@@ -5017,6 +5017,650 @@ const ANNALES_DATA = [
   },
 ];
 
+// ══════════════════ EXERCICES CORRIGÉS ══════════════════
+const EXERCICES_CORRIGES = [
+  {
+    id:'exo_thermo',
+    titre:'Exercices Thermique',
+    epreuve:'E4',
+    badge:'E4',
+    color:'#1d4ed8',
+    intro:'3 exercices corriges — Resistance thermique, dephasage, paroi composite',
+    exercices:[
+      {
+        id:'T1',
+        intitule:'Exercice 1 — Resistance thermique d\'une paroi simple',
+        enonce:[
+          {type:'text',content:'Une paroi exterieure est composee des couches suivantes (de l\'interieur vers l\'exterieur) :'},
+          {type:'table',headers:['Couche','Epaisseur e (m)','Conductivite \u03BB (W/m.K)'],rows:[
+            ['Platre','0,013','0,35'],
+            ['Beton banche','0,20','1,75'],
+            ['Isolant laine de verre','0,12','0,035'],
+            ['Enduit exterieur','0,015','0,87'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer la resistance thermique R de chaque couche.',
+            '2. Calculer la resistance totale RT de la paroi.',
+            '3. Calculer le coefficient U de la paroi.',
+            '4. La reglementation RE2020 impose U \u2264 0,20 W/m\u00B2.K pour un mur. La paroi est-elle conforme ?',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Resistances de chaque couche :'},
+          {type:'code',content:'R_platre   = 0,013 / 0,35  = 0,037 m\u00B2.K/W\nR_beton    = 0,20  / 1,75  = 0,114 m\u00B2.K/W\nR_isolant  = 0,12  / 0,035 = 3,429 m\u00B2.K/W\nR_enduit   = 0,015 / 0,87  = 0,017 m\u00B2.K/W'},
+          {type:'text',content:'2. Resistance totale :'},
+          {type:'code',content:'RT = Rsi + R_platre + R_beton + R_isolant + R_enduit + Rse\nRT = 0,13 + 0,037 + 0,114 + 3,429 + 0,017 + 0,04\nRT = 3,767 m\u00B2.K/W'},
+          {type:'text',content:'3. Coefficient U :'},
+          {type:'code',content:'U = 1 / RT = 1 / 3,767 = 0,27 W/m\u00B2.K'},
+          {type:'text',content:'4. Conformite RE2020 :'},
+          {type:'code',content:'U calcule = 0,27 W/m\u00B2.K\nU exige   = 0,20 W/m\u00B2.K (maxi)\n\n0,27 > 0,20  \u2192  NON CONFORME\n\u2192 Il faut augmenter l\'epaisseur de l\'isolant.'},
+          {type:'text',content:'Epaisseur d\'isolant necessaire pour U = 0,20 :'},
+          {type:'code',content:'RT_cible = 1 / 0,20 = 5,00 m\u00B2.K/W\nR_isolant_necessaire = 5,00 - (0,13 + 0,037 + 0,114 + 0,017 + 0,04)\n                     = 5,00 - 0,338 = 4,662 m\u00B2.K/W\ne_isolant = R x \u03BB = 4,662 x 0,035 = 0,163 m  \u2192  soit 16,5 cm minimum'},
+        ]
+      },
+      {
+        id:'T2',
+        intitule:'Exercice 2 — Dephasage thermique (inertie d\'ete)',
+        enonce:[
+          {type:'text',content:'Une toiture-terrasse est constituee d\'une dalle beton de :'},
+          {type:'list',items:[
+            'Epaisseur : e = 0,22 m',
+            'Masse volumique : \u03C1 = 2 300 kg/m\u00B3',
+            'Chaleur specifique : Cp = 1 000 J/kg.K',
+            'Conductivite thermique : \u03BB = 1,75 W/m.K',
+          ]},
+          {type:'list',items:[
+            '1. Calculer la diffusivite thermique a de la dalle.',
+            '2. Calculer le dephasage thermique \u03C6.',
+            '3. La toiture est-elle conforme a l\'exigence de confort d\'ete (\u03C6 > 12 heures) ?',
+            '4. Quelle epaisseur minimale faudrait-il pour atteindre \u03C6 = 12 heures ?',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Diffusivite thermique :'},
+          {type:'code',content:'a = \u03BB / (\u03C1 x Cp)\na = 1,75 / (2 300 x 1 000)\na = 1,75 / 2 300 000\na = 7,609 x 10\u207B\u2077 m\u00B2/s'},
+          {type:'text',content:'2. Dephasage thermique :'},
+          {type:'code',content:'\u03C6 = 0,023 x e / \u221Aa\n\u03C6 = 0,023 x 0,22 / \u221A(7,609 x 10\u207B\u2077)\n\u03C6 = 0,00506 / 8,723 x 10\u207B\u2074\n\u03C6 = 5,80 heures'},
+          {type:'text',content:'3. Conformite :'},
+          {type:'code',content:'\u03C6 calcule = 5,80 heures\nExigence  = \u03C6 > 12 heures\n\n5,80 < 12  \u2192  NON CONFORME\n\u2192 La dalle seule est insuffisante pour le confort d\'ete.\n\u2192 Solution : ajouter une couche d\'isolant a forte inertie ou augmenter l\'epaisseur.'},
+          {type:'text',content:'4. Epaisseur minimale pour \u03C6 = 12 heures :'},
+          {type:'code',content:'12 = 0,023 x e / \u221A(7,609 x 10\u207B\u2077)\n12 = 0,023 x e / 8,723 x 10\u207B\u2074\ne  = 12 x 8,723 x 10\u207B\u2074 / 0,023\ne  = 0,01047 / 0,023\ne  = 0,455 m  \u2192  soit 45,5 cm de beton'},
+          {type:'alert',color:'yellow',text:'Pour le beton seul, l\'epaisseur necessaire est irrealiste (45 cm). Il faut des materiaux a forte inertie (beton lourd, terre cuite, beton de chanvre) ou une combinaison isolant + masse thermique.'},
+        ]
+      },
+      {
+        id:'T3',
+        intitule:'Exercice 3 — Paroi composite : calcul complet (type sujet 2024)',
+        enonce:[
+          {type:'text',content:'Mur d\'un centre de loisirs CLSH, constitution (int \u2192 ext) :'},
+          {type:'table',headers:['Couche','e (m)','\u03BB (W/m.K)','\u03C1 (kg/m\u00B3)','Cp (J/kg.K)'],rows:[
+            ['Enduit platre','0,012','0,35','1 050','840'],
+            ['Beton cellulaire','0,30','0,11','500','1 000'],
+            ['Laine de roche','0,08','0,036','50','840'],
+            ['Bardage bois','0,022','0,13','600','1 600'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer U de la paroi. Est-elle conforme RE2020 (U \u2264 0,20) ?',
+            '2. Calculer le dephasage \u03C6 pour la couche de beton cellulaire seule.',
+            '3. Si \u03C6_beton = 5,2 h et \u03C6_isolant = 2,1 h, peut-on additionner les dephasages ?',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Coefficient U :'},
+          {type:'code',content:'R_enduit   = 0,012 / 0,35  = 0,034 m\u00B2.K/W\nR_beton C. = 0,30  / 0,11  = 2,727 m\u00B2.K/W\nR_laine    = 0,08  / 0,036 = 2,222 m\u00B2.K/W\nR_bardage  = 0,022 / 0,13  = 0,169 m\u00B2.K/W\n\nRT = 0,13 + 0,034 + 2,727 + 2,222 + 0,169 + 0,04\nRT = 5,322 m\u00B2.K/W\n\nU = 1 / 5,322 = 0,188 W/m\u00B2.K\n\n0,188 < 0,20  \u2192  CONFORME RE2020'},
+          {type:'text',content:'2. Dephasage couche beton cellulaire :'},
+          {type:'code',content:'a = \u03BB / (\u03C1 x Cp) = 0,11 / (500 x 1 000) = 2,2 x 10\u207B\u2077 m\u00B2/s\n\u03C6 = 0,023 x 0,30 / \u221A(2,2 x 10\u207B\u2077)\n\u03C6 = 0,0069 / 4,690 x 10\u207B\u2074\n\u03C6 = 14,7 heures  \u2192  CONFORME (> 12 h)'},
+          {type:'text',content:'3. Additionner les dephasages :'},
+          {type:'code',content:'NON \u2014 on ne peut pas additionner les dephasages de chaque couche.\nLa formule \u03C6 = 0,023 x e / \u221Aa s\'applique a UNE SEULE couche homogene.\nPour une paroi composite, on utilise le dephasage de la couche\nla plus inerte (ou on applique la formule a l\'ensemble si le\nmateriau est homogene).\n\u2192 Ici, le beton cellulaire seul donne \u03C6 = 14,7 h : CONFORME.'},
+          {type:'alert',color:'green',text:'Points de vigilance : e en metres (jamais en cm), \u221Aa calculer d\'abord a puis racine, \u03C6 > 12 h = exigence confort d\'ete, U \u2264 0,20 pour murs RE2020, Rsi = 0,13 paroi verticale, Rse = 0,04.'},
+        ]
+      },
+    ]
+  },
+  {
+    id:'exo_acoustique',
+    titre:'Exercices Acoustique',
+    epreuve:'E4',
+    badge:'E4',
+    color:'#7c3aed',
+    intro:'3 exercices corriges — Reverberation, isolement facade, gymnase',
+    exercices:[
+      {
+        id:'AC1',
+        intitule:'Exercice 1 — Temps de reverberation d\'une salle de classe (type sujet 2023)',
+        enonce:[
+          {type:'text',content:'Une salle de classe de dimensions 9 m x 7 m x 3 m est composee des surfaces suivantes :'},
+          {type:'table',headers:['Element','Surface (m\u00B2)','Coefficient \u03B1'],rows:[
+            ['Plafond (dalle beton brut)','63','0,02'],
+            ['Sol (carrelage)','63','0,02'],
+            ['Murs beton enduit','66','0,03'],
+            ['Fenetres simple vitrage','12','0,06'],
+            ['Tableau blanc','6','0,04'],
+            ['30 eleves assis','—','A = 30 x 0,45 m\u00B2'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer le volume V de la salle.',
+            '2. Calculer la surface d\'absorption totale A.',
+            '3. Calculer le temps de reverberation TR.',
+            '4. La valeur de TR est-elle acceptable pour une salle de classe (TR \u2264 0,6 s) ?',
+            '5. Que faut-il faire pour corriger ?',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Volume :'},
+          {type:'code',content:'V = 9 x 7 x 3 = 189 m\u00B3'},
+          {type:'text',content:'2. Surface d\'absorption totale A :'},
+          {type:'code',content:'A_plafond  = 63  x 0,02 = 1,26 m\u00B2\nA_sol      = 63  x 0,02 = 1,26 m\u00B2\nA_murs     = 66  x 0,03 = 1,98 m\u00B2\nA_fenetres = 12  x 0,06 = 0,72 m\u00B2\nA_tableau  = 6   x 0,04 = 0,24 m\u00B2\nA_eleves   = 30  x 0,45 = 13,50 m\u00B2\n\nA_total = 1,26 + 1,26 + 1,98 + 0,72 + 0,24 + 13,50\nA_total = 18,96 m\u00B2'},
+          {type:'text',content:'3. Temps de reverberation :'},
+          {type:'code',content:'TR = 0,16 x V / A\nTR = 0,16 x 189 / 18,96\nTR = 30,24 / 18,96\nTR = 1,59 secondes'},
+          {type:'text',content:'4. Conformite :'},
+          {type:'code',content:'TR calcule = 1,59 s\nExigence   = TR \u2264 0,6 s (salle de classe)\n\n1,59 > 0,6  \u2192  NON CONFORME\n\u2192 La salle est trop reverberante (echo important, mauvaise intelligibilite de la parole).'},
+          {type:'text',content:'5. Correction necessaire :'},
+          {type:'code',content:'A_necessaire = 0,16 x V / TR_cible\nA_necessaire = 0,16 x 189 / 0,6\nA_necessaire = 30,24 / 0,6\nA_necessaire = 50,4 m\u00B2\n\n\u0394A = A_necessaire - A_existante\n\u0394A = 50,4 - 18,96\n\u0394A = 31,44 m\u00B2 d\'absorption supplementaire\n\nSolution : Poser un faux-plafond absorbant (\u03B1 \u2248 0,70 a 0,90)\n  S_faux-plafond necessaire = \u0394A / \u03B1 = 31,44 / 0,75 \u2248 42 m\u00B2\n  \u2192 Recouvrir le plafond entier (63 m\u00B2) suffit largement.'},
+        ]
+      },
+      {
+        id:'AC2',
+        intitule:'Exercice 2 — Isolement acoustique des facades (type sujet 2023-2025)',
+        enonce:[
+          {type:'text',content:'Un batiment de logements est situe a proximite d\'une voie routiere. Le bureau d\'etudes indique que la voie est classee categorie 3 selon l\'arrete prefectoral.'},
+          {type:'list',items:[
+            '1. Quelle est la largeur de secteur affecte par le bruit pour une voie de categorie 3 ?',
+            '2. Quel est l\'isolement acoustique minimum DnT,A,tr exige pour les chambres ?',
+            '3. Pour les pieces de vie (sejour, salon) ?',
+            '4. L\'entree d\'air de ventilation doit-elle etre acoustique ? Justifier.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'Classement des voies et secteurs affectes :'},
+          {type:'code',content:'Categorie 1 : L > 81 dB(A)  \u2192  bande de 300 m\nCategorie 2 : L > 76 dB(A)  \u2192  bande de 250 m\nCategorie 3 : L > 70 dB(A)  \u2192  bande de 100 m\nCategorie 4 : L > 65 dB(A)  \u2192  bande de  30 m\nCategorie 5 : L > 60 dB(A)  \u2192  bande de  10 m\n\n\u2192 Voie categorie 3 : secteur affecte = 100 m de part et d\'autre'},
+          {type:'text',content:'Isolements exiges (NRA) :'},
+          {type:'code',content:'Pieces principales (chambres, sejour) facades exposees :\n  Categorie 1 : DnT,A,tr \u2265 45 dB\n  Categorie 2 : DnT,A,tr \u2265 42 dB\n  Categorie 3 : DnT,A,tr \u2265 38 dB  \u2190 notre cas\n  Categorie 4 : DnT,A,tr \u2265 35 dB\n  Categorie 5 : DnT,A,tr \u2265 30 dB\n\n\u2192 Chambres ET sejour : DnT,A,tr \u2265 38 dB'},
+          {type:'text',content:'Entrees d\'air :'},
+          {type:'code',content:'OUI \u2014 les entrees d\'air font partie de la facade acoustique.\nElles constituent le maillon faible de l\'isolement.\n\u2192 Il faut des entrees d\'air acoustiques (avec deflecteur et absorbant)\n  adaptees a la categorie de la voie.\n\u2192 Pour categorie 3 : entree d\'air de type \"acoustique renforce\"\n  (performance \u2265 38 dB).'},
+        ]
+      },
+      {
+        id:'AC3',
+        intitule:'Exercice 3 — Calcul complet (type sujet 2024 — Gymnase)',
+        enonce:[
+          {type:'text',content:'Un gymnase municipal a les caracteristiques suivantes :\n- Dimensions : 44 m x 24 m x 8 m'},
+          {type:'table',headers:['Element','Surface (m\u00B2)','\u03B1'],rows:[
+            ['Sol (parquet)','1 056','0,06'],
+            ['Plafond (beton)','1 056','0,02'],
+            ['Murs longs (beton enduit)','704','0,03'],
+            ['Murs courts (beton enduit)','384','0,03'],
+            ['Tribunes (gradins bois vides)','80','0,04'],
+          ]},
+          {type:'text',content:'On veut obtenir un TR \u2264 1,5 s (exigence ERP sportif).'},
+          {type:'list',items:[
+            '1. Calculer V et A_existante.',
+            '2. Calculer le TR actuel.',
+            '3. Calculer \u0394A necessaire.',
+            '4. On pose des panneaux absorbants sur le plafond (\u03B1 = 0,80). Quelle surface couvrir ?',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Volume et absorption existante :'},
+          {type:'code',content:'V = 44 x 24 x 8 = 8 448 m\u00B3\n\nA_sol      = 1 056 x 0,06 = 63,36 m\u00B2\nA_plafond  = 1 056 x 0,02 = 21,12 m\u00B2\nA_murs L   =   704 x 0,03 = 21,12 m\u00B2\nA_murs C   =   384 x 0,03 = 11,52 m\u00B2\nA_tribunes =    80 x 0,04 =  3,20 m\u00B2\n\nA_existante = 63,36 + 21,12 + 21,12 + 11,52 + 3,20\nA_existante = 120,32 m\u00B2'},
+          {type:'text',content:'2. TR actuel :'},
+          {type:'code',content:'TR = 0,16 x 8 448 / 120,32\nTR = 1 351,68 / 120,32\nTR = 11,23 secondes  \u2192  tres fortement reverberant'},
+          {type:'text',content:'3. \u0394A necessaire pour TR = 1,5 s :'},
+          {type:'code',content:'A_necessaire = 0,16 x 8 448 / 1,5\nA_necessaire = 1 351,68 / 1,5\nA_necessaire = 901,12 m\u00B2\n\n\u0394A = 901,12 - 120,32 = 780,80 m\u00B2'},
+          {type:'text',content:'4. Surface de panneaux absorbants (\u03B1 = 0,80) :'},
+          {type:'code',content:'S_panneaux = \u0394A / \u03B1 = 780,80 / 0,80 = 976 m\u00B2\n\nLe plafond fait 1 056 m\u00B2 \u2192 couvrir 976 / 1 056 = 92,4% du plafond.\n\u2192 Solution realiste : couvrir la totalite du plafond de panneaux absorbants.'},
+          {type:'alert',color:'blue',text:'Distinguer TR (reverberation locale) et DnT,A,tr (isolement de facade). La formule de Sabine TR = 0,16 x V / A s\'applique a l\'acoustique interne d\'un local.'},
+        ]
+      },
+    ]
+  },
+  {
+    id:'exo_rentabilite',
+    titre:'Exercices Rentabilite',
+    epreuve:'E52',
+    badge:'E52',
+    color:'#059669',
+    intro:'4 exercices corriges — Debourse sec, marge brute, resultat, ratios',
+    exercices:[
+      {
+        id:'RE1',
+        intitule:'Exercice 1 — Calcul du Debourse Sec (type sujet 2023 — Ecole maternelle)',
+        enonce:[
+          {type:'text',content:'Chantier de gros oeuvre d\'une ecole maternelle — lot beton arme.'},
+          {type:'text',content:'Main d\'oeuvre :'},
+          {type:'table',headers:['Ressource','Heures prod.','Taux horaire charge'],rows:[
+            ['Chef de chantier','120 h','38,50 \u20AC/h'],
+            ['Macon qualifie (x2)','480 h','32,00 \u20AC/h'],
+            ['Manoeuvre (x2)','360 h','26,50 \u20AC/h'],
+          ]},
+          {type:'text',content:'Materiaux :'},
+          {type:'table',headers:['Materiau','Quantite','Prix unitaire HT'],rows:[
+            ['Beton C25/30','85 m\u00B3','142 \u20AC/m\u00B3'],
+            ['Aciers HA','4 200 kg','1,15 \u20AC/kg'],
+            ['Coffrages bois','320 m\u00B2','18,50 \u20AC/m\u00B2'],
+            ['Armatures treillis','210 m\u00B2','8,20 \u20AC/m\u00B2'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer DSMO (debourse sec main d\'oeuvre).',
+            '2. Calculer DSMAT (debourse sec materiaux).',
+            '3. Calculer DS total.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. DSMO :'},
+          {type:'code',content:'Chef chantier : 120 x 38,50  =  4 620,00 \u20AC\nMacons        : 480 x 32,00  = 15 360,00 \u20AC\nManoeuvres     : 360 x 26,50  =  9 540,00 \u20AC\n\nDSMO = 4 620 + 15 360 + 9 540 = 29 520,00 \u20AC\n\nTotal heures productives = 120 + 480 + 360 = 960 heures'},
+          {type:'text',content:'2. DSMAT :'},
+          {type:'code',content:'Beton       : 85     x 142,00 = 12 070,00 \u20AC\nAciers HA   : 4 200  x   1,15 =  4 830,00 \u20AC\nCoffrages   : 320    x  18,50 =  5 920,00 \u20AC\nTreillis    : 210    x   8,20 =  1 722,00 \u20AC\n\nDSMAT = 12 070 + 4 830 + 5 920 + 1 722 = 24 542,00 \u20AC'},
+          {type:'text',content:'3. DS total :'},
+          {type:'code',content:'DS = DSMO + DSMAT\nDS = 29 520 + 24 542\nDS = 54 062,00 \u20AC HT'},
+        ]
+      },
+      {
+        id:'RE2',
+        intitule:'Exercice 2 — Marge brute et resultat (type sujet 2023)',
+        enonce:[
+          {type:'text',content:'Suite de l\'exercice 1. Donnees complementaires :'},
+          {type:'list',items:[
+            'Montant HT du lot : 74 800 \u20AC HT',
+            'Sous-traitance (echafaudages) : 3 200 \u20AC HT',
+            'Frais de chantier directs (installation, outillage) : 2 100 \u20AC HT',
+            'Frais Generaux (FG) : 7% du montant HT',
+            'Frais d\'Operation (FOp) : 1% du montant HT',
+          ]},
+          {type:'list',items:[
+            '1. Calculer le Cout Direct CD.',
+            '2. Calculer la Marge Brute MB et la Marge Brute Horaire MBH.',
+            '3. Calculer le Resultat Brut RB et RB%.',
+            '4. L\'operation est-elle rentable ? (seuil de rentabilite acceptable : RB% \u2265 3%)',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Cout Direct :'},
+          {type:'code',content:'CD = DS + Sous-traitance + Frais chantier directs\nCD = 54 062 + 3 200 + 2 100\nCD = 59 362,00 \u20AC HT'},
+          {type:'text',content:'2. Marge Brute :'},
+          {type:'code',content:'MB = Montant HT - CD\nMB = 74 800 - 59 362\nMB = 15 438,00 \u20AC HT\n\nMBH = MB / Heures productives\nMBH = 15 438 / 960\nMBH = 16,08 \u20AC/h'},
+          {type:'text',content:'3. Resultat Brut :'},
+          {type:'code',content:'FG  = 7% x 74 800 = 5 236,00 \u20AC\nFOp = 1% x 74 800 =   748,00 \u20AC\n\nRB  = MB - FG - FOp\nRB  = 15 438 - 5 236 - 748\nRB  = 9 454,00 \u20AC HT\n\nRB% = RB / Montant HT x 100\nRB% = 9 454 / 74 800 x 100\nRB% = 12,64%'},
+          {type:'text',content:'4. Rentabilite :'},
+          {type:'code',content:'RB% = 12,64% > 3%  \u2192  OPERATION RENTABLE\n\u2192 Tres bon resultat pour un lot de gros oeuvre.\n\u2192 La marge brute horaire de 16,08 \u20AC/h est satisfaisante.'},
+        ]
+      },
+      {
+        id:'RE3',
+        intitule:'Exercice 3 — Analyse de rentabilite complete (type sujet 2025 — Halle Maubeuge)',
+        enonce:[
+          {type:'text',content:'Lot charpente metallique d\'une halle couverte 901 m\u00B2.\n- Montant HT marche : 142 500 \u20AC HT\n- Surface : 901 m\u00B2'},
+          {type:'text',content:'Main d\'oeuvre :'},
+          {type:'table',headers:['Equipe','Heures','Taux'],rows:[
+            ['Monteur charpente N3 (x3)','720 h','35,50 \u20AC/h'],
+            ['Grutier','80 h','41,00 \u20AC/h'],
+            ['Chef de chantier','60 h','42,00 \u20AC/h'],
+          ]},
+          {type:'text',content:'Materiaux :'},
+          {type:'table',headers:['Poste','Montant HT'],rows:[
+            ['Charpente acier (profiles, boulons)','48 200 \u20AC'],
+            ['Bardage et couverture','12 800 \u20AC'],
+            ['Boulonnerie et consommables','1 450 \u20AC'],
+          ]},
+          {type:'list',items:[
+            'Location grue : 6 800 \u20AC HT (sous-traitance)',
+            'Installation chantier : 1 200 \u20AC HT',
+            'FG : 8% — FOp : 1,5%',
+          ]},
+          {type:'list',items:[
+            '1. Calculer DSMO, DSMAT, DS, CD.',
+            '2. Calculer MB, MBH, RB, RB%.',
+            '3. Calculer le ratio \u20AC/m\u00B2 pour ce lot.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. DSMO, DSMAT, DS, CD :'},
+          {type:'code',content:'DSMO :\n  Monteurs   : 720 x 35,50 = 25 560 \u20AC\n  Grutier    :  80 x 41,00 =  3 280 \u20AC\n  Chef ch.   :  60 x 42,00 =  2 520 \u20AC\n  DSMO = 25 560 + 3 280 + 2 520 = 31 360 \u20AC\n  Total heures = 720 + 80 + 60 = 860 h\n\nDSMAT :\n  Charpente acier = 48 200 \u20AC\n  Bardage/couv.   = 12 800 \u20AC\n  Boulonnerie     =  1 450 \u20AC\n  DSMAT = 62 450 \u20AC\n\nDS = 31 360 + 62 450 = 93 810 \u20AC\n\nCD :\n  CD = DS + Sous-traitance + Frais chantier\n  CD = 93 810 + 6 800 + 1 200\n  CD = 101 810 \u20AC'},
+          {type:'text',content:'2. MB, MBH, RB, RB% :'},
+          {type:'code',content:'MB  = 142 500 - 101 810 = 40 690 \u20AC\nMBH = 40 690 / 860 = 47,31 \u20AC/h\n\nFG  = 8,0% x 142 500 = 11 400 \u20AC\nFOp = 1,5% x 142 500 =  2 137,50 \u20AC\n\nRB  = 40 690 - 11 400 - 2 137,50 = 27 152,50 \u20AC\nRB% = 27 152,50 / 142 500 x 100 = 19,05%'},
+          {type:'text',content:'3. Ratio \u20AC/m\u00B2 :'},
+          {type:'code',content:'Ratio = Montant HT / Surface\nRatio = 142 500 / 901\nRatio = 158,16 \u20AC/m\u00B2'},
+        ]
+      },
+      {
+        id:'RE4',
+        intitule:'Exercice 4 — Ratios economiques multi-lots (type sujet 2024)',
+        enonce:[
+          {type:'text',content:'Gymnase municipal — 2 056 m\u00B2 SHON. Recapitulatif des lots :'},
+          {type:'table',headers:['Lot','Designation','Montant HT'],rows:[
+            ['1','Gros oeuvre','612 000 \u20AC'],
+            ['2','Charpente','287 500 \u20AC'],
+            ['3','Couverture','143 200 \u20AC'],
+            ['4','Menuiseries ext.','89 400 \u20AC'],
+            ['5','Platrerie-isolation','76 800 \u20AC'],
+            ['6','Electricite','112 300 \u20AC'],
+            ['7','Plomberie-CVC','134 600 \u20AC'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer le montant total HT de l\'operation.',
+            '2. Calculer le ratio global \u20AC/m\u00B2 SHON.',
+            '3. Calculer le ratio du lot gros-oeuvre en \u20AC/m\u00B2.',
+            '4. Le ratio gros-oeuvre est-il coherent avec un batiment sportif (reference : 280 a 380 \u20AC/m\u00B2) ?',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Montant total :'},
+          {type:'code',content:'Total = 612 000 + 287 500 + 143 200 + 89 400 + 76 800 + 112 300 + 134 600\nTotal = 1 455 800 \u20AC HT'},
+          {type:'text',content:'2. Ratio global :'},
+          {type:'code',content:'Ratio global = 1 455 800 / 2 056\nRatio global = 708,08 \u20AC/m\u00B2 SHON'},
+          {type:'text',content:'3. Ratio gros-oeuvre :'},
+          {type:'code',content:'Ratio GO = 612 000 / 2 056\nRatio GO = 297,66 \u20AC/m\u00B2'},
+          {type:'text',content:'4. Analyse :'},
+          {type:'code',content:'Ratio GO calcule = 297,66 \u20AC/m\u00B2\nReference batiment sportif = 280 a 380 \u20AC/m\u00B2\n\n297,66 est dans la fourchette [280 ; 380]\n\u2192 COHERENT avec un gymnase municipal standard.'},
+          {type:'alert',color:'green',text:'Points de vigilance : DSMO = heures x taux charge, MBH = indicateur cle de productivite, FG et FOp s\'appliquent sur le montant HT (pas sur DS ou CD), le ratio \u20AC/m\u00B2 compare toujours au marche de reference.'},
+        ]
+      },
+    ]
+  },
+  {
+    id:'exo_revision_prix',
+    titre:'Exercices Revision des Prix',
+    epreuve:'E52',
+    badge:'E52',
+    color:'#d97706',
+    intro:'4 exercices corriges — Coefficient Cn, decalage temporel, deux indices, multi-mois',
+    exercices:[
+      {
+        id:'RP1',
+        intitule:'Exercice 1 — Revision simple avec un seul indice (type sujet 2023)',
+        enonce:[
+          {type:'text',content:'Un marche de gros-oeuvre est passe avec les donnees suivantes :'},
+          {type:'list',items:[
+            'Indice de reference (I0, mois 0 = depot offre) : BT01 = 112,4',
+            'Indice du mois de realisation (Im) : BT01 = 121,7',
+            'Travaux HT realises le mois M : 38 500 \u20AC HT',
+          ]},
+          {type:'text',content:'Le CCAP prevoit la formule : Cn = 0,15 + 0,85 x (Im / I0)'},
+          {type:'list',items:[
+            '1. Calculer le coefficient de revision Cn (arrondir au millieme superieur).',
+            '2. Calculer le montant de la revision HT pour le mois M.',
+            '3. Quel est le montant HT total facture ce mois (travaux + revision) ?',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Coefficient Cn :'},
+          {type:'code',content:'Cn = 0,15 + 0,85 x (Im / I0)\nCn = 0,15 + 0,85 x (121,7 / 112,4)\nCn = 0,15 + 0,85 x 1,08274...\nCn = 0,15 + 0,92033...\nCn = 1,07033...\n\n\u2192 Arrondi au millieme SUPERIEUR : Cn = 1,071'},
+          {type:'alert',color:'yellow',text:'Attention : l\'arrondi est TOUJOURS au millieme superieur (jamais inferieur). 1,07033 \u2192 on monte a 1,071 (et non 1,070).'},
+          {type:'text',content:'2. Revision HT :'},
+          {type:'code',content:'Revision HT = Travaux HT x (Cn - 1)\nRevision HT = 38 500 x (1,071 - 1)\nRevision HT = 38 500 x 0,071\nRevision HT = 2 733,50 \u20AC'},
+          {type:'text',content:'3. Montant total facture :'},
+          {type:'code',content:'Montant HT = Travaux HT + Revision HT\nMontant HT = 38 500 + 2 733,50\nMontant HT = 41 233,50 \u20AC HT'},
+        ]
+      },
+      {
+        id:'RP2',
+        intitule:'Exercice 2 — Revision avec decalage temporel (type sujet 2024-2025)',
+        enonce:[
+          {type:'text',content:'Un marche de charpente metallique prevoit dans le CCAP :\n\"La revision est calculee avec l\'indice du mois M-3 (3 mois avant le mois des travaux)\"'},
+          {type:'table',headers:['Mois','Indice BT50'],rows:[
+            ['M0 (offre)','108,2'],
+            ['M-3 (3 mois avant M)','115,8'],
+            ['M (mois travaux)','118,3'],
+          ]},
+          {type:'text',content:'Travaux HT du mois M = 52 000 \u20AC HT'},
+          {type:'list',items:[
+            '1. Quel indice doit-on utiliser pour Im ? Pourquoi ?',
+            '2. Calculer Cn et la revision HT.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Indice a utiliser :'},
+          {type:'code',content:'Le CCAP precise Im-3 \u2192 on utilise l\'indice du mois M-3, soit BT50 = 115,8\n(et non l\'indice du mois M = 118,3)\n\nRaison : les indices BT sont publies avec retard.\nLe CCAP anticipe ce delai en imposant un decalage de 3 mois.'},
+          {type:'text',content:'2. Calcul Cn et revision :'},
+          {type:'code',content:'Cn = 0,15 + 0,85 x (Im-3 / I0)\nCn = 0,15 + 0,85 x (115,8 / 108,2)\nCn = 0,15 + 0,85 x 1,07024...\nCn = 0,15 + 0,90970...\nCn = 1,05970...\n\u2192 Cn = 1,060  (millieme superieur)\n\nRevision HT = 52 000 x (1,060 - 1)\nRevision HT = 52 000 x 0,060\nRevision HT = 3 120,00 \u20AC HT'},
+        ]
+      },
+      {
+        id:'RP3',
+        intitule:'Exercice 3 — Formule a deux indices (type sujet 2023 — lot toiture)',
+        enonce:[
+          {type:'text',content:'Un marche de couverture-etancheite a la formule de revision suivante :\nCn = 0,15 + 0,85 x [(Im_BT30 / I0_BT30) x 10% + (Im_BT34 / I0_BT34) x 90%]'},
+          {type:'table',headers:['Indice','I0','Im'],rows:[
+            ['BT30 (couverture)','105,1','109,4'],
+            ['BT34 (etancheite)','118,7','127,9'],
+          ]},
+          {type:'text',content:'Travaux HT du mois = 76 200 \u20AC HT'},
+          {type:'list',items:[
+            '1. Calculer Cn (arrondi au millieme superieur).',
+            '2. Calculer la revision HT.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Coefficient Cn :'},
+          {type:'code',content:'Terme BT30 : (109,4 / 105,1) x 10% = 1,04091 x 0,10 = 0,10409\nTerme BT34 : (127,9 / 118,7) x 90% = 1,07750 x 0,90 = 0,96975\n\nSomme ponderee = 0,10409 + 0,96975 = 1,07384\n\nCn = 0,15 + 0,85 x 1,07384\nCn = 0,15 + 0,91276\nCn = 1,06276...\n\u2192 Cn = 1,063  (millieme superieur)'},
+          {type:'text',content:'2. Revision HT :'},
+          {type:'code',content:'Revision HT = 76 200 x (1,063 - 1)\nRevision HT = 76 200 x 0,063\nRevision HT = 4 800,60 \u20AC HT'},
+        ]
+      },
+      {
+        id:'RP4',
+        intitule:'Exercice 4 — Revision sur plusieurs mois consecutifs (type sujet 2025)',
+        enonce:[
+          {type:'text',content:'Un marche de maconnerie : montant initial = 180 000 \u20AC HT, duree = 6 mois.\nFormule : Cn = 0,15 + 0,85 x (Im / I0), indice BT01.'},
+          {type:'table',headers:['Mois','Indice BT01','% avancement cumule','% avancement mois'],rows:[
+            ['I0 (offre)','110,0','\u2014','\u2014'],
+            ['M1','111,2','10%','10%'],
+            ['M2','112,5','25%','15%'],
+            ['M3','114,8','45%','20%'],
+            ['M4','116,0','70%','25%'],
+            ['M5','117,3','90%','20%'],
+            ['M6','118,1','100%','10%'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer Cn pour chaque mois.',
+            '2. Calculer les travaux HT et la revision HT pour chaque mois.',
+            '3. Calculer la revision totale HT sur le marche.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'Travaux HT du mois = Montant marche x % avancement mois'},
+          {type:'table',headers:['Mois','Im','Im/I0','Cn (mill. sup.)','Travaux HT','Revision HT'],rows:[
+            ['M1','111,2','1,01091','1,010','18 000','180,00'],
+            ['M2','112,5','1,02273','1,020','27 000','540,00'],
+            ['M3','114,8','1,04364','1,038','36 000','1 368,00'],
+            ['M4','116,0','1,05455','1,047','45 000','2 115,00'],
+            ['M5','117,3','1,06636','1,057','36 000','2 052,00'],
+            ['M6','118,1','1,07364','1,074','18 000','1 332,00'],
+          ]},
+          {type:'text',content:'Detail M3 : Cn = 0,15 + 0,85 x 1,04364 = 0,15 + 0,88709 = 1,03709 \u2192 1,038'},
+          {type:'code',content:'Revision totale = 180 + 540 + 1 368 + 2 115 + 2 052 + 1 332\nRevision totale = 7 587,00 \u20AC HT'},
+          {type:'alert',color:'red',text:'Points de vigilance : Cn arrondi au millieme SUPERIEUR (jamais inferieur), verifier quel indice utiliser (Im, Im-3 ou Im-4 selon CCAP), Revision = Travaux x (Cn - 1) et non Travaux x Cn, la part fixe de 0,15 (15%) n\'est pas revisee.'},
+        ]
+      },
+    ]
+  },
+  {
+    id:'exo_situation_travaux',
+    titre:'Exercices Situation de Travaux',
+    epreuve:'E52',
+    badge:'E52',
+    color:'#0891b2',
+    intro:'4 exercices corriges — Avance forfaitaire, remboursement, decompte mensuel',
+    exercices:[
+      {
+        id:'ST1',
+        intitule:'Exercice 1 — Calcul de l\'avance forfaitaire (type sujet 2023)',
+        enonce:[
+          {type:'text',content:'Marche d\'une entreprise de maconnerie :'},
+          {type:'list',items:[
+            'Montant HT du marche : 342 500 \u20AC HT',
+            'TVA : 20%',
+            'Duree du marche : 9 mois',
+          ]},
+          {type:'list',items:[
+            '1. L\'entreprise a-t-elle droit a une avance forfaitaire ? Justifier.',
+            '2. Calculer le montant TTC du marche.',
+            '3. Calculer le montant de l\'avance forfaitaire.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Conditions d\'eligibilite :'},
+          {type:'code',content:'Condition 1 : Montant HT > 50 000 \u20AC \u2192 342 500 > 50 000 \u2713\nCondition 2 : Duree > 2 mois \u2192 9 mois > 2 mois \u2713\n\n\u2192 L\'entreprise a DROIT a l\'avance forfaitaire.'},
+          {type:'text',content:'2. Montant TTC :'},
+          {type:'code',content:'TVA = 342 500 x 20% = 68 500 \u20AC\nMontant TTC = 342 500 + 68 500 = 411 000 \u20AC TTC'},
+          {type:'text',content:'3. Avance forfaitaire (duree \u2264 12 mois) :'},
+          {type:'code',content:'Avance = 10% x Montant TTC\nAvance = 10% x 411 000\nAvance = 41 100 \u20AC TTC'},
+        ]
+      },
+      {
+        id:'ST2',
+        intitule:'Exercice 2 — Remboursement de l\'avance (type sujet 2023-2024)',
+        enonce:[
+          {type:'text',content:'Reprise de l\'exercice 1 : Avance = 41 100 \u20AC TTC'},
+          {type:'text',content:'Tableau d\'avancement :'},
+          {type:'table',headers:['Mois','% cumule'],rows:[
+            ['M1','8%'],['M2','18%'],['M3','32%'],['M4','50%'],
+            ['M5','68%'],['M6','82%'],['M7','92%'],['M8','100%'],
+          ]},
+          {type:'list',items:[
+            '1. A partir de quel mois commence le remboursement ?',
+            '2. Calculer R_cumule et R_mois pour les mois M5 a M8.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Debut du remboursement :'},
+          {type:'code',content:'Le remboursement commence quand le % cumule \u2265 65%.\nM4 = 50% < 65%  \u2192  pas de remboursement\nM5 = 68% \u2265 65%  \u2192  DEBUT du remboursement en M5'},
+          {type:'text',content:'2. Tableau de remboursement :'},
+          {type:'code',content:'Formule : R_cumule = Avance x (% cum. - 65%) / 35%\n          R_mois   = R_cumule - Remb. deja effectues\n\nMOIS M5 (68%) :\n  R_cumule = 41 100 x (68% - 65%) / 35%\n  R_cumule = 41 100 x 3% / 35%\n  R_cumule = 41 100 x 0,08571\n  R_cumule = 3 522,78 \u20AC\n  R_mois M5 = 3 522,78 - 0 = 3 522,78 \u20AC\n\nMOIS M6 (82%) :\n  R_cumule = 41 100 x (82% - 65%) / 35%\n  R_cumule = 41 100 x 17% / 35%\n  R_cumule = 41 100 x 0,48571\n  R_cumule = 19 962,86 \u20AC\n  R_mois M6 = 19 962,86 - 3 522,78 = 16 440,08 \u20AC\n\nMOIS M7 (92%) :\n  R_cumule = 41 100 x (92% - 65%) / 35%\n  R_cumule = 41 100 x 27% / 35%\n  R_cumule = 41 100 x 0,77143\n  R_cumule = 31 705,71 \u20AC\n  R_mois M7 = 31 705,71 - 19 962,86 = 11 742,85 \u20AC\n\nMOIS M8 (100%) :\n  R_cumule = 41 100 x (100% - 65%) / 35%\n  R_cumule = 41 100 x 1,00\n  R_cumule = 41 100,00 \u20AC  (= montant total de l\'avance)\n  R_mois M8 = 41 100,00 - 31 705,71 = 9 394,29 \u20AC'},
+          {type:'text',content:'Verification :'},
+          {type:'code',content:'Total rembourse = 3 522,78 + 16 440,08 + 11 742,85 + 9 394,29\n               = 41 100,00 \u20AC  \u2713  (= avance totale remboursee)'},
+        ]
+      },
+      {
+        id:'ST3',
+        intitule:'Exercice 3 — Decompte mensuel complet (type sujet 2025 — Halle de Maubeuge)',
+        enonce:[
+          {type:'text',content:'Marche de charpente metallique :'},
+          {type:'list',items:[
+            'Montant initial HT : 280 000 \u20AC HT — TVA 20%',
+            'Duree : 8 mois — Avance : 33 600 \u20AC TTC',
+            'Coefficient de revision Cn mois M4 : 1,043',
+          ]},
+          {type:'table',headers:['Mois','% cumule'],rows:[
+            ['M1','5%'],['M2','15%'],['M3','35%'],['M4','60%'],
+            ['M5','78%'],['M6','90%'],['M7','97%'],['M8','100%'],
+          ]},
+          {type:'text',content:'Etablir le decompte complet du mois M4 (aucun remboursement d\'avance car 60% < 65%).'},
+        ],
+        corrige:[
+          {type:'text',content:'Montant TTC du marche :'},
+          {type:'code',content:'280 000 x 1,20 = 336 000 \u20AC TTC'},
+          {type:'text',content:'Decompte mois M4 :'},
+          {type:'code',content:'1. TRAVAUX HT DU MOIS\n   Travaux HT = Montant HT x (% cum. M4 - % cum. M3)\n   Travaux HT = 280 000 x (60% - 35%)\n   Travaux HT = 280 000 x 25%\n   Travaux HT = 70 000 \u20AC HT\n\n2. REVISION HT\n   Revision HT = Travaux HT x (Cn - 1)\n   Revision HT = 70 000 x (1,043 - 1)\n   Revision HT = 70 000 x 0,043\n   Revision HT = 3 010 \u20AC HT\n\n3. REMBOURSEMENT AVANCE\n   % cumule M4 = 60% < 65%\n   \u2192 Pas de remboursement d\'avance ce mois.\n   Remb. avance = 0 \u20AC\n\n4. MONTANT HT NET\n   Montant HT net = Travaux HT + Revision HT - Remb. avance\n   Montant HT net = 70 000 + 3 010 - 0\n   Montant HT net = 73 010 \u20AC HT\n\n5. TVA\n   TVA = 73 010 x 20% = 14 602 \u20AC\n\n6. MONTANT TTC\n   Montant TTC = 73 010 + 14 602 = 87 612 \u20AC TTC\n\n7. RETENUE DE GARANTIE\n   RG = 87 612 x 5% = 4 380,60 \u20AC\n   Plafond RG = 336 000 x 5% = 16 800 \u20AC\n   \u2192 RG mois M4 = 4 380,60 \u20AC (plafond non atteint)\n\n8. NET A PAYER\n   Net a payer = Montant TTC - RG\n   Net a payer = 87 612 - 4 380,60\n   Net a payer = 83 231,40 \u20AC TTC'},
+          {type:'text',content:'Tableau synthese decompte M4 :'},
+          {type:'table',headers:['Poste','Montant'],rows:[
+            ['Travaux HT','70 000,00 \u20AC'],
+            ['Revision HT','3 010,00 \u20AC'],
+            ['Remboursement avance','0,00 \u20AC'],
+            ['Montant HT net','73 010,00 \u20AC'],
+            ['TVA 20%','14 602,00 \u20AC'],
+            ['Montant TTC','87 612,00 \u20AC'],
+            ['Retenue de garantie (5%)','-4 380,60 \u20AC'],
+            ['Net a payer TTC','83 231,40 \u20AC'],
+          ]},
+        ]
+      },
+      {
+        id:'ST4',
+        intitule:'Exercice 4 — Decompte mois M5 avec remboursement avance',
+        enonce:[
+          {type:'text',content:'Suite de l\'exercice 3. Au mois M5 : % cumule = 78%, Cn = 1,051.'},
+          {type:'text',content:'Etablir le decompte complet du mois M5.'},
+        ],
+        corrige:[
+          {type:'code',content:'1. TRAVAUX HT\n   Travaux HT = 280 000 x (78% - 60%) = 280 000 x 18% = 50 400 \u20AC HT\n\n2. REVISION HT\n   Revision HT = 50 400 x (1,051 - 1) = 50 400 x 0,051 = 2 570,40 \u20AC HT\n\n3. REMBOURSEMENT AVANCE\n   R_cumule M5 = 33 600 x (78% - 65%) / 35%\n   R_cumule M5 = 33 600 x 13% / 35%\n   R_cumule M5 = 33 600 x 0,37143\n   R_cumule M5 = 12 480,00 \u20AC\n   Remb. M4    = 0 \u20AC (pas de remboursement en M4 car 60% < 65%)\n   R_mois M5   = 12 480,00 - 0 = 12 480,00 \u20AC\n\n4. MONTANT HT NET\n   Montant HT net = 50 400 + 2 570,40 - 12 480\n   Montant HT net = 40 490,40 \u20AC HT\n\n5. TVA = 40 490,40 x 20% = 8 098,08 \u20AC\n\n6. MONTANT TTC = 40 490,40 + 8 098,08 = 48 588,48 \u20AC TTC\n\n7. RETENUE DE GARANTIE = 48 588,48 x 5% = 2 429,42 \u20AC\n\n8. NET A PAYER = 48 588,48 - 2 429,42 = 46 159,06 \u20AC TTC'},
+          {type:'alert',color:'yellow',text:'Points de vigilance : la RG s\'applique sur le TTC (pas sur le HT), plafond RG = 5% du montant initial TTC, le remboursement d\'avance se deduit avant le calcul de TVA, pas de revision sur l\'avance, seuil de remboursement = 65%, denominateur = 35%.'},
+        ]
+      },
+    ]
+  },
+  {
+    id:'exo_analyse_offres',
+    titre:'Exercices Analyse des Offres',
+    epreuve:'E52',
+    badge:'E52',
+    color:'#be185d',
+    intro:'2 exercices corriges — Notation multi-criteres, negociation et actualisation',
+    exercices:[
+      {
+        id:'AO1',
+        intitule:'Exercice 1 — Analyse comparative d\'offres lot gros oeuvre (type sujet 2023)',
+        enonce:[
+          {type:'text',content:'Marche d\'une ecole maternelle. Estimation maitre d\'ouvrage : 248 500 \u20AC HT'},
+          {type:'text',content:'Criteres de selection :'},
+          {type:'list',items:[
+            'Prix : 50 points sur 100',
+            'Valeur technique (methodologie + references) : 35 points sur 100',
+            'Delai : 15 points sur 100',
+          ]},
+          {type:'text',content:'Offres recues :'},
+          {type:'table',headers:['Entreprise','Offre HT','Negociation','Delai (sem.)','Note val. tech.'],rows:[
+            ['SOGEBA','261 200 \u20AC','-3 500 \u20AC','14','28'],
+            ['BATIPLUS','244 800 \u20AC','+1 200 \u20AC','16','31'],
+            ['CMEC','252 000 \u20AC','-8 000 \u20AC','12','27'],
+            ['LABAT TP','238 500 \u20AC','+2 000 \u20AC','18','33'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer le montant final de chaque offre apres negociation.',
+            '2. Calculer l\'ecart en % entre chaque offre finale et l\'estimation.',
+            '3. Calculer la note prix de chaque entreprise.',
+            '4. Calculer la note delai de chaque entreprise.',
+            '5. Calculer le score total et classer les entreprises.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Montants apres negociation :'},
+          {type:'code',content:'SOGEBA   : 261 200 - 3 500 = 257 700 \u20AC HT\nBATIPLUS : 244 800 + 1 200 = 246 000 \u20AC HT\nCMEC     : 252 000 - 8 000 = 244 000 \u20AC HT\nLABAT TP : 238 500 + 2 000 = 240 500 \u20AC HT  \u2190 moins chere'},
+          {type:'text',content:'2. Ecarts par rapport a l\'estimation (248 500 \u20AC) :'},
+          {type:'code',content:'SOGEBA   : (257 700 - 248 500) / 248 500 x 100 = +3,70%  (depassement)\nBATIPLUS : (246 000 - 248 500) / 248 500 x 100 = -1,00%  (economie)\nCMEC     : (244 000 - 248 500) / 248 500 x 100 = -1,81%  (economie)\nLABAT TP : (240 500 - 248 500) / 248 500 x 100 = -3,22%  (economie)'},
+          {type:'text',content:'3. Notes prix (sur 50 points) — Prix_min = 240 500 \u20AC (LABAT TP) :'},
+          {type:'code',content:'Note prix = 50 x (Prix_min / Prix_i) = 50 x (240 500 / Prix_i)\n\nSOGEBA   : 50 x (240 500 / 257 700) = 50 x 0,9332 = 46,66 pts\nBATIPLUS : 50 x (240 500 / 246 000) = 50 x 0,9776 = 48,88 pts\nCMEC     : 50 x (240 500 / 244 000) = 50 x 0,9857 = 49,29 pts\nLABAT TP : 50 x (240 500 / 240 500) = 50 x 1,0000 = 50,00 pts'},
+          {type:'text',content:'4. Notes delai (sur 15 points) — Delai_min = 12 semaines (CMEC) :'},
+          {type:'code',content:'Note delai = 15 x (12 / Delai_i)\n\nSOGEBA   : 15 x (12 / 14) = 15 x 0,857 = 12,86 pts\nBATIPLUS : 15 x (12 / 16) = 15 x 0,750 = 11,25 pts\nCMEC     : 15 x (12 / 12) = 15 x 1,000 = 15,00 pts\nLABAT TP : 15 x (12 / 18) = 15 x 0,667 = 10,00 pts'},
+          {type:'text',content:'5. Score total et classement :'},
+          {type:'table',headers:['Entreprise','Note prix','Note tech.','Note delai','Total','Rang'],rows:[
+            ['SOGEBA','46,66','28','12,86','87,52','4'],
+            ['BATIPLUS','48,88','31','11,25','91,13','3'],
+            ['CMEC','49,29','27','15,00','91,29','2'],
+            ['LABAT TP','50,00','33','10,00','93,00','1'],
+          ]},
+          {type:'alert',color:'green',text:'LABAT TP retenu avec 93,00 pts. Meilleur prix + meilleure valeur technique compensent le delai le plus long.'},
+        ]
+      },
+      {
+        id:'AO2',
+        intitule:'Exercice 2 — Negociation et actualisation (type sujet 2025)',
+        enonce:[
+          {type:'text',content:'Lot charpente bois. Estimation : 89 000 \u20AC HT. Note max prix = 40 pts.'},
+          {type:'table',headers:['Entreprise','Offre initiale HT','Moins-values','Plus-values','Remise'],rows:[
+            ['CHARPBOIS','94 500 \u20AC','1 200 \u20AC','800 \u20AC','1,5%'],
+            ['LIGNOBAT','87 300 \u20AC','0 \u20AC','1 500 \u20AC','2,0%'],
+            ['STRUCTBOIS','91 000 \u20AC','2 500 \u20AC','0 \u20AC','1,0%'],
+          ]},
+          {type:'list',items:[
+            '1. Calculer le montant final HT de chaque offre.',
+            '2. Identifier Prix_min.',
+            '3. Calculer la note prix de chaque entreprise.',
+          ]},
+        ],
+        corrige:[
+          {type:'text',content:'1. Montants finaux :'},
+          {type:'code',content:'CHARPBOIS  : Base = 94 500 - 1 200 + 800 = 94 100 \u20AC\n             Remise = 94 100 x 1,5% = 1 411,50 \u20AC\n             Final = 94 100 - 1 411,50 = 92 688,50 \u20AC HT\n\nLIGNOBAT   : Base = 87 300 + 1 500 = 88 800 \u20AC\n             Remise = 88 800 x 2,0% = 1 776,00 \u20AC\n             Final = 88 800 - 1 776 = 87 024,00 \u20AC HT\n\nSTRUCTBOIS : Base = 91 000 - 2 500 = 88 500 \u20AC\n             Remise = 88 500 x 1,0% = 885,00 \u20AC\n             Final = 88 500 - 885 = 87 615,00 \u20AC HT'},
+          {type:'text',content:'2. Prix_min = 87 024 \u20AC (LIGNOBAT)'},
+          {type:'text',content:'3. Notes prix (sur 40 pts) :'},
+          {type:'code',content:'CHARPBOIS  : 40 x (87 024 / 92 688,50) = 40 x 0,9389 = 37,56 pts\nLIGNOBAT   : 40 x (87 024 / 87 024,00) = 40 x 1,0000 = 40,00 pts\nSTRUCTBOIS : 40 x (87 024 / 87 615,00) = 40 x 0,9933 = 39,73 pts'},
+          {type:'alert',color:'yellow',text:'Points de vigilance : toujours utiliser le montant APRES negociation pour Prix_min, la remise en % s\'applique sur le montant apres moins/plus-values, la note ne peut pas depasser Note_max.'},
+        ]
+      },
+    ]
+  },
+];
+
 // ══════════════════ PLANNING DATA ══════════════════
 
 const PLANNING_DATA = [
@@ -12886,6 +13530,8 @@ const FicheContent = ({sections}) => sections.map((sec,si)=>(
       if(b.type==='formula_ref') return <div key={bi} className="formula-ref">{b.items.map((it,i)=><div key={i}>{it}</div>)}</div>;
       if(b.type==='key') return <div key={bi} className="key-point">{b.text}</div>;
       if(b.type==='alert') return <div key={bi} className={`key-point ${b.color==='red'?'alert-red':b.color==='green'?'alert-green':b.color==='yellow'?'alert-yellow':'alert-blue'}`}>{b.text}</div>;
+      if(b.type==='text') return <p key={bi} style={{fontSize:13,color:'var(--text2)',lineHeight:1.8,margin:'8px 0',whiteSpace:'pre-wrap'}}>{b.content}</p>;
+      if(b.type==='code') return <pre key={bi} style={{fontSize:12,color:'#e2e8f0',background:'#1e293b',borderRadius:8,padding:'12px 14px',margin:'8px 0',overflowX:'auto',lineHeight:1.7,whiteSpace:'pre-wrap',wordBreak:'break-word',border:'1px solid #334155'}}>{b.content}</pre>;
       return null;
     })}
   </div>
@@ -14647,59 +15293,59 @@ const PlanningPage = ({data=PLANNING_DATA,title='Planning de Révision',subtitle
 
 const ANNALES_PDF = {
   maths: [
-    {year:2025, label:'Sujet Maths B1 2025', path:'ANNALES/Mathematiques/2025/Sujet_Maths_B1_2025.pdf', type:'sujet'},
-    {year:2025, label:'Corrigé Maths B1 2025', path:'ANNALES/Mathematiques/2025/Corrige_Maths_B1_2025.pdf', type:'corrige'},
-    {year:2024, label:'Sujet Maths B1 2024', path:'ANNALES/Mathematiques/2024/Sujet_Maths_B1_2024.pdf', type:'sujet'},
-    {year:2024, label:'Corrigé Maths B1 2024', path:'ANNALES/Mathematiques/2024/Corrige_Maths_B1_2024.pdf', type:'corrige'},
-    {year:2023, label:'Sujet Maths B1 2023', path:'ANNALES/Mathematiques/2023/Sujet_Maths_B1_2023.pdf', type:'sujet'},
-    {year:2023, label:'Corrigé Maths B1 2023', path:'ANNALES/Mathematiques/2023/Corrige_Maths_B1_2023.pdf', type:'corrige'},
-    {year:2022, label:'Sujet Maths B1 2022', path:'ANNALES/Mathematiques/2022/Sujet_Maths_B1_2022.pdf', type:'sujet'},
-    {year:2022, label:'Corrigé Maths B1 2022', path:'ANNALES/Mathematiques/2022/Corrige_Maths_B1_2022.pdf', type:'corrige'},
+    {year:2025, label:'Sujet Maths B1 2025', path:'../ANNALES/Mathematiques/2025/Sujet_Maths_B1_2025.pdf', type:'sujet'},
+    {year:2025, label:'Corrigé Maths B1 2025', path:'../ANNALES/Mathematiques/2025/Corrige_Maths_B1_2025.pdf', type:'corrige'},
+    {year:2024, label:'Sujet Maths B1 2024', path:'../ANNALES/Mathematiques/2024/Sujet_Maths_B1_2024.pdf', type:'sujet'},
+    {year:2024, label:'Corrigé Maths B1 2024', path:'../ANNALES/Mathematiques/2024/Corrige_Maths_B1_2024.pdf', type:'corrige'},
+    {year:2023, label:'Sujet Maths B1 2023', path:'../ANNALES/Mathematiques/2023/Sujet_Maths_B1_2023.pdf', type:'sujet'},
+    {year:2023, label:'Corrigé Maths B1 2023', path:'../ANNALES/Mathematiques/2023/Corrige_Maths_B1_2023.pdf', type:'corrige'},
+    {year:2022, label:'Sujet Maths B1 2022', path:'../ANNALES/Mathematiques/2022/Sujet_Maths_B1_2022.pdf', type:'sujet'},
+    {year:2022, label:'Corrigé Maths B1 2022', path:'../ANNALES/Mathematiques/2022/Corrige_Maths_B1_2022.pdf', type:'corrige'},
   ],
   physique: [
-    {year:2025, label:'Sujet Physique 2025', path:'ANNALES/Sciences_Physiques/2025/Sujet_Physique_BTS_Bat_2025.pdf', type:'sujet'},
-    {year:2025, label:'Corrigé Physique 2025', path:'ANNALES/Sciences_Physiques/2025/Corrige_Physique_BTS_Bat_2025.pdf', type:'corrige'},
-    {year:2024, label:'Sujet Physique 2024', path:'ANNALES/Sciences_Physiques/2024/Sujet_Physique_BTS_Bat_2024.pdf', type:'sujet'},
-    {year:2024, label:'Corrigé Physique 2024', path:'ANNALES/Sciences_Physiques/2024/Corrige_Physique_BTS_Bat_2024.pdf', type:'corrige'},
-    {year:2023, label:'Sujet Physique 2023', path:'ANNALES/Sciences_Physiques/2023/Sujet_Physique_BTS_Bat_2023.pdf', type:'sujet'},
-    {year:2023, label:'Corrigé Physique 2023', path:'ANNALES/Sciences_Physiques/2023/Corrige_Physique_BTS_Bat_2023.pdf', type:'corrige'},
-    {year:2022, label:'Sujet Physique 2022', path:'ANNALES/Sciences_Physiques/2022/Sujet_Physique_BTS_Bat_2022.pdf', type:'sujet'},
-    {year:2022, label:'Corrigé Physique 2022', path:'ANNALES/Sciences_Physiques/2022/Corrige_Physique_BTS_Bat_2022.pdf', type:'corrige'},
+    {year:2025, label:'Sujet Physique 2025', path:'../ANNALES/Sciences_Physiques/2025/Sujet_Physique_BTS_Bat_2025.pdf', type:'sujet'},
+    {year:2025, label:'Corrigé Physique 2025', path:'../ANNALES/Sciences_Physiques/2025/Corrige_Physique_BTS_Bat_2025.pdf', type:'corrige'},
+    {year:2024, label:'Sujet Physique 2024', path:'../ANNALES/Sciences_Physiques/2024/Sujet_Physique_BTS_Bat_2024.pdf', type:'sujet'},
+    {year:2024, label:'Corrigé Physique 2024', path:'../ANNALES/Sciences_Physiques/2024/Corrige_Physique_BTS_Bat_2024.pdf', type:'corrige'},
+    {year:2023, label:'Sujet Physique 2023', path:'../ANNALES/Sciences_Physiques/2023/Sujet_Physique_BTS_Bat_2023.pdf', type:'sujet'},
+    {year:2023, label:'Corrigé Physique 2023', path:'../ANNALES/Sciences_Physiques/2023/Corrige_Physique_BTS_Bat_2023.pdf', type:'corrige'},
+    {year:2022, label:'Sujet Physique 2022', path:'../ANNALES/Sciences_Physiques/2022/Sujet_Physique_BTS_Bat_2022.pdf', type:'sujet'},
+    {year:2022, label:'Corrigé Physique 2022', path:'../ANNALES/Sciences_Physiques/2022/Corrige_Physique_BTS_Bat_2022.pdf', type:'corrige'},
   ],
   francais: [
-    {year:2025, label:'Sujet CGE 2025 — Métropole', path:'ANNALES/Francais_CGE/2025/Sujet_CGE_2025_Metropole.pdf', type:'sujet'},
-    {year:2025, label:'Corrigé CGE 2025 — Métropole', path:'ANNALES/Francais_CGE/2025/Corrige_CGE_2025_Metropole.pdf', type:'corrige'},
-    {year:2025, label:'Sujet CGE 2025 — Nouvelle-Calédonie', path:'ANNALES/Francais_CGE/2025/Sujet_CGE_2025_Nouvelle_Caledonie.pdf', type:'sujet'},
-    {year:2025, label:'Sujet 0 CGE — Nouveau Format', path:'ANNALES/Francais_CGE/2025/Sujet_0_CGE_Nouveau_Format.pdf', type:'sujet'},
-    {year:2024, label:'Sujet CGE 2024', path:'ANNALES/Francais_CGE/2024/Sujet_CGE_2024.pdf', type:'sujet'},
-    {year:2024, label:'Corrigé CGE 2024', path:'ANNALES/Francais_CGE/2024/Corrige_CGE_2024.pdf', type:'corrige'},
-    {year:2023, label:'Sujet CGE 2023', path:'ANNALES/Francais_CGE/2023/Sujet_CGE_2023.pdf', type:'sujet'},
-    {year:2023, label:'Corrigé CGE 2023', path:'ANNALES/Francais_CGE/2023/Corrige_CGE_2023.pdf', type:'corrige'},
-    {year:2022, label:'Sujet CGE 2022', path:'ANNALES/Francais_CGE/2022/Sujet_CGE_2022.pdf', type:'sujet'},
-    {year:2022, label:'Corrigé CGE 2022', path:'ANNALES/Francais_CGE/2022/Corrige_CGE_2022.pdf', type:'corrige'},
+    {year:2025, label:'Sujet CGE 2025 — Métropole', path:'../ANNALES/Francais_CGE/2025/Sujet_CGE_2025_Metropole.pdf', type:'sujet'},
+    {year:2025, label:'Corrigé CGE 2025 — Métropole', path:'../ANNALES/Francais_CGE/2025/Corrige_CGE_2025_Metropole.pdf', type:'corrige'},
+    {year:2025, label:'Sujet CGE 2025 — Nouvelle-Calédonie', path:'../ANNALES/Francais_CGE/2025/Sujet_CGE_2025_Nouvelle_Caledonie.pdf', type:'sujet'},
+    {year:2025, label:'Sujet 0 CGE — Nouveau Format', path:'../ANNALES/Francais_CGE/2025/Sujet_0_CGE_Nouveau_Format.pdf', type:'sujet'},
+    {year:2024, label:'Sujet CGE 2024', path:'../ANNALES/Francais_CGE/2024/Sujet_CGE_2024.pdf', type:'sujet'},
+    {year:2024, label:'Corrigé CGE 2024', path:'../ANNALES/Francais_CGE/2024/Corrige_CGE_2024.pdf', type:'corrige'},
+    {year:2023, label:'Sujet CGE 2023', path:'../ANNALES/Francais_CGE/2023/Sujet_CGE_2023.pdf', type:'sujet'},
+    {year:2023, label:'Corrigé CGE 2023', path:'../ANNALES/Francais_CGE/2023/Corrige_CGE_2023.pdf', type:'corrige'},
+    {year:2022, label:'Sujet CGE 2022', path:'../ANNALES/Francais_CGE/2022/Sujet_CGE_2022.pdf', type:'sujet'},
+    {year:2022, label:'Corrigé CGE 2022', path:'../ANNALES/Francais_CGE/2022/Corrige_CGE_2022.pdf', type:'corrige'},
   ],
   anglais: [
-    {year:2025, label:'Sujet Anglais LVA 2025', path:'ANNALES/Anglais/2025/Sujet_Anglais_LVA_2025.pdf', type:'sujet'},
-    {year:2024, label:'Sujet Anglais LVA 2024', path:'ANNALES/Anglais/2024/Sujet_Anglais_LVA_2024.pdf', type:'sujet'},
-    {year:2023, label:'Sujet Anglais LVA 2023', path:'ANNALES/Anglais/2023/Sujet_Anglais_LVA_2023.pdf', type:'sujet'},
-    {year:2022, label:'Sujet 0 Anglais BTS 2022', path:'ANNALES/Anglais/2022/Sujet_0_Anglais_BTS_2022.pdf', type:'sujet'},
+    {year:2025, label:'Sujet Anglais LVA 2025', path:'../ANNALES/Anglais/2025/Sujet_Anglais_LVA_2025.pdf', type:'sujet'},
+    {year:2024, label:'Sujet Anglais LVA 2024', path:'../ANNALES/Anglais/2024/Sujet_Anglais_LVA_2024.pdf', type:'sujet'},
+    {year:2023, label:'Sujet Anglais LVA 2023', path:'../ANNALES/Anglais/2023/Sujet_Anglais_LVA_2023.pdf', type:'sujet'},
+    {year:2022, label:'Sujet 0 Anglais BTS 2022', path:'../ANNALES/Anglais/2022/Sujet_0_Anglais_BTS_2022.pdf', type:'sujet'},
   ],
   e4: [
-    {year:2025, label:'Sujet E4 2025 — Métropole', path:'bts-mec-2025-e4-sujet.pdf', type:'sujet'},
-    {year:2025, label:'Sujet E4 2025 — Nouvelle-Calédonie', path:'18943-bts-mec-2025nc-e4-sujet.pdf', type:'sujet'},
-    {year:2024, label:'Sujet E4 2024', path:'bts-mec-2024-e4-sujet.pdf', type:'sujet'},
-    {year:2023, label:'Sujet E4 2023 — Métropole', path:'bts-mec-2023-e4-sujet.pdf', type:'sujet'},
-    {year:2023, label:'Sujet E4 2023 — Nouvelle-Calédonie', path:'bts-mec-2023nc-e4-sujet.pdf', type:'sujet'},
+    {year:2025, label:'Sujet E4 2025 — Métropole', path:'../bts-mec-2025-e4-sujet.pdf', type:'sujet'},
+    {year:2025, label:'Sujet E4 2025 — Nouvelle-Calédonie', path:'../18943-bts-mec-2025nc-e4-sujet.pdf', type:'sujet'},
+    {year:2024, label:'Sujet E4 2024', path:'../bts-mec-2024-e4-sujet.pdf', type:'sujet'},
+    {year:2023, label:'Sujet E4 2023 — Métropole', path:'../bts-mec-2023-e4-sujet.pdf', type:'sujet'},
+    {year:2023, label:'Sujet E4 2023 — Nouvelle-Calédonie', path:'../bts-mec-2023nc-e4-sujet.pdf', type:'sujet'},
   ],
   e52: [
-    {year:2025, label:'Sujet E52 2025 — Métropole', path:'bts-mec-2025-e52-sujet.pdf', type:'sujet'},
-    {year:2025, label:'Sujet E52 2025 — Nouvelle-Calédonie', path:'18944-bts-mec-2025nc-e52-sujet.pdf', type:'sujet'},
-    {year:2024, label:'Sujet E52 2024', path:'bts-mec-2024-e52-sujet.pdf', type:'sujet'},
-    {year:2023, label:'Sujet E52 2023 — Métropole', path:'bts-mec-2023-e52-sujet.pdf', type:'sujet'},
-    {year:2023, label:'Sujet E52 2023 — Nouvelle-Calédonie', path:'bts-mec-2023nc-e52-sujet.pdf', type:'sujet'},
+    {year:2025, label:'Sujet E52 2025 — Métropole', path:'../bts-mec-2025-e52-sujet.pdf', type:'sujet'},
+    {year:2025, label:'Sujet E52 2025 — Nouvelle-Calédonie', path:'../18944-bts-mec-2025nc-e52-sujet.pdf', type:'sujet'},
+    {year:2024, label:'Sujet E52 2024', path:'../bts-mec-2024-e52-sujet.pdf', type:'sujet'},
+    {year:2023, label:'Sujet E52 2023 — Métropole', path:'../bts-mec-2023-e52-sujet.pdf', type:'sujet'},
+    {year:2023, label:'Sujet E52 2023 — Nouvelle-Calédonie', path:'../bts-mec-2023nc-e52-sujet.pdf', type:'sujet'},
   ],
   referentiel: [
-    {year:2021, label:'Référentiel BTS MEC (JO 2021)', path:'13292-referentiel-bts-mec-joe-20210131-0027-0073.pdf', type:'ref'},
+    {year:2021, label:'Référentiel BTS MEC (JO 2021)', path:'../13292-referentiel-bts-mec-joe-20210131-0027-0073.pdf', type:'ref'},
   ],
 };
 
@@ -14738,6 +15384,611 @@ const AnnalesPdfPage = ({data, title, subtitle, onBack, color}) => {
           </div>
         </div>
       ))}
+    </div>
+  );
+};
+
+// ══════════════════ E2-A ORAL COMPREHENSION ══════════════════
+
+const E2A_NUMBER_ITEMS = [
+  {spoken:'one',answer:'1',display:'1',level:'Facile'},{spoken:'three',answer:'3',display:'3',level:'Facile'},
+  {spoken:'five',answer:'5',display:'5',level:'Facile'},{spoken:'seven',answer:'7',display:'7',level:'Facile'},
+  {spoken:'nine',answer:'9',display:'9',level:'Facile'},{spoken:'two',answer:'2',display:'2',level:'Facile'},
+  {spoken:'four',answer:'4',display:'4',level:'Facile'},{spoken:'six',answer:'6',display:'6',level:'Facile'},
+  {spoken:'eight',answer:'8',display:'8',level:'Facile'},{spoken:'ten',answer:'10',display:'10',level:'Facile'},
+  {spoken:'eleven',answer:'11',display:'11',level:'Facile'},{spoken:'twelve',answer:'12',display:'12',level:'Facile'},
+  {spoken:'thirteen',answer:'13',display:'13',level:'Facile'},{spoken:'fourteen',answer:'14',display:'14',level:'Facile'},
+  {spoken:'fifteen',answer:'15',display:'15',level:'Facile'},{spoken:'sixteen',answer:'16',display:'16',level:'Facile'},
+  {spoken:'seventeen',answer:'17',display:'17',level:'Facile'},{spoken:'eighteen',answer:'18',display:'18',level:'Facile'},
+  {spoken:'nineteen',answer:'19',display:'19',level:'Facile'},{spoken:'twenty',answer:'20',display:'20',level:'Facile'},
+  {spoken:'thirty',answer:'30',display:'30',level:'Dizaines'},{spoken:'forty',answer:'40',display:'40',level:'Dizaines'},
+  {spoken:'fifty',answer:'50',display:'50',level:'Dizaines'},{spoken:'sixty',answer:'60',display:'60',level:'Dizaines'},
+  {spoken:'seventy',answer:'70',display:'70',level:'Dizaines'},{spoken:'eighty',answer:'80',display:'80',level:'Dizaines'},
+  {spoken:'ninety',answer:'90',display:'90',level:'Dizaines'},{spoken:'twenty one',answer:'21',display:'21',level:'Dizaines'},
+  {spoken:'twenty five',answer:'25',display:'25',level:'Dizaines'},{spoken:'thirty two',answer:'32',display:'32',level:'Dizaines'},
+  {spoken:'thirty five',answer:'35',display:'35',level:'Dizaines'},{spoken:'forty seven',answer:'47',display:'47',level:'Dizaines'},
+  {spoken:'fifty three',answer:'53',display:'53',level:'Dizaines'},{spoken:'sixty four',answer:'64',display:'64',level:'Dizaines'},
+  {spoken:'seventy eight',answer:'78',display:'78',level:'Dizaines'},{spoken:'eighty six',answer:'86',display:'86',level:'Dizaines'},
+  {spoken:'ninety nine',answer:'99',display:'99',level:'Dizaines'},{spoken:'forty two',answer:'42',display:'42',level:'Dizaines'},
+  {spoken:'sixty eight',answer:'68',display:'68',level:'Dizaines'},{spoken:'seventy five',answer:'75',display:'75',level:'Dizaines'},
+  {spoken:'thirteen',answer:'13',display:'13 (pas 30!)',level:'Pieges'},{spoken:'thirty',answer:'30',display:'30 (pas 13!)',level:'Pieges'},
+  {spoken:'fourteen',answer:'14',display:'14 (pas 40!)',level:'Pieges'},{spoken:'forty',answer:'40',display:'40 (pas 14!)',level:'Pieges'},
+  {spoken:'fifteen',answer:'15',display:'15 (pas 50!)',level:'Pieges'},{spoken:'fifty',answer:'50',display:'50 (pas 15!)',level:'Pieges'},
+  {spoken:'sixteen',answer:'16',display:'16 (pas 60!)',level:'Pieges'},{spoken:'sixty',answer:'60',display:'60 (pas 16!)',level:'Pieges'},
+  {spoken:'seventeen',answer:'17',display:'17 (pas 70!)',level:'Pieges'},{spoken:'seventy',answer:'70',display:'70 (pas 17!)',level:'Pieges'},
+  {spoken:'eighteen',answer:'18',display:'18 (pas 80!)',level:'Pieges'},{spoken:'eighty',answer:'80',display:'80 (pas 18!)',level:'Pieges'},
+  {spoken:'nineteen',answer:'19',display:'19 (pas 90!)',level:'Pieges'},{spoken:'ninety',answer:'90',display:'90 (pas 19!)',level:'Pieges'},
+  {spoken:'fifteen',answer:'15',display:'15',level:'Pieges'},
+  {spoken:'one hundred',answer:'100',display:'100',level:'Grands'},{spoken:'two hundred',answer:'200',display:'200',level:'Grands'},
+  {spoken:'three hundred',answer:'300',display:'300',level:'Grands'},{spoken:'five hundred',answer:'500',display:'500',level:'Grands'},
+  {spoken:'one hundred and twenty',answer:'120',display:'120',level:'Grands'},
+  {spoken:'one hundred and forty four',answer:'144',display:'144',level:'Grands'},
+  {spoken:'two hundred and fifty',answer:'250',display:'250',level:'Grands'},
+  {spoken:'three hundred and sixty',answer:'360',display:'360',level:'Grands'},
+  {spoken:'one thousand',answer:'1000',display:'1 000',level:'Grands'},{spoken:'two thousand',answer:'2000',display:'2 000',level:'Grands'},
+  {spoken:'five thousand',answer:'5000',display:'5 000',level:'Grands'},{spoken:'ten thousand',answer:'10000',display:'10 000',level:'Grands'},
+  {spoken:'twenty five thousand',answer:'25000',display:'25 000',level:'Grands'},
+  {spoken:'fifty thousand',answer:'50000',display:'50 000',level:'Grands'},
+  {spoken:'one hundred thousand',answer:'100000',display:'100 000',level:'Grands'},
+  {spoken:'ten percent',answer:'10',display:'10 %',level:'%'},{spoken:'fifteen percent',answer:'15',display:'15 %',level:'%'},
+  {spoken:'twenty percent',answer:'20',display:'20 %',level:'%'},{spoken:'twenty two percent',answer:'22',display:'22 %',level:'%'},
+  {spoken:'thirty percent',answer:'30',display:'30 %',level:'%'},{spoken:'thirty five percent',answer:'35',display:'35 %',level:'%'},
+  {spoken:'forty percent',answer:'40',display:'40 %',level:'%'},{spoken:'fifty percent',answer:'50',display:'50 %',level:'%'},
+  {spoken:'seven point five percent',answer:'7.5',display:'7,5 %',level:'%'},
+  {spoken:'eight percent',answer:'8',display:'8 %',level:'%'},{spoken:'twelve percent',answer:'12',display:'12 %',level:'%'},
+  {spoken:'seventeen percent',answer:'17',display:'17 %',level:'%'},
+  {spoken:'three point five',answer:'3.5',display:'3,5',level:'%'},
+  {spoken:'two point seven',answer:'2.7',display:'2,7',level:'%'},
+  {spoken:'nine point eight',answer:'9.8',display:'9,8',level:'%'},
+  {spoken:'one million',answer:'1000000',display:'1 million',level:'BTP'},
+  {spoken:'two million',answer:'2000000',display:'2 millions',level:'BTP'},
+  {spoken:'five million',answer:'5000000',display:'5 millions',level:'BTP'},
+  {spoken:'seven million',answer:'7000000',display:'7 millions',level:'BTP'},
+  {spoken:'ten million',answer:'10000000',display:'10 millions',level:'BTP'},
+  {spoken:'twelve million',answer:'12000000',display:'12 millions',level:'BTP'},
+  {spoken:'four point eight million',answer:'4800000',display:'4,8 millions',level:'BTP'},
+  {spoken:'twelve point five million',answer:'12500000',display:'12,5 millions',level:'BTP'},
+  {spoken:'three point two million',answer:'3200000',display:'3,2 millions',level:'BTP'},
+  {spoken:'six point five million pounds',answer:'6500000',display:'6,5 millions de livres',level:'BTP'},
+  {spoken:'eight point three million euros',answer:'8300000',display:'8,3 millions d\'euros',level:'BTP'},
+  {spoken:'one point five billion',answer:'1500000000',display:'1,5 milliard',level:'BTP'},
+  {spoken:'five hundred thousand',answer:'500000',display:'500 000',level:'BTP'},
+  {spoken:'two hundred and fifty thousand',answer:'250000',display:'250 000',level:'BTP'},
+  {spoken:'nine point two million',answer:'9200000',display:'9,2 millions',level:'BTP'},
+];
+
+const E2A_CONNECTOR_ITEMS = [
+  {spoken:'Good morning everyone',answer:'Bonjour a tous',level:'Debut'},
+  {spoken:'Today I would like to',answer:'Aujourd\'hui je voudrais',level:'Debut'},
+  {spoken:'First of all',answer:'Tout d\'abord',level:'Debut'},
+  {spoken:'Let me update you on',answer:'Je vais vous informer de',level:'Debut'},
+  {spoken:'The purpose of this presentation is',answer:'Le but de cette presentation est',level:'Debut'},
+  {spoken:'Also',answer:'Aussi / Egalement',level:'Ajouter'},
+  {spoken:'Moreover',answer:'De plus',level:'Ajouter'},
+  {spoken:'Furthermore',answer:'En outre / De plus',level:'Ajouter'},
+  {spoken:'In addition',answer:'De plus / En plus',level:'Ajouter'},
+  {spoken:'As well as',answer:'Ainsi que',level:'Ajouter'},
+  {spoken:'Moving on to',answer:'Passons a',level:'Ajouter'},
+  {spoken:'Regarding',answer:'Concernant',level:'Ajouter'},
+  {spoken:'On the financial side',answer:'Cote financier',level:'Ajouter'},
+  {spoken:'As for safety',answer:'Quant a la securite',level:'Ajouter'},
+  {spoken:'I should also mention',answer:'Je dois aussi mentionner',level:'Ajouter'},
+  {spoken:'However',answer:'Cependant / Toutefois',level:'Probleme'},
+  {spoken:'But',answer:'Mais',level:'Probleme'},
+  {spoken:'Unfortunately',answer:'Malheureusement',level:'Probleme'},
+  {spoken:'Despite',answer:'Malgre',level:'Probleme'},
+  {spoken:'Although',answer:'Bien que',level:'Probleme'},
+  {spoken:'On the other hand',answer:'D\'un autre cote',level:'Probleme'},
+  {spoken:'Nevertheless',answer:'Neanmoins',level:'Probleme'},
+  {spoken:'The main challenge is',answer:'Le defi principal est',level:'Probleme'},
+  {spoken:'The problem is',answer:'Le probleme est',level:'Probleme'},
+  {spoken:'We have experienced',answer:'Nous avons rencontre',level:'Probleme'},
+  {spoken:'In spite of',answer:'Malgre',level:'Probleme'},
+  {spoken:'Due to',answer:'En raison de / A cause de',level:'Cause'},
+  {spoken:'Because of',answer:'A cause de',level:'Cause'},
+  {spoken:'Therefore',answer:'Par consequent / Donc',level:'Cause'},
+  {spoken:'As a result',answer:'En consequence',level:'Cause'},
+  {spoken:'This means that',answer:'Cela signifie que',level:'Cause'},
+  {spoken:'Consequently',answer:'Par consequent',level:'Cause'},
+  {spoken:'Which is why',answer:'C\'est pourquoi',level:'Cause'},
+  {spoken:'So',answer:'Donc',level:'Cause'},
+  {spoken:'This is mainly due to',answer:'Cela est principalement du a',level:'Cause'},
+  {spoken:'The reason is',answer:'La raison est',level:'Cause'},
+  {spoken:'Finally',answer:'Enfin',level:'Fin'},
+  {spoken:'To conclude',answer:'Pour conclure',level:'Fin'},
+  {spoken:'To sum up',answer:'Pour resumer',level:'Fin'},
+  {spoken:'In summary',answer:'En resume',level:'Fin'},
+  {spoken:'In conclusion',answer:'En conclusion',level:'Fin'},
+  {spoken:'The next step will be',answer:'La prochaine etape sera',level:'Fin'},
+  {spoken:'Our objective is to',answer:'Notre objectif est de',level:'Fin'},
+  {spoken:'We expect to finish by',answer:'Nous esperons finir d\'ici',level:'Fin'},
+  {spoken:'Thank you for your attention',answer:'Merci de votre attention',level:'Fin'},
+  {spoken:'However',answer:'Cependant',level:'Mix'},
+  {spoken:'Due to',answer:'A cause de',level:'Mix'},
+  {spoken:'Moreover',answer:'De plus',level:'Mix'},
+  {spoken:'Unfortunately',answer:'Malheureusement',level:'Mix'},
+  {spoken:'Therefore',answer:'Donc / Par consequent',level:'Mix'},
+];
+
+const E2A_VOCAB_ITEMS = [
+  {spoken:'construction',answer:'construction',level:'Transparent'},
+  {spoken:'project',answer:'projet',level:'Transparent'},
+  {spoken:'budget',answer:'budget',level:'Transparent'},
+  {spoken:'structure',answer:'structure',level:'Transparent'},
+  {spoken:'installation',answer:'installation',level:'Transparent'},
+  {spoken:'renovation',answer:'renovation',level:'Transparent'},
+  {spoken:'residential',answer:'residentiel',level:'Transparent'},
+  {spoken:'infrastructure',answer:'infrastructure',level:'Transparent'},
+  {spoken:'foundation',answer:'fondation',level:'Transparent'},
+  {spoken:'estimation',answer:'estimation',level:'Transparent'},
+  {spoken:'inspection',answer:'inspection',level:'Transparent'},
+  {spoken:'ventilation',answer:'ventilation',level:'Transparent'},
+  {spoken:'coordination',answer:'coordination',level:'Transparent'},
+  {spoken:'emission',answer:'emission',level:'Transparent'},
+  {spoken:'regulation',answer:'reglementation',level:'Transparent'},
+  {spoken:'contamination',answer:'contamination',level:'Transparent'},
+  {spoken:'specification',answer:'specification',level:'Transparent'},
+  {spoken:'consultant',answer:'consultant',level:'Transparent'},
+  {spoken:'energy',answer:'energie',level:'Transparent'},
+  {spoken:'architect',answer:'architecte',level:'Transparent'},
+  {spoken:'delay',answer:'retard (pas delai !)',level:'Faux ami'},
+  {spoken:'actually',answer:'en fait (pas actuellement !)',level:'Faux ami'},
+  {spoken:'eventually',answer:'finalement (pas eventuellement !)',level:'Faux ami'},
+  {spoken:'to supply',answer:'fournir (pas supplier !)',level:'Faux ami'},
+  {spoken:'comprehensive',answer:'complet (pas comprehensif !)',level:'Faux ami'},
+  {spoken:'currently',answer:'actuellement (pas couramment !)',level:'Faux ami'},
+  {spoken:'to achieve',answer:'atteindre / realiser',level:'Faux ami'},
+  {spoken:'to resume',answer:'reprendre (pas resumer !)',level:'Faux ami'},
+  {spoken:'library',answer:'bibliotheque (pas librairie !)',level:'Faux ami'},
+  {spoken:'sensible',answer:'raisonnable (pas sensible !)',level:'Faux ami'},
+  {spoken:'building',answer:'batiment',level:'BTP'},
+  {spoken:'schedule',answer:'planning / calendrier',level:'BTP'},
+  {spoken:'survey',answer:'etude / releve',level:'BTP'},
+  {spoken:'timber',answer:'bois',level:'BTP'},
+  {spoken:'steel',answer:'acier',level:'BTP'},
+  {spoken:'health',answer:'sante',level:'BTP'},
+  {spoken:'issue',answer:'probleme',level:'BTP'},
+  {spoken:'target',answer:'objectif / cible',level:'BTP'},
+  {spoken:'slightly',answer:'legerement',level:'BTP'},
+  {spoken:'overall',answer:'global / dans l\'ensemble',level:'BTP'},
+  {spoken:'improve',answer:'ameliorer',level:'BTP'},
+  {spoken:'increase',answer:'augmenter',level:'BTP'},
+  {spoken:'reduce',answer:'reduire',level:'BTP'},
+  {spoken:'provide',answer:'fournir',level:'BTP'},
+  {spoken:'require',answer:'exiger / necessiter',level:'BTP'},
+  {spoken:'concrete',answer:'beton',level:'BTP'},
+  {spoken:'scaffolding',answer:'echafaudage',level:'BTP'},
+  {spoken:'formwork',answer:'coffrage',level:'BTP'},
+  {spoken:'harness',answer:'harnais',level:'BTP'},
+  {spoken:'hard hat',answer:'casque de chantier',level:'BTP'},
+  {spoken:'project manager',answer:'chef de projet',level:'Fonctions'},
+  {spoken:'site supervisor',answer:'chef de chantier',level:'Fonctions'},
+  {spoken:'health and safety officer',answer:'responsable securite / HSE',level:'Fonctions'},
+  {spoken:'quantity surveyor',answer:'economiste de la construction',level:'Fonctions'},
+  {spoken:'cost consultant',answer:'consultant couts',level:'Fonctions'},
+  {spoken:'contractor',answer:'entrepreneur / entreprise',level:'Fonctions'},
+  {spoken:'client',answer:'maitre d\'ouvrage / client',level:'Fonctions'},
+  {spoken:'structural engineer',answer:'ingenieur structure',level:'Fonctions'},
+  {spoken:'BIM coordinator',answer:'coordinateur BIM',level:'Fonctions'},
+  {spoken:'stakeholders',answer:'parties prenantes',level:'Fonctions'},
+];
+
+const E2A_PHRASE_ITEMS = [
+  {spoken:'Good morning everyone. My name is James Barrett.',answer:'Bonjour a tous. Je m\'appelle James Barrett.',level:'Debut'},
+  {spoken:'I am the project manager',answer:'Je suis le chef de projet',level:'Debut'},
+  {spoken:'Today I would like to update you',answer:'Aujourd\'hui je voudrais vous informer',level:'Debut'},
+  {spoken:'I\'m here to present the results',answer:'Je suis la pour presenter les resultats',level:'Debut'},
+  {spoken:'The purpose of this meeting is',answer:'Le but de cette reunion est',level:'Debut'},
+  {spoken:'Let me give you an overview',answer:'Voici un apercu',level:'Debut'},
+  {spoken:'The project involves the construction of three apartment blocks',answer:'Le projet comprend la construction de 3 immeubles',level:'Situation'},
+  {spoken:'We are currently in the structural phase',answer:'Nous sommes en phase de gros oeuvre',level:'Situation'},
+  {spoken:'The concrete frame is now complete',answer:'L\'ossature beton est terminee',level:'Situation'},
+  {spoken:'We have just started the formwork',answer:'Nous venons de commencer le coffrage',level:'Situation'},
+  {spoken:'The total budget is twelve point five million pounds',answer:'Le budget total est de 12,5 millions de livres',level:'Chiffres'},
+  {spoken:'So far we have spent approximately seven million',answer:'Jusqu\'ici nous avons depense environ 7 millions',level:'Chiffres'},
+  {spoken:'This is slightly above the initial forecast',answer:'C\'est legerement au-dessus des previsions',level:'Chiffres'},
+  {spoken:'The estimated cost is four point eight million',answer:'Le cout estime est de 4,8 millions',level:'Chiffres'},
+  {spoken:'Over two hundred clashes were detected',answer:'Plus de 200 conflits ont ete detectes',level:'Chiffres'},
+  {spoken:'Unfortunately we have experienced a two week delay',answer:'Malheureusement nous avons un retard de 2 semaines',level:'Probleme'},
+  {spoken:'Due to supply chain issues',answer:'En raison de problemes d\'approvisionnement',level:'Probleme'},
+  {spoken:'The overspend is mainly due to rising material costs',answer:'Le depassement est du a la hausse des couts des materiaux',level:'Probleme'},
+  {spoken:'We now expect to finish by mid April',answer:'Nous esperons finir d\'ici mi-avril',level:'Probleme'},
+  {spoken:'The main challenge is the volatile market',answer:'Le defi principal est le marche volatil',level:'Probleme'},
+  {spoken:'There is a risk of soil contamination',answer:'Il y a un risque de contamination du sol',level:'Probleme'},
+  {spoken:'Two near miss incidents were reported',answer:'Deux quasi-accidents ont ete signales',level:'Probleme'},
+  {spoken:'We are reviewing the specifications with the architect',answer:'Nous revoyons les specifications avec l\'architecte',level:'Solution'},
+  {spoken:'To identify potential savings',answer:'Pour identifier des economies possibles',level:'Solution'},
+  {spoken:'Without compromising quality',answer:'Sans compromettre la qualite',level:'Solution'},
+  {spoken:'New rules have been implemented',answer:'De nouvelles regles ont ete mises en place',level:'Solution'},
+  {spoken:'Scaffolding must be inspected every morning',answer:'Les echafaudages doivent etre inspectes chaque matin',level:'Solution'},
+  {spoken:'No vehicle movement without a banksman',answer:'Pas de mouvement de vehicule sans signaleur',level:'Solution'},
+  {spoken:'Hard hat, high visibility vest and safety boots are mandatory',answer:'Casque, gilet et chaussures de securite sont obligatoires',level:'Securite'},
+  {spoken:'We have had no major incidents on site',answer:'Aucun incident majeur sur le chantier',level:'Securite'},
+  {spoken:'Report any hazard to the site supervisor',answer:'Signalez tout danger au chef de chantier',level:'Securite'},
+  {spoken:'A harness is required when working at height',answer:'Un harnais est obligatoire pour le travail en hauteur',level:'Securite'},
+  {spoken:'The building sector accounts for forty percent of carbon emissions',answer:'Le batiment represente 40% des emissions carbone',level:'Environnement'},
+  {spoken:'Low carbon concrete can reduce emissions by fifty percent',answer:'Le beton bas carbone peut reduire les emissions de 50%',level:'Environnement'},
+  {spoken:'Cross laminated timber can be used for buildings up to eighteen storeys',answer:'Le bois CLT peut etre utilise jusqu\'a 18 etages',level:'Environnement'},
+  {spoken:'Sustainability is no longer optional',answer:'Le developpement durable n\'est plus optionnel',level:'Environnement'},
+  {spoken:'Finally, regarding safety',answer:'Enfin, concernant la securite',level:'Fin'},
+  {spoken:'The next step will be to start four D scheduling',answer:'La prochaine etape sera le planning 4D',level:'Fin'},
+  {spoken:'To sum up, the project is on track',answer:'Pour resumer, le projet avance bien',level:'Fin'},
+  {spoken:'Thank you for your attention',answer:'Merci de votre attention',level:'Fin'},
+];
+
+const E2A_TEXTS = [
+  {id:1, title:'Project Progress Update', level:'B1+', theme:'Suivi de chantier',
+   text:'Good morning everyone. My name is James Barrett and I am the project manager for the new residential complex in East London. Today I would like to update you on where we stand. The project involves the construction of three apartment blocks, each with six floors, for a total of one hundred and forty four units. We are currently in the structural phase. The concrete frame for Block A is now complete, and we have just started the formwork for Block B. Unfortunately, we have experienced a two week delay due to supply chain issues with the reinforcing steel. The original completion date was set for March 2027, but we now expect to finish by mid April. On the financial side, the total budget is twelve point five million pounds. So far, we have spent approximately seven million, which is slightly above the initial forecast. The overspend is mainly due to rising material costs, particularly for cement and timber. We are currently reviewing the specifications with the architect to identify potential savings on the finishing works without compromising quality. Finally, regarding safety, we have had no major incidents on site, which is very encouraging. Thank you.',
+   keyPoints:['James Barrett, chef de projet, complexe r\u00e9sidentiel \u00e0 East London','3 immeubles de 6 \u00e9tages = 144 logements','Phase gros \u0153uvre : ossature b\u00e9ton Bloc A termin\u00e9e, coffrage Bloc B d\u00e9marr\u00e9','Retard de 2 semaines (probl\u00e8me approvisionnement acier)','Livraison repouss\u00e9e de mars \u00e0 mi-avril 2027','Budget total : 12,5 millions \u00a3 \u2014 7 millions d\u00e9pens\u00e9s (d\u00e9passement)','D\u00e9passement d\u00fb \u00e0 la hausse du ciment et du bois','Recherche d\'\u00e9conomies sur le second \u0153uvre avec l\'architecte','S\u00e9curit\u00e9 : aucun incident majeur'],
+   vocab:[{en:'residential complex',fr:'complexe r\u00e9sidentiel'},{en:'apartment block',fr:'immeuble d\'habitation'},{en:'structural phase',fr:'phase gros \u0153uvre'},{en:'concrete frame',fr:'ossature b\u00e9ton'},{en:'formwork',fr:'coffrage'},{en:'supply chain',fr:'cha\u00eene d\'approvisionnement'},{en:'reinforcing steel',fr:'acier d\'armature / ferraillage'},{en:'completion date',fr:'date de livraison'},{en:'overspend',fr:'d\u00e9passement budg\u00e9taire'},{en:'finishing works',fr:'second \u0153uvre / finitions'},{en:'timber',fr:'bois d\'\u0153uvre'}]},
+  {id:2, title:'BIM Implementation Meeting', level:'B2', theme:'Maquette num\u00e9rique / BIM',
+   text:'Thank you all for joining this meeting. I am Sarah Chen, BIM coordinator for the Morrison Tower project. I want to discuss how we are implementing Building Information Modelling on this scheme. As you know, the client has required a full BIM Level Two approach. This means all stakeholders, including the architect, structural engineer, and quantity surveyor, must work collaboratively using a shared digital model. We have chosen Revit as our primary modelling tool, and we are using a common data environment to manage document exchange. The main challenge so far has been coordination between disciplines. We have detected over two hundred clashes in the latest model, mostly between the mechanical services and the structural beams. The clash detection process has actually saved us a significant amount of time and money compared to finding these issues on site. In terms of quantities, we are now extracting bill of quantities directly from the model, which has reduced estimation time by approximately thirty percent. Looking ahead, we plan to integrate four D scheduling by linking the model to our construction programme in Navisworks. This will allow us to visualise the build sequence and identify potential delays before they happen.',
+   keyPoints:['Sarah Chen, coordinatrice BIM, projet Morrison Tower','Approche BIM niveau 2 exig\u00e9e par le client','Travail collaboratif : architecte, ing\u00e9nieur structure, \u00e9conomiste','Outil principal : Revit + environnement de donn\u00e9es commun (CDE)','200+ clashs d\u00e9tect\u00e9s entre CVC et poutres structure','Extraction des m\u00e9tr\u00e9s depuis la maquette = -30% temps d\'estimation','Prochaine \u00e9tape : planning 4D avec Navisworks','Objectif : visualiser la s\u00e9quence de construction et anticiper les retards'],
+   vocab:[{en:'BIM coordinator',fr:'coordinateur BIM'},{en:'stakeholders',fr:'parties prenantes'},{en:'quantity surveyor',fr:'\u00e9conomiste de la construction'},{en:'common data environment',fr:'environnement de donn\u00e9es commun'},{en:'clash detection',fr:'d\u00e9tection de conflits / clashs'},{en:'mechanical services',fr:'\u00e9quipements CVC'},{en:'structural beams',fr:'poutres de structure'},{en:'bill of quantities',fr:'devis quantitatif estimatif (DQE)'},{en:'4D scheduling',fr:'planning 4D (temps)'},{en:'build sequence',fr:'phasage de construction'}]},
+  {id:3, title:'Site Safety Briefing', level:'B1', theme:'S\u00e9curit\u00e9 chantier',
+   text:'Right, listen up everyone. Before we start work today, I need to go through the safety briefing. My name is Tom Williams, I am the health and safety officer for this site. First, a reminder about personal protective equipment. Hard hats, high visibility vests, and safety boots must be worn at all times on site. If you are working at height, you must also wear a harness. We have had two near miss incidents this week. On Monday, a scaffold board was not properly secured and fell from the third floor. Fortunately, nobody was underneath. On Wednesday, a delivery truck reversed without a banksman guiding it. Both situations could have resulted in serious injuries. From today, we are implementing new rules. All scaffolding must be inspected every morning before work begins. No vehicle movement in the loading area without a trained banksman present. Also, please remember that the tower crane will be operating in zone B today, so keep clear of that area unless you have authorisation. If you see anything unsafe, report it immediately to your site supervisor. Safety is everyone\'s responsibility.',
+   keyPoints:['Tom Williams, responsable sant\u00e9 et s\u00e9curit\u00e9 du chantier','EPI obligatoires : casque, gilet haute visibilit\u00e9, chaussures','Travail en hauteur = harnais obligatoire','2 quasi-accidents : planche \u00e9chafaudage tomb\u00e9e + camion sans guide','Nouvelles r\u00e8gles : inspection \u00e9chafaudage chaque matin','Interdiction mouvement v\u00e9hicule sans banksman (signaleur)','Grue \u00e0 tour en op\u00e9ration zone B, acc\u00e8s restreint','Signaler tout danger au chef de chantier'],
+   vocab:[{en:'health and safety officer',fr:'responsable HSE'},{en:'PPE',fr:'\u00e9quipements de protection individuelle (EPI)'},{en:'hard hat',fr:'casque de chantier'},{en:'high-visibility vest',fr:'gilet haute visibilit\u00e9'},{en:'harness',fr:'harnais de s\u00e9curit\u00e9'},{en:'near-miss incident',fr:'quasi-accident'},{en:'scaffolding',fr:'\u00e9chafaudage'},{en:'banksman',fr:'signaleur'},{en:'tower crane',fr:'grue \u00e0 tour'},{en:'site supervisor',fr:'chef de chantier'}]},
+  {id:4, title:'Cost Estimation Presentation', level:'B2', theme:'Estimation des co\u00fbts',
+   text:'Good afternoon. I am Claire Dupont, cost consultant at Henderson Associates. I will be presenting the preliminary cost estimate for the Riverside School extension project. The scope of works includes a new two storey classroom block with twelve rooms, a gymnasium, and the refurbishment of the existing reception area. Our estimate is based on current market rates and benchmarking data from three similar education projects completed in the past eighteen months. The total estimated construction cost is four point eight million pounds. Substructure and foundations represent approximately eight percent of the total. The superstructure, including the steel frame, cladding, and roofing, accounts for thirty five percent. Mechanical and electrical installations make up twenty two percent. Internal finishes represent eighteen percent. External works and landscaping account for seventeen percent. I should highlight two key risks. First, the geotechnical survey identified potential contamination, which could increase foundation costs by up to fifteen percent. Second, the current market for steel is volatile, prices have increased by twelve percent over the last quarter. We have included a contingency of seven point five percent to cover these uncertainties.',
+   keyPoints:['Claire Dupont, consultante co\u00fbts chez Henderson Associates','Projet : extension \u00e9cole Riverside, 12 salles + gymnase + r\u00e9novation','Estimation bas\u00e9e sur prix march\u00e9 et benchmark 3 projets similaires','Co\u00fbt total estim\u00e9 : 4,8 millions \u00a3','R\u00e9partition : infrastructure 8%, superstructure 35%, CVC 22%, finitions 18%, ext\u00e9rieurs 17%','Risque 1 : contamination du sol, fondations +15%','Risque 2 : volatilit\u00e9 prix acier +12% dernier trimestre','Provision pour al\u00e9as : 7,5%'],
+   vocab:[{en:'cost consultant',fr:'consultant en co\u00fbts'},{en:'preliminary cost estimate',fr:'estimation pr\u00e9liminaire'},{en:'scope of works',fr:'p\u00e9rim\u00e8tre des travaux'},{en:'refurbishment',fr:'r\u00e9habilitation / r\u00e9novation'},{en:'benchmarking',fr:'analyse comparative'},{en:'substructure',fr:'infrastructure / fondations'},{en:'cladding',fr:'bardage / rev\u00eatement fa\u00e7ade'},{en:'contingency',fr:'provision pour al\u00e9as'},{en:'geotechnical survey',fr:'\u00e9tude g\u00e9otechnique'},{en:'volatile market',fr:'march\u00e9 volatil'}]},
+  {id:5, title:'Sustainability in Construction', level:'B2+', theme:'D\u00e9veloppement durable',
+   text:'Hello, I am Professor Alan Wright from the University of Manchester, and today I would like to talk about sustainability in the construction industry. The built environment is responsible for approximately forty percent of global carbon emissions. This includes both embodied carbon, which comes from manufacturing and transporting building materials, and operational carbon, which relates to energy consumption during the building lifetime. Many developers are now specifying low carbon concrete, which replaces a portion of the cement with ground granulated blast furnace slag or fly ash. This can reduce the carbon footprint of concrete by up to fifty percent. Timber construction is also gaining popularity, particularly cross laminated timber, known as C L T, which is being used for buildings up to eighteen storeys high. Another important trend is the adoption of passive house standards, which dramatically reduce energy consumption through superior insulation, airtight construction, and mechanical ventilation with heat recovery. In France, the R E 2020 regulation has set ambitious targets for reducing both the energy consumption and the carbon footprint of new buildings. The key message is that sustainability is no longer optional. It is becoming a fundamental requirement in every construction project.',
+   keyPoints:['Professeur Alan Wright, Universit\u00e9 de Manchester','Le b\u00e2timent = ~40% des \u00e9missions carbone mondiales','Carbone incorpor\u00e9 (fabrication/transport) et carbone op\u00e9rationnel (exploitation)','B\u00e9ton bas carbone : remplacement ciment par laitier ou cendres volantes, -50%','Construction bois : CLT lamell\u00e9-crois\u00e9 jusqu\'\u00e0 18 \u00e9tages','Norme maison passive : isolation, \u00e9tanch\u00e9it\u00e9, VMC double flux','RE2020 en France : objectifs ambitieux \u00e9nergie + carbone','Le d\u00e9veloppement durable est une exigence fondamentale'],
+   vocab:[{en:'sustainability',fr:'d\u00e9veloppement durable'},{en:'carbon emissions',fr:'\u00e9missions carbone'},{en:'embodied carbon',fr:'carbone incorpor\u00e9 / gris'},{en:'operational carbon',fr:'carbone op\u00e9rationnel'},{en:'low-carbon concrete',fr:'b\u00e9ton bas carbone'},{en:'blast furnace slag',fr:'laitier de haut fourneau'},{en:'fly ash',fr:'cendres volantes'},{en:'cross-laminated timber (CLT)',fr:'bois lamell\u00e9-crois\u00e9 (CLT)'},{en:'passive house',fr:'maison passive'},{en:'heat recovery ventilation',fr:'VMC double flux'}]},
+];
+
+const OralE2APage = ({onBack}) => {
+  const [section, setSection] = useState(null);
+
+  const e2aSpeak = (text, rate) => {
+    const s = window.speechSynthesis;
+    if(!s) return;
+    s.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    const voices = s.getVoices();
+    u.voice = voices.find(v=>v.lang.startsWith('en-GB')) || voices.find(v=>v.lang.startsWith('en-US')) || voices.find(v=>v.lang.startsWith('en'));
+    u.rate = rate || 0.75;
+    s.speak(u);
+  };
+
+  // Preload voices
+  useEffect(() => {
+    if(window.speechSynthesis) {
+      window.speechSynthesis.getVoices();
+      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+    return () => { if(window.speechSynthesis) window.speechSynthesis.cancel(); };
+  }, []);
+
+  // ---- Generic Quiz (number mode = typed answer, other = reveal) ----
+  const NumberQuiz = ({items, title, onBack: qBack}) => {
+    const [idx, setIdx] = useState(0);
+    const [score, setScore] = useState(0);
+    const [total, setTotal] = useState(0);
+    const [input, setInput] = useState('');
+    const [feedback, setFeedback] = useState(null);
+    const [answered, setAnswered] = useState(false);
+    const [started, setStarted] = useState(false);
+
+    const item = items[idx];
+    const done = idx >= items.length;
+    const pct = total > 0 ? Math.round(score/total*100) : 0;
+
+    const levelColors = {'Facile':'#2a9d8f','Dizaines':'#4a90d9','Pieges':'#e76f51','Grands':'#e09f3e','%':'#a78bfa','BTP':'#e09f3e'};
+
+    const doSpeak = () => { if(!done){e2aSpeak(item.spoken, 0.75); setStarted(true);} };
+    const doCheck = () => {
+      if(answered || !input.trim()) return;
+      setAnswered(true);
+      const userVal = input.trim().replaceAll(' ','').replaceAll(',','.');
+      const correctVal = item.answer.replaceAll(',','.');
+      const ok = userVal === correctVal || userVal.replace(/\.?0+$/,'') === correctVal.replace(/\.?0+$/,'');
+      setTotal(t=>t+1);
+      if(ok) { setScore(s=>s+1); setFeedback({ok:true, text:'Correct ! '+item.display}); }
+      else { setFeedback({ok:false, text:'Non. R\u00e9ponse : '+item.display}); }
+    };
+    const doNext = () => { setIdx(i=>i+1); setInput(''); setFeedback(null); setAnswered(false); setStarted(false); };
+
+    if(done) return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={qBack}>{'\u2190'} Retour</div>
+        <div style={{textAlign:'center',padding:40}}>
+          <div style={{fontSize:48,marginBottom:16}}>{pct>=80?'\uD83C\uDF89':pct>=50?'\uD83D\uDC4D':'\uD83D\uDCAA'}</div>
+          <div style={{fontSize:24,fontWeight:700,color:'#e09f3e',marginBottom:8}}>Termin\u00e9 !</div>
+          <div style={{fontSize:18}}>{score}/{total} ({pct}%)</div>
+          <div style={{marginTop:16,color:'var(--text2)'}}>{pct>=80?'Excellent !':pct>=60?'Bien !':pct>=40?'Pas mal, continuez !':'Refaites le test !'}</div>
+        </div>
+      </div>
+    );
+
+    return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={qBack}>{'\u2190'} Retour</div>
+        <div style={{textAlign:'center',marginBottom:8}}>
+          <span style={{fontSize:28}}>{'\uD83D\uDD22'}</span>
+          <div style={{fontSize:18,fontWeight:700,marginTop:4}}>{title}</div>
+        </div>
+        <div style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:20,marginBottom:16}}>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
+            <span style={{color:levelColors[item.level]||'#8b8fa3',fontWeight:700,fontSize:13}}>[{item.level}]</span>
+            <span style={{color:'var(--text2)',fontSize:13}}>Q {idx+1}/{items.length}</span>
+          </div>
+          {total>0 && <div style={{fontSize:13,color:'var(--text2)',marginBottom:8}}>{score}/{total} correct ({pct}%)</div>}
+          <div style={{display:'flex',gap:8,marginBottom:12}}>
+            <button onClick={doSpeak} style={{flex:1,padding:'12px 0',border:'none',borderRadius:10,background:'#e09f3e',color:'#0f1117',fontWeight:700,fontSize:15,cursor:'pointer'}}>{'\uD83D\uDD0A'} \u00c9couter</button>
+            {started && <button onClick={()=>e2aSpeak(item.spoken,0.6)} style={{padding:'12px 16px',border:'1px solid var(--border)',borderRadius:10,background:'transparent',color:'var(--text)',cursor:'pointer',fontSize:15}}>{'\uD83D\uDC22'}</button>}
+          </div>
+          {started && <div>
+            <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>{if(e.key==='Enter')doCheck();}}
+              placeholder="Tapez le nombre..." disabled={answered}
+              style={{width:'100%',padding:12,borderRadius:10,border:'1px solid var(--border)',background:'var(--bg)',color:'var(--text)',fontSize:16,marginBottom:10,boxSizing:'border-box'}}/>
+            {!answered && <button onClick={doCheck} style={{width:'100%',padding:12,border:'none',borderRadius:10,background:'#2a9d8f',color:'#fff',fontWeight:700,fontSize:15,cursor:'pointer'}}>V\u00e9rifier</button>}
+            {feedback && <div style={{marginTop:10,padding:12,borderRadius:10,background:feedback.ok?'rgba(42,157,143,.15)':'rgba(231,111,81,.15)',color:feedback.ok?'#2a9d8f':'#e76f51',fontWeight:600,fontSize:14}}>{feedback.text}</div>}
+            {answered && <button onClick={doNext} style={{width:'100%',marginTop:10,padding:12,border:'none',borderRadius:10,background:'#4a90d9',color:'#fff',fontWeight:700,fontSize:15,cursor:'pointer'}}>Suivant {'\u2192'}</button>}
+          </div>}
+        </div>
+      </div>
+    );
+  };
+
+  // ---- Reveal Quiz (listen + reveal answer) ----
+  const RevealQuiz = ({items, title, icon, onBack: qBack, speechRate}) => {
+    const [idx, setIdx] = useState(0);
+    const [revealed, setRevealed] = useState(false);
+    const [started, setStarted] = useState(false);
+
+    const item = items[idx];
+    const done = idx >= items.length;
+
+    const levelColors = {'Debut':'#2a9d8f','Ajouter':'#4a90d9','Probleme':'#e76f51','Cause':'#e09f3e','Fin':'#a78bfa','Mix':'#f97316',
+      'Transparent':'#2a9d8f','Faux ami':'#e76f51','BTP':'#e09f3e','Fonctions':'#4a90d9',
+      'Situation':'#4a90d9','Chiffres':'#e09f3e','Solution':'#2a9d8f','Securite':'#e76f51','Environnement':'#14b8a6'};
+
+    const doSpeak = () => { if(!done){e2aSpeak(item.spoken||item.phrase, speechRate||0.75); setStarted(true);} };
+    const doReveal = () => setRevealed(true);
+    const doNext = () => { setIdx(i=>i+1); setRevealed(false); setStarted(false); };
+
+    if(done) return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={qBack}>{'\u2190'} Retour</div>
+        <div style={{textAlign:'center',padding:40}}>
+          <div style={{fontSize:48,marginBottom:16}}>{'\u2705'}</div>
+          <div style={{fontSize:24,fontWeight:700,color:'#2a9d8f',marginBottom:8}}>Termin\u00e9 !</div>
+          <div style={{fontSize:16,color:'var(--text2)'}}>{items.length} questions r\u00e9vis\u00e9es</div>
+        </div>
+      </div>
+    );
+
+    return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={qBack}>{'\u2190'} Retour</div>
+        <div style={{textAlign:'center',marginBottom:8}}>
+          <span style={{fontSize:28}}>{icon}</span>
+          <div style={{fontSize:18,fontWeight:700,marginTop:4}}>{title}</div>
+        </div>
+        <div style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:20,marginBottom:16}}>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
+            <span style={{color:levelColors[item.level]||'#8b8fa3',fontWeight:700,fontSize:13}}>[{item.level}]</span>
+            <span style={{color:'var(--text2)',fontSize:13}}>Q {idx+1}/{items.length}</span>
+          </div>
+          <div style={{marginBottom:12}}>
+            <button onClick={doSpeak} style={{width:'100%',padding:'12px 0',border:'none',borderRadius:10,background:'#e09f3e',color:'#0f1117',fontWeight:700,fontSize:15,cursor:'pointer'}}>{'\uD83D\uDD0A'} \u00c9couter</button>
+          </div>
+          {started && <div>
+            <button onClick={()=>e2aSpeak(item.spoken||item.phrase,(speechRate||0.75)*0.7)} style={{width:'100%',marginBottom:10,padding:'10px 0',border:'1px solid var(--border)',borderRadius:10,background:'transparent',color:'var(--text)',cursor:'pointer',fontSize:14}}>{'\uD83D\uDC22'} R\u00e9-\u00e9couter lentement</button>
+            {!revealed && <button onClick={doReveal} style={{width:'100%',padding:12,border:'none',borderRadius:10,background:'#a78bfa',color:'#0f1117',fontWeight:700,fontSize:15,cursor:'pointer'}}>{'\uD83D\uDC41'} Voir la r\u00e9ponse</button>}
+            {revealed && <div>
+              <div style={{padding:14,borderRadius:10,background:'rgba(42,157,143,.12)',border:'1px solid rgba(42,157,143,.3)',marginBottom:10}}>
+                <div style={{fontSize:13,color:'var(--text2)',marginBottom:4}}>R\u00e9ponse :</div>
+                <div style={{fontSize:16,fontWeight:600,color:'#2a9d8f'}}>{item.answer}</div>
+              </div>
+              <button onClick={doNext} style={{width:'100%',padding:12,border:'none',borderRadius:10,background:'#4a90d9',color:'#fff',fontWeight:700,fontSize:15,cursor:'pointer'}}>Suivant {'\u2192'}</button>
+            </div>}
+          </div>}
+        </div>
+        <div style={{height:6,background:'var(--border)',borderRadius:3,overflow:'hidden'}}>
+          <div style={{height:'100%',width:((idx/items.length)*100)+'%',background:'#2a9d8f',borderRadius:3,transition:'width .3s'}}/>
+        </div>
+      </div>
+    );
+  };
+
+  // ---- Vocabulary Flip Cards (by theme from texts) ----
+  const VocabThemePage = ({texts, onBack: vBack}) => {
+    const [selText, setSelText] = useState(null);
+    const [flipped, setFlipped] = useState({});
+
+    if(!selText) return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={vBack}>{'\u2190'} Retour</div>
+        <div style={{textAlign:'center',marginBottom:16}}>
+          <span style={{fontSize:28}}>{'\uD83C\uDFD7'}</span>
+          <div style={{fontSize:18,fontWeight:700,marginTop:4}}>Vocabulaire par th\u00e8me</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>5 th\u00e8mes BTP - cartes retournables</div>
+        </div>
+        {texts.map(t=>(
+          <div key={t.id} onClick={()=>setSelText(t)} style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:16,marginBottom:10,cursor:'pointer'}}>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+              <div>
+                <div style={{fontWeight:700,color:'#e09f3e',fontSize:15}}>{t.title}</div>
+                <div style={{fontSize:13,color:'var(--text2)'}}>{t.theme}</div>
+              </div>
+              <span style={{background:'#2a9d8f',color:'#fff',padding:'2px 10px',borderRadius:99,fontSize:12,fontWeight:700}}>{t.level}</span>
+            </div>
+            <div style={{fontSize:12,color:'var(--text2)',marginTop:6}}>{t.vocab.length} mots</div>
+          </div>
+        ))}
+      </div>
+    );
+
+    return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={()=>{setSelText(null);setFlipped({});}}>{'\u2190'} Retour aux th\u00e8mes</div>
+        <div style={{textAlign:'center',marginBottom:16}}>
+          <div style={{fontSize:18,fontWeight:700,color:'#e09f3e'}}>{selText.title}</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>{selText.theme} ({selText.level})</div>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}}>
+          {selText.vocab.map((v,i)=>(
+            <div key={i} onClick={()=>setFlipped(f=>({...f,[i]:!f[i]}))}
+              style={{background:flipped[i]?'rgba(42,157,143,.12)':'var(--card)',border:'1px solid '+(flipped[i]?'rgba(42,157,143,.3)':'var(--border)'),borderRadius:10,padding:14,cursor:'pointer',minHeight:70,display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textAlign:'center',transition:'all .2s'}}>
+              {!flipped[i] ? (
+                <div>
+                  <div style={{fontSize:14,fontWeight:600,color:'#e09f3e'}}>{v.en}</div>
+                  <div style={{fontSize:11,color:'var(--text2)',marginTop:4}}>Cliquer pour voir</div>
+                </div>
+              ) : (
+                <div>
+                  <div style={{fontSize:13,color:'var(--text2)'}}>{v.en}</div>
+                  <div style={{fontSize:14,fontWeight:600,color:'#2a9d8f',marginTop:4}}>{v.fr}</div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <button onClick={()=>e2aSpeak(selText.vocab.map(v=>v.en).join('. '), 0.7)}
+          style={{width:'100%',marginTop:16,padding:12,border:'none',borderRadius:10,background:'#e09f3e',color:'#0f1117',fontWeight:700,fontSize:14,cursor:'pointer'}}>{'\uD83D\uDD0A'} \u00c9couter tous les mots</button>
+      </div>
+    );
+  };
+
+  // ---- Method E2-A ----
+  const MethodePage = ({onBack: mBack}) => {
+    const steps = [
+      {n:'1',t:'Avant l\'\u00e9coute',items:['Rep\u00e9rer le type de document (r\u00e9union, pr\u00e9sentation, briefing)','Se pr\u00e9parer mentalement aux th\u00e8mes BTP']},
+      {n:'2',t:'1\u00e8re \u00e9coute (sans notes)',items:['Identifier le locuteur (nom, fonction)','Comprendre le sujet g\u00e9n\u00e9ral','Rep\u00e9rer les chiffres cl\u00e9s','Distinguer les probl\u00e8mes \u00e9voqu\u00e9s']},
+      {n:'3',t:'Pause (2-3 min)',items:['Noter les id\u00e9es principales retenues','Lister les chiffres m\u00e9moris\u00e9s','Identifier ce qu\'il faut v\u00e9rifier']},
+      {n:'4',t:'2\u00e8me \u00e9coute',items:['Compl\u00e9ter les notes','V\u00e9rifier les chiffres','Capter les d\u00e9tails manqu\u00e9s']},
+      {n:'5',t:'R\u00e9daction (en fran\u00e7ais !)',items:['Intro : pr\u00e9senter le document','D\u00e9velopper les id\u00e9es principales','Inclure TOUS les chiffres','Conclure bri\u00e8vement']},
+    ];
+    return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={mBack}>{'\u2190'} Retour</div>
+        <div style={{textAlign:'center',marginBottom:16}}>
+          <span style={{fontSize:28}}>{'\uD83D\uDCCB'}</span>
+          <div style={{fontSize:18,fontWeight:700,marginTop:4}}>M\u00e9thode E2-A</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>Compr\u00e9hension orale - Compte-rendu en fran\u00e7ais</div>
+        </div>
+        {steps.map(s=>(
+          <div key={s.n} style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:16,marginBottom:10}}>
+            <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
+              <div style={{width:28,height:28,borderRadius:'50%',background:'#e09f3e',color:'#0f1117',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:700,fontSize:13,flexShrink:0}}>{s.n}</div>
+              <div style={{flex:1}}>
+                <div style={{fontWeight:700,marginBottom:6}}>{s.t}</div>
+                {s.items.map((it,i)=>(<div key={i} style={{fontSize:13,color:'var(--text2)',marginBottom:3}}>{'\u2022'} {it}</div>))}
+              </div>
+            </div>
+          </div>
+        ))}
+        <div style={{background:'rgba(231,111,81,.1)',border:'1px solid rgba(231,111,81,.3)',borderRadius:12,padding:16,marginTop:16}}>
+          <div style={{fontWeight:700,color:'#e76f51',marginBottom:8}}>Points de vigilance</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>{'\u2022'} Le compte-rendu est TOUJOURS en fran\u00e7ais</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>{'\u2022'} Ne pas inventer : ne noter que ce qui est dit</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>{'\u2022'} Les chiffres sont souvent pi\u00e9geux (thirteen/thirty)</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>{'\u2022'} Connectors = indices de structure du discours</div>
+        </div>
+      </div>
+    );
+  };
+
+  // ---- Training Plan ----
+  const PlanPage = ({onBack: pBack}) => {
+    const weeks = [
+      {w:'Semaine 1 (J1-J6)', days:[
+        {d:'J1',t:'Nombres faciles (1-20) + mots transparents',c:'#2a9d8f'},
+        {d:'J2',t:'Nombres dizaines + faux amis',c:'#4a90d9'},
+        {d:'J3',t:'Pi\u00e8ges teen/ty + connecteurs (d\u00e9but)',c:'#e76f51'},
+        {d:'J4',t:'Grands nombres + connecteurs (probl\u00e8me/cause)',c:'#e09f3e'},
+        {d:'J5',t:'Pourcentages + connecteurs (fin)',c:'#a78bfa'},
+        {d:'J6',t:'R\u00e9vision nombres + tous connecteurs',c:'#f97316'},
+      ]},
+      {w:'Semaine 2 (J7-J12)', days:[
+        {d:'J7',t:'Vocabulaire BTP + fonctions',c:'#2a9d8f'},
+        {d:'J8',t:'Phrases types (d\u00e9but + situation)',c:'#4a90d9'},
+        {d:'J9',t:'Phrases types (chiffres + probl\u00e8mes)',c:'#e76f51'},
+        {d:'J10',t:'Phrases types (solutions + s\u00e9curit\u00e9)',c:'#e09f3e'},
+        {d:'J11',t:'Vocabulaire th\u00e9matique (textes 1-3)',c:'#a78bfa'},
+        {d:'J12',t:'Vocabulaire th\u00e9matique (textes 4-5)',c:'#f97316'},
+      ]},
+      {w:'Semaine 3 (J13-J18)', days:[
+        {d:'J13',t:'Texte 1 : Project Progress (B1+)',c:'#2a9d8f'},
+        {d:'J14',t:'Texte 2 : BIM Meeting (B2)',c:'#4a90d9'},
+        {d:'J15',t:'Texte 3 : Safety Briefing (B1)',c:'#e76f51'},
+        {d:'J16',t:'Texte 4 : Cost Estimation (B2)',c:'#e09f3e'},
+        {d:'J17',t:'Texte 5 : Sustainability (B2+)',c:'#a78bfa'},
+        {d:'J18',t:'R\u00e9vision tous les textes',c:'#f97316'},
+      ]},
+      {w:'Semaine 4 (J19-J24)', days:[
+        {d:'J19',t:'Simulation compl\u00e8te texte 1',c:'#2a9d8f'},
+        {d:'J20',t:'Simulation compl\u00e8te texte 2',c:'#4a90d9'},
+        {d:'J21',t:'Simulation compl\u00e8te texte 3',c:'#e76f51'},
+        {d:'J22',t:'Simulation compl\u00e8te texte 4',c:'#e09f3e'},
+        {d:'J23',t:'Simulation compl\u00e8te texte 5',c:'#a78bfa'},
+        {d:'J24',t:'R\u00e9vision finale + m\u00e9thode',c:'#f97316'},
+      ]},
+    ];
+    return (
+      <div>
+        <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={pBack}>{'\u2190'} Retour</div>
+        <div style={{textAlign:'center',marginBottom:16}}>
+          <span style={{fontSize:28}}>{'\uD83D\uDCC5'}</span>
+          <div style={{fontSize:18,fontWeight:700,marginTop:4}}>Plan d'entra\u00eenement (24 jours)</div>
+          <div style={{fontSize:13,color:'var(--text2)'}}>Progression de z\u00e9ro \u00e0 l'\u00e9preuve</div>
+        </div>
+        {weeks.map((w,wi)=>(
+          <div key={wi} style={{marginBottom:16}}>
+            <div style={{fontWeight:700,fontSize:14,color:'#e09f3e',marginBottom:8}}>{w.w}</div>
+            {w.days.map((d,di)=>(
+              <div key={di} style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:10,padding:12,marginBottom:6,display:'flex',gap:10,alignItems:'center'}}>
+                <div style={{width:36,height:36,borderRadius:'50%',background:d.c,color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:700,fontSize:12,flexShrink:0}}>{d.d}</div>
+                <div style={{fontSize:13}}>{d.t}</div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  // ---- Main Hub ----
+  if(section==='numbers') return <NumberQuiz items={E2A_NUMBER_ITEMS} title="Nombres (100 questions)" onBack={()=>setSection(null)}/>;
+  if(section==='connectors') return <RevealQuiz items={E2A_CONNECTOR_ITEMS} title="Mots de liaison (50 questions)" icon={'\uD83D\uDD17'} speechRate={0.8} onBack={()=>setSection(null)}/>;
+  if(section==='vocab') return <RevealQuiz items={E2A_VOCAB_ITEMS} title="Vocabulaire BTP (60 questions)" icon={'\uD83C\uDFD7'} speechRate={0.75} onBack={()=>setSection(null)}/>;
+  if(section==='phrases') return <RevealQuiz items={E2A_PHRASE_ITEMS} title="Phrases types (40 questions)" icon={'\uD83D\uDCAC'} speechRate={0.7} onBack={()=>setSection(null)}/>;
+  if(section==='vocabTheme') return <VocabThemePage texts={E2A_TEXTS} onBack={()=>setSection(null)}/>;
+  if(section==='methode') return <MethodePage onBack={()=>setSection(null)}/>;
+  if(section==='plan') return <PlanPage onBack={()=>setSection(null)}/>;
+
+  const cards = [
+    {id:'plan',icon:'\uD83D\uDCC5',label:'Plan d\'entra\u00eenement',sub:'24 jours progressifs',color:'#e09f3e'},
+    {id:'numbers',icon:'\uD83D\uDD22',label:'Nombres',sub:'100 questions audio',color:'#4a90d9'},
+    {id:'connectors',icon:'\uD83D\uDD17',label:'Mots de liaison',sub:'50 connecteurs',color:'#a78bfa'},
+    {id:'vocab',icon:'\uD83C\uDFD7\uFE0F',label:'Vocabulaire BTP',sub:'60 mots cl\u00e9s',color:'#2a9d8f'},
+    {id:'phrases',icon:'\uD83D\uDCAC',label:'Phrases types',sub:'40 phrases BTP',color:'#f97316'},
+    {id:'vocabTheme',icon:'\uD83D\uDCD6',label:'Vocabulaire par th\u00e8me',sub:'5 textes, cartes retournables',color:'#14b8a6'},
+    {id:'methode',icon:'\uD83D\uDCCB',label:'M\u00e9thode E2-A',sub:'\u00c9tapes de l\'\u00e9preuve',color:'#e76f51'},
+  ];
+
+  return (
+    <div>
+      <div style={{cursor:'pointer',color:'var(--text2)',marginBottom:16,fontSize:14}} onClick={onBack}>{'\u2190'} Retour \u00e0 l'accueil</div>
+      <div style={{textAlign:'center',marginBottom:20}}>
+        <span style={{fontSize:40}}>{'\uD83C\uDFA7'}</span>
+        <div style={{fontSize:22,fontWeight:700,marginTop:4}}>E2-A Compr\u00e9hension Orale</div>
+        <div style={{fontSize:14,color:'var(--text2)'}}>Entra\u00eenement complet - {E2A_NUMBER_ITEMS.length+E2A_CONNECTOR_ITEMS.length+E2A_VOCAB_ITEMS.length+E2A_PHRASE_ITEMS.length} questions + vocabulaire</div>
+      </div>
+      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}}>
+        {cards.map(c=>(
+          <div key={c.id} onClick={()=>setSection(c.id)}
+            style={{background:'var(--card)',border:'1px solid var(--border)',borderTop:'3px solid '+c.color,borderRadius:12,padding:16,cursor:'pointer',textAlign:'center',transition:'border-color .2s'}}>
+            <div style={{fontSize:28,marginBottom:6}}>{c.icon}</div>
+            <div style={{fontSize:14,fontWeight:700}}>{c.label}</div>
+            <div style={{fontSize:12,color:'var(--text2)',marginTop:2}}>{c.sub}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -14838,6 +16089,91 @@ const SubjectHub = ({cfg,onModule,onBack}) => {
   );
 };
 
+// ══════════════════ EXERCICES CORRIGÉS PAGE ══════════════════
+
+const ExerciceDetail = ({cat, onBack}) => {
+  const [openMap, setOpenMap] = useState({});
+  const toggleExo = id => setOpenMap(s => ({...s, [id]:!s[id]}));
+  const [showCorrige, setShowCorrige] = useState({});
+  const toggleCorrige = id => setShowCorrige(s => ({...s, [id]:!s[id]}));
+
+  return (
+    <div>
+      <button onClick={onBack} style={{background:'none',border:'none',color:'var(--accent)',cursor:'pointer',fontSize:13,marginBottom:12,padding:0}}>← Retour aux exercices</button>
+      <div style={{marginBottom:16}}>
+        <span className="badge" style={{background:cat.color,marginRight:8}}>{cat.badge}</span>
+        <span style={{fontSize:20,fontWeight:700,color:'var(--text)'}}>{cat.titre}</span>
+      </div>
+      <p style={{fontSize:13,color:'var(--text3)',marginBottom:20}}>{cat.intro}</p>
+      {cat.exercices.map(exo => (
+        <div key={exo.id} style={{background:'var(--bg2)',borderRadius:12,padding:16,marginBottom:12,border:'1px solid var(--border)'}}>
+          <div onClick={()=>toggleExo(exo.id)} style={{cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+            <span style={{fontWeight:600,fontSize:14,color:'var(--text)'}}>{exo.intitule}</span>
+            <span style={{fontSize:18,color:'var(--text3)',transform:openMap[exo.id]?'rotate(90deg)':'none',transition:'transform 0.2s'}}>▶</span>
+          </div>
+          {openMap[exo.id] && (
+            <div style={{marginTop:12}}>
+              <div style={{marginBottom:12,padding:12,background:'var(--bg)',borderRadius:8,border:'1px solid var(--border)'}}>
+                <div style={{fontSize:12,fontWeight:700,color:'var(--accent)',marginBottom:8,textTransform:'uppercase',letterSpacing:1}}>Enonce</div>
+                <FicheContent sections={[{title:'',content:exo.enonce}]}/>
+              </div>
+              <button onClick={()=>toggleCorrige(exo.id)}
+                style={{display:'flex',alignItems:'center',gap:6,padding:'8px 16px',borderRadius:8,
+                  border:'1px solid '+(showCorrige[exo.id]?'#22c55e':'var(--border)'),
+                  background:showCorrige[exo.id]?'rgba(34,197,94,0.1)':'var(--bg)',
+                  color:showCorrige[exo.id]?'#22c55e':'var(--text3)',cursor:'pointer',fontSize:12,fontWeight:600,marginBottom:8}}>
+                {showCorrige[exo.id] ? '✅ Masquer le corrige' : '👁 Voir le corrige'}
+              </button>
+              {showCorrige[exo.id] && (
+                <div style={{padding:12,background:'var(--bg)',borderRadius:8,border:'1px solid #22c55e33'}}>
+                  <div style={{fontSize:12,fontWeight:700,color:'#22c55e',marginBottom:8,textTransform:'uppercase',letterSpacing:1}}>Corrige</div>
+                  <FicheContent sections={[{title:'',content:exo.corrige}]}/>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const ExercicesListPage = ({onSelect}) => {
+  const [filt, setFilt] = useState('all');
+  const filtered = filt==='all' ? EXERCICES_CORRIGES : EXERCICES_CORRIGES.filter(c=>c.badge===filt);
+  const badges = [...new Set(EXERCICES_CORRIGES.map(c=>c.badge))];
+  return (
+    <div>
+      <div style={{marginBottom:16}}>
+        <h2 style={{fontSize:20,fontWeight:700,color:'var(--text)',margin:'0 0 4px'}}>Exercices Corriges</h2>
+        <p style={{fontSize:13,color:'var(--text3)',margin:0}}>22 exercices types avec corrige detaille</p>
+      </div>
+      <div style={{display:'flex',gap:6,marginBottom:16,flexWrap:'wrap'}}>
+        <button onClick={()=>setFilt('all')} className={filt==='all'?'tab-active':'tab-inactive'} style={{padding:'6px 14px',borderRadius:20,border:'1px solid var(--border)',cursor:'pointer',fontSize:12,fontWeight:600,background:filt==='all'?'var(--accent)':'var(--bg2)',color:filt==='all'?'#fff':'var(--text3)'}}>Tous</button>
+        {badges.map(b=>(
+          <button key={b} onClick={()=>setFilt(b)} style={{padding:'6px 14px',borderRadius:20,border:'1px solid var(--border)',cursor:'pointer',fontSize:12,fontWeight:600,background:filt===b?'var(--accent)':'var(--bg2)',color:filt===b?'#fff':'var(--text3)'}}>{b}</button>
+        ))}
+      </div>
+      {filtered.map(cat => (
+        <div key={cat.id} onClick={()=>onSelect(cat)}
+          style={{background:'var(--bg2)',borderRadius:12,padding:16,marginBottom:10,cursor:'pointer',
+            border:'1px solid var(--border)',borderLeft:'4px solid '+cat.color,
+            transition:'transform 0.15s',display:'flex',alignItems:'center',gap:12}}>
+          <div style={{flex:1}}>
+            <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:4}}>
+              <span className="badge" style={{background:cat.color,fontSize:10}}>{cat.badge}</span>
+              <span style={{fontWeight:700,fontSize:14,color:'var(--text)'}}>{cat.titre}</span>
+            </div>
+            <div style={{fontSize:12,color:'var(--text3)'}}>{cat.intro}</div>
+            <div style={{fontSize:11,color:'var(--text3)',marginTop:4}}>{cat.exercices.length} exercice{cat.exercices.length>1?'s':''}</div>
+          </div>
+          <span style={{fontSize:18,color:'var(--text3)'}}>▶</span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 // ══════════════════ APP ══════════════════
 
 const NAVS = [
@@ -14848,6 +16184,7 @@ const NAVS = [
   {id:'qcm',       label:'QCM Interactifs', icon:'🧠'},
   {id:'synthese',  label:'Synthèse',        icon:'📊'},
   {id:'annales',   label:'Annales',         icon:'📝'},
+  {id:'exercices', label:'Exercices',       icon:'✏️'},
   {id:'memo',      label:'Fiche Mémo A4',   icon:'🗒️'},
   {id:'planning',  label:'Planning',        icon:'📅'},
   {id:'_sep1',     label:'──────────',      icon:''},
@@ -14855,6 +16192,7 @@ const NAVS = [
   {id:'fiches_physique', label:'Physique',        icon:'⚗️',badge:'PHYS'},
   {id:'fiches_francais', label:'Français CGE',    icon:'🇫🇷',badge:'CGE'},
   {id:'fiches_anglais',  label:'Anglais LVA',     icon:'🇬🇧',badge:'ANG'},
+  {id:'oral_e2a',        label:'E2-A Oral',        icon:'🎧',badge:'ANG'},
 ];
 
 const App = () => {
@@ -14862,6 +16200,7 @@ const App = () => {
   const [fiche,setFiche] = useState(null);
   const [qcm,setQCM] = useState(null);
   const [annale,setAnnale] = useState(null);
+  const [exerciceCat,setExerciceCat] = useState(null);
   const [subjectModule,setSubjectModule] = useState(null);
   const [dark,setDark] = useState(true);
   const [sideOpen,setSideOpen] = useState(false);
@@ -14871,7 +16210,7 @@ const App = () => {
   },[dark]);
 
   const handleNav = id => {
-    setNav(id);setFiche(null);setQCM(null);setAnnale(null);setSubjectModule(null);setSideOpen(false);
+    setNav(id);setFiche(null);setQCM(null);setAnnale(null);setExerciceCat(null);setSubjectModule(null);setSideOpen(false);
   };
 
   const currentLabel = NAVS.find(n=>n.id===nav)?.label || '';
@@ -14921,12 +16260,17 @@ const App = () => {
         }}/>;
       return <AnnalesListPage onSelect={setAnnale}/>;
     }
+    if(nav==='exercices'){
+      if(exerciceCat) return <ExerciceDetail cat={exerciceCat} onBack={()=>setExerciceCat(null)}/>;
+      return <ExercicesListPage onSelect={setExerciceCat}/>;
+    }
     if(nav==='memo') return <MemoPage/>;
     if(nav==='planning') return <PlanningPage/>;
     if(nav==='fiches_maths')    return renderSubjectPage(SUBJECT_CONFIG.maths);
     if(nav==='fiches_physique') return renderSubjectPage(SUBJECT_CONFIG.physique);
     if(nav==='fiches_francais') return renderSubjectPage(SUBJECT_CONFIG.francais);
     if(nav==='fiches_anglais')  return renderSubjectPage(SUBJECT_CONFIG.anglais);
+    if(nav==='oral_e2a') return <OralE2APage onBack={()=>handleNav('accueil')}/>;
   };
 
   return (
