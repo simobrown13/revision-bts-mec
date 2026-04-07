@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:c16r2="http://schemas.microsoft.com/office/drawing/2015/06/chart">
+  <c:date1904 val="0"/>
+  <c:lang val="fr-FR"/>
+  <c:roundedCorners val="1"/>
+  <c:style val="2"/>
+  <c:chart>
+    <c:autoTitleDeleted val="1"/>
+    <c:plotArea>
+      <c:layout/>
+      <c:barChart>
+        <c:barDir val="col"/>
+        <c:grouping val="clustered"/>
+        <c:varyColors val="0"/>
+        <c:ser>
+          <c:idx val="0"/>
+          <c:order val="0"/>
+          <c:tx>
+            <c:strRef>
+              <c:f>Sheet1!$B$1</c:f>
+              <c:strCache>
+                <c:ptCount val="1"/>
+                <c:pt idx="0">
+                  <c:v>2026</c:v>
+                </c:pt>
+              </c:strCache>
+            </c:strRef>
+          </c:tx>
+          <c:spPr>
+            <a:solidFill>
+              <a:srgbClr val="4AACB0"/>
+            </a:solidFill>
+            <a:effectLst/>
+          </c:spPr>
+          <c:invertIfNegative val="0"/>
+          <c:cat>
+            <c:strRef>
+              <c:f>Sheet1!$A$2:$A$6</c:f>
+              <c:strCache>
+                <c:ptCount val="5"/>
+                <c:pt idx="0">
+                  <c:v>Métrés BIM</c:v>
+                </c:pt>
+                <c:pt idx="1">
+                  <c:v>Plugins Revit</c:v>
+                </c:pt>
+                <c:pt idx="2">
+                  <c:v>DPGF auto.</c:v>
+                </c:pt>
+                <c:pt idx="3">
+                  <c:v>SaaS MEC</c:v>
+                </c:pt>
+                <c:pt idx="4">
+                  <c:v>Cabinet ingé.</c:v>
+                </c:pt>
+              </c:strCache>
+            </c:strRef>
+          </c:cat>
+          <c:val>
+            <c:numRef>
+              <c:f>Sheet1!$B$2:$B$6</c:f>
+              <c:numCache>
+                <c:formatCode>General</c:formatCode>
+                <c:ptCount val="5"/>
+                <c:pt idx="0">
+                  <c:v>80</c:v>
+                </c:pt>
+                <c:pt idx="1">
+                  <c:v>30</c:v>
+                </c:pt>
+                <c:pt idx="2">
+                  <c:v>0</c:v>
+                </c:pt>
+                <c:pt idx="3">
+                  <c:v>0</c:v>
+                </c:pt>
+                <c:pt idx="4">
+                  <c:v>0</c:v>
+                </c:pt>
+              </c:numCache>
+            </c:numRef>
+          </c:val>
+          <c:extLst>
+            <c:ext xmlns:c16="http://schemas.microsoft.com/office/drawing/2014/chart" uri="{C3380CC4-5D6E-409C-BE32-E72D297353CC}">
+              <c16:uniqueId val="{00000000-FE25-4B97-B5E5-04E13DE963EE}"/>
+            </c:ext>
+          </c:extLst>
+        </c:ser>
+        <c:ser>
+          <c:idx val="1"/>
+          <c:order val="1"/>
+          <c:tx>
+            <c:strRef>
+              <c:f>Sheet1!$C$1</c:f>
+              <c:strCache>
+                <c:ptCount val="1"/>
+                <c:pt idx="0">
+                  <c:v>2027-28</c:v>
+                </c:pt>
+              </c:strCache>
+            </c:strRef>
+          </c:tx>
+          <c:spPr>
+            <a:solidFill>
+              <a:srgbClr val="007A7F"/>
+            </a:solidFill>
+            <a:effectLst/>
+          </c:spPr>
+          <c:invertIfNegative val="0"/>
+          <c:cat>
+            <c:strRef>
+              <c:f>Sheet1!$A$2:$A$6</c:f>
+              <c:strCache>
+                <c:ptCount val="5"/>
+                <c:pt idx="0">
+                  <c:v>Métrés BIM</c:v>
+                </c:pt>
+                <c:pt idx="1">
+                  <c:v>Plugins Revit</c:v>
+                </c:pt>
+                <c:pt idx="2">
+                  <c:v>DPGF auto.</c:v>
+                </c:pt>
+                <c:pt idx="3">
+                  <c:v>SaaS MEC</c:v>
+                </c:pt>
+                <c:pt idx="4">
+                  <c:v>Cabinet ingé.</c:v>
+                </c:pt>
+              </c:strCache>
+            </c:strRef>
+          </c:cat>
+          <c:val>
+            <c:numRef>
+              <c:f>Sheet1!$C$2:$C$6</c:f>
+              <c:numCache>
+                <c:formatCode>General</c:formatCode>
+                <c:ptCount val="5"/>
+                <c:pt idx="0">
+                  <c:v>100</c:v>
+                </c:pt>
+                <c:pt idx="1">
+                  <c:v>80</c:v>
+                </c:pt>
+                <c:pt idx="2">
+                  <c:v>70</c:v>
+                </c:pt>
+                <c:pt idx="3">
+                  <c:v>30</c:v>
+                </c:pt>
+                <c:pt idx="4">
+                  <c:v>0</c:v>
+                </c:pt>
+              </c:numCache>
+            </c:numRef>
+          </c:val>
+          <c:extLst>
+            <c:ext xmlns:c16="http://schemas.microsoft.com/office/drawing/2014/chart" uri="{C3380CC4-5D6E-409C-BE32-E72D297353CC}">
+              <c16:uniqueId val="{00000001-FE25-4B97-B5E5-04E13DE963EE}"/>
+            </c:ext>
+          </c:extLst>
+        </c:ser>
+        <c:ser>
+          <c:idx val="2"/>
+          <c:order val="2"/>
+          <c:tx>
+            <c:strRef>
+              <c:f>Sheet1!$D$1</c:f>
+              <c:strCache>
+                <c:ptCount val="1"/>
+                <c:pt idx="0">
+                  <c:v>2029+</c:v>
+                </c:pt>
+              </c:strCache>
+            </c:strRef>
+          </c:tx>
+          <c:spPr>
+            <a:solidFill>
+              <a:srgbClr val="005A5E"/>
+            </a:solidFill>
+            <a:effectLst/>
+          </c:spPr>
+          <c:invertIfNegative val="0"/>
+          <c:cat>
+            <c:strRef>
+              <c:f>Sheet1!$A$2:$A$6</c:f>
+              <c:strCache>
+                <c:ptCount val="5"/>
+                <c:pt idx="0">
+                  <c:v>Métrés BIM</c:v>
+                </c:pt>
+                <c:pt idx="1">
+                  <c:v>Plugins Revit</c:v>
+                </c:pt>
+                <c:pt idx="2">
+                  <c:v>DPGF auto.</c:v>
+                </c:pt>
+                <c:pt idx="3">
+                  <c:v>SaaS MEC</c:v>
+                </c:pt>
+                <c:pt idx="4">
+                  <c:v>Cabinet ingé.</c:v>
+                </c:pt>
+              </c:strCache>
+            </c:strRef>
+          </c:cat>
+          <c:val>
+            <c:numRef>
+              <c:f>Sheet1!$D$2:$D$6</c:f>
+              <c:numCache>
+                <c:formatCode>General</c:formatCode>
+                <c:ptCount val="5"/>
+                <c:pt idx="0">
+                  <c:v>100</c:v>
+                </c:pt>
+                <c:pt idx="1">
+                  <c:v>100</c:v>
+                </c:pt>
+                <c:pt idx="2">
+                  <c:v>100</c:v>
+                </c:pt>
+                <c:pt idx="3">
+                  <c:v>80</c:v>
+                </c:pt>
+                <c:pt idx="4">
+                  <c:v>60</c:v>
+                </c:pt>
+              </c:numCache>
+            </c:numRef>
+          </c:val>
+          <c:extLst>
+            <c:ext xmlns:c16="http://schemas.microsoft.com/office/drawing/2014/chart" uri="{C3380CC4-5D6E-409C-BE32-E72D297353CC}">
+              <c16:uniqueId val="{00000002-FE25-4B97-B5E5-04E13DE963EE}"/>
+            </c:ext>
+          </c:extLst>
+        </c:ser>
+        <c:dLbls>
+          <c:showLegendKey val="0"/>
+          <c:showVal val="0"/>
+          <c:showCatName val="0"/>
+          <c:showSerName val="0"/>
+          <c:showPercent val="0"/>
+          <c:showBubbleSize val="0"/>
+        </c:dLbls>
+        <c:gapWidth val="150"/>
+        <c:axId val="2094734554"/>
+        <c:axId val="2094734552"/>
+      </c:barChart>
+      <c:catAx>
+        <c:axId val="2094734554"/>
+        <c:scaling>
+          <c:orientation val="minMax"/>
+        </c:scaling>
+        <c:delete val="0"/>
+        <c:axPos val="b"/>
+        <c:numFmt formatCode="General" sourceLinked="1"/>
+        <c:majorTickMark val="out"/>
+        <c:minorTickMark val="none"/>
+        <c:tickLblPos val="low"/>
+        <c:spPr>
+          <a:ln w="12700" cap="flat">
+            <a:solidFill>
+              <a:srgbClr val="888888"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:round/>
+          </a:ln>
+        </c:spPr>
+        <c:txPr>
+          <a:bodyPr/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr>
+              <a:defRPr sz="900" b="0" i="0" u="none" strike="noStrike">
+                <a:solidFill>
+                  <a:srgbClr val="888888"/>
+                </a:solidFill>
+                <a:latin typeface="Arial"/>
+              </a:defRPr>
+            </a:pPr>
+            <a:endParaRPr lang="en-US"/>
+          </a:p>
+        </c:txPr>
+        <c:crossAx val="2094734552"/>
+        <c:crosses val="autoZero"/>
+        <c:auto val="1"/>
+        <c:lblAlgn val="ctr"/>
+        <c:lblOffset val="100"/>
+        <c:noMultiLvlLbl val="1"/>
+      </c:catAx>
+      <c:valAx>
+        <c:axId val="2094734552"/>
+        <c:scaling>
+          <c:orientation val="minMax"/>
+        </c:scaling>
+        <c:delete val="0"/>
+        <c:axPos val="l"/>
+        <c:majorGridlines>
+          <c:spPr>
+            <a:ln w="6350" cap="flat">
+              <a:solidFill>
+                <a:srgbClr val="333333"/>
+              </a:solidFill>
+              <a:prstDash val="solid"/>
+              <a:round/>
+            </a:ln>
+          </c:spPr>
+        </c:majorGridlines>
+        <c:numFmt formatCode="General" sourceLinked="0"/>
+        <c:majorTickMark val="out"/>
+        <c:minorTickMark val="none"/>
+        <c:tickLblPos val="nextTo"/>
+        <c:spPr>
+          <a:ln w="12700" cap="flat">
+            <a:solidFill>
+              <a:srgbClr val="888888"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:round/>
+          </a:ln>
+        </c:spPr>
+        <c:txPr>
+          <a:bodyPr/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr>
+              <a:defRPr sz="800" b="0" i="0" u="none" strike="noStrike">
+                <a:solidFill>
+                  <a:srgbClr val="888888"/>
+                </a:solidFill>
+                <a:latin typeface="Arial"/>
+              </a:defRPr>
+            </a:pPr>
+            <a:endParaRPr lang="en-US"/>
+          </a:p>
+        </c:txPr>
+        <c:crossAx val="2094734554"/>
+        <c:crosses val="autoZero"/>
+        <c:crossBetween val="between"/>
+      </c:valAx>
+      <c:spPr>
+        <a:noFill/>
+        <a:ln>
+          <a:noFill/>
+        </a:ln>
+        <a:effectLst/>
+      </c:spPr>
+    </c:plotArea>
+    <c:legend>
+      <c:legendPos val="r"/>
+      <c:overlay val="0"/>
+      <c:txPr>
+        <a:bodyPr/>
+        <a:lstStyle/>
+        <a:p>
+          <a:pPr>
+            <a:defRPr sz="800">
+              <a:solidFill>
+                <a:srgbClr val="888888"/>
+              </a:solidFill>
+            </a:defRPr>
+          </a:pPr>
+          <a:endParaRPr lang="en-US"/>
+        </a:p>
+      </c:txPr>
+    </c:legend>
+    <c:plotVisOnly val="1"/>
+    <c:dispBlanksAs val="span"/>
+    <c:showDLblsOverMax val="1"/>
+  </c:chart>
+  <c:spPr>
+    <a:solidFill>
+      <a:srgbClr val="151515"/>
+    </a:solidFill>
+    <a:ln>
+      <a:noFill/>
+    </a:ln>
+    <a:effectLst/>
+  </c:spPr>
+  <c:externalData r:id="rId1">
+    <c:autoUpdate val="0"/>
+  </c:externalData>
+</c:chartSpace>

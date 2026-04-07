@@ -1,0 +1,111 @@
+Bonjour Mesdames, Messieurs les membres du jury.
+
+Je m'appelle Mohamed Bahafid, et je suis candidat libre au BTS Management Économique de la Construction, session 2026, académie de Lyon.
+
+Le rapport que je vous présente aujourd'hui rend compte des activités les plus significatives de mes huit années d'expérience dans le BTP.
+
+...
+
+Mon parcours s'est construit en trois phases.
+
+D'abord, quatre années au Maroc, au sein du Conseil Régional de Béni Mellal-Khénifra, en tant que technicien études et suivi des travaux. J'y assurais la maîtrise d'ouvrage publique : métrés, estimations, commissions d'appel d'offres et suivi financier.
+
+Ensuite, deux années en France comme chef d'équipe puis chef de chantier en gros œuvre. Cette expérience terrain m'a appris les coûts réels de production, les rendements, et les contraintes d'exécution.
+
+Enfin, une formation de huit mois à l'AFPA Colmar en tant que Technicien Modeleur BIM. Aujourd'hui, je dirige BIMCO, mon activité indépendante qui combine le BIM et l'économie de la construction.
+
+Ce rapport s'articule autour de deux projets majeurs et cinq situations professionnelles, analysées selon la méthode CPAR : Contexte, Problème, Action, Résultat.
+
+...
+
+Concernant le cadre professionnel.
+
+Au Conseil Régional, l'Agence d'Exécution des Projets, dirigée par Monsieur Doghmani, assure la maîtrise d'ouvrage des infrastructures régionales. En tant que technicien de suivi, j'étais le relais technique du Directeur.
+
+Mes missions principales étaient : les métrés avant-projet et l'estimation confidentielle, la rédaction des dossiers de consultation, l'analyse des offres en commission, le suivi financier mensuel, et les visites terrain avec attachements contradictoires.
+
+BIMCO, créé en janvier 2026, prolonge cette expérience. L'objectif est d'appliquer le BIM aux métiers de l'économiste : métrés par extraction de maquette numérique, études de prix ancrées dans les coûts réels, et développement de plugins Revit et Dynamo pour automatiser la chaîne du métré au DPGF.
+
+...
+
+Passons au premier projet.
+
+Il s'agit de la mise à niveau de quatre communes de la province de Khénifra : El Hammam, Kerrouchen, Ouaoumana et Sebt Ait Rahou. Le marché couvrait huit corps d'état, de l'assainissement à l'éclairage public, pour un montant total de 44,6 millions de dirhams hors taxes, soit environ 4,86 millions d'euros.
+
+Les deux communes les plus importantes, Ouaoumana et Sebt Ait Rahou, concentraient à elles seules 68 pour cent du budget. Sur ce projet, j'ai réalisé les avant-métrés, l'estimation confidentielle, participé à la commission d'appel d'offres et piloté le suivi financier sur 18 mois.
+
+...
+
+Je vous présente maintenant les deux premières situations.
+
+Situation 1 : l'estimation confidentielle pour la commune d'Ouaoumana, d'un montant de 15,8 millions de dirhams hors taxes.
+
+Le problème principal était double : les plans du bureau d'études présentaient des incohérences, et la mercuriale de référence datait de 2014, avec des dérives de 15 à 22 pour cent sur certains prix.
+
+Mon action a été de réaliser 112 lignes de métrés sur AutoCAD, complétées par quatre visites de terrain, puis de croiser trois sources de prix : la mercuriale actualisée, cinq marchés similaires récemment adjugés, et huit devis de fournisseurs locaux.
+
+Résultat : l'écart avec l'offre retenue n'a été que de 3,2 pour cent, bien en dessous de la marge habituelle de 5 à 10 pour cent. Ma méthode a été adoptée comme standard pour les trois autres communes.
+
+...
+
+Situation 2 : l'analyse des offres et la commission d'appel d'offres.
+
+Trois entreprises avaient répondu. L'un des dossiers contenait des erreurs arithmétiques, et un autre affichait des prix anormalement bas sur des postes majeurs.
+
+J'ai procédé à la vérification de conformité, à la correction arithmétique, et j'ai construit une grille comparative technique et financière sur cent points.
+
+L'entreprise retenue a obtenu 94 sur 100. L'attribution s'est faite en quinze jours, sans aucun recours.
+
+...
+
+Situation 3 : le suivi financier du chantier de Kerrouchen.
+
+Ce chantier représentait 7,3 millions de dirhams sur 18 mois. À mi-parcours, le dépassement extrapolé atteignait plus 4,8 pour cent, soit 349 000 dirhams. Dépasser le seuil de 5 pour cent aurait imposé un avenant, avec trois à six mois de procédure administrative.
+
+J'ai mis en place un tableau de bord hebdomadaire à trois indicateurs et proposé un mécanisme de compensation entre postes, dégageant 56 000 dirhams de marge.
+
+Résultat : le dépassement final a été ramené à plus 0,8 pour cent. L'avenant a été évité. Et ce tableau de bord a été adopté par l'ensemble de l'Agence.
+
+...
+
+Situation 4 : la coordination de quatre chantiers simultanés.
+
+J'étais le relais unique du Directeur pour quatre sites distants de 20 à 80 kilomètres. En semaine 23, trois crises se sont produites simultanément : un retard de livraison d'enrobés, une alerte météo, et un litige sur les quantités de bordures.
+
+J'ai traité les trois fronts en 48 heures. Le retard a été rattrapé. Le litige sur les bordures a été ramené de 15 pour cent d'écart à 2,3 pour cent. Et le modèle de compte-rendu que j'ai créé dans l'urgence est devenu le standard de l'Agence.
+
+...
+
+Passons au second projet : la route Lehri-Kerrouchen.
+
+25 kilomètres en zone montagneuse du Moyen Atlas, avec un budget de 24,2 millions de dirhams hors taxes. Les deux postes dominants étaient le corps de chaussée et les ouvrages hydrauliques, qui représentaient ensemble 58 pour cent du budget.
+
+Situation 5 : le contrôle des cubatures de terrassement.
+
+Au-delà du kilomètre 12, du calcaire fracturé a été découvert, entraînant un surcoût immédiat de 285 000 dirhams. Trois ouvrages hydrauliques non prévus au marché étaient également nécessaires.
+
+J'ai instauré un contrôle contradictoire GPS tous les 500 mètres et travaillé avec le bureau d'études pour dimensionner trois dalots en béton armé. Le surcoût a été entièrement absorbé par compensation sur d'autres postes. La réception a eu lieu dans les délais, sans avenant.
+
+...
+
+En synthèse.
+
+Mes activités professionnelles m'ont permis de développer des compétences solides en métrés tous corps d'état, en estimation, en analyse des offres, en suivi financier et en contrôle des quantités. Ma double expérience, côté maîtrise d'ouvrage au Maroc et côté exécution en France, me donne une lecture complète des projets, ancrée dans la réalité du terrain.
+
+...
+
+Concernant le BIM. Ma formation à l'AFPA Colmar m'a permis de modéliser un bâtiment R+2 complet et d'en extraire automatiquement 78 postes de métrés, avec un écart de seulement 1,8 pour cent par rapport au métré manuel. La détection de 12 conflits structure et réseaux en amont illustre la valeur ajoutée concrète du BIM pour l'économiste.
+
+Mon projet professionnel avec BIMCO repose sur cette triple compétence : maîtrise d'ouvrage, exécution, et BIM. À court terme, obtenir le BTS MEC. À moyen terme, développer les premières prestations et les premiers plugins Revit. À long terme, constituer un véritable cabinet d'ingénierie BIM et économie de la construction.
+
+...
+
+Pour conclure.
+
+Ce rapport démontre comment je résous un problème sous contrainte : délai, budget, aléas géologiques, coordination de crise.
+
+Cinq compétences construites sur le terrain. Une double lecture des projets. La rigueur de l'écrit comme protection. Et BIMCO, la traduction de tout ce parcours en une activité professionnelle.
+
+Le BTS MEC ne valide pas seulement un diplôme. Il valide huit ans de terrain, de chiffres et de chantiers. Et il ouvre la voie à ce que je veux construire.
+
+Je vous remercie pour votre attention et je suis à votre disposition pour vos questions.

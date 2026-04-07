@@ -1,0 +1,1452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <p:cSld>
+    <p:bg>
+      <p:bgPr>
+        <a:solidFill>
+          <a:srgbClr val="F5F8FA"/>
+        </a:solidFill>
+        <a:effectLst/>
+      </p:bgPr>
+    </p:bg>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr/>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="Rectangle 1"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="0"/>
+            <a:ext cx="12188952" cy="1051560"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="FFFFFF"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="Rectangle 2"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="0"/>
+            <a:ext cx="64008" cy="1051560"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="00959E"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="4" name="TextBox 3"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="182880" y="73152"/>
+            <a:ext cx="3657600" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>BIMCO ET PERSPECTIVES</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="TextBox 4"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="182880" y="320040"/>
+            <a:ext cx="11823192" cy="457200"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="2200" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Protocole BIM - Mon projet professionnel</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="6" name="Rectangle 5"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="182880" y="1188720"/>
+            <a:ext cx="5820156" cy="5349240"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="FFFFFF"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="7" name="Rectangle 6"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="182880" y="1188720"/>
+            <a:ext cx="5820156" cy="64008"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="00959E"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="8" name="TextBox 7"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="320040" y="1280160"/>
+            <a:ext cx="5545836" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1400" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Protocole BIM - BIMCO</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="9" name="TextBox 8"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="320040" y="1691640"/>
+            <a:ext cx="1554480" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Convention BIM : </a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="10" name="TextBox 9"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1874520" y="1691640"/>
+            <a:ext cx="3945637" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Charte projet, niveaux de developpement LOD</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="11" name="TextBox 10"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="320040" y="2075688"/>
+            <a:ext cx="1554480" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Format echange : </a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="12" name="TextBox 11"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1874520" y="2075688"/>
+            <a:ext cx="3945637" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>IFC / RVT Revit - interoperabilite</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="13" name="TextBox 12"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="320040" y="2459736"/>
+            <a:ext cx="1554480" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Extraction metres : </a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="14" name="TextBox 13"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1874520" y="2459736"/>
+            <a:ext cx="3945637" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Quantitatifs automatises depuis maquette</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15" name="TextBox 14"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="320040" y="2843784"/>
+            <a:ext cx="1554480" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Gain de temps : </a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="16" name="TextBox 15"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1874520" y="2843784"/>
+            <a:ext cx="3945637" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Estimation 3x plus rapide vs AutoCAD</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="17" name="TextBox 16"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="320040" y="3227832"/>
+            <a:ext cx="1554480" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Outils : </a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="18" name="TextBox 17"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1874520" y="3227832"/>
+            <a:ext cx="3945637" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Revit, BIM360, Navisworks - formation AFPA</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:graphicFrame>
+        <p:nvGraphicFramePr>
+          <p:cNvPr id="19" name="Chart 18"/>
+          <p:cNvGraphicFramePr>
+            <a:graphicFrameLocks noGrp="1"/>
+          </p:cNvGraphicFramePr>
+          <p:nvPr/>
+        </p:nvGraphicFramePr>
+        <p:xfrm>
+          <a:off x="182880" y="3657600"/>
+          <a:ext cx="5820156.0" cy="2788920"/>
+        </p:xfrm>
+        <a:graphic>
+          <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart">
+            <c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" r:id="rId2"/>
+          </a:graphicData>
+        </a:graphic>
+      </p:graphicFrame>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="20" name="Rectangle 19"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6185916" y="1188720"/>
+            <a:ext cx="5820156" cy="5349240"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F0F4F8"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="21" name="Rectangle 20"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6185916" y="1188720"/>
+            <a:ext cx="5820156" cy="64008"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F5A118"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="22" name="TextBox 21"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="1280160"/>
+            <a:ext cx="5545836" cy="320040"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1400" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="F5A118"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Mon projet professionnel</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="23" name="Rectangle 22"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6277356" y="1691640"/>
+            <a:ext cx="5637276" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="00959E"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="24" name="TextBox 23"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="1709928"/>
+            <a:ext cx="5545836" cy="237744"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1100" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>2026 - Court terme</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="25" name="TextBox 24"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="2011680"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Obtenir BTS MEC - validation acquis</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="26" name="TextBox 25"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="2304288"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Developper BIMCO - premiers clients</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="27" name="TextBox 26"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="2596896"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Maquettes BIM chantiers VRD</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="28" name="Rectangle 27"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6277356" y="3026664"/>
+            <a:ext cx="5637276" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F5A118"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="29" name="TextBox 28"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="3044952"/>
+            <a:ext cx="5545836" cy="237744"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1100" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>2027-2028 - Moyen terme</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="30" name="TextBox 29"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="3346704"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Licence pro gestion de projet BTP</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="31" name="TextBox 30"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="3639312"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Partenariat BET et maitres d'oeuvre</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="32" name="TextBox 31"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="3931920"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Logiciel estimation BIM integree</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="33" name="Rectangle 32"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6277356" y="4361688"/>
+            <a:ext cx="5637276" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="006E78"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="34" name="TextBox 33"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="4379976"/>
+            <a:ext cx="5545836" cy="237744"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1100" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Long terme</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="35" name="TextBox 34"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="4681728"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Expert BIM reconnu MOE / AMO</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="36" name="TextBox 35"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="4974336"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Formation jeunes techniciens BTP</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="37" name="TextBox 36"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6323076" y="5266944"/>
+            <a:ext cx="5545836" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="1000" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="1C3340"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>  • Pont Maroc - France - expertise BIM</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="38" name="Rectangle 37"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="6601968"/>
+            <a:ext cx="12188952" cy="256032"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="D4E1E5"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:lnRef>
+          <a:fillRef idx="3">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="2">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="39" name="TextBox 38"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="137160" y="6611112"/>
+            <a:ext cx="7315200" cy="228600"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="l"/>
+            <a:r>
+              <a:rPr sz="900" b="0" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="6E8A96"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>BAHAFID Mohamed . BTS MEC U62 . Session 2026</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="40" name="TextBox 39"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="11640312" y="6611112"/>
+            <a:ext cx="411480" cy="228600"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="r"/>
+            <a:r>
+              <a:rPr sz="900" b="1" i="0">
+                <a:solidFill>
+                  <a:srgbClr val="00959E"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+              </a:rPr>
+              <a:t>10</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sld>

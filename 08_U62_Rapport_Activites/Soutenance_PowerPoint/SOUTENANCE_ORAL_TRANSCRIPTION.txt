@@ -1,0 +1,49 @@
+TRANSCRIPTION - SOUTENANCE ORAL BTS MEC - Mohamed
+Durée : 9 min 08 s
+=====================================================
+
+Bonjour mesdames messieurs les membres du jury, je m'appelle Mohamed, je suis candidat libre au BTS Métiers de l'Économie de la Construction, session 2026, académie de Lyon.
+
+Avant de rentrer dans le vif du sujet, je vais vous présenter rapidement comment ce rapport est organisé. Il retrace mon parcours sur 8 ans dans le BTP à travers de projets principaux et 5 situations professionnelles. Le rapport est découpé en 5 parties : mon parcours et ma structure d'accueil, ensuite les deux projets avec les situations professionnelles associées, puis les activités complémentaires et le bilan, et enfin mon activité actuelle Banco.
+
+Alors pour commencer, un mot sur mon parcours. J'ai débuté au Maroc en 2017 au Conseil Régional de Béni Mellal-Khénifra. Pendant 3 ans j'ai travaillé comme technicien, j'ai fait des suivis sur des marchés publics d'infrastructures. C'est là que j'ai appris les bases : l'estimation, la rédaction des dossiers de consultation, le suivi de chantier.
+
+Ensuite, en arrivant en France en 2022, j'ai découvert un autre aspect du métier. J'ai travaillé côté exécution, d'abord comme chef d'équipe brocheur chez Gali dans la Loire, puis chef de chantier chez Monsieur et fils dans le Rhône. Ça m'a permis de mieux comprendre comment les coûts se construisent concrètement sur un chantier.
+
+Puis j'ai suivi une formation BIM à l'AFPA de Colmar où j'ai obtenu le titre de Modeleur BIM. Et depuis janvier 2026, j'ai créé Banco, ma micro-entreprise, en parallèle de cette candidature au BTS.
+
+Ma structure d'accueil au Maroc, c'était donc le Conseil Régional, une collectivité qui couvre cinq provinces. J'étais rattaché à l'agence d'exécution des projets. Concrètement, au quotidien, je m'occupais de préparer les estimations confidentielles avant les appels d'offres, de participer à l'analyse des offres et de suivre les chantiers sur le terrain.
+
+L'estimation confidentielle, c'est un document obligatoire au Maroc. C'est elle qui fixe le prix plafond : si une entreprise propose un prix au-dessus, son offre est automatiquement éliminée. Donc c'est un exercice qui demande beaucoup de rigueur.
+
+Quelques mots sur Banco, mon activité actuelle. En fait, pendant ma formation BIM, je me suis rendu compte que les outils existants sont surtout pensés pour les architectes ou les bureaux d'études structure, mais pour l'économiste de la construction, il n'y a pas grand-chose. C'est de là qu'est née l'idée de Banco. L'objectif, c'est d'extraire les métrés directement depuis la maquette numérique et d'automatiser la chaîne du métré jusqu'au DPGF grâce à des scripts Revit et Dynamo.
+
+Passons maintenant au premier projet. C'était la mise à niveau de 4 communes dans la province de Khénifra. Un projet conséquent : environ 53 millions de dirhams, soit à peu près 4,8 millions d'euros. Il couvrait 8 corps d'état sur 18, avec 4 chantiers répartis sur un large périmètre. C'est sur ce projet que se situent mes 4 premières situations professionnelles.
+
+PREMIÈRE SITUATION : L'estimation confidentielle pour la commune de Haumana. La difficulté principale, c'est que la mercuriale dont je disposais datait de 2014, elle n'était plus du tout en phase avec les prix du marché, avec des écarts qui pouvaient aller de 15 à 22 %. Donc ce que j'ai fait, c'est croiser systématiquement trois sources différentes pour recalibrer chaque poste. Au final, l'écart entre mon estimation et le marché attribué a été de 3,2 %, ce qui était plutôt encourageant puisque la moyenne régionale se situait entre 5 et 10 %.
+
+DEUXIÈME SITUATION : L'analyse des offres en commission. 3 entreprises avaient répondu. En épluchant les dossiers, j'ai relevé des erreurs arithmétiques et identifié des prix qui semblaient anormalement bas. J'ai proposé une grille d'évaluation sur 100 points pour le technique et 40 pour le financier, avec une justification pour chaque note. L'attribution s'est faite sans recours, ce qui pour nous était un bon signe.
+
+TROISIÈME SITUATION : Le suivi financier du chantier de Kerrouchène. Au bout de quelques mois, j'ai commencé à voir que certains postes dérivaient : la chaussée +8 %, les murs de soutènement +15 %. En projetant la tendance, on arrivait à un dépassement d'environ 4,8 %, sachant que le seuil pour déclencher un avenant est à 5 %, on était vraiment pas loin. J'ai donc mis en place un tableau de bord hebdomadaire pour suivre ça de près, et j'ai procédé à des compensations entre postes en réduisant un peu le paysage et le mobilier urbain. Au final, le dépassement a été limité à 0,8 %, on a évité l'avenant. Et ce tableau de bord a ensuite été repris sur les autres communes, ce qui m'a fait plaisir.
+
+QUATRIÈME SITUATION : C'est une semaine un peu particulière, la semaine 23. En l'espace de 48 heures, trois problèmes en même temps : un retard sur la livraison des enrobés, une alerte météo, et un litige avec l'entreprise sur les quantités de bordures avec un écart de 15 %. Concrètement, j'ai rédigé une note au directeur, mis un ordre de service d'arrêt avec relevé photographique, et organisé un mesurage sur site avec l'entreprise. Le litige est passé de 15 à 2,3 %. C'est une semaine qui m'a beaucoup appris, notamment sur l'importance de tout formaliser par écrit.
+
+DEUXIÈME PROJET : La route Lari-Kerrouchène, 25 km en zone montagneuse dans le Moyen-Atlas. Le terrain était assez compliqué : 400 m de dénivelé, des pentes jusqu'à 12 %, le drainage représentait une part très importante du budget, bien plus que sur une route en plaine.
+
+CINQUIÈME SITUATION : Au point kilométrique, on a rencontré du calcaire fracturé que l'étude géotechnique n'avait pas prévu. 5000 m³ à classifier, le prix unitaire passait de 28 à 85 dirhams, ce qui représentait un surcoût significatif. Pour gérer ça, j'ai réalisé des profils en travers tous les 25 mètres, des relevés GPS contradictoires, et on a conçu des dalots en béton armé avec le bureau d'étude. Au final, le surcoût a pu être absorbé par compensation entre postes, pas d'avenant, pas de réclamation.
+
+En complément de ces deux projets, j'ai aussi travaillé sur 5 autres marchés publics au Maroc, couvrant des routes, des pistes rurales, de l'eau potable et de la voirie. Et le fait d'avoir ensuite travaillé côté exécution en France, ça m'a aidé à mieux comprendre d'où viennent les écarts entre une estimation et la réalité du chantier. C'est un complément que je trouve utile au quotidien.
+
+Pour la comparaison entre le Maroc et la France, ce que j'ai constaté, c'est que les principes de transparence, égalité de traitement, mise en concurrence sont les mêmes. Les noms des documents changent : le CPS marocain correspond au CCAP, l'estimation confidentielle correspond à l'estimation du maître d'ouvrage, mais la logique est identique. Le fait d'avoir travaillé dans ces deux contextes, ça m'a simplement permis de voir les choses sous des angles différents. Au Maroc, j'étais du côté de ceux qui préparent les marchés ; en France, j'étais sur le chantier. Et naturellement, ça aide à mieux comprendre les contraintes de chacun.
+
+Pour le bilan réflexif : ce que j'ai appris — la semaine 23 m'a confirmé que la rigueur de l'écrit (les ordres de service, les attachements, les comptes rendus), c'est vraiment ce qui vous protège quand la situation se complique. Et le fait de croiser plusieurs sources de prix, ça fait une vraie différence sur la fiabilité des estimations.
+
+Ce que je ferais différemment : le tableau de bord avec le REC, je l'aurais mis en place dès le premier mois, pas au 9e quand la dérive était déjà bien engagée. J'aurais aussi demandé une étude géotechnique complémentaire avant les terrassements. Ce sont des leçons que j'ai retenues.
+
+Sur le BIM : le protocole que j'ai mis en place à l'AFPA m'a permis d'extraire les métrés en 2h contre 2 jours en méthode traditionnelle. C'est vraiment là que j'ai vu le potentiel de ces outils pour l'économie de la construction.
+
+Pour la suite, l'objectif à court terme est d'obtenir le BTS et de lancer les premières prestations d'études. Et à plus long terme, développer un plugin Revit vers DPGF et une application web de suivi économique.
+
+Pour conclure, ce que je souhaite que vous reteniez : c'est d'abord que les compétences du référentiel ont toutes été pratiquées en situation réelle. Ensuite, que le fait d'avoir travaillé au Maroc puis en France, dans des rôles différents, m'a permis d'avoir une vision plus complète de la chaîne d'un projet. Et enfin, que Banco est la suite naturelle de ce parcours.
+
+Je vous remercie pour votre attention et je suis à votre disposition pour vos questions.

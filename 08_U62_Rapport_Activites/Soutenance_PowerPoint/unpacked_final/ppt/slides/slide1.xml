@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?><p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld name="Slide 1">
+    <p:bg>
+      <p:bgPr>
+        <a:solidFill>
+          <a:srgbClr val="0D0D0D"/>
+        </a:solidFill>
+        <a:effectLst/>
+      </p:bgPr>
+    </p:bg>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="Shape 0"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="0"/>
+            <a:ext cx="5669280" cy="5143500"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="0D0D0D"/>
+          </a:solidFill>
+          <a:ln w="12700">
+            <a:solidFill>
+              <a:srgbClr val="0D0D0D"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+          </a:ln>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="Shape 1"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5650992" y="0"/>
+            <a:ext cx="36576" cy="5143500"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="007A7F">
+              <a:alpha val="50000"/>
+            </a:srgbClr>
+          </a:solidFill>
+          <a:ln w="12700">
+            <a:solidFill>
+              <a:srgbClr val="007A7F"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+          </a:ln>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="4" name="Shape 2"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5687568" y="0"/>
+            <a:ext cx="3456432" cy="5143500"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="007A7F"/>
+          </a:solidFill>
+          <a:ln w="12700">
+            <a:solidFill>
+              <a:srgbClr val="007A7F"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+          </a:ln>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="Shape 3"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="502920" y="502920"/>
+            <a:ext cx="2194560" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="1A1A1A"/>
+          </a:solidFill>
+          <a:ln w="6350">
+            <a:solidFill>
+              <a:srgbClr val="007A7F"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+          </a:ln>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="6" name="Text 4"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="502920" y="502920"/>
+            <a:ext cx="2194560" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900" kern="0" spc="200" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007A7F"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>BTS MEC — SESSION 2026</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="7" name="Text 5"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="502920" y="914400"/>
+            <a:ext cx="4937760" cy="2743200"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="4200" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Cambria" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Cambria" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Cambria" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>Rapport
+d'Activités
+</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="4200" b="1" i="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="4AACB0"/>
+                </a:solidFill>
+                <a:latin typeface="Cambria" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Cambria" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Cambria" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>Professionnelles</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="4200" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="8" name="Text 6"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="502920" y="3749040"/>
+            <a:ext cx="5029200" cy="1097280"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t xml:space="preserve">Candidat : </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>BAHAFID Mohamed
+</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t xml:space="preserve">N° : </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>02537399911 — Académie de Lyon
+</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t xml:space="preserve">Structure : </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>BIMCO | SIREN 999 580 053
+</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t xml:space="preserve">Siège : </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="AAAAAA"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>44 rue de la République, 42510 Bussières (Loire)</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1100" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="9" name="Text 7"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5852160" y="457200"/>
+            <a:ext cx="3108960" cy="914400"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="6800" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+                <a:latin typeface="Cambria" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Cambria" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Cambria" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>U62</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="6800" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="10" name="Text 8"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5943600" y="1554480"/>
+            <a:ext cx="1371600" cy="502920"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2000" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Cambria" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Cambria" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Cambria" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>8 ans</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="2000" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="11" name="Text 9"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5943600" y="2029968"/>
+            <a:ext cx="1371600" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>Expérience BTP</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="12" name="Text 10"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="1554480"/>
+            <a:ext cx="1371600" cy="502920"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2000" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Cambria" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Cambria" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Cambria" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>2 pays</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="2000" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="13" name="Text 11"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="2029968"/>
+            <a:ext cx="1371600" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>Maroc + France</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="14" name="Text 12"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5943600" y="2834640"/>
+            <a:ext cx="1371600" cy="502920"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2000" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Cambria" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Cambria" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Cambria" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>82,5 M DH</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="2000" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15" name="Text 13"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5943600" y="3310128"/>
+            <a:ext cx="1371600" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>Investissements gérés</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="16" name="Text 14"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="2834640"/>
+            <a:ext cx="1371600" cy="502920"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2000" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+                <a:latin typeface="Cambria" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Cambria" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Cambria" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>7</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="2000" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="17" name="Text 15"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="3310128"/>
+            <a:ext cx="1371600" cy="274320"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" indent="0" algn="ctr">
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>Marchés publics</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sld>

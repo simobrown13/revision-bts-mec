@@ -1,0 +1,297 @@
+[
+  {
+    "id": 1,
+    "title": "Project Progress Update",
+    "level": "B1+",
+    "theme": "Suivi de chantier",
+    "keyPoints": [
+      "James Barrett, chef de projet, complexe résidentiel à East London",
+      "3 immeubles de 6 étages = 144 logements",
+      "Phase gros œuvre : ossature béton Bloc A terminée, coffrage Bloc B démarré",
+      "Retard de 2 semaines (problème approvisionnement acier)",
+      "Livraison repoussée de mars à mi-avril 2027",
+      "Budget total : 12,5 millions £ — 7 millions dépensés (dépassement)",
+      "Dépassement dû à la hausse du ciment et du bois",
+      "Recherche d’économies sur le second œuvre avec l’architecte",
+      "Sécurité : aucun incident majeur"
+    ],
+    "vocab": [
+      {
+        "en": "residential complex",
+        "fr": "complexe résidentiel"
+      },
+      {
+        "en": "apartment block",
+        "fr": "immeuble d’habitation"
+      },
+      {
+        "en": "structural phase",
+        "fr": "phase gros œuvre"
+      },
+      {
+        "en": "concrete frame",
+        "fr": "ossature béton"
+      },
+      {
+        "en": "formwork",
+        "fr": "coffrage"
+      },
+      {
+        "en": "supply chain",
+        "fr": "chaîne d’approvisionnement"
+      },
+      {
+        "en": "reinforcing steel",
+        "fr": "acier d’armature / ferraillage"
+      },
+      {
+        "en": "completion date",
+        "fr": "date de livraison"
+      },
+      {
+        "en": "overspend",
+        "fr": "dépassement budgétaire"
+      },
+      {
+        "en": "finishing works",
+        "fr": "second œuvre / finitions"
+      },
+      {
+        "en": "timber",
+        "fr": "bois d’œuvre"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "BIM Implementation Meeting",
+    "level": "B2",
+    "theme": "Maquette numérique / BIM",
+    "keyPoints": [
+      "Sarah Chen, coordinatrice BIM, projet Morrison Tower",
+      "Approche BIM niveau 2 exigée par le client",
+      "Travail collaboratif : architecte, ingénieur structure, économiste",
+      "Outil principal : Revit + environnement de données commun (CDE)",
+      "200+ clashs détectés entre CVC et poutres structure",
+      "Extraction des métrés depuis la maquette = -30% temps d’estimation",
+      "Prochaine étape : planning 4D avec Navisworks",
+      "Objectif : visualiser la séquence de construction et anticiper les retards"
+    ],
+    "vocab": [
+      {
+        "en": "BIM coordinator",
+        "fr": "coordinateur BIM"
+      },
+      {
+        "en": "stakeholders",
+        "fr": "parties prenantes"
+      },
+      {
+        "en": "quantity surveyor",
+        "fr": "économiste de la construction"
+      },
+      {
+        "en": "common data environment",
+        "fr": "environnement de données commun"
+      },
+      {
+        "en": "clash detection",
+        "fr": "détection de conflits / clashs"
+      },
+      {
+        "en": "mechanical services",
+        "fr": "équipements CVC"
+      },
+      {
+        "en": "structural beams",
+        "fr": "poutres de structure"
+      },
+      {
+        "en": "bill of quantities",
+        "fr": "devis quantitatif estimatif (DQE)"
+      },
+      {
+        "en": "4D scheduling",
+        "fr": "planning 4D (temps)"
+      },
+      {
+        "en": "build sequence",
+        "fr": "phasage de construction"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Site Safety Briefing",
+    "level": "B1",
+    "theme": "Sécurité chantier",
+    "keyPoints": [
+      "Tom Williams, responsable santé et sécurité du chantier",
+      "EPI obligatoires : casque, gilet haute visibilité, chaussures",
+      "Travail en hauteur = harnais obligatoire",
+      "2 quasi-accidents : planche échafaudage tombée + camion sans guide",
+      "Nouvelles règles : inspection échafaudage chaque matin",
+      "Interdiction mouvement véhicule sans banksman (signaleur)",
+      "Grue à tour en opération zone B, accès restreint",
+      "Signaler tout danger au chef de chantier"
+    ],
+    "vocab": [
+      {
+        "en": "health and safety officer",
+        "fr": "responsable HSE"
+      },
+      {
+        "en": "PPE",
+        "fr": "équipements de protection individuelle (EPI)"
+      },
+      {
+        "en": "hard hat",
+        "fr": "casque de chantier"
+      },
+      {
+        "en": "high-visibility vest",
+        "fr": "gilet haute visibilité"
+      },
+      {
+        "en": "harness",
+        "fr": "harnais de sécurité"
+      },
+      {
+        "en": "near-miss incident",
+        "fr": "quasi-accident"
+      },
+      {
+        "en": "scaffolding",
+        "fr": "échafaudage"
+      },
+      {
+        "en": "banksman",
+        "fr": "signaleur"
+      },
+      {
+        "en": "tower crane",
+        "fr": "grue à tour"
+      },
+      {
+        "en": "site supervisor",
+        "fr": "chef de chantier"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Cost Estimation Presentation",
+    "level": "B2",
+    "theme": "Estimation des coûts",
+    "keyPoints": [
+      "Claire Dupont, consultante coûts chez Henderson Associates",
+      "Projet : extension école Riverside, 12 salles + gymnase + rénovation",
+      "Estimation basée sur prix marché et benchmark 3 projets similaires",
+      "Coût total estimé : 4,8 millions £",
+      "Répartition : infrastructure 8%, superstructure 35%, CVC 22%, finitions 18%, extérieurs 17%",
+      "Risque 1 : contamination du sol, fondations +15%",
+      "Risque 2 : volatilité prix acier +12% dernier trimestre",
+      "Provision pour aléas : 7,5%"
+    ],
+    "vocab": [
+      {
+        "en": "cost consultant",
+        "fr": "consultant en coûts"
+      },
+      {
+        "en": "preliminary cost estimate",
+        "fr": "estimation préliminaire"
+      },
+      {
+        "en": "scope of works",
+        "fr": "périmètre des travaux"
+      },
+      {
+        "en": "refurbishment",
+        "fr": "réhabilitation / rénovation"
+      },
+      {
+        "en": "benchmarking",
+        "fr": "analyse comparative"
+      },
+      {
+        "en": "substructure",
+        "fr": "infrastructure / fondations"
+      },
+      {
+        "en": "cladding",
+        "fr": "bardage / revêtement façade"
+      },
+      {
+        "en": "contingency",
+        "fr": "provision pour aléas"
+      },
+      {
+        "en": "geotechnical survey",
+        "fr": "étude géotechnique"
+      },
+      {
+        "en": "volatile market",
+        "fr": "marché volatil"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Sustainability in Construction",
+    "level": "B2+",
+    "theme": "Développement durable",
+    "keyPoints": [
+      "Professeur Alan Wright, Université de Manchester",
+      "Le bâtiment = ~40% des émissions carbone mondiales",
+      "Carbone incorporé (fabrication/transport) et carbone opérationnel (exploitation)",
+      "Béton bas carbone : remplacement ciment par laitier ou cendres volantes, -50%",
+      "Construction bois : CLT lamellé-croisé jusqu’à 18 étages",
+      "Norme maison passive : isolation, étanchéité, VMC double flux",
+      "RE2020 en France : objectifs ambitieux énergie + carbone",
+      "Le développement durable est une exigence fondamentale"
+    ],
+    "vocab": [
+      {
+        "en": "sustainability",
+        "fr": "développement durable"
+      },
+      {
+        "en": "carbon emissions",
+        "fr": "émissions carbone"
+      },
+      {
+        "en": "embodied carbon",
+        "fr": "carbone incorporé / gris"
+      },
+      {
+        "en": "operational carbon",
+        "fr": "carbone opérationnel"
+      },
+      {
+        "en": "low-carbon concrete",
+        "fr": "béton bas carbone"
+      },
+      {
+        "en": "blast furnace slag",
+        "fr": "laitier de haut fourneau"
+      },
+      {
+        "en": "fly ash",
+        "fr": "cendres volantes"
+      },
+      {
+        "en": "cross-laminated timber (CLT)",
+        "fr": "bois lamellé-croisé (CLT)"
+      },
+      {
+        "en": "passive house",
+        "fr": "maison passive"
+      },
+      {
+        "en": "heat recovery ventilation",
+        "fr": "VMC double flux"
+      }
+    ]
+  }
+]

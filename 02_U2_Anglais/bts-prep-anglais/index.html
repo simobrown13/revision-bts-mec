@@ -1,0 +1,2581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTS MEC - Prep Anglais E2-A</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --card-hover: #222633;
+  --border: #2a2e3a;
+  --text: #e8e8e8;
+  --text-muted: #8b8fa3;
+  --gold: #e09f3e;
+  --green: #2a9d8f;
+  --red: #e76f51;
+  --blue: #4a90d9;
+  --purple: #a78bfa;
+  --radius: 12px;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg); color: var(--text);
+  min-height: 100dvh; line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container { max-width: 720px; margin: 0 auto; padding: 16px; }
+header { text-align: center; padding: 24px 16px 8px; }
+header h1 { font-size: 1.4rem; font-weight: 700; color: var(--gold); }
+header p { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+/* Stepper */
+.stepper { display: flex; align-items: center; justify-content: center; margin: 20px 0 24px; padding: 0 8px; }
+.step-item { display: flex; align-items: center; }
+.step-circle {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700;
+  background: var(--card); border: 2px solid var(--border); color: var(--text-muted);
+  transition: all 0.3s; flex-shrink: 0;
+}
+.step-circle.active { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+.step-circle.done { background: var(--green); border-color: var(--green); color: #fff; }
+.step-line { width: 16px; height: 2px; background: var(--border); transition: background 0.3s; }
+.step-line.done { background: var(--green); }
+@media (min-width: 600px) {
+  .step-line { width: 32px; }
+  .step-circle { width: 36px; height: 36px; font-size: 0.85rem; }
+}
+
+/* Cards & Buttons */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 24px; border: none; border-radius: var(--radius);
+  font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s; width: 100%; text-align: center;
+}
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.btn-gold { background: var(--gold); color: var(--bg); }
+.btn-green { background: var(--green); color: #fff; }
+.btn-red { background: var(--red); color: #fff; }
+.btn-purple { background: var(--purple); color: var(--bg); }
+.btn-outline { background: transparent; border: 2px solid var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-sm { padding: 8px 16px; font-size: 0.85rem; width: auto; }
+@media (min-width: 600px) { .btn { width: auto; min-width: 200px; } }
+
+/* Screens */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* Text list */
+.text-list { display: flex; flex-direction: column; gap: 12px; }
+.text-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px; cursor: pointer; transition: border-color 0.2s, background 0.2s; position: relative;
+}
+.text-card:hover, .text-card:focus { border-color: var(--gold); background: var(--card-hover); }
+.text-card.locked { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+.text-card h3 { font-size: 1rem; color: var(--gold); margin-bottom: 4px; }
+.text-card .meta { display: flex; gap: 12px; font-size: 0.8rem; color: var(--text-muted); align-items: center; flex-wrap: wrap; }
+.text-card .meta .level { background: var(--green); color: #fff; padding: 1px 8px; border-radius: 99px; font-weight: 600; font-size: 0.75rem; }
+.lock-badge { position: absolute; top: 12px; right: 12px; font-size: 1.2rem; color: var(--text-muted); }
+
+.card-progress { margin-top: 10px; display: flex; align-items: center; gap: 10px; }
+.card-progress-bar { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.card-progress-bar .fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
+.card-progress-label { font-size: 0.75rem; font-weight: 700; min-width: 40px; text-align: right; }
+
+/* Mode selector */
+.mode-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+@media (min-width: 500px) { .mode-selector { grid-template-columns: 1fr 1fr 1fr 1fr; } }
+.mode-card {
+  background: var(--card); border: 2px solid var(--border); border-radius: var(--radius);
+  padding: 12px 8px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s;
+}
+.mode-card:hover { border-color: var(--gold); }
+.mode-card.active { border-color: var(--gold); background: var(--card-hover); }
+.mode-card .mode-icon { font-size: 1.5rem; margin-bottom: 4px; }
+.mode-card .mode-name { font-size: 0.8rem; font-weight: 700; color: var(--text); }
+.mode-card .mode-desc { font-size: 0.65rem; color: var(--text-muted); margin-top: 3px; line-height: 1.3; }
+
+/* Stats */
+.stats-bar { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.stat-item { flex: 1; min-width: 70px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; text-align: center; }
+.stat-value { font-size: 1.3rem; font-weight: 800; color: var(--gold); }
+.stat-label { font-size: 0.65rem; color: var(--text-muted); margin-top: 2px; }
+
+.global-progress { margin-bottom: 20px; }
+.global-progress-bar { width: 100%; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; margin-top: 8px; }
+.global-progress-bar .fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--gold)); border-radius: 5px; transition: width 0.6s; }
+.global-progress .label { font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; }
+
+/* Audio */
+.audio-status { text-align: center; margin: 16px 0; }
+.audio-status .label { font-size: 0.9rem; color: var(--text-muted); }
+.speed-selector { display: flex; gap: 6px; justify-content: center; margin: 12px 0; flex-wrap: wrap; }
+.speed-btn {
+  padding: 6px 12px; border: 2px solid var(--border); border-radius: 99px;
+  background: transparent; color: var(--text-muted); font-size: 0.8rem;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.speed-btn.active { border-color: var(--gold); color: var(--gold); }
+.progress-bar { width: 100%; height: 4px; background: var(--border); border-radius: 2px; margin: 16px 0; overflow: hidden; }
+.progress-bar .fill { height: 100%; background: var(--gold); border-radius: 2px; width: 0%; transition: width 0.3s; }
+
+/* Timer */
+.timer { text-align: center; margin: 20px 0; }
+.timer .time { font-size: 2.8rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--gold); }
+.timer .label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+/* Textarea */
+.notes-area {
+  width: 100%; min-height: 150px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); font-family: inherit; font-size: 0.95rem;
+  padding: 12px; resize: vertical; line-height: 1.6;
+}
+.notes-area:focus { outline: none; border-color: var(--gold); }
+.notes-area::placeholder { color: var(--text-muted); }
+
+/* Results */
+.score-display { text-align: center; margin: 16px 0; }
+.score-display .score { font-size: 3rem; font-weight: 800; color: var(--gold); }
+.score-display .max { font-size: 1.2rem; color: var(--text-muted); }
+.key-point { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+.key-point:last-child { border-bottom: none; }
+.key-point .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.key-point.found .icon { color: var(--green); }
+.key-point.missed .icon { color: var(--red); }
+
+/* Vocabulary */
+.vocab-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 500px) { .vocab-grid { grid-template-columns: 1fr 1fr; } }
+.vocab-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px; cursor: pointer; text-align: center; min-height: 80px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: border-color 0.2s; user-select: none;
+}
+.vocab-card:hover { border-color: var(--gold); }
+.vocab-card .en { font-weight: 700; font-size: 0.95rem; color: var(--gold); }
+.vocab-card .fr { font-size: 0.85rem; color: var(--green); margin-top: 6px; }
+
+.vocab-preview-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;
+}
+.vocab-preview-item:last-child { border-bottom: none; }
+.vocab-preview-item .en { color: var(--gold); font-weight: 600; }
+.vocab-preview-item .fr { color: var(--green); }
+
+/* Nav tabs */
+.nav-tabs { display: flex; margin-bottom: 20px; border-bottom: 2px solid var(--border); }
+.nav-tab {
+  flex: 1; padding: 10px; text-align: center; font-size: 0.85rem; font-weight: 600;
+  color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent;
+  margin-bottom: -2px; transition: color 0.2s, border-color 0.2s;
+  background: none; border-top: none; border-left: none; border-right: none;
+}
+.nav-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* Countdown */
+.countdown-overlay {
+  position: fixed; inset: 0; background: rgba(15,17,23,0.92);
+  display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.countdown-overlay .number { font-size: 6rem; font-weight: 800; color: var(--gold); animation: countPulse 0.6s ease-in-out; }
+@keyframes countPulse { 0% { transform: scale(0.5); opacity: 0; } 50% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
+
+/* Audio wave */
+.audio-wave { display: flex; gap: 4px; justify-content: center; align-items: flex-end; height: 40px; margin: 16px 0; }
+.audio-wave .bar { width: 4px; background: var(--gold); border-radius: 2px; animation: wave 1s ease-in-out infinite; }
+.audio-wave .bar:nth-child(1) { animation-delay: 0s; height: 12px; }
+.audio-wave .bar:nth-child(2) { animation-delay: 0.1s; height: 24px; }
+.audio-wave .bar:nth-child(3) { animation-delay: 0.2s; height: 36px; }
+.audio-wave .bar:nth-child(4) { animation-delay: 0.3s; height: 24px; }
+.audio-wave .bar:nth-child(5) { animation-delay: 0.4s; height: 16px; }
+.audio-wave .bar:nth-child(6) { animation-delay: 0.15s; height: 30px; }
+.audio-wave .bar:nth-child(7) { animation-delay: 0.35s; height: 20px; }
+@keyframes wave { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+.audio-wave.paused .bar { animation-play-state: paused; }
+
+/* Boxes */
+.hint-box {
+  background: rgba(224,159,62,0.08); border: 1px solid rgba(224,159,62,0.25);
+  border-radius: var(--radius); padding: 12px; margin-bottom: 12px;
+  font-size: 0.85rem; color: var(--gold); line-height: 1.5;
+}
+.info-box {
+  background: rgba(167,139,250,0.08); border: 1px solid rgba(167,139,250,0.25);
+  border-radius: var(--radius); padding: 12px; margin-bottom: 12px;
+  font-size: 0.85rem; color: var(--purple); line-height: 1.5;
+}
+.success-box {
+  background: rgba(42,157,143,0.1); border: 1px solid rgba(42,157,143,0.3);
+  border-radius: var(--radius); padding: 12px; margin: 12px 0;
+  color: var(--green); font-weight: 600; font-size: 0.9rem;
+  text-align: center; animation: popIn 0.5s ease;
+}
+@keyframes popIn { 0% { transform: scale(0); } 70% { transform: scale(1.1); } 100% { transform: scale(1); } }
+.new-best {
+  display: inline-block; background: var(--gold); color: var(--bg);
+  font-size: 0.7rem; font-weight: 800; padding: 2px 8px;
+  border-radius: 99px; animation: popIn 0.4s ease;
+}
+
+/* Transcript */
+.transcript-toggle {
+  background: none; border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text-muted); padding: 10px; width: 100%; text-align: left;
+  font-size: 0.85rem; cursor: pointer; margin-top: 12px; font-family: inherit;
+}
+.transcript-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.transcript-text {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px; margin-top: 8px; font-size: 0.85rem; line-height: 1.7;
+  color: var(--text-muted); white-space: pre-wrap;
+}
+
+/* ---- BASES TAB ---- */
+.lesson-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px; margin-bottom: 12px; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.lesson-card:hover { border-color: var(--gold); background: var(--card-hover); }
+.lesson-card .lesson-icon { font-size: 1.5rem; margin-bottom: 6px; }
+.lesson-card .lesson-title { font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 3px; }
+.lesson-card .lesson-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+.lesson-card .lesson-tag {
+  display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 1px 8px;
+  border-radius: 99px; margin-top: 6px;
+}
+.tag-essential { background: var(--red); color: #fff; }
+.tag-important { background: var(--gold); color: var(--bg); }
+.tag-bonus { background: var(--green); color: #fff; }
+
+.lesson-section { margin-bottom: 20px; }
+.lesson-section h3 { font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+.lesson-section p { font-size: 0.88rem; color: var(--text); margin-bottom: 8px; line-height: 1.6; }
+
+.example-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 12px; border-radius: 8px; margin-bottom: 4px; font-size: 0.88rem;
+}
+.example-row:nth-child(odd) { background: rgba(255,255,255,0.03); }
+.example-en { color: var(--gold); font-weight: 600; }
+.example-fr { color: var(--green); }
+.example-phonetic { color: var(--text-muted); font-size: 0.75rem; font-style: italic; }
+
+.listen-btn {
+  background: none; border: 1px solid var(--border); border-radius: 99px;
+  color: var(--gold); padding: 4px 10px; font-size: 0.75rem; cursor: pointer;
+  transition: border-color 0.2s; margin-left: 8px;
+}
+.listen-btn:hover { border-color: var(--gold); }
+
+/* Quiz */
+.quiz-area { margin: 16px 0; }
+.quiz-prompt { font-size: 1rem; font-weight: 600; text-align: center; margin-bottom: 12px; color: var(--text); }
+.quiz-input {
+  width: 100%; padding: 12px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); color: var(--text); font-size: 1.1rem;
+  text-align: center; font-family: inherit;
+}
+.quiz-input:focus { outline: none; border-color: var(--gold); }
+.quiz-feedback { text-align: center; margin-top: 10px; font-weight: 600; font-size: 0.9rem; }
+.quiz-feedback.correct { color: var(--green); }
+.quiz-feedback.wrong { color: var(--red); }
+.quiz-score { text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; }
+
+.method-step {
+  display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
+}
+.method-number {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.85rem;
+  background: var(--gold); color: var(--bg);
+}
+.method-content { flex: 1; }
+.method-content strong { color: var(--gold); }
+.method-content { font-size: 0.88rem; line-height: 1.5; }
+
+.template-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px; font-size: 0.88rem; line-height: 1.7; color: var(--text);
+}
+.template-box .placeholder { color: var(--gold); font-style: italic; }
+
+/* Utilities */
+.text-center { text-align: center; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.gap-12 { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.section-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+.instruction { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.hidden { display: none !important; }
+.reset-link {
+  font-size: 0.75rem; color: var(--text-muted); cursor: pointer;
+  background: none; border: none; text-decoration: underline; margin-top: 16px;
+}
+.reset-link:hover { color: var(--red); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BTS MEC - Anglais E2-A</h1>
+  <p>Entrainement comprehension orale</p>
+</header>
+
+<div class="container">
+  <div class="stepper hidden" id="stepper"></div>
+
+  <!-- ======== SCREEN: SELECTION ======== -->
+  <div class="screen active" id="screen-select">
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-tab="bases">Bases</button>
+      <button class="nav-tab" data-tab="exam">Examen</button>
+      <button class="nav-tab" data-tab="vocab">Vocabulaire</button>
+    </div>
+
+    <!-- ====== TAB: BASES ====== -->
+    <div id="tab-bases">
+      <div class="info-box">
+        Vous reprenez l'anglais apres longtemps ? Pas de stress.<br>
+        Suivez le plan. Etape par etape. Vous avez le temps.
+      </div>
+
+      <div class="text-list" id="lesson-list">
+        <div class="lesson-card" data-lesson="plan" style="border-color:var(--gold);background:rgba(224,159,62,0.05)">
+          <div class="lesson-icon">&#x1F4C5;</div>
+          <div class="lesson-title">Mon plan d'entrainement (24 jours)</div>
+          <div class="lesson-desc">Jour par jour, quoi faire, combien de temps. Commencez ici.</div>
+          <span class="lesson-tag tag-essential">Commencez ici</span>
+        </div>
+        <div class="lesson-card" data-lesson="method">
+          <div class="lesson-icon">&#x1F4CB;</div>
+          <div class="lesson-title">L'epreuve E2-A : comment ca marche ?</div>
+          <div class="lesson-desc">Comprendre l'epreuve, ce qu'on attend de vous, et la methode pas a pas.</div>
+          <span class="lesson-tag tag-essential">Essentiel</span>
+        </div>
+        <div class="lesson-card" data-lesson="numbers">
+          <div class="lesson-icon">&#x1F522;</div>
+          <div class="lesson-title">Les nombres en anglais</div>
+          <div class="lesson-desc">Reconnaitre les chiffres, pourcentages, prix et dates a l'oral. Exercice de dictee audio.</div>
+          <span class="lesson-tag tag-essential">Essentiel</span>
+        </div>
+        <div class="lesson-card" data-lesson="connectors">
+          <div class="lesson-icon">&#x1F517;</div>
+          <div class="lesson-title">Les mots de liaison</div>
+          <div class="lesson-desc">However, therefore, finally... Les reperer pour suivre la logique du texte.</div>
+          <span class="lesson-tag tag-essential">Essentiel</span>
+        </div>
+        <div class="lesson-card" data-lesson="transparent">
+          <div class="lesson-icon">&#x1F50D;</div>
+          <div class="lesson-title">Les mots transparents</div>
+          <div class="lesson-desc">Des centaines de mots anglais ressemblent au francais. Apprenez a les reperer.</div>
+          <span class="lesson-tag tag-important">Important</span>
+        </div>
+        <div class="lesson-card" data-lesson="phrases">
+          <div class="lesson-icon">&#x1F3A4;</div>
+          <div class="lesson-title">Phrases types des presentations</div>
+          <div class="lesson-desc">Les formules que vous entendrez au debut et a la fin de chaque audio.</div>
+          <span class="lesson-tag tag-important">Important</span>
+        </div>
+        <div class="lesson-card" data-lesson="template">
+          <div class="lesson-icon">&#x270D;&#xFE0F;</div>
+          <div class="lesson-title">Modele de compte-rendu</div>
+          <div class="lesson-desc">Un gabarit pret a remplir pour structurer votre redaction le jour de l'examen.</div>
+          <span class="lesson-tag tag-essential">Essentiel</span>
+        </div>
+        <div class="lesson-card" data-lesson="mini">
+          <div class="lesson-icon">&#x1F3A7;</div>
+          <div class="lesson-title">Mini-exercices d'ecoute</div>
+          <div class="lesson-desc">Ecouter des phrases courtes et identifier les informations cles.</div>
+          <span class="lesson-tag tag-bonus">Pratique</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== TAB: EXAM ====== -->
+    <div id="tab-exam" class="hidden">
+      <div class="stats-bar">
+        <div class="stat-item"><div class="stat-value" id="stat-completed">0/5</div><div class="stat-label">Reussis</div></div>
+        <div class="stat-item"><div class="stat-value" id="stat-avg">-</div><div class="stat-label">Score moyen</div></div>
+        <div class="stat-item"><div class="stat-value" id="stat-sessions">0</div><div class="stat-label">Sessions</div></div>
+      </div>
+      <div class="global-progress">
+        <div class="label"><span>Progression</span><span id="global-pct">0%</span></div>
+        <div class="global-progress-bar"><div class="fill" id="global-fill" style="width:0%"></div></div>
+      </div>
+      <p class="instruction">Mode :</p>
+      <div class="mode-selector" id="mode-selector">
+        <div class="mode-card active" data-mode="refresher">
+          <div class="mode-icon">&#x1F393;</div>
+          <div class="mode-name">Remise a niveau</div>
+          <div class="mode-desc">Tres lent, vocab avant, transcript</div>
+        </div>
+        <div class="mode-card" data-mode="discovery">
+          <div class="mode-icon">&#x1F331;</div>
+          <div class="mode-name">Decouverte</div>
+          <div class="mode-desc">Lent, indices, notes libres</div>
+        </div>
+        <div class="mode-card" data-mode="standard">
+          <div class="mode-icon">&#x1F3AF;</div>
+          <div class="mode-name">Standard</div>
+          <div class="mode-desc">Conditions d'examen</div>
+        </div>
+        <div class="mode-card" data-mode="challenge">
+          <div class="mode-icon">&#x26A1;</div>
+          <div class="mode-name">Defi</div>
+          <div class="mode-desc">Rapide, temps court</div>
+        </div>
+      </div>
+      <p class="instruction mt-12">Texte :</p>
+      <div class="text-list" id="text-list"></div>
+      <div class="text-center"><button class="reset-link" id="btn-reset">Reinitialiser la progression</button></div>
+    </div>
+
+    <!-- ====== TAB: VOCAB ====== -->
+    <div id="tab-vocab" class="hidden">
+      <p class="instruction">Selectionnez un theme pour reviser le vocabulaire BTP.</p>
+      <div class="text-list" id="vocab-theme-list"></div>
+      <div id="vocab-cards-section" class="hidden mt-16">
+        <div class="flex-between mb-12">
+          <span class="section-title" id="vocab-theme-title"></span>
+          <button class="btn btn-outline btn-sm" id="vocab-back-btn">Retour</button>
+        </div>
+        <p class="instruction">Touchez une carte pour reveler la traduction.</p>
+        <div class="vocab-grid" id="vocab-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== SCREEN: LESSON ======== -->
+  <div class="screen" id="screen-lesson">
+    <div class="flex-between mb-16">
+      <span class="section-title" id="lesson-title" style="margin:0"></span>
+      <button class="btn btn-outline btn-sm" id="lesson-back">Retour</button>
+    </div>
+    <div id="lesson-content"></div>
+  </div>
+
+  <!-- ======== SCREEN: VOCAB PREVIEW ======== -->
+  <div class="screen" id="screen-vocab-preview">
+    <div class="card">
+      <h2 class="section-title">Preparation - Vocabulaire cle</h2>
+      <div class="info-box">Avant d'ecouter, familiarisez-vous avec ces mots. Prenez le temps de les lire.</div>
+      <div id="vocab-preview-list"></div>
+      <div class="text-center mt-16">
+        <button class="btn btn-gold" id="btn-start-listen">Je suis pret, commencer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== SCREEN: 1ERE ECOUTE ======== -->
+  <div class="screen" id="screen-listen1">
+    <div class="card">
+      <div class="flex-between mb-12">
+        <h2 class="section-title" id="listen1-title" style="margin:0"></h2>
+        <span id="mode-badge" style="font-size:0.7rem;padding:2px 10px;border-radius:99px;font-weight:700"></span>
+      </div>
+      <p class="instruction" id="listen1-instruction">1ere ecoute</p>
+      <div id="hint-listen1"></div>
+      <div class="speed-selector" id="speed-selector">
+        <button class="speed-btn" data-speed="0.5">0.5x</button>
+        <button class="speed-btn" data-speed="0.6">0.6x</button>
+        <button class="speed-btn" data-speed="0.7">0.7x</button>
+        <button class="speed-btn" data-speed="0.85">0.85x</button>
+        <button class="speed-btn" data-speed="1">1.0x</button>
+      </div>
+      <div class="audio-wave paused" id="audio-wave">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      </div>
+      <div class="audio-status"><div class="label" id="audio-status-label">Pret a lancer</div></div>
+      <div class="progress-bar"><div class="fill" id="progress1"></div></div>
+      <div id="notes-listen1-wrap" class="hidden mb-12">
+        <textarea class="notes-area" id="notes-listen1" placeholder="Prenez des notes pendant l'ecoute..." style="min-height:100px"></textarea>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-gold" id="btn-play1">Lancer l'ecoute</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== SCREEN: PAUSE ======== -->
+  <div class="screen" id="screen-pause">
+    <div class="card">
+      <h2 class="section-title">Pause - Prise de notes</h2>
+      <p class="instruction">Notez les idees principales retenues.</p>
+      <div id="hint-pause"></div>
+      <div class="timer">
+        <div class="time" id="pause-timer">02:00</div>
+        <div class="label">Temps de pause</div>
+      </div>
+      <textarea class="notes-area" id="notes-pause" placeholder="Notez vos idees ici..."></textarea>
+      <div class="text-center mt-16">
+        <button class="btn btn-gold" id="btn-to-listen2">Passer a la 2eme ecoute</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== SCREEN: 2EME ECOUTE ======== -->
+  <div class="screen" id="screen-listen2">
+    <div class="card">
+      <h2 class="section-title" id="listen2-title">2eme ecoute</h2>
+      <p class="instruction">Completez vos notes.</p>
+      <div class="audio-wave paused" id="audio-wave2">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      </div>
+      <div class="audio-status"><div class="label" id="audio-status-label2">Pret a lancer</div></div>
+      <div class="progress-bar"><div class="fill" id="progress2"></div></div>
+      <textarea class="notes-area" id="notes-listen2" placeholder="Completez vos notes..."></textarea>
+      <div class="text-center mt-16">
+        <button class="btn btn-gold" id="btn-play2">Lancer la 2eme ecoute</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== SCREEN: REDACTION ======== -->
+  <div class="screen" id="screen-write">
+    <div class="card">
+      <h2 class="section-title">Redaction du compte-rendu</h2>
+      <p class="instruction">Redigez en francais un compte-rendu du document audio.</p>
+      <div id="hint-write"></div>
+      <div class="timer">
+        <div class="time" id="write-timer">15:00</div>
+        <div class="label">Temps de redaction</div>
+      </div>
+      <textarea class="notes-area" id="compte-rendu" placeholder="Redigez votre compte-rendu en francais..." style="min-height:220px"></textarea>
+      <div class="text-center mt-16">
+        <button class="btn btn-green" id="btn-submit">Soumettre et corriger</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== SCREEN: RESULTATS ======== -->
+  <div class="screen" id="screen-results">
+    <div class="card">
+      <h2 class="section-title text-center">Resultats</h2>
+      <div class="score-display">
+        <span class="score" id="result-score">0</span>
+        <span class="max" id="result-max"> / 0</span>
+      </div>
+      <p class="instruction text-center" id="result-message"></p>
+      <div id="result-new-best"></div>
+      <div id="result-unlock"></div>
+    </div>
+    <div class="card"><h2 class="section-title">Points cles</h2><div id="result-points"></div></div>
+    <div class="card"><h2 class="section-title">Votre compte-rendu</h2><p style="font-size:0.9rem;white-space:pre-wrap;color:var(--text-muted)" id="result-text"></p></div>
+    <div class="card hidden" id="result-transcript-card">
+      <h2 class="section-title">Transcription originale</h2>
+      <p class="instruction">Comparez avec votre compte-rendu pour apprendre.</p>
+      <button class="transcript-toggle" id="transcript-toggle">Afficher la transcription en anglais</button>
+      <div class="hidden" id="transcript-content"><div class="transcript-text" id="transcript-text"></div></div>
+    </div>
+    <div class="card"><h2 class="section-title">Vocabulaire du texte</h2><div class="vocab-grid" id="result-vocab"></div></div>
+    <div id="result-tips" class="card hidden"><h2 class="section-title">Conseils</h2><div id="result-tips-content"></div></div>
+    <div class="text-center mt-16 mb-16 gap-12">
+      <button class="btn btn-gold" id="btn-restart">Recommencer</button>
+      <button class="btn btn-outline hidden" id="btn-next">Texte suivant</button>
+      <button class="btn btn-outline" id="btn-home">Accueil</button>
+    </div>
+  </div>
+</div>
+
+<div class="countdown-overlay hidden" id="countdown-overlay">
+  <div class="number" id="countdown-number">3</div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  /* ================================================================
+     LESSONS DATA
+     ================================================================ */
+  const LESSONS = {
+    plan: {
+      title: "Mon plan d'entrainement",
+      render: function() {
+        return `
+        <div class="card" style="border-color:var(--gold)">
+          <div class="hint-box" style="font-size:0.95rem">
+            <strong>Examen le 27 avril 2026.</strong><br>
+            Ce plan est fait pour vous. Pas besoin d'etre bon en anglais.<br>
+            Pas besoin d'etre bon en francais non plus.<br>
+            Suivez les etapes. 30 minutes par jour suffisent.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--purple)">SEMAINE 1 : Les bases (3 - 9 avril)</h3>
+          <p class="instruction">Objectif : comprendre l'epreuve et apprendre a reperer les mots faciles.</p>
+
+          <div class="method-step">
+            <div class="method-number">1</div>
+            <div class="method-content">
+              <strong>Jour 1 (3 avril) - 30 min</strong><br>
+              Lisez la lecon <strong>"L'epreuve E2-A"</strong>.<br>
+              Puis lisez le <strong>"Gabarit universel"</strong> dans "Modeles de compte-rendu".<br>
+              Recopiez le gabarit sur une feuille a la main. Gardez cette feuille.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">2</div>
+            <div class="method-content">
+              <strong>Jour 2 (4 avril) - 30 min</strong><br>
+              Lisez la lecon <strong>"Les mots transparents"</strong>.<br>
+              Bonne nouvelle : vous connaissez deja plein de mots anglais !<br>
+              Lisez-les tous. Dites-les a voix haute.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">3</div>
+            <div class="method-content">
+              <strong>Jour 3 (5 avril) - 30 min</strong><br>
+              Lisez la lecon <strong>"Les nombres en anglais"</strong>.<br>
+              Faites la <strong>dictee de nombres</strong> (l'exercice en bas de la lecon).<br>
+              Les chiffres = les points les plus faciles a avoir.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">4</div>
+            <div class="method-content">
+              <strong>Jour 4 (6 avril) - 30 min</strong><br>
+              Lisez la lecon <strong>"Les mots de liaison"</strong>.<br>
+              Retenez surtout : <em>however</em> (= probleme), <em>finally</em> (= fin), <em>due to</em> (= a cause de).
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">5</div>
+            <div class="method-content">
+              <strong>Jour 5 (7 avril) - 30 min</strong><br>
+              Lisez la lecon <strong>"Phrases types"</strong>.<br>
+              Ce sont les phrases que vous entendrez dans TOUS les audios.<br>
+              Ecoutez-les a voix haute avec le bouton audio.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">6</div>
+            <div class="method-content">
+              <strong>Jours 6-7 (8-9 avril) - 30 min</strong><br>
+              Relisez le gabarit. Refaites la dictee de nombres.<br>
+              Onglet Vocabulaire : ouvrez le <strong>Texte 3 (Securite)</strong>. C'est le plus facile.<br>
+              Lisez les mots, touchez pour voir la traduction. Repetez.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--green)">SEMAINE 2 : Premiere ecoute (10 - 16 avril)</h3>
+          <p class="instruction">Objectif : ecouter les textes faciles et s'entrainer a ecrire le compte-rendu.</p>
+
+          <div class="method-step">
+            <div class="method-number">8</div>
+            <div class="method-content">
+              <strong>Jour 8 (10 avril) - 45 min</strong><br>
+              Onglet <strong>Examen</strong> > mode <strong>Remise a niveau</strong> > <strong>Texte 3</strong> (Securite - B1).<br>
+              C'est le texte le plus facile. Lisez bien le vocabulaire avant.<br>
+              Ecoutez en 0.5x. Pas de stress si vous comprenez peu. C'est normal.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">9</div>
+            <div class="method-content">
+              <strong>Jour 9 (11 avril) - 45 min</strong><br>
+              <strong>Refaites le Texte 3</strong> en Remise a niveau.<br>
+              La 2eme fois, vous comprendrez plus de mots. C'est comme ca que ca marche.<br>
+              Lisez la transcription apres. Comparez avec votre compte-rendu.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">10</div>
+            <div class="method-content">
+              <strong>Jour 10 (12 avril) - 45 min</strong><br>
+              Texte 3 une derniere fois. Essayez en <strong>0.6x</strong> cette fois.<br>
+              Puis faites les <strong>Mini-exercices d'ecoute</strong> dans l'onglet Bases.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">11</div>
+            <div class="method-content">
+              <strong>Jours 11-12 (13-14 avril) - 45 min/jour</strong><br>
+              Passez au <strong>Texte 1</strong> (Suivi de chantier - B1+) en Remise a niveau.<br>
+              Meme methode : vocab avant, ecoute lente, compte-rendu, transcription apres.<br>
+              Faites-le 2 fois.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">12</div>
+            <div class="method-content">
+              <strong>Jours 13-14 (15-16 avril) - 45 min/jour</strong><br>
+              Passez au <strong>Texte 2</strong> (BIM - B2) en Remise a niveau.<br>
+              C'est plus dur. C'est normal. Notez les chiffres et les noms.<br>
+              Le gabarit "Reunion BIM" vous aidera pour le compte-rendu.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--gold)">SEMAINE 3 : Monter en vitesse (17 - 23 avril)</h3>
+          <p class="instruction">Objectif : se rapprocher des conditions reelles de l'examen.</p>
+
+          <div class="method-step">
+            <div class="method-number">15</div>
+            <div class="method-content">
+              <strong>Jours 15-16 (17-18 avril) - 45 min/jour</strong><br>
+              Refaites les <strong>Textes 3 et 1</strong> en mode <strong>Decouverte</strong> (0.7x).<br>
+              Moins d'aide. Vitesse un peu plus rapide. Vous allez voir que c'est possible.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">16</div>
+            <div class="method-content">
+              <strong>Jours 17-18 (19-20 avril) - 45 min/jour</strong><br>
+              <strong>Textes 4 et 5</strong> (Couts et Developpement durable) en Remise a niveau.<br>
+              Utilisez les gabarits specifiques pour le compte-rendu.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">17</div>
+            <div class="method-content">
+              <strong>Jours 19-20 (21-22 avril) - 45 min/jour</strong><br>
+              Choisissez 2 textes au hasard. Mode <strong>Decouverte</strong>.<br>
+              Essayez de ne pas regarder le vocabulaire avant. Ecoutez d'abord.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">18</div>
+            <div class="method-content">
+              <strong>Jour 21 (23 avril) - 45 min</strong><br>
+              Un texte en mode <strong>Standard</strong> (conditions d'examen : 0.85x, 2 min pause).<br>
+              C'est dur ? C'est normal. L'important c'est d'avoir essaye.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--red)">DERNIERS JOURS (24 - 27 avril)</h3>
+          <p class="instruction">Objectif : reviser et se preparer mentalement.</p>
+
+          <div class="method-step">
+            <div class="method-number">22</div>
+            <div class="method-content">
+              <strong>Jour 22 (24 avril) - 30 min</strong><br>
+              Relisez les <strong>mots transparents</strong> et les <strong>mots de liaison</strong>.<br>
+              Refaites la <strong>dictee de nombres</strong>.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">23</div>
+            <div class="method-content">
+              <strong>Jour 23 (25 avril) - 30 min</strong><br>
+              Relisez votre <strong>gabarit universel</strong> sur votre feuille.<br>
+              Faites UN texte en mode Decouverte. N'importe lequel.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number">24</div>
+            <div class="method-content">
+              <strong>Jour 24 (26 avril) - Veille de l'examen</strong><br>
+              Relisez le gabarit une derniere fois.<br>
+              Pas de nouveau texte. Pas de stress.<br>
+              Dormez bien.
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-number" style="background:var(--red)">J</div>
+            <div class="method-content">
+              <strong>27 AVRIL - Jour de l'examen</strong><br>
+              Emportez votre feuille avec le gabarit (dans votre tete).<br>
+              Des que l'audio commence :<br>
+              - Cherchez QUI parle et DE QUOI<br>
+              - Notez les CHIFFRES<br>
+              - Notez les mots que vous reconnaissez<br>
+              Remplissez le gabarit. Rendez votre copie. C'est fait.
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:var(--green)">
+          <h3 class="section-title" style="color:var(--green)">Conseils importants</h3>
+          <div class="template-box" style="font-size:0.9rem;line-height:1.8">
+<strong>Pas besoin de tout comprendre.</strong>
+A l'examen, personne ne comprend 100% du texte.
+Meme avec 50% de comprehension, vous pouvez avoir une bonne note.
+
+<strong>Les chiffres = vos meilleurs amis.</strong>
+Les nombres en anglais se comprennent facilement.
+"Twelve point five million" = 12,5 millions.
+Chaque chiffre note = des points gagnes.
+
+<strong>Le gabarit = votre filet de securite.</strong>
+Meme si vous comprenez peu, le gabarit structure donne des points.
+"Ce document est une presentation de... concernant..."
+C'est deja mieux qu'une page blanche.
+
+<strong>Pour le francais :</strong>
+Ecrivez des phrases courtes. Sujet + verbe + complement.
+Pas besoin de phrases compliquees.
+"Le budget est de 12 millions." = phrase parfaite.
+"Il y a un retard de 2 semaines." = phrase parfaite.
+
+<strong>30 minutes par jour suffisent.</strong>
+Mieux vaut 30 min chaque jour que 3 heures une fois par semaine.
+          </div>
+        </div>`;
+      }
+    },
+
+    method: {
+      title: "L'epreuve E2-A : methode",
+      render: function() {
+        return `
+        <div class="card">
+          <div class="info-box">L'epreuve E2-A dure environ 30 minutes. Vous ecoutez un document audio en anglais (2 fois) et redigez un compte-rendu en francais. <strong>Pas besoin de parler anglais ni d'ecrire en anglais !</strong></div>
+        </div>
+        <div class="card">
+          <h3 class="section-title">Deroulement de l'epreuve</h3>
+          <div class="method-step">
+            <div class="method-number">1</div>
+            <div class="method-content"><strong>1ere ecoute</strong> - Vous ecoutez l'audio en entier. Pas de notes. Concentrez-vous sur le sens general : qui parle ? de quoi ? quel type de document ?</div>
+          </div>
+          <div class="method-step">
+            <div class="method-number">2</div>
+            <div class="method-content"><strong>Pause (2 min)</strong> - Vous notez tout ce dont vous vous souvenez. Meme des mots isoles, des chiffres, des impressions.</div>
+          </div>
+          <div class="method-step">
+            <div class="method-number">3</div>
+            <div class="method-content"><strong>2eme ecoute</strong> - Completez vos notes. Cette fois, ciblez ce qui vous a echappe : les details, les chiffres precis, les noms.</div>
+          </div>
+          <div class="method-step">
+            <div class="method-number">4</div>
+            <div class="method-content"><strong>Redaction</strong> - Ecrivez un compte-rendu <strong>en francais</strong>. Structurez-le : introduction, developpement, conclusion.</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="section-title">Ce qu'il faut reperer en ecoutant</h3>
+          <div class="example-row"><span class="example-en">QUI parle ?</span><span class="example-fr">Nom, fonction, entreprise</span></div>
+          <div class="example-row"><span class="example-en">DE QUOI ?</span><span class="example-fr">Sujet principal, type de projet</span></div>
+          <div class="example-row"><span class="example-en">LES CHIFFRES</span><span class="example-fr">Prix, dates, pourcentages, quantites</span></div>
+          <div class="example-row"><span class="example-en">LES PROBLEMES</span><span class="example-fr">Retards, depassements, risques</span></div>
+          <div class="example-row"><span class="example-en">LES SOLUTIONS</span><span class="example-fr">Mesures prises, prochaines etapes</span></div>
+        </div>
+        <div class="card">
+          <h3 class="section-title">Erreurs a eviter</h3>
+          <p style="font-size:0.88rem;line-height:1.6;color:var(--text)">
+            - Ne pas paniquer si vous ne comprenez pas tout (c'est normal !)<br>
+            - Ne pas traduire mot a mot, reformulez en francais naturel<br>
+            - Ne pas inventer des informations que vous n'avez pas entendues<br>
+            - Ne pas oublier les chiffres (c'est souvent la moitie des points)<br>
+            - Ne pas negliger la structure (introduction, developpement, conclusion)
+          </p>
+        </div>`;
+      }
+    },
+
+    numbers: {
+      title: "Les nombres en anglais",
+      render: function() {
+        return `
+        <div class="card" style="border-color:var(--gold)">
+          <div class="hint-box" style="font-size:0.95rem">
+            <strong>Les chiffres = vos points les plus faciles.</strong><br>
+            A l'examen, chaque chiffre que vous notez correctement rapporte des points.<br>
+            Cette lecon vous apprend a les reconnaitre a l'oral. 100 questions pour s'entrainer.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Etape 1 : Les 20 premiers nombres</h3>
+          <p class="instruction">Apprenez ces 20 mots. C'est la base de tout.</p>
+          <div class="example-row"><span class="example-en">one</span><span class="example-phonetic">/ouane/</span><span class="example-fr">1</span></div>
+          <div class="example-row"><span class="example-en">two</span><span class="example-phonetic">/tou/</span><span class="example-fr">2</span></div>
+          <div class="example-row"><span class="example-en">three</span><span class="example-phonetic">/sri/</span><span class="example-fr">3</span></div>
+          <div class="example-row"><span class="example-en">four</span><span class="example-phonetic">/fore/</span><span class="example-fr">4</span></div>
+          <div class="example-row"><span class="example-en">five</span><span class="example-phonetic">/faive/</span><span class="example-fr">5</span></div>
+          <div class="example-row"><span class="example-en">six</span><span class="example-phonetic">/sikss/</span><span class="example-fr">6</span></div>
+          <div class="example-row"><span class="example-en">seven</span><span class="example-phonetic">/sev-eun/</span><span class="example-fr">7</span></div>
+          <div class="example-row"><span class="example-en">eight</span><span class="example-phonetic">/eite/</span><span class="example-fr">8</span></div>
+          <div class="example-row"><span class="example-en">nine</span><span class="example-phonetic">/naine/</span><span class="example-fr">9</span></div>
+          <div class="example-row"><span class="example-en">ten</span><span class="example-phonetic">/tene/</span><span class="example-fr">10</span></div>
+          <div class="example-row"><span class="example-en">eleven</span><span class="example-phonetic">/i-lev-eun/</span><span class="example-fr">11</span></div>
+          <div class="example-row"><span class="example-en">twelve</span><span class="example-phonetic">/tou-elve/</span><span class="example-fr">12</span></div>
+          <div class="example-row"><span class="example-en">thirteen</span><span class="example-phonetic">/ser-tine/</span><span class="example-fr">13</span></div>
+          <div class="example-row"><span class="example-en">fourteen</span><span class="example-phonetic">/fore-tine/</span><span class="example-fr">14</span></div>
+          <div class="example-row"><span class="example-en">fifteen</span><span class="example-phonetic">/fif-tine/</span><span class="example-fr">15</span></div>
+          <div class="example-row"><span class="example-en">sixteen</span><span class="example-phonetic">/siks-tine/</span><span class="example-fr">16</span></div>
+          <div class="example-row"><span class="example-en">seventeen</span><span class="example-phonetic">/sev-eun-tine/</span><span class="example-fr">17</span></div>
+          <div class="example-row"><span class="example-en">eighteen</span><span class="example-phonetic">/ei-tine/</span><span class="example-fr">18</span></div>
+          <div class="example-row"><span class="example-en">nineteen</span><span class="example-phonetic">/naine-tine/</span><span class="example-fr">19</span></div>
+          <div class="example-row"><span class="example-en">twenty</span><span class="example-phonetic">/touen-ti/</span><span class="example-fr">20</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Etape 2 : Les dizaines</h3>
+          <p class="instruction">Astuce : toutes les dizaines finissent par <strong>-ty</strong>. Les ados (13-19) finissent par <strong>-teen</strong>.</p>
+          <div class="hint-box">
+            <strong>Le truc pour ne pas confondre :</strong><br>
+            thir<strong>TEEN</strong> (13) = accent sur TEEN = ado<br>
+            <strong>THIR</strong>ty (30) = accent au debut = dizaine<br>
+            Pareil pour fourteen/forty, fifteen/fifty, etc.
+          </div>
+          <div class="example-row"><span class="example-en">twenty</span><span class="example-phonetic">/touen-ti/</span><span class="example-fr">20</span></div>
+          <div class="example-row"><span class="example-en">thirty</span><span class="example-phonetic">/ser-ti/</span><span class="example-fr">30</span></div>
+          <div class="example-row"><span class="example-en">forty</span><span class="example-phonetic">/fore-ti/</span><span class="example-fr">40</span></div>
+          <div class="example-row"><span class="example-en">fifty</span><span class="example-phonetic">/fif-ti/</span><span class="example-fr">50</span></div>
+          <div class="example-row"><span class="example-en">sixty</span><span class="example-phonetic">/siks-ti/</span><span class="example-fr">60</span></div>
+          <div class="example-row"><span class="example-en">seventy</span><span class="example-phonetic">/sev-eun-ti/</span><span class="example-fr">70</span></div>
+          <div class="example-row"><span class="example-en">eighty</span><span class="example-phonetic">/ei-ti/</span><span class="example-fr">80</span></div>
+          <div class="example-row"><span class="example-en">ninety</span><span class="example-phonetic">/naine-ti/</span><span class="example-fr">90</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Etape 3 : Les grands nombres</h3>
+          <p class="instruction">En BTP, on parle en millions. Voici comment ca marche.</p>
+          <div class="example-row"><span class="example-en">a hundred / one hundred</span><span class="example-phonetic">/heun-dred/</span><span class="example-fr">100</span></div>
+          <div class="example-row"><span class="example-en">a thousand / one thousand</span><span class="example-phonetic">/t-aou-zend/</span><span class="example-fr">1 000</span></div>
+          <div class="example-row"><span class="example-en">a million / one million</span><span class="example-phonetic">/mil-yeun/</span><span class="example-fr">1 000 000</span></div>
+          <div class="example-row"><span class="example-en">a billion</span><span class="example-phonetic">/bil-yeun/</span><span class="example-fr">1 milliard (!)</span></div>
+          <div class="hint-box">
+            <strong>Attention piege :</strong> "billion" en anglais = <strong>milliard</strong> en francais (pas billion) !
+          </div>
+          <p class="instruction" style="margin-top:12px">Comment on dit les grands chiffres :</p>
+          <div class="example-row"><span class="example-en">two hundred</span><span class="example-fr">200</span></div>
+          <div class="example-row"><span class="example-en">three thousand</span><span class="example-fr">3 000</span></div>
+          <div class="example-row"><span class="example-en">five hundred thousand</span><span class="example-fr">500 000</span></div>
+          <div class="example-row"><span class="example-en">seven million</span><span class="example-fr">7 000 000</span></div>
+          <div class="example-row"><span class="example-en">twelve point five million</span><span class="example-fr">12 500 000 (12,5 millions)</span></div>
+          <div class="example-row"><span class="example-en">four point eight million</span><span class="example-fr">4 800 000 (4,8 millions)</span></div>
+          <div class="hint-box">
+            <strong>Le truc "point" :</strong><br>
+            En anglais, la virgule decimale se dit <strong>"point"</strong>.<br>
+            "twelve <strong>point</strong> five" = 12<strong>,</strong>5<br>
+            "seven <strong>point</strong> five percent" = 7<strong>,</strong>5 %<br>
+            Quand vous entendez "point", ecrivez une virgule !
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Etape 4 : Mots utiles avec les chiffres</h3>
+          <p class="instruction">Ces mots viennent toujours avec un nombre. Retenez-les.</p>
+          <div class="example-row"><span class="example-en">percent / per cent</span><span class="example-phonetic">/peur-cent/</span><span class="example-fr">pour cent (%)</span></div>
+          <div class="example-row"><span class="example-en">pounds</span><span class="example-phonetic">/paoundz/</span><span class="example-fr">livres sterling (monnaie)</span></div>
+          <div class="example-row"><span class="example-en">euros</span><span class="example-phonetic">/iou-roz/</span><span class="example-fr">euros</span></div>
+          <div class="example-row"><span class="example-en">weeks</span><span class="example-phonetic">/ouikss/</span><span class="example-fr">semaines</span></div>
+          <div class="example-row"><span class="example-en">months</span><span class="example-phonetic">/meunss/</span><span class="example-fr">mois</span></div>
+          <div class="example-row"><span class="example-en">years</span><span class="example-phonetic">/yi-eurz/</span><span class="example-fr">ans</span></div>
+          <div class="example-row"><span class="example-en">floors / storeys</span><span class="example-phonetic">/florz/ /store-iz/</span><span class="example-fr">etages</span></div>
+          <div class="example-row"><span class="example-en">units</span><span class="example-phonetic">/iou-nitss/</span><span class="example-fr">logements / unites</span></div>
+          <div class="example-row"><span class="example-en">square metres</span><span class="example-phonetic">/skouere mi-teurz/</span><span class="example-fr">metres carres</span></div>
+          <div class="example-row"><span class="example-en">approximately</span><span class="example-phonetic">/a-proks-i-met-li/</span><span class="example-fr">environ</span></div>
+          <div class="example-row"><span class="example-en">over / more than</span><span class="example-fr">plus de</span></div>
+          <div class="example-row"><span class="example-en">less than / under</span><span class="example-fr">moins de</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Etape 5 : Les mois (pour les dates)</h3>
+          <p class="instruction">Facile : presque tous ressemblent au francais.</p>
+          <div class="example-row"><span class="example-en">January</span><span class="example-fr">janvier</span></div>
+          <div class="example-row"><span class="example-en">February</span><span class="example-fr">fevrier</span></div>
+          <div class="example-row"><span class="example-en">March</span><span class="example-fr">mars</span></div>
+          <div class="example-row"><span class="example-en">April</span><span class="example-fr">avril</span></div>
+          <div class="example-row"><span class="example-en">May</span><span class="example-fr">mai</span></div>
+          <div class="example-row"><span class="example-en">June</span><span class="example-fr">juin</span></div>
+          <div class="example-row"><span class="example-en">July</span><span class="example-phonetic">/djou-laie/</span><span class="example-fr">juillet</span></div>
+          <div class="example-row"><span class="example-en">August</span><span class="example-phonetic">/o-gheust/</span><span class="example-fr">aout</span></div>
+          <div class="example-row"><span class="example-en">September</span><span class="example-fr">septembre</span></div>
+          <div class="example-row"><span class="example-en">October</span><span class="example-fr">octobre</span></div>
+          <div class="example-row"><span class="example-en">November</span><span class="example-fr">novembre</span></div>
+          <div class="example-row"><span class="example-en">December</span><span class="example-fr">decembre</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Resume : comment retenir vite</h3>
+          <div class="template-box" style="font-size:0.9rem;line-height:1.8">
+<strong>1. Les petits chiffres (1-12) :</strong> apprenez-les par coeur comme une chanson.
+Repetez : one two three four five six seven eight nine ten eleven twelve.
+
+<strong>2. Les ados (13-19) :</strong> c'est le petit chiffre + TEEN.
+four = 4, four<strong>teen</strong> = 14. six = 6, six<strong>teen</strong> = 16.
+
+<strong>3. Les dizaines (20-90) :</strong> c'est le petit chiffre + TY.
+twen<strong>ty</strong> = 20, thir<strong>ty</strong> = 30, for<strong>ty</strong> = 40, fif<strong>ty</strong> = 50.
+
+<strong>4. Les composes :</strong> dizaine + unite.
+twenty-<strong>three</strong> = 23. forty-<strong>seven</strong> = 47. ninety-<strong>nine</strong> = 99.
+
+<strong>5. Les grands :</strong> chiffre + hundred/thousand/million.
+<strong>three</strong> hundred = 300. <strong>five</strong> thousand = 5000. <strong>seven</strong> million = 7 millions.
+
+<strong>6. "Point" = virgule.</strong>
+twelve <strong>point</strong> five = 12,5.
+          </div>
+        </div>
+
+        <div class="card" style="border-color:var(--purple)">
+          <h3 class="section-title" style="color:var(--purple)">Test : 100 questions - Dictee de nombres</h3>
+          <p class="instruction">Cliquez "Ecouter", ecoutez le nombre, tapez-le en chiffres. Les questions vont du plus facile au plus dur.</p>
+          <div class="quiz-area" id="number-quiz">
+            <div class="quiz-prompt" id="nq-prompt">Cliquez "Ecouter" pour commencer</div>
+            <div class="text-center mb-12">
+              <button class="btn btn-purple btn-sm" id="nq-listen">Ecouter le nombre</button>
+            </div>
+            <input class="quiz-input" id="nq-input" type="text" placeholder="Tapez le nombre ici" disabled>
+            <div class="quiz-feedback" id="nq-feedback"></div>
+            <div class="quiz-score" id="nq-score"></div>
+            <div class="text-center mt-12 gap-12">
+              <button class="btn btn-outline btn-sm" id="nq-next" disabled>Suivant</button>
+              <button class="btn btn-outline btn-sm" id="nq-relisten" style="display:none">Re-ecouter</button>
+            </div>
+          </div>
+        </div>`;
+      },
+      init: function() { initNumberQuiz(); }
+    },
+
+    connectors: {
+      title: "Les mots de liaison",
+      render: function() {
+        return `
+        <div class="card" style="border-color:var(--gold)">
+          <div class="hint-box" style="font-size:0.95rem"><strong>Les mots de liaison = votre GPS dans le texte.</strong><br>Ils vous disent si on parle d'un probleme, d'une cause, d'une suite... Meme sans comprendre le reste, ces mots vous guident.</div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Comment retenir vite</h3>
+          <div class="template-box" style="font-size:0.9rem;line-height:1.8">
+<strong>Classez-les par SIGNAL :</strong>
+
+<span style="color:var(--green)">SIGNAL VERT = ca continue, ca va bien :</span>
+also, moreover, in addition, furthermore = "en plus, de plus"
+
+<span style="color:var(--red)">SIGNAL ROUGE = attention, probleme :</span>
+however, unfortunately, despite, although = "mais, cependant, malgre"
+
+<span style="color:var(--gold)">SIGNAL ORANGE = cause ou consequence :</span>
+due to, because of, therefore, as a result = "a cause de, donc"
+
+<span style="color:var(--purple)">SIGNAL BLEU = debut ou fin :</span>
+first, today I'd like to, finally, to sum up, thank you = "debut...fin"
+
+<strong>Truc pour retenir :</strong>
+Quand vous entendez "however" ou "unfortunately" = DANGER = un chiffre important ou un probleme va suivre. Soyez TRES attentif a la phrase qui suit.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--purple)">Debut / Introduction</h3>
+          <div class="example-row"><span class="example-en">Good morning everyone</span><span class="example-phonetic">/goud more-ning/</span><span class="example-fr">Bonjour a tous</span></div>
+          <div class="example-row"><span class="example-en">Today I would like to...</span><span class="example-fr">Aujourd'hui je voudrais...</span></div>
+          <div class="example-row"><span class="example-en">Let me update you on...</span><span class="example-fr">Je vais vous informer de...</span></div>
+          <div class="example-row"><span class="example-en">First of all / Firstly</span><span class="example-phonetic">/feurst/</span><span class="example-fr">Tout d'abord</span></div>
+          <div class="example-row"><span class="example-en">I'm here to present...</span><span class="example-fr">Je suis ici pour presenter...</span></div>
+          <div class="example-row"><span class="example-en">The purpose of this...</span><span class="example-fr">Le but de ceci...</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--green)">Ajouter / Continuer</h3>
+          <div class="example-row"><span class="example-en">Also</span><span class="example-phonetic">/ol-so/</span><span class="example-fr">Aussi, egalement</span></div>
+          <div class="example-row"><span class="example-en">Moreover</span><span class="example-phonetic">/more-o-veur/</span><span class="example-fr">De plus</span></div>
+          <div class="example-row"><span class="example-en">Furthermore</span><span class="example-phonetic">/feur-zeur-more/</span><span class="example-fr">En outre, de plus</span></div>
+          <div class="example-row"><span class="example-en">In addition</span><span class="example-fr">De plus</span></div>
+          <div class="example-row"><span class="example-en">As well as</span><span class="example-fr">Ainsi que</span></div>
+          <div class="example-row"><span class="example-en">And</span><span class="example-fr">Et</span></div>
+          <div class="example-row"><span class="example-en">Moving on to...</span><span class="example-fr">Passons a...</span></div>
+          <div class="example-row"><span class="example-en">Regarding / With regard to</span><span class="example-fr">Concernant</span></div>
+          <div class="example-row"><span class="example-en">On the financial side</span><span class="example-fr">Cote financier</span></div>
+          <div class="example-row"><span class="example-en">As for safety</span><span class="example-fr">Quant a la securite</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--red)">Probleme / Opposition</h3>
+          <div class="example-row"><span class="example-en">However</span><span class="example-phonetic">/haou-ev-eur/</span><span class="example-fr">Cependant, toutefois</span></div>
+          <div class="example-row"><span class="example-en">But</span><span class="example-fr">Mais</span></div>
+          <div class="example-row"><span class="example-en">Unfortunately</span><span class="example-phonetic">/eun-for-tchou-net-li/</span><span class="example-fr">Malheureusement</span></div>
+          <div class="example-row"><span class="example-en">Despite / In spite of</span><span class="example-phonetic">/dis-paite/</span><span class="example-fr">Malgre</span></div>
+          <div class="example-row"><span class="example-en">Although</span><span class="example-phonetic">/ol-zo/</span><span class="example-fr">Bien que</span></div>
+          <div class="example-row"><span class="example-en">On the other hand</span><span class="example-fr">D'un autre cote</span></div>
+          <div class="example-row"><span class="example-en">Nevertheless</span><span class="example-fr">Neanmoins</span></div>
+          <div class="example-row"><span class="example-en">The main challenge is...</span><span class="example-fr">Le defi principal est...</span></div>
+          <div class="example-row"><span class="example-en">The problem is...</span><span class="example-fr">Le probleme est...</span></div>
+          <div class="example-row"><span class="example-en">We have experienced...</span><span class="example-fr">Nous avons rencontre...</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--gold)">Cause / Consequence</h3>
+          <div class="example-row"><span class="example-en">Due to</span><span class="example-phonetic">/diou tou/</span><span class="example-fr">En raison de, a cause de</span></div>
+          <div class="example-row"><span class="example-en">Because of</span><span class="example-fr">A cause de</span></div>
+          <div class="example-row"><span class="example-en">Therefore</span><span class="example-phonetic">/zere-fore/</span><span class="example-fr">Par consequent, donc</span></div>
+          <div class="example-row"><span class="example-en">As a result</span><span class="example-fr">En consequence</span></div>
+          <div class="example-row"><span class="example-en">This means that...</span><span class="example-fr">Cela signifie que...</span></div>
+          <div class="example-row"><span class="example-en">Consequently</span><span class="example-fr">Par consequent</span></div>
+          <div class="example-row"><span class="example-en">Which is why</span><span class="example-fr">C'est pourquoi</span></div>
+          <div class="example-row"><span class="example-en">So</span><span class="example-fr">Donc</span></div>
+          <div class="example-row"><span class="example-en">This is mainly due to...</span><span class="example-fr">Cela est principalement du a...</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--purple)">Fin / Conclusion</h3>
+          <div class="example-row"><span class="example-en">Finally</span><span class="example-phonetic">/fai-ne-li/</span><span class="example-fr">Enfin</span></div>
+          <div class="example-row"><span class="example-en">To conclude / In conclusion</span><span class="example-fr">Pour conclure</span></div>
+          <div class="example-row"><span class="example-en">To sum up / In summary</span><span class="example-fr">Pour resumer</span></div>
+          <div class="example-row"><span class="example-en">The next step will be...</span><span class="example-fr">La prochaine etape sera...</span></div>
+          <div class="example-row"><span class="example-en">Our objective is to...</span><span class="example-fr">Notre objectif est de...</span></div>
+          <div class="example-row"><span class="example-en">Thank you for your attention</span><span class="example-fr">Merci (= FIN du discours)</span></div>
+        </div>
+
+        <div class="card" style="border-color:var(--purple)">
+          <h3 class="section-title" style="color:var(--purple)">Test : 50 questions - Reconnaitre les mots de liaison</h3>
+          <p class="instruction">Ecoutez le mot ou la phrase, tapez sa traduction en francais.</p>
+          <div class="quiz-area" id="connector-quiz">
+            <div class="quiz-prompt" id="cq-prompt">Cliquez "Ecouter" pour commencer</div>
+            <div class="text-center mb-12"><button class="btn btn-purple btn-sm" id="cq-listen">Ecouter</button></div>
+            <input class="quiz-input" id="cq-input" type="text" placeholder="Traduction en francais..." disabled>
+            <div class="quiz-feedback" id="cq-feedback"></div>
+            <div class="quiz-score" id="cq-score"></div>
+            <div class="text-center mt-12 gap-12">
+              <button class="btn btn-outline btn-sm" id="cq-show">Voir la reponse</button>
+              <button class="btn btn-outline btn-sm" id="cq-next" disabled>Suivant</button>
+            </div>
+          </div>
+        </div>`;
+      },
+      init: function() { initConnectorQuiz(); }
+    },
+
+    transparent: {
+      title: "Les mots transparents",
+      render: function() {
+        return `
+        <div class="card" style="border-color:var(--green)">
+          <div class="hint-box" style="font-size:0.95rem"><strong>Bonne nouvelle : vous connaissez deja des centaines de mots anglais !</strong><br>En BTP, beaucoup de mots techniques sont presque identiques. Cette lecon vous montre lesquels.</div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Comment ca marche</h3>
+          <div class="template-box" style="font-size:0.9rem;line-height:1.8">
+<strong>Les mots transparents</strong> = mots anglais qui ressemblent au francais.
+Exemple : "construction" en anglais = "construction" en francais.
+
+<strong>Les terminaisons changent un peu :</strong>
+-tion en anglais = -tion en francais (installation, ventilation, estimation)
+-ment en anglais = -ment en francais (management, department)
+-ble en anglais = -ble en francais (possible, responsible, available)
+-al en anglais = -al/-el en francais (structural, professional, material)
+-ity en anglais = -ite en francais (quality, security, sustainability)
+-ance/-ence = -ance/-ence (performance, compliance, experience)
+
+<strong>ATTENTION aux faux amis :</strong> quelques mots se RESSEMBLENT mais ne veulent PAS dire la meme chose. Apprenez-les par coeur.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Construction et projet</h3>
+          <div class="example-row"><span class="example-en">construction</span><span class="example-fr">construction</span></div>
+          <div class="example-row"><span class="example-en">project</span><span class="example-phonetic">/prod-jekt/</span><span class="example-fr">projet</span></div>
+          <div class="example-row"><span class="example-en">budget</span><span class="example-fr">budget</span></div>
+          <div class="example-row"><span class="example-en">phase</span><span class="example-fr">phase</span></div>
+          <div class="example-row"><span class="example-en">structure / structural</span><span class="example-fr">structure / structurel</span></div>
+          <div class="example-row"><span class="example-en">material</span><span class="example-fr">materiau</span></div>
+          <div class="example-row"><span class="example-en">installation</span><span class="example-fr">installation</span></div>
+          <div class="example-row"><span class="example-en">renovation / refurbishment</span><span class="example-fr">renovation</span></div>
+          <div class="example-row"><span class="example-en">residential</span><span class="example-fr">residentiel</span></div>
+          <div class="example-row"><span class="example-en">commercial</span><span class="example-fr">commercial</span></div>
+          <div class="example-row"><span class="example-en">industrial</span><span class="example-fr">industriel</span></div>
+          <div class="example-row"><span class="example-en">infrastructure</span><span class="example-fr">infrastructure</span></div>
+          <div class="example-row"><span class="example-en">architecture / architect</span><span class="example-fr">architecture / architecte</span></div>
+          <div class="example-row"><span class="example-en">foundation</span><span class="example-fr">fondation</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Finance et gestion</h3>
+          <div class="example-row"><span class="example-en">cost</span><span class="example-phonetic">/coste/</span><span class="example-fr">cout</span></div>
+          <div class="example-row"><span class="example-en">estimate / estimation</span><span class="example-fr">estimation</span></div>
+          <div class="example-row"><span class="example-en">total</span><span class="example-fr">total</span></div>
+          <div class="example-row"><span class="example-en">million</span><span class="example-fr">million</span></div>
+          <div class="example-row"><span class="example-en">percent / percentage</span><span class="example-fr">pourcentage</span></div>
+          <div class="example-row"><span class="example-en">risk</span><span class="example-fr">risque</span></div>
+          <div class="example-row"><span class="example-en">forecast</span><span class="example-phonetic">/fore-caste/</span><span class="example-fr">prevision</span></div>
+          <div class="example-row"><span class="example-en">contract</span><span class="example-fr">contrat</span></div>
+          <div class="example-row"><span class="example-en">consultant</span><span class="example-fr">consultant</span></div>
+          <div class="example-row"><span class="example-en">management</span><span class="example-fr">gestion / management</span></div>
+          <div class="example-row"><span class="example-en">specification</span><span class="example-fr">specification</span></div>
+          <div class="example-row"><span class="example-en">analysis</span><span class="example-fr">analyse</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Technique BTP</h3>
+          <div class="example-row"><span class="example-en">concrete</span><span class="example-phonetic">/con-crite/</span><span class="example-fr">beton</span></div>
+          <div class="example-row"><span class="example-en">ventilation</span><span class="example-fr">ventilation</span></div>
+          <div class="example-row"><span class="example-en">insulation</span><span class="example-phonetic">/in-siou-lei-cheun/</span><span class="example-fr">isolation</span></div>
+          <div class="example-row"><span class="example-en">inspection</span><span class="example-fr">inspection</span></div>
+          <div class="example-row"><span class="example-en">compliance</span><span class="example-fr">conformite</span></div>
+          <div class="example-row"><span class="example-en">dimension</span><span class="example-fr">dimension</span></div>
+          <div class="example-row"><span class="example-en">coordination</span><span class="example-fr">coordination</span></div>
+          <div class="example-row"><span class="example-en">collaborative</span><span class="example-fr">collaboratif</span></div>
+          <div class="example-row"><span class="example-en">detection</span><span class="example-fr">detection</span></div>
+          <div class="example-row"><span class="example-en">visualisation</span><span class="example-fr">visualisation</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Securite et environnement</h3>
+          <div class="example-row"><span class="example-en">security / safety</span><span class="example-fr">securite</span></div>
+          <div class="example-row"><span class="example-en">incident</span><span class="example-fr">incident</span></div>
+          <div class="example-row"><span class="example-en">mandatory</span><span class="example-phonetic">/man-da-to-ri/</span><span class="example-fr">obligatoire</span></div>
+          <div class="example-row"><span class="example-en">sustainable / sustainability</span><span class="example-fr">durable / durabilite</span></div>
+          <div class="example-row"><span class="example-en">emission</span><span class="example-fr">emission</span></div>
+          <div class="example-row"><span class="example-en">energy</span><span class="example-fr">energie</span></div>
+          <div class="example-row"><span class="example-en">regulation</span><span class="example-fr">reglementation</span></div>
+          <div class="example-row"><span class="example-en">contamination</span><span class="example-fr">contamination</span></div>
+          <div class="example-row"><span class="example-en">zone</span><span class="example-fr">zone</span></div>
+          <div class="example-row"><span class="example-en">restricted</span><span class="example-fr">restreint</span></div>
+        </div>
+
+        <div class="card" style="border-color:var(--red)">
+          <h3 class="section-title" style="color:var(--red)">FAUX AMIS - A connaitre par coeur !</h3>
+          <div class="hint-box">Ces mots RESSEMBLENT au francais mais ont un AUTRE sens. C'est un piege classique.</div>
+          <div class="example-row"><span class="example-en">delay</span><span class="example-phonetic">/di-lei/</span><span class="example-fr">= RETARD (pas delai)</span></div>
+          <div class="example-row"><span class="example-en">actually</span><span class="example-phonetic">/ak-tchou-a-li/</span><span class="example-fr">= EN FAIT (pas actuellement)</span></div>
+          <div class="example-row"><span class="example-en">eventually</span><span class="example-phonetic">/i-ven-tchou-a-li/</span><span class="example-fr">= FINALEMENT (pas eventuellement)</span></div>
+          <div class="example-row"><span class="example-en">to supply</span><span class="example-fr">= FOURNIR (pas supplier)</span></div>
+          <div class="example-row"><span class="example-en">comprehensive</span><span class="example-fr">= COMPLET (pas comprehensif)</span></div>
+          <div class="example-row"><span class="example-en">to achieve</span><span class="example-fr">= ATTEINDRE/REALISER (pas achever)</span></div>
+          <div class="example-row"><span class="example-en">currently</span><span class="example-fr">= ACTUELLEMENT (pas couramment)</span></div>
+          <div class="example-row"><span class="example-en">to resume</span><span class="example-fr">= REPRENDRE (pas resumer)</span></div>
+          <div class="example-row"><span class="example-en">library</span><span class="example-fr">= BIBLIOTHEQUE (pas librairie)</span></div>
+          <div class="example-row"><span class="example-en">important</span><span class="example-fr">= IMPORTANT (celui-la est vrai !)</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Mots NON transparents a connaitre</h3>
+          <p class="instruction">Ces mots reviennent souvent dans les textes BTP mais ne ressemblent pas au francais :</p>
+          <div class="example-row"><span class="example-en">building</span><span class="example-phonetic">/bil-ding/</span><span class="example-fr">batiment</span></div>
+          <div class="example-row"><span class="example-en">delay</span><span class="example-fr">retard</span></div>
+          <div class="example-row"><span class="example-en">schedule</span><span class="example-phonetic">/ske-dioul/</span><span class="example-fr">planning / calendrier</span></div>
+          <div class="example-row"><span class="example-en">survey</span><span class="example-phonetic">/seur-vei/</span><span class="example-fr">etude / releve</span></div>
+          <div class="example-row"><span class="example-en">throughout</span><span class="example-phonetic">/srou-aout/</span><span class="example-fr">tout au long de</span></div>
+          <div class="example-row"><span class="example-en">timber</span><span class="example-phonetic">/tim-beur/</span><span class="example-fr">bois</span></div>
+          <div class="example-row"><span class="example-en">steel</span><span class="example-phonetic">/stile/</span><span class="example-fr">acier</span></div>
+          <div class="example-row"><span class="example-en">health</span><span class="example-phonetic">/helss/</span><span class="example-fr">sante</span></div>
+          <div class="example-row"><span class="example-en">aware</span><span class="example-phonetic">/a-ouere/</span><span class="example-fr">conscient</span></div>
+          <div class="example-row"><span class="example-en">achieve</span><span class="example-phonetic">/a-tchive/</span><span class="example-fr">atteindre / realiser</span></div>
+          <div class="example-row"><span class="example-en">improve</span><span class="example-phonetic">/im-prouve/</span><span class="example-fr">ameliorer</span></div>
+          <div class="example-row"><span class="example-en">increase</span><span class="example-phonetic">/in-crise/</span><span class="example-fr">augmenter</span></div>
+          <div class="example-row"><span class="example-en">reduce / decrease</span><span class="example-fr">reduire / diminuer</span></div>
+          <div class="example-row"><span class="example-en">provide / supply</span><span class="example-fr">fournir</span></div>
+          <div class="example-row"><span class="example-en">require</span><span class="example-phonetic">/ri-kouaieur/</span><span class="example-fr">exiger / necessiter</span></div>
+          <div class="example-row"><span class="example-en">issue</span><span class="example-phonetic">/i-chou/</span><span class="example-fr">probleme</span></div>
+          <div class="example-row"><span class="example-en">target</span><span class="example-fr">objectif / cible</span></div>
+          <div class="example-row"><span class="example-en">slightly</span><span class="example-phonetic">/slaite-li/</span><span class="example-fr">legerement</span></div>
+          <div class="example-row"><span class="example-en">currently</span><span class="example-fr">actuellement</span></div>
+          <div class="example-row"><span class="example-en">overall</span><span class="example-fr">global / dans l'ensemble</span></div>
+        </div>
+
+        <div class="card" style="border-color:var(--purple)">
+          <h3 class="section-title" style="color:var(--purple)">Test : 60 questions - Vocabulaire essentiel</h3>
+          <p class="instruction">Ecoutez le mot anglais, tapez sa traduction en francais.</p>
+          <div class="quiz-area" id="vocab-quiz">
+            <div class="quiz-prompt" id="vq-prompt">Cliquez "Ecouter" pour commencer</div>
+            <div class="text-center mb-12"><button class="btn btn-purple btn-sm" id="vq-listen">Ecouter</button></div>
+            <input class="quiz-input" id="vq-input" type="text" placeholder="Traduction en francais..." disabled>
+            <div class="quiz-feedback" id="vq-feedback"></div>
+            <div class="quiz-score" id="vq-score"></div>
+            <div class="text-center mt-12 gap-12">
+              <button class="btn btn-outline btn-sm" id="vq-show">Voir la reponse</button>
+              <button class="btn btn-outline btn-sm" id="vq-next" disabled>Suivant</button>
+            </div>
+          </div>
+        </div>`;
+      },
+      init: function() { initVocabQuiz(); }
+    },
+
+    phrases: {
+      title: "Phrases types des presentations",
+      render: function() {
+        return `
+        <div class="card" style="border-color:var(--gold)">
+          <div class="hint-box" style="font-size:0.95rem"><strong>Tous les audios de l'epreuve suivent le meme plan.</strong><br>Si vous connaissez ces phrases, vous savez toujours ou vous etes dans le discours, meme si vous ne comprenez pas tout le reste.</div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Comment retenir vite</h3>
+          <div class="template-box" style="font-size:0.9rem;line-height:1.8">
+<strong>Tout discours en 3 parties :</strong>
+
+<span style="color:var(--green)">1. DEBUT (30 premieres secondes)</span>
+= Qui parle + De quoi + Pourquoi
+Mots-cles : "My name is...", "I would like to...", "update you on..."
+
+<span style="color:var(--gold)">2. MILIEU (le plus long)</span>
+= Les details, les chiffres, les problemes
+Mots-cles : "On the financial side...", "However...", "Due to..."
+
+<span style="color:var(--red)">3. FIN (30 dernieres secondes)</span>
+= Conclusion + Prochaines etapes
+Mots-cles : "Finally...", "The next step...", "Thank you"
+
+<strong>Truc :</strong> Au debut, concentrez-vous UNIQUEMENT sur le debut et la fin.
+Le debut vous donne le QUI et le QUOI.
+La fin vous donne le QUOI ENSUITE.
+C'est deja la moitie des points.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--green)">Debut - Se presenter</h3>
+          <div class="example-row"><span class="example-en">Good morning everyone</span><span class="example-fr">Bonjour a tous</span></div>
+          <div class="example-row"><span class="example-en">Good afternoon</span><span class="example-fr">Bonjour (apres-midi)</span></div>
+          <div class="example-row"><span class="example-en">My name is... and I am the...</span><span class="example-fr">Je m'appelle... et je suis le/la...</span></div>
+          <div class="example-row"><span class="example-en">I work for / I work at</span><span class="example-fr">Je travaille pour / chez</span></div>
+          <div class="example-row"><span class="example-en">Today I would like to update you on...</span><span class="example-fr">Aujourd'hui je voudrais vous informer de...</span></div>
+          <div class="example-row"><span class="example-en">I'm here to present...</span><span class="example-fr">Je suis la pour presenter...</span></div>
+          <div class="example-row"><span class="example-en">Let me give you an overview of...</span><span class="example-fr">Voici un apercu de...</span></div>
+          <div class="example-row"><span class="example-en">The purpose of this presentation is...</span><span class="example-fr">Le but de cette presentation est...</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--gold)">Milieu - Developper</h3>
+          <div class="example-row"><span class="example-en">The project involves...</span><span class="example-fr">Le projet comprend...</span></div>
+          <div class="example-row"><span class="example-en">We are currently in the... phase</span><span class="example-fr">Nous sommes en phase de...</span></div>
+          <div class="example-row"><span class="example-en">The total budget is...</span><span class="example-fr">Le budget total est de...</span></div>
+          <div class="example-row"><span class="example-en">So far, we have spent...</span><span class="example-fr">Jusqu'ici, nous avons depense...</span></div>
+          <div class="example-row"><span class="example-en">On the financial side...</span><span class="example-fr">Cote financier...</span></div>
+          <div class="example-row"><span class="example-en">Regarding safety...</span><span class="example-fr">Concernant la securite...</span></div>
+          <div class="example-row"><span class="example-en">However, we have experienced...</span><span class="example-fr">Cependant, nous avons rencontre...</span></div>
+          <div class="example-row"><span class="example-en">The overspend is due to...</span><span class="example-fr">Le depassement est du a...</span></div>
+          <div class="example-row"><span class="example-en">We are reviewing...</span><span class="example-fr">Nous examinons...</span></div>
+          <div class="example-row"><span class="example-en">I should also mention that...</span><span class="example-fr">Je dois aussi mentionner que...</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title" style="color:var(--red)">Fin - Conclure</h3>
+          <div class="example-row"><span class="example-en">Finally...</span><span class="example-fr">Enfin...</span></div>
+          <div class="example-row"><span class="example-en">To sum up / To summarise</span><span class="example-fr">Pour resumer</span></div>
+          <div class="example-row"><span class="example-en">In conclusion</span><span class="example-fr">En conclusion</span></div>
+          <div class="example-row"><span class="example-en">The next step will be to...</span><span class="example-fr">La prochaine etape sera de...</span></div>
+          <div class="example-row"><span class="example-en">Our objective is to...</span><span class="example-fr">Notre objectif est de...</span></div>
+          <div class="example-row"><span class="example-en">We expect to finish by...</span><span class="example-fr">Nous esperons finir d'ici...</span></div>
+          <div class="example-row"><span class="example-en">Thank you for your attention</span><span class="example-fr">Merci de votre attention</span></div>
+          <div class="example-row"><span class="example-en">Any questions?</span><span class="example-fr">Des questions ? (= c'est fini !)</span></div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Fonctions dans le BTP</h3>
+          <p class="instruction">Vous les entendrez au debut de chaque audio :</p>
+          <div class="example-row"><span class="example-en">project manager</span><span class="example-fr">chef de projet</span></div>
+          <div class="example-row"><span class="example-en">site manager / site supervisor</span><span class="example-fr">chef de chantier</span></div>
+          <div class="example-row"><span class="example-en">health and safety officer</span><span class="example-fr">responsable HSE</span></div>
+          <div class="example-row"><span class="example-en">quantity surveyor</span><span class="example-phonetic">/kouon-ti-ti seur-vei-eur/</span><span class="example-fr">economiste de la construction</span></div>
+          <div class="example-row"><span class="example-en">cost consultant</span><span class="example-fr">consultant couts</span></div>
+          <div class="example-row"><span class="example-en">BIM coordinator</span><span class="example-fr">coordinateur BIM</span></div>
+          <div class="example-row"><span class="example-en">architect</span><span class="example-fr">architecte</span></div>
+          <div class="example-row"><span class="example-en">structural engineer</span><span class="example-fr">ingenieur structure</span></div>
+          <div class="example-row"><span class="example-en">contractor</span><span class="example-fr">entrepreneur / entreprise</span></div>
+          <div class="example-row"><span class="example-en">client</span><span class="example-fr">maitre d'ouvrage / client</span></div>
+        </div>
+
+        <div class="card" style="border-color:var(--purple)">
+          <h3 class="section-title" style="color:var(--purple)">Test : 40 questions - Phrases et fonctions</h3>
+          <p class="instruction">Ecoutez la phrase anglaise, ecrivez ce que ca veut dire en francais.</p>
+          <div class="quiz-area" id="phrase-quiz">
+            <div class="quiz-prompt" id="pq-prompt">Cliquez "Ecouter" pour commencer</div>
+            <div class="text-center mb-12"><button class="btn btn-purple btn-sm" id="pq-listen">Ecouter</button></div>
+            <input class="quiz-input" id="pq-input" type="text" placeholder="Traduction en francais..." disabled>
+            <div class="quiz-feedback" id="pq-feedback"></div>
+            <div class="quiz-score" id="pq-score"></div>
+            <div class="text-center mt-12 gap-12">
+              <button class="btn btn-outline btn-sm" id="pq-show">Voir la reponse</button>
+              <button class="btn btn-outline btn-sm" id="pq-next" disabled>Suivant</button>
+            </div>
+          </div>
+        </div>`;
+      },
+      init: function() { initPhraseQuiz(); }
+    },
+
+    template: {
+      title: "Modeles de compte-rendu",
+      render: function() {
+        return `
+        <div class="card">
+          <div class="info-box">Le compte-rendu est la partie notee de l'epreuve. Meme si vous n'avez pas tout compris, une bonne structure vous rapporte des points. Voici un gabarit universel + 5 gabarits adaptes a chaque type de texte BTP.</div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Gabarit universel (pour tout texte)</h3>
+          <p class="instruction">Ce gabarit fonctionne quel que soit le sujet. Apprenez-le par coeur et recopiez-le le jour J.</p>
+          <div class="template-box">
+Ce document est <span class="placeholder">[une presentation / un compte-rendu / un expose]</span> de <span class="placeholder">[nom de la personne]</span>, <span class="placeholder">[sa fonction]</span>, au sujet de <span class="placeholder">[le sujet principal]</span>.
+
+<strong>Contexte :</strong>
+Il s'agit de <span class="placeholder">[type de projet, lieu, taille/dimension]</span>.
+
+<strong>Situation actuelle :</strong>
+<span class="placeholder">[Ou en est le projet ? Quelle phase ? Qu'est-ce qui est fait/en cours ?]</span>
+
+<strong>Chiffres cles :</strong>
+<span class="placeholder">[Budget, couts, pourcentages, quantites, dates, delais]</span>
+
+<strong>Problemes ou difficultes :</strong>
+<span class="placeholder">[Retards, depassements, risques, incidents]</span>
+
+<strong>Solutions et perspectives :</strong>
+<span class="placeholder">[Mesures prises, prochaines etapes, objectifs]</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:rgba(224,159,62,0.3)">
+          <h3 class="section-title">Gabarit 1 : Suivi de chantier</h3>
+          <p class="instruction">Pour les textes type "point d'avancement" ou "reunion de chantier".</p>
+          <div class="template-box">
+Ce document est un point d'avancement presente par <span class="placeholder">[nom]</span>, <span class="placeholder">[chef de projet / directeur de travaux]</span>, concernant le chantier de <span class="placeholder">[type : logements, bureaux...]</span> situe a <span class="placeholder">[lieu]</span>.
+
+<strong>Description du projet :</strong>
+Le projet comprend <span class="placeholder">[nombre de batiments, d'etages, de logements]</span>.
+
+<strong>Avancement des travaux :</strong>
+Le chantier est actuellement en phase de <span class="placeholder">[gros oeuvre / second oeuvre / finitions]</span>.
+- <span class="placeholder">[Ce qui est termine]</span>
+- <span class="placeholder">[Ce qui est en cours]</span>
+
+<strong>Budget :</strong>
+Le budget total est de <span class="placeholder">[montant]</span>. A ce jour, <span class="placeholder">[montant depense]</span> ont ete depenses. <span class="placeholder">[Depassement ? Cause ?]</span>
+
+<strong>Retards :</strong>
+Un retard de <span class="placeholder">[duree]</span> est signale, du a <span class="placeholder">[cause]</span>. La nouvelle date de livraison est <span class="placeholder">[date]</span>.
+
+<strong>Securite :</strong>
+<span class="placeholder">[Incidents ? Mesures ?]</span>
+
+<strong>Prochaines etapes :</strong>
+<span class="placeholder">[Actions a venir]</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:rgba(42,157,143,0.3)">
+          <h3 class="section-title">Gabarit 2 : Reunion BIM / Maquette numerique</h3>
+          <p class="instruction">Pour les textes sur le BIM, la coordination ou les outils numeriques.</p>
+          <div class="template-box">
+Ce document est un compte-rendu de reunion presente par <span class="placeholder">[nom]</span>, <span class="placeholder">[coordinateur BIM / responsable numerique]</span>, dans le cadre du projet <span class="placeholder">[nom du projet]</span>.
+
+<strong>Contexte :</strong>
+Le client exige une approche <span class="placeholder">[BIM niveau 2 / maquette numerique]</span>. Le travail implique <span class="placeholder">[les intervenants : architecte, ingenieur, economiste...]</span>.
+
+<strong>Outils utilises :</strong>
+L'equipe utilise <span class="placeholder">[logiciels : Revit, Navisworks...]</span> et un <span class="placeholder">[environnement de donnees commun (CDE)]</span>.
+
+<strong>Resultats obtenus :</strong>
+- <span class="placeholder">[Nombre de conflits/clashs detectes entre...]</span>
+- <span class="placeholder">[Gains de temps/efficacite : pourcentage]</span>
+
+<strong>Prochaines etapes :</strong>
+<span class="placeholder">[Planning 4D, visualisation, anticipation des retards...]</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:rgba(231,111,81,0.3)">
+          <h3 class="section-title">Gabarit 3 : Securite chantier</h3>
+          <p class="instruction">Pour les briefings securite, HSE, inspections.</p>
+          <div class="template-box">
+Ce document est un briefing securite presente par <span class="placeholder">[nom]</span>, <span class="placeholder">[responsable HSE / sante et securite]</span>, sur le chantier de <span class="placeholder">[lieu/projet]</span>.
+
+<strong>Equipements obligatoires (EPI) :</strong>
+Tous les ouvriers doivent porter <span class="placeholder">[casque, gilet haute visibilite, chaussures de securite, harnais si travail en hauteur]</span>.
+
+<strong>Incidents recents :</strong>
+<span class="placeholder">[Nombre de quasi-accidents]</span> quasi-accidents ont ete signales :
+- <span class="placeholder">[Description incident 1]</span>
+- <span class="placeholder">[Description incident 2]</span>
+
+<strong>Nouvelles regles :</strong>
+- <span class="placeholder">[Regle 1 : ex. inspection quotidienne des echafaudages]</span>
+- <span class="placeholder">[Regle 2 : ex. interdiction de mouvement vehicule sans signaleur]</span>
+
+<strong>Zones a risque :</strong>
+<span class="placeholder">[Zone restreinte, grue en operation, acces interdit...]</span>
+
+<strong>Consigne generale :</strong>
+<span class="placeholder">[Signaler tout danger au chef de chantier]</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:rgba(74,144,217,0.3)">
+          <h3 class="section-title">Gabarit 4 : Estimation des couts</h3>
+          <p class="instruction">Pour les presentations budgetaires, estimations, analyses de couts.</p>
+          <div class="template-box">
+Ce document est une presentation d'estimation des couts realisee par <span class="placeholder">[nom]</span>, <span class="placeholder">[consultant en couts / economiste]</span>, du cabinet <span class="placeholder">[nom]</span>, pour le projet de <span class="placeholder">[type : extension, construction, renovation]</span>.
+
+<strong>Perimetre des travaux :</strong>
+Le projet comprend <span class="placeholder">[description : nombre de salles, batiments, renovation...]</span>.
+
+<strong>Methode d'estimation :</strong>
+L'estimation est basee sur <span class="placeholder">[prix du marche, benchmark de X projets similaires]</span>.
+
+<strong>Cout total estime :</strong> <span class="placeholder">[montant]</span>
+
+<strong>Repartition des couts :</strong>
+- Infrastructure/fondations : <span class="placeholder">[X %]</span>
+- Superstructure : <span class="placeholder">[X %]</span>
+- CVC (chauffage, ventilation) : <span class="placeholder">[X %]</span>
+- Finitions : <span class="placeholder">[X %]</span>
+- Amenagements exterieurs : <span class="placeholder">[X %]</span>
+
+<strong>Risques identifies :</strong>
+- Risque 1 : <span class="placeholder">[ex. contamination du sol, impact sur fondations +X%]</span>
+- Risque 2 : <span class="placeholder">[ex. volatilite des prix de l'acier +X%]</span>
+
+<strong>Provision pour aleas :</strong> <span class="placeholder">[X %]</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:rgba(167,139,250,0.3)">
+          <h3 class="section-title">Gabarit 5 : Developpement durable</h3>
+          <p class="instruction">Pour les textes sur l'environnement, le carbone, les normes ecologiques.</p>
+          <div class="template-box">
+Ce document est un expose presente par <span class="placeholder">[nom]</span>, <span class="placeholder">[professeur / expert / chercheur]</span>, de <span class="placeholder">[universite / organisme]</span>, portant sur <span class="placeholder">[le developpement durable dans la construction]</span>.
+
+<strong>Constat :</strong>
+Le secteur du batiment represente <span class="placeholder">[X % des emissions carbone mondiales]</span>. On distingue :
+- Le carbone incorpore : <span class="placeholder">[fabrication et transport des materiaux]</span>
+- Le carbone operationnel : <span class="placeholder">[consommation d'energie du batiment en exploitation]</span>
+
+<strong>Solutions presentees :</strong>
+- <span class="placeholder">[Beton bas carbone : remplacement du ciment par... reduction de X%]</span>
+- <span class="placeholder">[Construction bois : CLT / lamelle-croise, jusqu'a X etages]</span>
+- <span class="placeholder">[Maison passive : isolation, etancheite, VMC double flux]</span>
+
+<strong>Reglementation :</strong>
+<span class="placeholder">[RE2020 en France, objectifs energie + carbone]</span>
+
+<strong>Conclusion :</strong>
+<span class="placeholder">[Le developpement durable est devenu une exigence fondamentale / incontournable]</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Exemple complet rempli (Texte 1)</h3>
+          <p class="instruction">Voici a quoi doit ressembler un bon compte-rendu termine :</p>
+          <div class="template-box" style="font-size:0.82rem">
+Ce document est une presentation de James Barrett, chef de projet, concernant un complexe residentiel a East London.
+
+<strong>Description du projet :</strong>
+Le projet comprend 3 immeubles de 6 etages pour un total de 144 logements.
+
+<strong>Avancement des travaux :</strong>
+Le chantier est en phase de gros oeuvre. L'ossature beton du Bloc A est terminee. Le coffrage du Bloc B vient de commencer.
+
+<strong>Budget :</strong>
+Le budget total est de 12,5 millions de livres. 7 millions ont deja ete depenses, ce qui represente un leger depassement. Ce depassement est du a la hausse des prix du ciment et du bois.
+
+<strong>Retards :</strong>
+Un retard de 2 semaines a ete enregistre a cause de problemes d'approvisionnement en acier d'armature. La date de livraison est repoussee de mars a mi-avril 2027.
+
+<strong>Solutions :</strong>
+L'equipe travaille avec l'architecte pour identifier des economies sur les finitions (second oeuvre) sans compromettre la qualite.
+
+<strong>Securite :</strong>
+Aucun incident majeur n'a ete signale sur le chantier.
+          </div>
+        </div>
+
+        <div class="hint-box">
+          <strong>Strategie le jour de l'examen :</strong><br>
+          1. Avant l'ecoute, ecrivez la structure du gabarit universel sur votre brouillon<br>
+          2. Pendant la pause, remplissez les blancs avec vos notes<br>
+          3. Apres la 2eme ecoute, completez et redigez proprement<br>
+          4. Meme incomplet, rendez votre copie : la structure seule vaut des points !
+        </div>`;
+      }
+    },
+
+    mini: {
+      title: "Mini-exercices d'ecoute",
+      render: function() {
+        return `
+        <div class="card">
+          <div class="info-box">Ecoutez des phrases courtes extraites des textes d'entrainement et identifiez l'information demandee.</div>
+        </div>
+        <div class="card">
+          <h3 class="section-title">Exercice : reperer l'info cle</h3>
+          <div class="quiz-area" id="mini-quiz">
+            <div class="quiz-prompt" id="mq-prompt">Cliquez pour commencer</div>
+            <div class="text-center mb-12">
+              <button class="btn btn-purple btn-sm" id="mq-listen">Ecouter la phrase</button>
+            </div>
+            <div class="quiz-prompt" style="font-size:0.85rem;color:var(--text-muted)" id="mq-question"></div>
+            <input class="quiz-input" id="mq-input" type="text" placeholder="Votre reponse" disabled>
+            <div class="quiz-feedback" id="mq-feedback"></div>
+            <div class="quiz-score" id="mq-score"></div>
+            <div class="text-center mt-12">
+              <button class="btn btn-outline btn-sm" id="mq-next" disabled>Suivant</button>
+            </div>
+          </div>
+        </div>`;
+      },
+      init: function() { initMiniQuiz(); }
+    }
+  };
+
+  /* ================================================================
+     NUMBER QUIZ
+     ================================================================ */
+  // 100 questions progressives : facile -> moyen -> dur -> BTP
+  const NUMBER_ITEMS = [
+    // NIVEAU 1 : Chiffres simples (1-20) — questions 1-20
+    { spoken: 'one', answer: '1', display: '1', level: 'Facile' },
+    { spoken: 'three', answer: '3', display: '3', level: 'Facile' },
+    { spoken: 'five', answer: '5', display: '5', level: 'Facile' },
+    { spoken: 'seven', answer: '7', display: '7', level: 'Facile' },
+    { spoken: 'nine', answer: '9', display: '9', level: 'Facile' },
+    { spoken: 'two', answer: '2', display: '2', level: 'Facile' },
+    { spoken: 'four', answer: '4', display: '4', level: 'Facile' },
+    { spoken: 'six', answer: '6', display: '6', level: 'Facile' },
+    { spoken: 'eight', answer: '8', display: '8', level: 'Facile' },
+    { spoken: 'ten', answer: '10', display: '10', level: 'Facile' },
+    { spoken: 'eleven', answer: '11', display: '11', level: 'Facile' },
+    { spoken: 'twelve', answer: '12', display: '12', level: 'Facile' },
+    { spoken: 'thirteen', answer: '13', display: '13', level: 'Facile' },
+    { spoken: 'fourteen', answer: '14', display: '14', level: 'Facile' },
+    { spoken: 'fifteen', answer: '15', display: '15', level: 'Facile' },
+    { spoken: 'sixteen', answer: '16', display: '16', level: 'Facile' },
+    { spoken: 'seventeen', answer: '17', display: '17', level: 'Facile' },
+    { spoken: 'eighteen', answer: '18', display: '18', level: 'Facile' },
+    { spoken: 'nineteen', answer: '19', display: '19', level: 'Facile' },
+    { spoken: 'twenty', answer: '20', display: '20', level: 'Facile' },
+
+    // NIVEAU 2 : Dizaines (20-99) — questions 21-40
+    { spoken: 'thirty', answer: '30', display: '30', level: 'Dizaines' },
+    { spoken: 'forty', answer: '40', display: '40', level: 'Dizaines' },
+    { spoken: 'fifty', answer: '50', display: '50', level: 'Dizaines' },
+    { spoken: 'sixty', answer: '60', display: '60', level: 'Dizaines' },
+    { spoken: 'seventy', answer: '70', display: '70', level: 'Dizaines' },
+    { spoken: 'eighty', answer: '80', display: '80', level: 'Dizaines' },
+    { spoken: 'ninety', answer: '90', display: '90', level: 'Dizaines' },
+    { spoken: 'twenty one', answer: '21', display: '21', level: 'Dizaines' },
+    { spoken: 'twenty five', answer: '25', display: '25', level: 'Dizaines' },
+    { spoken: 'thirty two', answer: '32', display: '32', level: 'Dizaines' },
+    { spoken: 'thirty five', answer: '35', display: '35', level: 'Dizaines' },
+    { spoken: 'forty seven', answer: '47', display: '47', level: 'Dizaines' },
+    { spoken: 'fifty three', answer: '53', display: '53', level: 'Dizaines' },
+    { spoken: 'sixty four', answer: '64', display: '64', level: 'Dizaines' },
+    { spoken: 'seventy eight', answer: '78', display: '78', level: 'Dizaines' },
+    { spoken: 'eighty six', answer: '86', display: '86', level: 'Dizaines' },
+    { spoken: 'ninety nine', answer: '99', display: '99', level: 'Dizaines' },
+    { spoken: 'forty two', answer: '42', display: '42', level: 'Dizaines' },
+    { spoken: 'sixty eight', answer: '68', display: '68', level: 'Dizaines' },
+    { spoken: 'seventy five', answer: '75', display: '75', level: 'Dizaines' },
+
+    // NIVEAU 3 : Pieges teen vs ty — questions 41-55
+    { spoken: 'thirteen', answer: '13', display: '13 (pas 30!)', level: 'Pieges' },
+    { spoken: 'thirty', answer: '30', display: '30 (pas 13!)', level: 'Pieges' },
+    { spoken: 'fourteen', answer: '14', display: '14 (pas 40!)', level: 'Pieges' },
+    { spoken: 'forty', answer: '40', display: '40 (pas 14!)', level: 'Pieges' },
+    { spoken: 'fifteen', answer: '15', display: '15 (pas 50!)', level: 'Pieges' },
+    { spoken: 'fifty', answer: '50', display: '50 (pas 15!)', level: 'Pieges' },
+    { spoken: 'sixteen', answer: '16', display: '16 (pas 60!)', level: 'Pieges' },
+    { spoken: 'sixty', answer: '60', display: '60 (pas 16!)', level: 'Pieges' },
+    { spoken: 'seventeen', answer: '17', display: '17 (pas 70!)', level: 'Pieges' },
+    { spoken: 'seventy', answer: '70', display: '70 (pas 17!)', level: 'Pieges' },
+    { spoken: 'eighteen', answer: '18', display: '18 (pas 80!)', level: 'Pieges' },
+    { spoken: 'eighty', answer: '80', display: '80 (pas 18!)', level: 'Pieges' },
+    { spoken: 'nineteen', answer: '19', display: '19 (pas 90!)', level: 'Pieges' },
+    { spoken: 'ninety', answer: '90', display: '90 (pas 19!)', level: 'Pieges' },
+    { spoken: 'fifteen', answer: '15', display: '15', level: 'Pieges' },
+
+    // NIVEAU 4 : Centaines et milliers — questions 56-70
+    { spoken: 'one hundred', answer: '100', display: '100', level: 'Grands' },
+    { spoken: 'two hundred', answer: '200', display: '200', level: 'Grands' },
+    { spoken: 'three hundred', answer: '300', display: '300', level: 'Grands' },
+    { spoken: 'five hundred', answer: '500', display: '500', level: 'Grands' },
+    { spoken: 'one hundred and twenty', answer: '120', display: '120', level: 'Grands' },
+    { spoken: 'one hundred and forty four', answer: '144', display: '144', level: 'Grands' },
+    { spoken: 'two hundred and fifty', answer: '250', display: '250', level: 'Grands' },
+    { spoken: 'three hundred and sixty', answer: '360', display: '360', level: 'Grands' },
+    { spoken: 'one thousand', answer: '1000', display: '1 000', level: 'Grands' },
+    { spoken: 'two thousand', answer: '2000', display: '2 000', level: 'Grands' },
+    { spoken: 'five thousand', answer: '5000', display: '5 000', level: 'Grands' },
+    { spoken: 'ten thousand', answer: '10000', display: '10 000', level: 'Grands' },
+    { spoken: 'twenty five thousand', answer: '25000', display: '25 000', level: 'Grands' },
+    { spoken: 'fifty thousand', answer: '50000', display: '50 000', level: 'Grands' },
+    { spoken: 'one hundred thousand', answer: '100000', display: '100 000', level: 'Grands' },
+
+    // NIVEAU 5 : Pourcentages et decimales — questions 71-85
+    { spoken: 'ten percent', answer: '10', display: '10 %', level: '%' },
+    { spoken: 'fifteen percent', answer: '15', display: '15 %', level: '%' },
+    { spoken: 'twenty percent', answer: '20', display: '20 %', level: '%' },
+    { spoken: 'twenty two percent', answer: '22', display: '22 %', level: '%' },
+    { spoken: 'thirty percent', answer: '30', display: '30 %', level: '%' },
+    { spoken: 'thirty five percent', answer: '35', display: '35 %', level: '%' },
+    { spoken: 'forty percent', answer: '40', display: '40 %', level: '%' },
+    { spoken: 'fifty percent', answer: '50', display: '50 %', level: '%' },
+    { spoken: 'seven point five percent', answer: '7.5', display: '7,5 %', level: '%' },
+    { spoken: 'eight percent', answer: '8', display: '8 %', level: '%' },
+    { spoken: 'twelve percent', answer: '12', display: '12 %', level: '%' },
+    { spoken: 'seventeen percent', answer: '17', display: '17 %', level: '%' },
+    { spoken: 'three point five', answer: '3.5', display: '3,5', level: '%' },
+    { spoken: 'two point seven', answer: '2.7', display: '2,7', level: '%' },
+    { spoken: 'nine point eight', answer: '9.8', display: '9,8', level: '%' },
+
+    // NIVEAU 6 : Millions (BTP) — questions 86-100
+    { spoken: 'one million', answer: '1000000', display: '1 million', level: 'BTP' },
+    { spoken: 'two million', answer: '2000000', display: '2 millions', level: 'BTP' },
+    { spoken: 'five million', answer: '5000000', display: '5 millions', level: 'BTP' },
+    { spoken: 'seven million', answer: '7000000', display: '7 millions', level: 'BTP' },
+    { spoken: 'ten million', answer: '10000000', display: '10 millions', level: 'BTP' },
+    { spoken: 'twelve million', answer: '12000000', display: '12 millions', level: 'BTP' },
+    { spoken: 'four point eight million', answer: '4800000', display: '4,8 millions', level: 'BTP' },
+    { spoken: 'twelve point five million', answer: '12500000', display: '12,5 millions', level: 'BTP' },
+    { spoken: 'three point two million', answer: '3200000', display: '3,2 millions', level: 'BTP' },
+    { spoken: 'six point five million pounds', answer: '6500000', display: '6,5 millions de livres', level: 'BTP' },
+    { spoken: 'eight point three million euros', answer: '8300000', display: '8,3 millions d\'euros', level: 'BTP' },
+    { spoken: 'one point five billion', answer: '1500000000', display: '1,5 milliard', level: 'BTP' },
+    { spoken: 'five hundred thousand', answer: '500000', display: '500 000', level: 'BTP' },
+    { spoken: 'two hundred and fifty thousand', answer: '250000', display: '250 000', level: 'BTP' },
+    { spoken: 'nine point two million', answer: '9200000', display: '9,2 millions', level: 'BTP' }
+  ];
+
+  let nqIdx = 0, nqCorrect = 0, nqTotal = 0, nqAnswered = false;
+
+  function initNumberQuiz() {
+    // Don't shuffle — keep progressive order
+    nqIdx = 0; nqCorrect = 0; nqTotal = 0; nqAnswered = false;
+
+    const listenBtn = document.getElementById('nq-listen');
+    const relistenBtn = document.getElementById('nq-relisten');
+    const input = document.getElementById('nq-input');
+    const nextBtn = document.getElementById('nq-next');
+    const feedback = document.getElementById('nq-feedback');
+    const score = document.getElementById('nq-score');
+    const prompt = document.getElementById('nq-prompt');
+
+    function levelColor(l) {
+      const m = { 'Facile':'#2a9d8f', 'Dizaines':'#4a90d9', 'Pieges':'#e76f51', 'Grands':'#e09f3e', '%':'#a78bfa', 'BTP':'#e09f3e' };
+      return m[l] || '#8b8fa3';
+    }
+
+    function loadQ() {
+      nqAnswered = false;
+      if (nqIdx >= NUMBER_ITEMS.length) {
+        const pct = Math.round(nqCorrect / nqTotal * 100);
+        let msg = pct >= 80 ? 'Excellent !' : pct >= 60 ? 'Bien !' : pct >= 40 ? 'Pas mal, continuez !' : 'Refaites le test, ca viendra !';
+        prompt.innerHTML = '<span style="font-size:1.2rem">Termine ! ' + nqCorrect + '/' + nqTotal + ' (' + pct + '%)</span><br>' + msg;
+        listenBtn.disabled = true;
+        relistenBtn.style.display = 'none';
+        input.disabled = true;
+        nextBtn.disabled = true;
+        // Save best score
+        try {
+          const prev = JSON.parse(localStorage.getItem('bts-nq-best') || '0');
+          if (nqCorrect > prev) localStorage.setItem('bts-nq-best', nqCorrect);
+        } catch {}
+        return;
+      }
+      const item = NUMBER_ITEMS[nqIdx];
+      prompt.innerHTML = '<span style="color:' + levelColor(item.level) + ';font-weight:700">[' + item.level + ']</span> Question ' + (nqIdx + 1) + ' / ' + NUMBER_ITEMS.length;
+      input.value = '';
+      input.disabled = true;
+      feedback.textContent = '';
+      nextBtn.disabled = true;
+      relistenBtn.style.display = 'none';
+    }
+
+    function playCurrentItem() {
+      if (nqIdx >= NUMBER_ITEMS.length) return;
+      speakText(NUMBER_ITEMS[nqIdx].spoken, 0.75);
+      input.disabled = false;
+      relistenBtn.style.display = '';
+      input.focus();
+    }
+
+    listenBtn.addEventListener('click', playCurrentItem);
+    relistenBtn.addEventListener('click', () => {
+      if (nqIdx < NUMBER_ITEMS.length) speakText(NUMBER_ITEMS[nqIdx].spoken, 0.65);
+    });
+
+    function checkAnswer() {
+      if (nqAnswered) return;
+      if (!input.value.trim()) return;
+      nqAnswered = true;
+      const item = NUMBER_ITEMS[nqIdx];
+      // Normalize: remove spaces, replace comma with dot
+      const userVal = input.value.trim().replaceAll(' ', '').replaceAll(',', '.');
+      const correctVal = item.answer.replaceAll(',', '.');
+      nqTotal++;
+
+      // Accept various formats
+      const isCorrect = userVal === correctVal ||
+        userVal === item.display.replace(/[^0-9.,]/g, '').replaceAll(',', '.') ||
+        userVal.replace(/\.?0+$/, '') === correctVal.replace(/\.?0+$/, '');
+
+      if (isCorrect) {
+        nqCorrect++;
+        feedback.className = 'quiz-feedback correct';
+        feedback.textContent = 'Correct ! ' + item.display;
+      } else {
+        feedback.className = 'quiz-feedback wrong';
+        feedback.textContent = 'Non. Reponse : ' + item.display;
+      }
+      score.textContent = nqCorrect + '/' + nqTotal + ' correct (' + Math.round(nqCorrect/nqTotal*100) + '%)';
+      nextBtn.disabled = false;
+      nextBtn.focus();
+    }
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') checkAnswer();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      nqIdx++;
+      loadQ();
+    });
+
+    loadQ();
+  }
+
+  /* ================================================================
+     GENERIC LISTEN-ANSWER QUIZ ENGINE
+     ================================================================ */
+  function initListenQuiz(prefix, items, speechRate) {
+    let idx = 0, answered = false;
+    const listen = document.getElementById(prefix + '-listen');
+    const input = document.getElementById(prefix + '-input');
+    const next = document.getElementById(prefix + '-next');
+    const show = document.getElementById(prefix + '-show');
+    const fb = document.getElementById(prefix + '-feedback');
+    const sc = document.getElementById(prefix + '-score');
+    const pr = document.getElementById(prefix + '-prompt');
+    let correct = 0, total = 0;
+
+    function load() {
+      answered = false;
+      if (idx >= items.length) {
+        pr.textContent = 'Termine ! ' + correct + '/' + total;
+        listen.disabled = true; input.disabled = true; next.disabled = true; show.style.display = 'none';
+        return;
+      }
+      const item = items[idx];
+      pr.innerHTML = (item.level ? '<span style="color:var(--gold);font-weight:700">[' + item.level + ']</span> ' : '') + 'Question ' + (idx+1) + '/' + items.length;
+      input.value = ''; input.disabled = true; fb.textContent = ''; next.disabled = true; show.style.display = '';
+    }
+
+    listen.addEventListener('click', () => {
+      if (idx >= items.length) return;
+      speakText(items[idx].spoken || items[idx].phrase, speechRate || 0.75);
+      input.disabled = false; input.focus();
+    });
+
+    function reveal() {
+      if (answered) return;
+      answered = true; total++;
+      const item = items[idx];
+      // Auto-credit for listen-answer quizzes (subjective answers)
+      correct++;
+      fb.className = 'quiz-feedback correct';
+      fb.textContent = 'Reponse : ' + item.answer;
+      sc.textContent = idx + 1 + '/' + items.length + ' termine';
+      next.disabled = false; show.style.display = 'none';
+    }
+
+    show.addEventListener('click', reveal);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') reveal(); });
+    next.addEventListener('click', () => { idx++; load(); });
+    load();
+  }
+
+  /* ================================================================
+     CONNECTOR QUIZ (50 questions)
+     ================================================================ */
+  const CONNECTOR_ITEMS = [
+    // Debut
+    { spoken: 'Good morning everyone', answer: 'Bonjour a tous', level: 'Debut' },
+    { spoken: 'Today I would like to', answer: 'Aujourd\'hui je voudrais', level: 'Debut' },
+    { spoken: 'First of all', answer: 'Tout d\'abord', level: 'Debut' },
+    { spoken: 'Let me update you on', answer: 'Je vais vous informer de', level: 'Debut' },
+    { spoken: 'The purpose of this presentation is', answer: 'Le but de cette presentation est', level: 'Debut' },
+    // Ajouter
+    { spoken: 'Also', answer: 'Aussi / Egalement', level: 'Ajouter' },
+    { spoken: 'Moreover', answer: 'De plus', level: 'Ajouter' },
+    { spoken: 'Furthermore', answer: 'En outre / De plus', level: 'Ajouter' },
+    { spoken: 'In addition', answer: 'De plus / En plus', level: 'Ajouter' },
+    { spoken: 'As well as', answer: 'Ainsi que', level: 'Ajouter' },
+    { spoken: 'Moving on to', answer: 'Passons a', level: 'Ajouter' },
+    { spoken: 'Regarding', answer: 'Concernant', level: 'Ajouter' },
+    { spoken: 'On the financial side', answer: 'Cote financier', level: 'Ajouter' },
+    { spoken: 'As for safety', answer: 'Quant a la securite', level: 'Ajouter' },
+    { spoken: 'I should also mention', answer: 'Je dois aussi mentionner', level: 'Ajouter' },
+    // Probleme
+    { spoken: 'However', answer: 'Cependant / Toutefois', level: 'Probleme' },
+    { spoken: 'But', answer: 'Mais', level: 'Probleme' },
+    { spoken: 'Unfortunately', answer: 'Malheureusement', level: 'Probleme' },
+    { spoken: 'Despite', answer: 'Malgre', level: 'Probleme' },
+    { spoken: 'Although', answer: 'Bien que', level: 'Probleme' },
+    { spoken: 'On the other hand', answer: 'D\'un autre cote', level: 'Probleme' },
+    { spoken: 'Nevertheless', answer: 'Neanmoins', level: 'Probleme' },
+    { spoken: 'The main challenge is', answer: 'Le defi principal est', level: 'Probleme' },
+    { spoken: 'The problem is', answer: 'Le probleme est', level: 'Probleme' },
+    { spoken: 'We have experienced', answer: 'Nous avons rencontre', level: 'Probleme' },
+    { spoken: 'In spite of', answer: 'Malgre', level: 'Probleme' },
+    // Cause
+    { spoken: 'Due to', answer: 'En raison de / A cause de', level: 'Cause' },
+    { spoken: 'Because of', answer: 'A cause de', level: 'Cause' },
+    { spoken: 'Therefore', answer: 'Par consequent / Donc', level: 'Cause' },
+    { spoken: 'As a result', answer: 'En consequence', level: 'Cause' },
+    { spoken: 'This means that', answer: 'Cela signifie que', level: 'Cause' },
+    { spoken: 'Consequently', answer: 'Par consequent', level: 'Cause' },
+    { spoken: 'Which is why', answer: 'C\'est pourquoi', level: 'Cause' },
+    { spoken: 'So', answer: 'Donc', level: 'Cause' },
+    { spoken: 'This is mainly due to', answer: 'Cela est principalement du a', level: 'Cause' },
+    { spoken: 'The reason is', answer: 'La raison est', level: 'Cause' },
+    // Fin
+    { spoken: 'Finally', answer: 'Enfin', level: 'Fin' },
+    { spoken: 'To conclude', answer: 'Pour conclure', level: 'Fin' },
+    { spoken: 'To sum up', answer: 'Pour resumer', level: 'Fin' },
+    { spoken: 'In summary', answer: 'En resume', level: 'Fin' },
+    { spoken: 'In conclusion', answer: 'En conclusion', level: 'Fin' },
+    { spoken: 'The next step will be', answer: 'La prochaine etape sera', level: 'Fin' },
+    { spoken: 'Our objective is to', answer: 'Notre objectif est de', level: 'Fin' },
+    { spoken: 'We expect to finish by', answer: 'Nous esperons finir d\'ici', level: 'Fin' },
+    { spoken: 'Thank you for your attention', answer: 'Merci de votre attention', level: 'Fin' },
+    // Revision mixte
+    { spoken: 'However', answer: 'Cependant', level: 'Mix' },
+    { spoken: 'Due to', answer: 'A cause de', level: 'Mix' },
+    { spoken: 'Moreover', answer: 'De plus', level: 'Mix' },
+    { spoken: 'Unfortunately', answer: 'Malheureusement', level: 'Mix' },
+    { spoken: 'Therefore', answer: 'Donc / Par consequent', level: 'Mix' },
+  ];
+
+  function initConnectorQuiz() { initListenQuiz('cq', CONNECTOR_ITEMS, 0.8); }
+
+  /* ================================================================
+     VOCABULARY QUIZ (60 questions)
+     ================================================================ */
+  const VOCAB_ITEMS = [
+    // Transparents
+    { spoken: 'construction', answer: 'construction', level: 'Transparent' },
+    { spoken: 'project', answer: 'projet', level: 'Transparent' },
+    { spoken: 'budget', answer: 'budget', level: 'Transparent' },
+    { spoken: 'structure', answer: 'structure', level: 'Transparent' },
+    { spoken: 'installation', answer: 'installation', level: 'Transparent' },
+    { spoken: 'renovation', answer: 'renovation', level: 'Transparent' },
+    { spoken: 'residential', answer: 'residentiel', level: 'Transparent' },
+    { spoken: 'infrastructure', answer: 'infrastructure', level: 'Transparent' },
+    { spoken: 'foundation', answer: 'fondation', level: 'Transparent' },
+    { spoken: 'estimation', answer: 'estimation', level: 'Transparent' },
+    { spoken: 'inspection', answer: 'inspection', level: 'Transparent' },
+    { spoken: 'ventilation', answer: 'ventilation', level: 'Transparent' },
+    { spoken: 'coordination', answer: 'coordination', level: 'Transparent' },
+    { spoken: 'emission', answer: 'emission', level: 'Transparent' },
+    { spoken: 'regulation', answer: 'reglementation', level: 'Transparent' },
+    { spoken: 'contamination', answer: 'contamination', level: 'Transparent' },
+    { spoken: 'specification', answer: 'specification', level: 'Transparent' },
+    { spoken: 'consultant', answer: 'consultant', level: 'Transparent' },
+    { spoken: 'energy', answer: 'energie', level: 'Transparent' },
+    { spoken: 'architect', answer: 'architecte', level: 'Transparent' },
+    // Faux amis
+    { spoken: 'delay', answer: 'retard (pas delai !)', level: 'Faux ami' },
+    { spoken: 'actually', answer: 'en fait (pas actuellement !)', level: 'Faux ami' },
+    { spoken: 'eventually', answer: 'finalement (pas eventuellement !)', level: 'Faux ami' },
+    { spoken: 'to supply', answer: 'fournir (pas supplier !)', level: 'Faux ami' },
+    { spoken: 'comprehensive', answer: 'complet (pas comprehensif !)', level: 'Faux ami' },
+    { spoken: 'currently', answer: 'actuellement (pas couramment !)', level: 'Faux ami' },
+    { spoken: 'to achieve', answer: 'atteindre / realiser', level: 'Faux ami' },
+    { spoken: 'to resume', answer: 'reprendre (pas resumer !)', level: 'Faux ami' },
+    { spoken: 'library', answer: 'bibliotheque (pas librairie !)', level: 'Faux ami' },
+    { spoken: 'sensible', answer: 'raisonnable (pas sensible !)', level: 'Faux ami' },
+    // Mots BTP non transparents
+    { spoken: 'building', answer: 'batiment', level: 'BTP' },
+    { spoken: 'schedule', answer: 'planning / calendrier', level: 'BTP' },
+    { spoken: 'survey', answer: 'etude / releve', level: 'BTP' },
+    { spoken: 'timber', answer: 'bois', level: 'BTP' },
+    { spoken: 'steel', answer: 'acier', level: 'BTP' },
+    { spoken: 'health', answer: 'sante', level: 'BTP' },
+    { spoken: 'issue', answer: 'probleme', level: 'BTP' },
+    { spoken: 'target', answer: 'objectif / cible', level: 'BTP' },
+    { spoken: 'slightly', answer: 'legerement', level: 'BTP' },
+    { spoken: 'overall', answer: 'global / dans l\'ensemble', level: 'BTP' },
+    { spoken: 'improve', answer: 'ameliorer', level: 'BTP' },
+    { spoken: 'increase', answer: 'augmenter', level: 'BTP' },
+    { spoken: 'reduce', answer: 'reduire', level: 'BTP' },
+    { spoken: 'provide', answer: 'fournir', level: 'BTP' },
+    { spoken: 'require', answer: 'exiger / necessiter', level: 'BTP' },
+    { spoken: 'concrete', answer: 'beton', level: 'BTP' },
+    { spoken: 'scaffolding', answer: 'echafaudage', level: 'BTP' },
+    { spoken: 'formwork', answer: 'coffrage', level: 'BTP' },
+    { spoken: 'harness', answer: 'harnais', level: 'BTP' },
+    { spoken: 'hard hat', answer: 'casque de chantier', level: 'BTP' },
+    // Fonctions
+    { spoken: 'project manager', answer: 'chef de projet', level: 'Fonctions' },
+    { spoken: 'site supervisor', answer: 'chef de chantier', level: 'Fonctions' },
+    { spoken: 'health and safety officer', answer: 'responsable securite / HSE', level: 'Fonctions' },
+    { spoken: 'quantity surveyor', answer: 'economiste de la construction', level: 'Fonctions' },
+    { spoken: 'cost consultant', answer: 'consultant couts', level: 'Fonctions' },
+    { spoken: 'contractor', answer: 'entrepreneur / entreprise', level: 'Fonctions' },
+    { spoken: 'client', answer: 'maitre d\'ouvrage / client', level: 'Fonctions' },
+    { spoken: 'structural engineer', answer: 'ingenieur structure', level: 'Fonctions' },
+    { spoken: 'BIM coordinator', answer: 'coordinateur BIM', level: 'Fonctions' },
+    { spoken: 'stakeholders', answer: 'parties prenantes', level: 'Fonctions' },
+  ];
+
+  function initVocabQuiz() { initListenQuiz('vq', VOCAB_ITEMS, 0.75); }
+
+  /* ================================================================
+     PHRASE QUIZ (40 questions)
+     ================================================================ */
+  const PHRASE_ITEMS = [
+    // Debut
+    { spoken: 'Good morning everyone. My name is James Barrett.', answer: 'Bonjour a tous. Je m\'appelle James Barrett.', level: 'Debut' },
+    { spoken: 'I am the project manager', answer: 'Je suis le chef de projet', level: 'Debut' },
+    { spoken: 'Today I would like to update you', answer: 'Aujourd\'hui je voudrais vous informer', level: 'Debut' },
+    { spoken: 'I\'m here to present the results', answer: 'Je suis la pour presenter les resultats', level: 'Debut' },
+    { spoken: 'The purpose of this meeting is', answer: 'Le but de cette reunion est', level: 'Debut' },
+    { spoken: 'Let me give you an overview', answer: 'Voici un apercu', level: 'Debut' },
+    // Situation
+    { spoken: 'The project involves the construction of three apartment blocks', answer: 'Le projet comprend la construction de 3 immeubles', level: 'Situation' },
+    { spoken: 'We are currently in the structural phase', answer: 'Nous sommes en phase de gros oeuvre', level: 'Situation' },
+    { spoken: 'The concrete frame is now complete', answer: 'L\'ossature beton est terminee', level: 'Situation' },
+    { spoken: 'We have just started the formwork', answer: 'Nous venons de commencer le coffrage', level: 'Situation' },
+    { spoken: 'The total budget is twelve point five million pounds', answer: 'Le budget total est de 12,5 millions de livres', level: 'Chiffres' },
+    { spoken: 'So far we have spent approximately seven million', answer: 'Jusqu\'ici nous avons depense environ 7 millions', level: 'Chiffres' },
+    { spoken: 'This is slightly above the initial forecast', answer: 'C\'est legerement au-dessus des previsions', level: 'Chiffres' },
+    { spoken: 'The estimated cost is four point eight million', answer: 'Le cout estime est de 4,8 millions', level: 'Chiffres' },
+    { spoken: 'Over two hundred clashes were detected', answer: 'Plus de 200 conflits ont ete detectes', level: 'Chiffres' },
+    // Problemes
+    { spoken: 'Unfortunately we have experienced a two week delay', answer: 'Malheureusement nous avons un retard de 2 semaines', level: 'Probleme' },
+    { spoken: 'Due to supply chain issues', answer: 'En raison de problemes d\'approvisionnement', level: 'Probleme' },
+    { spoken: 'The overspend is mainly due to rising material costs', answer: 'Le depassement est du a la hausse des couts des materiaux', level: 'Probleme' },
+    { spoken: 'We now expect to finish by mid April', answer: 'Nous esperons finir d\'ici mi-avril', level: 'Probleme' },
+    { spoken: 'The main challenge is the volatile market', answer: 'Le defi principal est le marche volatil', level: 'Probleme' },
+    { spoken: 'There is a risk of soil contamination', answer: 'Il y a un risque de contamination du sol', level: 'Probleme' },
+    { spoken: 'Two near miss incidents were reported', answer: 'Deux quasi-accidents ont ete signales', level: 'Probleme' },
+    // Solutions
+    { spoken: 'We are reviewing the specifications with the architect', answer: 'Nous revoyons les specifications avec l\'architecte', level: 'Solution' },
+    { spoken: 'To identify potential savings', answer: 'Pour identifier des economies possibles', level: 'Solution' },
+    { spoken: 'Without compromising quality', answer: 'Sans compromettre la qualite', level: 'Solution' },
+    { spoken: 'New rules have been implemented', answer: 'De nouvelles regles ont ete mises en place', level: 'Solution' },
+    { spoken: 'Scaffolding must be inspected every morning', answer: 'Les echafaudages doivent etre inspectes chaque matin', level: 'Solution' },
+    { spoken: 'No vehicle movement without a banksman', answer: 'Pas de mouvement de vehicule sans signaleur', level: 'Solution' },
+    // Securite
+    { spoken: 'Hard hat, high visibility vest and safety boots are mandatory', answer: 'Casque, gilet et chaussures de securite sont obligatoires', level: 'Securite' },
+    { spoken: 'We have had no major incidents on site', answer: 'Aucun incident majeur sur le chantier', level: 'Securite' },
+    { spoken: 'Report any hazard to the site supervisor', answer: 'Signalez tout danger au chef de chantier', level: 'Securite' },
+    { spoken: 'A harness is required when working at height', answer: 'Un harnais est obligatoire pour le travail en hauteur', level: 'Securite' },
+    // Environnement
+    { spoken: 'The building sector accounts for forty percent of carbon emissions', answer: 'Le batiment represente 40% des emissions carbone', level: 'Environnement' },
+    { spoken: 'Low carbon concrete can reduce emissions by fifty percent', answer: 'Le beton bas carbone peut reduire les emissions de 50%', level: 'Environnement' },
+    { spoken: 'Cross laminated timber can be used for buildings up to eighteen storeys', answer: 'Le bois CLT peut etre utilise jusqu\'a 18 etages', level: 'Environnement' },
+    { spoken: 'Sustainability is no longer optional', answer: 'Le developpement durable n\'est plus optionnel', level: 'Environnement' },
+    // Conclusion
+    { spoken: 'Finally, regarding safety', answer: 'Enfin, concernant la securite', level: 'Fin' },
+    { spoken: 'The next step will be to start four D scheduling', answer: 'La prochaine etape sera le planning 4D', level: 'Fin' },
+    { spoken: 'To sum up, the project is on track', answer: 'Pour resumer, le projet avance bien', level: 'Fin' },
+    { spoken: 'Thank you for your attention', answer: 'Merci de votre attention', level: 'Fin' },
+  ];
+
+  function initPhraseQuiz() { initListenQuiz('pq', PHRASE_ITEMS, 0.7); }
+
+  /* ================================================================
+     MINI QUIZ
+     ================================================================ */
+  const MINI_ITEMS = [
+    { phrase: 'My name is James Barrett and I am the project manager.', question: 'Quel est le nom et la fonction ?', answer: 'James Barrett, chef de projet' },
+    { phrase: 'The total budget is twelve point five million pounds.', question: 'Quel est le budget total ?', answer: '12,5 millions de livres' },
+    { phrase: 'We have experienced a two week delay due to supply chain issues.', question: 'Quelle est la duree du retard et sa cause ?', answer: '2 semaines, problemes d\'approvisionnement' },
+    { phrase: 'The concrete frame for Block A is now complete.', question: 'Qu\'est-ce qui est termine ?', answer: 'L\'ossature beton du Bloc A' },
+    { phrase: 'We now expect to finish by mid April twenty twenty seven.', question: 'Quelle est la nouvelle date de livraison ?', answer: 'Mi-avril 2027' },
+    { phrase: 'We have had no major incidents on site.', question: 'Y a-t-il eu des incidents de securite ?', answer: 'Non, aucun incident majeur' },
+    { phrase: 'The overspend is mainly due to rising material costs.', question: 'Quelle est la cause du depassement ?', answer: 'La hausse des couts des materiaux' },
+    { phrase: 'Over two hundred clashes were detected between the mechanical services and the structural beams.', question: 'Combien de conflits ont ete detectes ?', answer: 'Plus de 200' },
+    { phrase: 'The estimated cost is four point eight million pounds.', question: 'Quel est le cout estime ?', answer: '4,8 millions de livres' },
+    { phrase: 'Hard hat, high visibility vest and safety boots are mandatory at all times.', question: 'Quels equipements sont obligatoires ?', answer: 'Casque, gilet haute visibilite, chaussures de securite' },
+  ];
+
+  let mqIdx = 0, mqCorrect = 0, mqTotal = 0;
+
+  function initMiniQuiz() {
+    const shuffled = [...MINI_ITEMS].sort(() => Math.random() - 0.5);
+    mqIdx = 0; mqCorrect = 0; mqTotal = 0;
+    window._mqItems = shuffled;
+
+    const listenBtn = document.getElementById('mq-listen');
+    const input = document.getElementById('mq-input');
+    const nextBtn = document.getElementById('mq-next');
+    const feedback = document.getElementById('mq-feedback');
+    const score = document.getElementById('mq-score');
+    const prompt = document.getElementById('mq-prompt');
+    const question = document.getElementById('mq-question');
+
+    function loadQ() {
+      if (mqIdx >= shuffled.length) {
+        prompt.textContent = 'Termine ! Score : ' + mqCorrect + '/' + mqTotal;
+        question.textContent = '';
+        listenBtn.disabled = true;
+        input.disabled = true;
+        nextBtn.disabled = true;
+        return;
+      }
+      prompt.textContent = 'Phrase ' + (mqIdx + 1) + '/' + shuffled.length;
+      question.textContent = shuffled[mqIdx].question;
+      input.value = '';
+      input.disabled = false;
+      feedback.textContent = '';
+      nextBtn.disabled = true;
+    }
+
+    listenBtn.addEventListener('click', () => {
+      if (mqIdx >= shuffled.length) return;
+      speakText(shuffled[mqIdx].phrase, 0.7);
+      input.disabled = false;
+      input.focus();
+    });
+
+    function showAnswer() {
+      if (!nextBtn.disabled) return;
+      const item = shuffled[mqIdx];
+      mqTotal++;
+      // In mini quiz we show the answer directly since it's subjective
+      mqCorrect++; // credit for attempting
+      feedback.className = 'quiz-feedback correct';
+      feedback.textContent = 'Reponse attendue : ' + item.answer;
+      score.textContent = mqIdx + 1 + '/' + shuffled.length + ' termine';
+      nextBtn.disabled = false;
+    }
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') showAnswer();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      mqIdx++;
+      loadQ();
+    });
+
+    loadQ();
+  }
+
+  /* ================================================================
+     SPEECH HELPER
+     ================================================================ */
+  function speakText(text, rate) {
+    const s = window.speechSynthesis;
+    if (!s) return;
+    s.cancel();
+    const utt = new SpeechSynthesisUtterance(text);
+    const voices = s.getVoices();
+    utt.voice = voices.find(v => v.lang.startsWith('en-GB')) ||
+                voices.find(v => v.lang.startsWith('en-US')) ||
+                voices.find(v => v.lang.startsWith('en')) || null;
+    utt.rate = rate || 0.7;
+    utt.pitch = 1;
+    s.speak(utt);
+  }
+
+  /* ================================================================
+     MODES
+     ================================================================ */
+  const MODES = {
+    refresher: { name: 'Remise a niveau', speed: 0.6, pauseTime: 300, writeTime: 1500, notesOnListen1: true, showHints: true, showVocabBefore: true, showTranscript: true, showTips: true, unlockThreshold: 0.3, color: '#a78bfa' },
+    discovery: { name: 'Decouverte', speed: 0.7, pauseTime: 180, writeTime: 1200, notesOnListen1: true, showHints: true, showVocabBefore: true, showTranscript: true, showTips: true, unlockThreshold: 0.4, color: '#2a9d8f' },
+    standard:  { name: 'Standard', speed: 0.85, pauseTime: 120, writeTime: 900, notesOnListen1: false, showHints: false, showVocabBefore: false, showTranscript: false, showTips: false, unlockThreshold: 0.5, color: '#e09f3e' },
+    challenge: { name: 'Defi', speed: 1.0, pauseTime: 60, writeTime: 600, notesOnListen1: false, showHints: false, showVocabBefore: false, showTranscript: false, showTips: false, unlockThreshold: 0.5, color: '#e76f51' }
+  };
+
+  const TEXT_ORDER = [3, 1, 2, 4, 5];
+
+  // ---- State ----
+  let data = [], texts = {}, currentText = null, currentMode = 'refresher';
+  let speechRate = 0.6, pauseTimerInterval, writeTimerInterval, pauseSeconds = 300, writeSeconds = 1500;
+  let synth = window.speechSynthesis || null, currentUtterance = null, audioElement = null;
+
+  // ---- Progress ----
+  function loadP() { try { return JSON.parse(localStorage.getItem('bts-anglais-progress')) || {}; } catch { return {}; } }
+  function saveP(p) { localStorage.setItem('bts-anglais-progress', JSON.stringify(p)); }
+  function getBest(id) { return loadP()['text_' + id] || null; }
+  function setBest(id, found, total) {
+    const p = loadP(), k = 'text_' + id, pct = total > 0 ? found / total : 0;
+    const isNew = !p[k] || pct > p[k].pct;
+    if (isNew) { p[k] = { found, total, pct, date: new Date().toISOString() }; saveP(p); }
+    return isNew;
+  }
+  function incSession() { const p = loadP(); p._sessions = (p._sessions || 0) + 1; saveP(p); }
+  function isUnlocked(id) {
+    const i = TEXT_ORDER.indexOf(id);
+    if (i <= 0) return true;
+    const prev = getBest(TEXT_ORDER[i - 1]);
+    return prev && prev.pct >= 0.3;
+  }
+
+  const $ = id => document.getElementById(id);
+  const screens = document.querySelectorAll('.screen');
+  const stepperEl = $('stepper');
+
+  // ---- Init ----
+  async function init() {
+    try { data = await (await fetch('data.json')).json(); } catch {
+      document.querySelector('.container').innerHTML = '<div class="card"><p style="color:var(--red)">Erreur : charger data.json via Live Server.</p></div>';
+      return;
+    }
+    for (const item of data) {
+      try { texts[item.id] = await (await fetch('src/text' + item.id + '.txt')).text(); } catch { texts[item.id] = ''; }
+    }
+    if (synth) { synth.getVoices(); synth.onvoiceschanged = () => synth.getVoices(); }
+    renderAll();
+    setupTabs();
+    setupModeSelector();
+    setupLessons();
+    setupEvents();
+  }
+
+  function renderAll() { renderStats(); renderTextList(); renderVocabThemeList(); }
+
+  // ---- Stats ----
+  function renderStats() {
+    const p = loadP();
+    let done = 0, sum = 0, cnt = 0;
+    for (const id of TEXT_ORDER) {
+      const s = p['text_' + id];
+      if (s) { if (s.pct >= 0.3) done++; sum += s.pct; cnt++; }
+    }
+    $('stat-completed').textContent = done + '/' + TEXT_ORDER.length;
+    $('stat-avg').textContent = cnt > 0 ? Math.round(sum / cnt * 100) + '%' : '-';
+    $('stat-sessions').textContent = p._sessions || 0;
+    const pct = Math.round((done / TEXT_ORDER.length) * 100);
+    $('global-pct').textContent = pct + '%';
+    $('global-fill').style.width = pct + '%';
+  }
+
+  // ---- Tabs ----
+  function setupTabs() {
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const t = tab.dataset.tab;
+        $('tab-bases').classList.toggle('hidden', t !== 'bases');
+        $('tab-exam').classList.toggle('hidden', t !== 'exam');
+        $('tab-vocab').classList.toggle('hidden', t !== 'vocab');
+      });
+    });
+  }
+
+  function setupModeSelector() {
+    $('mode-selector').querySelectorAll('.mode-card').forEach(card => {
+      card.addEventListener('click', () => {
+        $('mode-selector').querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        currentMode = card.dataset.mode;
+      });
+    });
+  }
+
+  // ---- Lessons ----
+  function setupLessons() {
+    document.querySelectorAll('.lesson-card').forEach(card => {
+      card.addEventListener('click', () => openLesson(card.dataset.lesson));
+    });
+    $('lesson-back').addEventListener('click', () => {
+      showScreen('screen-select', 0);
+      stepperEl.classList.add('hidden');
+    });
+  }
+
+  function openLesson(key) {
+    const lesson = LESSONS[key];
+    if (!lesson) return;
+    $('lesson-title').textContent = lesson.title;
+    $('lesson-content').innerHTML = lesson.render();
+    showScreen('screen-lesson', 0);
+    if (lesson.init) setTimeout(lesson.init, 100);
+  }
+
+  // ---- Text list ----
+  function renderTextList() {
+    const list = $('text-list');
+    const ordered = TEXT_ORDER.map(id => data.find(d => d.id === id)).filter(Boolean);
+    list.innerHTML = ordered.map((t, idx) => {
+      const unlocked = isUnlocked(t.id);
+      const best = getBest(t.id);
+      const pct = best ? Math.round(best.pct * 100) : 0;
+      const col = pct >= 80 ? 'var(--green)' : pct >= 50 ? 'var(--gold)' : pct > 0 ? 'var(--red)' : 'var(--border)';
+      return `<div class="text-card ${unlocked ? '' : 'locked'}" data-id="${t.id}" tabindex="0">
+        ${!unlocked ? '<span class="lock-badge">&#x1F512;</span>' : ''}
+        <h3>${idx + 1}. ${t.title}</h3>
+        <div class="meta"><span class="level">${t.level}</span><span>${t.theme}</span>
+        ${best ? '<span style="color:var(--gold);font-weight:700">' + best.found + '/' + best.total + '</span>' : ''}</div>
+        <div class="card-progress"><div class="card-progress-bar"><div class="fill" style="width:${pct}%;background:${col}"></div></div>
+        <span class="card-progress-label" style="color:${pct > 0 ? col : 'var(--text-muted)'}">${pct > 0 ? pct + '%' : '-'}</span></div></div>`;
+    }).join('');
+    list.querySelectorAll('.text-card:not(.locked)').forEach(card => {
+      card.addEventListener('click', () => startExam(+card.dataset.id));
+    });
+  }
+
+  // ---- Vocab ----
+  function renderVocabThemeList() {
+    const list = $('vocab-theme-list');
+    list.innerHTML = data.map(t => `<div class="text-card" data-id="${t.id}" tabindex="0"><h3>${t.title}</h3><div class="meta"><span class="level">${t.level}</span><span>${t.vocab.length} termes</span></div></div>`).join('');
+    list.querySelectorAll('.text-card').forEach(card => { card.addEventListener('click', () => showVocab(+card.dataset.id)); });
+    $('vocab-back-btn').addEventListener('click', () => { $('vocab-cards-section').classList.add('hidden'); list.classList.remove('hidden'); });
+  }
+  function showVocab(id) {
+    const t = data.find(d => d.id === id);
+    $('vocab-theme-list').classList.add('hidden');
+    $('vocab-cards-section').classList.remove('hidden');
+    $('vocab-theme-title').textContent = t.title;
+    renderVocabCards(t.vocab, $('vocab-grid'));
+  }
+  function renderVocabCards(vocab, el) {
+    el.innerHTML = vocab.map(v => `<div class="vocab-card" tabindex="0"><div class="en">${v.en}</div><div class="fr hidden">${v.fr}</div></div>`).join('');
+    el.querySelectorAll('.vocab-card').forEach(c => { c.addEventListener('click', () => c.querySelector('.fr').classList.toggle('hidden')); });
+  }
+
+  // ---- Stepper ----
+  function getLabels() {
+    return MODES[currentMode].showVocabBefore
+      ? ['Choix', 'Vocab', '1re', 'Notes', '2e', 'Redac.', 'Score']
+      : ['Choix', '1re', 'Notes', '2e', 'Redac.', 'Score'];
+  }
+  function buildStepper() {
+    const labels = getLabels();
+    stepperEl.classList.remove('hidden');
+    stepperEl.innerHTML = labels.map((l, i) =>
+      '<div class="step-item"><div class="step-circle" data-step="' + i + '">' + (i+1) + '</div>' +
+      (i < labels.length-1 ? '<div class="step-line" data-line="' + i + '"></div>' : '') + '</div>'
+    ).join('');
+  }
+  function updateStepper(step) {
+    stepperEl.querySelectorAll('.step-circle').forEach(el => {
+      const s = +el.dataset.step; el.classList.remove('active','done');
+      if (s < step) el.classList.add('done'); else if (s === step) el.classList.add('active');
+    });
+    stepperEl.querySelectorAll('.step-line').forEach(el => { el.classList.toggle('done', +el.dataset.line < step); });
+  }
+  function showScreen(id, step) {
+    screens.forEach(s => s.classList.remove('active'));
+    $(id).classList.add('active');
+    updateStepper(step);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ---- Start exam ----
+  function startExam(id) {
+    currentText = data.find(d => d.id === id);
+    const mode = MODES[currentMode];
+    speechRate = mode.speed; pauseSeconds = mode.pauseTime; writeSeconds = mode.writeTime;
+    buildStepper();
+    const badge = $('mode-badge');
+    badge.textContent = mode.name; badge.style.background = mode.color;
+    badge.style.color = currentMode === 'standard' ? 'var(--bg)' : '#fff';
+    $('listen1-title').textContent = currentText.title;
+    $('listen2-title').textContent = currentText.title;
+    $('speed-selector').querySelectorAll('.speed-btn').forEach(b => { b.classList.toggle('active', Number.parseFloat(b.dataset.speed) === mode.speed); });
+    $('listen1-instruction').textContent = mode.notesOnListen1 ? '1ere ecoute - Ecoutez et prenez des notes.' : '1ere ecoute - Ecoutez attentivement, pas de notes.';
+    $('notes-listen1-wrap').classList.toggle('hidden', !mode.notesOnListen1);
+    if (mode.showHints) {
+      $('hint-listen1').innerHTML = '<div class="hint-box">Theme : <strong>' + currentText.theme + '</strong><br>Reperer : qui parle, de quoi, les chiffres, les mots transparents.</div>';
+      $('hint-pause').innerHTML = '<div class="hint-box">Notez tout : mots isoles, chiffres, impressions. Qui ? Quoi ? Combien ?</div>';
+      $('hint-write').innerHTML = '<div class="hint-box">Commencez par : "Ce document est... presente par... concernant..."<br>Ajoutez chiffres, problemes, solutions.</div>';
+    } else { $('hint-listen1').innerHTML = ''; $('hint-pause').innerHTML = ''; $('hint-write').innerHTML = ''; }
+    $('notes-listen1').value = ''; $('notes-pause').value = ''; $('notes-listen2').value = ''; $('compte-rendu').value = '';
+    $('btn-play1').disabled = false; $('btn-play1').textContent = "Lancer l'ecoute";
+    $('btn-play2').disabled = false; $('btn-play2').textContent = "Lancer la 2eme ecoute";
+    $('btn-to-listen2').classList.add('hidden');
+    $('audio-wave').classList.add('paused'); $('audio-wave2').classList.add('paused');
+    $('progress1').style.width = '0%'; $('progress2').style.width = '0%';
+    $('audio-status-label').textContent = 'Pret'; $('audio-status-label2').textContent = 'Pret';
+    if (mode.showVocabBefore) {
+      $('vocab-preview-list').innerHTML = currentText.vocab.map(v => '<div class="vocab-preview-item"><span class="en">' + v.en + '</span><span class="fr">' + v.fr + '</span></div>').join('');
+      showScreen('screen-vocab-preview', 1);
+    } else { showScreen('screen-listen1', 1); }
+  }
+
+  // ---- Audio ----
+  function getVoice() {
+    if (!synth) return null;
+    const v = synth.getVoices();
+    return v.find(x => x.lang.startsWith('en-GB')) || v.find(x => x.lang.startsWith('en-US')) || v.find(x => x.lang.startsWith('en')) || null;
+  }
+  function playAudio(text, pEl, sLabel, wEl, onEnd) {
+    if (synth && getVoice()) {
+      synth.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.voice = getVoice(); u.rate = speechRate; u.pitch = 1;
+      currentUtterance = u; sLabel.textContent = 'Lecture...'; wEl.classList.remove('paused');
+      const w = text.split(/\s+/).length, est = (w/150)*60/speechRate, t0 = Date.now();
+      const pi = setInterval(() => { pEl.style.width = Math.min(((Date.now()-t0)/1000/est)*100, 95)+'%'; }, 200);
+      const ri = setInterval(() => { if (!synth.speaking) { clearInterval(ri); return; } synth.pause(); synth.resume(); }, 10000);
+      u.onend = () => { clearInterval(pi); clearInterval(ri); pEl.style.width='100%'; sLabel.textContent='Ecoute terminee'; wEl.classList.add('paused'); onEnd && onEnd(); };
+      u.onerror = (e) => { clearInterval(pi); clearInterval(ri); if (e.error==='canceled') return; playMP3(pEl,sLabel,wEl,onEnd); };
+      synth.speak(u);
+    } else { playMP3(pEl,sLabel,wEl,onEnd); }
+  }
+  function playMP3(pEl, sLabel, wEl, onEnd) {
+    const a = new Audio('audio/text'+currentText.id+'.mp3'); audioElement = a;
+    sLabel.textContent = 'Lecture MP3...'; wEl.classList.remove('paused');
+    a.playbackRate = Math.max(speechRate, 0.5);
+    a.ontimeupdate = () => { if (a.duration) pEl.style.width = (a.currentTime/a.duration*100)+'%'; };
+    a.onended = () => { pEl.style.width='100%'; sLabel.textContent='Terminee'; wEl.classList.add('paused'); audioElement=null; onEnd && onEnd(); };
+    a.onerror = () => { sLabel.textContent='Erreur audio'; wEl.classList.add('paused'); };
+    a.play();
+  }
+
+  function showCountdown(cb) {
+    const o = $('countdown-overlay'), n = $('countdown-number');
+    o.classList.remove('hidden'); let c = 3; n.textContent = c;
+    const iv = setInterval(() => { c--; if (c<=0) { clearInterval(iv); o.classList.add('hidden'); cb(); } else { n.textContent=c; n.style.animation='none'; n.offsetHeight; n.style.animation=''; } }, 700);
+  }
+  function fmt(s) { return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+  function startPauseTimer() {
+    $('pause-timer').textContent = fmt(pauseSeconds); clearInterval(pauseTimerInterval);
+    pauseTimerInterval = setInterval(() => { pauseSeconds--; $('pause-timer').textContent = fmt(Math.max(0,pauseSeconds)); if (pauseSeconds<=0) clearInterval(pauseTimerInterval); }, 1000);
+    $('btn-to-listen2').classList.remove('hidden');
+  }
+  function startWriteTimer() {
+    $('write-timer').textContent = fmt(writeSeconds); clearInterval(writeTimerInterval);
+    writeTimerInterval = setInterval(() => { writeSeconds--; $('write-timer').textContent = fmt(Math.max(0,writeSeconds)); if (writeSeconds<=0) clearInterval(writeTimerInterval); }, 1000);
+  }
+
+  // ---- Scoring ----
+  function normalize(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim(); }
+  function evaluate(text) {
+    const nt = normalize(text);
+    return currentText.keyPoints.map(kp => {
+      const terms = normalize(kp).split(' ').filter(w => w.length > 3);
+      let m = 0; for (const t of terms) { if (nt.includes(t)) m++; }
+      const r = terms.length > 0 ? m/terms.length : 0;
+      return { point: kp, found: r >= 0.35, ratio: r };
+    });
+  }
+
+  function showResults() {
+    const mode = MODES[currentMode], text = $('compte-rendu').value;
+    const results = evaluate(text), found = results.filter(r=>r.found).length, total = results.length;
+    const pct = total > 0 ? found/total : 0;
+    const isNew = setBest(currentText.id, found, total); incSession();
+    $('result-score').textContent = found; $('result-max').textContent = ' / '+total;
+    let msg = pct >= 0.8 ? 'Excellent !' : pct >= 0.6 ? 'Bien !' : pct >= 0.4 ? 'Correct.' : pct >= 0.2 ? 'C\'est un debut !' : 'Pas de panique, reessayez !';
+    $('result-message').textContent = msg;
+    $('result-new-best').innerHTML = isNew ? '<div class="text-center"><span class="new-best">NOUVEAU RECORD</span></div>' : '';
+    const ci = TEXT_ORDER.indexOf(currentText.id), ni = ci < TEXT_ORDER.length-1 ? TEXT_ORDER[ci+1] : null;
+    const nt = ni ? data.find(d=>d.id===ni) : null;
+    if (pct >= mode.unlockThreshold && nt && isUnlocked(ni)) {
+      $('result-unlock').innerHTML = '<div class="success-box">Texte suivant debloque : '+nt.title+'</div>'; $('btn-next').classList.remove('hidden');
+    } else if (nt && !isUnlocked(ni)) {
+      $('result-unlock').innerHTML = '<div class="hint-box">Obtenez '+Math.round(mode.unlockThreshold*100)+'%+ pour debloquer la suite.</div>'; $('btn-next').classList.add('hidden');
+    } else { $('result-unlock').innerHTML = ''; $('btn-next').classList.toggle('hidden', !nt || !isUnlocked(ni)); }
+    $('result-points').innerHTML = results.map(r => '<div class="key-point '+(r.found?'found':'missed')+'"><span class="icon">'+(r.found?'\u2713':'\u2717')+'</span><span>'+r.point+'</span></div>').join('');
+    $('result-text').textContent = text || '(vide)';
+    if (mode.showTranscript) { $('result-transcript-card').classList.remove('hidden'); $('transcript-text').textContent = texts[currentText.id]||''; $('transcript-content').classList.add('hidden'); }
+    else { $('result-transcript-card').classList.add('hidden'); }
+    if (mode.showTips) {
+      $('result-tips').classList.remove('hidden');
+      let tips = pct < 0.4 ? '<div class="info-box"><strong>Pour progresser :</strong><br>1. Allez dans l\'onglet Bases et refaites les lecons<br>2. Revisez le vocabulaire avant de reecouter<br>3. Notez les chiffres et noms propres en priorite<br>4. Pas besoin de tout comprendre, visez les idees generales</div>'
+        : pct < 0.7 ? '<div class="info-box"><strong>Pour aller plus loin :</strong><br>1. Relisez la transcription et reperer les mots manques<br>2. Essayez en mode Decouverte<br>3. Comparez votre compte-rendu avec les points cles</div>'
+        : '<div class="info-box"><strong>Bravo !</strong> Essayez le mode Standard ou le texte suivant.</div>';
+      $('result-tips-content').innerHTML = tips;
+    } else { $('result-tips').classList.add('hidden'); }
+    renderVocabCards(currentText.vocab, $('result-vocab'));
+    const off = mode.showVocabBefore ? 1 : 0;
+    showScreen('screen-results', 5+off); clearInterval(writeTimerInterval);
+  }
+
+  // ---- Events ----
+  function setupEvents() {
+    $('speed-selector').addEventListener('click', e => {
+      const b = e.target.closest('.speed-btn'); if (!b) return;
+      $('speed-selector').querySelectorAll('.speed-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); speechRate = Number.parseFloat(b.dataset.speed);
+    });
+    $('btn-start-listen').addEventListener('click', () => showScreen('screen-listen1', 2));
+    $('btn-play1').addEventListener('click', () => {
+      $('btn-play1').disabled = true;
+      showCountdown(() => {
+        playAudio(texts[currentText.id]||'', $('progress1'), $('audio-status-label'), $('audio-wave'), () => {
+          setTimeout(() => {
+            const m = MODES[currentMode];
+            if (m.notesOnListen1 && $('notes-listen1').value) $('notes-pause').value = $('notes-listen1').value;
+            showScreen('screen-pause', (m.showVocabBefore?3:2)); startPauseTimer();
+          }, 1000);
+        });
+      });
+    });
+    $('btn-to-listen2').addEventListener('click', () => {
+      clearInterval(pauseTimerInterval); $('notes-listen2').value = $('notes-pause').value;
+      const off = MODES[currentMode].showVocabBefore?1:0; showScreen('screen-listen2', 3+off);
+    });
+    $('btn-play2').addEventListener('click', () => {
+      $('btn-play2').disabled = true;
+      playAudio(texts[currentText.id]||'', $('progress2'), $('audio-status-label2'), $('audio-wave2'), () => {
+        setTimeout(() => {
+          const off = MODES[currentMode].showVocabBefore?1:0;
+          showScreen('screen-write', 4+off);
+          if (!$('compte-rendu').value) $('compte-rendu').value = $('notes-listen2').value;
+          startWriteTimer();
+        }, 1000);
+      });
+    });
+    $('btn-submit').addEventListener('click', showResults);
+    $('transcript-toggle').addEventListener('click', () => {
+      const c = $('transcript-content'), v = !c.classList.contains('hidden'); c.classList.toggle('hidden');
+      $('transcript-toggle').textContent = v ? 'Afficher la transcription' : 'Masquer';
+    });
+    $('btn-restart').addEventListener('click', () => { if (currentText) startExam(currentText.id); });
+    $('btn-next').addEventListener('click', () => {
+      const ci = TEXT_ORDER.indexOf(currentText.id);
+      if (ci < TEXT_ORDER.length-1 && isUnlocked(TEXT_ORDER[ci+1])) startExam(TEXT_ORDER[ci+1]);
+    });
+    $('btn-home').addEventListener('click', () => {
+      stepperEl.classList.add('hidden');
+      if (synth) synth.cancel(); if (audioElement) { audioElement.pause(); audioElement=null; }
+      clearInterval(pauseTimerInterval); clearInterval(writeTimerInterval);
+      renderAll(); showScreen('screen-select', 0);
+    });
+    $('btn-reset').addEventListener('click', () => {
+      if (confirm('Reinitialiser la progression ?')) { localStorage.removeItem('bts-anglais-progress'); renderAll(); }
+    });
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

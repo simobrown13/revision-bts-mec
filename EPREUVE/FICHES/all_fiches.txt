@@ -1,0 +1,1052 @@
+FILE:E4_FICHE_01_MARCHE_MOE.docx
+P|Normal|FICHE 01 - MARCHÉ DE MAÎTRISE D'OEUVRE (MOE)
+P|Normal|Épreuve E4 - Partie A | Apparaît en 2024, 2025, 2025NC
+P|Heading 2|1. COMPOSITION D'UNE ÉQUIPE MOE
+P|Heading 2|2. PHASES DE LA MAÎTRISE D'OEUVRE
+P|Heading 2|3. MISSION EXE (Exécution)
+P|List Bullet|La mission EXE totale inclut la conception des plans d'exécution par le MOE
+P|List Bullet|Alternative : EXE partielle → les entreprises fournissent leurs propres plans
+P|List Bullet|Avantage EXE totale : meilleure cohérence, moins de discordances entre lots
+P|Heading 2|4. CRITÈRES DE JUGEMENT DES OFFRES MOE
+P|Normal|Les critères classiques :
+P|List Bullet|Valeur technique (qualité architecturale, fonctionnelle, environnementale) : souvent 50-70%
+P|List Bullet|Prix des honoraires : souvent 20-30%
+P|List Bullet|Délais : parfois présent
+P|Normal|Sous-critères techniques habituels :
+P|Normal|Barème de notation par sous-critère :
+P|Heading 2|5. CONTRAINTES LIÉES AU SITE / OBJECTIFS DE PERFORMANCE
+P|Normal|Points à analyser dans le programme particulier :
+P|List Bullet|Contraintes géographiques (altitude, exposition, sismicité)
+P|List Bullet|Réglementation applicable (PLU, ERP, MH...)
+P|List Bullet|Objectifs environnementaux (RE2020, label BBC...)
+P|List Bullet|Contraintes d'exploitation (activité en cours, riverains, accès)
+P|Heading 2|6. RÈGLEMENT DE CONSULTATION (RC) - POINTS CLÉS
+P|List Bullet|Procédure : adaptée ou formalisée selon seuils
+P|List Bullet|Critères de sélection et leur pondération
+P|List Bullet|Contenu du dossier à remettre : mémoire technique, planning, prix...
+P|List Bullet|Délai de remise des offres
+P|List Bullet|Forme de la mission : complète, partielle, avec ou sans EXE
+P|Heading 2|7. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Compléter un tableau d'informations sur la consultation
+P|List Bullet|Expliquer les contraintes du site liées aux objectifs de performance
+P|List Bullet|Lister les éléments de mission confiés au MOE
+P|List Bullet|Proposer une forme de mission alternative (EXE totale)
+P|List Bullet|Donner un avis sur l'organisation du groupement MOE
+P|List Bullet|Lister les critères de jugement des offres
+T|Compétence||Rôle
+T|Architecte||Mandataire (chef de file)
+T|Économiste de la construction||Co-traitant
+T|BET Structure||Co-traitant
+T|BET Fluides||Co-traitant
+T|BET QEB (Qualité Environnementale)||Co-traitant
+T|Sigle||Désignation||Contenu
+T|ESQ||Esquisse||Vérification de faisabilité
+T|APS||Avant-Projet Sommaire||Plans masse, volumétrie
+T|APD||Avant-Projet Définitif||Plans précis, estimations
+T|PRO||Projet||Plans d'exécution
+T|DCE||Dossier de Consultation des Entreprises||CCTP, DPGF, RC
+T|ACT||Assistance à la passation des Contrats||Analyse des offres
+T|DET||Direction de l'Exécution des Travaux||Suivi chantier
+T|AOR||Assistance aux Opérations de Réception||Réception des ouvrages
+T|OPC||Ordonnancement, Pilotage, Coordination||Planning général
+T|Sous-critère||Pondération type
+T|Qualité architecturale et fonctionnelle||20%
+T|Coût global (exploitation/maintenance)||20%
+T|Méthodologie et organisation de chantier||10%
+T|Qualité environnementale et performance énergétique||10%
+T|Respect des délais||10%
+T|Évaluation||Note
+T|Non traité||0
+T|Peu détaillé, quelques réponses intéressantes||3
+T|Détaillé, réponses intéressantes||6
+T|Bien développé, répond aux attentes||8
+T|Excellent, grande qualité de réponse||10
+ENDFILE
+FILE:E4_FICHE_02_REGLEMENTATION.docx
+P|Normal|FICHE 02 - CONTEXTE RÉGLEMENTAIRE ET URBANISME
+P|Normal|Épreuve E4 - Partie A/B | Apparaît en 2023, 2025
+P|Heading 2|1. PERMIS DE CONSTRUIRE (PC)
+P|Heading 3|Durée de validité
+P|List Bullet|Validité initiale : 3 ans à compter de la date d'obtention
+P|List Bullet|Prorogation possible : 2 fois 1 an (soit +2 ans maximum)
+P|List Bullet|Conditions de prorogation : demande au moins 2 mois avant expiration
+P|List Bullet|Refus de prorogation possible si réglementation a changé entre temps
+P|Heading 3|Motifs de refus de prorogation
+P|List Bullet|La réglementation thermique applicable a changé (ex : passage RT2012 → RE2020)
+P|List Bullet|Les règles d'urbanisme ont évolué (PLU révisé)
+P|List Bullet|Le projet est incompatible avec la réglementation en vigueur au moment de la demande
+P|Heading 2|2. RÉGLEMENTATIONS THERMIQUES
+P|Heading 3|Indicateurs RT2012
+P|List Bullet|Bbio : Besoin Bioclimatique (isolation, orientation, vitrages)
+P|List Bullet|Cep : Consommation d'Énergie Primaire (max 50 kWhep/m².an)
+P|List Bullet|Tic : Température Intérieure Conventionnelle (confort d'été)
+P|Heading 3|Indicateurs RE2020 (en plus de RT2012)
+P|List Bullet|Ic énergie : Impact carbone de l'énergie sur 50 ans
+P|List Bullet|Ic construction : Impact carbone des matériaux (ACV)
+P|Heading 2|3. CHRONOLOGIE TYPE D'UN PROJET (DT1)
+P|Normal|Étude de faisabilité
+       ↓
+Dépôt PC initial ──→ Validité 3 ans (+ prorogations éventuelles)
+       ↓
+Phase ESQ / APS / APD
+       ↓
+Dépôt nouveau PC (si expiration)
+       ↓
+PRO / DCE / ACT
+       ↓
+OS (Ordre de Service) de démarrage
+       ↓
+Chantier
+       ↓
+Réception
+       ↓
+Fin de garantie de parfait achèvement (1 an)
+       ↓
+Fin de garantie biennale (2 ans)
+       ↓
+Fin de garantie décennale (10 ans)
+P|Heading 2|4. PLAN LOCAL D'URBANISME (PLU)
+P|Heading 3|Règles à vérifier
+P|Heading 3|Méthode de vérification PLU à l'examen
+P|List Number|Identifier la zone dans le règlement PLU
+P|List Number|Lire les règles applicables article par article
+P|List Number|Calculer les valeurs du projet
+P|List Number|Comparer aux valeurs maximales/minimales exigées
+P|List Number|Conclure : conforme / non conforme
+P|Heading 2|5. CLASSEMENT ERP
+P|Heading 2|6. MONUMENTS HISTORIQUES (MH)
+P|List Bullet|Bâtiment classé MH : travaux soumis à l'avis de l'Architecte des Bâtiments de France (ABF)
+P|List Bullet|Zone de protection de 500m autour d'un MH : toute construction visible requiert accord ABF
+P|List Bullet|Obligation d'utiliser des entreprises qualifiées pour la restauration
+P|Heading 2|7. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Déterminer la date limite de validité d'un permis de construire
+P|List Bullet|Expliquer quelle réglementation thermique s'applique selon la date de dépôt du PC
+P|List Bullet|Justifier un refus de prorogation
+P|List Bullet|Compléter une chronologie réglementaire du projet
+P|List Bullet|Vérifier la conformité d'un projet aux règles PLU
+T|Réglementation||Applicabilité||Caractéristiques
+T|RT2012||Permis de construire déposés avant le 01/01/2022||Bbio max, Cep max, Tic max
+T|RE2020||Permis de construire déposés à partir du 01/01/2022||Bbio max, Cep max, Ic énergie, Ic construction (carbone)
+T|Règle PLU||Ce qu'il faut vérifier
+T|Zone||Classification du terrain (UA, UB, N, A...)
+T|Implantation / retrait||Distances par rapport aux limites séparatives et voies
+T|Hauteur maximale||À l'égout, au faîtage, ou en nombre de niveaux
+T|Emprise au sol||% maximum de la parcelle couverte
+T|CES||Coefficient d'Emprise au Sol
+T|COS||Coefficient d'Occupation des Sols (parfois supprimé)
+T|Stationnement||Nombre de places requises par logement/m²
+T|Espaces verts||% minimum de la parcelle non imperméabilisée
+T|Type||Désignation
+T|Type R||Établissements d'enseignement, de formation
+T|Type L||Salles de spectacles, de conférences
+T|Type M||Magasins, centres commerciaux
+T|Type N||Restaurants, débits de boissons
+T|Type P||Salles de danse, jeux
+T|Type U||Établissements sanitaires
+T|Type W||Administrations
+T|Catégorie||Effectif public admis
+T|1ère||> 1500 personnes
+T|2ème||De 701 à 1500
+T|3ème||De 301 à 700
+T|4ème||≤ 300 (sauf 5ème)
+T|5ème||Seuil propre à chaque type
+ENDFILE
+FILE:E4_FICHE_03_FONDATIONS.docx
+P|Normal|FICHE 03 - FONDATIONS ET CLASSES D'EXPOSITION BÉTON
+P|Normal|Épreuve E4 - Partie B | Apparaît dans TOUS les sujets 2023-2025
+P|Heading 2|1. TYPES DE FONDATIONS
+P|Heading 2|2. RÈGLES DE PROFONDEUR DE FONDATION
+P|List Bullet|Minimum dans le bon sol porteur : 0,50 m (horizon portant)
+P|List Bullet|Hors gel : profondeur selon zone géographique
+P|List Bullet 2|Zone H1 (montagne) : 1,00 m
+P|List Bullet 2|Zone H2 (plaine) : 0,80 m
+P|List Bullet 2|Zone H3 (bord de mer) : 0,50 m
+P|List Bullet|La profondeur retenue est le maximum entre hors gel et porteur
+P|Heading 3|À l'examen : vérifier la profondeur de la semelle
+P|Normal|Profondeur assise = TN - côte semelle
+Vérifier :
+  1. ≥ hors gel selon zone
+  2. ≥ 0,50 m dans l'horizon portant
+  3. ≥ niveau nappe phréatique si nécessaire
+P|Heading 2|3. NAPPE PHRÉATIQUE - INCIDENCE SUR LES FONDATIONS
+P|List Bullet|Si nappe phréatique présente : risque de soulèvement, sous-pression hydrostatique
+P|List Bullet|Nécessite : imperméabilisation des voiles enterrés, drainage, cuvelage
+P|List Bullet|Présence de chlorures dans l'eau → classe d'exposition XD ou XS
+P|Heading 2|4. CLASSES D'EXPOSITION DU BÉTON (NF EN 206)
+P|Heading 3|Tableau complet des classes
+P|Heading 2|5. EXIGENCES BÉTON SELON CLASSE D'EXPOSITION
+P|Heading 2|6. MÉTHODE POUR COMPLÉTER UN TABLEAU DE CLASSES D'EXPOSITION
+P|Normal|Pour chaque partie d'ouvrage (semelle, voile, plancher...) :
+P|List Number|Identifier l'environnement : sec / humide / extérieur / enterré / eau...
+P|List Number|Identifier les agents agressifs : chlorures ? gel ? attaque chimique ?
+P|List Number|Choisir la/les classe(s) : plusieurs classes peuvent s'additionner
+P|List Number|Prescrire : résistance, w/c max, dosage minimum
+P|Heading 3|Exemple : semelle de fondation (sol non agressif, nappe à 1,80m sans chlorures)
+P|Normal|→ Contact longtemps avec eau → XC2
+P|Normal|→ Pas de gel (enterré) → pas XF
+P|Normal|→ Sol non agressif → XA1 si sol légèrement agressif
+P|Normal|→ Résistance : C25/30 minimum
+P|Heading 2|7. TASSEMENTS ET RECONNAISSANCES DE SOL
+P|List Bullet|Rapport géotechnique de type G1, G2, G3 selon NF EN 1997
+P|List Bullet|Sondages : pressiométriques, pénétrométriques
+P|List Bullet|SPT (Standard Penetration Test) : nombre de coups / 30 cm
+P|List Bullet|Tassement différentiel : risque si sols hétérogènes → radier conseillé
+P|Heading 2|8. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Vérifier la profondeur de la nappe phréatique (calcul depuis TN)
+P|List Bullet|Vérifier la profondeur d'assise des fondations
+P|List Bullet|Compléter un tableau de classes d'exposition par partie d'ouvrage
+P|List Bullet|Prescrire les caractéristiques du béton (résistance, w/c, dosage)
+P|List Bullet|Justifier le type de fondation retenu
+T|Type||Description||Utilisation
+T|Superficielles||Semelles filantes, semelles isolées, radier||Sol porteur à faible profondeur
+T|Semi-profondes||Puits, massifs||Sol porteur à profondeur intermédiaire
+T|Profondes||Pieux, micropieux||Sol porteur en profondeur
+T|Spéciales||Injections, jet-grouting||Sols compressibles, problématiques
+T|Classe||Désignation||Exemple
+T|X0||Aucun risque de corrosion ni d'attaque||Béton sans armatures, environnement sec
+T|XC1||Corrosion par carbonatation - Sec ou humide en permanence||Béton à l'intérieur des bâtiments (faible humidité)
+T|XC2||Humide, rarement sec||Fondations, éléments en contact longtemps avec l'eau
+T|XC3||Humidité modérée||Extérieur abrité de la pluie
+T|XC4||Alternance humide/sec||Extérieur exposé à la pluie
+T|XD1||Chlorures pas d'eau de mer - Humidité modérée||Parties de ponts exposées à brouillard chloruré
+T|XD2||Humide, rarement sec||Piscines, béton exposé eaux industrielles
+T|XD3||Alternance humide/sec||Dalles de parking, éléments exposés déneigement
+T|XS1||Chlorures eau de mer - Exposé air chargé en sel||Structures en bord de mer
+T|XS2||Immergé en permanence||Parties de structures marines
+T|XS3||Zones de marnage, projections||Structures portuaires
+T|XF1||Gel/dégel - Saturation en eau modérée||Surfaces verticales extérieures exposées pluie + gel
+T|XF2||Saturation modérée + agents de déverglaçage||Surfaces de routes
+T|XF3||Forte saturation en eau||Surfaces horizontales extérieures
+T|XF4||Forte saturation + agents de déverglaçage||Chaussées, trottoirs en zone de gel sévère
+T|XA1||Attaque chimique - Légèrement agressif||Sols et eaux peu agressifs
+T|XA2||Modérément agressif||Sols et eaux à agressivité modérée
+T|XA3||Hautement agressif||Sols et eaux très agressifs
+T|Classe||Résistance min||w/c max||Dosage ciment min||Enrobage nominal
+T|X0||C12/15||-||260 kg/m³||10 mm
+T|XC1||C20/25||0,65||260 kg/m³||15 mm
+T|XC2||C25/30||0,60||280 kg/m³||25 mm
+T|XC3||C30/37||0,55||280 kg/m³||25 mm
+T|XC4||C30/37||0,50||300 kg/m³||30 mm
+T|XF1||C30/37||0,55||300 kg/m³||25 mm
+T|XF3||C35/45||0,50||320 kg/m³||30 mm
+T|XA1||C30/37||0,55||300 kg/m³||25 mm
+ENDFILE
+FILE:E4_FICHE_04_THERMIQUE.docx
+P|Normal|FICHE 04 - CONFORT THERMIQUE ET ISOLATION
+P|Normal|Épreuve E4 - Partie C | Apparaît en 2024, 2025, 2025NC
+P|Heading 2|1. FORMULES ESSENTIELLES
+P|Heading 3|Résistance thermique d'une couche homogène
+P|Normal|R = e / λ    [m².K/W]
+
+Avec :
+  e = épaisseur de la couche (en mètres)
+  λ = conductivité thermique (W/m.K)
+P|Heading 3|Résistance thermique totale d'une paroi multicouche
+P|Normal|RT = Rsi + R1 + R2 + ... + Rn + Rse
+
+Avec :
+  Rsi = résistance superficielle intérieure (m².K/W)
+  Rse = résistance superficielle extérieure (m².K/W)
+  R1, R2... = résistances de chaque couche
+P|Normal|Valeurs standard :
+P|Heading 3|Coefficient de transmission thermique (U)
+P|Normal|U = 1 / RT    [W/m².K]
+
+Plus U est faible, meilleure est l'isolation.
+P|Heading 3|Calcul de l'épaisseur nécessaire
+P|Normal|Pour obtenir une résistance R cible :
+  e = R × λ
+P|Heading 2|2. DÉPHASAGE THERMIQUE (INERTIE)
+P|Heading 3|Définition
+P|Normal|Le déphasage est le délai entre le pic de température extérieure et le pic de température intérieure. Plus il est grand, meilleur est le confort d'été.
+P|Normal|Exigence minimale : déphasage > 12 heures
+P|Heading 3|Formules du déphasage
+P|Normal|Diffusivité thermique :
+  a = λ / (ρ × Cp)    [m²/s]
+
+Déphasage :
+  φ = 0,023 × e / √a    [heures]
+
+Avec :
+  λ = conductivité thermique (W/m.K)
+  ρ = masse volumique (kg/m³)
+  Cp = chaleur spécifique (J/kg.K)
+  e = épaisseur (en mètres)
+P|Heading 3|Exemple de calcul (Panneaux de paille de riz - sujet 2025)
+P|Normal|Données :
+P|List Bullet|λ = 0,056 W/m.K
+P|List Bullet|ρ = 120 kg/m³
+P|List Bullet|Cp = 1600 J/kg.K
+P|List Bullet|e = 0,37 m (37 cm)
+P|Normal|Calcul :
+P|Normal|a = 0,056 / (120 × 1600) = 0,056 / 192000 = 2,92 × 10⁻⁷ m²/s
+
+φ = 0,023 × 0,37 / √(2,92 × 10⁻⁷)
+φ = 0,023 × 0,37 / 0,000540
+φ = 0,00851 / 0,000540 ≈ 15,8 heures  → satisfaisant (> 12h)
+P|Heading 2|3. PROPRIÉTÉS DES MATÉRIAUX ISOLANTS COURANTS
+P|Heading 2|4. RÉGLEMENTATION THERMIQUE
+P|Heading 3|RT2012 - Indicateurs à respecter
+P|Normal|Bbio ≤ Bbio max   (Besoin Bioclimatique)
+Cep  ≤ 50 kWhep/m².an (Consommation Énergie Primaire)
+Tic  ≤ Tic ref    (Température Intérieure Conventionnelle - été)
+P|Heading 3|RE2020 (depuis 01/01/2022)
+P|Normal|Bbio ≤ Bbio max
+Cep  ≤ Cep max (renforcé vs RT2012)
+Ic énergie ≤ seuil (impact carbone énergie, 50 ans)
+Ic construction ≤ seuil (impact carbone matériaux, ACV)
+P|Heading 2|5. COUPE DE PAROI - MÉTHODE DE LECTURE
+P|Normal|Pour une façade type ossature bois (de l'extérieur vers l'intérieur) :
+P|List Number|Parement extérieur (bardage bois, zinc, Trespa...)
+P|List Number|Lame d'air ventilée (15-25 mm)
+P|List Number|Pare-pluie / écran de sous-toiture
+P|List Number|Isolant entre montants (laine de bois, PSE...)
+P|List Number|Montants ossature bois
+P|List Number|Frein-vapeur
+P|List Number|Contre-cloison / doublage
+P|List Number|Plaque de plâtre (parement intérieur)
+P|Heading 2|6. VARIANTES D'ISOLATION À COMPARER (Sujet 2025)
+P|Normal|Critères d'analyse d'une variante :
+P|List Bullet|Résistance thermique R [m².K/W] → plus R est grand, mieux c'est
+P|List Bullet|Déphasage thermique φ [heures] → doit être > 12h
+P|List Bullet|Épaisseur → contrainte architecturale
+P|List Bullet|Masse volumique / Inertie
+P|List Bullet|Impact environnemental (carbone, recyclabilité)
+P|List Bullet|Coût
+P|Heading 2|7. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Dessiner une coupe horizontale de paroi et compléter la nomenclature
+P|List Bullet|Compléter un tableau comparatif de variantes d'isolation
+P|List Bullet|Calculer la résistance thermique d'une variante
+P|List Bullet|Calculer l'épaisseur nécessaire pour une résistance équivalente
+P|List Bullet|Calculer le déphasage thermique pour une épaisseur donnée
+P|List Bullet|Conclure sur l'aptitude d'un matériau (thermique, technique, économie)
+T|Surface||Rsi (m².K/W)||Rse (m².K/W)
+T|Paroi verticale||0,13||0,04
+T|Flux horizontal||0,10||0,04
+T|Flux descendant (plancher haut)||0,17||0,04
+T|Flux ascendant (plancher bas)||0,10||0,04
+T|Matériau||λ (W/m.K)||ρ (kg/m³)||Cp (J/kg.K)
+T|Laine de verre||0,032-0,040||10-30||1000
+T|Laine de roche||0,035-0,045||40-100||1030
+T|Polystyrène expansé (PSE)||0,029-0,038||15-25||1450
+T|Polystyrène extrudé (XPS)||0,025-0,036||30-45||1450
+T|Polyuréthane (PUR)||0,022-0,028||30-40||1400
+T|Laine de bois||0,038-0,052||50-270||2100
+T|Paille de riz (ProFibres)||~0,056||~120||~1600
+T|Chanvre||0,040-0,060||25-40||1700
+T|Ouate de cellulose||0,038-0,042||25-60||1900
+T|Béton||1,75||2400||1000
+T|Bois massif||0,12-0,17||600-700||1600
+T|Brique creuse||0,27-0,41||1200||840
+T|Verre||1,00||2500||800
+T|Plaque de plâtre||0,25||900||1000
+T|Enduit plâtre||0,57||1300||840
+ENDFILE
+FILE:E4_FICHE_05_ACOUSTIQUE.docx
+P|Normal|FICHE 05 - ACOUSTIQUE DES FAÇADES ET DES LOCAUX
+P|Normal|Épreuve E4 - Partie D | Apparaît dans TOUS les sujets 2023-2025
+P|Heading 2|1. CLASSEMENT ACOUSTIQUE DES VOIES (BRUIT EXTÉRIEUR)
+P|Normal|Largeur de secteur affecté (de chaque côté de la voie) :
+P|Heading 2|2. ISOLEMENT ACOUSTIQUE MINIMAL DES FAÇADES
+P|Normal|Pour des locaux d'habitation ou d'enseignement :
+P|Normal|Formule de l'isolement de façade :
+P|Normal|DnT,A,tr = Ln (LAeq, ext) - LAeq, int requis
+
+Isolement nécessaire = Niveau extérieur (dB) - Niveau intérieur cible (dB)
+P|Heading 2|3. CALCUL DE L'ISOLEMENT D'UNE FAÇADE COMPOSÉE
+P|Heading 3|Méthode de la surface équivalente de bruit transmis
+P|Normal|Pour une façade composée de plusieurs éléments (mur, fenêtre, entrée d'air...) :
+P|Normal|Ri = -10 × log [ Σ (Si × 10^(-Ri/10)) / S_totale ]
+
+Avec :
+  Si = surface de l'élément i (m²)
+  Ri = isolement acoustique de l'élément i (dB)
+  S_totale = surface totale de la façade
+P|Heading 3|Simplification pratique à l'examen
+P|Normal|L'isolement de la façade est limité par l'élément le plus faible.
+P|Normal|L'entrée d'air est souvent l'élément le plus défavorable.
+P|Heading 2|4. ENTRÉES D'AIR - ISOLEMENT ACOUSTIQUE
+P|Heading 3|Types d'entrées d'air
+P|Heading 3|Comment choisir l'entrée d'air
+P|List Number|Déterminer l'isolement requis pour la façade
+P|List Number|Calculer l'isolement fourni par les éléments opaques (mur, volet...)
+P|List Number|En déduire l'isolement minimum nécessaire pour l'entrée d'air
+P|List Number|Choisir le type correspondant dans le tableau du fabricant
+P|Normal|À l'examen (2024) :
+P|List Bullet|Façade catégorie 4 : isolement façade ≥ 35 dB
+P|List Bullet|Menuiserie + volet roulant : 32 dB
+P|List Bullet|Mur opaque : > 35 dB
+P|List Bullet|Donc entrée d'air doit compenser pour atteindre 35 dB → choisir AVENT acoustique ≥ 35 dB
+P|Heading 2|5. TEMPS DE RÉVERBÉRATION (ACOUSTIQUE DES LOCAUX)
+P|Heading 3|Formule de Sabine
+P|Normal|TR = 0,16 × V / A    [secondes]
+
+Avec :
+  V = volume du local (m³)
+  A = surface d'absorption équivalente (m²)
+
+A = Σ (Si × αi)
+Avec :
+  Si = surface de l'élément i
+  αi = coefficient d'absorption du matériau i (entre 0 et 1)
+P|Heading 3|Valeurs typiques de coefficient d'absorption (α) à 500 Hz
+P|Heading 2|6. EXIGENCES DE TR SELON L'USAGE
+P|Heading 2|7. ISOLEMENT ACOUSTIQUE DES PLANCHERS (BRUITS D'IMPACT)
+P|Normal|Solutions contre les bruits d'impact :
+P|List Bullet|Chape flottante (sur isolant acoustique)
+P|List Bullet|Dalle résiliente
+P|List Bullet|Revêtement souple (moquette, liège...)
+P|Heading 2|8. LOT IMPACTÉ PAR LES PRESCRIPTIONS ACOUSTIQUES
+P|Normal|À l'examen, quand on identifie une non-conformité acoustique :
+P|List Bullet|Lot menuiseries extérieures → remplacement des fenêtres
+P|List Bullet|Lot façades → modification de la composition
+P|List Bullet|Lot VMC → changement d'entrées d'air
+P|List Bullet|Lot gros œuvre → si mur porteur concerné
+P|Heading 2|9. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Identifier la catégorie de la voie bruyante
+P|List Bullet|Déterminer l'isolement minimal de façade requis
+P|List Bullet|Identifier les systèmes d'entrée d'air envisageables
+P|List Bullet|Vérifier les entrées d'air pour plusieurs locaux
+P|List Bullet|Calculer le temps de réverbération TR d'un local
+P|List Bullet|Calculer la surface d'absorption supplémentaire nécessaire
+P|List Bullet|Identifier les lots de travaux impactés par les modifications
+T|Catégorie||Niveau sonore diurne LAeq||Exemples
+T|1||> 81 dB(A)||Autoroutes très fréquentées
+T|2||76-81 dB(A)||Rocades, boulevards périphériques
+T|3||70-76 dB(A)||Voies à fort trafic
+T|4||65-70 dB(A)||Voies urbaines moyennes (fréquent à l'examen)
+T|5||60-65 dB(A)||Voies peu fréquentées
+T|Catégorie||Distance d'isolement
+T|1||300 m
+T|2||250 m
+T|3||100 m
+T|4||30 m
+T|5||10 m
+T|Usage du local||Isolation minimale requise DnT,A,tr
+T|Chambre, séjour||30 dB
+T|Façade exposée voie cat. 4||35 dB (valeur fréquente)
+T|Façade exposée voie cat. 3||38-42 dB
+T|Type||Isolement acoustique||Débit
+T|Standard (AVENT)||30 dB||Standard
+T|Acoustique (AVENT acoustique)||35-44 dB||Réduit
+T|SMEC (Silencieux à Mécanisme Équilibré)||> 44 dB||Variable
+T|Matériau||α
+T|Béton brut||0,02
+T|Béton peint||0,01
+T|Brique||0,03
+T|Plaque de plâtre||0,05
+T|Parquet, carrelage||0,02-0,05
+T|Moquette||0,25-0,40
+T|Laine minérale en plafond||0,70-0,90
+T|Vitrage simple||0,03
+T|Double vitrage||0,05
+T|Rideau léger||0,10-0,35
+T|Usage||TR cible
+T|Classe d'école||0,4-0,6 s
+T|Salle polyvalente||0,8-1,0 s
+T|Restaurant||0,8-1,2 s
+T|Salle de sport||1,5-2,0 s
+T|Bureau open-space||0,5-0,8 s
+T|Classement||Ln,w (bruit de choc)||Performance
+T|Bon||≤ 50 dB||Très bonne isolation
+T|Correct||50-60 dB||Acceptable
+T|Insuffisant||> 60 dB||Mauvaise isolation
+ENDFILE
+FILE:E4_FICHE_06_SECURITE_CHANTIER.docx
+P|Normal|FICHE 06 - SÉCURITÉ SUR LE CHANTIER
+P|Normal|Épreuve E4 - Partie D (2025) | Tranchées, terrassements, travaux en toiture
+P|Heading 2|1. BLINDAGE DES TRANCHÉES
+P|Heading 3|Réglementation (Code du Travail, Articles R4534-24 à R4534-32)
+P|Heading 3|Article R4534-31 - Exécution des fouilles
+P|List Bullet|Profondeur > 1,30 m → blindage obligatoire
+P|List Bullet|Distance minimale des matériaux en bord de fouille : au moins 0,60 m du bord
+P|List Bullet|Proscrit le déblaiement des matériaux par-dessus la tête des travailleurs
+P|Heading 3|Article R4534-32 - Circulation des engins
+P|List Bullet|Distances minimales des engins par rapport aux bords de fouille :
+P|List Bullet 2|Engins légers : 1 m
+P|List Bullet 2|Engins lourds : 3 m minimum
+P|Heading 2|2. TYPES DE BLINDAGE
+P|Heading 3|Choix du blindage selon sujet 2025
+P|Normal|Guide de sélection à partir de :
+P|List Bullet|Profondeur de fouille
+P|List Bullet|Nature du sol
+P|List Bullet|Présence d'eau
+P|List Bullet|Charges en bord de fouille
+P|Heading 2|3. GARDE-CORPS EN TOITURE-TERRASSE
+P|Heading 3|Réglementation
+P|List Bullet|Hauteur minimale du garde-corps : 1,00 m (bord de toiture accessible)
+P|List Bullet|Hauteur minimale si bord non accessible : 0,60 m
+P|List Bullet|Résistance minimale : garde-corps doit résister aux efforts normaux et horizontaux
+P|Heading 3|Types de fixation garde-corps
+P|Heading 3|Schéma de principe (garde-corps sur toiture)
+P|Normal|↑ Garde-corps (H ≥ 1,00m)
+    |
+    |_____ Platine d'ancrage
+    |         |
+    |      [Tirant filleté]
+    |         |
+ ===|=========|===== Acrotère béton
+         |
+   [Gaine d'étanchéité]
+P|Heading 2|4. ANALYSE DES RISQUES - MÉTHODE
+P|Heading 3|Document unique / Plan de prévention
+P|Normal|Pour chaque phase de travaux, analyser :
+P|Heading 3|Risques courants en construction
+P|Heading 2|5. MODÉLISATION MÉCANIQUE D'UN ÉLÉMENT STRUCTUREL
+P|Heading 3|Modèles de base
+P|Heading 3|Pour l'élément Po 20 × 110ht (sujet 2025)
+P|List Bullet|Élément vertical ancré dans le sol
+P|List Bullet|Modèle : console (encastrée en pied dans le sol, libre en tête)
+P|List Bullet|Chargement : forces horizontales (vent, poussée)
+P|List Bullet|Diagramme des moments : triangulaire, max en pied
+P|Heading 2|6. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Analyser les risques pour des interventions de maintenance en toiture
+P|List Bullet|Dessiner un croquis légendé de fixation de garde-corps
+P|List Bullet|Schématiser la coupe d'un élément structurel (poteau, linteau)
+P|List Bullet|Réaliser le modèle mécanique d'un élément (schéma des efforts, appuis)
+P|List Bullet|Compléter un tableau de sécurité par phase de travaux
+P|List Bullet|Choisir un type de blindage selon les caractéristiques de la fouille
+T|Profondeur||Obligation
+T|< 1,30 m||Pas de blindage obligatoire
+T|≥ 1,30 m||Blindage obligatoire
+T|Type||Description||Usage
+T|Blindage à planche||Planches en bois horizontales + étais||Fouilles peu profondes (< 2m)
+T|Blindage berlinois||Pieux + planches verticales||Fouilles moyennes à profondes
+T|Palplanches||Profilés acier battus||Fouilles profondes, nappes
+T|Paroi moulée||Béton coulé en tranchée||Très grandes profondeurs
+T|Type||Description
+T|Sabots / platines boulonnées||Fixation mécanique sur acrotère ou dalle
+T|Contreplaque + tirant||Plaque d'ancrage + tige filetée dans la structure
+T|Lestage||Poids (plots béton) - ne perfore pas l'étanchéité
+T|Colonne||Description
+T|Phase / Tâche||Opération considérée
+T|Risques identifiés||Chute de hauteur, écrasement, ensevelissement...
+T|Mesures de prévention||EPI, protections collectives, procédures
+T|Intervenant(s)||Qui réalise la tâche
+T|Risque||Situation||Prévention
+T|Chute de hauteur||Toiture, échafaudage, fouille||Garde-corps, harnais, filet
+T|Ensevelissement||Fouille, tranchée||Blindage, talutage
+T|Écrasement||Engin, charge suspendue||Zone de balayage, balisage
+T|Électrisation||Câbles enterrés, ligne aérienne||Détection réseaux (DICT)
+T|Projection||Meuleuse, scie||Lunettes, écran
+T|Chute de plain-pied||Sol encombré, glissant||Balisage, nettoyage
+T|Modèle||Conditions aux limites||Usage
+T|Poutre appuyée-appuyée||2 appuis simples (rotules)||Poutre sur 2 appuis
+T|Console||1 encastrement + 1 libre||Acrotère, balcon, auvent
+T|Poutre encastrée-encastrée||2 encastrements||Linteau avec murs épais
+T|Poteau||Encastré en pied, libre en tête||Poteau isolé
+ENDFILE
+FILE:E52_FICHE_07_ANALYSE_OFFRES.docx
+P|Normal|FICHE 07 - ANALYSE ET COMPARAISON DES OFFRES
+P|Normal|Épreuve E52 - Partie A | Apparaît dans TOUS les sujets E52 2023-2025
+P|Heading 2|1. CRITÈRES DE JUGEMENT DES OFFRES
+P|Normal|Les critères sont définis dans le Règlement de Consultation (RC) et toujours précisés à l'examen.
+P|Heading 3|Critères classiques et pondérations rencontrées
+P|Normal|Exemples de pondérations par sujet :
+P|Heading 2|2. CALCUL DE LA NOTE PRIX
+P|Heading 3|Formule standard (offre la moins chère = note max)
+P|Normal|Note prix = Note max × (Offre la moins chère / Offre considérée)
+
+Exemple : note max = 40 pts
+  - Offre A = 50 000 € → Note = 40 × (50 000 / 50 000) = 40 pts
+  - Offre B = 60 000 € → Note = 40 × (50 000 / 60 000) = 33,33 pts
+  - Offre C = 55 000 € → Note = 40 × (50 000 / 55 000) = 36,36 pts
+P|Heading 3|Formule alternative (vue dans certains sujets)
+P|Normal|Note = Note max × (1 - (Offre - Offre min) / Offre min)
+P|Heading 2|3. CALCUL DE LA NOTE DÉLAI
+P|Normal|Note délai = Note max × (Délai le plus court / Délai considéré)
+
+Exemple : note max = 20 pts, délai le plus court = 23 jours
+  - Offre 2 : 23 jours → Note = 20 × (23/23) = 20 pts
+  - Offre 3 : 28 jours → Note = 20 × (23/28) = 16,43 pts
+P|Heading 2|4. CALCUL DE LA NOTE VALEUR TECHNIQUE
+P|Heading 3|Méthode par sous-critères
+P|Normal|Chaque sous-critère est noté sur une grille :
+P|Normal|Note pondérée du sous-critère :
+P|Normal|Note pondérée = Note /10 × Poids du sous-critère
+P|Normal|Note totale valeur technique :
+P|Normal|Note valeur technique = Σ (notes pondérées de tous les sous-critères)
+P|Heading 3|Sous-critères fréquents
+P|Heading 2|5. CLASSEMENT FINAL ET CONCLUSION
+P|Normal|Score total = Note prix + Note valeur technique + Note délai
+
+L'offre retenue = celle avec le score total le plus élevé
+P|Normal|Tableau de synthèse type :
+P|Normal|→ Entreprise A retenue (score le plus élevé)
+P|Heading 2|6. ÉCART ENTRE OFFRES ET ESTIMATION
+P|Normal|Écart (%) = (Offre - Estimation) / Estimation × 100
+
+Si positif → offre supérieure à l'estimation (dépassement)
+Si négatif → offre inférieure à l'estimation (économie)
+P|Heading 2|7. RATIO ÉCONOMIQUE PAR POSTE
+P|Normal|Ratio (€/m²) = Montant HT du lot / Surface considérée (m²)
+
+Surface considérée selon le poste :
+  - Classe : surface de la classe
+  - Couloir : surface de circulation
+  - Sanitaires : surface des sanitaires
+P|Normal|À l'examen 2023 : calcul de ratios par type de local (classe, couloir, sanitaires) à partir du DPGF.
+P|Heading 2|8. ÉCHANGES MOE / ENTREPRISES (NÉGOCIATION)
+P|Normal|Après ouverture des plis, le MOE peut engager des échanges pour :
+P|List Bullet|Corriger des erreurs matérielles (calcul, report...)
+P|List Bullet|Appliquer des moins-values (suppression de prestations)
+P|List Bullet|Appliquer des plus-values (ajout de prestations)
+P|List Bullet|Accorder des remises commerciales
+P|Normal|Méthode de calcul du montant après négociation :
+P|Normal|Montant final = Offre de base
+              - Moins-values négociées
+              + Plus-values négociées
+              - Remise commerciale
+P|Heading 2|9. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Calculer les montants après négociation pour chaque entreprise
+P|List Bullet|Calculer les écarts entre offres et estimation (%)
+P|List Bullet|Calculer les notes sur le critère prix pour chaque entreprise
+P|List Bullet|Évaluer la valeur technique de chaque offre (grille de notation)
+P|List Bullet|Calculer le score total et classer les entreprises
+P|List Bullet|Proposer une conclusion motivée sur l'attribution du marché
+P|List Bullet|Calculer des ratios économiques et les comparer à l'estimation
+T|Critère||Pondération courante
+T|Prix des prestations||30 à 60%
+T|Valeur technique||30 à 70%
+T|Délai d'exécution||0 à 20%
+T|Sujet||Prix||Valeur technique||Délai
+T|2023||10 pts (50%)||-||-
+T|2023 NC||60 pts (60%)||40 pts (40%)||-
+T|2024||20 pts (30%)||50%||20%
+T|2025 NC||40 pts (40%)||40 pts (40%)||20 pts (20%)
+T|Évaluation||Note /10
+T|Non traité||0
+T|Peu détaillé, quelques réponses||3
+T|Détaillé, réponses intéressantes||6
+T|Bien développé, répond aux attentes||8
+T|Excellent, grande qualité||10
+T|Sous-critère A||Méthodologie et moyens
+T|Sous-critère C||Planning des travaux
+T|Sous-critère D||Approche HQE / environnementale
+T|Entreprise||Note prix||Note VT||Note délai||TOTAL
+T|A||40,00||32,50||20,00||92,50
+T|B||33,33||38,00||16,43||87,76
+T|C||36,36||28,00||20,00||84,36
+ENDFILE
+FILE:E52_FICHE_08_REVISION_PRIX.docx
+P|Normal|FICHE 08 - RÉVISION ET ACTUALISATION DES PRIX
+P|Normal|Épreuve E52 - Partie B/C | Apparaît dans TOUS les sujets E52 2023-2025
+P|Heading 2|1. POURQUOI RÉVISER LES PRIX ?
+P|Normal|Les marchés publics et privés prévoient une révision des prix pour protéger les entreprises contre l'inflation des matériaux et de la main-d'œuvre.
+P|Normal|Les prix sont mis à jour via des indices BT publiés au Journal Officiel.
+P|Heading 2|2. LES INDICES BT (BÂTIMENT)
+P|Normal|L'indice applicable est spécifié au CCAP pour chaque lot.
+P|Heading 2|3. FORMULES DE RÉVISION DES PRIX
+P|Heading 3|Formule d'actualisation simple (la plus fréquente)
+P|Normal|P actualisé = P0 × (Im / I0)
+
+Avec :
+  P0 = prix initial (au mois zéro)
+  Im = indice BT du mois de révision
+  I0 = indice BT du mois zéro (mois de dépôt de l'offre)
+  m  = mois de réalisation des travaux (ou m-3 selon CCAP)
+P|Heading 3|Formule avec part fixe (clause de butée)
+P|Normal|P(m) = P(o) × [0,15 + 0,85 × (Im / I0)]
+
+La part fixe (15%) ne bénéficie pas de la révision.
+La part variable (85%) est révisée selon l'indice.
+P|Heading 3|Formule à plusieurs indices (exemple 2023)
+P|Normal|P(m) = P(o) × [0,15 + 0,85 × (Im BT30 × 10% + Im BT34 × 90%) / I0]
+P|Heading 3|Formule avec décalage temporel (CCAP 2024/2025)
+P|Normal|P actualisé = P0 × (Im-3 / Im0)
+
+Le mois m de révision utilise l'indice de 3 mois AVANT le mois de réalisation.
+P|Heading 2|4. MOIS ZÉRO (I0)
+P|Normal|Le mois zéro est le mois de référence des prix, généralement :
+P|List Bullet|Le mois de remise des offres (date mentionnée dans le CCAP)
+P|List Bullet|Ou le mois qui précède la remise des offres
+P|Normal|Exemple : Offre remise en mars 2021 → I0 = indice de mars 2021
+P|Heading 2|5. CALCUL PRATIQUE - ÉTAPES
+P|Normal|Étape 1 : Lire le CCAP → identifier la formule et les indices applicables
+P|Normal|Étape 2 : Identifier le mois zéro (I0) et trouver sa valeur dans le tableau
+P|Normal|Étape 3 : Pour chaque mois de travaux, identifier le mois de révision (m ou m-3 ou m-4 selon formule)
+P|Normal|Étape 4 : Calculer le coefficient de révision
+P|Normal|Cn = 0,15 + 0,85 × (Im / I0)   → arrondi au millième supérieur
+P|Normal|Étape 5 : Calculer la révision en € pour chaque mois
+P|Normal|Révision = Montant HT travaux du mois × (Cn - 1)
+P|Normal|Étape 6 : Cumuler les révisions sur toute la durée du marché
+P|Heading 2|6. EXEMPLE COMPLET (Sujet 2023 - Lot toiture)
+P|Normal|Données :
+P|List Bullet|Offre déposée : juillet 2021 → I0 BT30 = 120,8 ; I0 BT34 = 122,9
+P|List Bullet|Formule : P(m) = P(o) × [0,15 + 0,85 × (Im BT30 × 10% + Im BT34 × 90%)]
+P|List Bullet|Dernier mois de travaux : décembre 2022 → Im BT30 = 138,1 ; Im BT34 = 144,6
+P|Normal|Calcul du coefficient :
+P|Normal|Part BT30 = (138,1 / 120,8) × 10% = 1,1433 × 0,10 = 0,11433
+Part BT34 = (144,6 / 122,9) × 90% = 1,1765 × 0,90 = 1,05885
+Somme = 0,11433 + 1,05885 = 1,17318
+
+Cn = 0,15 + 0,85 × 1,17318 = 0,15 + 0,99720 = 1,14720
+P|Normal|Révision du mois :
+P|Normal|Si travaux du mois = 13 693,59 €
+Révision = 13 693,59 × (1,14720 - 1) = 13 693,59 × 0,14720 = 2 015,69 €
+P|Heading 2|7. TABLEAU DE SUIVI TYPE (DR à compléter)
+P|Heading 2|8. POINTS D'ATTENTION
+P|List Bullet|Les avances forfaitaires ne bénéficient pas de révision de prix
+P|List Bullet|L'indice appliqué est celui du dernier publié au moment de l'établissement de la situation
+P|List Bullet|Certains CCAP prévoient un décalage : Im-3 = indice 3 mois avant le mois des travaux
+P|List Bullet|Les indices publiés peuvent être provisoires → révision définitive à publication de l'indice définitif
+P|Heading 2|9. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Calculer le coefficient d'actualisation pour un ou plusieurs mois
+P|List Bullet|Calculer le montant de la révision mensuelle
+P|List Bullet|Calculer le montant cumulé de la révision sur l'ensemble du marché
+P|List Bullet|Compléter le décompte mensuel avec la ligne révision des prix
+P|List Bullet|Expliquer pourquoi une révision est définitive ou provisoire
+T|Indice||Désignation
+T|BT01||Bâtiment tous corps d'état
+T|BT03||Maçonnerie et canalisations en béton
+T|BT06||Ossature, ouvrages en béton armé
+T|BT09||Carrelage et revêtement céramique
+T|BT10||Revêtements en plastique
+T|BT30||Couverture en ardoise
+T|BT34||Toiture en zinc et métaux
+T|BT42||Menuiserie acier et serrurerie
+T|Mois||Travaux HT||Im (BT09)||Im (BT10)||Cn||Révision HT
+T|Mai 2022||8 200 €||111,8||113,8||1,012||98,40 €
+T|Juin 2022||5 800 €||112,3||113,4||1,016||92,80 €
+T|Juillet 2022||14 475 €||112,3||112,8||1,009||130,28 €
+T|TOTAL||28 475 €||321,48 €||||||
+ENDFILE
+FILE:E52_FICHE_09_SITUATION_TRAVAUX.docx
+P|Normal|FICHE 09 - SITUATION DE TRAVAUX ET DÉCOMPTE MENSUEL
+P|Normal|Épreuve E52 - Partie B/C | Apparaît dans TOUS les sujets E52 2023-2025
+P|Heading 2|1. PRINCIPE GÉNÉRAL
+P|Normal|Chaque mois, l'entrepreneur soumet une situation de travaux au maître d'œuvre.
+P|Normal|Le MOE établit un décompte mensuel (ou acompte) qui détermine la somme à payer.
+P|Normal|SITUATION       →    DÉCOMPTE MENSUEL    →    MANDAT DE PAIEMENT
+(entrepreneur)       (MOE)                    (maître d'ouvrage)
+
+Délai de paiement : 30 jours fin de mois (M+1 en général)
+P|Heading 2|2. CALCUL DU MONTANT DES TRAVAUX PAR MOIS
+P|Heading 3|Méthode par avancement
+P|Normal|Travaux cumulés jusqu'au mois m = Montant marché × % avancement cumulé
+
+Travaux du mois m = Travaux cumulés(m) - Travaux cumulés(m-1)
+P|Normal|Exemple :
+P|List Bullet|Marché : 116 000 € HT
+P|List Bullet|Avancement mois 1 : 60% → Cumulé = 116 000 × 60% = 69 600 €
+P|List Bullet|Avancement mois 2 : 75% → Cumulé = 116 000 × 75% = 87 000 €
+P|List Bullet|Travaux mois 2 = 87 000 - 69 600 = 17 400 €
+P|Heading 2|3. STRUCTURE DU DÉCOMPTE MENSUEL
+P|Normal|1. Avance forfaitaire             (ligne créditrice)
+2. Approvisionnements             (matériaux sur chantier non posés)
+3. Travaux HT du mois
+4. TOTAL (1 + 2 + 3)
+5. Remboursement avance           (ligne débitrice dès 65% d'avancement)
+6. Pénalités de retard            (ligne débitrice si applicable)
+7. TOTAL débiteur (5 + 6)
+8. Solde (4 - 7) = Montant HT avant révision
+9. Révision des prix              (+ ou - selon évolution indices)
+10. TOTAL HT (8 + 9)
+11. TVA (20%)
+12. TOTAL TTC
+13. Retenue de garantie (5%)      (déduite ou remplacée par caution)
+14. Solde TTC net
+15. Acomptes antérieurs payés
+16. ACOMPTE DU MOIS (14 - 15)
+P|Heading 2|4. AVANCE FORFAITAIRE
+P|Heading 3|Conditions d'attribution
+P|List Bullet|Marché > 50 000 € HT
+P|List Bullet|Durée d'exécution > 2 mois
+P|List Bullet|L'entrepreneur en fait la demande
+P|Heading 3|Montant de l'avance
+P|Normal|Si durée ≤ 12 mois :
+  Avance = 10% × Montant initial TTC
+
+Si durée > 12 mois :
+  Avance = 10% × (12 × Montant initial TTC / N mois)
+P|Heading 3|Remboursement de l'avance
+P|Normal|Le remboursement commence quand l'avancement cumulé atteint 65%
+et se termine quand l'avancement cumulé atteint 80%.
+
+Remboursement du mois = Avance × (% cumulé - 65%) / (80% - 65%)
+                      - Remboursements déjà effectués
+
+Ou selon certains CCAP :
+R = Avance × (% avancement cumulé - 65%) / 35% - Avance déjà remboursée
+P|Normal|Exemple :
+P|List Bullet|Avance = 10 000 €
+P|List Bullet|Mois 2 : avancement cumulé = 75%
+P|Normal|R total dû = 10 000 × (75% - 65%) / 35% = 10 000 × 10/35 = 2 857,14 €
+R mois 1 déjà effectué = 0 (si < 65% au mois 1)
+R mois 2 = 2 857,14 - 0 = 2 857,14 €
+P|Heading 2|5. RETENUE DE GARANTIE
+P|Heading 3|Règle
+P|Normal|Retenue de garantie = 5% du montant TTC de chaque décompte
+
+Plafonnée à 5% du montant initial TTC total du marché
+P|Normal|Elle garantit la bonne exécution des travaux et la levée des réserves.
+P|Heading 3|Libération de la retenue
+P|List Bullet|À la fin du délai de garantie de parfait achèvement (1 an après réception)
+P|List Bullet|Ou remplacée dès le début par une caution bancaire (garantie à première demande)
+P|Heading 2|6. PÉNALITÉS DE RETARD
+P|Normal|Pénalités = Taux journalier × Nombre de jours de retard × Montant marché HT
+
+Taux courant : 1/3000 du montant marché HT par jour calendaire
+P|Normal|Si pas de retard dans le sujet → pénalités = 0
+P|Heading 2|7. CALCUL DE L'ACOMPTE DU MOIS
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+  File "C:\Users\bahaf\AppData\Roaming\Python\Python310\site-packages\docx\api.py", line 27, in Document
+    document_part = cast("DocumentPart", Package.open(docx).main_document_part)
+  File "C:\Users\bahaf\AppData\Roaming\Python\Python310\site-packages\docx\opc\package.py", line 126, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Users\bahaf\AppData\Roaming\Python\Python310\site-packages\docx\opc\pkgreader.py", line 22, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Users\bahaf\AppData\Roaming\Python\Python310\site-packages\docx\opc\phys_pkg.py", line 21, in __new__
+    raise PackageNotFoundError("Package not found at '%s'" % pkg_file)
+docx.opc.exceptions.PackageNotFoundError: Package not found at '~$_FICHE_01_MARCHE_MOE.docx'
+P|Normal|Travaux HT du mois
++ Révision des prix
+- Remboursement avance
+- Retenue de garantie
++ TVA 20%
+= TOTAL TTC du mois
+- Acomptes antérieurs déjà mandatés
+= ACOMPTE À MANDATER
+P|Heading 2|8. SITUATION DÉFINITIVE (DÉCOMPTE GÉNÉRAL DÉFINITIF - DGD)
+P|Normal|Établi après réception des travaux. Comprend :
+P|List Bullet|L'ensemble des travaux du marché (initial + avenants)
+P|List Bullet|Les révisions de prix totales
+P|List Bullet|Les pénalités éventuelles
+P|List Bullet|La soldede la retenue de garantie (si levée des réserves)
+P|List Bullet|Le solde de l'avance forfaitaire
+P|Normal|Structure du DGD (vue en 2023) :
+P|Heading 2|9. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Calculer les montants de travaux réalisés par mois selon les avancements
+P|List Bullet|Calculer les montants de la révision définitive par mois
+P|List Bullet|Calculer le montant de l'avance forfaitaire
+P|List Bullet|Calculer les remboursements d'avance mois par mois
+P|List Bullet|Calculer la retenue de garantie mensuelle
+P|List Bullet|Compléter les situations de travaux (décomptes mensuels)
+P|List Bullet|Commenter et vérifier un DGD proposé
+T|Ligne||Contenu
+T|1||Avance forfaitaire
+T|2||Approvisionnements
+T|3||Travaux (montant total HT)
+T|4||Total (1+2+3)
+T|5||Remboursement avance
+T|6||Pénalités
+T|7||Total débiteur
+T|8||Différence (4-7)
+T|9||Révisions / actualisations
+T|10||Total HT
+T|11||TVA 20%
+T|12||Total TTC
+T|13||Caution bancaire (si applicable)
+T|14||Différence (12-13)
+T|15||Acomptes antérieurs
+T|16||Acompte à percevoir
+ENDFILE
+FILE:E52_FICHE_10_RENTABILITE.docx
+P|Normal|FICHE 10 - RENTABILITÉ D'UNE OPÉRATION
+P|Normal|Épreuve E52 - Partie C/D | Apparaît en 2023, 2024, 2025
+P|Heading 2|1. VOCABULAIRE ESSENTIEL
+P|Heading 2|2. CHAÎNE DE CALCUL ÉCONOMIQUE
+P|Normal|MONTANT HT DES TRAVAUX
+         |
+         - Coût Direct (DS + FG de chantier)
+         |
+         = MARGE BRUTE (MB)
+         |
+         - Frais Généraux (FG entreprise)
+         - Frais d'Opération (FOp)
+         |
+         = RÉSULTAT BRUT (RB)
+         |
+         RB% = RB / Montant HT × 100
+P|Heading 2|3. CALCUL DU DÉBOURSÉ SEC (DS)
+P|Heading 3|Main-d'œuvre (DSMO)
+P|Normal|DSMO = Nombre d'heures productives × Taux horaire chargé (€/h)
+
+Exemple : 620,30 h × 26,21 €/h = 16 258,06 € HT
+P|Heading 3|Matériaux (DSMAT)
+P|Normal|DSMAT = Somme des coûts d'achat des matériaux mis en œuvre
+
+Attention : inclure les hausses de prix sur matériaux si données
+Ex : DSMAT prévisionnel × (1 + %) si hausse de 2,5%
+P|Heading 3|Déboursé Sec total
+P|Normal|DS = DSMO + DSMAT
+P|Heading 2|4. COÛT DIRECT (CD)
+P|Normal|CD = DS + Sous-traitance + Frais de chantier directs
+
+Si sous-traitance :
+  Coût sous-traitance = Montant HT sous-traitant × (1 + % frais gestion)
+  Ex : 5 463,74 € × 1,02 = 5 573,01 € (2% de frais de direction de chantier)
+P|Heading 2|5. MARGE BRUTE (MB)
+P|Normal|MB = Montant HT travaux réels - Coût Direct réel
+
+MB prévisionnelle = Montant HT prévisionnel - CD prévisionnel
+
+Marge brute horaire (MBH) = MB / Heures productives
+P|Heading 2|6. RÉSULTAT BRUT (RB)
+P|Normal|Frais d'Opération (FOp) = % × Montant HT travaux
+  Ex : FOp = 0,90% × 44 070,92 = 396,64 €
+
+Frais Généraux (FG) = % × Montant HT travaux (ou montant fixe)
+
+RB = MB - FG - FOp
+
+RB% = RB / Montant HT × 100
+P|Heading 2|7. COMPARATIF PRÉVISIONNEL / RÉEL
+P|Heading 2|8. ANALYSE ET COMMENTAIRES
+P|Normal|À l'examen, il faut commenter les écarts. Points à analyser :
+P|List Bullet|Si DSMO réel > prévisionnel : manque de productivité, sous-estimation des heures
+P|List Bullet|Si DSMAT réel > prévisionnel : hausse des prix des matériaux, gaspillage, erreur de quantitatif
+P|List Bullet|Si MB réelle < MB prévisionnelle : dérapage des coûts → perte de rentabilité
+P|List Bullet|Si RB% < 5% : opération peu rentable
+P|List Bullet|Hausses de prix : si révision de prix prévue dans le marché → compense partiellement
+P|Heading 2|9. COMPTE DE RÉSULTAT PRÉVISIONNEL (Bilan d'opération)
+P|Heading 2|10. RENTABILITÉ D'UNE OPÉRATION IMMOBILIÈRE
+P|Normal|Résultat = Total produits - Total charges
+
+Taux de marge = Résultat / Total produits × 100
+
+Taux de rentabilité = Résultat / Fonds propres engagés × 100
+P|Heading 2|11. QUESTIONS TYPES À L'EXAMEN
+P|List Bullet|Calculer le montant réel des travaux (avec révision + avenants)
+P|List Bullet|Calculer le coût direct réel
+P|List Bullet|Calculer la marge brute réelle et la MBH
+P|List Bullet|Calculer le résultat brut et son pourcentage
+P|List Bullet|Comparer prévisionnel et réel poste par poste
+P|List Bullet|Commenter les écarts et identifier les causes
+P|List Bullet|Compléter un bilan prévisionnel d'opération
+T|Terme||Définition||Formule
+T|DS||Déboursé Sec||Coût direct de production (MO + MAT)
+T|DSMO||Déboursé Sec Main-d'Œuvre||Heures prod × taux horaire
+T|DSMAT||Déboursé Sec Matériaux||Coût des matériaux mis en œuvre
+T|CD||Coût Direct||DS + Frais de chantier directs
+T|MB||Marge Brute||Montant HT travaux - Coût Direct
+T|FG||Frais Généraux||Charges de structure de l'entreprise
+T|FOp||Frais d'Opération||% du marché (études, frais commerciaux)
+T|RB||Résultat Brut||Marge Brute - Frais Généraux - FOp
+T|MBH||Marge Brute Horaire||MB / Heures productives
+T|Poste||Prévisionnel||Réel||Écart (€)||Écart (%)
+T|Montant HT travaux||44 070,92 €||47 230,88 €||+3 159,96||+7,2%
+T|DSMO||14 579,54 €||16 258,06 €||+1 678,52||+11,5%
+T|DSMAT||14 658,32 €||15 024,78 €||+366,46||+2,5%
+T|DS total||29 237,86 €||31 282,84 €||+2 044,98||+7,0%
+T|Coût Direct||-||-||-||-
+T|MB||14 833,06 €||-||-||-
+T|RB||4 310,08 €||-||-||-
+T|RB%||9,78%||-||-||-
+T|Charges||Produits
+T|Charges foncières||X
+T|Frais d'études / MOE||X
+T|Travaux (lots)||X
+T|VRD||X
+T|Frais financiers||X
+T|TVA non récupérable||X
+T|Divers imprévus (% des travaux)||X
+T|TOTAL CHARGES||X
+T|Prix de vente HT des logements||X
+T|Subventions||X
+T|TOTAL PRODUITS||X
+T|RÉSULTAT (Produits - Charges)||X
+ENDFILE
+FILE:SYNTHESE_FICHE_11_THEMES_RECURRENTS.docx
+P|Normal|FICHE 11 - COMPARAISON DES SUJETS ET THÈMES RÉCURRENTS
+P|Normal|Analyse croisée de tous les sujets BTS MEC 2023 à 2025
+P|Heading 2|1. TABLEAU DE FRÉQUENCE DES THÈMES
+P|Heading 3|ÉPREUVE E4
+P|Heading 3|ÉPREUVE E52
+P|Heading 2|2. THÈMES INCONTOURNABLES (100% des sujets)
+P|Heading 3|E4 - Présents dans TOUS les sujets
+P|Normal|⭐⭐⭐ FONDATIONS et CLASSES D'EXPOSITION BÉTON
+⭐⭐⭐ ACOUSTIQUE DES FAÇADES et entrées d'air
+P|Heading 3|E52 - Présents dans TOUS les sujets
+P|Normal|⭐⭐⭐ ANALYSE ET NOTATION DES OFFRES
+⭐⭐⭐ RÉVISION DES PRIX (indices BT)
+⭐⭐⭐ SITUATION DE TRAVAUX (décompte mensuel)
+⭐⭐⭐ AVANCE FORFAITAIRE et RETENUE DE GARANTIE
+⭐⭐⭐ RATIOS ÉCONOMIQUES
+P|Heading 2|3. ÉVOLUTION DES THÈMES (TENDANCES 2023 → 2025)
+P|Heading 3|E4 - Ce qui monte
+P|Heading 3|E4 - Ce qui disparaît
+P|Heading 3|E52 - Ce qui monte
+P|Heading 2|4. COMPARAISON DES PROJETS SUPPORT
+P|Heading 2|5. FORMULES À MAÎTRISER ABSOLUMENT
+P|Heading 3|E4
+P|Heading 3|E52
+P|Heading 2|6. TYPES DE PROJETS RENCONTRÉS
+P|Heading 2|7. STRATÉGIE DE RÉVISION RECOMMANDÉE
+P|Heading 3|Priorité MAXIMALE (dans chaque sujet)
+P|List Number|Fondations → classes exposition béton (E4)
+P|List Number|Acoustique façades → catégorie voie, isolement minimal, entrées d'air (E4)
+P|List Number|Analyse d'offres → formule notation prix + délai + valeur technique (E52)
+P|List Number|Révision des prix → formule Cn = 0,15 + 0,85 × Im/I0 (E52)
+P|List Number|Situation de travaux → avance, retenue, acompte (E52)
+P|Heading 3|Priorité HAUTE (depuis 2024, en progression)
+P|List Number|Confort thermique → déphasage, résistance R (E4)
+P|List Number|Sécurité chantier → blindage, garde-corps (E4)
+P|List Number|Marché MOE → phases, critères, organisation (E4)
+P|Heading 3|À ne pas négliger
+P|List Number|Contexte réglementaire → PC, RT2012/RE2020, PLU (E4)
+P|List Number|Rentabilité → DS, MB, RB (E52)
+P|Heading 2|8. POINTS DE VIGILANCE RÉCURRENTS
+P|List Bullet|Unités : e en mètres (pas cm) dans les formules thermiques
+P|List Bullet|Indices BT : ne pas confondre Im et I0, et le décalage temporel (m-3 ou m-4)
+P|List Bullet|Avance : ne pas appliquer de révision sur l'avance
+P|List Bullet|Retenue de garantie : s'applique sur le TTC, plafonnée à 5% du marché total
+P|List Bullet|Arrondi : coefficient Cn arrondi au millième supérieur
+P|List Bullet|Note prix : utiliser le montant APRÈS négociation si précisé dans le sujet
+P|List Bullet|Classes expo : un même élément peut cumul plusieurs classes (XC + XF + XA)
+T|Thème||2023||2023NC||2024||2025||2025NC||Fréquence
+T|Marché MOE (organisation, critères)||✗||✗||✓||✓||✓||3/5
+T|Contexte réglementaire (PC, RT, PLU)||✓||✓||✗||✓||✓||4/5
+T|Fondations / Classes expo béton||✓||✓||✓||✓||✓||5/5
+T|Acoustique des façades||✓||✓||✓||✓||✓||5/5
+T|Confort thermique / déphasage||✗||✗||✓||✓||✓||3/5
+T|Planchers / Revêtements de sol||✓||✓||✗||✗||✗||2/5
+T|Sécurité chantier / Structure||✗||✗||✓||✓||✓||3/5
+T|Analyse du projet / Surfaces||✗||✗||✗||✓||✓||2/5
+T|Thème||2023||2023NC||2024||2025||2025NC||Fréquence
+T|Analyse d'offres (notation)||✓||✓||✓||✓||✓||5/5
+T|Révision / Actualisation des prix||✓||✓||✓||✓||✓||5/5
+T|Situation de travaux / Décompte||✓||✓||✓||✓||✓||5/5
+T|Avance forfaitaire||✓||✓||✓||✓||✓||5/5
+T|Retenue de garantie||✓||✓||✓||✓||✓||5/5
+T|Ratios économiques||✓||✓||✓||✓||✓||5/5
+T|Rentabilité (DS, MB, RB)||✓||✗||✓||✗||✓||3/5
+T|Bilan d'opération||✗||✗||✗||✓||✓||2/5
+T|Thème||Tendance
+T|Marché de maîtrise d'œuvre||Nouveau depuis 2024, confirmé en 2025
+T|Confort thermique + déphasage||Nouveau depuis 2024, en progression
+T|Sécurité chantier (blindage, garde-corps)||Nouveau depuis 2024, en progression
+T|Analyse du projet (PLU, surfaces)||Nouveau en 2025
+T|Thème||Tendance
+T|Planchers / Revêtements de sol||Uniquement en 2023 et 2023NC
+T|Acoustique des locaux (TR)||Uniquement en 2023
+T|Thème||Tendance
+T|Bilan d'opération prévisionnel||Apparaît en 2025
+T|Critère délai dans l'analyse d'offres||Ajouté en 2025NC
+T|Année||E4 - Projet||E52 - Projet
+T|2023||Rénovation hôtel historique - Montlouis-sur-Loire (MH)||École maternelle 5 classes - 742 m² - 1,15 M€
+T|2023 NC||Bâtiment collectif R+2 / 14 logements||Extension bâtiment multi-usage - ~524 k€
+T|2024||Centre de loisirs CLSH - Coudray - 266 m²||Gymnase municipal - 2 056 m² - 3,4 M€
+T|2025||Centre exploitation agrotourisme - Fleurieux - 7 468 m²||Halle couverte - Maubeuge - 901 m²
+T|2025 NC||Idem 2025 (même projet)||15 logements collectifs - Coquelles - 1,3 M€
+T|Formule||Usage||Fiche
+T|R = e / λ||Résistance thermique||Fiche 04
+T|U = 1 / RT||Coefficient de transmission||Fiche 04
+T|a = λ / (ρ × Cp)||Diffusivité thermique||Fiche 04
+T|φ = 0,023 × e / √a||Déphasage thermique||Fiche 04
+T|TR = 0,16 × V / A||Temps de réverbération||Fiche 05
+T|Formule||Usage||Fiche
+T|Note prix = N_max × (prix_min / prix_i)||Notation prix||Fiche 07
+T|Note délai = N_max × (délai_min / délai_i)||Notation délai||Fiche 07
+T|Cn = 0,15 + 0,85 × (Im / I0)||Révision des prix||Fiche 08
+T|Avance = 10% × Montant TTC||Avance forfaitaire||Fiche 09
+T|R = Avance × (% cum - 65%) / 35%||Remboursement avance||Fiche 09
+T|MB = Montant HT - CD||Marge brute||Fiche 10
+T|RB = MB - FG - FOp||Résultat brut||Fiche 10
+T|Type de projet||Particularités
+T|ERP (École, gymnase, CLSH)||Type R ou P ; règles sécurité incendie ; accessibilité PMR
+T|Logement collectif||R+1 à R+2 ; isolation acoustique entre logements
+T|Rénovation patrimoine (MH)||Avis ABF ; matériaux compatibles ; procédés traditionnels
+T|Bâtiment agricole / rural||PLU zone A ; bâtiments spécifiques
+ENDFILE

@@ -1,0 +1,30 @@
+❯ COMMENT CONTUNIER                                                                   
+                     
+● Voici les options pour continuer votre préparation                                    
+  ---                                                                                   SUITE POSSIBLE
+                                                                                        Option 1 — Régénérer les Word avec les nouveaux noms                                
+
+  Les fichiers .docx ont été renommés mais leur contenu interne (titres, en-têtes)    
+  affiche encore les anciens noms. On peut relancer la conversion pour regénérer des  
+  .docx propres.
+
+  Option 2 — Créer des fiches d'exercices corrigés
+
+  Générer des exercices types basés sur les sujets 2023-2025, avec corrigés détaillés,
+   pour chaque thème 
+  - Ex  calculs de révision de prix avec indices BT
+  - Ex  décompte mensuel complet (avance + RG + TVA)
+  - Ex  déphasage thermique et vérification φ  12h
+
+  Option 3 — Créer un quiz  QCM de révision
+
+  Générer un fichier de questions-réponses par fiche pour tester vos connaissances.   
+
+  Option 4 — Créer une fiche mémo format A4 imprimable
+
+  Un document condensé 1 page par épreuve avec toutes les formules + seuils clés,     
+  conçu pour une révision rapide la veille de l'examen.
+
+  Option 5 — Analyser un sujet complet d'entraînement
+
+  Travailler sur un sujet 2023 ou 2024 en mode simulation d'examen avec correction.

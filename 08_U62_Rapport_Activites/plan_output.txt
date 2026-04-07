@@ -1,0 +1,924 @@
+I now have a thorough understanding of the entire codebase. Let me compile the complete restructured 30-page plan.
+
+---
+
+# COMPLETE RESTRUCTURED 30-PAGE PLAN -- Rapport U62 BAHAFID Mohamed
+
+## Architecture Overview
+
+**Current problem**: The existing 30-page PowerPoint spends pages 5-12 (8 pages) on "who am I" content (parcours timeline, chiffres cles, conseil regional, organigramme, BIMCO, outils, app gestion). The actual professional situations are described generically as mission summaries (page 17), data displays (pages 18-20), and difficulty lists (page 21) -- none with true CPAR (Context/Problem/Action/Result) narrative structure. The jury wants to evaluate competencies C18 and C19 through deeply analyzed professional situations, not a CV.
+
+**Solution**: Compress the identity/context section from 8 pages to 3, eliminate "chiffres cles" vanity page entirely, eliminate standalone app page, and invest those freed pages into 5 dedicated SITUATION pages, each one a full narrative with real numbers. Add a synthesis table mapping activities to competencies, a reflective analysis page, and a BIM protocol page.
+
+**Page budget shift**:
+- Identity/context: 12 pages (current) to 6 pages (new) -- saves 6 pages
+- Professional situations: 0 dedicated pages (current) to 5 pages (new) -- uses 5 pages  
+- Synthesis/analysis: 2 pages (current) to 4 pages (new) -- uses 2 more pages
+- BIM protocol: 0 pages (current) to 1 page (new) -- uses 1 page
+- Net: -6 +5 +2 +1 = +2 pages freed, compensated by removing 2 pages (chiffres cles + app gestion)
+
+---
+
+## PAGE-BY-PAGE SPECIFICATION
+
+---
+
+### PAGE 1 -- COUVERTURE
+
+**Title**: RAPPORT D'ACTIVITES PROFESSIONNELLES
+
+**Content**:
+- "RAPPORT" + "D'ACTIVITES" + "PROFESSIONNELLES" (stacked, large)
+- BTS Management Economique de la Construction
+- SESSION 2026
+- BAHAFID Mohamed
+- Candidat no 02537399911 | Academie de Lyon
+- Logo BIMCO bottom-right
+
+**Helpers/Patterns to reuse**: 
+- `page_01_couverture` pattern exactly -- `add_image_safe(img("cover"))`, overlay shape with `set_transparency(65)`, `add_islamic_star`, `add_islamic_border`
+- Bande rouge gauche with "U62" vertical
+- Large titles at 48pt/36pt
+
+**Font sizes**: Main title 48pt, "PROFESSIONNELLES" 36pt, BTS MEC 16pt, session 20pt, name 28pt, candidat info 12pt
+
+**What makes it different from CV-style**: Identical to current -- the cover is already correct. No changes needed.
+
+**One clear message**: "This is a formal BTS MEC U62 report."
+
+**contenu.py key**: `PAGE_01` -- unchanged.
+
+---
+
+### PAGE 2 -- FICHE CANDIDAT
+
+**Title**: FICHE D'IDENTITE DU CANDIDAT
+
+**Content**:
+- Photo portrait (photo_bahafid.jpg) in red circle frame
+- 11 fields: Nom, No Candidat, Academie, Structure accueil, Direction, Poste, Experience, Formation BIM, Activite actuelle, SIREN/APE, Siege
+- Banniere BIMCO at bottom
+- Footer with website
+
+**Helpers/Patterns**: `page_02_fiche_candidat` pattern -- `add_circle`, `add_image_safe(img("bahafid"))`, `add_islamic_border` top/bottom, label/value pairs
+
+**Font sizes**: Title 22pt, labels 7pt bold grey, values 10pt black
+
+**What makes it different**: Unchanged -- administrative requirement page. Must stay.
+
+**One clear message**: "Candidate identification and registration data."
+
+**contenu.py key**: `PAGE_02` -- unchanged.
+
+---
+
+### PAGE 3 -- SOMMAIRE
+
+**Title**: SOMMAIRE
+
+**Content**: Updated table of contents reflecting the new structure:
+```
+01  Introduction + Parcours ......................... p. 4
+02  Cadre professionnel ............................ p. 5-7
+03  Projet 1 : Mise a niveau 4 communes ........... p. 8-15
+    - 5 situations professionnelles detaillees
+04  Projet 2 : Route Lehri-Kerrouchen ............. p. 16-20
+    - 1 situation professionnelle detaillee
+05  Activites complementaires ...................... p. 21
+06  Bilan et analyse des competences ............... p. 22-27
+07  Conclusion ..................................... p. 28
+08  Annexes ........................................ p. 29-30
+```
+
+**Helpers/Patterns**: `page_03_sommaire` pattern -- red circles with numbers, line separators, section titles. Reuse `add_circle`, `add_text_box`, `add_islamic_border`, `add_islamic_star`.
+
+**Font sizes**: Title "SOMMAIRE" 30pt, section titles 13pt bold, subtitles 8pt, page numbers 10pt
+
+**What makes it different**: The sommaire now prominently shows "5 situations professionnelles" as the core. The jury sees immediately that this is not a CV -- it is organized around analyzed professional activities.
+
+**One clear message**: "This report is structured around 5+1 analyzed professional situations."
+
+**contenu.py key**: New `PAGE_03` with updated sections and page numbers.
+
+---
+
+### PAGE 4 -- INTRODUCTION + PARCOURS (MERGED)
+
+**Title**: INTRODUCTION
+
+**Content -- top half** (Introduction):
+- Opening paragraph (2-3 sentences): "Fort de huit annees d'experience dans le BTP, j'ai souhaite valider mes competences en preparant le BTS MEC. Ce rapport presente mes activites professionnelles a travers 5 situations analysees en detail."
+- Two project bullets:
+  - Projet 1: Mise a niveau 4 communes (53,5 M DH, 8 corps d'etat)
+  - Projet 2: Route Lehri-Kerrouchen 25 km (29 M DH)
+- Citation block: "Cette double experience, cote MOA et cote execution, m'a offert une vision complete du cycle de vie d'un projet."
+
+**Content -- bottom half** (Parcours condense):
+- Horizontal infographic timeline (5 circles with arrows), NOT the full vertical timeline
+- Formation Maroc (2014-17) -> MOA Maroc (2017-22) -> Chantier France (2022-24) -> BIM Colmar (2023-24) -> BIMCO (2026)
+- Each circle: date + 1-line description, 7pt
+- This replaces the old pages 4+6+7 (introduction + parcours timeline + chiffres cles)
+
+**Helpers/Patterns**: 
+- Top: `add_text_box` for title (28pt), `add_multi_text` for project bullets, quote block with `add_shadow` and red bar (`add_bg_rect` for quote background)
+- Bottom: `add_circle` in a row, `add_text_box` for dates/labels, arrow shapes between circles
+- Reuse exact pattern from current `page_04_introduction` bottom section (lines 668-682)
+
+**Font sizes**: Title 28pt, intro text 11pt, project bullets 10pt, citation 12pt bold, timeline circles 7-8pt, dates 7pt
+
+**What makes it different**: Merges 3 old pages (introduction + parcours + chiffres cles) into 1. The jury gets a quick context overview and moves straight to the substance. No vanity "8 chiffres cles" page.
+
+**One clear message**: "Here is my context in 30 seconds -- now let's dive into the real work."
+
+**contenu.py key**: New `PAGE_04` combining elements from old `PAGE_04`, `PAGE_06` (horizontal timeline only), condensed.
+
+---
+
+### PAGE 5 -- SEPARATEUR "CADRE PROFESSIONNEL"
+
+**Title**: CADRE PROFESSIONNEL
+
+**Content**:
+- Large "01" semi-transparent
+- Title: "CADRE PROFESSIONNEL"
+- Subtitle: "Le Conseil Regional de Beni Mellal-Khenifra | Mon poste | BIMCO"
+
+**Helpers/Patterns**: `add_section_separator` -- exact reuse. Photo background `img("conseil")`, red overlay 70%, `add_islamic_border` top/bottom, `add_islamic_star` decorations.
+
+**Font sizes**: Number 160pt semi-transparent, title 28pt, subtitle 14pt
+
+**What makes it different**: Shortened subtitle -- no longer "Mon parcours en 5 phases" since that was already covered on page 4.
+
+**One clear message**: "Section break -- professional framework."
+
+**contenu.py key**: New `PAGE_05` with updated subtitle.
+
+---
+
+### PAGE 6 -- CONSEIL REGIONAL + MON POSTE (MERGED)
+
+**Title**: MON CADRE D'EXERCICE
+
+**Content -- left column** (40%):
+- "STRUCTURE D'ACCUEIL" sur-titre
+- "Conseil Regional de Beni Mellal-Khenifra"
+- Photo `img("conseil")` (smaller, ~Cm(9) wide)
+- Key facts in compact list: 5 provinces, 28 374 km2, 2.5M habitants
+- Decret reference box
+
+**Content -- right column** (60%):
+- Simplified organigramme (3 levels only: President -> Directeur M. DOGHMANI -> 3 services, with "MON POSTE" highlighted in red)
+- Missions list (5 bullet points, 9pt)
+- This merges old pages 8+9 (Conseil Regional + Organigramme)
+
+**Helpers/Patterns**:
+- Left: `add_text_box` for sur-titre/titre, `add_image_safe` for photo, compact `add_text_box` pairs for facts
+- Right: `add_org_box` pattern from current `page_09_organigramme` (lines 872-920), scaled down
+- `add_multi_text` for missions list
+
+**Font sizes**: Sur-titre 12pt grey, title 20pt red bold, facts titles 11pt red bold, facts values 9pt, organigramme boxes 8pt, missions 9pt
+
+**What makes it different**: Merges 2 old pages into 1. The jury sees the institutional context AND the candidate's position in one glance. No separate page wasted on just the organigramme.
+
+**One clear message**: "I worked at the Regional Council, in this specific position, with these missions."
+
+**contenu.py key**: New `PAGE_06` combining old `PAGE_08` and `PAGE_09`.
+
+---
+
+### PAGE 7 -- BIMCO + OUTILS + APP (MERGED)
+
+**Title**: BIMCO -- Expert BIM & Economie de la Construction
+
+**Content -- top section**:
+- Logo BIMCO centered
+- Company facts (3 lines): Cree jan 2026, SIREN, APE 7112B, siege
+- 5 domain circles in a row: Projeteur BIM, Metres, Etudes de prix, Outils numeriques, Suivi economique
+
+**Content -- middle section**:
+- "OUTILS CLES" -- horizontal compact bar chart (4 bars only: Revit 90%, Excel 95%, AutoCAD 85%, Python 80%) instead of 8 bars
+- Remove: Navisworks, Dynamo, C#/API Revit, MS Project (keep for oral if asked)
+
+**Content -- bottom section**:
+- BIM protocol box (from old page 11 bottom): "Convention BIM: LOD 300 / LOI 3 | Echange IFC 2x3..."
+- One line about app: "Application Gestion Chantiers developpee (React/Node/PostgreSQL) -- demo sur demande"
+
+**Helpers/Patterns**:
+- Top: `add_image_safe(img("logo"))`, `add_text_box` for facts, `add_circle` row for domains (reuse from `page_10_bimco`)
+- Middle: `add_bar_h` for progress bars (4 only), or simplified manual bars as in `page_11_outils`
+- Bottom: rounded rectangle card with red border for BIM protocol (reuse from `page_11_outils` lines 1021-1031)
+
+**Font sizes**: BIMCO title 28pt, company facts 10pt, domain circles 8pt, tool names 10pt bold, protocol 9pt
+
+**What makes it different**: Merges 3 old pages (BIMCO + Outils + App) into 1. Eliminates the full "app gestion chantiers" page which was essentially a product advertisement irrelevant to the U62 evaluation. Keeps only what demonstrates competence.
+
+**One clear message**: "My current activity and the tools I use for construction economics."
+
+**contenu.py key**: New `PAGE_07` combining old `PAGE_10`, `PAGE_11` (condensed), `PAGE_12` (one line).
+
+---
+
+### PAGE 8 -- SEPARATEUR "PROJET 1"
+
+**Title**: PROJET 1 -- MISE A NIVEAU DE 4 COMMUNES
+
+**Content**:
+- Large "02"
+- "PROJET 1 : MISE A NIVEAU DE 4 COMMUNES"
+- "53,5 M DH TTC -- 8 corps d'etat -- Province de Khenifra"
+- "5 situations professionnelles analysees"
+
+**Helpers/Patterns**: `add_section_separator` with `img("projet1")`
+
+**Font sizes**: Number 160pt, title 28pt, subtitle 14pt
+
+**What makes it different**: Adds "5 situations professionnelles analysees" to signal the narrative approach.
+
+**One clear message**: "Section break -- here comes the core content."
+
+**contenu.py key**: New `PAGE_08`.
+
+---
+
+### PAGE 9 -- FICHE PROJET 1
+
+**Title**: Mise a niveau des centres de 4 communes
+
+**Content**:
+- Identical to current page 14 (project identity card)
+- Photo `img("chantier_urban")` left, fiche details right
+- Big red banner: "53,5 M DH TTC"
+- Context paragraph about the programme
+
+**Helpers/Patterns**: Exact reuse of `page_14_projet1_fiche` pattern (lines 1099-1148). Photo left, key-value fiche right, big montant banner bottom.
+
+**Font sizes**: Sur-titre 14pt, title 26pt, context 8pt, fiche labels 9pt, values 10pt, montant 36pt
+
+**What makes it different**: Unchanged in content, but now positioned as lead-in for the 5 situations, not buried after 7 pages of CV.
+
+**One clear message**: "This is a 53.5M DH multi-site, multi-corps project."
+
+**contenu.py key**: Reuse current `PAGE_14`.
+
+---
+
+### PAGE 10 -- BUDGET + 8 CORPS D'ETAT (MERGED)
+
+**Title**: REPARTITION BUDGETAIRE ET CORPS D'ETAT
+
+**Content -- top half**:
+- Mini pie chart (Cm(8) wide, not Cm(10)) showing 4 communes
+- 4-line detail beside it: El Hammam 14.9%, Kerrouchen 16.5%, Ouaoumana 35.5%, Sebt Ait Rahou 33.2%
+- Red callout: "68% du budget sur 2 communes"
+
+**Content -- bottom half**:
+- 8 small colored cards in 2 rows of 4 (each card ~Cm(4.5) x Cm(4.5)) showing the 8 corps d'etat
+- Each card: number, name, key items (8pt)
+- This merges old pages 15+16
+
+**Helpers/Patterns**:
+- Top: `CategoryChartData` + `XL_CHART_TYPE.PIE` pattern from `page_15_repartition_communes`, scaled down
+- Bottom: Colored card grid from `page_16_parties_techniques`, but halved in height (cards ~Cm(4.5) instead of Cm(9))
+
+**Font sizes**: Title 20pt, commune names 10pt, percentages 9pt, callout 12pt, corps d'etat cards: number 18pt, name 9pt, items 7pt
+
+**What makes it different**: Merges 2 pages of data into 1 reference page. The jury sees the project scope at a glance. This is support data, not the core -- it should not take 2 full pages.
+
+**One clear message**: "The budget distribution and technical scope of the project."
+
+**contenu.py key**: New `PAGE_10` combining old `PAGE_15` and `PAGE_16`.
+
+---
+
+### PAGE 11 -- SITUATION 1: ESTIMATION DE L'ADMINISTRATION
+
+**Title**: SITUATION 1 : Etablissement de l'estimation de l'administration
+
+**This is a NEW page type -- the core innovation of the restructured rapport.**
+
+**Layout**: Full-page narrative CPAR structure with visual markers.
+
+**Narrative structure**:
+
+- **CONTEXTE** (red bar left, grey background card, top section):
+  "En 2017, le Conseil Regional de Beni Mellal-Khenifra lance un programme de mise a niveau des centres de 4 communes de la province de Khenifra. Avant de publier l'appel d'offres, le Decret n2-12-349 impose l'etablissement d'une estimation confidentielle de l'administration. Le Directeur de l'Agence me confie la realisation des metres detailles pour les 8 parties techniques de la commune d'Ouaoumana (35,5% du budget, 15,8 M DH HT)."
+
+- **PROBLEME** (orange accent, mid-left section):
+  "Le bureau d'etudes a fourni des plans incomplets pour les reseaux d'assainissement. Plusieurs troncons ne figuraient pas sur les plans de masse. De plus, les prix unitaires de reference etaient obsoletes (mercuriale 2014). J'avais 3 semaines pour produire un metre verifiable couvrant 3 620 m3 de tranchees, 2 370 ml de buses PEHD, 56 regards, 2 175 T d'enrobes, 11 500 m2 de carreaux stries et 163 massifs candelabres."
+
+- **ACTION** (red accent, mid-right section):
+  "J'ai organise mon travail en deux phases. D'abord, j'ai realise les metres sur plans pour les 7 parties ou les documents etaient complets, en utilisant des tableurs Excel structures avec formules tracables (chaque quantite reliee a un plan source). Ensuite, je me suis rendu sur site a Ouaoumana pour effectuer des releves complementaires sur les troncons d'assainissement manquants. J'ai confronte mes mesures terrain aux plans pour corriger les ecarts. Pour les prix unitaires, j'ai constitue une base de prix actualisee a partir de 3 sources : la mercuriale regionale 2017, les prix des marches recents de la region, et les devis d'entreprises locales."
+
+- **RESULTAT** (green accent, bottom-left):
+  "L'estimation de l'administration pour Ouaoumana a ete arretee a 15 830 359 DH HT, soit 35,5% du budget total. Lors de l'ouverture des plis, l'offre retenue (Entreprise B) s'est ecartee de seulement +3,2% de mon estimation. Ce taux est considere comme excellent pour un projet de cette complexite (la norme acceptable etant de 5-10%). Le Directeur a valide ma methode de metre pour les 3 autres communes."
+
+- **COMPETENCE BTS MEC** (red badge bottom-right):
+  "C18 -- Suivre techniquement une operation : Realiser des metres detailles (sous-composante : etablissement des avant-metres quantitatifs)"
+
+**Visual elements**: 
+- Bandeau with "SITUATION 1" and key number "15,8 M DH HT" 
+- Small BPDE extract table (3-4 lines from the reconstituted table: prix 1.1, 2.3, 3.3 showing unit prices)
+- Red competence badge at bottom
+
+**Helpers/Patterns**:
+- NEW pattern: `add_situation_page(slide, num, title, context, problem, action, result, competence, key_figure, table_extract)`
+- Uses: `add_bg_rect(BLANC)`, `add_text_box` for each section with colored left bar, `add_shadow` on cards
+- Color coding: Context=grey bg, Problem=orange left bar, Action=red left bar, Result=green left bar, Competence=red filled badge
+
+**Font sizes**: "SITUATION 1" 18pt red bold, section headers ("CONTEXTE", "PROBLEME", etc.) 10pt bold colored, narrative text 10pt black (minimum for readability), key figure 20pt, competence badge 9pt, table extract 8pt
+
+**What makes it different**: THIS PAGE TYPE DOES NOT EXIST IN THE CURRENT RAPPORT. It replaces the old "missions summary" page (page 17) with a deep narrative that the jury can interrogate. Each sentence connects to a verifiable fact. The CPAR structure mirrors what the jury expects per the referentiel.
+
+**One clear message**: "I personally established the 15.8M DH estimation for Ouaoumana with a traceable methodology."
+
+**contenu.py key**: New `PAGE_11` -- entirely new data structure with `context`, `problem`, `action`, `result`, `competence` fields.
+
+---
+
+### PAGE 12 -- SITUATION 2: ANALYSE DES OFFRES EN CAO
+
+**Title**: SITUATION 2 : Analyse des offres et participation a la CAO
+
+**Narrative structure**:
+
+- **CONTEXTE**:
+  "Apres la publication de l'appel d'offres ouvert pour le marche n38-RBK-2017, trois entreprises ont depose des offres dans le delai reglementaire. En tant que membre technique de la Commission d'Appel d'Offres (CAO), le Directeur m'a charge de preparer l'analyse comparative des offres avant la seance publique d'ouverture des plis."
+
+- **PROBLEME**:
+  "L'Entreprise C a soumis un bordereau avec 7 erreurs arithmetiques (produit quantite x prix unitaire incorrect sur les postes de chaussee et trottoirs). L'Entreprise A proposait des prix anormalement bas sur les enrobes (380 DH/T contre 450 DH/T dans mon estimation) et anormalement eleves sur les regards (+40% par rapport a la reference). Il fallait determiner si ces prix rendaient les offres inacceptables ou s'ils se compensaient au global."
+
+- **ACTION**:
+  "J'ai d'abord corrige les erreurs arithmetiques de l'Entreprise C conformement a l'article 40 du Decret (le prix unitaire prime sur le montant). J'ai ensuite realise un tableau comparatif a 4 colonnes (mon estimation, Entreprise A, B, C) pour les 10 prix les plus lourds (representant 85% du montant). Pour chaque prix anormal, j'ai calcule l'impact financier sur le montant global. J'ai prepare la grille de notation sur 100 points : offre financiere (70 pts) + moyens humains (10) + materiels (10) + references (10). L'ensemble a ete formalise dans un rapport d'analyse confidentiel remis au president de la CAO 48h avant la seance."
+
+- **RESULTAT**:
+  "L'Entreprise B a ete retenue avec 94/100 (financier 68/70, humains 9/10, materiels 9/10, references 8/10). L'Entreprise A classee 2e avec 83/100, l'Entreprise C 3e avec 73/100. Ma recommandation technique a ete suivie par la commission. Le marche a ete notifie sans recours des entreprises evincees, ce qui valide la rigueur de l'analyse."
+
+- **COMPETENCE BTS MEC**:
+  "C18 -- Suivre techniquement une operation : Analyser les offres des entreprises (sous-composante : participation aux commissions d'appel d'offres)"
+
+**Visual elements**:
+- Bar chart (compact, Cm(8) wide) showing the 3 enterprises' scores
+- Scans of `convocation_cao.jpg` and `notification_rejet.jpg` (small, Cm(4) each)
+- Competence badge
+
+**Helpers/Patterns**:
+- Same `add_situation_page` pattern as page 11
+- Small `CategoryChartData` + `XL_CHART_TYPE.BAR_CLUSTERED` (3 series, 4 categories)
+- `add_image_safe(img("cao"))` and `add_image_safe(img("rejet"))` scaled down
+
+**Font sizes**: Same as page 11 -- narrative text 10pt, headers 10pt bold, chart labels 8pt
+
+**What makes it different**: The current page 19 shows the chart and documents but does NOT tell the story of the 7 arithmetic errors, the abnormal prices, or the candidate's personal decision-making process. The new version makes the candidate's individual contribution explicit and traceable.
+
+**One clear message**: "I personally analyzed 3 offers, detected errors, and my recommendation was followed."
+
+**contenu.py key**: New `PAGE_12` with full CPAR narrative.
+
+---
+
+### PAGE 13 -- SITUATION 3: SUIVI FINANCIER KERROUCHEN
+
+**Title**: SITUATION 3 : Suivi financier de la commune de Kerrouchen
+
+**Narrative structure**:
+
+- **CONTEXTE**:
+  "Pendant la phase d'execution du marche n38-RBK-2017, j'ai assure le suivi financier de la commune de Kerrouchen (7 336 914 DH HT, 16,5% du budget global). Chaque mois, l'entreprise soumettait une situation de travaux detaillant les quantites executees pour les 8 parties techniques. Mon role etait de verifier ces declarations par rapprochement avec l'avancement reel constate sur chantier."
+
+- **PROBLEME**:
+  "A la situation n6, j'ai constate que les postes Chaussee et Murs affichaient des consommations de +12% et +15% par rapport aux previsions, tandis que le poste Paysager n'etait realise qu'a 35%. Le terrain rocheux imprévu a Kerrouchen generait des plus-values de terrassement non anticipees dans le BPDE. Si la tendance se poursuivait, le depassement aurait atteint +5% du montant du marche, necessitant un avenant (3 a 6 mois de procedure administrative)."
+
+- **ACTION**:
+  "J'ai mis en place un tableau de bord Excel hebdomadaire avec 3 indicateurs par partie : montant engage, montant restant, ecart previsionnel. J'ai effectue une visite de chantier avec l'entreprise pour constater les conditions geologiques et signer des attachements contradictoires justifiant les plus-values de terrassement. J'ai ensuite propose au Directeur une strategie de compensation : reduire le poste Paysager (dont le cout pouvait etre optimise sans degrader la qualite) pour absorber les plus-values des postes Chaussee et Murs. J'ai formalise cette proposition dans une note technique ecrite."
+
+- **RESULTAT**:
+  "Le depassement final a ete contenu a +57 581 DH soit +0,8% du montant du marche. Aucun avenant n'a ete necessaire. Le Directeur a valide la strategie de compensation et l'a repliquee pour les 3 autres communes. Le delai administratif d'un avenant (3-6 mois) a ete evite."
+
+- **COMPETENCE BTS MEC**:
+  "C18 -- Suivre techniquement une operation : Suivi financier du marche (sous-composante : verification des situations de travaux, gestion des ecarts budgetaires)"
+
+**Visual elements**:
+- Mini bar chart: Marche vs Execute for 8 parties (compact)
+- Green callout: "DEPASSEMENT MAITRISE : +0,8%"
+- Key figures in 3 cards: Marche 7 336 914 DH, Execute 7 394 495 DH, Ecart +57 581 DH
+
+**Helpers/Patterns**:
+- `add_situation_page` pattern
+- Compact `XL_CHART_TYPE.BAR_CLUSTERED` (2 series: Marche/Execute)
+- Green callout box (reuse from `page_20_suivi_kerrouchen` lines 1457-1469)
+- 3 rounded rectangle cards for key figures
+
+**Font sizes**: Narrative 10pt, chart 8pt labels, key figures 14pt bold, callout 14pt white on green
+
+**What makes it different**: The current page 20 shows the data (chart, numbers, callout) but the narrative is generic. The new version tells the story of how the candidate DETECTED the problem at situation n6, PROPOSED a compensation strategy, and PREVENTED an avenant.
+
+**One clear message**: "I saved 3-6 months of administrative delay by detecting and managing a budget drift."
+
+**contenu.py key**: New `PAGE_13`.
+
+---
+
+### PAGE 14 -- SITUATION 4: COMMUNICATION CHANTIER
+
+**Title**: SITUATION 4 : Communication et coordination sur le projet multi-sites
+
+**Narrative structure**:
+
+- **CONTEXTE**:
+  "Le marche n38-RBK-2017 se deroulait sur 4 chantiers simultanement dans des communes distantes de 20 a 80 km. Le Directeur de l'Agence, M. DOGHMANI, ne pouvait pas se rendre sur chaque site chaque semaine. Il avait besoin d'une information fiable et synthetique pour prendre ses decisions (validation des situations, ordres de service, preparation des avenants). J'etais son relais technique sur le terrain."
+
+- **PROBLEME**:
+  "En mars 2018, le chantier d'Ouaoumana a pris 3 semaines de retard en raison d'un defaut d'approvisionnement en enrobes (le fournisseur avait des problemes de production). Simultanement, a Kerrouchen, l'entreprise demandait l'emission d'un ordre de service d'arret pour intemperies hivernales. A Sebt Ait Rahou, un desaccord sur les quantites de bordures T3 posees bloquait le paiement de la situation n4. Trois problemes sur trois sites differents necessitaient une action coordonnee dans la meme semaine."
+
+- **ACTION**:
+  "J'ai organise mon action en 3 temps. 1) Visite d'Ouaoumana avec controle du stock d'enrobes restant et estimation du delai de livraison -- j'ai redige une note factuelle au Directeur avec un calendrier de rattrapage. 2) Visite de Kerrouchen avec constatation meteo et signature de l'attachement d'arret -- j'ai prepare le projet d'OS d'arret avec justificatifs (photos, releves meteo). 3) A Sebt Ait Rahou, j'ai effectue un recalage contradictoire des quantites de bordures T3 avec le chef de chantier de l'entreprise, sur la base de mes metres initiaux et des releves terrain. Chaque intervention a fait l'objet d'un compte rendu ecrit transmis au Directeur dans les 24h."
+
+- **RESULTAT**:
+  "A Ouaoumana, le retard a ete rattrape en 2 semaines grace au recalage du planning. L'OS d'arret de Kerrouchen a ete emis le lendemain de ma visite. A Sebt Ait Rahou, le desaccord sur les bordures a ete resolu avec un ecart de seulement 2,3% entre les metres de l'entreprise et les miens, et la situation n4 a ete payee. Le Directeur a felicite la reactivite de l'equipe technique."
+
+- **COMPETENCE BTS MEC**:
+  "C19 -- Communiquer : Communication ecrite et orale dans le cadre du suivi d'operation (sous-composante : comptes rendus, notes techniques, coordination multi-acteurs)"
+
+**Visual elements**:
+- Map-style diagram showing 4 communes with distance indicators
+- 3 mini-cards: one per probleme/resolution
+- C19 competence badge (different color than C18 -- blue or violet accent to distinguish)
+
+**Helpers/Patterns**:
+- `add_situation_page` pattern
+- 3 problem/solution mini-cards side by side (reuse pattern from `page_21_difficultes_p1` but scaled to 1/3 page)
+- `add_circle` for map dots, lines for distances
+
+**Font sizes**: Narrative 10pt, mini-cards 9pt, competence badge 9pt
+
+**What makes it different**: There is NO communication situation in the current rapport. The referentiel specifically evaluates C19 (Communiquer) and the jury will ask about it. This page provides concrete, dated, verifiable examples of written and oral communication in a professional context.
+
+**One clear message**: "I coordinated 3 simultaneous crises on 3 sites through structured written communication."
+
+**contenu.py key**: New `PAGE_14` -- entirely new content.
+
+---
+
+### PAGE 15 -- DIFFICULTES ET SOLUTIONS PROJET 1
+
+**Title**: DIFFICULTES ET SOLUTIONS -- PROJET 1
+
+**Content**: 
+- Reuse of the 4 difficulty/solution pairs from current page 21
+- Layout: 4 rows, each with red problem card (left) -> green arrow -> green solution card (right)
+- Add bottom synthesis text about lessons learned
+
+**Helpers/Patterns**: Exact reuse of `page_21_difficultes_p1` pattern (lines 1473-1521). Red cards `RGBColor(0xFF, 0xEB, 0xEB)`, green cards `RGBColor(0xEB, 0xFF, 0xEB)`, arrows, `add_shadow`.
+
+**Font sizes**: Title 22pt, problem titles 11pt red bold, descriptions 10pt, solutions 10pt, synthesis 8pt
+
+**What makes it different**: Minimal change -- this page already has a good structure. Slight font increase from current (some text was 7pt, raise to 8pt minimum).
+
+**One clear message**: "Here are the 4 main challenges and how I resolved them."
+
+**contenu.py key**: Reuse current `PAGE_21` data.
+
+---
+
+### PAGE 16 -- SEPARATEUR "PROJET 2"
+
+**Title**: PROJET 2 -- ROUTE LEHRI-KERROUCHEN
+
+**Content**:
+- Large "03"
+- "PROJET 2 : ROUTE LEHRI-KERROUCHEN"
+- "29 M DH TTC -- 25 km en zone montagneuse -- 1 situation professionnelle"
+
+**Helpers/Patterns**: `add_section_separator` with `img("route")`
+
+**Font sizes**: Number 160pt, title 28pt, subtitle 14pt
+
+**One clear message**: "Section break -- second project."
+
+**contenu.py key**: New `PAGE_16`.
+
+---
+
+### PAGE 17 -- FICHE PROJET 2 + METRES (MERGED)
+
+**Title**: ROUTE LEHRI-KERROUCHEN -- Fiche et metres
+
+**Content -- top section**:
+- Photo `img("route")` background with overlay (half-page)
+- "25 KM" and "29 M DH" large numbers
+- Key facts bullets: Marche n46-RBK-2017, PRR3, 3 sections, 53 prix unitaires
+
+**Content -- bottom section**:
+- 9 key metres in 3x3 grid (compact): Deblais 120 334 m3, Remblais 76 735 m3, GNB 19 989 m3, GNF2 34 481 m3, Buses 794 ml, Acier 64.5 T, Beton B2 733 m3, Beton B3 4 579 m3, Gabions 789 m3
+- Small photo strip at very bottom: `img("route2")`
+
+**Helpers/Patterns**:
+- Top: reuse `page_22_projet2_fiche` top pattern (photo + overlay + large numbers)
+- Bottom: reuse `page_23_metres_routiers` grid pattern but more compact (values 18pt instead of 24pt)
+
+**Font sizes**: Title 18pt, large numbers 36pt, fiche items 10pt, metre values 18pt, metre labels 9pt
+
+**What makes it different**: Merges 2 old pages (fiche projet 2 + metres routiers) into 1. The merged page provides enough context before the critical Situation 5.
+
+**One clear message**: "This is a 25km mountain road project with massive earthworks."
+
+**contenu.py key**: New `PAGE_17` combining old `PAGE_22` and `PAGE_23`.
+
+---
+
+### PAGE 18 -- BUDGET ROUTE + ANALYSE
+
+**Title**: REPARTITION BUDGETAIRE -- PROJET 2
+
+**Content**:
+- Pie chart (same as current page 24)
+- 6 items detail
+- Red callout: "58% du budget sur 2 postes"
+- Analysis paragraph about mountain road specifics
+- CPS signed image `img("cps")` small
+
+**Helpers/Patterns**: Reuse `page_24_budget_route` pattern almost entirely. Add `add_image_safe(img("cps"))` at bottom.
+
+**Font sizes**: Title 20pt, chart labels 9pt, detail items 10pt/9pt, callout 14pt, analysis 8pt
+
+**What makes it different**: Adds the CPS document scan from old page 22 as proof. Slightly more analytical text.
+
+**One clear message**: "Mountain road = 58% on pavement and hydraulic works."
+
+**contenu.py key**: Reuse current `PAGE_24` with added CPS image.
+
+---
+
+### PAGE 19 -- SITUATION 5: SUIVI CUBATURES EN MONTAGNE
+
+**Title**: SITUATION 5 : Suivi des cubatures de terrassement en zone montagneuse
+
+**Narrative structure**:
+
+- **CONTEXTE**:
+  "Sur le chantier de la route Lehri-Kerrouchen (25 km), le terrassement representait 120 334 m3 de deblais et 76 735 m3 de remblais, soit 17,9% du budget total (4,3 M DH HT). Le calcul initial des cubatures avait ete realise a partir des profils en travers fournis par le bureau d'etudes routier. Mon role etait de suivre les quantites reellement executees et d'alerter en cas d'ecart significatif."
+
+- **PROBLEME**:
+  "A partir du PK 12+000, l'entreprise a rencontre un terrain rocheux imprévu qui ne figurait pas dans l'etude geotechnique initiale. L'extraction en terrain rocheux coute 3 fois plus cher que le deblai en terrain meuble (60 DH/m3 contre 20 DH/m3). Sur les 5 km concernes, l'ecart de cubature entre les profils theoriques et la realite atteindrait +8% si rien n'etait fait. Par ailleurs, les intemperies hivernales (gel, fortes precipitations) imposaient des arrets de chantier non prevus au planning initial."
+
+- **ACTION**:
+  "J'ai mis en place un suivi rapproche des cubatures par attachements contradictoires signes sur chantier avec le chef de chantier de l'entreprise, a chaque etape de 500 ml d'avancement. Pour chaque profil en travers, je comparais les quantites mesurees sur site avec les quantites du BPDE. J'ai aussi anticipe les periodes d'arret hivernal en preparant les ordres de service d'arret et de reprise (OS d'arret pour gel, OS de reprise au printemps). Enfin, j'ai collabore avec le bureau d'etudes pour ajuster les metres d'ouvrages hydrauliques apres observation des crues reelles (le nombre de dalots a ete augmente de 3 unites sur la section PK 15-20)."
+
+- **RESULTAT**:
+  "L'ecart final de cubature de terrassement a ete maitrise a +8% sur la section rocheuse, coherent avec les tolerances habituelles pour un projet routier en montagne. Les attachements contradictoires signes ont permis de justifier chaque ecart sans contestation. Les 3 dalots supplementaires ont ete integres dans un avenant technique valide sans depassement de l'enveloppe globale (compensation par reduction du poste signaletique)."
+
+- **COMPETENCE BTS MEC**:
+  "C18 -- Suivre techniquement une operation : Suivi des quantites executees et verification des attachements (sous-composante : controle des cubatures et gestion des ecarts)"
+
+**Visual elements**:
+- Photo `img("montagne")` as small inset (Cm(6) wide) top-right
+- Key figure card: "120 334 m3 deblais | +8% ecart maitrise"
+- Competence badge
+
+**Helpers/Patterns**: `add_situation_page` pattern. `add_image_safe(img("montagne"))` scaled down.
+
+**Font sizes**: Narrative 10pt, key figure 16pt, competence 9pt
+
+**What makes it different**: The current page 25 (defis route) lists 4 generic challenges without telling a story. The new page narrates one specific, verifiable situation with real PK references, real cost differences, and real outcomes.
+
+**One clear message**: "I controlled a +8% earthwork deviation on a mountain road through systematic field measurements."
+
+**contenu.py key**: New `PAGE_19`.
+
+---
+
+### PAGE 20 -- DEFIS ET SOLUTIONS PROJET 2
+
+**Title**: DEFIS ET SOLUTIONS -- PROJET 2
+
+**Content**:
+- 4 cards on photo background (mountain) with overlay
+- Same 4 challenges as current page 25: Relief montagneux, Conditions climatiques, Ecarts cubatures, Ouvrages hydrauliques
+- Compact -- each card smaller than current version
+
+**Helpers/Patterns**: Reuse `page_25_difficultes_route` pattern with `add_fullpage_photo_overlay(img("montagne"))`, 4 white semi-transparent cards with `set_transparency(92)`.
+
+**Font sizes**: Title 24pt white, card titles 14pt red, card text 11pt
+
+**One clear message**: "Mountain road construction challenges and how they were managed."
+
+**contenu.py key**: Reuse current `PAGE_25`.
+
+---
+
+### PAGE 21 -- ACTIVITES COMPLEMENTAIRES
+
+**Title**: ACTIVITES COMPLEMENTAIRES
+
+**Content**:
+- Section Maroc: 5 other markets table (compact)
+- Section France: 2 experiences (Ergalis + Minssieux)
+- Photo gros oeuvre at bottom
+- Synthesis paragraph about what terrain experience brings to MEC
+
+**Helpers/Patterns**: Reuse `page_26_complementaires` pattern. Bullet lists, separator line, photo strip.
+
+**Font sizes**: Title 22pt, market refs 9pt, descriptions 10pt, synthesis 7-8pt
+
+**One clear message**: "Beyond the 2 main projects: 5 other markets + 5 years on-site in France."
+
+**contenu.py key**: Reuse current `PAGE_26`.
+
+---
+
+### PAGE 22 -- SEPARATEUR "BILAN ET ANALYSE"
+
+**Title**: BILAN ET ANALYSE
+
+**Content**:
+- Large "04"
+- "BILAN ET ANALYSE DES COMPETENCES"
+- "Synthese activites-competences | Comparaison Maroc/France | Bilan reflexif | BIM | Projet professionnel"
+
+**Helpers/Patterns**: `add_section_separator` with `img("bilan")`
+
+**Font sizes**: Number 160pt, title 28pt, subtitle 14pt
+
+**One clear message**: "Section break -- analysis and reflection."
+
+**contenu.py key**: New `PAGE_22`.
+
+---
+
+### PAGE 23 -- TABLEAU SYNTHESE ACTIVITES -> COMPETENCES BTS MEC
+
+**Title**: SYNTHESE : ACTIVITES ET COMPETENCES BTS MEC
+
+**This is a NEW page type -- the competency mapping table.**
+
+**Content**:
+A matrix table with:
+- Rows: 5 situations + activities complementaires
+- Columns: Key BTS MEC competencies (C18 sub-components + C19)
+- Cells: checkmarks or page references
+
+```
+                    | Metres | Estimer | Analyser | Suivre  | Suivre  | Commun. | Rediger | BIM
+                    |        |         | offres   | budget  | chantier| (C19)   | pieces  | (T23)
+Sit.1 Estimation    |   X    |    X    |          |         |         |         |    X    |
+Sit.2 CAO           |        |         |    X     |         |         |    X    |    X    |
+Sit.3 Suivi Kerr.   |        |         |          |    X    |    X    |         |         |
+Sit.4 Communication  |        |         |          |         |    X    |    X    |    X    |
+Sit.5 Cubatures     |   X    |         |          |    X    |    X    |    X    |         |
+Compl. France       |        |    X    |          |         |    X    |         |         |
+Compl. BIM          |   X    |         |          |         |         |         |         |   X
+```
+
+**Helpers/Patterns**:
+- Build using `add_bg_rect` for cells, `add_text_box` for headers and checkmarks
+- Alternating row colors (white/grey) like `page_28_comparaison` pattern
+- Red header row, checkmarks as red "X" in cells
+
+**Font sizes**: Title 20pt, column headers 8pt bold, row headers 9pt bold, checkmarks 10pt
+
+**What makes it different**: THIS PAGE DOES NOT EXIST IN THE CURRENT RAPPORT. It is the synthesis page the jury needs to see that the candidate covers the referentiel. It directly maps each activity to BTS MEC competencies. The jury can immediately verify coverage.
+
+**One clear message**: "My 5 situations cover all key competencies of the BTS MEC referentiel."
+
+**contenu.py key**: New `PAGE_23` with matrix data.
+
+---
+
+### PAGE 24 -- COMPARAISON MAROC/FRANCE
+
+**Title**: ANALYSE COMPARATIVE MAROC vs FRANCE
+
+**Content**: Identical to current page 28. 5-row comparison table with "MAROC" and "FRANCE" columns. Synthesis box at bottom.
+
+**Helpers/Patterns**: Reuse `page_28_comparaison` pattern exactly. Alternating row backgrounds, flag colors for headers, synthesis rounded rectangle.
+
+**Font sizes**: Title 28pt, column headers 16pt, criteria 9pt bold, values 9pt, synthesis 11pt
+
+**One clear message**: "Same principles, different frameworks -- I know both."
+
+**contenu.py key**: Reuse current `PAGE_28`.
+
+---
+
+### PAGE 25 -- BILAN REFLEXIF PERSONNEL
+
+**Title**: BILAN REFLEXIF
+
+**This is a NEW page type.**
+
+**Content**: A personal reflection structured in 3 blocks:
+
+1. **Ce que j'ai appris** (3 bullet points, larger text):
+   - "La precision des metres conditionne tout le projet : une erreur de 5% sur les trottoirs d'Ouaoumana = +1 M DH d'ecart"
+   - "Le suivi financier n'est pas un exercice de bureau : il exige une presence terrain reguliere et des attachements contradictoires signes"
+   - "La communication ecrite (notes, CR, OS) est aussi importante que la competence technique : c'est elle qui trace les decisions"
+
+2. **Ce que je ferais differemment aujourd'hui** (2 bullet points):
+   - "J'utiliserais des outils numeriques (maquette BIM + extraction automatique) pour fiabiliser mes metres initiaux"
+   - "Je mettrais en place un tableau de bord numerique partage plutot que des tableurs Excel individuels"
+
+3. **Ce que cette experience m'apporte pour le BTS MEC** (2 bullet points):
+   - "Ma double culture MOA/execution me permet de verifier la coherence d'un prix unitaire avec la realite du chantier"
+   - "Ma maitrise du BIM me permet d'aller plus loin : extraire les quantites d'une maquette, reduire les erreurs de metres, automatiser le chiffrage"
+
+**Helpers/Patterns**:
+- 3 vertical cards (same pattern as `page_29_projet_pro` horizons): rounded rectangle with shadow, red accent circle on top, title in red, text in black
+- Bottom quote: "Cette double experience, cote MOA et cote execution, m'a offert une vision complete du cycle de vie d'un projet."
+
+**Font sizes**: Title 24pt, block titles 12pt red bold, bullet text 10pt, quote 12pt italic
+
+**What makes it different**: THIS PAGE DOES NOT EXIST IN THE CURRENT RAPPORT. It demonstrates self-awareness and critical thinking -- qualities the jury values. It is not a generic "I am good at everything" page but a structured reflection with concrete examples tied to the situations.
+
+**One clear message**: "I can analyze my own practice and identify areas for improvement."
+
+**contenu.py key**: New `PAGE_25`.
+
+---
+
+### PAGE 26 -- PROTOCOLE BIM + COLLABORATION (T23)
+
+**Title**: PROTOCOLE DE COLLABORATION BIM
+
+**This is a NEW dedicated page for the BIM protocol.**
+
+**Content**:
+- "Competence T23 : Appliquer un protocole de collaboration BIM"
+- Workflow diagram: Modelisation Revit -> Export IFC -> Extraction quantites -> Chiffrage DPGF -> Reporting client
+- Convention BIM details: LOD 300, LOI 3, echange IFC 2x3, plateforme collaborative
+- Application to MEC: "L'extraction automatique de quantites depuis une maquette BIM reduit les erreurs de metres de 15-20% par rapport a la methode traditionnelle sur plan 2D"
+- How BIMCO implements this: "Mes plugins C#/API Revit et scripts Dynamo automatisent l'export de metres structures par lots et corps d'etat"
+
+**Helpers/Patterns**:
+- Dark background (reuse from `page_11_outils`: `RGBColor(0x1A, 0x1A, 0x2E)`)
+- Flow diagram: 5 rounded rectangles connected by arrows
+- Red border box for convention BIM (reuse from `page_11_outils` bottom section)
+
+**Font sizes**: Title 22pt white, workflow boxes 10pt, convention details 9pt, application text 10pt
+
+**What makes it different**: The current rapport buries BIM protocol in a 3-line box at the bottom of the outils page. The new version gives it a dedicated page because T23 is specifically evaluated. The jury needs to see that the candidate understands not just the tools but the PROCESS of BIM collaboration.
+
+**One clear message**: "I apply a structured BIM collaboration protocol with traceable outputs."
+
+**contenu.py key**: New `PAGE_26`.
+
+---
+
+### PAGE 27 -- PROJET PROFESSIONNEL
+
+**Title**: MON PROJET PROFESSIONNEL
+
+**Content**: Identical to current page 29. Three horizons: Court terme (2026), Moyen terme (2027-28), Long terme (2029+). Quote and distinctive advantage.
+
+**Helpers/Patterns**: Reuse `page_29_projet_pro` pattern exactly. 3 cards with circles, arrows, quote box.
+
+**Font sizes**: Title 26pt, horizon labels 13pt, date 9pt, descriptions 10pt, quote 16pt
+
+**One clear message**: "BIMCO = BIM + Construction Economics, from freelancer to engineering firm."
+
+**contenu.py key**: Reuse current `PAGE_29`.
+
+---
+
+### PAGE 28 -- CONCLUSION
+
+**Title**: CONCLUSION
+
+**Content**: Similar to current page 30 but with updated points reflecting the new structure:
+- "5 situations professionnelles analysees en detail"
+- "82,5 M DH de projets suivis (7,4 M EUR)"
+- "MOA + Execution + BIM = triple competence"
+- "BIMCO : au service de l'economiste de la construction"
+- Final quote
+- Logo + contact
+
+**Helpers/Patterns**: Reuse `page_30_conclusion` pattern. Photo + overlay, `add_islamic_border`, `add_islamic_star`, points with line accents, quote, logo.
+
+**Font sizes**: Title 36pt, point titles 14pt, descriptions 10pt, quote 14pt, footer 10pt
+
+**What makes it different**: Updated to reference the 5 situations instead of generic experience summary.
+
+**One clear message**: "This report demonstrates concrete competencies through 5 real situations."
+
+**contenu.py key**: Updated `PAGE_28`.
+
+---
+
+### PAGE 29 -- ANNEXE 1: DOCUMENTS REELS
+
+**Title**: ANNEXE 1 -- DOCUMENTS OFFICIELS
+
+**Content**:
+- 3 document scans displayed prominently:
+  1. `convocation_cao.jpg` -- "Convocation Commission d'Appel d'Offres" (Cm(8) x Cm(10))
+  2. `notification_rejet.jpg` -- "Notification de rejet d'offre" (Cm(8) x Cm(10))
+  3. `cps_marche46_signe.jpg` -- "CPS signe Marche n46" (Cm(8) x Cm(10))
+- Caption under each with context reference: "cf. Situation 2 p.12", "cf. Situation 2 p.12", "cf. Projet 2 p.17"
+- Title: "Ces documents authentiques attestent de ma participation directe aux procedures de marches publics"
+
+**Helpers/Patterns**: 
+- White background, `add_image_safe` for 3 images in a 1x3 or 2+1 layout
+- `add_text_box` for captions (8pt grey)
+- Simple layout -- documents speak for themselves
+
+**Font sizes**: Title 20pt, subtitle 10pt, captions 8pt
+
+**What makes it different**: Documents were scattered across content pages in the current version. Grouping them as an annexe with cross-references to specific situations makes the proof structure clearer for the jury.
+
+**One clear message**: "Here are the original documents proving my involvement."
+
+**contenu.py key**: New `PAGE_29`.
+
+---
+
+### PAGE 30 -- ANNEXE 2: PHOTOS CHANTIER + RECAPITULATIF
+
+**Title**: ANNEXE 2 -- PHOTOS DE CHANTIER
+
+**Content**:
+- Grid of 6-8 construction photos (selected from the 118 available), each Cm(5) x Cm(4):
+  - `img("chantier_urban")` -- Amenagement urbain
+  - `img("vrd")` -- Travaux VRD
+  - `img("gros_oeuvre")` -- Gros oeuvre
+  - `img("route")` -- Route
+  - `img("montagne")` -- Zone montagneuse
+  - `img("terrassement")` -- Terrassement
+- Each photo captioned with date (from filename) and location
+- Bottom strip: "BAHAFID Mohamed | BIMCO | BTS MEC Session 2026 | Academie de Lyon | gestion.bimco-consulting.fr"
+
+**Helpers/Patterns**:
+- `add_image_safe` for each photo, arranged in 2x3 or 2x4 grid
+- `add_text_box` for captions
+- Footer with `add_islamic_border`
+
+**Font sizes**: Title 20pt, captions 7pt, footer 10pt
+
+**What makes it different**: Provides visual proof of field presence. Grouped rather than scattered.
+
+**One clear message**: "I was physically present on these construction sites."
+
+**contenu.py key**: New `PAGE_30`.
+
+---
+
+## IMPLEMENTATION STRATEGY
+
+### Step 1: Create new `contenu_v2.py`
+Define all 30 new `PAGE_XX` dictionaries. For SITUATION pages (11-14, 19), create a new data structure:
+```python
+PAGE_11 = {
+    "type": "situation",
+    "numero": "1",
+    "titre": "Etablissement de l'estimation de l'administration",
+    "contexte": "En 2017, le Conseil Regional...",
+    "probleme": "Le bureau d'etudes a fourni...",
+    "action": "J'ai organise mon travail en deux phases...",
+    "resultat": "L'estimation a ete arretee a 15 830 359 DH HT...",
+    "competence": "C18 -- Suivre techniquement une operation",
+    "sous_competence": "Realiser des metres detailles",
+    "key_figure": "15,8 M DH HT",
+    "key_figure_label": "Estimation Ouaoumana",
+    "table_extract": [...],  # Optional BPDE extract
+}
+```
+
+### Step 2: Create `add_situation_page()` helper function
+New reusable function for pages 11, 12, 13, 14, 19:
+```python
+def add_situation_page(slide, data, photo_path=None):
+    """Generate a CPAR situation page with structured narrative."""
+    add_bg_rect(slide, BLANC)
+    # Header: "SITUATION X" + title
+    # 4 sections: CONTEXTE, PROBLEME, ACTION, RESULTAT
+    # Each with colored left bar and text
+    # Key figure card
+    # Competence badge at bottom
+```
+
+### Step 3: Create new `generer_pptx_30pages_v2.py`
+- Import from `contenu_v2.py`
+- Keep ALL existing helpers (lines 1-470 of current script are 100% reusable)
+- Replace the 30 page functions with the new structure
+- New page functions for merged pages (6, 7, 10, 17) use existing helpers in new combinations
+- New page functions for situation pages (11, 12, 13, 14, 19) use the new `add_situation_page` helper
+- New page functions for synthesis (23), bilan reflexif (25), BIM protocol (26), annexes (29, 30)
+
+### Step 4: Dependency order
+1. `contenu_v2.py` first (all text content)
+2. `generer_pptx_30pages_v2.py` second (all rendering)
+3. Test run and iterate
+
+### Potential Challenges
+1. **Merged pages may overflow**: Pages 6, 7, 10, 17 combine 2-3 pages of content into 1. Must be ruthless about cutting text. Target 40-50 words per section, maximum.
+2. **Situation narrative length**: Each situation has ~150 words of narrative. At 10pt Calibri on A4 portrait, this fits in approximately Cm(17) x Cm(18) of text area. The key is using short paragraphs and visual markers (colored bars, section headers) to break the wall of text.
+3. **The competency mapping table (page 23)**: Building a matrix in python-pptx requires manual cell placement. No native table helper exists in the current script. Will need to build with `add_bg_rect` + `add_text_box` for each cell.
+4. **Font size floor**: All narrative text must be at minimum 10pt for projection readability. This constrains how much text can fit per page. The CPAR structure helps by forcing concision.
+
+---
+
+### Critical Files for Implementation
+
+- `D:\PREPA BTS MEC\08_U62_Rapport_Activites\contenu.py` - Contains all current text data; needs a v2 with new SITUATION structures, merged page data, and synthesis table content
+- `D:\PREPA BTS MEC\08_U62_Rapport_Activites\generer_pptx_30pages.py` - Contains all reusable helpers (lines 88-470) and current page functions; the new script will import helpers and replace page functions
+- `D:\PREPA BTS MEC\08_U62_Rapport_Activites\Rapport_Redaction\RAPPORT_U62_BAHAFID_Mohamed.md` - Source of all real data (unit prices, financial tracking, bid evaluation grids) needed to write the SITUATION narratives with verified numbers
+- `D:\PREPA BTS MEC\08_U62_Rapport_Activites\Annexes\Images\convocation_cao.jpg` - One of 6 proof documents (with notification_rejet.jpg, cps_marche46_signe.jpg, photo_bahafid.jpg, logo_bimco.png, banniere_bimco.png) critical for the annexe pages and situation page illustrations
+- `D:\PREPA BTS MEC\08_U62_Rapport_Activites\Rapport_Redaction\PLAN_CANVA_30_PAGES.md` - Original design guidelines for visual style consistency (palette, typography, layout rules) that must be maintained in the restructured version

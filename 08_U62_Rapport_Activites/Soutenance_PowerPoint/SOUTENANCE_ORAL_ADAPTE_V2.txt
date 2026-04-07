@@ -1,0 +1,133 @@
+SOUTENANCE ORALE ADAPTÉE AU RAPPORT U62 — BTS MEC 2026
+BAHAFID Mohamed — Candidat libre — Académie de Lyon
+Durée cible : 10 minutes
+Structure calée sur le rapport papier (30 slides)
+================================================================
+
+[SLIDE 1 — PAGE DE GARDE] (~20 s)
+
+Bonjour mesdames, messieurs les membres du jury. Je m'appelle Mohamed BAHAFID, je suis candidat libre au BTS Métiers de l'Économie de la Construction, session 2026, académie de Lyon.
+
+[SLIDE 2-3 — FICHE D'IDENTITÉ + SOMMAIRE] (~30 s)
+
+Mon rapport retrace huit ans d'expérience dans le BTP à travers deux projets majeurs et cinq situations professionnelles, analysées selon la méthode CPAR — Contexte, Problème, Action, Résultat.
+
+Le rapport s'organise en quatre parties : d'abord mon cadre professionnel, ensuite les deux projets avec les situations associées, puis les activités complémentaires et la comparaison Maroc-France, et enfin le bilan réflexif et mon projet professionnel avec BIMCO.
+
+[SLIDE 4 — INTRODUCTION ET PARCOURS] (~40 s)
+
+Mon parcours se construit en trois phases. D'abord, quatre ans au Maroc au Conseil Régional de Béni Mellal-Khénifra, comme technicien études et suivi des travaux. C'est là que j'ai appris les fondamentaux : métrés, estimation confidentielle, rédaction des DCE, analyse des offres en commission, suivi financier. Sept marchés publics totalisant plus de 100 millions de dirhams d'investissements.
+
+Ensuite, cinq ans côté exécution en France — chef d'équipe gros œuvre chez Ergalis BTP dans la Loire, puis chef de chantier chez Minssieux et Fils dans le Rhône. Cette expérience terrain m'a appris les coûts réels de production : rendements, main-d'œuvre, consommation matériaux.
+
+Enfin, une formation BIM de huit mois à l'AFPA de Colmar, où j'ai obtenu le titre de Modeleur BIM. Et depuis janvier 2026, j'ai créé BIMCO, ma micro-entreprise.
+
+[SLIDE 5-6 — CADRE PROFESSIONNEL : STRUCTURE D'ACCUEIL] (~30 s)
+
+Ma structure d'accueil, c'est le Conseil Régional de Béni Mellal-Khénifra, une collectivité couvrant cinq provinces et deux millions et demi d'habitants. J'étais rattaché à l'Agence d'Exécution des Projets, sous la direction de Monsieur Doghmani. Concrètement, j'étais le relais technique du Directeur : je préparais les estimations confidentielles, je rédigeais les CPS, RC et BPDE, je participais aux commissions d'appel d'offres, et j'assurais le suivi financier et terrain des chantiers.
+
+[SLIDE 7 — BIMCO] (~25 s)
+
+Quelques mots sur BIMCO, mon activité actuelle. Pendant ma formation BIM, j'ai constaté que les outils existants sont pensés pour les architectes et les ingénieurs structure — pas pour l'économiste de la construction. BIMCO corrige ce manque : extraction des métrés depuis la maquette numérique, automatisation de la chaîne métré vers DPGF grâce à des scripts Revit et Dynamo, et développement d'une application web de suivi économique — déjà livrée en React, Node.js et PostgreSQL.
+
+[SLIDE 8-10 — PROJET 1 : PRÉSENTATION] (~25 s)
+
+Premier projet : la mise à niveau de quatre communes dans la province de Khénifra. Budget de 53,5 millions de dirhams TTC, soit 4,8 millions d'euros. Huit corps d'état — de l'assainissement à l'éclairage public — sur quatre sites distants de 20 à 80 kilomètres, avec 112 lignes de prix par commune. C'est sur ce projet que se situent mes quatre premières situations professionnelles.
+
+[SLIDE 11 — SITUATION 1 : ESTIMATION CONFIDENTIELLE] (~50 s)
+
+Situation 1 : l'estimation confidentielle pour la commune d'Ouaoumana — 15,8 millions de dirhams hors taxes, soit 35 % du budget global.
+
+Le problème : la mercuriale de référence datait de 2014. Les prix des enrobés, des canalisations et de l'acier avaient dérivé de 15 à 22 %. Impossible de chiffrer correctement sans actualiser.
+
+Mon action : j'ai relevé les 112 lignes de métrés sur AutoCAD, complétées par quatre visites terrain pour caler les altimétries. Puis j'ai construit chaque prix unitaire en croisant systématiquement trois sources : la mercuriale actualisée, cinq marchés similaires récemment adjugés dans la région, et huit devis de fournisseurs locaux. Relecture croisée avec un collègue avant validation par le Directeur.
+
+Résultat : l'écart avec l'offre retenue n'a été que de 3,2 %, alors que la moyenne régionale se situait entre 5 et 10 %. Ma méthode de croisement des sources a été adoptée comme standard pour les trois autres communes.
+
+[SLIDE 12 — SITUATION 2 : ANALYSE DES OFFRES] (~40 s)
+
+Situation 2 : l'analyse des offres en commission d'appel d'offres. Trois entreprises avaient répondu.
+
+Problème : un dossier contenait sept erreurs arithmétiques. Un autre affichait des prix anormalement bas sur trois postes représentant 42 % du montant global — des écarts de 25 à 33 % par rapport aux prix du marché.
+
+Action : j'ai vérifié la conformité, corrigé les erreurs en appliquant la règle de primauté du prix unitaire, demandé par écrit la justification des prix bas, et bâti une grille d'évaluation sur 100 points — 60 pour le technique, 40 pour le financier — avec justification de chaque note.
+
+Résultat : l'entreprise retenue a obtenu 94 sur 100. Attribution en quinze jours, zéro recours. Le rapport et le PV validés sans réserve.
+
+[SLIDE 13 — SITUATION 3 : SUIVI FINANCIER KERROUCHEN] (~45 s)
+
+Situation 3 : le suivi financier du chantier de Kerrouchen — 7,3 millions de dirhams sur 18 mois.
+
+Problème : à mi-parcours, la chaussée dérivait de +12 % à cause du terrassement rocheux, les murs de soutènement de +15 % en raison de fondations plus profondes que prévu. En extrapolant, le dépassement global atteignait 4,8 %, soit 349 000 dirhams — juste sous le seuil d'avenant de 5 %. Le dépasser aurait signifié trois à six mois de procédure administrative.
+
+Action : j'ai mis en place un tableau de bord hebdomadaire à trois indicateurs — avancement physique, consommation budgétaire, écart prévisionnel. Et j'ai proposé un mécanisme de compensation : réduction du paysager de 44 000 dirhams et du mobilier urbain de 12 000 dirhams, libérant 56 000 dirhams de marge.
+
+Résultat : dépassement final ramené à +0,8 %. Avenant évité. Le tableau de bord a été répliqué sur les trois autres communes et adopté comme outil de référence par l'Agence.
+
+[SLIDE 14 — SITUATION 4 : COORDINATION MULTI-SITES] (~40 s)
+
+Situation 4 : la coordination de quatre chantiers simultanés. J'étais le relais unique du Directeur.
+
+Problème : la semaine 23, trois crises en 48 heures — retard de livraison des enrobés à Ouaoumana, alerte météo nécessitant l'arrêt à Kerrouchen, et un litige sur les quantités de bordures à Sebt Ait Rahou avec 15 % d'écart entre les déclarations de l'entreprise et la réalité.
+
+Action : note factuelle au Directeur avec planning de rattrapage, ordre de service d'arrêt avec photos datées, et re-mesurage contradictoire sur site pour le litige bordures. En parallèle, point quotidien à 8 heures avec les quatre chefs de chantier et compte-rendu consolidé sous 24 heures.
+
+Résultat : retard rattrapé en deux semaines, arrêt formalisé proprement, écart bordures ramené de 15 à 2,3 %. Mon modèle de compte-rendu a été adopté pour tous les marchés de l'Agence.
+
+[SLIDE 16-18 — PROJET 2 : ROUTE LEHRI-KERROUCHEN] (~20 s)
+
+Deuxième projet : la route Lehri-Kerrouchen, 25 kilomètres en zone montagneuse dans le Moyen Atlas. Budget de 29 millions de dirhams TTC. Un terrain exigeant : 400 mètres de dénivelé, des pentes jusqu'à 12 %, 120 000 m³ de déblais. Le drainage représentait 28 % du budget — 2,5 fois plus qu'une route en plaine.
+
+[SLIDE 19 — SITUATION 5 : CONTRÔLE DES CUBATURES] (~45 s)
+
+Situation 5 : le contrôle des cubatures de terrassement.
+
+Problème : au-delà du kilomètre 12, le terrain s'est révélé rocheux — du calcaire fracturé non détecté par l'étude géotechnique. 5 000 m³ à reclassifier en déblais rocheux : le prix unitaire passait de 28 à 85 dirhams, soit un surcoût immédiat de 285 000 dirhams. En parallèle, trois passages en fond de vallée nécessitaient des ouvrages hydrauliques non prévus au marché.
+
+Action : j'ai instauré un contrôle contradictoire tous les 500 mètres — relevé GPS, comparaison avec les profils théoriques, calcul de volume vérifié par tableur. Profils en travers tous les 25 mètres. Pour les ouvrages, j'ai travaillé avec le bureau d'études NOVEC pour dimensionner trois dalots en béton armé 3 par 2 par 2 mètres. La reclassification a été formalisée par attachement signé et documentée en photos.
+
+Résultat : le surcoût de 285 000 dirhams a été intégralement absorbé par compensation — remblais réels inférieurs aux prévisions et économies sur le revêtement. Les trois dalots intégrés dans l'enveloppe. Réception dans les délais, sans avenant, sans réclamation.
+
+[SLIDE 21 — ACTIVITÉS COMPLÉMENTAIRES] (~20 s)
+
+En complément, j'ai suivi cinq autres marchés publics au Maroc — routes, pistes rurales, eau potable, voirie — et travaillé côté exécution en France. Cette double expérience m'a appris d'où viennent les écarts entre une estimation et la réalité du chantier. Connaître le chantier de l'intérieur change profondément la façon d'estimer.
+
+[SLIDE 24 — COMPARAISON MAROC/FRANCE] (~20 s)
+
+Sur la comparaison Maroc-France : les principes fondamentaux sont les mêmes — transparence, égalité de traitement, mise en concurrence. Le CPS marocain correspond au CCAP, l'estimation confidentielle correspond à l'estimation du maître d'ouvrage, le BPDE correspond au BPU-DQE. La logique est identique. Avoir travaillé des deux côtés — celui qui prépare les marchés et celui qui les exécute — m'a donné une vision complète de la chaîne.
+
+[SLIDE 25 — PROTOCOLE BIM] (~25 s)
+
+Sur le BIM : ma formation à l'AFPA m'a permis de modéliser un bâtiment R+2 complet en LOD 300 et d'en extraire automatiquement 78 postes de métrés — surfaces de planchers, volumes béton, linéaires de murs, quantités d'acier. L'écart avec le métré manuel traditionnel n'a été que de 1,8 %. Douze clashs structure-réseaux détectés et résolus en amont. Et surtout : extraction en 2 heures contre 2 jours en méthode traditionnelle. C'est là que j'ai vu le potentiel du BIM pour l'économiste.
+
+[SLIDE 26 — BILAN RÉFLEXIF] (~30 s)
+
+Pour le bilan réflexif. Ce que j'ai appris : la semaine 23 m'a confirmé que la rigueur de l'écrit — ordres de service, attachements contradictoires, comptes-rendus — est le seul rempart contre les litiges. Et croiser trois sources de prix fait une vraie différence sur la fiabilité.
+
+Ce que je ferais différemment : le tableau de bord, je l'aurais mis en place dès le premier mois — pas au neuvième. Et j'aurais exigé une étude géotechnique complémentaire avant les terrassements. Le problème détecté tôt coûte dix fois moins cher à corriger.
+
+[SLIDE 27 — PROJET PROFESSIONNEL] (~20 s)
+
+Pour la suite : à court terme, obtenir le BTS et lancer les premières prestations BIMCO — métrés BIM, études de prix, DPGF. À moyen terme, développer les premiers plugins Revit-Dynamo et une base prix connectée. À long terme, faire de BIMCO un cabinet d'ingénierie BIM et économie de la construction, avec une gamme d'outils SaaS pour les économistes.
+
+[SLIDE 28 — CONCLUSION] (~20 s)
+
+Pour conclure, ce que je souhaite que vous reteniez : premièrement, les cinq compétences du référentiel ont toutes été pratiquées en situation réelle, sous contrainte de délai, de budget et d'aléas. Deuxièmement, la double expérience MOA au Maroc et exécution en France me donne une vision complète de la chaîne d'un projet. Et troisièmement, BIMCO est la traduction directe de ce parcours — la rigueur du terrain combinée aux outils numériques.
+
+Je vous remercie pour votre attention et je suis à votre disposition pour vos questions.
+
+================================================================
+DURÉE ESTIMÉE : ~9 min 45 s (marge de 15 s pour le rythme naturel)
+================================================================
+
+POINTS CLÉS CORRIGÉS PAR RAPPORT À L'ORAL INITIAL :
+1. BIMCO (pas "Banco") — nom correct de votre entreprise
+2. Grille d'analyse : 60 technique + 40 financier = 100 (pas "100 + 40")
+3. Chaussée Kerrouchen : +12% (pas +8%) — cohérent avec le rapport
+4. Surcoût précis : 349 000 DH (situation 3), 285 000 DH (situation 5)
+5. Méthode CPAR mentionnée dès l'introduction
+6. BIM développé : LOD 300, 78 postes, 12 clashs, écart 1,8%
+7. Projet pro structuré court/moyen/long terme
+8. Chiffres du rapport intégrés : 112 lignes, 15,8 M DH, 7,3 M DH, 94/100
+9. Noms d'entreprises : Ergalis BTP, Minssieux et Fils (à confirmer)
+10. Structure slide par slide pour savoir quand tourner les pages
