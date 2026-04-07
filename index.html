@@ -5664,9 +5664,44 @@ const EXERCICES_CORRIGES = [
 // ══════════════════ PLANNING DATA ══════════════════
 
 const PLANNING_DATA = [
-  {sem:1, titre:'Semaine 1 — Priorités absolues (thèmes 5/5)', jours:[
-    {jour:'Lundi', theme:'E4 : Fondations + Classes béton ⭐⭐⭐',
-     objectif:'Remplir un tableau de classes d\'expo complet de mémoire en < 10 min',
+  {sem:0, titre:'📊 Tableau de bord — Coefficients et stratégie', jours:[
+    {jour:'COEFFICIENTS', theme:'Répartition des 29 coefficients par épreuve',
+     objectif:'Concentrer l\'effort sur les plus gros coefficients',
+     taches:[
+       {h:'Coeff 5',a:'E51 — Étude descriptive et économique (oral 50 min) ████████████████████ 17%',s:'15-18 juin — PLUS GROS COEFF'},
+       {h:'Coeff 4',a:'E4 — Analyse du projet et contexte (écrit 4h) ████████████████ 14%',s:'20 mai 14h00'},
+       {h:'Coeff 4',a:'E1 — Culture générale et expression (écrit 3h) ████████████████ 14%',s:'19 mai 14h30'},
+       {h:'Coeff 4',a:'E61 — Projet numérique BIM (pratique 3 jours) ████████████████ 14%',s:'11-13 mai'},
+       {h:'Coeff 3',a:'E2 — Anglais (oral 15 min) ████████████ 10%',s:'4 mai 13h30'},
+       {h:'Coeff 3',a:'E62 — Compte rendu stage (oral 20 min) ████████████ 10%',s:'PASSÉ ✅'},
+       {h:'Coeff 2',a:'E52 — Analyse et suivi financiers (écrit 2h) ████████ 7%',s:'21 mai 16h00'},
+       {h:'Coeff 2',a:'E31 — Mathématiques (oral 35 min) ████████ 7%',s:'23-24 juin'},
+       {h:'Coeff 2',a:'E32 — Physique-Chimie (pratique 2h) ████████ 7%',s:'23-24 juin'},
+     ]},
+    {jour:'5 PHASES', theme:'Plan stratégique en 5 phases (79 jours)',
+     objectif:'Chaque phase cible les épreuves par ordre chronologique et coefficient',
+     taches:[
+       {h:'Phase 1',a:'7 avril → 3 mai (27j) : E4 + E52 fondamentaux + prépa Anglais oral',s:'Coeff visés : 9'},
+       {h:'Phase 2',a:'4 → 13 mai (10j) : BIM intensif + oral Anglais le 4 mai',s:'Coeff visés : 7'},
+       {h:'Phase 3',a:'14 → 21 mai (8j) : SPRINT FINAL — 3 écrits en 3 jours (E1+E4+E52)',s:'Coeff visés : 10'},
+       {h:'Phase 4',a:'22 mai → 18 juin (28j) : E51 projet oral — le plus gros coefficient',s:'Coeff visé : 5'},
+       {h:'Phase 5',a:'19 → 24 juin (6j) : Maths + Physique-Chimie',s:'Coeff visés : 4'},
+     ]},
+    {jour:'SCORE PRIO', theme:'Score de priorité = Coefficient / Jours restants × 100',
+     objectif:'Plus le score est élevé, plus l\'épreuve nécessite d\'attention immédiate',
+     taches:[
+       {h:'11.8',a:'E6-A BIM (coeff 4, J-34) — URGENT',s:'Peu préparé'},
+       {h:'11.1',a:'E2-B Anglais oral (coeff 3, J-27) — URGENT',s:'À préparer'},
+       {h:'9.5',a:'E1 Français (coeff 4, J-42)',s:'Annales dispo'},
+       {h:'9.3',a:'E4 Analyse projet (coeff 4, J-43)',s:'BIEN PRÉPARÉ ✅'},
+       {h:'7.2',a:'E51 Étude descriptive (coeff 5, J-69)',s:'Sujet non encore reçu'},
+       {h:'4.5',a:'E52 Suivi financier (coeff 2, J-44)',s:'BIEN PRÉPARÉ ✅'},
+       {h:'2.6',a:'E3 Maths + Physique (coeff 2+2, J-77)',s:'Annales dispo'},
+     ]},
+  ]},
+  {sem:1, titre:'Phase 1 / Semaine 1 (7-13 avril) — Fondamentaux E4+E52 (thèmes 5/5)', jours:[
+    {jour:'Lundi 7 avril', theme:'E4 : Fondations + Classes béton ⭐⭐⭐',
+     objectif:'Remplir un tableau de classes d\'expo complet de mémoire en < 10 min — E4 coeff 4, le 20 mai',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 03 complète',s:'F03 Fondations'},
        {h:'10h-11h',a:'Apprendre les 18 classes (X0 à XA3) par groupe',s:'Fiche mémo A4'},
@@ -5675,7 +5710,7 @@ const PLANNING_DATA = [
        {h:'15h-16h',a:'Exercices : vérifier profondeur + classes + béton',s:'Exercices'},
        {h:'16h-17h',a:'Correction + noter les erreurs',s:'Corrigé E4 2025 — B3'},
      ]},
-    {jour:'Mardi', theme:'E4 : Acoustique des façades ⭐⭐⭐',
+    {jour:'Mardi 8 avril', theme:'E4 : Acoustique des façades ⭐⭐⭐',
      objectif:'Déterminer catégorie voie + isolement requis en < 2 min',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 05 complète',s:'F05 Acoustique'},
@@ -5685,7 +5720,7 @@ const PLANNING_DATA = [
        {h:'15h-16h',a:'QCM Acoustique (15 questions)',s:'QCM interactifs'},
        {h:'16h-17h',a:'Exercice complet : catégorie voie + isolement + TR',s:'Corrigé E4 2025 — D1'},
      ]},
-    {jour:'Mercredi', theme:'E52 : Révision et Actualisation des Prix ⭐⭐⭐',
+    {jour:'Mercredi 9 avril', theme:'E52 : Révision et Actualisation des Prix ⭐⭐⭐',
      objectif:'Calculer Cn et révision mensuelle en < 3 min par mois',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 08 complète',s:'F08 Révision prix'},
@@ -5695,7 +5730,7 @@ const PLANNING_DATA = [
        {h:'15h-16h',a:'QCM Révision prix (15 questions)',s:'QCM interactifs'},
        {h:'16h-17h',a:'Tableau de suivi complet (Cn + révisions mensuelles)',s:'Corrigé E52 2024 — Partie B'},
      ]},
-    {jour:'Jeudi', theme:'E52 : Situation de Travaux — Décompte Mensuel ⭐⭐⭐',
+    {jour:'Jeudi 10 avril', theme:'E52 : Situation de Travaux — Décompte Mensuel ⭐⭐⭐',
      objectif:'Remplir un décompte mensuel complet de mémoire en < 15 min',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 09 — Structure 16 lignes',s:'F09 Situation travaux'},
@@ -5705,7 +5740,7 @@ const PLANNING_DATA = [
        {h:'15h-16h',a:'QCM Situation de travaux (15 questions)',s:'QCM interactifs'},
        {h:'16h-17h',a:'Décompte mois 4 complet',s:'Corrigé E52 2024 — C3'},
      ]},
-    {jour:'Vendredi', theme:'E52 : Analyse des Offres ⭐⭐⭐',
+    {jour:'Vendredi 11 avril', theme:'E52 : Analyse des Offres ⭐⭐⭐',
      objectif:'Réaliser un classement complet de 3 offres avec conclusion en < 20 min',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 07 complète',s:'F07 Analyse offres'},
@@ -5715,7 +5750,7 @@ const PLANNING_DATA = [
        {h:'15h-16h',a:'QCM Analyse des offres (15 questions)',s:'QCM interactifs'},
        {h:'16h-17h',a:'Classement complet + conclusion rédigée',s:'Corrigé E52 2024 — Partie A'},
      ]},
-    {jour:'Samedi', theme:'Révision Semaine 1 + Simulation E52',
+    {jour:'Samedi 12 avril', theme:'SIMULATION E52 chronométrée (2h)',
      objectif:'Identifier les points faibles avant la semaine 2',
      taches:[
        {h:'09h-10h',a:'Relire la fiche mémo A4 complète recto-verso',s:'Fiche mémo A4'},
@@ -5723,15 +5758,15 @@ const PLANNING_DATA = [
        {h:'14h-16h',a:'Auto-correction + identifier les points faibles',s:'—'},
        {h:'16h-17h',a:'Refaire les calculs ratés',s:'—'},
      ]},
-    {jour:'Dimanche', theme:'Repos (ou révision légère)',
+    {jour:'Dimanche 13 avril', theme:'REPOS',
      objectif:'Récupérer — révision optionnelle 15 min max',
      taches:[
        {h:'15 min',a:'Relire la fiche mémo A4 une fois',s:'Fiche mémo A4'},
        {h:'Optionnel',a:'Regarder les "Points de vigilance" des deux corrigés',s:'—'},
      ]},
   ]},
-  {sem:2, titre:'Semaine 2 — Priorités hautes (thèmes 3-4/5)', jours:[
-    {jour:'Lundi', theme:'E4 : Contexte Réglementaire (4/5)',
+  {sem:2, titre:'Phase 1 / Semaine 2 (14-20 avril) — E4 thèmes 3-4/5 + Anglais', jours:[
+    {jour:'Lundi 14 avril', theme:'E4 : Contexte Réglementaire (4/5)',
      objectif:'Maîtriser PC, PLU, ERP et MH sans hésitation',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 02 complète',s:'F02 Réglementation'},
@@ -5740,7 +5775,7 @@ const PLANNING_DATA = [
        {h:'14h-15h',a:'Exercices réglementaires (dates PC, PLU, ERP)',s:'—'},
        {h:'15h-16h',a:'Monuments Historiques + chronologie projet',s:'Fiche 02'},
      ]},
-    {jour:'Mardi', theme:'E4 : Confort Thermique et Déphasage (3/5)',
+    {jour:'Mardi 15 avril', theme:'E4 : Confort Thermique et Déphasage (3/5)',
      objectif:'Calculer R, U, déphasage sans erreur d\'unité',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 04 complète',s:'F04 Thermique'},
@@ -5748,7 +5783,7 @@ const PLANNING_DATA = [
        {h:'14h-15h',a:'QCM Thermique (15 questions)',s:'QCM interactifs'},
        {h:'15h-17h',a:'Exercice complet paroi + déphasage',s:'Corrigé E4 2025 — Partie C'},
      ]},
-    {jour:'Mercredi', theme:'E4 : Marché MOE (3/5)',
+    {jour:'Mercredi 16 avril', theme:'E4 : Marché MOE (3/5) + ANGLAIS',
      objectif:'Composer une équipe MOE et noter 3 offres en < 15 min',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 01 complète',s:'F01 Marché MOE'},
@@ -5756,7 +5791,7 @@ const PLANNING_DATA = [
        {h:'11h-12h',a:'Composition équipe + critères + barème de notation',s:'Fiche 01'},
        {h:'14h-16h',a:'Exercice notation offres MOE',s:'Corrigé E4 2025 — Partie A'},
      ]},
-    {jour:'Jeudi', theme:'E4 : Sécurité Chantier (3/5)',
+    {jour:'Jeudi 17 avril', theme:'E4 : Sécurité Chantier (3/5)',
      objectif:'Appliquer les règles de blindage et garde-corps sans aide',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 06 complète',s:'F06 Sécurité chantier'},
@@ -5764,24 +5799,24 @@ const PLANNING_DATA = [
        {h:'11h-12h',a:'Garde-corps : hauteurs + fixations + modèles mécaniques',s:'Fiche 06'},
        {h:'14h-16h',a:'Exercice sécurité complet',s:'Corrigé E4 2025 — Partie D'},
      ]},
-    {jour:'Vendredi', theme:'E52 : Rentabilité (3/5)',
+    {jour:'Vendredi 18 avril', theme:'E52 : Rentabilité (3/5) + ANGLAIS',
      objectif:'Calculer DS, MB, RB et interpréter les résultats',
      taches:[
        {h:'09h-10h',a:'Lire Fiche 10 complète',s:'F10 Rentabilité'},
        {h:'10h-12h',a:'Calculer DSMO, DS, MB, RB à partir d\'un exemple',s:'Exercices rentabilité'},
        {h:'14h-16h',a:'Comparatif prévisionnel/réel + commentaires',s:'Corrigé E52 2024 — Partie D'},
      ]},
-    {jour:'Samedi', theme:'Simulation E4 Complète (4h)',
+    {jour:'Samedi 19 avril', theme:'SIMULATION E4 complète (4h chrono)',
      objectif:'Identifier les points faibles sous conditions d\'examen',
      taches:[
        {h:'09h-13h',a:'Simuler l\'épreuve E4 complète (4h chronométrées)',s:'Corrigé E4 2025'},
        {h:'14h-16h',a:'Auto-correction + noter les erreurs récurrentes',s:'—'},
        {h:'16h-17h',a:'Réviser les points faibles identifiés',s:'—'},
      ]},
-    {jour:'Dimanche', theme:'Repos', objectif:'—', taches:[]},
+    {jour:'Dimanche 20 avril', theme:'REPOS', objectif:'Récupérer', taches:[]},
   ]},
-  {sem:3, titre:'Semaine 3 — Consolidation et Simulation Finale', jours:[
-    {jour:'Lundi', theme:'Révision croisée E4 + E52',
+  {sem:3, titre:'Phase 1 / Semaine 3 (21-27 avril) — Consolidation + Anglais oral J-7', jours:[
+    {jour:'Lundi 21 avril', theme:'Révision croisée E4 + E52',
      objectif:'Relier tous les thèmes entre eux',
      taches:[
        {h:'09h-11h',a:'Relire Synthèse (thèmes récurrents)',s:'Section Synthèse'},
@@ -5789,7 +5824,7 @@ const PLANNING_DATA = [
        {h:'14h-16h',a:'Refaire les exercices où des erreurs avaient été commises',s:'—'},
        {h:'16h-17h',a:'Relire la fiche mémo A4',s:'Fiche mémo A4'},
      ]},
-    {jour:'Mardi', theme:'Focus Calculs (les plus chronophages)',
+    {jour:'Mardi 22 avril', theme:'Focus Calculs chronophages + ANGLAIS',
      objectif:'Réduire le temps de calcul sous la barre des cibles',
      taches:[
        {h:'1h',a:'Décompte mensuel 16 lignes complet (objectif < 15 min)',s:'Exercices'},
@@ -5798,7 +5833,7 @@ const PLANNING_DATA = [
        {h:'45 min',a:'Classes expo béton 6 parties d\'ouvrage (< 10 min)',s:'Exercices'},
        {h:'1h',a:'Calcul R + U + épaisseur + déphasage (< 15 min)',s:'Exercices'},
      ]},
-    {jour:'Mercredi', theme:'Mémorisation intensive',
+    {jour:'Mercredi 23 avril', theme:'Mémorisation intensive + BIM découverte',
      objectif:'Réciter 100 % des valeurs de la fiche mémo sans la regarder',
      taches:[
        {h:'09h',a:'E4 : 5 formules thermiques (R, RT, U, a, φ)',s:'Fiche mémo A4'},
@@ -5810,21 +5845,246 @@ const PLANNING_DATA = [
        {h:'14h',a:'E52 : Formules avance + remboursement',s:'Fiche mémo A4'},
        {h:'14h30',a:'E52 : Formules MB, RB, RB%',s:'Fiche mémo A4'},
      ]},
-    {jour:'Jeudi', theme:'Double Simulation E52 + E4 enchaînées',
+    {jour:'Jeudi 24 avril', theme:'Double Simulation E52 + E4 enchaînées',
      objectif:'Simuler les conditions réelles de la semaine d\'examen',
      taches:[
        {h:'09h-11h',a:'E52 simulée (2h chrono) — corrigé 2024',s:'Corrigé E52 2024'},
        {h:'11h-12h',a:'Correction E52',s:'—'},
        {h:'14h-18h',a:'E4 simulée (4h chrono) — corrigé 2025',s:'Corrigé E4 2025'},
      ]},
-    {jour:'Vendredi', theme:'Révision finale et préparation logistique',
-     objectif:'Partir serein le jour J',
+    {jour:'Vendredi 25 avril', theme:'Dernier entraînement Anglais + BIM',
+     objectif:'Être prêt pour l\'oral anglais du 4 mai',
      taches:[
-       {h:'09h-10h',a:'Lire la fiche mémo A4 une dernière fois',s:'Fiche mémo A4'},
-       {h:'10h-11h',a:'Lire les "Points de vigilance" des deux corrigés',s:'Corrigés'},
-       {h:'11h-12h',a:'Préparer le matériel : calculatrice, stylos, règle',s:'—'},
-       {h:'14h-15h',a:'Relire la Synthèse',s:'Section Synthèse'},
-       {h:'15h00',a:'ARRÊT — repos complet',s:'—'},
+       {h:'09h-12h',a:'ANGLAIS : Dernier entraînement complet — présentation + interaction',s:'3 documents'},
+       {h:'14h-17h',a:'BIM : Navigation maquette, extraction données, nomenclatures',s:'Logiciel BIM'},
+     ]},
+    {jour:'Samedi 26 avril', theme:'Révision légère',
+     objectif:'Repos avant dernière semaine de Phase 1',
+     taches:[
+       {h:'09h-10h',a:'Relire fiche mémo A4',s:'Fiche mémo A4'},
+       {h:'10h-11h',a:'Anglais : relire plan de présentation',s:'Documents'},
+     ]},
+    {jour:'Dimanche 27 avril', theme:'REPOS', objectif:'Récupérer', taches:[]},
+  ]},
+  {sem:4, titre:'Phase 2 / Semaine 4 (28 avril - 4 mai) — BIM + Oral Anglais ★', jours:[
+    {jour:'Lundi 28 avril', theme:'BIM intensif + dernière prépa Anglais',
+     objectif:'Maîtriser modification/enrichissement maquette — Anglais coeff 3 dans 6 jours',
+     taches:[
+       {h:'09h-12h',a:'BIM : Modifier objets, enrichir attributs (description, coût)',s:'Logiciel BIM'},
+       {h:'14h-16h',a:'BIM : Extraction quantitatifs depuis maquette',s:'Logiciel BIM'},
+       {h:'16h-17h',a:'ANGLAIS : Dernière relecture des 3 documents + timing 5 min',s:'Documents anglais'},
+     ]},
+    {jour:'Mardi 29 avril', theme:'BIM : Import/Export + Collaboration',
+     objectif:'Maîtriser IFC, BCF, plateforme collaborative',
+     taches:[
+       {h:'09h-12h',a:'BIM : Import/export IFC, détection de conflits',s:'Logiciel BIM'},
+       {h:'14h-17h',a:'BIM : Exercice complet décomposition + quantification depuis maquette',s:'Exercice'},
+     ]},
+    {jour:'Mercredi 30 avril', theme:'BIM + Maintien E4/E52',
+     objectif:'Ne pas perdre les acquis E4/E52 pendant la prépa BIM',
+     taches:[
+       {h:'09h-12h',a:'BIM : Bilan carbone + programmation/automatisation',s:'Logiciel BIM'},
+       {h:'14h-15h30',a:'E4 : 1 QCM rapide de chaque thème (6 QCM en 1h30)',s:'QCM interactifs'},
+       {h:'15h30-17h',a:'E52 : 1 décompte mensuel + 1 calcul Cn de mémoire',s:'Exercices'},
+     ]},
+    {jour:'Jeudi 1er mai', theme:'FÉRIÉ — Repos ou révision légère BIM',
+     objectif:'Récupérer', taches:[
+       {h:'Optionnel',a:'Revoir les fonctions BIM les moins maîtrisées (1h max)',s:'Notes'},
+     ]},
+    {jour:'Vendredi 2 mai', theme:'BIM + Dernière relecture Anglais',
+     objectif:'Être serein pour l\'oral du 4 mai',
+     taches:[
+       {h:'09h-12h',a:'BIM : Simulation pratique type examen',s:'Exercice'},
+       {h:'14h-15h',a:'ANGLAIS : Dernière répétition orale chronométrée',s:'Documents'},
+       {h:'15h',a:'STOP — Repos complet',s:'—'},
+     ]},
+    {jour:'Samedi 3 mai', theme:'REPOS COMPLET avant oral Anglais',
+     objectif:'Vérifier itinéraire → LP Carole Peyrefitte, 21 Quai Tilsitt, Lyon 2e',
+     taches:[
+       {h:'—',a:'Préparer : convocation + pièce d\'identité + 3 documents anglais',s:'—'},
+     ]},
+    {jour:'★ Dimanche 4 mai', theme:'ÉPREUVE E2-B : ANGLAIS ORAL — 13h30 — Coeff 3',
+     objectif:'LP Carole Peyrefitte, Lyon 2e — Arriver à 13h00 — Durée 15 min',
+     taches:[
+       {h:'13h30',a:'Présentation structurée des 3 documents (5 min)',s:'Épreuve'},
+       {h:'13h35',a:'Entretien avec examinateur (10 min)',s:'Épreuve'},
+     ]},
+  ]},
+  {sem:5, titre:'Phase 2 / Semaine 5 (5-13 mai) — BIM intensif → Épreuve E6-A ★', jours:[
+    {jour:'Lundi 5 mai', theme:'BIM : Relevé et modélisation',
+     objectif:'Maîtriser nuage de points → maquette — E6-A coeff 4 dans 6 jours',
+     taches:[
+       {h:'09h-12h',a:'Nuage de points : import, nettoyage, assemblage',s:'Logiciel BIM'},
+       {h:'14h-17h',a:'Modélisation d\'ouvrage à partir du nuage de points',s:'Logiciel BIM'},
+     ]},
+    {jour:'Mardi 6 mai', theme:'BIM : Décomposition et quantification',
+     objectif:'Extraire des quantitatifs fiables depuis la maquette',
+     taches:[
+       {h:'09h-12h',a:'Décomposition ouvrage : lots, ouvrages élémentaires, interfaces',s:'Logiciel BIM'},
+       {h:'14h-17h',a:'Extraction de quantitatifs : nomenclatures, rapports, DPGF',s:'Logiciel BIM'},
+     ]},
+    {jour:'Mercredi 7 mai', theme:'BIM : Enrichissement + bilan carbone',
+     objectif:'Enrichir les objets et calculer l\'impact environnemental',
+     taches:[
+       {h:'09h-12h',a:'Enrichir maquette : attributs, coût, FDES',s:'Logiciel BIM'},
+       {h:'14h-17h',a:'Bilan carbone + outils de programmation (scripts, tableur)',s:'Logiciel BIM'},
+     ]},
+    {jour:'Jeudi 8 mai', theme:'FÉRIÉ — Repos',
+     objectif:'Récupérer avant les 2 derniers jours de prépa BIM', taches:[]},
+    {jour:'Vendredi 9 mai', theme:'BIM : Dernière simulation pratique',
+     objectif:'Être opérationnel pour lundi — vérifier tous les aspects',
+     taches:[
+       {h:'09h-12h',a:'Simulation pratique complète : sujet type → livrables',s:'Exercice'},
+       {h:'14h-17h',a:'Corriger + revoir les points faibles',s:'—'},
+     ]},
+    {jour:'Samedi 10 mai', theme:'REPOS avant BIM',
+     objectif:'Vérifier itinéraire → AFIP Formations, 40 rue des Antonins, Villeurbanne',
+     taches:[
+       {h:'—',a:'Préparer : convocation + pièce d\'identité + vérifier logiciels',s:'—'},
+     ]},
+    {jour:'★ Lun 11 → Mer 13 mai', theme:'ÉPREUVE E6-A : PROJET NUMÉRIQUE BIM — Coeff 4',
+     objectif:'AFIP Formations, Villeurbanne — 08h30-17h00 chaque jour (3 jours)',
+     taches:[
+       {h:'3 jours',a:'Épreuve pratique : maquette BIM, quantification, livrables numériques',s:'Épreuve'},
+     ]},
+  ]},
+  {sem:6, titre:'Phase 3 / Semaine 6 (14-21 mai) — SPRINT FINAL : 3 écrits en 3 jours ★★★', jours:[
+    {jour:'Mercredi 14 mai', theme:'Révision intense E4 + E52',
+     objectif:'J-6 avant E4 — Réactiver tous les réflexes après la semaine BIM',
+     taches:[
+       {h:'09h-10h',a:'E4 : Réciter de mémoire TOUTES les formules',s:'Fiche mémo A4'},
+       {h:'10h-12h',a:'E4 : Simulation partielle 2h (thèmes les plus faibles)',s:'Sujet annales'},
+       {h:'14h-15h',a:'E52 : Décompte 16 lignes de mémoire + Cn',s:'Exercices'},
+       {h:'15h-17h',a:'E52 : Simulation rapide 1h30 + correction',s:'Sujet annales'},
+     ]},
+    {jour:'Jeudi 15 mai', theme:'E1 Culture Générale + révision E4',
+     objectif:'J-4 avant E1 — Maîtriser la méthode synthèse + écriture perso',
+     taches:[
+       {h:'09h-10h',a:'E1 : Méthode synthèse : plan thématique, citations courtes, neutralité',s:'Fiches CGE'},
+       {h:'10h-12h',a:'E1 : Entraînement synthèse sur sujet annales CGE 2025',s:'Annales CGE'},
+       {h:'14h-15h',a:'E1 : Méthode écriture personnelle : thèse/antithèse/dépassement',s:'Fiches CGE'},
+       {h:'15h-17h',a:'E4 : Relire les 6 fiches en mode survol (10 min/fiche)',s:'Fiches E4'},
+     ]},
+    {jour:'Vendredi 16 mai', theme:'Simulations E1 + E52',
+     objectif:'Dernières simulations avant le week-end de repos',
+     taches:[
+       {h:'09h-12h',a:'E1 : Entraînement écriture personnelle (1h30) + relecture',s:'Annales CGE'},
+       {h:'14h-16h',a:'E52 : Dernière simulation 2h chrono',s:'Sujet annales'},
+       {h:'16h-17h',a:'Correction + noter les dernières erreurs',s:'—'},
+     ]},
+    {jour:'Samedi 17 mai', theme:'Dernière révision E4',
+     objectif:'J-3 — Dernier effort puis repos',
+     taches:[
+       {h:'09h-11h',a:'E4 : Dernière simulation partielle (thèmes faibles uniquement)',s:'Exercices'},
+       {h:'11h-12h',a:'Relire fiche mémo A4 complète',s:'Fiche mémo A4'},
+       {h:'14h',a:'STOP — REPOS COMPLET',s:'—'},
+     ]},
+    {jour:'Dimanche 18 mai', theme:'REPOS TOTAL avant les écrits',
+     objectif:'Dormir tôt — Préparer matériel — Vérifier itinéraire LGT Martinière Lyon 8e',
+     taches:[
+       {h:'Soir',a:'Relire fiche mémo A4 une dernière fois (15 min MAX)',s:'Fiche mémo A4'},
+       {h:'—',a:'Préparer : calculatrice mode examen + stylos bleu/noir + règle + convocation',s:'—'},
+     ]},
+    {jour:'★ Mardi 19 mai', theme:'ÉPREUVE E1 : CULTURE GÉNÉRALE — 14h30 — Coeff 4',
+     objectif:'LGT Martinière Monplaisir, Lyon 8e — Arriver 14h00 — Durée 3h',
+     taches:[
+       {h:'14h30-15h45',a:'Synthèse de documents (1h15) : plan thématique + rédaction neutre',s:'Épreuve'},
+       {h:'15h45-16h45',a:'Écriture personnelle (1h) : thèse/antithèse/dépassement argumenté',s:'Épreuve'},
+       {h:'16h45-17h30',a:'Relecture orthographe et ponctuation (15 min minimum)',s:'Épreuve'},
+       {h:'Soir',a:'Relire fiche mémo A4 pour E4 du lendemain (30 min max)',s:'Fiche mémo A4'},
+     ]},
+    {jour:'★ Mercredi 20 mai', theme:'ÉPREUVE E4 : ANALYSE DU PROJET — 14h00 — Coeff 4',
+     objectif:'LGT Martinière Monplaisir — Arriver 13h30 — Durée 4h',
+     taches:[
+       {h:'14h00-14h15',a:'Lire tout le sujet — identifier les thèmes',s:'Épreuve'},
+       {h:'14h15-16h15',a:'CALCULS en premier : fondations, acoustique, thermique → points assurés',s:'Épreuve'},
+       {h:'16h15-17h45',a:'Questions rédigées : MOE, réglementation, sécurité',s:'Épreuve'},
+       {h:'17h45-18h00',a:'Relecture de tous les calculs (15 min)',s:'Épreuve'},
+       {h:'Soir',a:'Relire formules E52 pour le lendemain (20 min max)',s:'Fiche mémo A4'},
+     ]},
+    {jour:'★ Jeudi 21 mai', theme:'ÉPREUVE E52 : SUIVI FINANCIER — 16h00 — Coeff 2',
+     objectif:'LGT Martinière Monplaisir — Arriver 15h30 — Durée 2h',
+     taches:[
+       {h:'09h-10h',a:'Le matin : réciter 16 lignes + formule Cn + avance',s:'Fiche mémo A4'},
+       {h:'10h-11h',a:'1 décompte mensuel rapide de mémoire puis STOP',s:'Exercices'},
+       {h:'16h00-16h05',a:'Lire tout le sujet — repérer les données chiffrées',s:'Épreuve'},
+       {h:'16h05-16h50',a:'Analyse des offres en premier (le plus long)',s:'Épreuve'},
+       {h:'16h50-17h25',a:'Révision des prix (Cn par mois)',s:'Épreuve'},
+       {h:'17h25-17h55',a:'Décompte mensuel (le plus structuré)',s:'Épreuve'},
+       {h:'17h55-18h00',a:'Vérifier : millième sup ? Avance sur TTC ? Remb. avant TVA ?',s:'Épreuve'},
+     ]},
+  ]},
+  {sem:7, titre:'Phase 4 (22 mai - 18 juin) — E51 Projet oral — COEFF 5 ★★', jours:[
+    {jour:'22-25 mai', theme:'Récupération + lancement E51',
+     objectif:'Se reposer après les 3 écrits puis lire le dossier E51 quand reçu',
+     taches:[
+       {h:'Ven-Sam',a:'REPOS complet après les écrits',s:'—'},
+       {h:'Dimanche',a:'Lire le sujet/dossier E51 attentivement (1ère lecture)',s:'Dossier E51'},
+       {h:'Lundi',a:'Analyser le dossier : identifier lots, prestations, contraintes',s:'Dossier E51'},
+     ]},
+    {jour:'26-31 mai', theme:'Travail sur le dossier E51 (semaine 1/3)',
+     objectif:'Produire CCTP + estimation + sous-détails de prix',
+     taches:[
+       {h:'Mar 26',a:'Description des ouvrages — CCTP du/des lot(s) + estimation ratios',s:'Dossier E51'},
+       {h:'Mer 27',a:'Coût de revient — sous-détails de prix, DS, frais chantier, FG, coeff PV',s:'Dossier E51'},
+       {h:'Jeu 28',a:'FÉRIÉ (Ascension)',s:'—'},
+       {h:'Ven 29',a:'Planification — ordonnancement, planning Gantt, chemin critique',s:'Dossier E51'},
+       {h:'Sam 30',a:'Stratégie commerciale — finaliser offre + mémoire technique',s:'Dossier E51'},
+     ]},
+    {jour:'1-7 juin', theme:'Rédaction + entraînement oral (semaine 2/3)',
+     objectif:'Structurer l\'exposé de 20 min et préparer les réponses aux questions',
+     taches:[
+       {h:'Lun 1',a:'Rédiger note de synthèse + structurer l\'exposé oral',s:'Dossier E51'},
+       {h:'Mar 2',a:'Préparer réponses aux questions probables du jury + chrono x2',s:'—'},
+       {h:'Mer 3',a:'Réviser aspects techniques + simulation orale avec chrono',s:'—'},
+       {h:'Jeu 4',a:'Réviser estimation + coût de revient + simulation orale',s:'Dossier E51'},
+       {h:'Ven 5',a:'Finaliser tous les documents numériques — RENDU si demandé',s:'Dossier E51'},
+     ]},
+    {jour:'8-14 juin', theme:'Simulations orales intensives (semaine 3/3)',
+     objectif:'Être fluide à l\'oral — 20 min exposé + 30 min entretien sans hésitation',
+     taches:[
+       {h:'Lun-Ven',a:'1 simulation orale complète par jour (50 min) + correction des faiblesses',s:'—'},
+       {h:'Sam 13',a:'Relire note de synthèse + repos',s:'Dossier E51'},
+       {h:'Dim 14',a:'REPOS TOTAL avant l\'oral',s:'—'},
+     ]},
+    {jour:'★ Lun 15 → Jeu 18 juin', theme:'ÉPREUVE E51 : ÉTUDE DESCRIPTIVE ET ÉCONOMIQUE — Coeff 5',
+     objectif:'LGT Martinière Monplaisir — 08h30-17h00 — LE PLUS GROS COEFFICIENT DU BTS',
+     taches:[
+       {h:'20 min',a:'Exposé : 5 min travail d\'équipe + 15 min travail personnel',s:'Épreuve'},
+       {h:'30 min',a:'Entretien avec jury (1 professionnel + 1-2 professeurs)',s:'Épreuve'},
+     ]},
+  ]},
+  {sem:8, titre:'Phase 5 (19-24 juin) — Maths + Physique — Coeff 2+2', jours:[
+    {jour:'Vendredi 19 juin', theme:'Maths : Éq. différentielles + Fonctions',
+     objectif:'Revoir les bases de l\'analyse — E3-A coeff 2',
+     taches:[
+       {h:'09h-12h',a:'Éq. diff 1er ordre : y\' + ay = b → solution générale + limite',s:'Fiches Maths'},
+       {h:'14h-17h',a:'Fonctions : dérivées, variations, limites, TVI',s:'Fiches Maths'},
+     ]},
+    {jour:'Samedi 20 juin', theme:'Maths : Probabilités + Statistiques',
+     objectif:'Maîtriser arbres, binomiale, normale, IC',
+     taches:[
+       {h:'09h-12h',a:'Probabilités : arbres, loi binomiale B(n,p), loi normale',s:'Fiches Maths'},
+       {h:'14h-17h',a:'Statistiques descriptives + intervalles de confiance',s:'Fiches Maths'},
+     ]},
+    {jour:'Dimanche 21 juin', theme:'Physique : Thermique + Acoustique',
+     objectif:'Revoir les fondamentaux physique du bâtiment — E3-B coeff 2',
+     taches:[
+       {h:'09h-12h',a:'Thermique : conduction, convection, rayonnement, résistance thermique',s:'Fiches Physique'},
+       {h:'14h-17h',a:'Acoustique : niveau sonore, réflexion, absorption, Sabine',s:'Fiches Physique'},
+     ]},
+    {jour:'Lundi 22 juin', theme:'Physique : Chimie + Simulation globale',
+     objectif:'Dernière révision avant les épreuves du lendemain',
+     taches:[
+       {h:'09h-12h',a:'Chimie : pH, oxydo-réduction, corrosion, polymères, chaux',s:'Fiches Physique'},
+       {h:'14h-16h',a:'Simulation maths (1h préparation + oral)',s:'Annales Maths'},
+       {h:'16h-17h',a:'Relire formules physique puis STOP',s:'Fiche mémo'},
+     ]},
+    {jour:'★ Mar 23 → Mer 24 juin', theme:'ÉPREUVES E3-A MATHS + E3-B PHYSIQUE — Coeff 2+2',
+     objectif:'LGT Martinière Monplaisir — 08h30-17h00 — DERNIÈRES ÉPREUVES',
+     taches:[
+       {h:'E3-A',a:'Maths : Oral 35 min (1h préparation + 15 min exposé + 20 min entretien)',s:'Épreuve'},
+       {h:'E3-B',a:'Physique : Pratique 2h (manipulation + compte-rendu)',s:'Épreuve'},
      ]},
   ]},
 ];
@@ -13624,18 +13884,16 @@ const QCMComponent = ({qcm}) => {
 // ══════════════════ PAGES ══════════════════
 
 const EXAM_CALENDAR = [
-  {date:'2026-03-09', label:'Rendu rapport U62', sub:'Avant 12h dans le centre d\'examen', color:'#ef4444', icon:'📋'},
-  {date:'2026-03-23', label:'Soutenance U62', sub:'Compte rendu d\'activités — AFIP Villeurbanne', color:'#ef4444', icon:'🎤'},
-  {date:'2026-04-06', label:'Info logiciels U61', sub:'Information sur les logiciels utilisés', color:'#f59e0b', icon:'💻'},
-  {date:'2026-05-04', label:'Récupération sujet U5', sub:'Dans le centre d\'examen', color:'#8b5cf6', icon:'📦'},
-  {date:'2026-05-05', label:'U31 — Mathématiques', sub:'Épreuve ponctuelle', color:'#8b5cf6', icon:'🔢', nav:'fiches_maths'},
-  {date:'2026-05-06', label:'U32 — Physique-Chimie', sub:'Épreuve ponctuelle', color:'#f97316', icon:'⚗️', nav:'fiches_physique'},
-  {date:'2026-05-19', label:'E1 — Culture Générale', sub:'Écrit 3h — 14h30 à 17h30', color:'#14b8a6', icon:'🇫🇷', nav:'fiches_francais'},
-  {date:'2026-05-20', label:'E4 — Analyse du projet', sub:'Écrit 4h — 14h à 18h (mise en loge)', color:'#3b82f6', icon:'📘', nav:'fiches_e4'},
-  {date:'2026-05-21', label:'U52 — Analyse financière', sub:'Écrit 2h — 16h à 18h (mise en loge)', color:'#22c55e', icon:'📗', nav:'fiches_e52'},
-  {date:'2026-06-05', label:'Rendu projet U5', sub:'Avant 16h dans le centre d\'examen', color:'#8b5cf6', icon:'📁'},
-  {date:'2026-06-08', label:'Soutenances U51', sub:'Étude descriptive — du 8 au 19 juin', color:'#8b5cf6', icon:'🎤'},
-  {date:'2026-06-20', label:'U61 — Projet numérique', sub:'Étude quantitative (selon planning)', color:'#d97706', icon:'💻'},
+  {date:'2026-03-23', label:'E6-B — Compte rendu activités', sub:'PASSÉ — AFIP Villeurbanne (23-25 mars)', color:'#64748b', icon:'✅'},
+  {date:'2026-04-27', label:'E2-A — Compréhension orale Anglais', sub:'PASSÉ — Lycée Condorcet, St Priest', color:'#64748b', icon:'✅'},
+  {date:'2026-05-04', label:'E2-B — Expression orale Anglais', sub:'Oral 15 min — 13h30 — LP Carole Peyrefitte, 21 Quai Tilsitt, Lyon 2e', color:'#f87171', icon:'🇬🇧', nav:'fiches_anglais'},
+  {date:'2026-05-11', label:'E6-A — Projet numérique BIM', sub:'3 jours (11-13 mai) — AFIP Villeurbanne, 40 rue des Antonins', color:'#d97706', icon:'💻'},
+  {date:'2026-05-19', label:'E1 — Culture Générale', sub:'Écrit 3h — 14h30 — LGT Martinière Monplaisir, Lyon 8e', color:'#14b8a6', icon:'🇫🇷', nav:'fiches_francais'},
+  {date:'2026-05-20', label:'E4 — Analyse du projet', sub:'Écrit 4h — 14h00 — LGT Martinière Monplaisir, Lyon 8e', color:'#3b82f6', icon:'📘', nav:'fiches_e4'},
+  {date:'2026-05-21', label:'E5-B — Analyse et suivi financiers', sub:'Écrit 2h — 16h00 — LGT Martinière Monplaisir, Lyon 8e', color:'#22c55e', icon:'📗', nav:'fiches_e52'},
+  {date:'2026-06-15', label:'E5-A — Étude descriptive et économique', sub:'Oral (15-18 juin) — LGT Martinière Monplaisir, Lyon 8e', color:'#8b5cf6', icon:'🎤'},
+  {date:'2026-06-23', label:'E3-A — Mathématiques', sub:'Oral (23-24 juin) — LGT Martinière Monplaisir, Lyon 8e', color:'#8b5cf6', icon:'🔢', nav:'fiches_maths'},
+  {date:'2026-06-23', label:'E3-B — Physique et Chimie', sub:'Pratique (23-24 juin) — LGT Martinière Monplaisir, Lyon 8e', color:'#f97316', icon:'⚗️', nav:'fiches_physique'},
 ];
 
 const Accueil = ({setNav}) => {
@@ -13643,7 +13901,7 @@ const Accueil = ({setNav}) => {
   useEffect(() => { const t = setInterval(() => setNow(new Date()), 60000); return () => clearInterval(t); }, []);
 
   const daysUntil = (ds) => Math.ceil((new Date(ds+'T00:00:00') - now) / 86400000);
-  const upcoming = EXAM_CALENDAR.map(e => ({...e, days: daysUntil(e.date)})).filter(e => e.days >= 0);
+  const upcoming = EXAM_CALENDAR.map(e => ({...e, days: daysUntil(e.date)})).filter(e => e.days >= 0 && e.color !== '#64748b');
   const nextExam = upcoming[0];
   const fmtDate = (ds) => {
     const d = new Date(ds+'T00:00:00');
@@ -13707,7 +13965,7 @@ const Accueil = ({setNav}) => {
         {label:'Synthèse',sub:'Fréquences et tendances 2022-2025',c:'#dc2626',nav:'synthese'},
         {label:'Annales Corrigées',sub:'E4 + E52 corrigés + 41 PDF officiels',c:'#7c3aed',nav:'annales'},
         {label:'Fiche Mémo A4',sub:'Résumé compact à imprimer recto-verso',c:'#0891b2',nav:'memo'},
-        {label:'Planning',sub:'Programme jour par jour avec cases à cocher',c:'#059669',nav:'planning'},
+        {label:'Planning',sub:'5 phases · 79 jours · basé sur les 29 coefficients',c:'#059669',nav:'planning'},
         {label:'Maths B1',sub:'6 fiches · 75 QCM · Annales corrigées · Mémo',c:'#8b5cf6',nav:'fiches_maths'},
         {label:'Physique',sub:'6 fiches · 60 QCM · Exercices guidés · Annales',c:'#f97316',nav:'fiches_physique'},
         {label:'Français CGE',sub:'10 fiches · 75 QCM · Thème 2026 · Gabarits',c:'#14b8a6',nav:'fiches_francais'},
@@ -15270,7 +15528,7 @@ const PlanningDay = ({jour}) => {
   );
 };
 
-const PlanningPage = ({data=PLANNING_DATA,title='Planning de Révision',subtitle='3 semaines structurées — priorités par fréquence d\'apparition aux épreuves',onBack}) => (
+const PlanningPage = ({data=PLANNING_DATA,title='Planning de Révision',subtitle='5 phases · 8 semaines · 79 jours — du 7 avril au 24 juin 2026 — basé sur les coefficients',onBack}) => (
   <div>
     {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
     <div className="page-title">{title}</div>
@@ -16065,7 +16323,7 @@ const SubjectHub = ({cfg,onModule,onBack}) => {
     {id:'qcm',     icon:'🧠', label:'QCM Interactifs',    sub:cfg.qcm().reduce((a,q)=>a+q.questions.length,0)+' questions'},
     {id:'synthese',icon:'📊', label:'Synthèse Récurrents', sub:'Fréquences par année'},
     {id:'memo',    icon:'🗒️', label:'Fiche Mémo A4',       sub:'Résumé imprimable'},
-    {id:'planning',icon:'📅', label:'Planning Révision',   sub:'2 semaines structurées'},
+    {id:'planning',icon:'📅', label:'Planning Révision',   sub:'5 phases · 8 semaines · coefficients'},
     {id:'annales', icon:'📝', label:'Annales PDF',          sub:cfg.annales().length+' documents'},
   ];
   return (
