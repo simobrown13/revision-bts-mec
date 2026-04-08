@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Phase 3 — Sprint Final E1+E4+E52 · 14-21 mai</title>
+<style>
+@page { size: A4 landscape; margin: 8mm; }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 8.5px; color: #1a1a1a; background: #fff; line-height: 1.3; }
+.header { background: linear-gradient(135deg, #991b1b, #dc2626); color: #fff; padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 14px; font-weight: 900; }
+.header .meta { font-size: 8px; text-align: right; opacity: 0.85; line-height: 1.4; }
+.profil-bar { background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; font-size: 7.5px; display: flex; gap: 10px; flex-wrap: wrap; }
+.profil-bar b { color: #991b1b; }
+.tag { padding: 1px 5px; border-radius: 3px; font-weight: 700; font-size: 7px; }
+.tag.fort { background: #dcfce7; color: #166534; } .tag.warn { background: #fef3c7; color: #92400e; } .tag.danger { background: #fee2e2; color: #991b1b; }
+.grid { display: grid; grid-template-columns: 80px repeat(7, 1fr); gap: 2px; margin-bottom: 3px; }
+.dow { text-align: center; font-size: 7.5px; font-weight: 800; color: #64748b; padding: 2px; }
+.wk { background: #991b1b; color: #fff; font-weight: 800; font-size: 7.5px; padding: 4px; border-radius: 3px 0 0 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.2; }
+.wk .wksub { font-size: 6.5px; font-weight: 400; opacity: 0.8; margin-top: 2px; }
+.cell { border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px; min-height: 88px; font-size: 7.5px; line-height: 1.25; }
+.cell .dh { font-size: 7.5px; font-weight: 800; color: #1e3a5f; margin-bottom: 2px; display: flex; justify-content: space-between; }
+.cell .dh .jm { font-size: 6.5px; color: #64748b; font-weight: 600; }
+.cell .t { margin-bottom: 1px; padding-left: 7px; text-indent: -7px; }
+.cell .t::before { content: "□ "; font-size: 8px; color: #94a3b8; }
+.cell .heure { color: #dc2626; font-weight: 700; font-size: 6.5px; }
+.cell .note { font-style: italic; color: #64748b; font-size: 6.5px; margin-top: 2px; }
+.e4 { background: #eff6ff; } .e52 { background: #f0fdf4; } .e1 { background: #f0fdfa; }
+.mix { background: #fff; } .repos { background: #f8fafc; border-color: #e2e8f0; }
+.sim { background: #fefce8; border: 1.5px solid #eab308; }
+.exam { border: 2.5px solid; }
+.exam-e1 { border-color: #14b8a6; background: #f0fdfa; }
+.exam-e4 { border-color: #3b82f6; background: #eff6ff; }
+.exam-e52 { border-color: #22c55e; background: #f0fdf4; }
+.badge { font-size: 7px; font-weight: 800; color: #fff; padding: 1px 5px; border-radius: 2px; display: inline-block; margin-bottom: 2px; }
+.badge-e1 { background: #14b8a6; } .badge-e4 { background: #3b82f6; } .badge-e52 { background: #22c55e; }
+.strat-box { border: 1.5px solid; border-radius: 4px; padding: 5px 8px; margin-top: 4px; font-size: 7.5px; line-height: 1.4; }
+.strat-e1 { border-color: #14b8a6; background: #f0fdfa; }
+.strat-e4 { border-color: #3b82f6; background: #eff6ff; }
+.strat-e52 { border-color: #22c55e; background: #f0fdf4; }
+.strat-box b { font-size: 8px; }
+.footer { text-align: center; font-size: 6.5px; color: #94a3b8; margin-top: 4px; border-top: 1px solid #e2e8f0; padding-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>PHASE 3 — SPRINT FINAL : 3 écrits en 3 jours</h1>
+    <div style="font-size:9px;opacity:0.9">14 → 21 mai · 8 jours · E1 coeff 4 + E4 coeff 4 + E52 coeff 2 = 10 coefficients (38% de la note)</div>
+  </div>
+  <div class="meta">BAHAFID Mohamed<br>BTS MEC 2026<br>Candidat libre</div>
+</div>
+
+<div class="profil-bar">
+  <div><b>Forces pour cette phase :</b> <span class="tag fort">E4 maîtrisé (exp. MOA+chantier)</span> <span class="tag fort">E52 maîtrisé (situations, offres)</span></div>
+  <div><b>Risques :</b> <span class="tag danger">E1 Français : peu préparé, méthode synthèse à travailler</span> <span class="tag warn">E4 Acoustique/Thermique : formules à consolider</span></div>
+  <div><b>Stratégie :</b> 50% du temps sur E1 (faiblesse) + 30% E4 (formules) + 20% E52 (maintien)</div>
+</div>
+
+<div class="grid">
+  <div class="dow"></div><div class="dow">LUNDI</div><div class="dow">MARDI</div><div class="dow">MERCREDI</div><div class="dow">JEUDI</div><div class="dow">VENDREDI</div><div class="dow">SAMEDI</div><div class="dow">DIMANCHE</div>
+</div>
+
+<div class="grid">
+  <div class="wk">SEM. 6<br>14-18 mai<div class="wksub">DERNIÈRES<br>RÉVISIONS</div></div>
+
+  <div class="cell mix"><div class="dh"><span>Mer 14</span><span class="jm">J-5</span></div>
+    <div class="heure">9h-10h REPOS après BIM</div>
+    <div class="heure">10h-12h E1 Français</div>
+    <div class="t">Méthode synthèse thématique</div>
+    <div class="t">Citations courtes, neutralité</div>
+    <div class="heure">14h-17h E1 Français</div>
+    <div class="t">Entraîn. synthèse CGE 2025</div>
+    <div class="t">Plan + rédaction complète</div>
+    <div class="note">⚠️ E1 = priorité n°1 cette semaine</div>
+  </div>
+
+  <div class="cell mix"><div class="dh"><span>Jeu 15</span><span class="jm">J-4</span></div>
+    <div class="heure">9h-12h E1 Français</div>
+    <div class="t">Écriture personnelle (1h30)</div>
+    <div class="t">Thèse/antithèse/dépassement</div>
+    <div class="t">Connecteurs logiques</div>
+    <div class="heure">14h-15h E1 Intro+conclusion</div>
+    <div class="heure">15h-17h E4 Relire 6 fiches</div>
+    <div class="t">10 min par fiche en survol</div>
+  </div>
+
+  <div class="cell sim"><div class="dh"><span>Ven 16</span><span class="jm">J-3</span></div>
+    <div class="heure">9h-11h SIMUL E52 2h</div>
+    <div class="t"><b>Dernière simulation E52</b></div>
+    <div class="heure">11h-12h Correction E52</div>
+    <div class="heure">14h-16h E1 Synthèse #2</div>
+    <div class="t">Sujet différent + correction</div>
+    <div class="heure">16h-17h E4 thèmes faibles</div>
+    <div class="t">Acoustique + thermique</div>
+  </div>
+
+  <div class="cell mix"><div class="dh"><span>Sam 17</span><span class="jm">J-2</span></div>
+    <div class="heure">9h-10h E52 de mémoire</div>
+    <div class="t">16 lignes + Cn + avance</div>
+    <div class="heure">10h-11h E4 de mémoire</div>
+    <div class="t">Classes béton + formules th.</div>
+    <div class="heure">11h-12h E1 connecteurs</div>
+    <div class="t">Relire fiche mémo A4</div>
+    <div class="t" style="text-indent:0;color:#dc2626;font-weight:800">STOP 14h — REPOS</div>
+  </div>
+
+  <div class="cell repos"><div class="dh"><span>Dim 18</span><span class="jm">J-1</span></div>
+    <div class="t" style="text-indent:0;font-weight:800;font-size:8px">REPOS TOTAL</div>
+    <div class="t" style="text-indent:0">Mémo A4 le soir (15 min)</div>
+    <div class="t" style="text-indent:0;color:#dc2626;font-weight:700">✓ Calculatrice mode examen</div>
+    <div class="t" style="text-indent:0;color:#dc2626;font-weight:700">✓ Stylos bleu/noir ×2</div>
+    <div class="t" style="text-indent:0;color:#dc2626;font-weight:700">✓ Règle + convocation + ID</div>
+    <div class="t" style="text-indent:0">→ LGT Martinière Monplaisir</div>
+    <div class="t" style="text-indent:0">41 rue A. Lumière, Lyon 8e</div>
+    <div class="t" style="text-indent:0;font-weight:700">Dormir tôt !</div>
+  </div>
+
+  <div class="cell exam-e1"><div class="dh"><span>★ Mar 19</span></div>
+    <div class="badge badge-e1">E1 · 14h30 · 3h · coeff 4</div>
+    <div style="font-weight:800;font-size:8px;margin:2px 0">Culture Générale</div>
+    <div style="font-size:7px;color:#475569">
+      LGT Martinière, Lyon 8e<br>
+      Arriver 14h00<br><br>
+      <b>14h30-14h45</b> Lire corpus<br>
+      <b>14h45-15h00</b> Plan thématique<br>
+      <b>15h00-16h15</b> Synthèse<br>
+      <b>16h15-17h15</b> Écriture perso<br>
+      <b>17h15-17h30</b> Relecture<br><br>
+      <i>Soir : mémo E4 30 min</i>
+    </div>
+  </div>
+
+  <div class="cell exam-e4"><div class="dh"><span>★ Mer 20</span></div>
+    <div class="badge badge-e4">E4 · 14h · 4h · coeff 4</div>
+    <div style="font-weight:800;font-size:8px;margin:2px 0">Analyse du Projet</div>
+    <div style="font-size:7px;color:#475569">
+      LGT Martinière, Lyon 8e<br>
+      Arriver 13h30<br><br>
+      <b>14h-14h15</b> Lire tout le sujet<br>
+      <b>14h15-16h15</b> CALCULS<br>
+      (fondations, acoust., therm.)<br>
+      <b>16h15-17h45</b> Rédaction<br>
+      (MOE, régl., sécurité)<br>
+      <b>17h45-18h</b> Relire calculs<br><br>
+      <i>Soir : formules E52 20 min</i>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="wk" style="background:#dc2626">★★★<br>JOUR J<br>E52<div class="wksub">21 MAI</div></div>
+
+  <div class="cell exam-e52" style="grid-column: span 2"><div class="dh"><span>★ Jeudi 21 mai — ÉPREUVE E52 : Analyse et suivi financiers</span></div>
+    <div class="badge badge-e52">E52 · 16h00 · 2h · coeff 2</div>
+    <div style="font-size:7.5px;color:#475569;margin-top:3px;line-height:1.4">
+      <b>LGT Martinière Monplaisir, Lyon 8e</b> — Arriver 15h30<br><br>
+      <b>LE MATIN (2h max puis STOP) :</b><br>
+      □ 9h-10h : Réciter 16 lignes + Cn + avance de mémoire<br>
+      □ 10h-11h : 1 décompte mensuel rapide — <b>11h = STOP</b><br><br>
+      <b>STRATÉGIE ÉPREUVE :</b><br>
+      □ 16h00-16h05 : LIRE tout le sujet — repérer données chiffrées<br>
+      □ 16h05-16h50 : Analyse des offres (le plus long)<br>
+      □ 16h50-17h25 : Révision des prix (Cn par mois)<br>
+      □ 17h25-17h55 : Décompte mensuel (le plus structuré)<br>
+      □ 17h55-18h00 : <b style="color:#dc2626">VÉRIFICATIONS : Cn millième SUP ? Avance sur TTC ? Remb. avant TVA ? RG 5% sur TTC ?</b>
+    </div>
+  </div>
+
+  <div class="cell repos" style="grid-column: span 5"><div class="dh"><span>Après le 21 mai</span></div>
+    <div style="font-size:8px;line-height:1.5;padding:4px">
+      <b>Vendredi 22 - Samedi 23 mai :</b> REPOS complet — décompression après 3 écrits<br>
+      <b>Dimanche 24 mai :</b> 1ère lecture du dossier E51 (quand reçu) → Phase 4<br><br>
+      <b>→ PHASE 4 : E51 Étude descriptive et économique (coeff 5 = LE PLUS GROS)</b>
+    </div>
+  </div>
+</div>
+
+<div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 6px;">
+  <div class="strat-box strat-e1">
+    <b>RÉFLEXES E1 (3h)</b><br>
+    ✓ Plan TOUJOURS thématique (jamais 1 doc = 1 partie)<br>
+    ✓ Citations courtes entre guillemets « ... » (l. 12)<br>
+    ✓ Synthèse = NEUTRE (pas d'opinion perso)<br>
+    ✓ Écriture perso = exemples perso + culturels<br>
+    ✓ Connecteurs : cependant, en outre, c'est pourquoi<br>
+    ✓ Toujours conclure par une ouverture
+  </div>
+  <div class="strat-box strat-e4">
+    <b>RÉFLEXES E4 (4h)</b><br>
+    ✓ "fondations" → classes expo + exigences + gel<br>
+    ✓ "façade" → catég. voie + DnT,A,tr + entrée air<br>
+    ✓ "thermique" → R, U, déphasage φ > 12h<br>
+    ✓ "sécurité" → blindage ≥1,30m + garde-corps<br>
+    ✓ "MOE" → 9 phases + critères sélection<br>
+    ✓ Calculs EN PREMIER → points assurés<br>
+    ⚡ Votre exp. chantier = bonus en sécurité/fondations
+  </div>
+  <div class="strat-box strat-e52">
+    <b>RÉFLEXES E52 (2h)</b><br>
+    ✓ Cn = arrondi millième SUPÉRIEUR<br>
+    ✓ Im-3 = indice de 3 mois AVANT<br>
+    ✓ Avance = 10% × TTC (pas HT)<br>
+    ✓ Remboursement = AVANT TVA<br>
+    ✓ RG = 5% × TTC mensuel<br>
+    ✓ Note prix = Nmax × (Meilleur/Candidat)<br>
+    ⚡ Votre exp. MOA = bonus en analyse offres
+  </div>
+</div>
+
+<div class="footer">Phase 3 — BTS MEC 2026 — BAHAFID Mohamed — 8 jours · E1 coeff 4 (19/5) + E4 coeff 4 (20/5) + E52 coeff 2 (21/5) = 10 coefficients</div>
+
+</body>
+</html>

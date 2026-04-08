@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Phases 4+5 — E51 + Maths/Physique · 22 mai - 24 juin</title>
+<style>
+@page { size: A4 landscape; margin: 8mm; }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 8.5px; color: #1a1a1a; background: #fff; line-height: 1.3; }
+.header { padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; color: #fff; }
+.h-e51 { background: linear-gradient(135deg, #5b21b6, #8b5cf6); }
+.header h1 { font-size: 14px; font-weight: 900; }
+.header .meta { font-size: 8px; text-align: right; opacity: 0.85; line-height: 1.4; }
+.profil-bar { border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; font-size: 7.5px; display: flex; gap: 10px; flex-wrap: wrap; }
+.pb-e51 { background: #f5f3ff; border: 1px solid #c4b5fd; }
+.profil-bar b { color: #5b21b6; }
+.tag { padding: 1px 5px; border-radius: 3px; font-weight: 700; font-size: 7px; }
+.tag.fort { background: #dcfce7; color: #166534; } .tag.warn { background: #fef3c7; color: #92400e; } .tag.new { background: #dbeafe; color: #1e40af; }
+.grid { display: grid; grid-template-columns: 80px repeat(7, 1fr); gap: 2px; margin-bottom: 3px; }
+.dow { text-align: center; font-size: 7.5px; font-weight: 800; color: #64748b; padding: 2px; }
+.wk { color: #fff; font-weight: 800; font-size: 7.5px; padding: 4px; border-radius: 3px 0 0 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.2; }
+.wk .wksub { font-size: 6.5px; font-weight: 400; opacity: 0.8; margin-top: 2px; }
+.wk-e51 { background: #5b21b6; } .wk-math { background: #7c3aed; }
+.cell { border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px; min-height: 72px; font-size: 7.5px; line-height: 1.25; }
+.cell .dh { font-size: 7.5px; font-weight: 800; color: #1e3a5f; margin-bottom: 2px; display: flex; justify-content: space-between; }
+.cell .dh .jm { font-size: 6.5px; color: #64748b; font-weight: 600; }
+.cell .t { margin-bottom: 1px; padding-left: 7px; text-indent: -7px; }
+.cell .t::before { content: "□ "; font-size: 8px; color: #94a3b8; }
+.cell .heure { color: #7c3aed; font-weight: 700; font-size: 6.5px; }
+.cell .note { font-style: italic; color: #64748b; font-size: 6.5px; margin-top: 2px; }
+.e51 { background: #f5f3ff; } .math { background: #faf5ff; }
+.repos { background: #f8fafc; border-color: #e2e8f0; }
+.exam { border: 2.5px solid; }
+.exam-e51 { border-color: #8b5cf6; background: #f5f3ff; }
+.exam-math { border-color: #a855f7; background: #faf5ff; }
+.badge { font-size: 7px; font-weight: 800; color: #fff; padding: 1px 5px; border-radius: 2px; display: inline-block; margin-bottom: 2px; }
+.badge-e51 { background: #8b5cf6; } .badge-math { background: #a855f7; }
+.sep { border-top: 3px solid #8b5cf6; margin: 8px 0 4px; }
+.strat-box { border: 1.5px solid #c4b5fd; background: #f5f3ff; border-radius: 4px; padding: 5px 8px; margin-top: 4px; font-size: 7.5px; line-height: 1.4; }
+.strat-box b { color: #5b21b6; }
+.footer { text-align: center; font-size: 6.5px; color: #94a3b8; margin-top: 4px; border-top: 1px solid #e2e8f0; padding-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header h-e51">
+  <div>
+    <h1>PHASE 4 — E51 Étude descriptive (COEFF 5) + PHASE 5 Maths/Physique</h1>
+    <div style="font-size:9px;opacity:0.9">22 mai → 24 juin · 34 jours · E51 coeff 5 (15-18 juin) + E3 coeff 4 (23-24 juin)</div>
+  </div>
+  <div class="meta">BAHAFID Mohamed<br>BTS MEC 2026<br>Candidat libre</div>
+</div>
+
+<div class="profil-bar pb-e51">
+  <div><b>Votre avantage E51 :</b> <span class="tag fort">CCTP rédigé en pro ✓</span> <span class="tag fort">Estimation prix (exp. MOA) ✓</span> <span class="tag fort">Sous-détails prix (chef chantier) ✓</span> <span class="tag fort">Planning MS Project ✓</span></div>
+  <div><b>À préparer :</b> <span class="tag new">Format BTS (note synthèse, soutenance 20+30 min)</span> <span class="tag warn">Coût global (cycle de vie)</span> <span class="tag warn">Planning 4D BIM</span></div>
+  <div><b>E51 = PLUS GROS COEFFICIENT DU BTS</b> · Sujet remis ~1 mois avant (mi-mai) · Oral 50 min devant jury (1 pro + 1-2 profs)</div>
+</div>
+
+<div class="grid">
+  <div class="dow"></div><div class="dow">LUNDI</div><div class="dow">MARDI</div><div class="dow">MERCREDI</div><div class="dow">JEUDI</div><div class="dow">VENDREDI</div><div class="dow">SAMEDI</div><div class="dow">DIMANCHE</div>
+</div>
+
+<!-- SEMAINE 7 : 22-25 mai (récupération) -->
+<div class="grid">
+  <div class="wk wk-e51">SEM. 7<br>19-25 mai<div class="wksub">Récup.<br>+ lancement<br>E51</div></div>
+  <div class="cell" style="background:#fef2f2;font-size:7px;text-align:center;display:flex;align-items:center;justify-content:center;grid-column:span 3"><b>← Épreuves E1 (mar 19) + E4 (mer 20) + E52 (jeu 21) ← voir Phase 3</b></div>
+  <div class="cell repos"><div class="dh"><span>Ven 22</span></div><div class="t" style="text-indent:0"><b>REPOS</b></div></div>
+  <div class="cell repos"><div class="dh"><span>Sam 23</span></div><div class="t" style="text-indent:0"><b>REPOS</b></div></div>
+  <div class="cell e51"><div class="dh"><span>Dim 24</span></div><div class="t">1ère lecture dossier E51</div><div class="t">Identifier le projet</div><div class="note">Si sujet reçu</div></div>
+</div>
+
+<!-- SEMAINE 8 : 25-31 mai -->
+<div class="grid">
+  <div class="wk wk-e51">SEM. 8<br>25-31 mai<div class="wksub">PRODUCTION<br>Documents<br>E51</div></div>
+  <div class="cell e51"><div class="dh"><span>Lun 25</span></div>
+    <div class="heure">9h-12h Analyse dossier</div>
+    <div class="t">Lots, prestations, contraintes</div>
+    <div class="heure">14h-17h Décomposition</div>
+    <div class="t">Lots, interfaces, limites</div>
+    <div class="note">⚡ Votre exp. MOA : décomp. ouvrage = naturel</div>
+  </div>
+  <div class="cell e51"><div class="dh"><span>Mar 26</span></div>
+    <div class="heure">9h-12h CCTP lot(s)</div>
+    <div class="t">Description technique ouvrages</div>
+    <div class="t">Localisation + prescriptions</div>
+    <div class="heure">14h-17h Estimation prix</div>
+    <div class="t">Ratios, prix composés, m²</div>
+    <div class="note">⚡ CCTP rédigés au Conseil Régional = acquis</div>
+  </div>
+  <div class="cell e51"><div class="dh"><span>Mer 27</span></div>
+    <div class="heure">9h-12h Coût de revient</div>
+    <div class="t">Sous-détails prix (DS, MO, mat.)</div>
+    <div class="t">Frais chantier, FG</div>
+    <div class="heure">14h-17h Prix de vente</div>
+    <div class="t">Coeff PV, bénéfice, aléas</div>
+    <div class="note">⚡ Chef de chantier = coûts réels maîtrisés</div>
+  </div>
+  <div class="cell repos"><div class="dh"><span>Jeu 28</span></div><div class="t" style="text-indent:0"><b>FÉRIÉ (Ascension)</b></div></div>
+  <div class="cell e51"><div class="dh"><span>Ven 29</span></div>
+    <div class="heure">9h-12h Planning</div>
+    <div class="t">Ordonnancement, Gantt</div>
+    <div class="t">Chemin critique</div>
+    <div class="heure">14h-17h Planning 4D</div>
+    <div class="t">Si maquette BIM disponible</div>
+    <div class="note">⚡ MS Project maîtrisé + BIM 4D = forte valeur</div>
+  </div>
+  <div class="cell e51"><div class="dh"><span>Sam 30</span></div>
+    <div class="heure">9h-12h Proposition commerciale</div>
+    <div class="t">Stratégie, prix de vente</div>
+    <div class="heure">14h-17h Mémoire technique</div>
+    <div class="t">Rédaction + mise en forme</div>
+  </div>
+  <div class="cell repos"><div class="dh"><span>Dim 31</span></div><div class="t" style="text-indent:0"><b>REPOS</b></div></div>
+</div>
+
+<!-- SEMAINE 9 : 1-7 juin -->
+<div class="grid">
+  <div class="wk wk-e51">SEM. 9<br>1-7 juin<div class="wksub">RÉDACTION<br>+ oral</div></div>
+  <div class="cell e51"><div class="dh"><span>Lun 1</span></div>
+    <div class="t">Note de synthèse</div>
+    <div class="t">Plan exposé 20 min</div>
+    <div class="t">5 min équipe + 15 min perso</div>
+  </div>
+  <div class="cell e51"><div class="dh"><span>Mar 2</span></div>
+    <div class="t">Réponses questions jury</div>
+    <div class="t">Chrono exposé ×2</div>
+    <div class="t">Anticiper questions techniques</div>
+  </div>
+  <div class="cell e51"><div class="dh"><span>Mer 3</span></div>
+    <div class="t">Révision aspects techniques</div>
+    <div class="t">Simulation orale complète</div>
+    <div class="t">(20 min exposé + 30 min Q)</div>
+  </div>
+  <div class="cell e51"><div class="dh"><span>Jeu 4</span></div>
+    <div class="t">Réviser estimation + CdR</div>
+    <div class="t">Simulation orale #2</div>
+  </div>
+  <div class="cell e51"><div class="dh"><span>Ven 5</span></div>
+    <div class="t"><b>Finaliser docs numériques</b></div>
+    <div class="t">RENDU dossier si demandé</div>
+    <div class="note">Vérifier format + nomenclature fichiers</div>
+  </div>
+  <div class="cell repos"><div class="dh"><span>Sam 6</span></div><div class="t" style="text-indent:0">REPOS</div></div>
+  <div class="cell repos"><div class="dh"><span>Dim 7</span></div><div class="t" style="text-indent:0">REPOS</div></div>
+</div>
+
+<!-- SEMAINE 10 : 8-14 juin -->
+<div class="grid">
+  <div class="wk wk-e51" style="background:#7c3aed">SEM. 10<br>8-14 juin<div class="wksub">SIMULATIONS<br>ORALES<br>★ E51</div></div>
+  <div class="cell e51"><div class="dh"><span>Lun 8</span></div><div class="t">Simul. orale 50 min #3</div><div class="t">Corriger faiblesses</div></div>
+  <div class="cell e51"><div class="dh"><span>Mar 9</span></div><div class="t">Simul. orale #4</div><div class="t">Fluidité + timing</div></div>
+  <div class="cell e51"><div class="dh"><span>Mer 10</span></div><div class="t">Simul. orale #5</div><div class="t">Questions pièges jury</div></div>
+  <div class="cell e51"><div class="dh"><span>Jeu 11</span></div><div class="t">Simul. orale #6</div><div class="t">Coût global + planning</div></div>
+  <div class="cell e51"><div class="dh"><span>Ven 12</span></div><div class="t">Dernière simulation</div><div class="t">Relire note synthèse</div></div>
+  <div class="cell repos"><div class="dh"><span>Sam 13</span></div><div class="t" style="text-indent:0">Relecture légère</div></div>
+  <div class="cell repos"><div class="dh"><span>Dim 14</span><span class="jm">J-1</span></div>
+    <div class="t" style="text-indent:0"><b>REPOS TOTAL</b></div>
+    <div class="t" style="text-indent:0;color:#7c3aed;font-weight:700">✓ Dossier numérique prêt</div>
+    <div class="t" style="text-indent:0;color:#7c3aed;font-weight:700">✓ Convocation + ID</div>
+  </div>
+</div>
+
+<!-- SEMAINE 11 : E51 + début Maths -->
+<div class="grid">
+  <div class="wk" style="background:#dc2626">SEM. 11<br>15-21 juin<div class="wksub">★ E51<br>+ MATHS</div></div>
+  <div class="cell exam-e51"><div class="dh"><span>★ Lun 15</span></div>
+    <div class="badge badge-e51">E51 · coeff 5</div>
+    <div style="font-weight:800;font-size:8px">Étude descriptive</div>
+    <div style="font-size:7px;color:#475569">LGT Martinière<br>15→18 juin<br>20 min exposé<br>30 min entretien<br>Jury : 1 pro + profs</div>
+  </div>
+  <div class="cell exam-e51"><div class="dh"><span>Mar 16</span></div><div style="font-size:7px;text-align:center;padding-top:15px">← E51 suite</div></div>
+  <div class="cell exam-e51"><div class="dh"><span>Mer 17</span></div><div style="font-size:7px;text-align:center;padding-top:15px">← E51 suite</div></div>
+  <div class="cell exam-e51"><div class="dh"><span>Jeu 18</span></div><div style="font-size:7px;text-align:center;padding-top:15px">← E51 fin</div></div>
+  <div class="cell math"><div class="dh"><span>Ven 19</span></div>
+    <div class="heure">9h-12h Maths</div>
+    <div class="t">Éq. diff 1er ordre</div>
+    <div class="t">y'+ay=b → solution</div>
+    <div class="heure">14h-17h Maths</div>
+    <div class="t">Fonctions : dérivées,</div>
+    <div class="t">variations, limites, TVI</div>
+  </div>
+  <div class="cell math"><div class="dh"><span>Sam 20</span></div>
+    <div class="heure">9h-12h Maths</div>
+    <div class="t">Probas : arbres, B(n,p)</div>
+    <div class="t">Loi normale</div>
+    <div class="heure">14h-17h</div>
+    <div class="t">Stats + IC</div>
+  </div>
+  <div class="cell math"><div class="dh"><span>Dim 21</span></div>
+    <div class="heure">9h-12h Physique</div>
+    <div class="t">Thermique bâtiment</div>
+    <div class="t">R, U, conduction</div>
+    <div class="heure">14h-17h Physique</div>
+    <div class="t">Acoustique bâtiment</div>
+    <div class="t">dB, Sabine, absorption</div>
+  </div>
+</div>
+
+<!-- SEMAINE 12 : Maths + Physique -->
+<div class="grid">
+  <div class="wk wk-math">SEM. 12<br>22-24 juin<div class="wksub">★ DERNIÈRES<br>ÉPREUVES</div></div>
+  <div class="cell math"><div class="dh"><span>Lun 22</span><span class="jm">J-1</span></div>
+    <div class="heure">9h-12h Physique</div>
+    <div class="t">Chimie : pH, oxydo-réd.</div>
+    <div class="t">Corrosion, polymères, chaux</div>
+    <div class="heure">14h-16h Simul maths oral</div>
+    <div class="t" style="text-indent:0;color:#7c3aed;font-weight:700">STOP 17h</div>
+    <div class="t" style="text-indent:0;color:#7c3aed;font-weight:700">✓ Convocation + ID</div>
+  </div>
+  <div class="cell exam-math"><div class="dh"><span>★ Mar 23</span></div>
+    <div class="badge badge-math">E3 · coeff 2+2</div>
+    <div style="font-weight:800;font-size:8px">Maths + Physique</div>
+    <div style="font-size:7px;color:#475569">LGT Martinière<br>23→24 juin<br><br><b>E3-A Maths :</b><br>Oral 35 min<br>(1h prépa + 15 min<br>exposé + 20 min Q)<br><br><b>E3-B Physique :</b><br>Pratique 2h<br>(manip + CR)</div>
+  </div>
+  <div class="cell exam-math"><div class="dh"><span>★ Mer 24</span></div>
+    <div style="text-align:center;padding-top:20px">
+      <div style="font-size:7px;color:#475569">← E3 fin</div>
+      <div style="font-size:14px;margin:8px 0">🎉</div>
+      <div style="font-size:10px;font-weight:900;color:#22c55e">FIN DU BTS !</div>
+    </div>
+  </div>
+  <div class="cell repos" style="grid-column:span 4;text-align:center;display:flex;align-items:center;justify-content:center">
+    <div style="font-size:12px;font-weight:900;color:#8b5cf6">🎉 LIBERTÉ ! Résultats en juillet sur e-resultats.ac-lyon.fr</div>
+  </div>
+</div>
+
+<div class="strat-box">
+  <b>STRATÉGIE E51 adaptée à votre profil BAHAFID :</b><br>
+  ✅ <b>CCTP + estimation</b> = votre cœur de métier (4,5 ans MOA + BIMCO) → rédiger rapidement, focus sur la forme BTS<br>
+  ✅ <b>Coût de revient + sous-détails</b> = votre exp. chef de chantier (coûts réels MO, matériaux, matériels) → avantage majeur<br>
+  ✅ <b>Planning</b> = MS Project maîtrisé + BIM 4D possible avec Navisworks/Revit → valoriser cette compétence rare<br>
+  ⚠️ <b>Soutenance orale</b> = format BTS spécifique (20+30 min) → s'entraîner au chrono, anticiper questions jury<br>
+  ⚠️ <b>Coût global</b> = investissement + maintenance + exploitation + déconstruction → peut-être moins pratiqué, revoir la théorie<br>
+  💡 <b>Conseil :</b> Votre double vision MOA/entreprise est TRÈS valorisée par les jurys. Mettez-la en avant dans l'exposé.
+</div>
+
+<div class="footer">Phases 4+5 — BTS MEC 2026 — BAHAFID Mohamed — E51 coeff 5 (15-18 juin) + E3-A coeff 2 + E3-B coeff 2 (23-24 juin) = 9 coefficients</div>
+
+</body>
+</html>

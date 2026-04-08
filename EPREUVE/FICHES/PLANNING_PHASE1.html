@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Phase 1 — E4 + E52 + Anglais · 8-27 avril</title>
+<style>
+@page { size: A4 landscape; margin: 8mm; }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 8.5px; color: #1a1a1a; background: #fff; line-height: 1.3; }
+
+.header { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: #fff; padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 14px; font-weight: 900; }
+.header .meta { font-size: 8px; text-align: right; opacity: 0.85; line-height: 1.4; }
+
+.profil-bar { background: #f0f9ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; font-size: 7.5px; display: flex; gap: 12px; flex-wrap: wrap; }
+.profil-bar b { color: #1e3a5f; }
+.profil-tag { background: #dbeafe; color: #1e40af; padding: 1px 5px; border-radius: 3px; font-weight: 700; font-size: 7px; }
+.profil-tag.fort { background: #dcfce7; color: #166534; }
+.profil-tag.moyen { background: #fef3c7; color: #92400e; }
+.profil-tag.faible { background: #fee2e2; color: #991b1b; }
+
+.grid { display: grid; grid-template-columns: 80px repeat(7, 1fr); gap: 2px; margin-bottom: 3px; }
+.dow { text-align: center; font-size: 7.5px; font-weight: 800; color: #64748b; padding: 2px; }
+.wk { background: #1e3a5f; color: #fff; font-weight: 800; font-size: 7.5px; padding: 4px; border-radius: 3px 0 0 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.2; }
+.wk .wksub { font-size: 6.5px; font-weight: 400; opacity: 0.8; margin-top: 2px; }
+
+.cell { border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px; min-height: 72px; font-size: 7.5px; line-height: 1.25; position: relative; }
+.cell .dh { font-size: 7.5px; font-weight: 800; color: #1e3a5f; margin-bottom: 2px; display: flex; justify-content: space-between; }
+.cell .dh .jm { font-size: 6.5px; color: #64748b; font-weight: 600; }
+.cell .t { margin-bottom: 1px; padding-left: 7px; text-indent: -7px; }
+.cell .t::before { content: "□ "; font-size: 8px; color: #94a3b8; }
+.cell .heure { color: #3b82f6; font-weight: 700; font-size: 6.5px; }
+.cell .note { font-style: italic; color: #64748b; font-size: 6.5px; margin-top: 2px; }
+
+/* Types */
+.e4 { background: #eff6ff; } .e52 { background: #f0fdf4; }
+.ang { background: #fef2f2; } .bim { background: #fffbeb; }
+.mix { background: #fff; } .repos { background: #f8fafc; border-color: #e2e8f0; }
+.sim { background: #fefce8; border: 1.5px solid #eab308; }
+.exam { border: 2px solid #ef4444; background: #fef2f2; }
+
+.badge { font-size: 6.5px; font-weight: 800; color: #fff; padding: 1px 4px; border-radius: 2px; display: inline-block; margin-bottom: 2px; }
+.badge-e4 { background: #3b82f6; } .badge-e52 { background: #22c55e; }
+.badge-ang { background: #ef4444; } .badge-bim { background: #f59e0b; }
+
+.strat { background: #f0fdf4; border: 1px solid #86efac; border-radius: 4px; padding: 4px 6px; margin-top: 4px; font-size: 7px; line-height: 1.35; }
+.strat b { color: #166534; }
+.warn { background: #fef3c7; border-left: 3px solid #f59e0b; padding: 3px 6px; font-size: 7px; margin-top: 3px; border-radius: 0 3px 3px 0; }
+
+.footer { text-align: center; font-size: 6.5px; color: #94a3b8; margin-top: 4px; border-top: 1px solid #e2e8f0; padding-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>PHASE 1 — E4 + E52 + Anglais</h1>
+    <div style="font-size:9px;opacity:0.9">8 → 27 avril 2026 · 20 jours · Objectif : consolider les acquis + préparer E2-A</div>
+  </div>
+  <div class="meta">
+    BAHAFID Mohamed<br>
+    BTS MEC 2026 — Candidat libre<br>
+    Académie de Lyon
+  </div>
+</div>
+
+<div class="profil-bar">
+  <div><b>Profil :</b> 8 ans BTP · Chargé d'affaires MOA + Chef de chantier GO + BIM</div>
+  <div><b>Forces :</b> <span class="profil-tag fort">E4 Fondations/Sécu ✓</span> <span class="profil-tag fort">E52 Offres/Décompte ✓</span> <span class="profil-tag fort">BIM Revit/Dynamo ✓</span></div>
+  <div><b>À renforcer :</b> <span class="profil-tag moyen">Acoustique formules</span> <span class="profil-tag moyen">Thermique φ</span> <span class="profil-tag faible">Anglais écoute</span> <span class="profil-tag moyen">E1 Français méthode</span></div>
+  <div><b>Adapté :</b> Moins de temps sur sécurité/offres/BIM (maîtrisés) → Plus sur acoustique/thermique/anglais</div>
+</div>
+
+<div class="grid">
+  <div class="dow"></div><div class="dow">LUNDI</div><div class="dow">MARDI</div><div class="dow">MERCREDI</div><div class="dow">JEUDI</div><div class="dow">VENDREDI</div><div class="dow">SAMEDI</div><div class="dow">DIMANCHE</div>
+</div>
+
+<!-- SEMAINE 1 -->
+<div class="grid">
+  <div class="wk">SEM. 1<br>7-13 avr<div class="wksub">E4+E52<br>fondamentaux</div></div>
+
+  <div class="cell repos"><div class="dh"><span>Lun 7</span></div>
+    <div class="t">Lire le planning complet</div>
+    <div class="t">Installer/vérifier app révision</div>
+    <div class="note">Démarrage en douceur</div>
+  </div>
+
+  <div class="cell e4"><div class="dh"><span>Mar 8</span><span class="jm">J-41</span></div>
+    <div class="heure">9h-12h E4 Fondations</div>
+    <div class="t">F03 : 18 classes béton</div>
+    <div class="t">Exigences (résist., w/c, enrob.)</div>
+    <div class="heure">14h-17h</div>
+    <div class="t">QCM Fondations (15 Q)</div>
+    <div class="t">Exercice + Corrigé E4 2025</div>
+    <div class="note">⚡ Vous connaissez déjà les classes de terrain → focus sur les valeurs chiffrées</div>
+  </div>
+
+  <div class="cell e4"><div class="dh"><span>Mer 9</span><span class="jm">J-40</span></div>
+    <div class="heure">9h-12h E4 Acoustique ← PRIORITÉ</div>
+    <div class="t">F05 : 5 catég. voies</div>
+    <div class="t">Entrées d'air AVENT/SMEC</div>
+    <div class="t">Sabine TR = 0,16×V/A</div>
+    <div class="heure">14h-17h</div>
+    <div class="t">QCM Acoustique (15 Q)</div>
+    <div class="t">Exo complet + Corrigé E4 2025</div>
+    <div class="note">⚠️ Thème MOINS maîtrisé → y passer plus de temps</div>
+  </div>
+
+  <div class="cell e52"><div class="dh"><span>Jeu 10</span><span class="jm">J-39</span></div>
+    <div class="heure">9h-12h E52 Révision prix</div>
+    <div class="t">F08 : Cn = 0,15+0,85×(Im/I0)</div>
+    <div class="t">Arrondi millième SUP</div>
+    <div class="t">10 calculs Cn chronométrés</div>
+    <div class="heure">14h-17h</div>
+    <div class="t">QCM Rév. prix (15 Q)</div>
+    <div class="t">Tableau Cn 4 mois (Corr. 2024)</div>
+    <div class="note">⚡ Vous maîtrisez les indices BT → focus sur le calcul rapide</div>
+  </div>
+
+  <div class="cell e52"><div class="dh"><span>Ven 11</span><span class="jm">J-38</span></div>
+    <div class="heure">9h-12h E52 Situation travaux</div>
+    <div class="t">F09 : 16 lignes décompte</div>
+    <div class="t">Avance >50k€ + remb. 65%</div>
+    <div class="heure">14h-17h</div>
+    <div class="t">QCM Sit. travaux (15 Q)</div>
+    <div class="t">Décompte mois 4 (Corr. 2024)</div>
+    <div class="note">⚡ Votre exp. chef de chantier = avantage pour comprendre les situations</div>
+  </div>
+
+  <div class="cell sim"><div class="dh"><span>Sam 12</span><span class="jm">J-37</span></div>
+    <div class="heure">9h-11h E52 Offres + Rentabilité</div>
+    <div class="t">F07 Analyse offres (survol)</div>
+    <div class="t">F10 Rentabilité DS/MB/RB</div>
+    <div class="heure">14h-16h SIMULATION</div>
+    <div class="t"><b>SIMUL E52 — 2h chrono</b></div>
+    <div class="t">Correction + erreurs</div>
+    <div class="note">⚡ Offres maîtrisées (exp. MOA) → survol rapide puis simulation</div>
+  </div>
+
+  <div class="cell repos"><div class="dh"><span>Dim 13</span></div>
+    <div class="t" style="text-indent:0"><b>REPOS</b></div>
+    <div class="t" style="text-indent:0">Fiche mémo A4 (15 min)</div>
+  </div>
+</div>
+
+<!-- SEMAINE 2 -->
+<div class="grid">
+  <div class="wk">SEM. 2<br>14-20 avr<div class="wksub">E4 second.<br>+ ANGLAIS<br>E2-A J-13</div></div>
+
+  <div class="cell mix"><div class="dh"><span>Lun 14</span><span class="jm">J-35</span></div>
+    <div class="heure">9h-12h E4 Réglementation</div>
+    <div class="t">F02 : PC, PLU, ERP, MH</div>
+    <div class="t">RT2012 vs RE2020</div>
+    <div class="heure">14h-15h Exercices réglementaires</div>
+    <div class="heure">15h-17h 🎧 ANGLAIS</div>
+    <div class="t">Écoute BTP anglais (podcast/vidéo)</div>
+    <div class="t">Choisir 3 docs pour E2-B</div>
+  </div>
+
+  <div class="cell e4"><div class="dh"><span>Mar 15</span><span class="jm">J-34</span></div>
+    <div class="heure">9h-12h E4 Thermique ← PRIORITÉ</div>
+    <div class="t">F04 : R, RT, U, a, φ</div>
+    <div class="t">RE2020 : U≤0,20 / φ>12h</div>
+    <div class="heure">14h-16h</div>
+    <div class="t">QCM Thermique + exo complet</div>
+    <div class="heure">16h-17h 🎧 Écoute ANG</div>
+    <div class="note">⚠️ Déphasage = piège fréquent → bien maîtriser φ=0,023×e/√a</div>
+  </div>
+
+  <div class="cell mix"><div class="dh"><span>Mer 16</span><span class="jm">J-33</span></div>
+    <div class="heure">9h-12h E4 MOE</div>
+    <div class="t">F01 : 9 phases (survol rapide)</div>
+    <div class="t">Notation offres MOE</div>
+    <div class="heure">14h-15h 🎧 Écoute ANG (simul)</div>
+    <div class="heure">15h-17h 🇬🇧 Structurer prés. orale</div>
+    <div class="note">⚡ Vous connaissez les phases MOE (exp. MOA) → survol + exercice</div>
+  </div>
+
+  <div class="cell mix"><div class="dh"><span>Jeu 17</span><span class="jm">J-32</span></div>
+    <div class="heure">9h-12h E4 Sécurité (survol)</div>
+    <div class="t">F06 : Blindage + garde-corps</div>
+    <div class="heure">14h-15h 🎧 Simul écoute ANG</div>
+    <div class="heure">15h-17h 🇬🇧 Oral x3 chrono</div>
+    <div class="note">⚡ Sécurité chantier = votre quotidien de chef de chantier → survol rapide</div>
+  </div>
+
+  <div class="cell mix"><div class="dh"><span>Ven 18</span><span class="jm">J-31</span></div>
+    <div class="heure">9h-11h E52 Rentabilité</div>
+    <div class="t">DS, MB, RB, MBH + exercice</div>
+    <div class="heure">11h-12h Comparatif prévi/réel</div>
+    <div class="heure">14h-15h 🎧 Simul écoute ANG</div>
+    <div class="heure">15h-17h 🇬🇧 Simul orale complète</div>
+  </div>
+
+  <div class="cell sim"><div class="dh"><span>Sam 19</span><span class="jm">J-30</span></div>
+    <div class="heure">9h-13h SIMULATION</div>
+    <div class="t"><b>SIMUL E4 — 4h chrono</b></div>
+    <div class="heure">14h-17h</div>
+    <div class="t">Correction + thèmes faibles</div>
+  </div>
+
+  <div class="cell repos"><div class="dh"><span>Dim 20</span></div>
+    <div class="t" style="text-indent:0"><b>REPOS</b></div>
+  </div>
+</div>
+
+<!-- SEMAINE 3 -->
+<div class="grid">
+  <div class="wk" style="background:#991b1b">SEM. 3<br>21-27 avr<div class="wksub">CONSOL.<br>★ E2-A<br>LE 27 !</div></div>
+
+  <div class="cell mix"><div class="dh"><span>Lun 21</span><span class="jm">J-28</span></div>
+    <div class="heure">9h-12h Rév. croisée E4+E52</div>
+    <div class="t">Exercices ratés uniquement</div>
+    <div class="t">Flashcards formules</div>
+    <div class="heure">14h-16h 1 exo par thème</div>
+    <div class="heure">16h-17h 🎧 Écoute ANG</div>
+  </div>
+
+  <div class="cell mix"><div class="dh"><span>Mar 22</span><span class="jm">J-27</span></div>
+    <div class="heure">9h-11h Calculs chronos</div>
+    <div class="t">Décompte <15 min ✓</div>
+    <div class="t">Cn <12 min ✓</div>
+    <div class="t">Offres <20 min ✓</div>
+    <div class="heure">14h-15h 🎧 Simul écoute</div>
+    <div class="heure">15h-17h 🇬🇧 Simul oral x2</div>
+  </div>
+
+  <div class="cell mix"><div class="dh"><span>Mer 23</span><span class="jm">J-26</span></div>
+    <div class="heure">9h-12h Mémorisation totale</div>
+    <div class="t">Toutes formules de mémoire</div>
+    <div class="t">16 lignes de mémoire</div>
+    <div class="heure">14h-17h 💻 BIM révision</div>
+    <div class="note">⚡ Revit maîtrisé → juste se remettre dans le bain</div>
+  </div>
+
+  <div class="cell sim"><div class="dh"><span>Jeu 24</span><span class="jm">J-25</span></div>
+    <div class="heure">9h-11h</div>
+    <div class="t"><b>SIMUL E52 — 2h chrono</b></div>
+    <div class="heure">14h-18h</div>
+    <div class="t"><b>SIMUL E4 — 4h chrono</b></div>
+  </div>
+
+  <div class="cell ang"><div class="dh"><span>Ven 25</span><span class="jm">J-2</span></div>
+    <div class="heure">9h-11h 🎧 2 simul écoute ANG</div>
+    <div class="heure">11h-12h 🇬🇧 Relire plan oral</div>
+    <div class="heure">14h-17h 💻 BIM navigation</div>
+    <div class="note">Dernière prépa anglais avant E2-A lundi</div>
+  </div>
+
+  <div class="cell repos"><div class="dh"><span>Sam 26</span><span class="jm">J-1</span></div>
+    <div class="t" style="text-indent:0">🎧 Écoute légère 15 min</div>
+    <div class="t" style="text-indent:0">Vocabulaire BTP anglais</div>
+    <div class="t" style="text-indent:0"><b>STOP à 10h</b></div>
+    <div class="t" style="text-indent:0;color:#ef4444;font-weight:700">Préparer convoc + ID</div>
+    <div class="t" style="text-indent:0">Itinéraire → Lycée Condorcet, St Priest</div>
+  </div>
+
+  <div class="cell exam"><div class="dh"><span>★ Lun 27</span></div>
+    <div class="badge badge-ang">E2-A · 13h30 · 30 min</div>
+    <div style="font-weight:700;margin:2px 0">Compréhension orale</div>
+    <div style="font-size:7px;color:#475569">
+      Lycée Condorcet<br>
+      29 rue E. Rostand, St Priest<br>
+      <b>Salle E302</b><br><br>
+      1ère écoute : thème général<br>
+      2ème écoute : infos précises<br>
+      3ème écoute : compléter<br>
+      CR structuré en français
+    </div>
+  </div>
+</div>
+
+<div class="strat">
+  <b>STRATÉGIE PHASE 1 adaptée à votre profil :</b><br>
+  ✅ <b>Fondations/Sécurité/Offres/BIM</b> = vos points forts (8 ans d'exp.) → survol + exercices de rapidité, pas de cours<br>
+  ⚠️ <b>Acoustique + Thermique</b> = formules théoriques moins pratiquées → y consacrer 2× plus de temps<br>
+  ⚠️ <b>Anglais E2-A</b> = 1ère épreuve J-19 → 1-2h/jour dès semaine 2 (écoute + vocabulaire BTP)<br>
+  ⚡ <b>MOE/Réglementation</b> = votre exp. MOA au Conseil Régional couvre 80% du contenu → juste mémoriser les valeurs exactes
+</div>
+
+<div class="warn">
+  ⚠️ <b>Pièges à éviter :</b> Cn arrondi au millième SUPÉRIEUR (pas inférieur) · Remboursement avance AVANT TVA · Retenue garantie 5% sur TTC · φ > 12h (pas 10h) · Im-3 = indice de 3 mois AVANT
+</div>
+
+<div class="footer">Phase 1 — BTS MEC 2026 — BAHAFID Mohamed — 20 jours · E4 coeff 4 + E52 coeff 2 + E2-A coeff 3</div>
+
+</body>
+</html>
