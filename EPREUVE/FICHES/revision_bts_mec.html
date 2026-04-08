@@ -1939,885 +1939,387 @@ const MemoPhysiqueVerso = () => (
 // ══════════════════ 1. FORMULES (MÉTHODES) ══════════════════
 
 const FORMULES_FRANCAIS = [
-  // ── Section 1 : Méthodologie Synthèse ──
-  {section:'CGE — Méthodologie Synthèse', color:'#14b8a6', items:[
-    {name:'Structure de l\'introduction',
-     code:'Intro = Amorce + Problématique + Annonce du plan\n\n1. Amorce  → phrase générale liée au thème du corpus\n2. Présentation du corpus (auteur, titre, date, nature, thèse)\n3. Problématique = question soulevée par l\'ensemble des documents\n4. Annonce du plan thématique (2 ou 3 axes)',
-     vars:'Ne JAMAIS annoncer un plan par auteur/document\nToujours regrouper par THÈMES transversaux'},
-    {name:'Structure du développement',
-     code:'2 ou 3 parties thématiques\nChaque partie :\n  → Idée directrice (phrase-chapeau)\n  → Confrontation des documents (accords / oppositions)\n  → Citations courtes intégrées entre guillemets\n  → Transition vers la partie suivante',
-     vars:'Confronter = montrer les convergences ET divergences\nNe jamais résumer un document seul dans une partie\nÉquilibre : chaque document cité au moins 2 fois'},
-    {name:'Structure de la conclusion',
-     code:'Conclusion = Bilan synthétique\n  → Rappel des axes principaux (sans répéter)\n  → Réponse à la problématique posée en introduction\n  → PAS d\'ouverture (contrairement à l\'écriture personnelle)',
-     vars:'Conclusion courte : 5 à 8 lignes maximum\nNe pas introduire d\'idée nouvelle'},
-    {name:'Plan thématique (méthode de construction)',
-     code:'Étape 1 : Lire tous les documents, repérer thèse de chacun\nÉtape 2 : Tableau de confrontation :\n  | Thème / Idée | Doc 1 | Doc 2 | Doc 3 | Doc 4 |\nÉtape 3 : Regrouper les idées en 2-3 axes\nÉtape 4 : Ordonner du plus évident au plus nuancé',
-     vars:'Temps conseillé au brouillon : 1h / rédaction : 1h30\nBarème synthèse : 40 points'},
-    {name:'Règles de la synthèse',
-     code:'INTERDIT : donner son avis personnel\nINTERDIT : ajouter des connaissances extérieures\nINTERDIT : utiliser « je » ou « selon moi »\nOBLIGATOIRE : rester NEUTRE et OBJECTIF\nOBLIGATOIRE : citer les auteurs (« Selon X, ... »)\nOBLIGATOIRE : confronter les documents entre eux',
-     vars:'Longueur attendue : environ 3 pages\nTemps recommandé : 2h30 sur les 4h'},
-    {name:'Gestion du temps (synthèse)',
-     code:'Phase 1 — Lecture active          : 20 min\n  → Surligner thèses, arguments, mots-clés\nPhase 2 — Tableau de confrontation : 20 min\n  → Remplir le tableau thème / doc1 / doc2 / doc3 / doc4\nPhase 3 — Construction du plan     : 10 min\n  → 2-3 axes, phrases-chapeaux\nPhase 4 — Rédaction introduction    : 10 min\nPhase 5 — Rédaction développement   : 50 min\nPhase 6 — Rédaction conclusion      : 10 min\nPhase 7 — Relecture                 : 10 min\n                          TOTAL     : 2h10 à 2h30',
-     vars:'Garder impérativement 1h30 pour l\'écriture personnelle\nNe pas dépasser 2h30 même si la synthèse n\'est pas parfaite'},
+  {section:'MÉTHODE — Questions sur le corpus (10 pts)', color:'#14b8a6', items:[
+    {name:'Format épreuve E1 (nouveau format 2025)',
+     code:'Durée : 3h (pas 4h)\nPartie 1 — Questions sur le corpus : 10 POINTS\nPartie 2 — Essai (écriture personnelle) : 10 POINTS\nTOTAL : 20 POINTS\n\nThème 2026 : « Les animaux et nous :\n  imaginer, connaître, comprendre l\'animal »',
+     vars:'Les 3 axes du thème :\n  IMAGINER = représentations (fables, mythes, symboles)\n  CONNAÎTRE = sciences (éthologie, cognition, sentience)\n  COMPRENDRE = éthique (droits, bien-être, responsabilité)'},
+    {name:'Gabarit — Question de confrontation (RAPPORTE LE PLUS)',
+     code:'"Les documents [X] et [Y] abordent tous deux\nla question de [thème commun].\n[Auteur X] considère que [idée X], comme en\ntémoigne « [citation] » (l. X).\nDe son côté, [auteur Y] [rejoint/nuance/contredit]\ncette vision en affirmant que [idée Y] (doc. Y, l. X).\nAinsi, si les deux auteurs s\'accordent sur [commun],\nils divergent quant à [divergence]."',
+     vars:'ACCORD : « À l\'instar de [X], [Y] souligne que... »\nNUANCE : « [Y] rejoint partiellement [X] mais... »\nOPPOSITION : « En revanche, [Y] s\'oppose à [X]... »\nCOMPLÉMENT : « [Y] enrichit la réflexion de [X]... »'},
+    {name:'Gabarit — Question de compréhension (1 doc)',
+     code:'"Dans ce document, [auteur] [défend/analyse]\n[idée principale]. Il souligne que [détail]\nen précisant que [élément secondaire].\nCette approche permet de comprendre que\n[interprétation]."',
+     vars:'Toujours : reformuler (jamais recopier)\nToujours : citer avec « » + (l. X)\nToujours : rester NEUTRE (pas d\'avis perso)'},
+    {name:'Gabarit — Question sur une image',
+     code:'"Ce document iconographique représente\n[description factuelle : qui, quoi, où].\n[Élément visuel remarquable] évoque [interprétation].\nCette image [confirme/nuance/illustre] la thèse\nde [auteur] dans le document [X]."',
+     vars:'1. Décrire objectivement\n2. Interpréter (symboles, choix visuels)\n3. Relier aux autres documents du corpus'},
+    {name:'Réflexe : Définir les mots clés de la question',
+     code:'AVANT de répondre, écrire :\n"Le mot [X] peut se définir comme [définition]."\n\nExemple thème 2026 :\n"Le mot « imaginaire » renvoie ici aux représentations\nmentales, mythes et symboles que l\'homme projette\nsur l\'animal, par opposition à la connaissance\nscientifique objective."',
+     vars:'LE CORRECTEUR VALORISE cette démarche (source : grille IGESR)\nDéfinir les termes montre la compréhension du sujet'},
   ]},
-
-  // ── Section 2 : Écriture Personnelle ──
-  {section:'CGE — Écriture Personnelle', color:'#0d9488', items:[
-    {name:'Structure de l\'essai',
-     code:'Introduction :\n  1. Amorce (citation, fait, observation)\n  2. Reformulation du sujet\n  3. Problématique personnelle\n  4. Annonce du plan (2 ou 3 parties)\n\nDéveloppement :\n  → 2 ou 3 parties argumentées\n  → Chaque partie = argument + exemple + analyse\n\nConclusion :\n  → Bilan + réponse à la problématique\n  → Ouverture (question, élargissement)',
-     vars:'Longueur attendue : environ 2 pages\nBarème écriture personnelle : 20 points\nTemps recommandé : 1h30 sur les 4h'},
-    {name:'Plan thèse / antithèse / dépassement',
-     code:'I.  Thèse   → défendre le point de vue du sujet\n    Arg 1 + exemple → Arg 2 + exemple\nII. Antithèse → nuancer ou contredire\n    Arg 1 + exemple → Arg 2 + exemple\nIII. Dépassement → synthèse personnelle\n    Dépasser l\'opposition, proposer une vision nuancée',
-     vars:'Le dépassement n\'est PAS un simple résumé des deux parties\nIl apporte une réflexion nouvelle, une position personnelle argumentée'},
-    {name:'Plan thématique (alternatif)',
-     code:'I.  Premier aspect du sujet\n    Arg + exemples variés\nII. Deuxième aspect (approfondissement)\n    Arg + exemples variés\nIII. Troisième aspect (ouverture)\n    Arg + exemples variés',
-     vars:'Adapté quand le sujet ne se prête pas à un débat pour/contre\nChaque partie doit progresser dans la réflexion'},
-    {name:'Connecteurs logiques essentiels',
-     code:'Addition     : de plus, en outre, par ailleurs, qui plus est\nOpposition   : cependant, néanmoins, toutefois, en revanche\nCause        : en effet, car, puisque, étant donné que\nConséquence  : par conséquent, ainsi, dès lors, c\'est pourquoi\nConcession   : certes... mais, bien que, malgré, quoique\nIllustration : par exemple, notamment, ainsi, tel que\nConclusion   : en définitive, en somme, pour conclure, finalement',
-     vars:'Varier les connecteurs pour éviter les répétitions\nUn connecteur par transition minimum'},
-    {name:'Types d\'exemples à mobiliser',
-     code:'Littéraire   : roman, poésie, théâtre, essai\nCinématographique : film, documentaire, série\nHistorique   : événement, personnage, période\nActualité     : fait de société, débat contemporain\nPersonnel     : expérience vécue (avec recul critique)\nScientifique  : étude, statistique, découverte',
-     vars:'Toujours ANALYSER l\'exemple (ne pas juste le citer)\nUn exemple par argument minimum'},
-    {name:'Formules de transition entre parties',
-     code:'Transition I → II :\n  « Si [bilan partie I], il convient néanmoins de\n    s\'interroger sur [annonce partie II]. »\n\nTransition II → III :\n  « Au-delà de cette opposition, il apparaît que\n    [annonce du dépassement]. »\n\nModèles utiles :\n  → « Cette analyse conduit à envisager... »\n  → « Toutefois, cette perspective doit être nuancée... »\n  → « Il reste cependant à examiner... »',
-     vars:'La transition relie deux parties : elle résume la précédente\net annonce la suivante en une ou deux phrases\nNe jamais sauter de ligne sans transition'},
+  {section:'MÉTHODE — Essai / Écriture personnelle (10 pts)', color:'#0d9488', items:[
+    {name:'Ce que le correcteur cherche (grille officielle IGESR)',
+     code:'✓ Répondre AU SUJET (pas à côté)\n✓ Réflexion NUANCÉE (pas un seul point de vue)\n✓ Progression COHÉRENTE (connecteurs entre §)\n✓ Références VARIÉES : corpus + culture + perso\n✓ Exemples PRÉCIS (titre, auteur, date)\n✓ Langue correcte\n\n"Sans contraintes formelles fixes"\n  → pas de plan imposé (thèse/antithèse = outil, pas obligation)',
+     vars:'Barème indicatif :\n  Palier 1 = 1 à 2 pts (indigent)\n  Palier 2 = 2,5 à 4,5 (insuffisant)\n  Palier 3 = 5 à 7,5 ← OBJECTIF (niveau BTS)\n  Palier 4 = 8 à 10 (excellent)'},
+    {name:'Gabarit Introduction',
+     code:'"[Constat général sur le thème]. Cette question,\nau cœur du corpus proposé, invite à s\'interroger\nsur [reformuler le sujet].\nNous examinerons d\'abord [axe 1], avant de\nmontrer que [axe 2]."',
+     vars:'5 à 8 lignes maximum\nReformuler le sujet dans ses propres mots\nAnnoncer la progression (pas forcément un plan en 3 parties)'},
+    {name:'Gabarit Transitions',
+     code:'Mouvement 1 → 2 :\n  "Néanmoins, cette vision mérite d\'être nuancée."\n  "Cependant, on peut aussi considérer que..."\n  "Toutefois, cette approche présente des limites."\n\nMouvement 2 → 3 :\n  "Dès lors, il convient de dépasser cette opposition."\n  "En définitive, ne faudrait-il pas plutôt..."',
+     vars:'Un connecteur au DÉBUT de chaque paragraphe\nC\'est ce qui donne l\'impression de cohérence au correcteur'},
+    {name:'Gabarit Conclusion',
+     code:'"En définitive, [répondre à la question en 1-2 phrases].\nToutefois, on peut se demander si [ouverture —\nnouvelle question liée]."',
+     vars:'3 à 5 lignes\nToujours répondre à la question posée\nOuverture = question (pas affirmation)'},
   ]},
-
-  // ── Section 3 : Analyse de Documents ──
-  {section:'CGE — Analyse de Documents', color:'#2dd4bf', items:[
-    {name:'Identifier la nature du document',
-     code:'Texte argumentatif : essai, éditorial, tribune, discours\nTexte narratif      : roman, nouvelle, autobiographie\nTexte descriptif    : reportage, portrait, guide\nTexte poétique      : poème, chanson, slam\nImage               : photographie, dessin de presse,\n                      affiche publicitaire, tableau\nDocument composite  : infographie, page web, BD',
-     vars:'Toujours préciser : auteur, titre, date, source\nLa nature influence la méthode d\'analyse'},
-    {name:'Repérer la thèse et les arguments',
-     code:'Thèse = idée principale défendue par l\'auteur\n  → Souvent dans l\'introduction ou la conclusion du texte\n  → Parfois implicite (à déduire)\n\nArguments = raisons qui soutiennent la thèse\n  → Repérer les connecteurs logiques\n  → Distinguer argument et exemple\n  → Hiérarchiser : arg. principal vs secondaire',
-     vars:'Attention aux textes ironiques : la thèse réelle est\nl\'INVERSE de ce qui est dit littéralement'},
-    {name:'Paraphrase vs Analyse (erreur fréquente)',
-     code:'PARAPHRASE (à éviter) :\n  « L\'auteur dit que le progrès est dangereux »\n  → Simple reformulation, aucune valeur ajoutée\n\nANALYSE (attendue) :\n  « L\'auteur dénonce les dérives du progrès en\n    s\'appuyant sur un argument d\'expérience et en\n    utilisant un champ lexical de la menace »\n  → Identifier le PROCÉDÉ + son EFFET',
-     vars:'Toujours nommer le procédé utilisé par l\'auteur\nToujours expliquer l\'EFFET produit sur le lecteur'},
-    {name:'Intégrer les citations',
-     code:'Citation courte (< 3 lignes) :\n  → Entre guillemets, intégrée dans la phrase\n  → « Selon X, "le progrès est une illusion" (l. 12) »\n\nCitation longue :\n  → Résumer et ne citer que les mots-clés\n  → « X utilise le terme "illusion" pour qualifier... »\n\nImage / document visuel :\n  → Décrire précisément ce qu\'on voit\n  → Interpréter les choix visuels (cadrage, couleurs...)',
-     vars:'Référencer : (l. 12) pour les textes\nNe jamais citer plus de 2 lignes d\'affilée\nToujours commenter la citation après l\'avoir insérée'},
-    {name:'Analyser une image',
-     code:'1. Description objective :\n   → Que voit-on ? (personnages, décor, objets)\n2. Composition :\n   → Plans, cadrage, couleurs, typographie\n3. Interprétation :\n   → Message implicite, symboles, connotations\n4. Lien avec le corpus :\n   → Quelle thèse l\'image illustre-t-elle ?',
-     vars:'Ne jamais oublier de LIER l\'image aux textes du corpus\nL\'image a autant de valeur qu\'un texte dans la synthèse'},
-    {name:'Les registres littéraires (repérage)',
-     code:'Polémique  : ton combatif, vocabulaire péjoratif, interpellations\nPathétique : vocabulaire de la souffrance, exclamations, compassion\nLyrique    : expression des sentiments, « je », musicalité\nComique    : jeux de mots, décalage, ironie douce\nIronique   : dire le contraire de ce qu\'on pense (2nd degré)\nDidactique : ton pédagogique, explications, exemples concrets\nÉpidictique: éloge ou blâme, vocabulaire laudatif ou dépréciatif',
-     vars:'Repérer le registre permet d\'expliquer l\'INTENTION de l\'auteur\nToujours nommer le registre + donner un indice textuel'},
+  {section:'THÈME 2026 — Les animaux et nous', color:'#059669', items:[
+    {name:'AXE 1 — IMAGINER l\'animal (représentations)',
+     code:'La Fontaine, Fables (1668-1694)\n  → Animaux = masques des défauts humains\n  → "Le Loup et l\'Agneau" = force vs innocence\n\nOrwell, La Ferme des animaux (1945)\n  → Allégorie politique du totalitarisme\n  → Les cochons = dirigeants corrompus\n\nKafka, La Métamorphose (1915)\n  → Gregor → insecte : frontière homme/animal\n  → Questionnement sur l\'identité et l\'exclusion\n\nSaint-Exupéry, Le Petit Prince (1943)\n  → Le renard : "apprivoiser" = créer des liens\n  → Responsabilité envers ce qu\'on a apprivoisé',
+     vars:'Mots clés : fable, allégorie, anthropomorphisme,\nbestiaire, métamorphose, symbole\n\nIdée clé : l\'animal imaginé nous parle de NOUS\nplus que de l\'animal lui-même'},
+    {name:'AXE 2 — CONNAÎTRE l\'animal (sciences)',
+     code:'Jane Goodall — chimpanzés (1960-)\n  → Intelligence, émotions, culture chez les primates\n\nKonrad Lorenz — père de l\'éthologie\n  → Observation scientifique du comportement animal\n  → Concept d\'empreinte (imprinting)\n\nFrans de Waal, L\'Âge de l\'empathie\n  → Empathie et coopération chez les animaux\n\nDescartes, Discours de la méthode (1637)\n  → Théorie "animal-machine" : animal = automate\n  → CONTESTÉE par la science moderne',
+     vars:'Mots clés : éthologie, sentience, cognition animale,\ninstinct vs apprentissage\n\nIdée clé : la science montre que les animaux\nont émotions, intelligence et culture\n→ réfute Descartes'},
+    {name:'AXE 3 — COMPRENDRE l\'animal (éthique)',
+     code:'Peter Singer, La Libération animale (1975)\n  → Fondateur de l\'antispécisme\n  → Égalité de considération des êtres sentients\n\nDerrida, L\'Animal que donc je suis (2006)\n  → Questionne la frontière homme/animal\n  → Critique la tradition philosophique occidentale\n\nVoltaire, Dict. philosophique (art. Bêtes)\n  → Critique l\'animal-machine de Descartes\n  → Défend la compassion envers les animaux\n\nLoi française 2015\n  → Animal reconnu "être vivant doué de sensibilité"\n  → (avant : simple "bien meuble" dans le Code civil)',
+     vars:'Mots clés : antispécisme, spécisme, bien-être animal,\nsentience, bioéthique\n\nIdée clé : la question éthique est\n"que devons-NOUS à l\'animal ?" (pas l\'inverse)'},
+    {name:'Exemples BTP personnels (votre expérience)',
+     code:'→ Espèces protégées sur chantier :\n  chauves-souris, hirondelles, crapauds\n  → arrêt de chantier possible, diagnostics écologiques\n\n→ Nids dans les bâtiments avant démolition :\n  obligation légale de protection\n\n→ RE2020 et biodiversité :\n  toitures végétalisées, corridors écologiques\n\n→ Au Maroc : rapport différent à l\'animal\n  (chèvres arganiers, chiens errants, faune montagnarde)\n\n→ Nuisibles sur chantier : rats, pigeons\n  gestion sans cruauté vs impératifs sanitaires',
+     vars:'Le correcteur valorise les exemples PERSONNELS\nVotre parcours BTP est original et concret\nToujours lier à la problématique du sujet'},
+    {name:'Problématiques possibles le jour J',
+     code:'1. Les représentations animales nous en apprennent-elles\n   plus sur l\'homme que sur l\'animal ?\n\n2. Peut-on connaître véritablement l\'animal ou\n   ne fait-on que projeter notre humanité ?\n\n3. Les avancées sur la sentience doivent-elles\n   changer nos comportements ?\n\n4. L\'anthropomorphisme est-il un moyen de comprendre\n   l\'animal ou de le dénaturer ?\n\n5. Comment concilier progrès (construction, agriculture)\n   et respect du vivant ?',
+     vars:'RAPPEL : le « nous » du titre place la RELATION\nau centre. Ce n\'est pas un thème SUR l\'animal,\nmais sur NOTRE RAPPORT à l\'animal.\n\nToute réponse doit interroger cette relation.'},
   ]},
-
-  // ── Section 4 : Argumentation ──
-  {section:'CGE — Argumentation', color:'#0f766e', items:[
-    {name:'Argument d\'autorité',
-     code:'Définition : invoquer une source reconnue\n  → Expert, scientifique, institution, auteur célèbre\n\nExemple :\n  « Comme le souligne le sociologue Z. Bauman,\n    la modernité liquide fragilise les liens sociaux. »',
-     vars:'Efficace pour asseoir la crédibilité\nAttention : une autorité n\'est pas une preuve absolue'},
-    {name:'Argument par analogie',
-     code:'Définition : comparer deux situations pour convaincre\n  → Rapprocher un cas connu d\'un cas discuté\n\nExemple :\n  « De même que la Révolution industrielle a bouleversé\n    le travail, la révolution numérique transforme nos\n    modes de vie. »',
-     vars:'Puissant pour rendre concret un concept abstrait\nLimite : l\'analogie peut être contestée si les cas diffèrent'},
-    {name:'Argument d\'expérience',
-     code:'Définition : s\'appuyer sur un fait vécu ou observé\n  → Témoignage, observation directe, vécu personnel\n\nExemple :\n  « Lors d\'un stage en entreprise, j\'ai constaté que\n    la communication numérique réduisait les échanges\n    en face à face. »',
-     vars:'Crédible car concret, mais subjectif\nToujours prendre du recul critique sur son expérience'},
-    {name:'Argument par les valeurs',
-     code:'Définition : faire appel à des principes partagés\n  → Liberté, égalité, justice, solidarité, progrès\n\nExemple :\n  « Au nom de l\'égalité des chances, il est essentiel\n    de garantir l\'accès à la culture pour tous. »',
-     vars:'Efficace car fédérateur\nAdapter les valeurs au contexte du sujet'},
-    {name:'Argument par l\'absurde / la concession',
-     code:'Par l\'absurde :\n  → Pousser la thèse adverse à l\'extrême\n  → Montrer qu\'elle mène à une contradiction\n\nPar la concession :\n  → « Certes, ... cependant ... »\n  → Reconnaître un point adverse pour mieux le dépasser',
-     vars:'La concession est très valorisée au BTS\nElle montre la capacité de nuance du candidat'},
-    {name:'Structure d\'un paragraphe argumenté',
-     code:'1. Idée directrice (affirmation claire)\n2. Argument (raison logique)\n3. Exemple précis (littéraire, historique, personnel...)\n4. Analyse de l\'exemple (expliquer en quoi il prouve)\n5. Transition (lien vers le paragraphe suivant)',
-     vars:'Méthode IEAT : Idée → Explication → Argument → Transition\nChaque paragraphe = 8 à 15 lignes'},
-    {name:'Les sophismes à éviter',
-     code:'Ad hominem    : attaquer la personne, pas l\'idée\nGénéralisation : « Tout le monde sait que... »\nFaux dilemme  : « C\'est soit A, soit B » (pas d\'autre choix)\nPente glissante : « Si A alors forcément Z » (sauts logiques)\nAppel à l\'émotion : convaincre par la pitié sans argument\nArgument du nombre : « La majorité pense que... »',
-     vars:'Repérer les sophismes dans les textes du corpus\nLes éviter dans l\'écriture personnelle\nLes dénoncer si un auteur les utilise'},
+  {section:'ORTHOGRAPHE — 10 règles les plus rentables', color:'#dc2626', items:[
+    {name:'Homophones : a/à, et/est, er/é',
+     code:'a / à  → remplacer par "avait" : si OK = "a"\net / est → remplacer par "était" : si OK = "est"\ner / é  → remplacer par "vendre/vendu"\n         "vendre" = er, "vendu" = é',
+     vars:'Ces 3 règles couvrent 50% des fautes\nLes tester systématiquement en relecture'},
+    {name:'Accords essentiels',
+     code:'Participe passé + ÊTRE : accorder avec SUJET\n  "Les solutions SONT PROPOSÉES"\n\nParticipe passé + AVOIR : accorder avec COD AVANT\n  "Les idées que j\'AI DÉVELOPPÉES"\n  MAIS : "J\'AI DÉVELOPPÉ des idées" (COD après = rien)\n\nSujet-verbe : TOUJOURS chercher le sujet\n  "Les problèmes SONT nombreux" (pas "est")',
+     vars:'En cas de doute, simplifier la phrase\nRelecture : vérifier chaque participe passé un par un'},
+    {name:'Connecteurs logiques à utiliser',
+     code:'ADDITION : de plus, en outre, par ailleurs\nOPPOSITION : cependant, néanmoins, toutefois\nCAUSE : en effet, car, puisque\nCONSÉQUENCE : par conséquent, ainsi, dès lors\nCONCESSION : certes... mais, bien que, malgré\nILLUSTRATION : par exemple, notamment\nCONCLUSION : en définitive, en somme, finalement',
+     vars:'1 connecteur au début de chaque paragraphe\nVarier (pas toujours "de plus")\nC\'est ce qui donne la cohérence au correcteur'},
+  ]},
+  {section:'GESTION DU TEMPS — 3h le 19 mai', color:'#7c3aed', items:[
+    {name:'Répartition minute par minute',
+     code:'14h30-14h45  LIRE corpus (15 min)\n14h45-14h55  NOTER mots clés questions (10 min)\n14h55-16h15  PARTIE 1 — Questions corpus (80 min)\n  → Courtes : 5-10 min chacune\n  → Confrontation : 20-30 min\n16h15-16h25  BROUILLON plan essai (10 min)\n16h25-17h00  RÉDACTION essai (35 min)\n17h00-17h10  RELECTURE essai (10 min)\n17h10-17h30  RELECTURE ORTHOGRAPHE totale (20 min)',
+     vars:'RÈGLE D\'OR : TOUJOURS garder 20 min\npour la relecture orthographe\nC\'est là que vous gagnez 1-2 points\nen corrigeant a/à, er/é, accords'},
   ]},
 ];
-
-// ══════════════════ 1bis. ERREURS FRÉQUENTES ET CONSEILS ══════════════════
 
 const ERREURS_FREQUENTES_FRANCAIS = [
-  {exercice:'Synthèse',
+  {exercice:'Questions corpus (Partie 1)',
    erreurs:[
-     {erreur:'Plan par document',
-      consequence:'Note très basse — critère éliminatoire',
-      correction:'Plan THÉMATIQUE : regrouper par idées transversales'},
-     {erreur:'Avis personnel dans la synthèse',
-      consequence:'Hors-sujet méthodologique, points retirés',
+     {erreur:'Ne pas confronter les documents',
+      consequence:'Palier 1 direct — perte massive de points',
+      correction:'Toujours montrer accords ET divergences entre documents'},
+     {erreur:'Recopier les textes au lieu de reformuler',
+      consequence:'Palier 1 — "recopie les textes"',
+      correction:'Reformuler dans vos propres mots + citation courte « » (l. X)'},
+     {erreur:'Donner son avis personnel',
+      consequence:'Hors-sujet méthodologique',
       correction:'Rester NEUTRE : « Selon X... », « X affirme que... »'},
-     {erreur:'Paraphrase au lieu d\'analyse',
-      consequence:'Pas de points pour la compréhension des procédés',
-      correction:'Nommer le procédé + expliquer l\'EFFET sur le lecteur'},
-     {erreur:'Oublier un document du corpus',
-      consequence:'Synthèse incomplète, pénalité importante',
-      correction:'Chaque document doit être cité au moins 2 fois'},
-     {erreur:'Citations trop longues',
-      consequence:'La synthèse devient un collage, pas une rédaction',
-      correction:'Citations courtes (mots-clés) intégrées entre guillemets'},
-     {erreur:'Pas de confrontation',
-      consequence:'Simple juxtaposition = pas de synthèse',
-      correction:'Confronter = accords, désaccords, nuances entre auteurs'},
+     {erreur:'Oublier de citer les lignes',
+      consequence:'Manque de rigueur',
+      correction:'Toujours (l. 12) ou (doc. 2, l. 5)'},
    ]},
-  {exercice:'Écriture personnelle',
+  {exercice:'Essai (Partie 2)',
    erreurs:[
-     {erreur:'Paraphrase du corpus sans réflexion propre',
-      consequence:'L\'essai devient un résumé, pas une écriture personnelle',
-      correction:'Apporter ses propres exemples et sa réflexion argumentée'},
-     {erreur:'Exemples non analysés (juste cités)',
-      consequence:'L\'exemple ne prouve rien s\'il n\'est pas expliqué',
-      correction:'Toujours analyser : en quoi cet exemple illustre l\'argument ?'},
-     {erreur:'Pas de connecteurs logiques',
-      consequence:'Le texte manque de cohérence et de progression',
-      correction:'Un connecteur par transition minimum, varier le vocabulaire'},
-     {erreur:'Conclusion sans ouverture',
-      consequence:'La réflexion semble inachevée',
-      correction:'Bilan + ouverture (question élargie, perspective nouvelle)'},
-     {erreur:'Manque de temps (synthèse trop longue)',
-      consequence:'EP bâclée ou incomplète',
-      correction:'Ne JAMAIS dépasser 2h30 pour la synthèse'},
+     {erreur:'Répondre à côté du sujet',
+      consequence:'Palier 1 — "répond de manière lacunaire et allusive"',
+      correction:'Relire la question 3 FOIS avant de rédiger'},
+     {erreur:'Un seul point de vue (pas de nuance)',
+      consequence:'Palier 2 maximum — "ne fait pas part d\'une opinion nuancée"',
+      correction:'Toujours nuancer : certes... mais... / mouvement 1 + mouvement 2'},
+     {erreur:'Exemples uniquement du corpus',
+      consequence:'Palier 2 — "issues uniquement du corpus"',
+      correction:'Varier : corpus + culture (La Fontaine, Orwell...) + expérience perso (BTP)'},
+     {erreur:'Pas de connecteurs entre paragraphes',
+      consequence:'Palier 2 — "progression peu cohérente"',
+      correction:'1 connecteur au début de CHAQUE paragraphe (cependant, de plus, dès lors...)'},
    ]},
 ];
 
-// ══════════════════ 1ter. FORMULES DE PRÉSENTATION DU CORPUS ══════════════════
-// Phrases-types réutilisables pour la synthèse et l'écriture personnelle
+// ══════════════════════════════════════════════════════════════════════════════
+// INSERTION QCM + SYNTHESE + PLANNING + MEMO FRANCAIS
+// ══════════════════════════════════════════════════════════════════════════════
 
-const PHRASES_TYPES_FRANCAIS = {
-  presentation_corpus: [
-    'Le corpus soumis à notre étude se compose de [nombre] documents traitant de [thème].',
-    'Ce corpus réunit [nombre] documents de natures variées, publiés entre [date1] et [date2].',
-    'Le premier document est un [nature] de [auteur], intitulé « [titre] » ([date]), dans lequel l\'auteur [thèse].',
-    'Le deuxième document, « [titre] » de [auteur] ([date]), est un [nature] qui [thèse].',
-    'Enfin, le document [n] est un [nature] de [auteur] ([date]) qui [thèse].',
-  ],
-  problematique: [
-    'Ces documents nous amènent à nous interroger : [question] ?',
-    'La confrontation de ces documents soulève la problématique suivante : [question] ?',
-    'Dès lors, on peut se demander dans quelle mesure [reformulation du thème].',
-    'Il convient donc de s\'interroger sur [thème] : [question] ?',
-  ],
-  annonce_plan: [
-    'Nous verrons dans un premier temps [axe I], avant d\'analyser [axe II].',
-    'Après avoir examiné [axe I], nous nous intéresserons à [axe II], puis nous envisagerons [axe III].',
-    'Notre réflexion s\'articulera autour de deux axes : [axe I] et [axe II].',
-  ],
-  confrontation: [
-    'Selon [auteur1], [idée]. [Auteur2] partage cette vision en affirmant que [idée proche].',
-    'Si [auteur1] soutient que [idée], [auteur2] adopte un point de vue différent en défendant l\'idée que [idée opposée].',
-    'Cette idée est confirmée par [auteur2], qui [explication].',
-    'À l\'inverse, [auteur2] nuance cette position en montrant que [nuance].',
-    '[Auteur1] et [auteur2] s\'accordent sur le fait que [point commun].',
-    'Toutefois, [auteur2] va plus loin en affirmant que [approfondissement].',
-  ],
-  conclusion_synthese: [
-    'En définitive, la confrontation de ces documents met en lumière [bilan].',
-    'Au terme de cette analyse, il apparaît que [réponse à la problématique].',
-    'Ainsi, les documents étudiés convergent vers l\'idée que [bilan principal], tout en soulignant [nuance].',
-  ],
-  ouverture_ep: [
-    'Cette réflexion invite à s\'interroger plus largement sur [question élargie].',
-    'Dès lors, ne pourrait-on pas envisager [perspective nouvelle] ?',
-    'Il resterait à examiner [aspect non traité], question qui dépasse le cadre de cette réflexion.',
-  ],
-};
-
-// ══════════════════ 2. QCM ══════════════════
 
 const QCM_FRANCAIS = [
-  // ── QCM 1 : Méthodologie Synthèse (12 questions) ──
-  {id:'cge_synthese', title:'Méthodologie Synthèse', epreuve:'CGE', color:'#14b8a6', questions:[
-    {q:"La synthèse de documents au BTS est notée sur :",
-     choices:["40 points","30 points","20 points","60 points"],
-     answer:0,
-     expl:"La synthèse est notée sur 40 points, l'écriture personnelle sur 20 points (total : 60 points)."},
-    {q:"Dans une synthèse, le plan doit être organisé :",
-     choices:["Par document (un document par partie)","Par ordre chronologique des documents","Par thèmes transversaux aux documents","Par type de document (texte, image, etc.)"],
+  {id:'cge_methode', title:'Méthodologie — Nouveau format 3h', epreuve:'CGE', color:'#14b8a6', questions:[
+    {q:"Quel est le nouveau format de l'épreuve E1 (à partir de 2025) ?",
+     choices:["Synthèse 40 pts + écriture perso 20 pts sur 4h","Questions corpus 10 pts + Essai 10 pts sur 3h","Dissertation 20 pts sur 4h","Oral 20 min + écrit 2h"],
+     answer:1,
+     expl:"Nouveau format 2025 : Partie 1 Questions corpus (10 pts) + Partie 2 Essai (10 pts) = 20 pts total sur 3h."},
+    {q:"Selon la grille IGESR, que faut-il faire ABSOLUMENT en Partie 1 ?",
+     choices:["Résumer chaque document","Donner son avis personnel","CONFRONTER les documents entre eux","Recopier les citations intégralement"],
      answer:2,
-     expl:"Le plan est TOUJOURS thématique : on regroupe les documents par idées communes, jamais un document par partie."},
-    {q:"L'introduction de la synthèse doit contenir :",
-     choices:["Une citation personnelle et un plan détaillé","Une amorce, la présentation du corpus, la problématique et l'annonce du plan","Seulement la problématique","Un résumé de chaque document"],
+     expl:"La grille évalue l'aptitude à CONFRONTER les documents. Ne pas confronter = Palier 1 (note très basse). Il faut montrer accords ET divergences."},
+    {q:"Quel réflexe est VALORISÉ par le correcteur selon la grille officielle ?",
+     choices:["Faire un plan en 3 parties","Définir les mots clés de la question","Utiliser des mots compliqués","Écrire plus de 4 pages"],
      answer:1,
-     expl:"L'intro comporte 4 éléments : amorce, présentation du corpus (auteur/titre/date/nature/thèse), problématique, annonce du plan."},
-    {q:"Dans la synthèse, le candidat peut-il donner son avis personnel ?",
-     choices:["Oui, c'est même recommandé","Oui, mais uniquement en conclusion","Non, la synthèse doit rester neutre et objective","Oui, s'il utilise des arguments solides"],
+     expl:"La grille IGESR précise : « On valorise la copie qui s'efforce de définir les mots clés de la question. »"},
+    {q:"En Partie 1, peut-on donner son avis personnel ?",
+     choices:["Oui, c'est recommandé","Oui, en conclusion seulement","NON, il faut rester neutre et objectif","Oui, si on argumente"],
      answer:2,
-     expl:"La synthèse est un exercice de NEUTRALITÉ. Aucun avis personnel, aucun « je », aucune connaissance extérieure au corpus."},
-    {q:"Combien de parties comporte généralement le développement d'une synthèse ?",
-     choices:["1 partie unique","2 ou 3 parties thématiques","4 parties obligatoires","Autant que de documents"],
+     expl:"La Partie 1 exige neutralité et objectivité. L'avis personnel est réservé à la Partie 2 (Essai)."},
+    {q:"Quelle est la différence entre REFORMULER et RECOPIER ?",
+     choices:["C'est la même chose","Reformuler = mettre dans ses propres mots ; Recopier = copier le texte","Reformuler est interdit","Recopier est mieux noté"],
      answer:1,
-     expl:"Le développement comporte 2 ou 3 parties thématiques. Chaque partie confronte plusieurs documents autour d'une même idée."},
-    {q:"La « confrontation des documents » signifie :",
-     choices:["Résumer chaque document l'un après l'autre","Opposer systématiquement tous les documents","Montrer les convergences et divergences entre les documents","Citer tous les documents dans chaque phrase"],
+     expl:"Recopier les textes = Palier 1 (très mauvais). Il faut REFORMULER dans ses propres mots et n'utiliser que des citations courtes entre « » avec (l. X)."},
+    {q:"Pour l'Essai (Partie 2), y a-t-il un plan obligatoire ?",
+     choices:["Oui, thèse/antithèse/synthèse obligatoire","Oui, introduction/développement/conclusion en 3 parties","NON, « sans contraintes formelles fixes » (grille officielle)","Oui, plan chronologique"],
      answer:2,
-     expl:"Confronter = montrer comment les documents se rejoignent (convergences) ou s'opposent (divergences) sur une même idée."},
-    {q:"Quelle est la longueur attendue pour la synthèse ?",
-     choices:["1 page maximum","Environ 3 pages","5 pages minimum","Pas de limite"],
+     expl:"La grille IGESR précise « sans contraintes formelles fixes ». Le plan thèse/antithèse est un OUTIL utile, pas une obligation."},
+    {q:"Pour atteindre le Palier 3 en Essai (5 à 7,5 / 10), il faut :",
+     choices:["Juste répondre au sujet","Répondre au sujet + réflexion nuancée + exemples variés + progression cohérente","Écrire 4 pages minimum","Citer 10 auteurs"],
      answer:1,
-     expl:"La synthèse fait environ 3 pages. Trop court = manque de développement. Trop long = hors sujet ou paraphrase."},
-    {q:"Lors de la présentation du corpus, il faut préciser pour chaque document :",
-     choices:["Seulement le titre","Auteur, titre, date, nature et thèse","Le nombre de pages","La maison d'édition et l'ISBN"],
+     expl:"Palier 3 = répondre au sujet + opinion nuancée + progression cohérente + références variées (corpus + culture + perso) + langue correcte."},
+    {q:"Quels 3 types de références faut-il mobiliser en Essai ?",
+     choices:["3 citations du corpus","Corpus + culture générale + expérience personnelle","3 auteurs différents","3 exemples du même domaine"],
      answer:1,
-     expl:"Pour chaque document : auteur, titre, date de publication, nature (essai, article, roman...) et thèse principale."},
-    {q:"La conclusion de la synthèse doit-elle comporter une ouverture ?",
-     choices:["Oui, toujours","Non, jamais d'ouverture en synthèse","Uniquement si le sujet le demande","Oui, sous forme de question"],
-     answer:1,
-     expl:"Pas d'ouverture en synthèse. La conclusion est un bilan synthétique qui répond à la problématique. L'ouverture est réservée à l'écriture personnelle."},
-    {q:"Quel temps est recommandé pour la synthèse sur les 4 heures d'épreuve ?",
-     choices:["1 heure","1h30","2h30","3h30"],
+     expl:"Pour Palier 3, le correcteur veut voir : 1) des références au CORPUS, 2) des références CULTURELLES (films, livres), 3) des exemples PERSONNELS."},
+    {q:"Combien de temps garder pour la relecture orthographe ?",
+     choices:["5 min","10 min","20 min","Pas de relecture, utiliser le temps pour écrire plus"],
      answer:2,
-     expl:"Environ 2h30 pour la synthèse (dont 1h de brouillon) et 1h30 pour l'écriture personnelle."},
-    {q:"Comment citer un auteur dans la synthèse ?",
-     choices:["En recopiant des paragraphes entiers","Avec des citations courtes entre guillemets, intégrées à la phrase","En paraphrasant sans jamais citer","En utilisant des notes de bas de page"],
+     expl:"Garder 20 min de relecture orthographe. C'est là qu'on gagne 1-2 pts en corrigeant a/à, er/é, accords. L'orthographe est évaluée dans les 2 parties."},
+    {q:"Comment citer correctement un texte du corpus ?",
+     choices:["Recopier le paragraphe entier","Citation courte entre « » avec numéro de ligne : « ... » (l. 12)","Mettre entre parenthèses sans guillemets","Résumer sans citer"],
      answer:1,
-     expl:"Citations courtes entre guillemets, intégrées dans la phrase : « Selon X, \"le progrès...\" (l. 12) ». Jamais de longs passages recopiés."},
-    {q:"Quelle est l'erreur la plus fréquente en synthèse ?",
-     choices:["Oublier la conclusion","Faire un plan par document au lieu d'un plan thématique","Écrire trop court","Citer trop de documents"],
-     answer:1,
-     expl:"Le plan par document (un doc = une partie) est l'erreur n°1. Il faut un plan THÉMATIQUE avec confrontation des documents dans chaque partie."},
+     expl:"Citation courte entre guillemets français « » intégrée dans la phrase, avec le numéro de ligne : « ... » (l. 12) ou (doc. 2, l. 5)."},
   ]},
-
-  // ── QCM 2 : Écriture Personnelle (12 questions) ──
-  {id:'cge_ecriture', title:'Écriture Personnelle', epreuve:'CGE', color:'#0d9488', questions:[
-    {q:"L'écriture personnelle est notée sur :",
-     choices:["10 points","20 points","30 points","40 points"],
-     answer:1,
-     expl:"L'écriture personnelle est notée sur 20 points (synthèse : 40 points, total : 60 points)."},
-    {q:"Dans l'écriture personnelle, le candidat peut-il donner son avis ?",
-     choices:["Non, comme dans la synthèse","Oui, c'est même l'objectif de l'exercice","Seulement en conclusion","Uniquement s'il cite des auteurs"],
-     answer:1,
-     expl:"Contrairement à la synthèse, l'écriture personnelle est un essai argumenté où le candidat exprime et défend sa position personnelle."},
-    {q:"Le plan « thèse / antithèse / dépassement » comporte :",
-     choices:["2 parties","3 parties","4 parties","1 seule partie"],
-     answer:1,
-     expl:"3 parties : I. Thèse (défendre un point de vue), II. Antithèse (nuancer/contredire), III. Dépassement (synthèse personnelle, vision nuancée)."},
-    {q:"Le « dépassement » dans un plan dialectique consiste à :",
-     choices:["Résumer les deux premières parties","Proposer une vision nuancée qui dépasse l'opposition thèse/antithèse","Donner raison à l'antithèse","Ajouter un quatrième argument"],
-     answer:1,
-     expl:"Le dépassement n'est pas un résumé. Il propose une réflexion nouvelle, une position personnelle qui dépasse et réconcilie les deux points de vue."},
-    {q:"Quelle longueur est attendue pour l'écriture personnelle ?",
-     choices:["1 demi-page","Environ 2 pages","4 pages minimum","Aucune limite"],
-     answer:1,
-     expl:"Environ 2 pages. Plus court = argumentation insuffisante. Plus long = risque de hors sujet ou de perte de temps sur la synthèse."},
-    {q:"Le temps conseillé pour l'écriture personnelle est :",
-     choices:["30 minutes","1 heure","1h30","2h30"],
+  // QCM THÈME 2026 : LES ANIMAUX ET NOUS
+  {id:'cge_theme_2026', title:'Thème 2026 — Les animaux et nous', epreuve:'CGE', color:'#059669', questions:[
+    {q:"Quel est le thème officiel CGE pour la session 2026 ?",
+     choices:["L'invitation au voyage","À table !","Les animaux et nous : imaginer, connaître, comprendre l'animal","Le progrès technique"],
      answer:2,
-     expl:"Environ 1h30 (dont 20 min de brouillon pour le plan et 1h10 de rédaction), le reste du temps étant consacré à la synthèse."},
-    {q:"L'introduction de l'écriture personnelle doit contenir :",
-     choices:["Uniquement le plan","Amorce, reformulation du sujet, problématique, annonce du plan","Un résumé de la synthèse","Une longue citation"],
+     expl:"Thème 2026 : « Les animaux et nous : imaginer, connaître, comprendre l'animal » — BO n°24 du 12 juin 2025."},
+    {q:"Les 3 axes du thème 2026 sont :",
+     choices:["Nourrir, protéger, libérer","Imaginer, connaître, comprendre","Observer, classer, domestiquer","Aimer, exploiter, respecter"],
      answer:1,
-     expl:"Même structure que pour la synthèse : amorce, reformulation du sujet, problématique personnelle, annonce du plan."},
-    {q:"Peut-on réutiliser des exemples du corpus de la synthèse ?",
-     choices:["Non, c'est interdit","Oui, mais en les développant différemment avec un regard personnel","Oui, en les recopiant tels quels","Seulement les images"],
+     expl:"IMAGINER (représentations littéraires/artistiques), CONNAÎTRE (sciences/éthologie), COMPRENDRE (éthique/philosophie)."},
+    {q:"Dans les Fables de La Fontaine, les animaux servent à :",
+     choices:["Décrire la faune avec réalisme","Représenter des types humains pour critiquer la société","Sensibiliser à la cause animale","Divertir les enfants"],
      answer:1,
-     expl:"On peut s'appuyer sur les documents du corpus, mais en les exploitant avec un regard personnel et une analyse propre, pas en les résumant."},
-    {q:"Quel type d'exemples est le plus valorisé dans l'écriture personnelle ?",
-     choices:["Uniquement des exemples personnels","Des exemples variés : littéraires, historiques, cinématographiques, personnels","Uniquement des citations de philosophes","Aucun exemple n'est nécessaire"],
-     answer:1,
-     expl:"La variété des exemples est valorisée : littérature, cinéma, histoire, actualité, expérience personnelle. Chaque exemple doit être analysé."},
-    {q:"La conclusion de l'écriture personnelle doit comporter :",
-     choices:["Seulement un résumé","Un bilan et une ouverture","Uniquement une ouverture","Ni bilan ni ouverture"],
-     answer:1,
-     expl:"La conclusion contient un bilan (réponse à la problématique) ET une ouverture (question, élargissement), contrairement à la synthèse."},
-    {q:"« Certes... cependant... » est un exemple de :",
-     choices:["Connecteur d'addition","Structure de concession","Argument d'autorité","Transition entre deux parties"],
-     answer:1,
-     expl:"« Certes... cependant... » est la structure type de la concession : on reconnaît un point de la thèse adverse pour mieux le dépasser."},
-    {q:"Quelle erreur faut-il éviter dans l'écriture personnelle ?",
-     choices:["Donner son avis","Rester dans la simple paraphrase des documents sans réflexion personnelle","Utiliser des connecteurs logiques","Faire un plan en 3 parties"],
-     answer:1,
-     expl:"L'erreur majeure est de rester dans la paraphrase du corpus sans apporter de réflexion ni d'exemples personnels. C'est un essai argumenté, pas un résumé."},
-  ]},
-
-  // ── QCM 3 : Analyse de Documents (12 questions) ──
-  {id:'cge_analyse', title:'Analyse de Documents', epreuve:'CGE', color:'#2dd4bf', questions:[
-    {q:"Un « essai » est un texte de type :",
-     choices:["Argumentatif","Descriptif","Narratif","Poétique"],
-     answer:0,
-     expl:"L'essai est un texte argumentatif dans lequel l'auteur défend une thèse avec des arguments et des exemples."},
-    {q:"La « thèse » d'un texte est :",
-     choices:["Le résumé du texte","L'idée principale défendue par l'auteur","Le premier paragraphe","La conclusion du texte"],
-     answer:1,
-     expl:"La thèse est l'idée centrale que l'auteur cherche à défendre ou à démontrer tout au long du texte."},
-    {q:"Quelle est la différence entre un argument et un exemple ?",
-     choices:["Aucune, c'est la même chose","L'argument est la raison logique, l'exemple est le fait concret qui l'illustre","L'exemple est plus important que l'argument","L'argument est toujours une citation"],
-     answer:1,
-     expl:"L'argument est une idée abstraite (raison logique), l'exemple est un fait concret (littéraire, historique...) qui illustre et renforce l'argument."},
-    {q:"La paraphrase consiste à :",
-     choices:["Analyser les procédés d'écriture","Reformuler le texte sans rien apporter de plus","Citer l'auteur entre guillemets","Confronter deux documents"],
-     answer:1,
-     expl:"La paraphrase est une simple reformulation du texte sans analyse des procédés ni interprétation. C'est l'erreur la plus pénalisée."},
-    {q:"Analyser un texte, c'est :",
-     choices:["Le résumer fidèlement","Identifier les procédés utilisés par l'auteur et expliquer leur effet","Recopier des passages importants","Donner son opinion sur le texte"],
-     answer:1,
-     expl:"Analyser = identifier un procédé (champ lexical, métaphore, ironie...) + expliquer l'EFFET produit sur le lecteur."},
-    {q:"Un « champ lexical » est :",
-     choices:["Une figure de style","Un ensemble de mots se rapportant à un même thème","Un type de plan","Un connecteur logique"],
-     answer:1,
-     expl:"Un champ lexical est un ensemble de mots qui se rattachent à un même thème (ex. champ lexical de la guerre : combat, victoire, défaite, arme...)."},
-    {q:"Comment intégrer correctement une citation courte ?",
-     choices:["Entre parenthèses, sans guillemets","Entre guillemets, intégrée dans la phrase avec référence à la ligne","En italique, dans un paragraphe séparé","Sans guillemets, dans la marge"],
-     answer:1,
-     expl:"Citation courte entre guillemets, intégrée dans la phrase : « Selon X, \"le terme...\" (l. 12) ». Toujours référencer la ligne."},
-    {q:"Face à un texte ironique, il faut :",
-     choices:["Prendre le texte au premier degré","Comprendre que la thèse réelle est l'inverse de ce qui est dit littéralement","Ignorer l'ironie","Citer uniquement les passages non ironiques"],
-     answer:1,
-     expl:"L'ironie dit le contraire de ce qu'elle pense. La thèse réelle est l'INVERSE du sens littéral. Il faut le repérer et l'expliquer."},
-    {q:"Pour analyser une image dans le corpus, il faut :",
-     choices:["Seulement la décrire","Décrire, interpréter les choix visuels et lier au corpus","Ignorer l'image et se concentrer sur les textes","La commenter sans la décrire"],
-     answer:1,
-     expl:"Analyser une image : 1. Description objective, 2. Composition (plans, couleurs, cadrage), 3. Interprétation, 4. Lien avec les textes du corpus."},
-    {q:"Un « dessin de presse » est généralement un document de type :",
-     choices:["Narratif","Argumentatif (il défend une position par l'image)","Descriptif","Informatif neutre"],
-     answer:1,
-     expl:"Le dessin de presse est argumentatif : il prend position sur un sujet d'actualité par l'humour, la caricature ou le symbole."},
-    {q:"Quelle expression permet d'introduire la thèse d'un auteur ?",
-     choices:["« Je pense que... »","« Selon l'auteur... » ou « X défend l'idée que... »","« On sait que... »","« Il est évident que... »"],
-     answer:1,
-     expl:"En synthèse, on utilise des formules neutres : « Selon X, ... », « X défend l'idée que... », « X met en lumière... ». Jamais « je »."},
-    {q:"Un texte littéraire (roman, nouvelle) dans le corpus doit être analysé :",
-     choices:["Comme un texte argumentatif classique","En repérant les procédés narratifs et leur lien avec le thème du corpus","En le résumant simplement","En ignorant le style pour ne garder que le contenu"],
-     answer:1,
-     expl:"Un texte littéraire utilise des procédés narratifs (point de vue, registre, figures de style) qui servent le thème. Il faut les analyser."},
-  ]},
-
-  // ── QCM 4 : Argumentation (12 questions) ──
-  {id:'cge_argumentation', title:'Argumentation', epreuve:'CGE', color:'#0f766e', questions:[
-    {q:"Un argument d'autorité consiste à :",
-     choices:["Invoquer une source reconnue (expert, institution, auteur célèbre)","Citer un ami","Raconter une expérience personnelle","Comparer deux situations"],
-     answer:0,
-     expl:"L'argument d'autorité s'appuie sur la crédibilité d'une source reconnue : scientifique, philosophe, institution officielle, etc."},
-    {q:"Un argument par analogie consiste à :",
-     choices:["Donner un exemple personnel","Comparer deux situations pour éclairer un raisonnement","Citer un expert","Nier la thèse adverse"],
-     answer:1,
-     expl:"L'analogie rapproche deux situations : on explique un cas discuté en le comparant à un cas connu et accepté."},
-    {q:"Un argument d'expérience s'appuie sur :",
-     choices:["Une théorie philosophique","Un fait vécu ou observé directement","Une statistique officielle","Une citation littéraire"],
-     answer:1,
-     expl:"L'argument d'expérience se fonde sur un vécu, un témoignage ou une observation directe. Il est concret mais subjectif."},
-    {q:"Le connecteur « néanmoins » exprime :",
-     choices:["L'addition","La cause","L'opposition / la concession","La conséquence"],
+     expl:"La Fontaine utilise les animaux comme allégories : le renard = la ruse, le lion = le pouvoir, l'agneau = l'innocence. C'est une satire sociale."},
+    {q:"Quel philosophe a développé la théorie de l'« animal-machine » ?",
+     choices:["Voltaire","Rousseau","Descartes","Montaigne"],
      answer:2,
-     expl:"« Néanmoins » est un connecteur d'opposition, comme « cependant », « toutefois », « en revanche »."},
-    {q:"Le connecteur « par conséquent » exprime :",
-     choices:["L'opposition","L'addition","La cause","La conséquence"],
-     answer:3,
-     expl:"« Par conséquent » introduit une conséquence, comme « ainsi », « dès lors », « c'est pourquoi »."},
-    {q:"Le connecteur « en effet » exprime :",
-     choices:["L'opposition","La conséquence","La cause / l'explication","La conclusion"],
-     answer:2,
-     expl:"« En effet » introduit une explication ou une justification de ce qui vient d'être affirmé."},
-    {q:"La concession est une technique qui consiste à :",
-     choices:["Rejeter totalement l'avis adverse","Reconnaître un point de la thèse adverse pour mieux le dépasser","Ignorer les contre-arguments","Répéter sa thèse plus fort"],
+     expl:"Descartes (Discours de la méthode, 1637) : les animaux sont des automates sans âme. Théorie très contestée par Voltaire et la science moderne."},
+    {q:"Jacques Derrida a écrit « L'Animal que donc je suis » (2006) pour :",
+     choices:["Classer les espèces animales","Questionner la frontière homme/animal","Défendre l'élevage intensif","Raconter sa vie avec son chat"],
      answer:1,
-     expl:"La concession (« Certes... mais... ») reconnaît la validité partielle de l'argument adverse, puis le dépasse. Très valorisée au BTS."},
-    {q:"Un paragraphe argumenté bien structuré suit l'ordre :",
-     choices:["Exemple → Argument → Idée → Transition","Idée directrice → Argument → Exemple → Analyse → Transition","Citation → Résumé → Opinion","Introduction → Conclusion → Développement"],
+     expl:"Derrida interroge la frontière homme/animal et critique la tradition philosophique qui réduit l'animal à un être sans pensée."},
+    {q:"Dans « La Métamorphose » de Kafka, Gregor Samsa se transforme en :",
+     choices:["Un loup","Un insecte monstrueux","Un oiseau","Un poisson"],
      answer:1,
-     expl:"Structure IEAT : Idée directrice, Explication/Argument, Exemple analysé, Transition. Chaque paragraphe suit cet ordre."},
-    {q:"Quel type d'argument fait appel à des principes moraux partagés ?",
-     choices:["Argument d'autorité","Argument par analogie","Argument par les valeurs","Argument d'expérience"],
-     answer:2,
-     expl:"L'argument par les valeurs invoque des principes partagés : liberté, égalité, justice, solidarité, progrès, etc."},
-    {q:"L'argument par l'absurde consiste à :",
-     choices:["Citer un auteur absurde","Pousser la thèse adverse à l'extrême pour montrer qu'elle mène à une contradiction","Raconter une anecdote amusante","Utiliser de l'humour"],
-     answer:1,
-     expl:"L'argument par l'absurde pousse le raisonnement adverse jusqu'à ses conséquences extrêmes pour en montrer l'incohérence."},
-    {q:"Combien de lignes doit faire un paragraphe argumenté ?",
-     choices:["2 à 3 lignes","8 à 15 lignes","20 à 30 lignes","Pas de limite"],
-     answer:1,
-     expl:"Un paragraphe argumenté fait 8 à 15 lignes : assez pour développer idée + argument + exemple + analyse, sans être trop long."},
-    {q:"« De plus », « en outre », « par ailleurs » sont des connecteurs de :",
-     choices:["Opposition","Cause","Addition / enrichissement","Conséquence"],
-     answer:2,
-     expl:"« De plus », « en outre », « par ailleurs », « qui plus est » sont des connecteurs d'addition qui ajoutent un argument."},
-  ]},
-
-  // ── QCM 5 : Culture Générale / Vocabulaire (12 questions) ──
-  {id:'cge_culture', title:'Culture Générale / Vocabulaire', epreuve:'CGE', color:'#14b8a6', questions:[
-    {q:"L'épreuve de Culture Générale et Expression au BTS dure :",
-     choices:["4 heures","3 heures","2 heures","5 heures"],
-     answer:0,
-     expl:"L'épreuve dure 4 heures : environ 2h30 pour la synthèse et 1h30 pour l'écriture personnelle."},
-    {q:"Le corpus de la synthèse comporte généralement :",
-     choices:["1 à 2 documents","3 à 4 documents","5 à 6 documents","Plus de 6 documents"],
-     answer:1,
-     expl:"Le corpus comporte 3 à 4 documents de natures variées : textes argumentatifs, littéraires, images, articles, etc."},
-    {q:"Le mot « dichotomie » signifie :",
-     choices:["Accord total","Division en deux parties opposées","Accumulation","Répétition"],
-     answer:1,
-     expl:"Dichotomie = division en deux éléments opposés et complémentaires (ex. nature/culture, individu/société)."},
-    {q:"Le mot « paradigme » signifie :",
-     choices:["Un modèle de pensée, un cadre de référence dominant","Un exemple à imiter","Un argument fallacieux","Une figure de style"],
-     answer:0,
-     expl:"Un paradigme est un modèle de pensée dominant à une époque donnée (ex. le paradigme numérique, le paradigme écologique)."},
-    {q:"Une « problématique » est :",
-     choices:["Un problème simple à résoudre","Un ensemble de questions soulevées par un sujet, formulé sous forme interrogative","La première phrase de l'introduction","Le titre du devoir"],
-     answer:1,
-     expl:"La problématique est la question centrale qui guide la réflexion. Elle naît de la tension entre les documents du corpus."},
-    {q:"Le registre « polémique » se caractérise par :",
-     choices:["L'attaque virulente, la critique véhémente","La douceur et la sérénité","La description neutre","L'humour léger"],
-     answer:0,
-     expl:"Le registre polémique est combatif : vocabulaire péjoratif, interpellations, ironie mordante, volonté de dénoncer."},
-    {q:"Le registre « pathétique » cherche à provoquer :",
-     choices:["Le rire","La pitié et l'émotion","La peur","L'admiration"],
-     answer:1,
-     expl:"Le registre pathétique vise à émouvoir le lecteur, à susciter la compassion (champ lexical de la souffrance, exclamations...)."},
-    {q:"Une « métaphore » est :",
-     choices:["Une exagération","Une comparaison sans outil de comparaison","Une répétition de sons","Un mot qui a deux sens"],
-     answer:1,
-     expl:"La métaphore assimile deux éléments sans outil de comparaison (comme, tel que). Ex. : « La vie est un combat » (pas « comme un combat »)."},
-    {q:"L'expression « ad hominem » désigne un argument qui :",
-     choices:["S'appuie sur une autorité","Attaque la personne au lieu de ses idées","Compare deux situations","Fait appel aux émotions"],
-     answer:1,
-     expl:"L'argument ad hominem attaque l'adversaire lui-même (sa personne, son passé) au lieu de réfuter ses arguments. C'est un sophisme."},
-    {q:"Le mot « ubiquité » signifie :",
-     choices:["L'absence totale","La capacité d'être présent partout en même temps","La solitude","Le manque de communication"],
-     answer:1,
-     expl:"L'ubiquité est la capacité d'être présent partout simultanément (souvent utilisé pour parler du numérique et des réseaux)."},
-    {q:"Un « euphémisme » consiste à :",
-     choices:["Exagérer la réalité","Atténuer une réalité brutale par une expression adoucie","Dire le contraire de ce qu'on pense","Comparer deux éléments"],
-     answer:1,
-     expl:"L'euphémisme atténue une réalité jugée trop crue. Ex. : « Il nous a quittés » pour « Il est mort »."},
-    {q:"Le thème annuel de CGE au BTS change :",
-     choices:["Chaque trimestre","Chaque année scolaire","Tous les 2 ans","Jamais, il est fixe"],
-     answer:2,
-     expl:"Le thème de Culture Générale et Expression est renouvelé chaque année par le Bulletin Officiel. Le corpus de l'examen s'y rapporte."},
-  ]},
-  // ═══ QCM THÈME 2026 : LES ANIMAUX ET NOUS ═══
-  {id:'cge_theme_2026', title:'Thème 2026 — Les animaux et nous', epreuve:'CGE', color:'#14b8a6', questions:[
-    {q:"Quel est le thème de CGE pour la session 2026 ?",
-     choices:["L'invitation au voyage","À table !","Les animaux et nous","Le progrès technique"],
-     answer:2,
-     expl:"Le thème 2026 est « Les animaux et nous : imaginer, connaître, comprendre l'animal », publié au BO n°24 du 12 juin 2025."},
-    {q:"Quel est le sous-titre complet du thème 2026 ?",
-     choices:["Protéger et respecter l'animal","Imaginer, connaître, comprendre l'animal","L'animal dans la littérature","Droits et devoirs envers les animaux"],
-     answer:1,
-     expl:"L'intitulé complet est : « Les animaux et nous : imaginer, connaître, comprendre l'animal ». Les trois verbes structurent les axes de réflexion."},
-    {q:"Le thème 2026 s'articule autour de combien d'axes principaux ?",
-     choices:["2 axes","3 axes","4 axes","5 axes"],
-     answer:1,
-     expl:"Le thème s'articule autour de 3 axes : 1) Imaginer l'animal (représentations), 2) Connaître l'animal (sciences), 3) Comprendre l'animal (éthique et philosophie)."},
-    {q:"Dans les Fables de La Fontaine, les animaux servent principalement à :",
-     choices:["Décrire la vie sauvage avec réalisme","Représenter des types humains pour critiquer la société","Sensibiliser à la cause animale","Divertir les enfants sans message moral"],
-     answer:1,
-     expl:"La Fontaine utilise les animaux comme allégories des comportements humains (le renard = la ruse, le lion = le pouvoir) pour faire une satire sociale."},
-    {q:"Quel philosophe a écrit « L'Animal que donc je suis » ?",
-     choices:["Michel Foucault","Jacques Derrida","Jean-Paul Sartre","Gilles Deleuze"],
-     answer:1,
-     expl:"Jacques Derrida, dans « L'Animal que donc je suis » (2006), interroge la frontière entre l'homme et l'animal et critique la tradition philosophique qui réduit l'animal à un être sans pensée."},
-    {q:"La « Métamorphose » de Kafka raconte la transformation d'un homme en :",
-     choices:["Loup","Oiseau","Insecte (vermine)","Poisson"],
-     answer:2,
-     expl:"Gregor Samsa se réveille transformé en un monstrueux insecte (« vermine »). Cette métamorphose interroge l'identité, l'exclusion et la frontière entre humanité et animalité."},
-    {q:"Élisabeth de Fontenay est connue pour son ouvrage :",
-     choices:["La Condition animale","Le Silence des bêtes","L'Âme des animaux","Plaidoyer pour les bêtes"],
-     answer:1,
-     expl:"« Le Silence des bêtes — La philosophie à l'épreuve de l'animalité » (1998) retrace l'histoire philosophique du statut de l'animal, de l'Antiquité à nos jours."},
+     expl:"Gregor devient un « monstrueux insecte ». La métamorphose interroge l'identité, l'exclusion et la frontière humanité/animalité."},
     {q:"Le concept de « sentience » animale désigne :",
-     choices:["L'intelligence mesurable par des tests","La capacité à ressentir des émotions et de la souffrance","L'instinct de survie","La capacité de communiquer avec l'homme"],
+     choices:["L'intelligence mesurable","La capacité de ressentir douleur et émotions","Le langage articulé","L'instinct de survie"],
      answer:1,
-     expl:"La sentience est la capacité d'un être à éprouver des expériences subjectives (douleur, plaisir, émotions). C'est un concept central dans le débat sur les droits des animaux."},
-    {q:"Quel penseur des Lumières a défendu l'idée que la souffrance animale devait être prise en compte moralement ?",
-     choices:["Montesquieu","Diderot","Voltaire","Rousseau"],
-     answer:2,
-     expl:"Voltaire, dans le Dictionnaire philosophique (article « Bêtes »), s'indigne de la cruauté envers les animaux et de la théorie cartésienne de l'animal-machine."},
-    {q:"Le film « Le Règne animal » (Thomas Cailley, 2023) traite de :",
-     choices:["Un documentaire sur les espèces menacées","Des humains qui mutent progressivement en animaux","La domestication des animaux sauvages","L'élevage intensif"],
+     expl:"La sentience = capacité d'éprouver des expériences subjectives (douleur, plaisir, émotions). Concept central dans le débat sur les droits des animaux."},
+    {q:"Peter Singer (La Libération animale, 1975) est le fondateur de :",
+     choices:["L'écologie politique","L'antispécisme","Le véganisme religieux","La zoologie moderne"],
      answer:1,
-     expl:"Dans ce film, des mutations transforment des humains en créatures hybrides mi-homme mi-animal, questionnant la frontière entre humanité et animalité, et la notion d'altérité."},
-    {q:"La théorie de l'« animal-machine » est attribuée à :",
-     choices:["Aristote","Descartes","Darwin","Montaigne"],
-     answer:1,
-     expl:"Descartes, dans le Discours de la méthode (1637), soutient que les animaux sont des automates sans âme ni pensée, de simples mécaniques biologiques. Cette théorie a été très contestée."},
-    {q:"Jane Goodall est célèbre pour ses recherches sur :",
-     choices:["Les dauphins","Les abeilles","Les chimpanzés","Les loups"],
-     answer:2,
-     expl:"Jane Goodall a révolutionné la primatologie par ses observations des chimpanzés en Tanzanie, démontrant qu'ils utilisent des outils, ont des émotions et des liens sociaux complexes."},
+     expl:"L'antispécisme refuse la hiérarchie morale entre espèces. Singer défend l'égalité de considération des intérêts de tous les êtres sentients."},
     {q:"Quel axe du thème 2026 correspond aux questions éthiques sur le bien-être animal ?",
-     choices:["Imaginer l'animal","Connaître l'animal","Comprendre l'animal","Aucun des trois"],
+     choices:["Imaginer l'animal","Connaître l'animal","Comprendre l'animal","Aucun"],
      answer:2,
-     expl:"L'axe « Comprendre l'animal » porte sur les enjeux éthiques et philosophiques : droits des animaux, antispécisme, bien-être animal, responsabilité humaine envers le vivant."},
-    {q:"L'antispécisme est un courant qui :",
-     choices:["Classe les espèces par intelligence","Refuse toute hiérarchie morale entre espèces","Prône l'élevage biologique","S'oppose à la recherche scientifique sur les animaux"],
+     expl:"L'axe COMPRENDRE porte sur les enjeux éthiques : droits des animaux, antispécisme, bien-être animal, responsabilité humaine."},
+    {q:"Le « nous » dans le titre « Les animaux et nous » signifie que le thème porte sur :",
+     choices:["Les animaux uniquement","Les humains uniquement","Notre RAPPORT à l'animal (la relation)","La classification des espèces"],
+     answer:2,
+     expl:"Le « nous » place la RELATION au centre. Ce n'est pas un thème SUR l'animal, mais sur NOTRE RAPPORT à l'animal."},
+    {q:"La loi française de 2015 reconnaît l'animal comme :",
+     choices:["Un bien meuble","Un être vivant doué de sensibilité","Une personne juridique","Un objet de droit"],
      answer:1,
-     expl:"L'antispécisme (Peter Singer, « La Libération animale », 1975) s'oppose au spécisme, c'est-à-dire à la discrimination fondée sur l'espèce, et défend l'égalité de considération des intérêts de tous les êtres sentients."},
-    {q:"Le documentaire « Animal » (Cyril Dion, 2021) s'intéresse à :",
-     choices:["L'élevage industriel uniquement","La relation entre l'homme et le monde vivant face à l'extinction","Les animaux de compagnie","La chasse traditionnelle"],
+     expl:"Depuis 2015, l'article 515-14 du Code civil reconnaît l'animal comme « être vivant doué de sensibilité » (avant : simple « bien meuble »)."},
+    {q:"Le film « Le Règne animal » (Thomas Cailley, 2023) traite de :",
+     choices:["Un documentaire animalier","Des humains qui mutent en créatures animales","L'élevage bio","La chasse"],
      answer:1,
-     expl:"« Animal » suit deux adolescents qui enquêtent sur l'effondrement de la biodiversité et interrogent notre rapport au vivant. C'est un document mobilisable pour l'axe « Comprendre l'animal »."},
+     expl:"Des mutations transforment des humains en hybrides mi-homme mi-animal, questionnant la frontière humanité/animalité et l'acceptation de la différence."},
+    {q:"Voltaire critique Descartes sur les animaux dans :",
+     choices:["Candide","Le Dictionnaire philosophique (article « Bêtes »)","Les Lettres persanes","Émile"],
+     answer:1,
+     expl:"Voltaire s'indigne de la cruauté envers les animaux et de la théorie cartésienne de l'animal-machine dans l'article « Bêtes » du Dict. philosophique."},
+    {q:"Jane Goodall est connue pour ses recherches sur :",
+     choices:["Les dauphins","Les chimpanzés","Les abeilles","Les loups"],
+     answer:1,
+     expl:"Jane Goodall a démontré l'intelligence, les émotions et la culture chez les chimpanzés, bouleversant notre regard sur les animaux."},
+    {q:"L'anthropomorphisme consiste à :",
+     choices:["Étudier les animaux scientifiquement","Prêter des qualités humaines aux animaux","Classer les espèces","Domestiquer les animaux"],
+     answer:1,
+     expl:"L'anthropomorphisme = attribuer des caractéristiques humaines (parole, sentiments, morale) aux animaux. Procédé littéraire et culturel très ancien."},
   ]},
 ];
-
-// ══════════════════ 3. SYNTHÈSE DES THÈMES RÉCURRENTS ══════════════════
-
-const SYNTHESE_COLS_FRANCAIS = ['2022','2023','2024','2025'];
 
 const SYNTHESE_FRANCAIS = [
-  {theme:'Synthèse de documents (3-4 docs)',             v:['✓','✓','✓','✓'], freq:'4/4'},
-  {theme:'Écriture personnelle / essai argumenté',       v:['✓','✓','✓','✓'], freq:'4/4'},
-  {theme:'Corpus mixte (textes + image)',                v:['✓','✓','✓','✓'], freq:'4/4'},
-  {theme:'Thème annuel imposé par le BO',                v:['✓','✓','✓','✓'], freq:'4/4'},
-  {theme:'Texte argumentatif (essai, article, tribune)', v:['✓','✓','✓','✓'], freq:'4/4'},
-  {theme:'Texte littéraire (roman, nouvelle, poésie)',   v:['✓','✓','✗','✓'], freq:'3/4'},
-  {theme:'Document iconographique (image, dessin presse)',v:['✗','✓','✓','✓'], freq:'3/4'},
-  {theme:'Question de société contemporaine',            v:['✓','✓','✓','✓'], freq:'4/4'},
-  {theme:'Réflexion sur le progrès / la technique',      v:['✓','✗','✓','✓'], freq:'3/4'},
-  {theme:'Rapport individu / collectif',                 v:['✗','✓','✓','✓'], freq:'3/4'},
+  {cols:['Axe du thème','Références clés','Mots clés','Type de question possible'],
+   data:[
+    ['IMAGINER','La Fontaine, Orwell, Kafka, Saint-Exupéry, Disney, bestiaires médiévaux','Fable, allégorie, anthropomorphisme, métamorphose, symbole, bestiaire','Les représentations animales parlent-elles plus de nous que des animaux ?'],
+    ['CONNAÎTRE','Jane Goodall, Konrad Lorenz, Frans de Waal, Descartes','Éthologie, sentience, cognition, instinct, apprentissage, animal-machine','La science a-t-elle changé notre regard sur l\'animal ?'],
+    ['COMPRENDRE','Singer, Derrida, Fontenay, Voltaire, loi 2015','Antispécisme, spécisme, bien-être, droits, bioéthique, sentience','Que devons-nous à l\'animal ? Quelle responsabilité ?'],
+   ]},
 ];
-
-// ══════════════════ 3bis. BARÈME DÉTAILLÉ CGE ══════════════════
-
-const BAREME_CGE = {
-  synthese: {
-    total: 40,
-    criteres: [
-      {critere:'Compréhension des documents', points:'8-10', detail:'Identifier correctement la thèse de chaque document'},
-      {critere:'Confrontation des documents', points:'10-12', detail:'Montrer convergences et divergences entre les documents'},
-      {critere:'Plan thématique cohérent', points:'6-8', detail:'Plan organisé par idées, pas par documents'},
-      {critere:'Qualité de la rédaction', points:'6-8', detail:'Style, orthographe, syntaxe, transitions'},
-      {critere:'Respect de la méthode', points:'4-6', detail:'Intro complète, conclusion, citations, neutralité'},
-    ],
-  },
-  ecriture_personnelle: {
-    total: 20,
-    criteres: [
-      {critere:'Pertinence de la réflexion', points:'6-8', detail:'Répondre au sujet avec une pensée personnelle argumentée'},
-      {critere:'Qualité de l\'argumentation', points:'4-6', detail:'Arguments variés, exemples analysés, logique'},
-      {critere:'Richesse des exemples', points:'3-4', detail:'Exemples variés (littérature, cinéma, histoire, vécu)'},
-      {critere:'Qualité de la rédaction', points:'3-4', detail:'Expression écrite, connecteurs, orthographe'},
-    ],
-  },
-};
-
-// ══════════════════ 4. PLANNING DE RÉVISION ══════════════════
 
 const PLANNING_FRANCAIS = [
-  {sem:1, titre:'Semaine 1 — Maîtriser la méthodologie', jours:[
-    {jour:'Lundi', theme:'Méthodologie de la synthèse',
-     objectif:'Savoir construire un plan thématique et rédiger une introduction complète',
+  {sem:1, titre:'Semaines 2-3 (15-27 avril) — Découverte méthode E1 + thème', jours:[
+    {jour:'Chaque jour S2-S3', theme:'1-2h/jour E1 Français intégré au planning principal',
+     objectif:'Acquérir la méthode + connaître le thème 2026',
      taches:[
-       {h:'09h-10h', a:'Relire la méthode complète de la synthèse (structure intro/dev/conclusion)', s:'Fiche méthode synthèse'},
-       {h:'10h-11h', a:'S\'entraîner à présenter un corpus de 4 documents (auteur/titre/date/nature/thèse)', s:'Annales 2025'},
-       {h:'11h-12h', a:'Construire un tableau de confrontation sur un corpus', s:'Brouillon'},
-       {h:'14h-15h', a:'Rédiger une introduction complète (amorce + corpus + problématique + plan)', s:'Annales 2024'},
-       {h:'15h-16h', a:'QCM Méthodologie Synthèse (12 questions)', s:'QCM interactifs'},
-       {h:'16h-17h', a:'Rédiger 2 phrases-chapeaux et 2 transitions (entraînement ciblé)', s:'Brouillon'},
-     ]},
-    {jour:'Mardi', theme:'Rédaction de la synthèse',
-     objectif:'Rédiger un développement complet en 2 parties avec confrontation',
-     taches:[
-       {h:'09h-10h', a:'Revoir les règles de confrontation (convergences/divergences)', s:'Fiche méthode'},
-       {h:'10h-11h', a:'Rédiger la partie I d\'une synthèse avec citations intégrées', s:'Annales 2025'},
-       {h:'11h-12h', a:'Rédiger la partie II avec transitions soignées', s:'Annales 2025'},
-       {h:'14h-15h', a:'Rédiger la conclusion (bilan synthétique, sans ouverture)', s:'Annales 2025'},
-       {h:'15h-16h', a:'Relecture critique : vérifier neutralité, absence de « je »', s:'Auto-correction'},
-       {h:'16h-17h', a:'Comparer sa synthèse à un corrigé : noter les différences de méthode', s:'Corrigé annales'},
-     ]},
-    {jour:'Mercredi', theme:'Méthodologie de l\'écriture personnelle',
-     objectif:'Maîtriser le plan dialectique (thèse/antithèse/dépassement)',
-     taches:[
-       {h:'09h-10h', a:'Relire la méthode de l\'écriture personnelle (structure essai)', s:'Fiche méthode EP'},
-       {h:'10h-11h', a:'S\'entraîner à construire un plan thèse/antithèse/dépassement', s:'Sujet annales 2024'},
-       {h:'11h-12h', a:'Lister 10 exemples variés mobilisables (littéraire, ciné, histoire, perso)', s:'Carnet d\'exemples'},
-       {h:'14h-15h', a:'Rédiger une écriture personnelle complète (2 pages)', s:'Annales 2024'},
-       {h:'15h-16h', a:'QCM Écriture Personnelle (12 questions)', s:'QCM interactifs'},
-       {h:'16h-17h', a:'Écrire 5 amorces différentes pour un même sujet (variété)', s:'Entraînement'},
-     ]},
-    {jour:'Jeudi', theme:'Analyse de documents et procédés',
-     objectif:'Savoir distinguer paraphrase et analyse, repérer les procédés d\'écriture',
-     taches:[
-       {h:'09h-10h', a:'Revoir les types de documents (essai, article, roman, image, etc.)', s:'Fiche analyse'},
-       {h:'10h-11h', a:'Exercice : identifier thèse + arguments dans 3 textes différents', s:'Corpus annales'},
-       {h:'11h-12h', a:'Exercice : réécrire 5 phrases paraphrasées en phrases d\'analyse', s:'Entraînement'},
-       {h:'14h-15h', a:'Analyser un document iconographique (description + interprétation)', s:'Image annales 2023'},
-       {h:'15h-16h', a:'QCM Analyse de Documents (12 questions)', s:'QCM interactifs'},
-       {h:'16h-17h', a:'Repérer et nommer les figures de style dans 2 textes du corpus', s:'Corpus annales'},
-     ]},
-    {jour:'Vendredi', theme:'Argumentation et connecteurs',
-     objectif:'Maîtriser les types d\'arguments et les connecteurs logiques',
-     taches:[
-       {h:'09h-10h', a:'Revoir les types d\'arguments (autorité, analogie, expérience, valeurs, absurde)', s:'Fiche argumentation'},
-       {h:'10h-11h', a:'Exercice : identifier les arguments dans un texte argumentatif', s:'Texte annales'},
-       {h:'11h-12h', a:'S\'entraîner aux connecteurs : rédiger 10 transitions variées', s:'Liste connecteurs'},
-       {h:'14h-15h', a:'Rédiger 3 paragraphes argumentés avec structure IEAT', s:'Entraînement'},
-       {h:'15h-16h', a:'QCM Argumentation (12 questions)', s:'QCM interactifs'},
-       {h:'16h-17h', a:'Fiche récapitulative : tableau des types d\'arguments avec un exemple chacun', s:'Fiche personnelle'},
-     ]},
-    {jour:'Samedi', theme:'Repos',
-     objectif:'Récupération — révision optionnelle 15 min max',
-     taches:[
-       {h:'15 min', a:'Relire la fiche mémo recto-verso une fois', s:'Fiche mémo CGE'},
-     ]},
-    {jour:'Dimanche', theme:'Repos',
-     objectif:'Récupération',
-     taches:[
-       {h:'Optionnel', a:'Relire la liste des connecteurs logiques', s:'—'},
+       {h:'S2 Mar 15',a:'Lire fiche méthode E1 complète (gabarits + ortho + grille IGESR)',s:'E1_METHODE'},
+       {h:'S2 Mer 16',a:'Mémoriser gabarits de phrases (présenter, confronter, conclure)',s:'Formules CGE'},
+       {h:'S2 Jeu 17',a:'Mémoriser connecteurs logiques par cœur',s:'Formules CGE'},
+       {h:'S2 Ven 18',a:'20 règles orthographe + 5 exemples culturels thème animaux',s:'E1_METHODE'},
+       {h:'S2 Sam 19',a:'Structure thèse/antithèse/dépassement',s:'Formules CGE'},
+       {h:'S3 Mar 22',a:'1er entraînement corpus réel — questions + confrontation (1h30)',s:'Annales CGE'},
+       {h:'S3 Mer 23',a:'Écriture personnelle complète — thèse/antithèse (1h)',s:'Annales CGE'},
+       {h:'S3 Jeu 24',a:'Relire gabarits + connecteurs',s:'E1_METHODE'},
+       {h:'S3 Sam 26',a:'Relire exemples thème 2026 (La Fontaine, Orwell, Singer...)',s:'Fiches CGE'},
      ]},
   ]},
-  {sem:2, titre:'Semaine 2 — Entraînement intensif et simulation', jours:[
-    {jour:'Lundi', theme:'Synthèse complète chronométrée',
-     objectif:'Rédiger une synthèse complète en 2h30 maximum',
+  {sem:2, titre:'Semaines 4-5 (28 avril - 13 mai) — Entraînements en parallèle du BIM', jours:[
+    {jour:'Après-midi S4-S5', theme:'E1 après-midi pendant que BIM le matin',
+     objectif:'2 entraînements corpus + 1 sujet complet 3h chrono',
      taches:[
-       {h:'09h-11h30', a:'Synthèse complète chronométrée sur un sujet d\'annale (2h30)', s:'Annales 2023'},
-       {h:'14h-15h', a:'Auto-correction : vérifier plan thématique, confrontation, neutralité', s:'Grille d\'évaluation'},
-       {h:'15h-16h', a:'Reprendre les erreurs et réécrire les passages faibles', s:'Auto-correction'},
-       {h:'16h-17h', a:'Revoir les points de méthode qui ont posé problème', s:'Fiche méthode'},
-       {h:'17h-17h30', a:'Mémoriser 3 citations utiles mobilisables dans plusieurs sujets', s:'Carnet de citations'},
+       {h:'S4 Mar 28',a:'Entraînement corpus — questions de confrontation (1h30)',s:'Annales CGE'},
+       {h:'S4 Mer 29',a:'Écriture personnelle complète sur thème animaux (1h30)',s:'Annales CGE'},
+       {h:'S5 Mar 5',a:'SUJET COMPLET 3h chrono (corpus + essai)',s:'Annales CGE 2025'},
+       {h:'S5 Mer 6',a:'Correction détaillée du sujet — noter chaque erreur',s:'Corrigé CGE'},
+       {h:'S5 Jeu 7',a:'Rédiger 3 intros + 3 conclusions avec gabarits + ortho',s:'E1_METHODE'},
      ]},
-    {jour:'Mardi', theme:'Écriture personnelle chronométrée',
-     objectif:'Rédiger une écriture personnelle complète en 1h30 maximum',
+  ]},
+  {sem:3, titre:'Semaine 6 (14-18 mai) — SPRINT E1 = 60% du temps', jours:[
+    {jour:'Jeu 14 → Dim 17 mai', theme:'E1 priorité absolue — 12h minimum',
+     objectif:'Maîtriser méthode + thème pour le 19 mai',
      taches:[
-       {h:'09h-10h30', a:'Écriture personnelle chronométrée sur sujet d\'annale (1h30)', s:'Annales 2023'},
-       {h:'14h-15h', a:'Auto-correction : vérifier argumentation, exemples, connecteurs', s:'Grille d\'évaluation'},
-       {h:'15h-16h', a:'Enrichir son carnet d\'exemples (5 nouveaux exemples)', s:'Carnet d\'exemples'},
-       {h:'16h-17h', a:'QCM Culture Générale / Vocabulaire (12 questions)', s:'QCM interactifs'},
-       {h:'17h-17h30', a:'Rédiger une conclusion modèle avec bilan + ouverture', s:'Entraînement'},
-     ]},
-    {jour:'Mercredi', theme:'Approfondissement du thème annuel',
-     objectif:'Maîtriser le thème de l\'année pour mobiliser des exemples pertinents',
-     taches:[
-       {h:'09h-10h', a:'Relire les documents de cours sur le thème annuel', s:'Documents du professeur'},
-       {h:'10h-11h', a:'Constituer une fiche de 10 exemples liés au thème annuel', s:'Carnet d\'exemples'},
-       {h:'11h-12h', a:'Rédiger 3 paragraphes argumentés sur le thème annuel', s:'Entraînement'},
-       {h:'14h-15h', a:'S\'entraîner à la confrontation sur un corpus lié au thème', s:'Corpus thématique'},
-       {h:'15h-16h', a:'Revoir le vocabulaire spécifique au thème', s:'Fiche vocabulaire'},
-       {h:'16h-17h', a:'Rédiger un paragraphe de concession sur le thème annuel', s:'Entraînement'},
-     ]},
-    {jour:'Jeudi', theme:'Simulation complète (4h)',
-     objectif:'Réaliser l\'épreuve complète en conditions réelles',
-     taches:[
-       {h:'09h-11h30', a:'Synthèse complète (2h30 chronométrées)', s:'Sujet annales 2022'},
-       {h:'11h30-13h', a:'Écriture personnelle (1h30 chronométrée)', s:'Sujet annales 2022'},
-       {h:'14h-15h30', a:'Auto-correction détaillée avec grille de notation', s:'Grille BTS'},
-       {h:'15h30-16h30', a:'Identifier les 3 points faibles prioritaires', s:'Bilan personnel'},
-       {h:'16h30-17h', a:'Réécrire les introductions de la synthèse et de l\'EP si insuffisantes', s:'Auto-correction'},
-     ]},
-    {jour:'Vendredi', theme:'Révision ciblée et derniers ajustements',
-     objectif:'Consolider les points faibles identifiés la veille',
-     taches:[
-       {h:'09h-10h', a:'Reprendre les 3 points faibles identifiés jeudi', s:'Bilan personnel'},
-       {h:'10h-11h', a:'Relire toutes les fiches méthode une dernière fois', s:'Fiches méthode'},
-       {h:'11h-12h', a:'Réviser les connecteurs logiques et le vocabulaire', s:'Fiche connecteurs'},
-       {h:'14h-15h', a:'Relire la fiche mémo A4 recto-verso', s:'Fiche mémo CGE'},
-       {h:'15h-16h', a:'Derniers QCM : refaire les questions ratées uniquement', s:'QCM interactifs'},
-       {h:'16h-17h', a:'Rédiger une fiche « erreurs à ne pas commettre » personnalisée', s:'Bilan personnel'},
-     ]},
-    {jour:'Samedi', theme:'Repos',
-     objectif:'Repos complet avant l\'épreuve',
-     taches:[
-       {h:'15 min', a:'Relire la fiche mémo une dernière fois (optionnel)', s:'Fiche mémo CGE'},
-     ]},
-    {jour:'Dimanche', theme:'Repos',
-     objectif:'Repos complet',
-     taches:[
-       {h:'Optionnel', a:'Relire ses exemples préférés pour se rassurer', s:'Carnet d\'exemples'},
+       {h:'Jeu 14 PM',a:'Méthode synthèse + entraînement CGE 2025 complet',s:'Annales CGE'},
+       {h:'Ven 15 AM',a:'Écriture personnelle complète + connecteurs + intro/conclusion',s:'Annales CGE'},
+       {h:'Ven 15 PM',a:'Revoir connecteurs logiques + gabarits',s:'Formules CGE'},
+       {h:'Sam 16 PM',a:'2ème sujet E1 complet + correction',s:'Annales CGE'},
+       {h:'Dim 17 AM',a:'Relire connecteurs + gabarits + orthographe + exemples animaux',s:'E1_METHODE'},
+       {h:'Dim 17 14h',a:'STOP — REPOS COMPLET',s:'—'},
      ]},
   ]},
 ];
 
-// ══════════════════ 5. FICHES MÉMO RECTO / VERSO ══════════════════
-
 const MemoFrancaisRecto = () => (
-  <FicheContent sections={[
-    {title:'SYNTHÈSE DE DOCUMENTS — Méthode express', content:[
-      {type:'table', headers:['Étape','Contenu','Temps'], rows:[
-        ['Lecture','Lire tous les documents, repérer thèse de chacun','20 min'],
-        ['Tableau','Confrontation : Thème | Doc 1 | Doc 2 | Doc 3 | Doc 4','20 min'],
-        ['Plan','2 ou 3 axes thématiques (du plus évident au plus nuancé)','10 min'],
-        ['Intro','Amorce + Corpus (auteur/titre/date/nature/thèse) + Problématique + Plan','10 min'],
-        ['Développement','Confrontation des docs dans chaque partie + citations courtes','50 min'],
-        ['Conclusion','Bilan synthétique + réponse à la problématique (PAS d\'ouverture)','10 min'],
-        ['Relecture','Orthographe, neutralité, cohérence','10 min'],
-      ]},
-      {type:'alert', color:'red', text:'INTERDIT en synthèse : avis personnel, « je », connaissances extérieures, plan par document'},
-      {type:'alert', color:'blue', text:'Barème : 40 points | Longueur : environ 3 pages | Temps total : 2h30'},
-      {type:'table', headers:['Erreur fréquente','Correction'], rows:[
-        ['Plan par document','Plan THÉMATIQUE (regrouper par idées)'],
-        ['Paraphrase','ANALYSE (procédé + effet)'],
-        ['Avis personnel','Rester NEUTRE et OBJECTIF'],
-        ['Pas de confrontation','Montrer convergences ET divergences'],
-        ['Citations trop longues','Citations courtes intégrées + référence (l. X)'],
-      ]},
-    ]},
-    {title:'ANALYSE DE DOCUMENTS — Aide-mémoire', content:[
-      {type:'table', headers:['Nature du document','Exemples','Ce qu\'il faut repérer'], rows:[
-        ['Texte argumentatif','Essai, éditorial, tribune, discours','Thèse, arguments, connecteurs, registre'],
-        ['Texte narratif','Roman, nouvelle, autobiographie','Point de vue, temps verbaux, figures de style'],
-        ['Texte descriptif','Reportage, portrait, guide','Champs lexicaux, vocabulaire appréciatif/dépréciatif'],
-        ['Document iconographique','Photo, dessin de presse, affiche','Composition, couleurs, symboles, message implicite'],
-      ]},
-      {type:'alert', color:'yellow', text:'Présenter chaque document : Auteur — Titre — Date — Nature — Thèse principale'},
-      {type:'alert', color:'green', text:'Analyser = nommer le PROCÉDÉ + expliquer l\'EFFET sur le lecteur (jamais juste résumer)'},
-    ]},
-    {title:'FIGURES DE STYLE — Les plus fréquentes', content:[
-      {type:'table', headers:['Figure','Définition','Exemple'], rows:[
-        ['Métaphore','Comparaison sans outil','« La vie est un long fleuve tranquille »'],
-        ['Comparaison','Rapprochement avec outil (comme, tel)','« Fort comme un lion »'],
-        ['Hyperbole','Exagération','« Mourir de faim »'],
-        ['Euphémisme','Atténuation','« Il nous a quittés » (= il est mort)'],
-        ['Antithèse','Opposition de 2 idées','« Ô rage ! Ô désespoir ! Ô vieillesse ennemie ! »'],
-        ['Anaphore','Répétition en début de phrase','« Moi président... Moi président... »'],
-        ['Oxymore','Association de 2 mots contradictoires','« Cette obscure clarté »'],
-        ['Litote','Dire moins pour suggérer plus','« Ce n\'est pas mal » (= c\'est très bien)'],
-        ['Périphrase','Désigner par une expression détournée','« Le roi des animaux » (= le lion)'],
-        ['Gradation','Succession ordonnée croissante/décroissante','« Va, cours, vole ! »'],
-      ]},
-      {type:'alert', color:'blue', text:'En synthèse : repérer la figure + nommer le procédé + expliquer l\'effet produit'},
-    ]},
-    {title:'REGISTRES LITTÉRAIRES — Repérage rapide', content:[
-      {type:'table', headers:['Registre','Intention','Indices textuels'], rows:[
-        ['Polémique','Attaquer, dénoncer','Vocabulaire péjoratif, interpellations, ironie mordante'],
-        ['Pathétique','Émouvoir, apitoyer','Champ lexical de la souffrance, exclamations, « hélas »'],
-        ['Lyrique','Exprimer des sentiments','Usage du « je », musicalité, interjections'],
-        ['Comique','Faire rire','Jeux de mots, décalage, absurde'],
-        ['Ironique','Critiquer en disant le contraire','Antiphrase, exagération, 2nd degré'],
-        ['Didactique','Instruire, expliquer','Ton pédagogique, exemples, connecteurs logiques'],
-        ['Épidictique','Louer ou blâmer','Superlatifs, vocabulaire laudatif ou dépréciatif'],
-      ]},
-    ]},
-    {title:'PHRASES-CLÉS — Modèles réutilisables', content:[
-      {type:'table', headers:['Usage','Formulation type'], rows:[
-        ['Présenter un document','« Le premier document est un [nature] de [auteur], intitulé... »'],
-        ['Énoncer une thèse','« L\'auteur défend l\'idée selon laquelle... »'],
-        ['Montrer un accord','« Cette idée est partagée par [auteur2], qui affirme que... »'],
-        ['Montrer un désaccord','« À l\'inverse, [auteur2] nuance cette position en... »'],
-        ['Introduire une citation','« Comme le souligne [auteur], "[citation]" (l. X) »'],
-        ['Transition','« Si [bilan I], il convient néanmoins de s\'interroger sur [II]... »'],
-        ['Conclure la synthèse','« En définitive, la confrontation de ces documents met en lumière... »'],
-        ['Ouvrir (EP seulement)','« Cette réflexion invite à s\'interroger plus largement sur... »'],
-      ]},
-      {type:'alert', color:'yellow', text:'Ces formulations sont des modèles : les adapter au contexte du corpus'},
-    ]},
-  ]}/>
+  <div style={{fontSize:11,lineHeight:1.5}}>
+    <div style={{textAlign:'center',fontWeight:900,fontSize:14,marginBottom:8,color:'#14b8a6'}}>MÉMO E1 — RECTO — Méthode + Grille (19 mai 2026)</div>
+
+    <div style={{fontWeight:800,fontSize:12,color:'#dc2626',marginBottom:4}}>FORMAT : 3h — Questions corpus (10 pts) + Essai (10 pts) = 20 pts</div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#14b8a6',marginTop:8}}>GESTION DU TEMPS</div>
+    <div style={{fontFamily:'monospace',fontSize:10,background:'var(--code-bg)',padding:6,borderRadius:4,marginTop:2}}>
+      14h30-14h45 LIRE corpus (15 min)<br/>
+      14h45-14h55 NOTER mots clés (10 min)<br/>
+      14h55-16h15 PARTIE 1 Questions corpus (80 min)<br/>
+      16h15-16h25 BROUILLON plan essai (10 min)<br/>
+      16h25-17h00 RÉDACTION essai (35 min)<br/>
+      17h00-17h10 Relecture essai (10 min)<br/>
+      17h10-17h30 RELECTURE ORTHO (20 min) ← NE PAS SAUTER
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#14b8a6',marginTop:8}}>GABARIT CONFRONTATION (rapporte le plus !)</div>
+    <div style={{fontFamily:'monospace',fontSize:9.5,background:'var(--code-bg)',padding:6,borderRadius:4,marginTop:2}}>
+      "Les documents [X] et [Y] abordent [thème commun].<br/>
+      [Auteur X] considère que [idée], « [citation] » (l. X).<br/>
+      De son côté, [auteur Y] [rejoint/nuance/contredit]<br/>
+      cette vision en affirmant que [idée Y].<br/>
+      Ainsi, s'ils s'accordent sur [commun], ils divergent sur [diff]."<br/><br/>
+      ACCORD : "À l'instar de [X], [Y] souligne que..."<br/>
+      NUANCE : "[Y] rejoint partiellement [X] mais..."<br/>
+      OPPOSITION : "En revanche, [Y] s'oppose à [X]..."
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#14b8a6',marginTop:8}}>GABARIT ESSAI</div>
+    <div style={{fontFamily:'monospace',fontSize:9.5,background:'var(--code-bg)',padding:6,borderRadius:4,marginTop:2}}>
+      INTRO : "[Constat]. Invite à s'interroger sur [sujet].<br/>
+      Nous examinerons d'abord [axe 1], avant de [axe 2]."<br/>
+      TRANSITION : "Néanmoins, cette vision mérite d'être nuancée."<br/>
+      CONCLUSION : "En définitive, [réponse]. Toutefois, on peut<br/>
+      se demander si [ouverture]."
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#14b8a6',marginTop:8}}>CONNECTEURS LOGIQUES</div>
+    <div style={{fontSize:10}}>
+      <b>Addition :</b> de plus, en outre, par ailleurs · <b>Opposition :</b> cependant, néanmoins, toutefois<br/>
+      <b>Cause :</b> en effet, car, puisque · <b>Conséquence :</b> par conséquent, ainsi, dès lors<br/>
+      <b>Concession :</b> certes... mais, bien que · <b>Illustration :</b> par exemple, notamment<br/>
+      <b>Conclusion :</b> en définitive, en somme, finalement
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#dc2626',marginTop:8}}>RÉFLEXES ANTI-ERREURS</div>
+    <div style={{fontSize:10}}>
+      ❌ Recopier → ✅ REFORMULER + « citation » (l. X)<br/>
+      ❌ Résumer chaque doc → ✅ CONFRONTER (accord + divergence)<br/>
+      ❌ Avis perso en P1 → ✅ NEUTRE en P1, OPINION en P2<br/>
+      ❌ 1 seul point de vue → ✅ NUANCER (certes... mais...)<br/>
+      ❌ Exemples que corpus → ✅ Corpus + CULTURE + PERSO
+    </div>
+  </div>
 );
 
 const MemoFrancaisVerso = () => (
-  <FicheContent sections={[
-    {title:'ÉCRITURE PERSONNELLE — Méthode express', content:[
-      {type:'table', headers:['Étape','Contenu','Temps'], rows:[
-        ['Analyse sujet','Reformuler la question, identifier les mots-clés','5 min'],
-        ['Plan au brouillon','Thèse / Antithèse / Dépassement (ou plan thématique)','15 min'],
-        ['Intro','Amorce + Reformulation sujet + Problématique + Plan','10 min'],
-        ['Développement','2-3 parties : argument + exemple analysé + transition','45 min'],
-        ['Conclusion','Bilan + réponse à la problématique + ouverture','10 min'],
-        ['Relecture','Orthographe, connecteurs, cohérence','5 min'],
-      ]},
-      {type:'alert', color:'blue', text:'Barème : 20 points | Longueur : environ 2 pages | Temps total : 1h30'},
-      {type:'alert', color:'green', text:'Exemples variés à mobiliser : littérature, cinéma, histoire, actualité, expérience personnelle'},
-      {type:'alert', color:'yellow', text:'La concession (certes... mais...) est TRÈS valorisée : elle montre la nuance du candidat'},
-    ]},
-    {title:'CONNECTEURS LOGIQUES — Indispensables', content:[
-      {type:'table', headers:['Fonction','Connecteurs'], rows:[
-        ['Addition','De plus, en outre, par ailleurs, qui plus est, de surcroît'],
-        ['Opposition','Cependant, néanmoins, toutefois, en revanche, or, pourtant'],
-        ['Cause','En effet, car, puisque, étant donné que, dans la mesure où'],
-        ['Conséquence','Par conséquent, ainsi, dès lors, c\'est pourquoi, de ce fait'],
-        ['Concession','Certes... mais, bien que, malgré, quoique, même si'],
-        ['Illustration','Par exemple, notamment, ainsi, tel que, en particulier'],
-        ['Conclusion','En définitive, en somme, pour conclure, finalement, au final'],
-      ]},
-    ]},
-    {title:'VOCABULAIRE UTILE — Mots à maîtriser', content:[
-      {type:'table', headers:['Mot','Définition rapide'], rows:[
-        ['Dichotomie','Division en deux parties opposées'],
-        ['Paradigme','Modèle de pensée dominant, cadre de référence'],
-        ['Ubiquité','Capacité d\'être présent partout en même temps'],
-        ['Euphémisme','Atténuation d\'une réalité brutale'],
-        ['Métaphore','Comparaison sans outil (« comme »)'],
-        ['Polémique','Débat vif, ton combatif et critique'],
-        ['Pathétique','Qui suscite la pitié et l\'émotion'],
-        ['Sophisme','Raisonnement qui semble logique mais est faux'],
-        ['Ad hominem','Argument attaquant la personne et non ses idées'],
-        ['Antithèse','Opposition de deux idées dans une même phrase'],
-        ['Axiome','Vérité admise sans démonstration'],
-        ['Paradoxe','Affirmation contraire à l\'opinion commune, mais recevable'],
-        ['Rhétorique','Art de bien parler, de persuader par le discours'],
-        ['Ambivalence','Double valeur, caractère de ce qui a deux aspects opposés'],
-        ['Obsolescence','Processus de dépassement, de mise hors d\'usage'],
-        ['Hégémonie','Domination, suprématie d\'un groupe ou d\'une idée'],
-      ]},
-      {type:'alert', color:'red', text:'Rappel : épreuve = 4h | Synthèse (40 pts) = 2h30 | Écriture perso (20 pts) = 1h30'},
-    ]},
-    {title:'TYPES D\'ARGUMENTS — Aide-mémoire', content:[
-      {type:'table', headers:['Type','Principe','Exemple d\'utilisation'], rows:[
-        ['Autorité','Citer un expert reconnu','« Comme le souligne le sociologue X... »'],
-        ['Analogie','Comparer deux situations','« De même que la Révolution industrielle... »'],
-        ['Expérience','Fait vécu ou observé','« Lors d\'un stage, j\'ai constaté que... »'],
-        ['Valeurs','Principes moraux partagés','« Au nom de l\'égalité des chances... »'],
-        ['Absurde','Pousser la thèse adverse à l\'extrême','« Si l\'on suivait cette logique... »'],
-        ['Concession','Reconnaître pour dépasser','« Certes... cependant... »'],
-      ]},
-      {type:'alert', color:'green', text:'La concession est la technique la plus valorisée au BTS — elle prouve la maturité du candidat'},
-    ]},
-    {title:'EXEMPLES POLYVALENTS — À mémoriser', content:[
-      {type:'table', headers:['Domaine','Exemple','Thèmes applicables'], rows:[
-        ['Littérature','1984 de George Orwell (1949)','Surveillance, liberté, technologie, totalitarisme'],
-        ['Littérature','Candide de Voltaire (1759)','Optimisme, voyage, critique sociale, ironie'],
-        ['Littérature','L\'Étranger de Camus (1942)','Absurde, conformisme, justice, marginalité'],
-        ['Cinéma','Les Temps modernes de Chaplin (1936)','Progrès, travail, déshumanisation, industrie'],
-        ['Cinéma','Her de Spike Jonze (2013)','Intelligence artificielle, solitude, lien humain'],
-        ['Histoire','Mai 68','Contestation, liberté, jeunesse, changement social'],
-        ['Actualité','Réseaux sociaux et désinformation','Communication, vérité, démocratie, manipulation'],
-        ['Philosophie','Rousseau, Discours sur l\'inégalité (1755)','Nature/culture, progrès, inégalités, société'],
-      ]},
-      {type:'alert', color:'green', text:'Ces exemples sont mobilisables dans de nombreux sujets — les maîtriser permet de gagner du temps le jour J'},
-    ]},
-    {title:'GRILLE D\'AUTO-ÉVALUATION — Synthèse', content:[
-      {type:'table', headers:['Critère','Points / Vérification'], rows:[
-        ['Plan thématique (pas par document)','Si plan par document = note très basse'],
-        ['Tous les documents présentés en intro','Auteur + titre + date + nature + thèse'],
-        ['Problématique formulée en question','Doit naître de la confrontation des docs'],
-        ['Confrontation dans chaque partie','Au moins 2 documents confrontés par partie'],
-        ['Citations courtes entre guillemets','Maximum 2 lignes, avec référence (l. X)'],
-        ['Aucun avis personnel, aucun « je »','Neutralité totale = règle absolue'],
-        ['Conclusion sans ouverture','Bilan synthétique uniquement'],
-        ['Transitions entre les parties','Bilan partie N + annonce partie N+1'],
-      ]},
-    ]},
-    {title:'GRILLE D\'AUTO-ÉVALUATION — Écriture personnelle', content:[
-      {type:'table', headers:['Critère','Points / Vérification'], rows:[
-        ['Problématique reformulée personnellement','Ne pas recopier le sujet tel quel'],
-        ['Plan clair annoncé en intro','Thèse/Antithèse/Dépassement ou thématique'],
-        ['Exemples variés et analysés','Littérature + cinéma + actualité + perso'],
-        ['Connecteurs logiques variés','Jamais 2 fois le même dans un paragraphe'],
-        ['Concession utilisée au moins une fois','« Certes... mais... » = technique valorisée'],
-        ['Conclusion avec bilan ET ouverture','Réponse + question élargie'],
-        ['Paragraphes de 8-15 lignes','Ni trop court ni trop long'],
-        ['Relecture orthographique faite','Accords, conjugaison, ponctuation'],
-      ]},
-    ]},
-    {title:'RAPPELS CRITIQUES — NE PAS OUBLIER', content:[
-      {type:'alert', color:'red', text:'Synthèse : plan THÉMATIQUE, jamais par document'},
-      {type:'alert', color:'red', text:'Synthèse : NEUTRE et OBJECTIF — pas de « je » ni d\'avis personnel'},
-      {type:'alert', color:'red', text:'Synthèse : conclusion SANS ouverture'},
-      {type:'alert', color:'red', text:'Écriture personnelle : conclusion AVEC ouverture'},
-      {type:'alert', color:'red', text:'Toujours ANALYSER les exemples (pas juste les citer)'},
-      {type:'alert', color:'red', text:'Varier les connecteurs logiques — ne pas répéter « de plus » 10 fois'},
-      {type:'alert', color:'red', text:'Chaque document du corpus doit être cité au moins 2 fois dans la synthèse'},
-      {type:'alert', color:'red', text:'Gestion du temps : 2h30 synthèse MAX — garder 1h30 pour l\'écriture personnelle'},
-    ]},
-    {title:'THÈME 2026 — LES ANIMAUX ET NOUS', content:[
-      {type:'alert', color:'blue', text:'Thème : « Les animaux et nous : imaginer, connaître, comprendre l\'animal » — BO n°24 du 12 juin 2025'},
-      {type:'table', headers:['Axe','Contenu','Mots-clés'], rows:[
-        ['Imaginer','Représentations de l\'animal dans la littérature, les arts, les mythes','Fable, allégorie, anthropomorphisme, bestiaire, métamorphose'],
-        ['Connaître','Apports scientifiques : éthologie, cognition animale, sentience','Éthologie, sentience, intelligence animale, instinct vs apprentissage'],
-        ['Comprendre','Enjeux éthiques et philosophiques : droits, bien-être, responsabilité','Antispécisme, bien-être animal, animal-machine, spécisme, bioéthique'],
-      ]},
-      {type:'table', headers:['Référence','Type','Utilisation'], rows:[
-        ['La Fontaine, Fables','Littérature','Allégorie animale = critique sociale (axe Imaginer)'],
-        ['Kafka, La Métamorphose','Littérature','Frontière homme/animal, exclusion, identité (axe Imaginer)'],
-        ['Derrida, L\'Animal que donc je suis','Philosophie','Remise en cause de la frontière homme/animal (axe Comprendre)'],
-        ['Fontenay, Le Silence des bêtes','Philosophie','Histoire du statut philosophique de l\'animal (axe Comprendre)'],
-        ['Jane Goodall, recherches sur les chimpanzés','Sciences','Intelligence et émotions animales démontrées (axe Connaître)'],
-        ['Voltaire, Dictionnaire philosophique (art. Bêtes)','Philosophie','Critique de l\'animal-machine de Descartes (axe Comprendre)'],
-        ['Singer, La Libération animale','Philosophie','Fondateur de l\'antispécisme (axe Comprendre)'],
-        ['Montaigne, Essais (II, 12)','Philosophie','Apologie de Raymond Sebond : l\'homme n\'est pas supérieur (axe Comprendre)'],
-      ]},
-      {type:'table', headers:['Film/Doc','Réalisateur','Angle'], rows:[
-        ['Au hasard Balthazar (1966)','Robert Bresson','L\'âne comme figure christique de souffrance innocente'],
-        ['Le Règne animal (2023)','Thomas Cailley','Mutations homme-animal : frontière, altérité, acceptation'],
-        ['Animal (2021)','Cyril Dion','Effondrement biodiversité, rapport au vivant, jeunesse engagée'],
-      ]},
-      {type:'alert', color:'green', text:'Pour l\'essai : mobiliser au moins 1 référence littéraire + 1 philosophique + 1 contemporaine (film, actualité). Penser à la concession (certes l\'animal est différent... mais il mérite considération).'},
-    ]},
-  ]}/>
+  <div style={{fontSize:11,lineHeight:1.5}}>
+    <div style={{textAlign:'center',fontWeight:900,fontSize:14,marginBottom:8,color:'#059669'}}>MÉMO E1 — VERSO — Thème 2026 : Les animaux et nous</div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#059669'}}>3 AXES DU THÈME</div>
+    <div style={{fontSize:10,marginBottom:4}}>
+      <b>IMAGINER</b> = représentations (fables, mythes, symboles) · <b>CONNAÎTRE</b> = sciences (éthologie, sentience) · <b>COMPRENDRE</b> = éthique (droits, bien-être)
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#3b82f6',marginTop:6}}>AXE 1 — IMAGINER</div>
+    <div style={{fontSize:9.5}}>
+      <b>La Fontaine</b>, Fables — animaux = masques humains (renard=ruse, lion=pouvoir)<br/>
+      <b>Orwell</b>, La Ferme des animaux (1945) — allégorie politique du totalitarisme<br/>
+      <b>Kafka</b>, La Métamorphose (1915) — Gregor→insecte : frontière homme/animal<br/>
+      <b>Saint-Exupéry</b>, Le Petit Prince — renard : apprivoiser = créer des liens<br/>
+      <b>Bestiaires médiévaux</b> — lion=courage, serpent=tentation, colombe=paix<br/>
+      <b>Cailley</b>, Le Règne animal (2023) — mutations humain/animal, altérité
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#3b82f6',marginTop:6}}>AXE 2 — CONNAÎTRE</div>
+    <div style={{fontSize:9.5}}>
+      <b>Goodall</b> — intelligence et émotions chez les chimpanzés<br/>
+      <b>Lorenz</b> — père de l'éthologie, concept d'empreinte<br/>
+      <b>De Waal</b> — empathie et coopération chez les animaux<br/>
+      <b>Descartes</b> (1637) — « animal-machine » (automate sans âme) → CONTESTÉ par la science
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#3b82f6',marginTop:6}}>AXE 3 — COMPRENDRE</div>
+    <div style={{fontSize:9.5}}>
+      <b>Singer</b>, La Libération animale (1975) — fondateur antispécisme<br/>
+      <b>Derrida</b>, L'Animal que donc je suis (2006) — frontière homme/animal<br/>
+      <b>Voltaire</b>, Dict. philosophique (Bêtes) — contre l'animal-machine<br/>
+      <b>Loi 2015</b> — animal = « être vivant doué de sensibilité »<br/>
+      <b>Cyril Dion</b>, Animal (2021) — effondrement biodiversité
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#f59e0b',marginTop:6}}>EXEMPLES BTP PERSONNELS</div>
+    <div style={{fontSize:9.5}}>
+      Espèces protégées sur chantier (chauves-souris, hirondelles) · Nids avant démolition · RE2020 biodiversité · Maroc : rapport différent à l'animal · Nuisibles : gestion sans cruauté
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#dc2626',marginTop:6}}>ORTHOGRAPHE — TESTS RAPIDES</div>
+    <div style={{fontSize:10}}>
+      <b>a/à</b> → remplacer par "avait" · <b>et/est</b> → remplacer par "était" · <b>er/é</b> → remplacer par "vendre/vendu"<br/>
+      <b>PP+être</b> = accord sujet · <b>PP+avoir</b> = accord COD avant · <b>ce/se</b> = démonstratif/réfléchi
+    </div>
+
+    <div style={{fontWeight:700,fontSize:11,color:'#8b5cf6',marginTop:6}}>PROBLÉMATIQUES POSSIBLES</div>
+    <div style={{fontSize:9.5}}>
+      1. Les représentations animales en apprennent-elles plus sur l'homme que sur l'animal ?<br/>
+      2. Peut-on connaître l'animal ou projette-t-on notre humanité ?<br/>
+      3. Les avancées sur la sentience doivent-elles changer nos comportements ?<br/>
+      4. L'anthropomorphisme : comprendre l'animal ou le dénaturer ?<br/>
+      5. Comment concilier progrès et respect du vivant ?
+    </div>
+
+    <div style={{background:'rgba(5,150,105,.15)',padding:6,borderRadius:4,marginTop:6,fontSize:10,borderLeft:'3px solid #059669'}}>
+      <b>CLÉ :</b> Le « nous » du titre = NOTRE RAPPORT à l'animal. Toute réponse doit interroger la relation homme-animal.
+    </div>
+  </div>
 );
+
 
 // ══════════════════════════════════════════════════════════════════════════════
 //  DATA_ANGLAIS.JS — BTS MEC Anglais LVA
@@ -10906,7 +10408,7 @@ const FICHES_FRANCAIS = [
         content: [
           { type: 'table', headers: ['Critère', 'Ancien format (2022-2024)', 'Nouveau format (2025+)'], rows: [
             ['Durée', '4 heures', '3 heures'],
-            ['Coefficient (BTS MEC)', '3', '2 (à confirmer selon arrêté)'],
+            ['Coefficient (BTS MEC)', '3', '4 (arrêté BTS MEC)'],
             ['Nombre de documents', '4 documents', '3 documents'],
             ['Partie 1', 'Synthèse de documents (40 pts /60)', 'Questions sur corpus (10 pts /20)'],
             ['Nombre de questions P1', 'Aucune question : rédaction d\'une synthèse', '3 questions distinctes (3-4 pts chacune)'],
@@ -11411,316 +10913,6 @@ const FICHES_FRANCAIS = [
     ]
   },
 
-  // ═══════════════════════════════════════════════════════════════════════════
-  // FR04 — RÉFÉRENCES CULTURELLES — BANQUE COMPLÈTE
-  // ═══════════════════════════════════════════════════════════════════════════
-  {
-    id: 'fr04',
-    title: 'Références Culturelles — Banque Complète',
-    freq: '★',
-    sections: [
-      {
-        title: '1. Références pour le thème "Dans ma maison" (2022-2023)',
-        content: [
-          { type: 'table', headers: ['Oeuvre', 'Auteur / Réalisateur', 'Date', 'Ce qu\'on peut en dire'], rows: [
-            ['Oblomov', 'Ivan Gontcharov', '1859', 'Le personnage vit reclus dans sa chambre, la maison comme lieu d\'inertie et de paresse. La maison reflète l\'âme du personnage (désordre, négligence). Utilisé dans le sujet 2023.'],
-            ['Chez soi, une odyssée de l\'espace domestique', 'Mona Chollet', '2015', 'Essai sur la maison comme espace de liberté et de repli. Réflexion sur le foyer moderne, le télétravail, l\'intimité. Utilisé dans le sujet 2023.'],
-            ['La Poétique de l\'espace', 'Gaston Bachelard', '1957', 'Essai philosophique fondamental : la maison comme nid, coquille, abri originel. Les figures du grenier (rêves) et de la cave (inconscient).'],
-            ['Les Choses', 'Georges Perec', '1965', 'Roman sur un couple obsédé par les objets et l\'aménagement de son intérieur. La maison comme vitrine du consumérisme.'],
-            ['Dans les forêts de Sibérie', 'Sylvain Tesson', '2011', 'Récit d\'un ermite dans une cabane au bord du lac Baïkal. La maison minimale comme retour à l\'essentiel. Utilisé dans le sujet 2022.'],
-            ['Robinson Crusoé', 'Daniel Defoe', '1719', 'Le naufragé reconstruit une maison sur l\'île déserte : besoin fondamental d\'habiter, de recréer un foyer même en situation extrême.'],
-            ['La Maison de Claudine', 'Colette', '1922', 'Récit autobiographique de souvenirs d\'enfance dans la maison familiale. La maison comme espace de mémoire et de bonheur.'],
-            ['Tanguy', 'Étienne Chatiliez (film)', '2001', 'Comédie sur un fils de 28 ans qui refuse de quitter le domicile parental. La maison comme lieu de conflit intergénérationnel. Affiche utilisée dans le sujet 2023.'],
-            ['Construire une cabane dans les arbres', 'David Parfitt', '2006', 'Essai sur la maison arboricole comme espace de rêve et d\'aventure. Utilisé dans le sujet 2022.'],
-            ['Psycho', 'Alfred Hitchcock (film)', '1960', 'La maison (le Bates Motel) comme lieu d\'angoisse et de terreur. La maison peut être un piège, pas seulement un refuge.'],
-            ['La Maison du retour', 'Jean-Paul Kauffmann', '2014', 'Récit sur la reconstruction d\'une maison après une longue absence. La maison comme métaphore de la reconstruction personnelle.'],
-            ['Tiny Houses / La folie du tout petit', 'Sophie Berthier (Télérama)', '2021', 'Article sur le mouvement des micromaisons : habiter petit pour habiter mieux. Utilisé dans le sujet 2022.']
-          ] }
-        ]
-      },
-      {
-        title: '2. Références pour le thème "L\'invitation au voyage" (2024)',
-        content: [
-          { type: 'table', headers: ['Oeuvre', 'Auteur / Réalisateur', 'Date', 'Ce qu\'on peut en dire'], rows: [
-            ['Les femmes aussi sont du voyage', 'Lucie Azéma', '2021', 'Essai sur les femmes voyageuses et les dangers qu\'elles affrontent. Le voyage au féminin : liberté ET dangers spécifiques (harcèlement, préjugés). Utilisé dans le sujet 2024.'],
-            ['La Civilisation, ma Mère !...', 'Driss Chraïbi', '1972', 'Roman sur une mère marocaine qui s\'émancipe en voyageant vers l\'Occident. Le voyage comme vecteur de libération et d\'apprentissage. Utilisé dans le sujet 2024.'],
-            ['L\'Aventurière de l\'Étoile', 'Christel Mouchard', '2020', 'Récit de Jeanne Barret, première femme à faire le tour du monde (déguisée en homme). Le voyage comme transgression. Utilisé dans le sujet 2024.'],
-            ['L\'Invitation au voyage', 'Charles Baudelaire', '1857', 'Poème des Fleurs du mal. Le voyage comme rêve d\'ailleurs idéalisé : "Là, tout n\'est qu\'ordre et beauté / Luxe, calme et volupté."'],
-            ['Le Voyage', 'Charles Baudelaire', '1861', 'Dernier poème des Fleurs du mal. Le voyage ultime comme fuite du spleen : "Plonger au fond du gouffre [...] pour trouver du nouveau."'],
-            ['Sur la route', 'Jack Kerouac', '1957', 'Roman emblématique du road trip américain. Le voyage comme quête de liberté, de sens et de dépassement de soi.'],
-            ['L\'Usage du monde', 'Nicolas Bouvier', '1963', 'Récit de voyage de la Suisse à l\'Afghanistan. Le voyage comme dépouillement : "On croit qu\'on va faire un voyage, mais bientôt c\'est le voyage qui vous fait."'],
-            ['Into the Wild', 'Sean Penn (film)', '2007', 'Tiré de l\'histoire vraie de Christopher McCandless. Le voyage comme fuite de la société et quête de pureté, mais aussi ses dangers mortels.'],
-            ['Supplément au voyage de Bougainville', 'Denis Diderot', '1772', 'Texte philosophique questionnant le regard du voyageur européen sur les peuples dits "sauvages". Le voyage comme confrontation culturelle.'],
-            ['Micromégas', 'Voltaire', '1752', 'Conte philosophique d\'un géant voyageant dans l\'espace. Le voyage comme moyen de relativiser les certitudes humaines.'],
-            ['Vendredi ou les Limbes du Pacifique', 'Michel Tournier', '1967', 'Réécriture de Robinson Crusoé. Le voyage forcé (naufrage) comme transformation identitaire profonde.'],
-            ['Le Tour du monde en 80 jours', 'Jules Verne', '1872', 'Roman d\'aventures. Le voyage comme défi, prouesse technique et découverte du monde.']
-          ] }
-        ]
-      },
-      {
-        title: '3. Références pour le thème "À table !" (2025)',
-        content: [
-          { type: 'table', headers: ['Oeuvre', 'Auteur / Réalisateur', 'Date', 'Ce qu\'on peut en dire'], rows: [
-            ['L\'Enfant', 'Jules Vallès', '1878', 'Roman autobiographique. Le repas comme espace de domination maternelle : forcer l\'enfant à manger ce qu\'il déteste. Ironie, souffrance, humour noir. UTILISÉ dans le sujet 2025.'],
-            ['Risques, rites et plaisirs alimentaires', 'Pascal Lardellier', '2013', 'Essai sociologique sur le repas familial comme "rassemblement nourricier". Le repas est toujours plus que manger : c\'est dire qui on est. UTILISÉ dans le sujet 2025.'],
-            ['La Promesse de l\'aube', 'Romain Gary', '1960', 'Roman autobiographique. La mère se prive de nourriture pour son fils (scène du bifteck). Le repas comme sacrifice maternel et prise de conscience. UTILISÉ dans le sujet 0.'],
-            ['Festen', 'Thomas Vinterberg (film)', '1998', 'Film danois. Un dîner d\'anniversaire familial tourne au psychodrame quand le fils aîné révèle les abus de son père. Le repas comme moment de vérité. CITÉ dans le doc 2 (2025).'],
-            ['Le Festin de Babette', 'Gabriel Axel (film)', '1987', 'Un repas somptueux transforme une communauté austère. La nourriture comme art, partage et réconciliation.'],
-            ['Freedom from Want (À l\'abri du besoin)', 'Norman Rockwell (peinture)', '1942', 'Scène de Thanksgiving idéalisée. La dinde au centre, famille souriante. Vision américaine de l\'abondance et de la famille unie. UTILISÉ dans le sujet 0.'],
-            ['Gargantua', 'François Rabelais', '1534', 'Le banquet rabelaisien comme célébration de l\'excès, de la joie de vivre et du corps. Le repas comme fête et transgression.'],
-            ['Le Ventre de Paris', 'Émile Zola', '1873', 'Roman sur les Halles de Paris. La nourriture comme spectacle, abondance, mais aussi inégalités sociales (ceux qui mangent vs ceux qui ont faim).'],
-            ['Physiologie du goût', 'Brillat-Savarin', '1825', 'Essai fondateur de la gastronomie française. "Dis-moi ce que tu manges, je te dirai ce que tu es." Le repas comme marqueur social et identitaire.'],
-            ['Ratatouille', 'Brad Bird (Pixar, film)', '2007', 'Film d\'animation sur un rat qui devient chef cuisinier. La cuisine comme art démocratique : "Tout le monde peut cuisiner." Le repas comme créativité et passion.'],
-            ['Le Dîner de cons', 'Francis Veber (film)', '1998', 'Comédie sur un dîner mondain humiliant. Le repas comme jeu de pouvoir et de cruauté sociale.'],
-            ['Les Nourritures terrestres', 'André Gide', '1897', 'Hymne aux plaisirs sensoriels dont la nourriture. "Nathanaël, je t\'enseignerai la ferveur." Le repas comme éveil des sens.'],
-            ['L\'Étranger', 'Albert Camus', '1942', 'Meursault est indifférent aux repas. Son détachement alimentaire reflète son détachement existentiel. Le repas comme révélateur de l\'état psychologique.'],
-            ['Un dîner d\'athées', 'Barbey d\'Aurevilly', '1874', 'Nouvelle des Diaboliques. Un repas entre amis qui vire à la confession de crimes. Le repas comme espace de confession et de transgression morale.']
-          ] }
-        ]
-      },
-      {
-        title: '4. Références transversales (utilisables quel que soit le thème)',
-        content: [
-          { type: 'table', headers: ['Auteur / Penseur', 'Oeuvre clé', 'Idée mobilisable'], rows: [
-            ['Montaigne', 'Essais (1580-1595)', '"Que sais-je ?" — Le doute, la relativité des coutumes, l\'ouverture à l\'autre. Chapitre "Des cannibales" : ne pas juger les cultures étrangères.'],
-            ['Rousseau', 'Les Confessions (1782) / Émile (1762)', 'La nature vs la société. L\'éducation par l\'expérience. Les souvenirs d\'enfance comme fondements de l\'identité.'],
-            ['Voltaire', 'Candide (1759) / Traité sur la tolérance (1763)', 'La critique sociale par l\'ironie. Le voyage comme apprentissage de la tolérance. "Il faut cultiver notre jardin."'],
-            ['Victor Hugo', 'Les Misérables (1862) / Les Contemplations (1856)', 'La misère sociale, la générosité (Mgr Myriel offrant un repas à Valjean), la mémoire et le deuil.'],
-            ['Albert Camus', 'L\'Étranger (1942) / Le Mythe de Sisyphe (1942)', 'L\'absurde, le rapport à l\'existence, la quête de sens face au monde.'],
-            ['Simone de Beauvoir', 'Le Deuxième Sexe (1949) / Mémoires d\'une jeune fille rangée (1958)', 'La condition féminine, l\'émancipation, le regard de la société sur les femmes.'],
-            ['Marcel Proust', 'À la recherche du temps perdu (1913-1927)', 'La madeleine et la mémoire involontaire. Le repas comme déclencheur de souvenirs. La maison de Combray comme paradis perdu.'],
-            ['Antoine de Saint-Exupéry', 'Le Petit Prince (1943) / Terre des hommes (1939)', 'La quête de sens, le voyage, les liens humains. "On ne voit bien qu\'avec le coeur."'],
-            ['Émile Zola', 'Les Rougon-Macquart (1871-1893)', 'La question sociale, l\'hérédité, les conditions de vie. L\'Assommoir (alcoolisme), Germinal (faim et misère).'],
-            ['Guy de Maupassant', 'Nouvelles (1880-1890)', 'La société bourgeoise, les apparences trompeuses, les repas comme révélateurs sociaux (Boule de Suif, La Parure).']
-          ] }
-        ]
-      },
-      {
-        title: '5. Films et séries utilisables comme références culturelles',
-        content: [
-          { type: 'table', headers: ['Film / Série', 'Réalisateur', 'Année', 'Thèmes exploitables'], rows: [
-            ['Festen', 'Thomas Vinterberg', '1998', 'Repas familial, secrets de famille, confrontation, vérité'],
-            ['Le Festin de Babette', 'Gabriel Axel', '1987', 'Cuisine comme art, partage, réconciliation, générosité'],
-            ['Ratatouille', 'Brad Bird (Pixar)', '2007', 'Cuisine démocratique, talent vs origines sociales, passion'],
-            ['Le Dîner de cons', 'Francis Veber', '1998', 'Cruauté sociale, humiliation, repas mondain'],
-            ['Into the Wild', 'Sean Penn', '2007', 'Voyage, liberté, nature, solitude, danger de l\'idéalisme'],
-            ['Tanguy', 'Étienne Chatiliez', '2001', 'Maison familiale, conflit intergénérationnel, quitter le foyer'],
-            ['Parasite', 'Bong Joon-ho', '2019', 'Inégalités sociales, la maison comme symbole de classe, le repas comme miroir des écarts sociaux'],
-            ['La Grande Bouffe', 'Marco Ferreri', '1973', 'Excès alimentaire, critique de la bourgeoisie, le repas comme autodestruction'],
-            ['Mange, prie, aime', 'Ryan Murphy', '2010', 'Voyage, découverte culinaire, quête de soi, renouveau personnel'],
-            ['Julie & Julia', 'Nora Ephron', '2009', 'Cuisine comme passion et émancipation, transmission culinaire'],
-            ['The Lunchbox', 'Ritesh Batra', '2013', 'Nourriture comme lien humain entre inconnus, solitude urbaine, partage'],
-            ['Les Saveurs du palais', 'Christian Vincent', '2012', 'Cuisine française, patrimoine gastronomique, femme dans un monde d\'hommes']
-          ] }
-        ]
-      },
-      {
-        title: '6. Oeuvres d\'art et photographies utilisables',
-        content: [
-          { type: 'table', headers: ['Oeuvre', 'Artiste', 'Date', 'Ce qu\'on peut en dire'], rows: [
-            ['Freedom from Want', 'Norman Rockwell', '1942', 'Scène de Thanksgiving idéalisée. L\'abondance alimentaire comme symbole de la prospérité américaine et du bonheur familial. Utilisé dans le sujet 0 BTS 2025.'],
-            ['Le Déjeuner sur l\'herbe', 'Édouard Manet', '1863', 'Scène de repas en plein air qui fit scandale. Le repas comme espace de transgression sociale et artistique.'],
-            ['Les Mangeurs de pommes de terre', 'Vincent Van Gogh', '1885', 'Repas frugal d\'une famille paysanne. La nourriture comme reflet de la condition sociale. Dignité dans la pauvreté.'],
-            ['La Cène', 'Léonard de Vinci', '1495-1498', 'Le dernier repas du Christ. Le repas comme moment de trahison et de révélation. Dimension sacrée et symbolique du repas partagé.'],
-            ['Nature morte aux pommes', 'Paul Cézanne', '~1890', 'La nourriture comme objet esthétique. Les natures mortes (vanités) rappellent la fugacité de la vie.'],
-            ['Le Repas de noce', 'Pieter Brueghel l\'Ancien', '1567', 'Scène festive et populaire. Le repas comme célébration collective, joie, abondance paysanne.'],
-            ['Nighthawks (Les Oiseaux de nuit)', 'Edward Hopper', '1942', 'Scène dans un diner américain la nuit. Solitude urbaine, isolement. Manger seul comme symbole de la modernité solitaire.'],
-            ['Frontispice de l\'Essai sur l\'architecture', 'Charles Eisen', '1755', 'La cabane primitive comme premier habitat humain. Architecture comme besoin originel. Utilisé dans le sujet 2022.']
-          ] }
-        ]
-      },
-      {
-        title: '7. Comment intégrer une référence dans un paragraphe',
-        content: [
-          { type: 'formula_ref', items: [
-            'MODÈLE 1 (référence littéraire) : C\'est ce qu\'illustre [Auteur] dans [Titre] ([date]) : [résumé de la scène ou de l\'idée en 1-2 phrases], montrant ainsi que [lien avec l\'argument].',
-            'MODÈLE 2 (référence cinématographique) : Le film [Titre] de [Réalisateur] ([date]) met en scène [description de la scène], ce qui confirme l\'idée selon laquelle [lien avec l\'argument].',
-            'MODÈLE 3 (référence artistique) : La toile [Titre] de [Artiste] ([date]) représente [description]. Cette oeuvre témoigne de [interprétation en lien avec l\'argument].',
-            'MODÈLE 4 (référence philosophique) : Comme le soulignait déjà [Penseur] dans [Oeuvre] ([date]), "[citation ou idée]". Cette réflexion éclaire [le sujet] en montrant que [lien].',
-            'MODÈLE 5 (référence d\'actualité) : Un phénomène contemporain illustre cette tendance : [description du fait d\'actualité, avec source si possible]. Cela montre que [lien avec l\'argument].'
-          ] },
-          { type: 'alert', color: 'red', text: 'ERREUR FRÉQUENTE : Citer une oeuvre sans la relier à l\'argument. "Dans Festen, il y a un repas de famille" n\'apporte rien. Il faut toujours expliciter le LIEN avec la thèse défendue : "Dans Festen de Vinterberg, le dîner d\'anniversaire révèle que le repas familial peut être le lieu d\'émergence de vérités douloureuses longtemps tues, confirmant que la table n\'est pas toujours synonyme d\'harmonie."' }
-        ]
-      },
-      {
-        title: '8. Références citées dans les corrigés officiels (compilation)',
-        content: [
-          { type: 'table', headers: ['Session', 'Référence citée dans le corrigé', 'Contexte d\'utilisation'], rows: [
-            ['2025', 'Festen de Thomas Vinterberg (1998)', 'Cité dans le document 2 de Lardellier comme exemple de repas qui tourne au psychodrame. Le corrigé en note de bas de page.'],
-            ['2025', 'Expression "passer à table"', 'Le corrigé analyse l\'expression populaire : dans le jargon judiciaire, "passer à table" = faire ses aveux. Le repas comme lieu de confession.'],
-            ['Sujet 0', 'Norman Rockwell, Freedom from Want', 'Document 3 du corpus. Le corrigé invite à analyser l\'ambiguïté de cette image : idéalisation de l\'abondance américaine en temps de guerre.'],
-            ['Sujet 0', 'Paul Bocuse', 'Cité dans le doc 2 (article Dekhili) : chef ayant proposé des doggy bags élégants à ses clients.'],
-            ['2024', 'Marga d\'Andurain, Isabelle Eberhardt, Anne-France Dautheville', 'Femmes voyageuses citées dans le doc 1 d\'Azéma. Exemples de voyageuses harcelées et persécutées.'],
-            ['2023', 'Bachelard, La Poétique de l\'espace', 'Cité dans le doc 2 de Lamarche-Vadel. La maison comme "nid", "coquille", figure d\'intériorité enveloppante.'],
-            ['2022', 'Robinson suisse (J.-R. Wyss, 1812)', 'Cité dans le doc 2 de Parfitt sur les cabanes dans les arbres. La maison arboricole comme aventure et victoire sur la nature.']
-          ] },
-          { type: 'alert', color: 'green', text: 'Conseil : Les références citées dans les corrigés sont celles que le jury considère comme pertinentes. Les connaître et pouvoir les réutiliser est un atout. Mais la diversité et l\'originalité des références personnelles sont encore plus valorisées (Palier 4).' }
-        ]
-      },
-      {
-        title: '9. Conseils pour diversifier ses références',
-        content: [
-          { type: 'list', items: [
-            'VARIER LES ÉPOQUES : Ne pas citer que des oeuvres du XIXe siècle. Mélanger classiques (Rabelais, Voltaire) et contemporains (films récents, séries, art actuel).',
-            'VARIER LES GENRES : Littérature + cinéma + art + philosophie + actualité. Le correcteur apprécie la culture LARGE.',
-            'VARIER LES CULTURES : Ne pas se limiter à la France. Citer des oeuvres étrangères montre une ouverture d\'esprit (Gontcharov, Kerouac, Rockwell, Bong Joon-ho...).',
-            'ÊTRE PRÉCIS : "Un film que j\'ai vu" = 0 point. "Le film Festen de Thomas Vinterberg (1998)" = référence exploitable.',
-            'NE PAS INVENTER : Mieux vaut une seule référence bien maîtrisée que 5 références approximatives. Le correcteur repère les bluffs.',
-            'PRÉPARER 5-6 RÉFÉRENCES SOLIDES par thème : des références qu\'on connaît bien, qu\'on peut décrire en détail et relier à plusieurs arguments.',
-            'UTILISER L\'ACTUALITÉ : Un événement récent bien choisi montre que le candidat est ancré dans son époque et capable de relier culture générale et réalité contemporaine.',
-            'L\'EXPÉRIENCE PERSONNELLE est acceptable mais doit rester secondaire : toujours la relier à une réflexion générale, ne jamais transformer l\'essai en récit de vie.'
-          ] }
-        ]
-      }
-    ]
-  },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // FR05 — L\'ANCIENNE SYNTHÈSE DE DOCUMENTS
-  // ═══════════════════════════════════════════════════════════════════════════
-  {
-    id: 'fr05',
-    title: 'L\'Ancienne Synthèse de Documents (format 2022-2024)',
-    freq: '★',
-    sections: [
-      {
-        title: '1. Pourquoi connaître l\'ancienne synthèse ?',
-        content: [
-          { type: 'alert', color: 'yellow', text: 'La synthèse de documents a été le format de la Partie 1 de l\'épreuve CGE de 2000 à 2024. Depuis 2025, elle est remplacée par les questions sur corpus. Toutefois, connaître la méthode reste utile pour :' },
-          { type: 'list', items: [
-            'S\'entraîner à la lecture analytique et à la confrontation de documents (compétence toujours évaluée dans les questions)',
-            'Comprendre les annales 2022-2024 pour pratiquer sur des sujets réels',
-            'Se préparer au cas (improbable mais pas impossible) d\'un retour partiel de cet exercice',
-            'Développer les compétences de reformulation et d\'objectivité qui restent valorisées dans le nouveau format',
-            'Les BTS de certains DOM-TOM ou les sessions de rattrapage pourraient encore utiliser l\'ancien format'
-          ] }
-        ]
-      },
-      {
-        title: '2. Méthode complète de la synthèse — Les 6 étapes',
-        content: [
-          { type: 'table', headers: ['Étape', 'Durée conseillée (sur 2h30)', 'Actions détaillées'], rows: [
-            ['1. Lecture du corpus', '20-25 min', 'Lire chaque document attentivement. Identifier la nature (genre, auteur, date, source). Repérer le thème commun et la thèse de chaque document.'],
-            ['2. Analyse et tableau de confrontation', '20-25 min', 'Construire un tableau au brouillon : en colonnes les documents, en lignes les thèmes/sous-thèmes. Repérer les convergences et divergences.'],
-            ['3. Formuler la problématique', '5-10 min', 'Trouver LA question que le corpus dans son ensemble pose. Elle doit englober tous les documents.'],
-            ['4. Construire le plan thématique', '10-15 min', 'Organiser les idées en 2-3 axes thématiques. Chaque axe doit mobiliser au minimum 2 documents. JAMAIS de plan document par document.'],
-            ['5. Rédiger la synthèse', '60-70 min', 'Introduction (présentation du corpus + problématique + annonce du plan) → 2-3 parties thématiques avec confrontation → Conclusion (bilan).'],
-            ['6. Relecture', '10-15 min', 'Vérifier : objectivité (aucun avis personnel), confrontation (chaque paragraphe croise 2+ docs), reformulation (pas de copier-coller), tous les docs mobilisés.']
-          ] }
-        ]
-      },
-      {
-        title: '3. Les règles INVIOLABLES de la synthèse',
-        content: [
-          { type: 'list', items: [
-            'OBJECTIVITÉ ABSOLUE : La synthèse est un exercice NEUTRE. Aucun avis personnel, aucun jugement de valeur, aucune prise de position. On rapporte les idées des auteurs, on ne les commente pas.',
-            'CONFRONTATION SYSTÉMATIQUE : Chaque paragraphe du développement doit croiser au MINIMUM 2 documents. Interdiction de consacrer un paragraphe à un seul document.',
-            'REFORMULATION OBLIGATOIRE : On ne cite JAMAIS directement les textes dans une synthèse (sauf un mot ou une expression très brève entre guillemets). On reformule systématiquement.',
-            'TOUS LES DOCUMENTS MOBILISÉS : Chaque document doit apparaître dans CHAQUE partie du développement (ou au minimum dans 2 parties sur 3). Aucun document ne doit être oublié.',
-            'JAMAIS DE PLAN DOCUMENT PAR DOCUMENT : Le plan "I. Document 1 / II. Document 2 / III. Document 3" est la PIRE erreur. Le plan est THÉMATIQUE.',
-            'FIDÉLITÉ AUX TEXTES : Ne pas déformer les idées des auteurs. Ne pas inventer ce que le texte ne dit pas.',
-            'CONCISION : La synthèse fait environ 3 pages. Pas de digressions, pas de répétitions.',
-            'PAS DE "JE" : Ne jamais utiliser la première personne dans une synthèse. Formules impersonnelles : "Il apparaît que...", "Les documents mettent en lumière...", "On observe que..."'
-          ] },
-          { type: 'alert', color: 'red', text: 'La règle la plus fréquemment violée est l\'objectivité. Beaucoup de candidats glissent des opinions personnelles sans s\'en rendre compte. Exemples d\'erreurs : "Ce texte est très intéressant" (jugement), "L\'auteur a raison de dire que..." (prise de position), "Il est évident que..." (opinion déguisée).' }
-        ]
-      },
-      {
-        title: '4. Plan type de la synthèse',
-        content: [
-          { type: 'formula_ref', items: [
-            '--- INTRODUCTION (8-10 lignes) ---',
-            'Phrase d\'accroche thématique (1 ligne)',
-            'Présentation du corpus : "Le corpus soumis à notre étude se compose de quatre documents : [doc 1 = Auteur, Titre, date, genre], [doc 2 = ...], [doc 3 = ...], [doc 4 = ...]." (3-4 lignes)',
-            'Problématique : "L\'ensemble de ces documents invite à se demander [question]." (1-2 lignes)',
-            'Annonce du plan : "Nous verrons d\'abord que [axe 1], puis que [axe 2], et enfin que [axe 3]." (1-2 lignes)',
-            '--- DÉVELOPPEMENT ---',
-            'Partie I : [Axe thématique 1] — 3-4 paragraphes, chacun confrontant 2+ documents',
-            'Transition : [Bilan I + annonce II]',
-            'Partie II : [Axe thématique 2] — 3-4 paragraphes confrontant 2+ documents',
-            'Transition : [Bilan II + annonce III]',
-            'Partie III (facultative) : [Axe thématique 3] — 2-3 paragraphes',
-            '--- CONCLUSION (3-5 lignes) ---',
-            'Bilan synthétique reprenant les grandes lignes de la réflexion. PAS d\'ouverture personnelle (rester objectif).'
-          ] }
-        ]
-      },
-      {
-        title: '5. Confronter ≠ juxtaposer',
-        content: [
-          { type: 'table', headers: ['MAUVAIS (juxtaposition)', 'BON (confrontation)'], rows: [
-            ['Dans le document 1, Vallès raconte que les repas de son enfance étaient douloureux. Dans le document 2, Lardellier explique que le repas est un rassemblement nourricier.', 'Si le repas familial est présenté par Lardellier comme un "rassemblement nourricier" porteur de valeurs positives, Vallès en offre une vision radicalement opposée où le rituel alimentaire devient un instrument de domination maternelle.'],
-            ['Le document 3 montre une famille heureuse à table. Le document 1 montre un enfant malheureux à table.', 'La représentation idéalisée du repas familial dans la photographie du document 3, tout en sourires et en convivialité, contraste vivement avec l\'expérience douloureuse du narrateur de Vallès, pour qui la table est un champ de bataille.'],
-            ['Tesson vit seul dans une cabane en Sibérie. Perec décrit un couple obsédé par son intérieur.', 'La quête de dépouillement volontaire de Tesson, qui choisit une cabane minimale au bord du lac Baïkal, s\'oppose terme à terme à l\'accumulation compulsive d\'objets décrite par Perec, révélant deux rapports antagoniques à l\'espace domestique.']
-          ] },
-          { type: 'alert', color: 'green', text: 'La clé de la confrontation : utiliser des CONNECTEURS D\'OPPOSITION ou de SIMILITUDE pour mettre les documents en DIALOGUE. Les mots "alors que", "en revanche", "de même", "à l\'instar de", "contrairement à" sont vos alliés.' }
-        ]
-      },
-      {
-        title: '6. Synthèse vs Questions sur corpus — Différences clés',
-        content: [
-          { type: 'table', headers: ['Critère', 'Synthèse (ancien format)', 'Questions sur corpus (nouveau format)'], rows: [
-            ['Objectivité', 'STRICTE : aucun avis personnel', 'RELATIVE : interprétation personnelle acceptée et même attendue'],
-            ['Structure', 'Plan thématique obligatoire avec intro-développement-conclusion', 'Réponse structurée mais pas de plan formel imposé'],
-            ['Confrontation', 'Systématique : CHAQUE paragraphe croise 2+ docs', 'Ciblée : selon ce que demande la question'],
-            ['Citations', 'INTERDITES (sauf mot isolé entre guillemets)', 'AUTORISÉES et même attendues (courtes, entre guillemets, commentées)'],
-            ['Longueur', '~3 pages de développement continu', '~1 page par question (plus court)'],
-            ['Documents mobilisés', 'TOUS les documents dans CHAQUE partie', 'Seulement les documents indiqués par la question'],
-            ['Point de vue', 'Impersonnel (jamais de "je")', 'Personnel possible ("Selon nous...", "Il semble que...")'],
-            ['Notation', '/40 (sur 60 au total)', '/10 (sur 20 au total)'],
-            ['Durée conseillée', '~2h30', '~1h20']
-          ] },
-          { type: 'alert', color: 'blue', text: 'La compétence de CONFRONTATION reste centrale dans les deux formats. Même dans les questions, le corrigé 2025 évalue "l\'aptitude à confronter les documents". La différence : dans la synthèse c\'est systématique et objectif ; dans les questions c\'est ciblé et interprétatif.' }
-        ]
-      },
-      {
-        title: '7. Exemple de plan pour le sujet 2023 — "Dans ma maison"',
-        content: [
-          { type: 'alert', color: 'yellow', text: 'Sujet 2023 : Corpus de 4 documents sur le thème "Dans ma maison". Doc 1 = Gontcharov, Oblomov (1859). Doc 2 = Lamarche-Vadel, "Entre les pierres du mur" (1990). Doc 3 = Mona Chollet, Chez soi (2015). Doc 4 = Chatiliez, affiche du film Tanguy (2001). Écriture personnelle : "Selon vous, la maison est-elle toujours un refuge ?"' },
-          { type: 'formula_ref', items: [
-            '--- PLAN THÉMATIQUE PROPOSÉ ---',
-            'INTRODUCTION : Présentation des 4 documents (genres variés : roman russe XIXe, essai poétique, essai contemporain, affiche de film). Problématique : "Quel rapport l\'individu entretient-il avec son espace domestique : la maison est-elle un havre de paix ou un espace ambigu ?"',
-            'PARTIE I : La maison comme espace de refuge et de protection',
-            '→ Doc 2 (Lamarche-Vadel) : la maison comme nid, coquille, intériorité enveloppante (référence à Bachelard). Protection contre l\'extérieur menaçant.',
-            '→ Doc 1 (Gontcharov) : Oblomov trouve dans sa chambre un confort rassurant, un espace familier où il se sent en sécurité.',
-            '→ Doc 3 (Chollet) : la maison comme espace de liberté et de ressourcement dans le monde moderne.',
-            'PARTIE II : La maison comme espace d\'enfermement et de contradiction',
-            '→ Doc 1 (Gontcharov) : l\'excès de confort conduit à l\'inertie totale. La chambre d\'Oblomov est sale, délabrée, signe de son abandon.',
-            '→ Doc 4 (Tanguy) : l\'affiche montre le fils adulte incrusté chez ses parents, la maison comme piège intergénérationnel.',
-            '→ Doc 2 (Lamarche-Vadel) : la maison trop sécurisée (barreaux, alarmes, caméras) se referme sur elle-même et connaît la "solitude vide".',
-            'PARTIE III : La maison comme lieu d\'ouverture sur le monde',
-            '→ Doc 2 (Lamarche-Vadel) : la maison est aussi une "étape", un "phare" qui accueille l\'étranger. Elle ne peut se soustraire à son rôle d\'accueil.',
-            '→ Doc 3 (Chollet) : la maison connectée au monde (internet, télétravail) n\'est plus un espace clos.',
-            '→ Doc 1 (Gontcharov) : même Oblomov reçoit des visiteurs, la maison est un espace social malgré lui.',
-            'CONCLUSION : Bilan — la maison oscille entre refuge protecteur et prison dorée, mais peut aussi devenir un lieu d\'ouverture si elle reste connectée au monde extérieur.'
-          ] }
-        ]
-      },
-      {
-        title: '8. Exemple de plan pour le sujet 2022 — "Dans ma maison"',
-        content: [
-          { type: 'alert', color: 'yellow', text: 'Sujet 2022 : Doc 1 = Charles Eisen, gravure (1755). Doc 2 = David Parfitt, Construire une cabane dans les arbres (2006). Doc 3 = Sophie Berthier, "La folie du tout petit", Télérama (2021). Doc 4 = Sylvain Tesson, Dans les forêts de Sibérie (2011). Écriture personnelle : "Selon vous, notre maison parle-t-elle de nous ?"' },
-          { type: 'formula_ref', items: [
-            '--- PLAN THÉMATIQUE PROPOSÉ ---',
-            'PROBLÉMATIQUE : En quoi les formes alternatives d\'habitat révèlent-elles un rapport essentiel de l\'homme à la nature et à lui-même ?',
-            'PARTIE I : L\'habitat alternatif comme retour aux origines et à l\'essentiel',
-            '→ Doc 1 (Eisen) : la cabane primitive comme premier geste architectural, lien originel entre l\'homme et la nature.',
-            '→ Doc 2 (Parfitt) : la cabane dans les arbres comme "caractère humain universel", instinct de construire ancré en chacun.',
-            '→ Doc 4 (Tesson) : la cabane au Baïkal comme choix de vie radical, dépouillement volontaire, retour à l\'essentiel.',
-            'PARTIE II : L\'habitat alternatif comme réponse critique à la société moderne',
-            '→ Doc 3 (Berthier) : le mouvement Tiny House comme contestation du consumérisme ("Dans une société qui génère de faux besoins, quelle fierté de se contenter de peu").',
-            '→ Doc 4 (Tesson) : la fuite en Sibérie comme rejet de la société hyperconnectée.',
-            '→ Doc 2 (Parfitt) : les amateurs de cabanes arboricoles perçus comme des "visionnaires, des esprits libres" — dimension contestataire.',
-            'PARTIE III : L\'habitat alternatif entre rêve et réalité',
-            '→ Doc 2 (Parfitt) : la cabane comme espace de jeu, de poésie et d\'imaginaire ("Le jeu nous entraîne dans l\'imaginaire").',
-            '→ Doc 3 (Berthier) : les critiques et les difficultés pratiques (incompréhension, surface limitée, isolation).',
-            '→ Doc 1 (Eisen) : l\'allégorie de l\'architecture montre que construire est un geste à la fois pratique et symbolique.',
-            'CONCLUSION : Les habitats alternatifs révèlent une aspiration profonde à la simplicité et à l\'harmonie avec la nature, mais se heurtent aux réalités pratiques et sociales.'
-          ] }
-        ]
-      }
-    ]
-  },
   // ═══════════════════════════════════════════════════════════════════════════
   // FR06 — THÈME 2026 : LES ANIMAUX ET NOUS
   // ═══════════════════════════════════════════════════════════════════════════
