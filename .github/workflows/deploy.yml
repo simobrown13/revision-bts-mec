@@ -1,19 +1,14 @@
-name: Deploy to GitHub Pages
+name: Deploy App
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'index.html'
+    paths: ['index.html']
 
 permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -22,21 +17,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Download index.html only
+        run: curl -sL "https://raw.githubusercontent.com/${{ github.repository }}/main/index.html" -o index.html
+
+      - name: Prepare site
+        run: mkdir _site && mv index.html _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
-          sparse-checkout: |
-            index.html
-          sparse-checkout-cone-mode: false
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
+          path: _site
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4
