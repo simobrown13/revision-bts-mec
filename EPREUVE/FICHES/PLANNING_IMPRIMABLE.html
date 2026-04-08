@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Planning BTS MEC 2026 — À imprimer</title>
+<style>
+@page { size: A4 landscape; margin: 8mm; }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .page-break { page-break-before: always; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9px; color: #1a1a1a; background: #fff; line-height: 1.35; }
+h1 { font-size: 16px; text-align: center; margin: 6px 0 2px; color: #1e3a5f; }
+h2 { font-size: 11px; text-align: center; color: #475569; margin-bottom: 6px; }
+.subtitle { text-align: center; font-size: 8px; color: #94a3b8; margin-bottom: 8px; }
+
+/* HEADER COEFFICIENTS */
+.coeff-bar { display: flex; gap: 4px; justify-content: center; margin-bottom: 8px; flex-wrap: wrap; }
+.coeff-item { padding: 3px 6px; border-radius: 4px; font-weight: 700; font-size: 7.5px; color: #fff; text-align: center; }
+
+/* CALENDAR GRID */
+.week-row { display: grid; grid-template-columns: 90px repeat(7, 1fr); gap: 2px; margin-bottom: 2px; }
+.week-label { background: #1e3a5f; color: #fff; font-weight: 800; font-size: 8px; padding: 4px 5px; border-radius: 4px 0 0 4px; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.2; }
+.day-cell { border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px; min-height: 62px; position: relative; overflow: hidden; }
+.day-header { font-size: 8px; font-weight: 800; color: #1e3a5f; margin-bottom: 2px; display: flex; justify-content: space-between; }
+.day-header .date { color: #64748b; font-weight: 600; }
+.day-content { font-size: 7.5px; line-height: 1.3; }
+.day-content .task { margin-bottom: 1px; padding-left: 8px; text-indent: -8px; }
+.day-content .task::before { content: "▸ "; color: #94a3b8; }
+
+/* EXAM DAY */
+.exam-day { border: 2px solid; font-weight: 600; }
+.exam-day .exam-badge { font-size: 7px; font-weight: 800; color: #fff; padding: 1px 4px; border-radius: 2px; display: inline-block; margin-bottom: 2px; }
+.exam-day .exam-info { font-size: 7px; color: #475569; }
+
+/* COLORS */
+.bg-e4 { background: #eff6ff; } .border-e4 { border-color: #3b82f6; }
+.bg-e52 { background: #f0fdf4; } .border-e52 { border-color: #22c55e; }
+.bg-e1 { background: #f0fdfa; } .border-e1 { border-color: #14b8a6; }
+.bg-bim { background: #fffbeb; } .border-bim { border-color: #f59e0b; }
+.bg-ang { background: #fef2f2; } .border-ang { border-color: #ef4444; }
+.bg-e51 { background: #f5f3ff; } .border-e51 { border-color: #8b5cf6; }
+.bg-math { background: #faf5ff; } .border-math { border-color: #a855f7; }
+.bg-repos { background: #f8fafc; border-color: #e2e8f0; }
+.bg-sim { background: #fefce8; border-color: #eab308; }
+.bg-mixed { background: #fff; }
+
+.badge-e4 { background: #3b82f6; } .badge-e52 { background: #22c55e; }
+.badge-e1 { background: #14b8a6; } .badge-bim { background: #f59e0b; }
+.badge-ang { background: #ef4444; } .badge-e51 { background: #8b5cf6; }
+.badge-math { background: #a855f7; }
+
+/* PHASE HEADER */
+.phase-header { background: #1e3a5f; color: #fff; padding: 4px 8px; border-radius: 4px; margin: 6px 0 4px; font-size: 10px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+.phase-header .ph-sub { font-weight: 400; font-size: 8px; opacity: 0.8; }
+
+/* DOW HEADER */
+.dow-row { display: grid; grid-template-columns: 90px repeat(7, 1fr); gap: 2px; margin-bottom: 2px; }
+.dow-cell { text-align: center; font-size: 8px; font-weight: 800; color: #64748b; padding: 2px; }
+
+/* LEGEND */
+.legend { display: flex; gap: 8px; justify-content: center; margin: 6px 0; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 3px; font-size: 7.5px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+
+/* CHECKLIST */
+.check { display: inline-block; width: 7px; height: 7px; border: 1px solid #94a3b8; border-radius: 1px; margin-right: 2px; vertical-align: middle; }
+
+/* FOOTER */
+.footer { text-align: center; font-size: 7px; color: #94a3b8; margin-top: 4px; border-top: 1px solid #e2e8f0; padding-top: 3px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 : PHASE 1 + 2 -->
+<h1>PLANNING BTS MEC — Session 2026</h1>
+<h2>BAHAFID Mohamed — Candidat individuel — Académie de Lyon</h2>
+
+<div class="coeff-bar">
+  <div class="coeff-item" style="background:#ef4444">E2 Anglais · coeff 3</div>
+  <div class="coeff-item" style="background:#f59e0b">E6-A BIM · coeff 4</div>
+  <div class="coeff-item" style="background:#14b8a6">E1 Français · coeff 4</div>
+  <div class="coeff-item" style="background:#3b82f6">E4 Analyse · coeff 4</div>
+  <div class="coeff-item" style="background:#22c55e">E52 Financier · coeff 2</div>
+  <div class="coeff-item" style="background:#8b5cf6">E51 Étude · coeff 5</div>
+  <div class="coeff-item" style="background:#a855f7">E3 Maths+Phys · coeff 4</div>
+  <div class="coeff-item" style="background:#1e3a5f">Total : 29 coeff (26 restants)</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>E4</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>E52</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Anglais</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>BIM</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#14b8a6"></div>E1 Français</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div>E51</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#eab308"></div>Simulation</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#e2e8f0"></div>Repos</div>
+  <div class="legend-item"><span style="font-size:10px">★</span> = Jour d'examen</div>
+  <div class="legend-item"><span class="check"></span> = Case à cocher</div>
+</div>
+
+<!-- PHASE 1 -->
+<div class="phase-header">
+  <span>PHASE 1 — E4 + E52 + Anglais</span>
+  <span class="ph-sub">8 → 26 avril · 19 jours</span>
+</div>
+
+<div class="dow-row">
+  <div class="dow-cell"></div>
+  <div class="dow-cell">LUNDI</div>
+  <div class="dow-cell">MARDI</div>
+  <div class="dow-cell">MERCREDI</div>
+  <div class="dow-cell">JEUDI</div>
+  <div class="dow-cell">VENDREDI</div>
+  <div class="dow-cell">SAMEDI</div>
+  <div class="dow-cell">DIMANCHE</div>
+</div>
+
+<!-- SEMAINE 1 : 7-13 avril -->
+<div class="week-row">
+  <div class="week-label">SEM. 1<br>7-13 avr</div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Lun 7</span></div><div class="day-content"><span class="task">Démarrage en douceur</span><span class="task">Lire PLANNING complet</span></div></div>
+  <div class="day-cell bg-e4"><div class="day-header"><span>Mar 8</span><span class="date">J-41</span></div><div class="day-content"><span class="task"><span class="check"></span>F03 Fondations</span><span class="task"><span class="check"></span>18 classes béton</span><span class="task"><span class="check"></span>QCM Fondations</span><span class="task"><span class="check"></span>Corrigé E4 2025</span></div></div>
+  <div class="day-cell bg-e4"><div class="day-header"><span>Mer 9</span><span class="date">J-40</span></div><div class="day-content"><span class="task"><span class="check"></span>F05 Acoustique</span><span class="task"><span class="check"></span>5 catég. voies</span><span class="task"><span class="check"></span>Sabine TR</span><span class="task"><span class="check"></span>QCM Acoustique</span></div></div>
+  <div class="day-cell bg-e52"><div class="day-header"><span>Jeu 10</span><span class="date">J-39</span></div><div class="day-content"><span class="task"><span class="check"></span>F08 Révision prix</span><span class="task"><span class="check"></span>Formule Cn</span><span class="task"><span class="check"></span>10 calculs Cn</span><span class="task"><span class="check"></span>QCM Rév. prix</span></div></div>
+  <div class="day-cell bg-e52"><div class="day-header"><span>Ven 11</span><span class="date">J-38</span></div><div class="day-content"><span class="task"><span class="check"></span>F09 Situation trav.</span><span class="task"><span class="check"></span>16 lignes décompte</span><span class="task"><span class="check"></span>Avance + RG</span><span class="task"><span class="check"></span>QCM Sit. trav.</span></div></div>
+  <div class="day-cell bg-sim"><div class="day-header"><span>Sam 12</span><span class="date">J-37</span></div><div class="day-content"><span class="task"><span class="check"></span>F07 Analyse offres</span><span class="task"><span class="check"></span>F10 Rentabilité</span><span class="task"><span class="check"></span><b>SIMUL E52 2h</b></span><span class="task"><span class="check"></span>Correction</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Dim 13</span></div><div class="day-content"><span class="task">REPOS</span><span class="task">Fiche mémo 15 min</span></div></div>
+</div>
+
+<!-- SEMAINE 2 : 14-20 avril -->
+<div class="week-row">
+  <div class="week-label">SEM. 2<br>14-20 avr</div>
+  <div class="day-cell bg-e4"><div class="day-header"><span>Lun 14</span><span class="date">J-35</span></div><div class="day-content"><span class="task"><span class="check"></span>F02 Réglementation</span><span class="task"><span class="check"></span>PC + PLU + ERP</span><span class="task"><span class="check"></span>RT2012/RE2020</span><span class="task"><span class="check"></span>🎧 Écoute ANG</span></div></div>
+  <div class="day-cell bg-e4"><div class="day-header"><span>Mar 15</span><span class="date">J-34</span></div><div class="day-content"><span class="task"><span class="check"></span>F04 Thermique</span><span class="task"><span class="check"></span>5 formules R,U,φ</span><span class="task"><span class="check"></span>QCM Thermique</span><span class="task"><span class="check"></span>🎧 Écoute ANG</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Mer 16</span><span class="date">J-33</span></div><div class="day-content"><span class="task"><span class="check"></span>F01 MOE 9 phases</span><span class="task"><span class="check"></span>Notation MOE</span><span class="task"><span class="check"></span>🎧 Écoute ANG</span><span class="task"><span class="check"></span>🇬🇧 Prés. orale</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Jeu 17</span><span class="date">J-32</span></div><div class="day-content"><span class="task"><span class="check"></span>F06 Sécurité</span><span class="task"><span class="check"></span>Blindage+GC</span><span class="task"><span class="check"></span>🎧 Simul écoute</span><span class="task"><span class="check"></span>🇬🇧 Oral x3</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Ven 18</span><span class="date">J-31</span></div><div class="day-content"><span class="task"><span class="check"></span>E52 Rentabilité</span><span class="task"><span class="check"></span>DS, MB, RB, MBH</span><span class="task"><span class="check"></span>🎧 Simul écoute</span><span class="task"><span class="check"></span>🇬🇧 Simul orale</span></div></div>
+  <div class="day-cell bg-sim"><div class="day-header"><span>Sam 19</span><span class="date">J-30</span></div><div class="day-content"><span class="task"><span class="check"></span><b>SIMUL E4 4h</b></span><span class="task"><span class="check"></span>Correction</span><span class="task"><span class="check"></span>Points faibles</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Dim 20</span></div><div class="day-content"><span class="task">REPOS</span></div></div>
+</div>
+
+<!-- SEMAINE 3 : 21-27 avril -->
+<div class="week-row">
+  <div class="week-label">SEM. 3<br>21-27 avr<br><span style="color:#fde68a;font-size:7px">E2-A LE 27 !</span></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Lun 21</span><span class="date">J-28</span></div><div class="day-content"><span class="task"><span class="check"></span>Rév. croisée E4+E52</span><span class="task"><span class="check"></span>Exercices ratés</span><span class="task"><span class="check"></span>Flashcards</span><span class="task"><span class="check"></span>🎧 Écoute ANG</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Mar 22</span><span class="date">J-27</span></div><div class="day-content"><span class="task"><span class="check"></span>Calculs chronos</span><span class="task"><span class="check"></span>Décompte <15 min</span><span class="task"><span class="check"></span>🎧 Simul écoute</span><span class="task"><span class="check"></span>🇬🇧 Simul orale x2</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Mer 23</span><span class="date">J-26</span></div><div class="day-content"><span class="task"><span class="check"></span>Mémorisation AM</span><span class="task"><span class="check"></span>Toutes formules</span><span class="task"><span class="check"></span>💻 BIM découverte</span></div></div>
+  <div class="day-cell bg-sim"><div class="day-header"><span>Jeu 24</span><span class="date">J-25</span></div><div class="day-content"><span class="task"><span class="check"></span><b>SIMUL E52 2h</b></span><span class="task"><span class="check"></span><b>SIMUL E4 4h</b></span><span class="task"><span class="check"></span>Correction</span></div></div>
+  <div class="day-cell bg-ang"><div class="day-header"><span>Ven 25</span><span class="date">J-24</span></div><div class="day-content"><span class="task"><span class="check"></span>🎧 2 simul écoute</span><span class="task"><span class="check"></span>🇬🇧 Relire plan</span><span class="task"><span class="check"></span>💻 BIM navigation</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Sam 26</span><span class="date">J-1</span></div><div class="day-content"><span class="task">Écoute légère 15 min</span><span class="task">Vocabulaire BTP</span><span class="task"><b>STOP 10h</b></span><span class="task" style="color:#ef4444;font-weight:700">Préparer convoc.</span></div></div>
+  <div class="day-cell exam-day border-ang bg-ang"><div class="day-header"><span>★ Lun 27</span></div><div class="day-content"><div class="exam-badge badge-ang">E2-A · 13h30</div><div class="exam-info"><b>Compréhension orale</b><br>Lycée Condorcet<br>St Priest · Salle E302<br>Durée : 30 min<br>3 écoutes + CR</div></div></div>
+</div>
+
+<!-- PHASE 2 -->
+<div class="phase-header">
+  <span>PHASE 2 — BIM + Anglais B</span>
+  <span class="ph-sub">28 avril → 13 mai · 16 jours</span>
+</div>
+
+<!-- SEMAINE 4 : 28 avril - 4 mai -->
+<div class="week-row">
+  <div class="week-label">SEM. 4<br>28 avr-4 mai<br><span style="color:#fde68a;font-size:7px">E2-B LE 4 !</span></div>
+  <div class="day-cell bg-bim"><div class="day-header"><span>Lun 28</span><span class="date">J-25</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 BIM attributs</span><span class="task"><span class="check"></span>💻 Extraction qtés</span><span class="task"><span class="check"></span>🇬🇧 Oral répét.</span></div></div>
+  <div class="day-cell bg-bim"><div class="day-header"><span>Mar 29</span><span class="date">J-24</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 IFC / BCF</span><span class="task"><span class="check"></span>💻 Décomp.+quantif.</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Mer 30</span><span class="date">J-23</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 Bilan carbone</span><span class="task"><span class="check"></span>E4 : 6 QCM rapides</span><span class="task"><span class="check"></span>E52 : Cn + décompte</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Jeu 1 mai</span></div><div class="day-content"><span class="task">FÉRIÉ</span><span class="task">BIM léger (1h max)</span></div></div>
+  <div class="day-cell bg-ang"><div class="day-header"><span>Ven 2</span><span class="date">J-2</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 BIM simulation</span><span class="task"><span class="check"></span>🇬🇧 Dernier oral</span><span class="task"><b>STOP 15h</b></span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Sam 3</span><span class="date">J-1</span></div><div class="day-content"><span class="task">REPOS</span><span class="task" style="color:#ef4444;font-weight:700">Préparer convoc.</span><span class="task">+ 3 documents ANG</span></div></div>
+  <div class="day-cell exam-day border-ang bg-ang"><div class="day-header"><span>★ Dim 4</span></div><div class="day-content"><div class="exam-badge badge-ang">E2-B · 13h30</div><div class="exam-info"><b>Expression orale</b><br>LP Carole Peyrefitte<br>21 Quai Tilsitt, Lyon 2e<br>Durée : 15 min<br>5 min prés. + 10 min</div></div></div>
+</div>
+
+<!-- SEMAINE 5 : 5-11 mai -->
+<div class="week-row">
+  <div class="week-label">SEM. 5<br>5-11 mai<br><span style="color:#fde68a;font-size:7px">BIM 11-13 !</span></div>
+  <div class="day-cell bg-bim"><div class="day-header"><span>Lun 5</span><span class="date">J-6</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 Nuage de points</span><span class="task"><span class="check"></span>💻 Modélisation</span></div></div>
+  <div class="day-cell bg-bim"><div class="day-header"><span>Mar 6</span><span class="date">J-5</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 Décomposition</span><span class="task"><span class="check"></span>💻 Quantification</span></div></div>
+  <div class="day-cell bg-bim"><div class="day-header"><span>Mer 7</span><span class="date">J-4</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 Enrichissement</span><span class="task"><span class="check"></span>💻 Collaboration</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Jeu 8 mai</span></div><div class="day-content"><span class="task">FÉRIÉ</span></div></div>
+  <div class="day-cell bg-bim"><div class="day-header"><span>Ven 9</span><span class="date">J-2</span></div><div class="day-content"><span class="task"><span class="check"></span>💻 Simul. complète</span><span class="task"><span class="check"></span>💻 Points faibles</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Sam 10</span><span class="date">J-1</span></div><div class="day-content"><span class="task">REPOS</span><span class="task" style="color:#f59e0b;font-weight:700">Préparer convoc.</span></div></div>
+  <div class="day-cell exam-day border-bim bg-bim"><div class="day-header"><span>★ Dim 11</span></div><div class="day-content"><div class="exam-badge badge-bim">E6-A BIM</div><div class="exam-info"><b>Projet numérique</b><br>AFIP Villeurbanne<br>40 rue Antonins<br><b>11→13 mai</b><br>08h30-17h00 (3j)</div></div></div>
+</div>
+
+<div class="footer">Planning BTS MEC 2026 — BAHAFID Mohamed — Généré le 8 avril 2026 — Page 1/2</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page-break"></div>
+
+<h1>PLANNING BTS MEC — Session 2026 (suite)</h1>
+
+<!-- PHASE 3 -->
+<div class="phase-header">
+  <span>PHASE 3 — SPRINT FINAL : E1 + E4 + E52</span>
+  <span class="ph-sub">14 → 21 mai · 8 jours · 10 coefficients en 3 jours</span>
+</div>
+
+<div class="dow-row">
+  <div class="dow-cell"></div>
+  <div class="dow-cell">LUNDI</div>
+  <div class="dow-cell">MARDI</div>
+  <div class="dow-cell">MERCREDI</div>
+  <div class="dow-cell">JEUDI</div>
+  <div class="dow-cell">VENDREDI</div>
+  <div class="dow-cell">SAMEDI</div>
+  <div class="dow-cell">DIMANCHE</div>
+</div>
+
+<div class="week-row">
+  <div class="week-label">SEM. 6<br>12-18 mai<br><span style="color:#fde68a;font-size:7px">3 ÉCRITS<br>19-20-21 !</span></div>
+  <div class="day-cell exam-day border-bim bg-bim"><div class="day-header"><span>Lun 12</span></div><div class="day-content"><div class="exam-info">← BIM suite<br>(jour 2/3)</div></div></div>
+  <div class="day-cell exam-day border-bim bg-bim"><div class="day-header"><span>Mar 13</span></div><div class="day-content"><div class="exam-info">← BIM fin<br>(jour 3/3)</div></div></div>
+  <div class="day-cell bg-e1"><div class="day-header"><span>Mer 14</span><span class="date">J-5</span></div><div class="day-content"><span class="task">Repos matin</span><span class="task"><span class="check"></span>E1 : Méthode synthèse</span><span class="task"><span class="check"></span>E1 : Entraîn. CGE 2025</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Jeu 15</span><span class="date">J-4</span></div><div class="day-content"><span class="task"><span class="check"></span>E1 : Écriture perso</span><span class="task"><span class="check"></span>E1 : Connecteurs</span><span class="task"><span class="check"></span>E4 : Relire 6 fiches</span></div></div>
+  <div class="day-cell bg-sim"><div class="day-header"><span>Ven 16</span><span class="date">J-3</span></div><div class="day-content"><span class="task"><span class="check"></span><b>SIMUL E52 2h</b></span><span class="task"><span class="check"></span>E1 : Synthèse #2</span><span class="task"><span class="check"></span>E4 : Thèmes faibles</span></div></div>
+  <div class="day-cell bg-mixed"><div class="day-header"><span>Sam 17</span><span class="date">J-2</span></div><div class="day-content"><span class="task"><span class="check"></span>E52 : 16 lignes mém.</span><span class="task"><span class="check"></span>E4 : Formules mém.</span><span class="task"><span class="check"></span>E1 : Connecteurs</span><span class="task"><b>STOP 14h</b></span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Dim 18</span><span class="date">J-1</span></div><div class="day-content"><span class="task"><b>REPOS TOTAL</b></span><span class="task">Mémo 15 min soir</span><span class="task" style="color:#ef4444;font-weight:700">Préparer matériel :</span><span class="task">Calc. + stylos + règle</span></div></div>
+</div>
+
+<!-- SEMAINE ECRITS -->
+<div class="week-row">
+  <div class="week-label" style="background:#dc2626">SEM. 7<br>19-25 mai<br><span style="font-size:8px">★★★ ÉCRITS</span></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Lun 19</span></div><div class="day-content"><span class="task">Matin : repos</span><span class="task">Relire mémo E1</span></div></div>
+  <div class="day-cell exam-day border-e1 bg-e1"><div class="day-header"><span>★ Mar 19</span></div><div class="day-content"><div class="exam-badge badge-e1">E1 · 14h30 · 3h</div><div class="exam-info"><b>Culture Générale</b><br>LGT Martinière<br>Lyon 8e<br>Synthèse 1h15<br>Écriture perso 1h<br>Relecture 15 min</div></div></div>
+  <div class="day-cell exam-day border-e4 bg-e4"><div class="day-header"><span>★ Mer 20</span></div><div class="day-content"><div class="exam-badge badge-e4">E4 · 14h · 4h</div><div class="exam-info"><b>Analyse du projet</b><br>LGT Martinière<br>Lyon 8e<br>1. Lire sujet 15 min<br>2. Calculs d'abord<br>3. Rédaction ensuite<br>4. Relire calculs</div></div></div>
+  <div class="day-cell exam-day border-e52 bg-e52"><div class="day-header"><span>★ Jeu 21</span></div><div class="day-content"><div class="exam-badge badge-e52">E52 · 16h · 2h</div><div class="exam-info"><b>Suivi financier</b><br>LGT Martinière<br>Lyon 8e<br>Matin : réciter Cn<br>+ 16 lignes + avance<br>1. Offres<br>2. Révision prix<br>3. Décompte</div></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Ven 22</span></div><div class="day-content"><span class="task"><b>REPOS</b></span><span class="task">Décompression</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Sam 23</span></div><div class="day-content"><span class="task"><b>REPOS</b></span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Dim 24</span></div><div class="day-content"><span class="task"><span class="check"></span>Lire dossier E51</span><span class="task">(1ère lecture)</span></div></div>
+</div>
+
+<!-- PHASE 4 -->
+<div class="phase-header">
+  <span>PHASE 4 — E51 Étude descriptive (COEFF 5 — LE PLUS GROS)</span>
+  <span class="ph-sub">25 mai → 18 juin · 25 jours · Oral 50 min</span>
+</div>
+
+<div class="week-row">
+  <div class="week-label">SEM. 8<br>25-31 mai<br><span style="color:#fde68a;font-size:7px">PROJET E51</span></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Lun 25</span></div><div class="day-content"><span class="task"><span class="check"></span>Analyser dossier</span><span class="task">Lots + prestations</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Mar 26</span></div><div class="day-content"><span class="task"><span class="check"></span>CCTP lot(s)</span><span class="task"><span class="check"></span>Estimation prix</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Mer 27</span></div><div class="day-content"><span class="task"><span class="check"></span>Coût de revient</span><span class="task"><span class="check"></span>Sous-détails prix</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Jeu 28</span></div><div class="day-content"><span class="task">FÉRIÉ (Ascension)</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Ven 29</span></div><div class="day-content"><span class="task"><span class="check"></span>Planning Gantt</span><span class="task"><span class="check"></span>Ordonnancement</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Sam 30</span></div><div class="day-content"><span class="task"><span class="check"></span>Offre commerciale</span><span class="task"><span class="check"></span>Mémoire technique</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Dim 31</span></div><div class="day-content"><span class="task">REPOS</span></div></div>
+</div>
+
+<div class="week-row">
+  <div class="week-label">SEM. 9<br>1-7 juin<br><span style="color:#fde68a;font-size:7px">RÉDACTION</span></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Lun 1</span></div><div class="day-content"><span class="task"><span class="check"></span>Note de synthèse</span><span class="task"><span class="check"></span>Plan exposé 20 min</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Mar 2</span></div><div class="day-content"><span class="task"><span class="check"></span>Réponses jury</span><span class="task"><span class="check"></span>Chrono exposé x2</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Mer 3</span></div><div class="day-content"><span class="task"><span class="check"></span>Aspects techniques</span><span class="task"><span class="check"></span>Simul. orale</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Jeu 4</span></div><div class="day-content"><span class="task"><span class="check"></span>Estimation + CdR</span><span class="task"><span class="check"></span>Simul. orale #2</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Ven 5</span></div><div class="day-content"><span class="task"><span class="check"></span>Finaliser docs</span><span class="task"><span class="check"></span>RENDU si demandé</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Sam 6</span></div><div class="day-content"><span class="task">REPOS</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Dim 7</span></div><div class="day-content"><span class="task">REPOS</span></div></div>
+</div>
+
+<div class="week-row">
+  <div class="week-label">SEM. 10<br>8-14 juin<br><span style="color:#fde68a;font-size:7px">ORAUX E51</span></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Lun 8</span></div><div class="day-content"><span class="task"><span class="check"></span>Simul. orale 50 min</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Mar 9</span></div><div class="day-content"><span class="task"><span class="check"></span>Simul. orale #2</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Mer 10</span></div><div class="day-content"><span class="task"><span class="check"></span>Simul. orale #3</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Jeu 11</span></div><div class="day-content"><span class="task"><span class="check"></span>Simul. orale #4</span></div></div>
+  <div class="day-cell bg-e51"><div class="day-header"><span>Ven 12</span></div><div class="day-content"><span class="task"><span class="check"></span>Dernière simul.</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Sam 13</span></div><div class="day-content"><span class="task">Relire synthèse</span></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Dim 14</span></div><div class="day-content"><span class="task"><b>REPOS TOTAL</b></span></div></div>
+</div>
+
+<div class="week-row">
+  <div class="week-label" style="background:#7c3aed">SEM. 11<br>15-21 juin<br><span style="font-size:8px">★ E51 + Maths</span></div>
+  <div class="day-cell exam-day border-e51 bg-e51"><div class="day-header"><span>★ Lun 15</span></div><div class="day-content"><div class="exam-badge badge-e51">E51 · coeff 5</div><div class="exam-info"><b>Étude descriptive</b><br>LGT Martinière<br>15→18 juin<br>20 min exposé<br>30 min entretien</div></div></div>
+  <div class="day-cell exam-day border-e51 bg-e51"><div class="day-header"><span>Mar 16</span></div><div class="day-content"><div class="exam-info">← E51 suite</div></div></div>
+  <div class="day-cell exam-day border-e51 bg-e51"><div class="day-header"><span>Mer 17</span></div><div class="day-content"><div class="exam-info">← E51 suite</div></div></div>
+  <div class="day-cell exam-day border-e51 bg-e51"><div class="day-header"><span>Jeu 18</span></div><div class="day-content"><div class="exam-info">← E51 fin</div></div></div>
+  <div class="day-cell bg-math"><div class="day-header"><span>Ven 19</span></div><div class="day-content"><span class="task"><span class="check"></span>Maths : Éq. diff.</span><span class="task"><span class="check"></span>Maths : Fonctions</span></div></div>
+  <div class="day-cell bg-math"><div class="day-header"><span>Sam 20</span></div><div class="day-content"><span class="task"><span class="check"></span>Maths : Probas</span><span class="task"><span class="check"></span>Maths : Stats + IC</span></div></div>
+  <div class="day-cell bg-math"><div class="day-header"><span>Dim 21</span></div><div class="day-content"><span class="task"><span class="check"></span>Phys : Thermique</span><span class="task"><span class="check"></span>Phys : Acoustique</span></div></div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="phase-header">
+  <span>PHASE 5 — Maths + Physique</span>
+  <span class="ph-sub">19 → 24 juin · 6 jours · coeff 2+2</span>
+</div>
+
+<div class="week-row">
+  <div class="week-label" style="background:#a855f7">SEM. 12<br>22-24 juin<br><span style="font-size:8px">★ DERNIÈRES</span></div>
+  <div class="day-cell bg-math"><div class="day-header"><span>Lun 22</span><span class="date">J-1</span></div><div class="day-content"><span class="task"><span class="check"></span>Phys : Chimie, pH</span><span class="task"><span class="check"></span>Simul. maths oral</span><span class="task"><b>STOP 17h</b></span></div></div>
+  <div class="day-cell exam-day border-math bg-math"><div class="day-header"><span>★ Mar 23</span></div><div class="day-content"><div class="exam-badge badge-math">E3 · coeff 2+2</div><div class="exam-info"><b>Maths + Physique</b><br>LGT Martinière<br>23→24 juin<br>Maths : oral 35 min<br>Phys : pratique 2h</div></div></div>
+  <div class="day-cell exam-day border-math bg-math"><div class="day-header"><span>★ Mer 24</span></div><div class="day-content"><div class="exam-info">← E3 fin<br><br><b style="color:#22c55e;font-size:10px">🎉 FIN DU BTS !</b></div></div></div>
+  <div class="day-cell bg-repos"><div class="day-header"><span>Jeu 25</span></div><div class="day-content"><span class="task" style="font-size:9px;text-align:center"><b>🎉 LIBERTÉ !</b></span></div></div>
+  <div class="day-cell bg-repos"></div>
+  <div class="day-cell bg-repos"></div>
+  <div class="day-cell bg-repos"></div>
+</div>
+
+<div class="footer">Planning BTS MEC 2026 — BAHAFID Mohamed — Total : 29 coefficients · 8 épreuves · 76 jours — Page 2/2</div>
+
+</body>
+</html>
