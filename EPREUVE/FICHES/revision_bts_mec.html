@@ -13881,6 +13881,170 @@ const QCMComponent = ({qcm}) => {
   );
 };
 
+// ══════════════════ SIMULATEUR DE NOTES ══════════════════
+
+const SIMU_EPREUVES = [
+  {id:'e1', name:'E1 — Culture générale', coeff:4, color:'#14b8a6', icon:'🇫🇷', niveau:'faible'},
+  {id:'e2', name:'E2 — Anglais (A+B)', coeff:3, color:'#ef4444', icon:'🇬🇧', niveau:'moyen'},
+  {id:'e31',name:'E31 — Mathématiques', coeff:2, color:'#8b5cf6', icon:'🔢', niveau:'moyen'},
+  {id:'e32',name:'E32 — Physique-Chimie', coeff:2, color:'#f97316', icon:'⚗️', niveau:'moyen'},
+  {id:'e4', name:'E4 — Analyse du projet', coeff:4, color:'#3b82f6', icon:'📘', niveau:'fort'},
+  {id:'e51',name:'E51 — Étude descriptive', coeff:5, color:'#8b5cf6', icon:'📐', niveau:'fort'},
+  {id:'e52',name:'E52 — Suivi financier', coeff:2, color:'#22c55e', icon:'📗', niveau:'fort'},
+  {id:'e61',name:'E61 — Projet BIM', coeff:4, color:'#f59e0b', icon:'💻', niveau:'fort'},
+  {id:'e62',name:'E62 — Rapport stage', coeff:3, color:'#d97706', icon:'📋', niveau:'fort'},
+];
+
+const SIMU_PRESETS = [
+  {name:'🎯 Minimum (10/20)',notes:{e1:8,e2:10,e31:8,e32:8,e4:12,e51:12,e52:14,e61:14,e62:12}},
+  {name:'✅ Réaliste',notes:{e1:10,e2:11,e31:10,e32:10,e4:14,e51:14,e52:15,e61:16,e62:13}},
+  {name:'🚀 Ambitieux',notes:{e1:12,e2:12,e31:12,e32:12,e4:16,e51:16,e52:17,e61:18,e62:15}},
+  {name:'⚠️ Pessimiste',notes:{e1:6,e2:8,e31:7,e32:7,e4:11,e51:10,e52:12,e61:12,e62:10}},
+  {name:'💪 Forces à fond',notes:{e1:8,e2:9,e31:9,e32:9,e4:15,e51:16,e52:16,e61:17,e62:14}},
+];
+
+const SimulateurPage = ({onBack}) => {
+  const [notes, setNotes] = useState({e1:10,e2:10,e31:10,e32:10,e4:14,e51:14,e52:14,e61:15,e62:12});
+  const [preset, setPreset] = useState(-1);
+
+  const upd = (id,v) => { setNotes(p=>({...p,[id]:parseFloat(v)})); setPreset(-1); };
+  const apply = (i) => { setNotes({...SIMU_PRESETS[i].notes}); setPreset(i); };
+
+  const totalCoeff = SIMU_EPREUVES.reduce((s,e)=>s+e.coeff,0);
+  const totalPts = SIMU_EPREUVES.reduce((s,e)=>s+notes[e.id]*e.coeff,0);
+  const moy = totalPts / totalCoeff;
+  const pass = moy >= 10;
+  const mention = moy>=16?'Mention Bien':moy>=14?'Mention Assez Bien':moy>=12?'Mention':null;
+  const nc = n => n<8?'#ef4444':n<10?'#f59e0b':n<12?'#eab308':n<14?'#22c55e':'#34d399';
+  const manque = pass ? 0 : Math.ceil((10-moy)*totalCoeff);
+
+  const fortMoy = (()=>{const f=SIMU_EPREUVES.filter(e=>e.niveau==='fort');return f.reduce((s,e)=>s+notes[e.id]*e.coeff,0)/f.reduce((s,e)=>s+e.coeff,0);})();
+  const faibleMoy = (()=>{const f=SIMU_EPREUVES.filter(e=>e.niveau!=='fort');return f.reduce((s,e)=>s+notes[e.id]*e.coeff,0)/f.reduce((s,e)=>s+e.coeff,0);})();
+
+  return (
+  <div>
+    {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
+    <div className="page-title">Simulateur de Notes</div>
+    <div className="page-sub">29 coefficients — Glissez les curseurs — Moyenne nécessaire : 10/20</div>
+
+    {/* JAUGE */}
+    <div style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:14,padding:18,marginBottom:16,textAlign:'center'}}>
+      <div style={{fontSize:48,fontWeight:900,color:nc(moy),lineHeight:1}}>{moy.toFixed(2)}/20</div>
+      <div style={{fontSize:12,color:'var(--text2)',marginTop:4}}>{totalPts.toFixed(0)} pts / {totalCoeff*20} pts max</div>
+      <div style={{height:12,background:'var(--prog-bg)',borderRadius:6,margin:'10px 0',overflow:'hidden'}}>
+        <div style={{height:'100%',width:(moy/20*100)+'%',background:nc(moy),borderRadius:6,transition:'all .4s'}}/>
+      </div>
+      <div style={{display:'flex',justifyContent:'space-between',fontSize:9,color:'var(--text3)',padding:'0 2px'}}>
+        <span>0</span><span>4</span><span>8</span><span style={{color:moy>=10?'#22c55e':'#ef4444',fontWeight:800}}>10</span><span>12</span><span>14</span><span>16</span><span>20</span>
+      </div>
+      {pass ?
+        <div style={{marginTop:10,padding:10,borderRadius:10,background:'rgba(34,197,94,.12)',border:'1px solid rgba(34,197,94,.3)',color:'#86efac',fontSize:16,fontWeight:800}}>
+          ✅ ADMIS{mention ? ' — '+mention : ''}
+        </div> :
+        moy >= 9 ?
+        <div style={{marginTop:10,padding:10,borderRadius:10,background:'rgba(245,158,11,.12)',border:'1px solid rgba(245,158,11,.3)',color:'#fde68a',fontSize:14,fontWeight:800}}>
+          ⚠️ RATTRAPAGE — Il manque {manque} points ({(10-moy).toFixed(2)} de moyenne)
+        </div> :
+        <div style={{marginTop:10,padding:10,borderRadius:10,background:'rgba(239,68,68,.12)',border:'1px solid rgba(239,68,68,.3)',color:'#fca5a5',fontSize:14,fontWeight:800}}>
+          ❌ NON ADMIS — Il manque {manque} points ({(10-moy).toFixed(2)} de moyenne)
+        </div>
+      }
+    </div>
+
+    {/* STATS */}
+    <div className="stat-row">
+      <div className="stat"><div className="stat-val" style={{color:nc(moy)}}>{moy.toFixed(1)}</div><div className="stat-lbl">Moyenne</div></div>
+      <div className="stat"><div className="stat-val" style={{color:'#34d399'}}>{fortMoy.toFixed(1)}</div><div className="stat-lbl">Points forts</div></div>
+      <div className="stat"><div className="stat-val" style={{color:nc(faibleMoy)}}>{faibleMoy.toFixed(1)}</div><div className="stat-lbl">Points faibles</div></div>
+      <div className="stat"><div className="stat-val" style={{color:nc(notes.e1)}}>{notes.e1}</div><div className="stat-lbl">E1 Français</div></div>
+    </div>
+
+    {/* PRESETS */}
+    <div style={{display:'flex',gap:6,marginBottom:16,flexWrap:'wrap',justifyContent:'center'}}>
+      {SIMU_PRESETS.map((p,i)=>(
+        <div key={i} onClick={()=>apply(i)} style={{padding:'7px 14px',borderRadius:8,border:'1px solid '+(preset===i?'#3b82f6':'var(--border)'),background:preset===i?'var(--nav-active)':'var(--card)',color:preset===i?'var(--nav-actxt)':'var(--text2)',cursor:'pointer',fontSize:12,fontWeight:600,transition:'all .15s'}}>{p.name}</div>
+      ))}
+    </div>
+
+    {/* TABLEAU */}
+    <div className="tbl-wrap" style={{marginBottom:16}}>
+      <table className="tbl">
+        <thead><tr><th></th><th>Épreuve</th><th style={{textAlign:'center'}}>Coeff</th><th style={{textAlign:'center'}}>Niveau</th><th style={{textAlign:'center',width:50}}>Note</th><th style={{width:'35%'}}>Curseur</th><th style={{textAlign:'center'}}>Points</th></tr></thead>
+        <tbody>
+          {SIMU_EPREUVES.map(e=>{
+            const n=notes[e.id], pts=n*e.coeff;
+            const nBg = e.niveau==='fort'?'rgba(34,197,94,.15)':e.niveau==='faible'?'rgba(239,68,68,.15)':'rgba(245,158,11,.15)';
+            const nCol = e.niveau==='fort'?'#86efac':e.niveau==='faible'?'#fca5a5':'#fde68a';
+            const nLbl = e.niveau==='fort'?'FORT':e.niveau==='faible'?'FAIBLE':'MOYEN';
+            return (
+              <tr key={e.id}>
+                <td style={{fontSize:16,textAlign:'center'}}>{e.icon}</td>
+                <td style={{fontWeight:700,color:e.color}}>{e.name}</td>
+                <td style={{textAlign:'center',fontWeight:800,color:'#60a5fa'}}>{e.coeff}</td>
+                <td style={{textAlign:'center'}}><span style={{background:nBg,color:nCol,padding:'2px 7px',borderRadius:4,fontSize:10,fontWeight:700}}>{nLbl}</span></td>
+                <td style={{textAlign:'center',fontSize:18,fontWeight:900,color:nc(n)}}>{n}</td>
+                <td><input type="range" min="0" max="20" step="0.5" value={n} onChange={ev=>upd(e.id,ev.target.value)} style={{width:'100%',accentColor:e.color}}/></td>
+                <td style={{textAlign:'center',fontWeight:700,color:nc(n)}}>{pts.toFixed(0)}/{e.coeff*20}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    {/* IMPACT */}
+    <div style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:14,marginBottom:16}}>
+      <div className="section-h2" style={{marginTop:0}}>💡 Que se passe-t-il si...</div>
+      {[
+        {desc:'E1 Français +2 pts → '+(notes.e1+2)+'/20', d:2*4},
+        {desc:'E51 Étude desc. +2 pts → '+(notes.e51+2)+'/20', d:2*5},
+        {desc:'E4 Analyse +2 pts → '+(notes.e4+2)+'/20', d:2*4},
+        {desc:'BIM monte à 18/20', d:(18-notes.e61)*4},
+        {desc:'E1 Français tombe à '+(Math.max(notes.e1-3,0))+'/20', d:-3*4},
+        {desc:'E52 monte à 18/20', d:(18-notes.e52)*2},
+      ].map((sc,i)=>{
+        const newM = (totalPts+sc.d)/totalCoeff;
+        return (
+          <div key={i} style={{display:'flex',alignItems:'center',gap:8,padding:'5px 0',borderBottom:'1px solid var(--border2)',fontSize:12}}>
+            <div style={{flex:1,color:'var(--text2)'}}>{sc.desc}</div>
+            <div style={{minWidth:70,textAlign:'center',fontWeight:700,color:sc.d>=0?'#22c55e':'#ef4444'}}>{sc.d>=0?'+':''}{sc.d} pts</div>
+            <div style={{minWidth:80,textAlign:'right',fontWeight:800,color:nc(newM)}}>→ {newM.toFixed(2)}/20</div>
+          </div>
+        );
+      })}
+
+      {!pass && <div className="key-point alert-red" style={{marginTop:10}}>
+        <b>💡 Conseil :</b> Il manque <b>{manque} points</b>. Le plus rentable : gagner +2 sur E51 (coeff 5) = +10 points d'un coup.
+      </div>}
+      {pass && moy<12 && <div className="key-point" style={{marginTop:10}}>
+        <b>💡 Pour la mention :</b> Il faut {((12-moy)*totalCoeff).toFixed(0)} points de plus. Concentrez-vous sur E4, E51 et BIM.
+      </div>}
+      {moy>=12 && <div className="key-point alert-green" style={{marginTop:10}}>
+        <b>🎯 Excellent !</b> Moyenne de {moy.toFixed(2)}/20{mention?' avec '+mention:''}. Continuez !
+      </div>}
+    </div>
+
+    {/* BARRES PAR EPREUVE */}
+    <div style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:14}}>
+      <div className="section-h2" style={{marginTop:0}}>📊 Vue par épreuve</div>
+      {[...SIMU_EPREUVES].sort((a,b)=>b.coeff-a.coeff).map(e=>{
+        const n=notes[e.id];
+        return (
+          <div key={e.id} style={{display:'flex',alignItems:'center',gap:8,padding:'4px 0',borderBottom:'1px solid var(--border2)',fontSize:12}}>
+            <div style={{minWidth:16,textAlign:'center'}}>{e.icon}</div>
+            <div style={{fontWeight:700,color:e.color,minWidth:160}}>{e.name} (×{e.coeff})</div>
+            <div style={{flex:1,height:8,background:'var(--prog-bg)',borderRadius:4,overflow:'hidden'}}>
+              <div style={{height:'100%',width:(n/20*100)+'%',background:nc(n),borderRadius:4,transition:'width .3s'}}/>
+            </div>
+            <div style={{fontWeight:800,color:nc(n),minWidth:40,textAlign:'right'}}>{n}/20</div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+  );
+};
+
 // ══════════════════ PAGES ══════════════════
 
 const EXAM_CALENDAR = [
@@ -13966,6 +14130,7 @@ const Accueil = ({setNav}) => {
         {label:'Annales Corrigées',sub:'E4 + E52 corrigés + 41 PDF officiels',c:'#7c3aed',nav:'annales'},
         {label:'Fiche Mémo A4',sub:'Résumé compact à imprimer recto-verso',c:'#0891b2',nav:'memo'},
         {label:'Planning',sub:'5 phases · 79 jours · basé sur les 29 coefficients',c:'#059669',nav:'planning'},
+        {label:'Simulateur Notes',sub:'Glissez les curseurs · Moyenne · Scénarios · Mentions',c:'#dc2626',nav:'simulateur'},
         {label:'Maths B1',sub:'6 fiches · 75 QCM · Annales corrigées · Mémo',c:'#8b5cf6',nav:'fiches_maths'},
         {label:'Physique',sub:'6 fiches · 60 QCM · Exercices guidés · Annales',c:'#f97316',nav:'fiches_physique'},
         {label:'Français CGE',sub:'10 fiches · 75 QCM · Thème 2026 · Gabarits',c:'#14b8a6',nav:'fiches_francais'},
@@ -16445,6 +16610,7 @@ const NAVS = [
   {id:'exercices', label:'Exercices',       icon:'✏️'},
   {id:'memo',      label:'Fiche Mémo A4',   icon:'🗒️'},
   {id:'planning',  label:'Planning',        icon:'📅'},
+  {id:'simulateur',label:'Simulateur Notes',icon:'🎯'},
   {id:'_sep1',     label:'──────────',      icon:''},
   {id:'fiches_maths',    label:'Maths B1',        icon:'🔢',badge:'MATHS'},
   {id:'fiches_physique', label:'Physique',        icon:'⚗️',badge:'PHYS'},
@@ -16524,6 +16690,7 @@ const App = () => {
     }
     if(nav==='memo') return <MemoPage/>;
     if(nav==='planning') return <PlanningPage/>;
+    if(nav==='simulateur') return <SimulateurPage onBack={()=>handleNav('accueil')}/>;
     if(nav==='fiches_maths')    return renderSubjectPage(SUBJECT_CONFIG.maths);
     if(nav==='fiches_physique') return renderSubjectPage(SUBJECT_CONFIG.physique);
     if(nav==='fiches_francais') return renderSubjectPage(SUBJECT_CONFIG.francais);
