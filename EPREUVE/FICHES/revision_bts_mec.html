@@ -6077,6 +6077,228 @@ const PLANNING_DATA = [
   ]},
 ];
 
+// ══════════════════ FICHES E1 FRANÇAIS — Grille officielle IGESR ══════════════════
+
+const FICHES_E1_METHODE = [
+  {id:'e1_grille', title:'Grille officielle de notation', freq:'ESSENTIEL', sections:[
+    {title:'FORMAT DE L\'ÉPREUVE (nouveau format 2025)', content:[
+      {type:'table', headers:['Partie','Points','Contenu'], rows:[
+        ['Partie 1 — Questions corpus','10 pts','Compréhension + confrontation des documents'],
+        ['Partie 2 — Essai','10 pts','Écriture personnelle argumentée'],
+        ['TOTAL','20 pts','Durée : 3h — Mardi 19 mai 14h30'],
+      ]},
+    ]},
+    {title:'PARTIE 1 — Grille de notation (10 pts)', content:[
+      {type:'table', headers:['Compétence','Palier 1 (nul)','Palier 3 (cible BTS)','Palier 4 (excellent)'], rows:[
+        ['Comprendre question + docs','Ne répond pas à la question','Répond à la question, documents compris','Répond avec finesse, très bien compris'],
+        ['CONFRONTER les documents','Documents pas confrontés','Documents BIEN confrontés','Documents FINEMENT confrontés'],
+        ['Reformuler les idées','Recopie les textes','Idées correctement reformulées','Reformulées avec pertinence, citations exploitées'],
+        ['Interpréter avec nuance','Pas argumentée','Argumentée ET nuancée','Finement argumentée et nuancée'],
+        ['Interprétation cohérente','Idées juxtaposées','Interprétation cohérente','Cohérente et progressive'],
+        ['Langue claire','Peu intelligible','Globalement correcte','Riche et soignée'],
+        ['Orthographe','Ne respecte pas','Respecte globalement','Respecte (quelques étourderies OK)'],
+      ]},
+      {type:'alert', color:'red', text:'PIÈGE PRINCIPAL : Ne pas confronter les documents = Palier 1 direct. Il faut TOUJOURS montrer accords ET divergences entre les textes.'},
+      {type:'alert', color:'yellow', text:'CE QUE LE CORRECTEUR VALORISE : La copie qui s\'efforce de définir les mots clés de la question.'},
+    ]},
+    {title:'PARTIE 2 — Grille de notation (10 pts)', content:[
+      {type:'table', headers:['Compétence','Palier 1 (1-2 pts)','Palier 3 (5-7,5 pts)','Palier 4 (8-10 pts)'], rows:[
+        ['Comprendre le sujet','Répond à côté','Répond au sujet','Répond de manière fine'],
+        ['Réflexion nuancée','Esquissée sans aboutir','Aboutie, opinion NUANCÉE','Approfondie, le candidat se démarque'],
+        ['Cohérence interne','Confuse, contradictoire','Progression cohérente maîtrisée','Progresse avec subtilité vers l\'objectif'],
+        ['Mobiliser corpus + culture','Maladroit, imprécis','VARIÉES : corpus + thème + perso','Variées, pertinentes, finement exploitées'],
+        ['Langue claire','Incorrecte','Globalement correcte','Riche et soignée'],
+        ['Orthographe','Ne respecte pas','Respecte globalement','Respecte (quelques étourderies OK)'],
+      ]},
+      {type:'table', headers:['Palier','Note indicative'], rows:[
+        ['Palier 1 — Copie indigente','1 à 2 / 10'],
+        ['Palier 2 — Insuffisant','2,5 à 4,5 / 10'],
+        ['Palier 3 — Niveau attendu BTS ← OBJECTIF','5 à 7,5 / 10'],
+        ['Palier 4 — Excellent','8 à 10 / 10'],
+      ]},
+      {type:'alert', color:'green', text:'IMPORTANT (citation officielle) : "Sans contraintes formelles fixes" → pas de plan imposé. Le correcteur évalue la PROGRESSION de votre réflexion, pas le nombre de parties.'},
+    ]},
+  ]},
+  {id:'e1_corpus', title:'Méthode Questions Corpus (10 pts)', freq:'ESSENTIEL', sections:[
+    {title:'Étape 1 — Lire et annoter (15 min)', content:[
+      {type:'list', items:[
+        'Pour CHAQUE document noter : Auteur + Titre + Date + Nature (article/essai/roman/image)',
+        'Idée principale de chaque document',
+        'Position de l\'auteur : pour / contre / nuancé',
+      ]},
+    ]},
+    {title:'Étape 2 — Définir les mots clés de la question', content:[
+      {type:'alert', color:'yellow', text:'Le correcteur VALORISE cette démarche ! Commencer par : "Le mot [X] peut se définir comme [définition]."'},
+      {type:'code', content:'Exemple : "Le mot \'progrès\' désigne ici aussi bien\nl\'avancée technique que l\'amélioration\ndes conditions de vie."'},
+    ]},
+    {title:'Gabarit — Question de compréhension (1 document)', content:[
+      {type:'code', content:'"Dans ce document, [auteur] [défend/analyse/témoigne de]\n[idée principale]. Il souligne que [détail]\nen précisant que [élément secondaire].\nCette approche permet de comprendre que [interprétation]."'},
+    ]},
+    {title:'Gabarit — Question de CONFRONTATION (2+ docs) ← RAPPORTE LE PLUS', content:[
+      {type:'alert', color:'red', text:'CONFRONTER = montrer points communs ET différences. JAMAIS résumer chaque doc séparément.'},
+      {type:'code', content:'"Les documents [X] et [Y] abordent tous deux la question de\n[thème commun]. [Auteur X] considère que [idée X], comme en\ntémoigne « [citation] » (l. X). De son côté, [auteur Y]\n[rejoint/nuance/contredit] cette vision en affirmant que\n[idée Y] (doc. Y, l. X).\nAinsi, si les deux auteurs s\'accordent sur [point commun],\nils divergent quant à [point de divergence]."'},
+      {type:'list', items:[
+        'ACCORD : "À l\'instar de [X], [Y] souligne que..."',
+        'NUANCE : "[Y] rejoint partiellement [X] mais nuance en..."',
+        'OPPOSITION : "En revanche, [Y] s\'oppose à [X] en affirmant que..."',
+        'COMPLÉMENT : "[Y] enrichit la réflexion de [X] en ajoutant que..."',
+      ]},
+    ]},
+    {title:'Gabarit — Question sur une image', content:[
+      {type:'code', content:'"Ce document iconographique représente [description factuelle].\n[Élément visuel remarquable] évoque [interprétation].\nCette image [confirme/nuance/illustre] la thèse de [auteur]\ndans le document [X], selon laquelle [idée]."'},
+    ]},
+    {title:'Réflexes anti-erreurs Partie 1', content:[
+      {type:'list', items:[
+        '❌ Recopier des phrases entières → ✅ REFORMULER + citation courte entre « » (l. X)',
+        '❌ Résumer chaque doc séparément → ✅ CONFRONTER (accord + divergence)',
+        '❌ Donner son avis perso en Partie 1 → ✅ Rester NEUTRE et OBJECTIF',
+        '❌ Oublier les numéros de ligne → ✅ Toujours indiquer (l. 12) ou (doc. 2, l. 5)',
+      ]},
+    ]},
+  ]},
+  {id:'e1_essai', title:'Méthode Essai / Écriture perso (10 pts)', freq:'ESSENTIEL', sections:[
+    {title:'Ce que le correcteur cherche (grille officielle)', content:[
+      {type:'list', items:[
+        '✓ Vous répondez AU SUJET (pas à côté)',
+        '✓ Votre réflexion est NUANCÉE (pas un seul point de vue)',
+        '✓ Votre texte PROGRESSE de façon cohérente',
+        '✓ Vous utilisez le CORPUS + des références CULTURELLES + des exemples PERSO',
+        '✓ Exemples PRÉCIS (titre, auteur, date)',
+        '✓ Votre langue est correcte',
+      ]},
+      {type:'alert', color:'green', text:'"Sans contraintes formelles fixes" (citation officielle) → Le plan thèse/antithèse est un OUTIL utile, pas une obligation.'},
+    ]},
+    {title:'Structure recommandée', content:[
+      {type:'code', content:'INTRODUCTION (5-8 lignes)\n  1. Phrase d\'accroche (fait, constat, question)\n  2. Reformuler le sujet / définir les mots clés\n  3. Annoncer la progression\n\nMOUVEMENT 1 : Premier aspect\n  → 1 argument + 1 exemple (corpus OU culture OU perso)\n  → Transition\n\nMOUVEMENT 2 : Nuance / approfondissement\n  → 1 argument + 1 exemple différent\n  → Transition\n\nMOUVEMENT 3 (optionnel) : Dépassement\n  → 1 argument + 1 exemple\n\nCONCLUSION (3-5 lignes)\n  1. Bilan : répondre à la question\n  2. Ouverture : nouvelle question liée'},
+    ]},
+    {title:'Gabarit Introduction', content:[
+      {type:'code', content:'"[Constat général sur le thème]. Cette question, au cœur\ndu corpus proposé, invite à s\'interroger sur [reformuler\nle sujet]. Nous examinerons d\'abord [axe 1], avant de\nmontrer que [axe 2]."'},
+    ]},
+    {title:'Gabarit Transitions', content:[
+      {type:'list', items:[
+        'Mouv. 1→2 : "Néanmoins, cette vision mérite d\'être nuancée."',
+        'Mouv. 1→2 : "Cependant, on peut aussi considérer que..."',
+        'Mouv. 2→3 : "Dès lors, il convient de dépasser cette opposition."',
+      ]},
+    ]},
+    {title:'Gabarit Conclusion', content:[
+      {type:'code', content:'"En définitive, [répondre à la question en 1-2 phrases].\nToutefois, on peut se demander si [ouverture — nouvelle\nquestion liée]."'},
+    ]},
+    {title:'3 types de références à mobiliser (clé Palier 3)', content:[
+      {type:'alert', color:'blue', text:'Le correcteur veut voir 3 TYPES de références pour atteindre Palier 3 :'},
+      {type:'table', headers:['Type','Comment l\'utiliser','Exemple'], rows:[
+        ['CORPUS','Citer les documents du sujet','Comme le souligne [auteur], « ... » (l. X)'],
+        ['CULTURE GÉNÉRALE','Films, livres, événements','Chaplin, "Les Temps modernes" (1936)'],
+        ['EXPÉRIENCE PERSO','Votre vécu, observations','Mon expérience de chef de chantier BTP'],
+      ]},
+    ]},
+  ]},
+  {id:'e1_exemples', title:'Banque d\'exemples culturels', freq:'À MÉMORISER', sections:[
+    {title:'Progrès / Technique', content:[
+      {type:'list', items:[
+        'Charlie Chaplin, "Les Temps modernes" (1936) — déshumanisation par la machine',
+        'Aldous Huxley, "Le Meilleur des mondes" (1932) — société contrôlée par la technique',
+        'Le BIM dans la construction — révolution numérique qui transforme les métiers',
+        'L\'intelligence artificielle — ChatGPT, automatisation, question de l\'emploi',
+      ]},
+    ]},
+    {title:'Société / Vivre ensemble', content:[
+      {type:'list', items:[
+        'Émile Zola, "Germinal" (1885) — lutte sociale, conditions de travail',
+        '"Intouchables" film (2011) — solidarité, différences sociales, rencontre',
+        'Victor Hugo, "Les Misérables" (1862) — justice, pauvreté, rédemption',
+      ]},
+    ]},
+    {title:'Liberté / Surveillance', content:[
+      {type:'list', items:[
+        'George Orwell, "1984" (1949) — surveillance, manipulation de l\'information',
+        'Albert Camus, "L\'Étranger" (1942) — liberté individuelle, conformisme',
+        'Les réseaux sociaux — liberté d\'expression vs désinformation',
+      ]},
+    ]},
+    {title:'Nature / Environnement', content:[
+      {type:'list', items:[
+        'J.-J. Rousseau, "Discours sur l\'inégalité" (1755) — nature vs civilisation',
+        'Mouvement climat (Greta Thunberg) — urgence écologique',
+        'La RE2020 dans le bâtiment — prise en compte du bilan carbone',
+      ]},
+    ]},
+    {title:'Votre expérience personnelle (toujours pertinente)', content:[
+      {type:'alert', color:'green', text:'Votre parcours BTP est une richesse pour l\'essai. Le correcteur valorise les exemples concrets et personnels.'},
+      {type:'list', items:[
+        'Chef de chantier gros œuvre → travail en équipe, sécurité, responsabilité',
+        'Création de BIMCO → entrepreneuriat, innovation, numérique',
+        'Travail Maroc puis France → interculturalité, adaptation, ouverture',
+        'Transformation numérique du BTP → évolution des métiers, formation continue',
+        'Marchés publics au Conseil Régional → intérêt général, transparence',
+      ]},
+    ]},
+  ]},
+  {id:'e1_ortho', title:'20 règles d\'orthographe essentielles', freq:'À MÉMORISER', sections:[
+    {title:'Homophones grammaticaux (les plus fréquents)', content:[
+      {type:'table', headers:['Confusion','Règle','Test'], rows:[
+        ['a / à','a = avoir · à = préposition','Remplacer par "avait" → si OK = "a"'],
+        ['et / est','et = addition · est = être','Remplacer par "était" → si OK = "est"'],
+        ['er / é','er = infinitif · é = participe passé','Remplacer par "vendre/vendu"'],
+        ['ce / se','ce = démonstratif · se = réfléchi','ce livre / il se lave'],
+        ['ces / ses','ces = démonstratif pl. · ses = possessif','ces gens-là / ses affaires'],
+        ['ou / où','ou = choix · où = lieu/temps','rouge ou bleu / la ville où'],
+        ['la / là','la = article · là = lieu','la maison / je suis là'],
+        ['leur / leurs','leur (verbe) = invariable · leurs (nom) = pl.','je leur dis / leurs affaires'],
+        ["c'est / s'est","c'est = cela est · s'est = réfléchi","c'est bien / il s'est trompé"],
+      ]},
+    ]},
+    {title:'Accords essentiels', content:[
+      {type:'list', items:[
+        'Accord sujet-verbe : TOUJOURS chercher le sujet — "Les problèmes SONT nombreux"',
+        'Participe passé + ÊTRE : accorder avec le sujet — "Les solutions SONT PROPOSÉES"',
+        'Participe passé + AVOIR : accorder avec COD AVANT — "Les idées que j\'AI DÉVELOPPÉES"',
+        'Participe passé + AVOIR : PAS d\'accord si COD après — "J\'AI DÉVELOPPÉ des idées"',
+        'Tout/tous/toute/toutes : accorder avec le nom',
+        'Quel/quelle/quels/quelles : accorder avec le nom',
+        'Ni... ni... → verbe au PLURIEL',
+      ]},
+    ]},
+    {title:'Ponctuation', content:[
+      {type:'list', items:[
+        'Espace AVANT et APRÈS les signes doubles en français : ; ! ?',
+        'Majuscule après un POINT, jamais après une virgule',
+        'Guillemets français : « citation » (pas "citation")',
+      ]},
+    ]},
+  ]},
+  {id:'e1_connecteurs', title:'Connecteurs logiques', freq:'À MÉMORISER', sections:[
+    {title:'Liste par fonction', content:[
+      {type:'table', headers:['Fonction','Connecteurs'], rows:[
+        ['ADDITION','de plus, en outre, par ailleurs, également, qui plus est'],
+        ['OPPOSITION','cependant, néanmoins, toutefois, en revanche, or'],
+        ['CAUSE','en effet, car, puisque, étant donné que, du fait de'],
+        ['CONSÉQUENCE','par conséquent, ainsi, dès lors, c\'est pourquoi, de ce fait'],
+        ['CONCESSION','certes... mais, bien que, malgré, quoique, il est vrai que'],
+        ['ILLUSTRATION','par exemple, notamment, ainsi, tel que, c\'est le cas de'],
+        ['CONCLUSION','en définitive, en somme, pour conclure, finalement'],
+        ['TEMPS','tout d\'abord, ensuite, puis, enfin, dans un premier temps'],
+      ]},
+      {type:'alert', color:'blue', text:'Utiliser au moins 1 connecteur au début de chaque paragraphe. C\'est ce qui donne l\'impression de cohérence au correcteur.'},
+    ]},
+  ]},
+  {id:'e1_temps', title:'Gestion du temps (3h)', freq:'ESSENTIEL', sections:[
+    {title:'Répartition minute par minute', content:[
+      {type:'table', headers:['Horaire','Durée','Activité'], rows:[
+        ['14h30-14h45','15 min','LIRE tout le corpus attentivement'],
+        ['14h45-14h55','10 min','SURLIGNER idées clés + NOTER mots clés des questions'],
+        ['14h55-16h15','80 min','PARTIE 1 — Questions sur le corpus'],
+        ['','','→ Questions courtes : 5-10 min chacune'],
+        ['','','→ Question de confrontation : 20-30 min'],
+        ['16h15-16h25','10 min','BROUILLON plan essai (Partie 2)'],
+        ['16h25-17h00','35 min','RÉDACTION essai'],
+        ['17h00-17h10','10 min','RELECTURE essai'],
+        ['17h10-17h30','20 min','RELECTURE ORTHOGRAPHE de toute la copie'],
+      ]},
+      {type:'alert', color:'red', text:'RÈGLE D\'OR : TOUJOURS garder 20 min pour la relecture orthographe. C\'est là que vous gagnez 1-2 points facilement en corrigeant les fautes a/à, er/é, accords.'},
+    ]},
+  ]},
+];
 
 const FICHES_E4 = [
   {id:'f01',title:"Marché de Maîtrise d'Œuvre",freq:'3/5',sections:[
@@ -14111,6 +14333,7 @@ const Accueil = ({setNav}) => {
     <div className="section-h2">Accès rapide</div>
     <div className="grid-2">
       {[
+        {label:'E1 Français — Méthode',sub:'Grille officielle · Gabarits · Ortho · Exemples · coeff 4',c:'#dc2626',nav:'fiches_e1'},
         {label:'Fiches E4',sub:'6 thèmes — Fondations, Acoustique, Thermique…',c:'#3b82f6',nav:'fiches_e4'},
         {label:'Fiches E52',sub:'5 thèmes — Offres, Révision, Décomptes, Rentabilité…',c:'#22c55e',nav:'fiches_e52'},
         {label:'Formules',sub:'Toutes les formules E4 et E52 organisées',c:'#8b5cf6',nav:'formules'},
@@ -14136,7 +14359,7 @@ const Accueil = ({setNav}) => {
 };
 
 const badgeCls = ep => ep==='E4'?'cb-e4':ep==='E52'?'cb-e52':ep==='MATHS'?'cb-maths':ep==='PHYS'?'cb-physique':ep==='CGE'?'cb-francais':ep==='ANG'?'cb-anglais':'cb-e4';
-const epreuveLabel = ep => ({MATHS:'Mathématiques B1',PHYS:'Sciences Physiques',CGE:'Français — Culture Générale',ANG:'Anglais LVA'}[ep]||'Fiches '+ep);
+const epreuveLabel = ep => ({E1:'E1 — Méthode Français (Grille officielle)',MATHS:'Mathématiques B1',PHYS:'Sciences Physiques',CGE:'Français — Culture Générale',ANG:'Anglais LVA'}[ep]||'Fiches '+ep);
 
 const FichesList = ({fiches,epreuve,onSelect,onBack}) => (
   <div>
@@ -16599,6 +16822,7 @@ const NAVS = [
   {id:'exercices', label:'Exercices',       icon:'✏️'},
   {id:'memo',      label:'Fiche Mémo A4',   icon:'🗒️'},
   {id:'planning',  label:'Planning',        icon:'📅'},
+  {id:'fiches_e1', label:'E1 Français CGE', icon:'🇫🇷'},
   {id:'simulateur',label:'Simulateur Notes',icon:'🎯'},
   {id:'_sep1',     label:'──────────',      icon:''},
   {id:'fiches_maths',    label:'Maths B1',        icon:'🔢',badge:'MATHS'},
@@ -16651,6 +16875,10 @@ const App = () => {
     if(nav==='accueil') return <Accueil setNav={handleNav}/>;
     if(nav==='formules') return <FormulesPage/>;
     if(nav==='synthese') return <SynthesePage/>;
+    if(nav==='fiches_e1'){
+      if(fiche) return <FicheDetail fiche={fiche} epreuve="E1" onBack={()=>setFiche(null)}/>;
+      return <FichesList fiches={FICHES_E1_METHODE} epreuve="E1" onSelect={setFiche} onBack={()=>{setFiche(null);handleNav('accueil')}}/>;
+    }
     if(nav==='fiches_e4'){
       if(fiche) return <FicheDetail fiche={fiche} epreuve="E4" onBack={()=>setFiche(null)}/>;
       return <FichesList fiches={FICHES_E4} epreuve="E4" onSelect={setFiche}/>;
