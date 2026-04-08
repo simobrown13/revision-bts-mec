@@ -3,171 +3,147 @@
 
 ---
 
-## TABLEAU DE BORD — 7 avril 2026
+## TABLEAU DE BORD — 8 avril 2026
 
 ### Epreuves restantes classees par POIDS STRATEGIQUE
 
 ```
                                                     SCORE
-EPREUVE         COEFF   DATE         J-     PRIO   (coeff x urgence)
-─────────────────────────────────────────────────────────────────────
-E2-B Anglais      3     4 mai        J-27   ████░   11.1  URGENT
-E6-A BIM          4    11-13 mai     J-34   ████░   11.8  URGENT
-E1  Francais      4    19 mai        J-42   ███░░    9.5
-E4  Analyse       4    20 mai        J-43   ███░░    9.3  ← MIEUX PREPARE
-E52 Suivi fin.    2    21 mai        J-44   ██░░░    4.5  ← MIEUX PREPARE
-E51 Etude desc.   5    15-18 juin    J-69   ███░░    7.2  ← PLUS GROS COEFF
-E3-A Maths        2    23-24 juin    J-77   ██░░░    2.6
-E3-B Physique     2    23-24 juin    J-77   ██░░░    2.6
-─────────────────────────────────────────────────────────────────────
-TOTAL            26                          Score = coeff / jours x 100
+EPREUVE         COEFF   DATE          JOUR       J-  (coeff/jours x100)
+─────────────────────────────────────────────────────────────────────────
+E2-A Anglais      3*    27 avril      Lundi      19   15.8  ★ TRES URGENT
+E2-B Anglais      3*    4 mai         Lundi      26   11.5  ★ URGENT
+E6-A BIM          4     11-13 mai     Lun-Mer    33   12.1  ★ URGENT
+E1  Francais      4     19 mai        Mardi      41    9.8
+E4  Analyse       4     20 mai        Mercredi   42    9.5  ← BIEN PREPARE
+E52 Suivi fin.    2     21 mai        Jeudi      43    4.7  ← BIEN PREPARE
+E51 Etude desc.   5     15-18 juin    Lun-Jeu    68    7.4  ← PLUS GROS COEFF
+E3-A Maths        2     23-24 juin    Mar-Mer    76    2.6
+E3-B Physique     2     23-24 juin    Mar-Mer    76    2.6
+─────────────────────────────────────────────────────────────────────────
+*E2-A et E2-B = 2 parties de la meme epreuve E2 (coeff 3 au total)
+TOTAL COEFFICIENTS RESTANTS : 26  (E62 coeff 3 deja passe)
+TOTAL GENERAL BTS : 29 coefficients
 ```
 
-### Repartition du temps par coefficient
+### Repartition du temps de revision
 
 ```
-TOTAL COEFFICIENTS : 26
-
-E51 Etude descriptive ████████████████████  coeff 5 = 19%  → 19% du temps
-E4  Analyse projet    ████████████████      coeff 4 = 15%  → 15% du temps
-E1  Francais CGE      ████████████████      coeff 4 = 15%  → 15% du temps
-E6-A BIM              ████████████████      coeff 4 = 15%  → 15% du temps
-E2-B Anglais          ████████████          coeff 3 = 12%  → 10% du temps
-E52 Suivi financier   ████████              coeff 2 =  8%  →  8% du temps
-E3-A Maths            ████████              coeff 2 =  8%  →  6% du temps
-E3-B Physique         ████████              coeff 2 =  8%  →  6% du temps
-
-Ajustement : E4 et E52 sont DEJA bien prepares (fiches existantes)
-           → Transferer du temps vers E51, E1 et BIM
+E51 Etude descriptive  ████████████████████  coeff 5 = 19%  MAIS sujet pas recu
+E4  Analyse projet     ████████████████      coeff 4 = 15%  DEJA bien prepare
+E1  Francais CGE       ████████████████      coeff 4 = 15%  PEU prepare (fiches web)
+E6-A BIM               ████████████████      coeff 4 = 15%  A PREPARER
+E2  Anglais (A+B)      ████████████          coeff 3 = 12%  ★ 1ERE ECHEANCE J-19
+E52 Suivi financier    ████████              coeff 2 =  8%  DEJA bien prepare
+E3-A Maths             ████████              coeff 2 =  8%  Annales dispo
+E3-B Physique          ████████              coeff 2 =  8%  Annales dispo
 ```
 
 ### Les 5 phases du plan
 
 ```
-PHASE 1 ▸ 7 avril - 3 mai   (27 jours)  E4 + E52 + Anglais + debut BIM
-PHASE 2 ▸ 4 mai - 13 mai    (10 jours)  BIM intensif + maintien E4/E52
-PHASE 3 ▸ 14 mai - 21 mai   ( 8 jours)  SPRINT FINAL E1 + E4 + E52
-PHASE 4 ▸ 22 mai - 18 juin  (28 jours)  E51 (coeff 5) preparation orale
-PHASE 5 ▸ 19 juin - 24 juin ( 6 jours)  Maths + Physique
+PHASE 1 ▸ 8-26 avril  (19j)  E4+E52 revision + ANGLAIS A+B + debut BIM
+PHASE 2 ▸ 27 avril-13 mai    Anglais A (27/4) + BIM + Anglais B (4/5) + Epreuve BIM (11-13/5)
+PHASE 3 ▸ 14-21 mai   (8j)   SPRINT FINAL E1 + E4 + E52 (3 ecrits)
+PHASE 4 ▸ 22 mai-18 juin     E51 oral (coeff 5) — preparation du projet
+PHASE 5 ▸ 19-24 juin  (6j)   Maths + Physique
 ```
 
 ---
 ---
 
-# PHASE 1 — E4 + E52 + ANGLAIS (7 avril → 3 mai)
+# PHASE 1 — E4 + E52 + ANGLAIS + BIM (8 avril → 26 avril)
 
-> 27 jours — Objectif : Maitriser E4/E52, preparer oral anglais, amorcer BIM
-> Rythme : 7h/jour (9h-12h + 14h-17h + 1h soir optionnelle)
+> 19 jours — Objectif : Consolider E4/E52, preparer les 2 oraux anglais, amorcer BIM
+> E2-A le 27 avril = PREMIERE ECHEANCE dans 19 jours
+> Rythme : 7h/jour (9h-12h + 14h-17h + 20 min revision soir)
 
 ---
 
-## SEMAINE 1 : 7-13 avril — FONDAMENTAUX E4 + E52 (themes 5/5)
+## SEMAINE 1 : 8-13 avril — FONDAMENTAUX E4 + E52 (themes 5/5)
 
-### LUNDI 7 AVRIL — E4 : Fondations et Classes d'exposition beton ⭐⭐⭐
+### MARDI 8 AVRIL — E4 : Fondations et Classes d'exposition beton
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 03 complete — comprendre la logique des classes | E4_FICHE_03_FONDATIONS.docx |
-| 10h-11h | Apprendre les 18 classes par groupe : XC, XD, XS, XF, XA | Fiche memo A4 |
-| 11h-12h | Memoriser exigences beton par classe (resistance, w/c, enrobage) | Fiche memo A4 |
+| 09h-10h | Lire Fiche 03 complete — logique des classes | E4_FICHE_03_FONDATIONS.docx |
+| 10h-11h | Apprendre 18 classes par groupe : XC, XD, XS, XF, XA | Fiche memo A4 |
+| 11h-12h | Memoriser exigences beton (resistance, w/c, enrobage) | Fiche memo A4 |
 | 14h-15h | QCM Fondations — 15 questions | E4_QCM_FONDATIONS.docx |
-| 15h-16h | Exercice : determiner classes + profondeur hors gel | Exercices |
+| 15h-16h | Exercice : classes + profondeur hors gel | Exercices |
 | 16h-17h | Corriger avec annale E4 2025 — Partie B | ANNALE_E4_2025_CORRIGE |
 
-**Objectif :** Remplir un tableau classes d'expo complet de memoire en < 10 min
-**Verification soir (20 min) :** Reciter H1=1,00m / H2=0,80m / H3=0,50m + 5 classes les plus courantes
+**Objectif :** Tableau classes d'expo de memoire en < 10 min
+**Soir (20 min) :** Reciter H1=1,00m / H2=0,80m / H3=0,50m
 
 ---
 
-### MARDI 8 AVRIL — E4 : Acoustique des facades ⭐⭐⭐
+### MERCREDI 9 AVRIL — E4 : Acoustique des facades
 
 | Heure | Activite | Support |
 |---|---|---|
 | 09h-10h | Lire Fiche 05 complete | E4_FICHE_05_ACOUSTIQUE.docx |
-| 10h-11h | Memoriser 5 categories de voies : niveaux dB + distances + isolement | Fiche memo A4 |
-| 11h-12h | Entrees d'air : AVENT standard (30dB) / acoustique (35-44dB) / SMEC (>44dB) | Fiche memo A4 |
-| 14h-15h | Formule Sabine TR = 0,16×V/A + exercice calcul TR | E4_EXERCICES_ACOUSTIQUE.docx |
+| 10h-11h | 5 categories de voies : niveaux dB + distances + isolement | Fiche memo A4 |
+| 11h-12h | Entrees d'air : AVENT (30dB) / acoustique (35-44dB) / SMEC (>44dB) | Fiche memo A4 |
+| 14h-15h | Formule Sabine TR = 0,16×V/A + exercice | E4_EXERCICES_ACOUSTIQUE.docx |
 | 15h-16h | QCM Acoustique — 15 questions | E4_QCM_ACOUSTIQUE.docx |
-| 16h-17h | Exercice complet : categorie voie → isolement → entree d'air → TR | ANNALE_E4_2025_CORRIGE — Partie D |
-
-**Objectif :** Determiner categorie voie + isolement requis en < 2 min
+| 16h-17h | Exercice complet : categorie → isolement → entree d'air → TR | Corrige E4 2025 — Partie D |
 
 ---
 
-### MERCREDI 9 AVRIL — E52 : Revision des prix ⭐⭐⭐
+### JEUDI 10 AVRIL — E52 : Revision des prix
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 08 complete — comprendre le mecanisme | E52_FICHE_08_REVISION_PRIX.docx |
-| 10h-11h | Memoriser : Cn = 0,15 + 0,85 × (Im/I0) + arrondi millieme SUPERIEUR | Fiche memo A4 |
-| 11h-12h | 10 calculs de Cn avec indices differents — chronometrer | E52_EXERCICES_REVISION_PRIX.docx |
-| 14h-15h | Formule 2 indices + decalage Im-3 (3 mois avant) | E52_EXERCICES_REVISION_PRIX.docx |
+| 09h-10h | Lire Fiche 08 complete | E52_FICHE_08_REVISION_PRIX.docx |
+| 10h-11h | Formule Cn = 0,15 + 0,85 × (Im/I0) + arrondi millieme SUPERIEUR | Fiche memo A4 |
+| 11h-12h | 10 calculs de Cn chronometres | E52_EXERCICES_REVISION_PRIX.docx |
+| 14h-15h | Formule 2 indices + decalage Im-3 | Exercices |
 | 15h-16h | QCM Revision prix — 15 questions | E52_QCM_REVISION_PRIX.docx |
-| 16h-17h | Tableau complet Cn sur 4 mois | ANNALE_E52_2024_CORRIGE — Partie B |
-
-**Objectif :** Calculer Cn + revision mensuelle en < 3 min par mois
-**Piege a retenir :** Im < I0 = revision NEGATIVE (on rembourse)
+| 16h-17h | Tableau Cn sur 4 mois | Corrige E52 2024 — Partie B |
 
 ---
 
-### JEUDI 10 AVRIL — E52 : Situation de travaux ⭐⭐⭐
+### VENDREDI 11 AVRIL — E52 : Situation de travaux + Decompte 16 lignes
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 09 — Structure 16 lignes du decompte | E52_FICHE_09_SITUATION_TRAVAUX.docx |
-| 10h-11h | MEMORISER les 16 lignes DANS L'ORDRE (ecrire 5 fois de memoire) | Fiche memo A4 |
-| 11h-12h | Avance : conditions (>50k€ HT + >2 mois) + calcul 10% × TTC | Exercices |
-| 14h-15h | Remboursement avance : debut a 65%, formule (% - 65%) / 35% | E52_EXERCICES_SITUATION_TRAVAUX.docx |
+| 09h-10h | Lire Fiche 09 — Structure 16 lignes | E52_FICHE_09_SITUATION_TRAVAUX.docx |
+| 10h-11h | MEMORISER les 16 lignes DANS L'ORDRE (ecrire 5 fois) | Fiche memo A4 |
+| 11h-12h | Avance (>50k€ HT + >2 mois) + remboursement (debut 65%) | Exercices |
+| 14h-15h | Decompte mensuel complet (avance + RG + revision + TVA) | Exercices |
 | 15h-16h | QCM Situation de travaux — 15 questions | E52_QCM_SITUATION_TRAVAUX.docx |
-| 16h-17h | Decompte mensuel complet mois 4 | ANNALE_E52_2024_CORRIGE — Partie C |
-
-**Objectif :** Decompte mensuel complet de memoire en < 15 min
-**Pieges :** Remboursement avance AVANT TVA / Retenue garantie 5% sur TTC
+| 16h-17h | Decompte mois 4 complet | Corrige E52 2024 — Partie C |
 
 ---
 
-### VENDREDI 11 AVRIL — E52 : Analyse des offres ⭐⭐⭐
+### SAMEDI 12 AVRIL — E52 : Analyse des offres + SIMULATION
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 07 complete | E52_FICHE_07_ANALYSE_OFFRES.docx |
-| 10h-11h | Formule note prix : Note = Nmax × (Meilleur/Candidat) | Fiche memo A4 |
-| 11h-12h | Exercice : 3 offres → montants apres MV/PV/rabais → classement | E52_EXERCICES_ANALYSE_OFFRES.docx |
-| 14h-15h | Valeur technique : sous-criteres × ponderation | E52_EXERCICES_ANALYSE_OFFRES.docx |
-| 15h-16h | QCM Analyse offres — 15 questions | E52_QCM_ANALYSE_OFFRES.docx |
-| 16h-17h | Analyse complete + conclusion redigee | ANNALE_E52_2024_CORRIGE — Partie A |
-
-**Objectif :** Classement complet de 3 offres avec conclusion en < 20 min
-
----
-
-### SAMEDI 12 AVRIL — SIMULATION E52 chronometree
-
-| Heure | Activite |
-|---|---|
-| 09h-10h | Relire fiche memo A4 (recto-verso) |
-| 10h-12h | **SIMULATION E52 — 2h chrono** (sujet 2024 ou 2023) |
-| 14h-16h | Auto-correction detaillee — noter chaque erreur |
-| 16h-17h | Refaire les calculs rates |
+| 09h-10h | Lire Fiche 07 + formule note prix | E52_FICHE_07_ANALYSE_OFFRES.docx |
+| 10h-11h | Exercice : 3 offres → montants → classement | E52_EXERCICES_ANALYSE_OFFRES.docx |
+| 11h-12h | Fiche 10 Rentabilite : DS, MB (15-25%), RB (2-8%) | E52_FICHE_10_RENTABILITE.docx |
+| 14h-16h | **SIMULATION E52 — 2h chrono** | Sujet 2024 ou 2023 |
+| 16h-17h | Auto-correction | — |
 
 ### DIMANCHE 13 AVRIL — REPOS
-- Relire fiche memo A4 (15 min max)
-- Preparer les documents anglais pour la semaine prochaine
+- Relire fiche memo A4 (15 min)
 
 ---
 
-## SEMAINE 2 : 14-20 avril — E4 themes 3-4/5 + ANGLAIS
+## SEMAINE 2 : 14-20 avril — E4 themes secondaires + ANGLAIS (E2-A dans 13 jours)
 
-### LUNDI 14 AVRIL — E4 : Reglementation (4/5)
+### LUNDI 14 AVRIL — E4 : Reglementation (4/5) + ANGLAIS debut
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 02 complete | E4_FICHE_02_REGLEMENTATION.docx |
-| 10h-11h | PC : validite 3 ans + 2×1 an prorogation + calcul dates | Corrige E4 2025 |
-| 11h-12h | PLU + ERP : types/categories + MH rayon 500m | Fiche 02 |
-| 14h-15h | RT2012 vs RE2020 : date bascule 01/01/2022 + differences | Fiche 02 |
-| 15h-16h | Exercices reglementaires | — |
-| 16h-17h | **ANGLAIS** : Choisir 3 documents pour oral E2-B | Documents anglais |
+| 09h-10h | Lire Fiche 02 — PC, PLU, ERP, MH | E4_FICHE_02_REGLEMENTATION.docx |
+| 10h-11h | PC : validite 3 ans + prorogation 2×1 an | Corrige E4 2025 |
+| 11h-12h | RT2012 vs RE2020 : bascule 01/01/2022 | Fiche 02 |
+| 14h-15h | Exercices reglementaires | — |
+| 15h-16h | **ANGLAIS E2-A** : S'entrainer a l'ecoute (podcasts BTP en anglais) | Audio/video |
+| 16h-17h | **ANGLAIS E2-B** : Choisir 3 documents pour presentation orale | Documents |
 
 ---
 
@@ -175,11 +151,11 @@ PHASE 5 ▸ 19 juin - 24 juin ( 6 jours)  Maths + Physique
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 04 complete | E4_FICHE_04_THERMIQUE.docx |
-| 10h-11h | 5 formules : R=e/λ, RT=Rsi+ΣR+Rse, U=1/RT, a=λ/(ρ×Cp), φ=0,023×e/√a | Exercices |
-| 11h-12h | Valeurs RE2020 : U≤0,20 (murs), U≤0,15 (toits), φ>12h | Fiche memo A4 |
+| 09h-10h | Lire Fiche 04 | E4_FICHE_04_THERMIQUE.docx |
+| 10h-12h | 5 formules : R, RT, U, a, phi + valeurs RE2020 | E4_EXERCICES_THERMIQUE.docx |
 | 14h-15h | QCM Thermique — 15 questions | E4_QCM_THERMIQUE.docx |
-| 15h-17h | Exercice complet : paroi multicouche + dephasage | ANNALE_E4_2025_CORRIGE — Partie C |
+| 15h-16h | Exercice complet paroi + dephasage | Corrige E4 2025 — Partie C |
+| 16h-17h | **ANGLAIS E2-A** : Exercice ecoute + prise de notes en francais | Audio |
 
 ---
 
@@ -187,11 +163,11 @@ PHASE 5 ▸ 19 juin - 24 juin ( 6 jours)  Maths + Physique
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 01 complete | E4_FICHE_01_MARCHE_MOE.docx |
-| 10h-11h | 9 phases ESQ→APS→APD→PRO→DCE→ACT→DET→AOR + OPC | Fiche 01 |
-| 11h-12h | Composition equipe MOE + criteres selection | Fiche 01 |
-| 14h-15h | Exercice notation offres MOE | Corrige E4 2025 — Partie A |
-| 15h-17h | **ANGLAIS** : Structurer presentation orale (5 min chrono) | 3 documents |
+| 09h-10h | Lire Fiche 01 — 9 phases ESQ→AOR + OPC | E4_FICHE_01_MARCHE_MOE.docx |
+| 10h-11h | Composition equipe MOE + criteres + bareme | Fiche 01 |
+| 11h-12h | Exercice notation offres MOE | Corrige E4 2025 — Partie A |
+| 14h-15h | **ANGLAIS E2-A** : Ecoute document 3 min + compte-rendu ecrit | Audio |
+| 15h-17h | **ANGLAIS E2-B** : Structurer presentation orale (5 min chrono) | 3 documents |
 
 ---
 
@@ -199,22 +175,21 @@ PHASE 5 ▸ 19 juin - 24 juin ( 6 jours)  Maths + Physique
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 06 complete | E4_FICHE_06_SECURITE_CHANTIER.docx |
-| 10h-11h | Blindage : obligatoire si prof ≥ 1,30m / distances reglementaires | Fiche 06 |
-| 11h-12h | Garde-corps : hauteur ≥ 1,00m + fixations | Fiche 06 |
-| 14h-15h | Exercice securite complet | Corrige E4 2025 — Partie D |
-| 15h-17h | **ANGLAIS** : S'entrainer oral — repeter 3 fois avec chrono | Plan de presentation |
+| 09h-10h | Lire Fiche 06 — blindage + garde-corps | E4_FICHE_06_SECURITE_CHANTIER.docx |
+| 10h-12h | Exercice securite complet | Corrige E4 2025 — Partie D |
+| 14h-15h | **ANGLAIS E2-A** : Simulation ecoute (3 ecoutes + compte-rendu) | Audio |
+| 15h-17h | **ANGLAIS E2-B** : Repeter presentation orale x3 avec chrono | Plan oral |
 
 ---
 
-### VENDREDI 18 AVRIL — E52 : Rentabilite (3/5) + Revision
+### VENDREDI 18 AVRIL — E52 Rentabilite + ANGLAIS
 
 | Heure | Activite | Support |
 |---|---|---|
-| 09h-10h | Lire Fiche 10 complete | E52_FICHE_10_RENTABILITE.docx |
-| 10h-12h | DS, MB (15-25%), RB (2-8%), MBH (15-30 €/h) | E52_EXERCICES_RENTABILITE.docx |
-| 14h-15h | Comparatif previsionnel/reel | Corrige E52 2024 — Partie D |
-| 15h-17h | Reviser les points faibles identifies samedi dernier |
+| 09h-11h | E52 Rentabilite : DS, MB, RB, MBH + exercice | E52_EXERCICES_RENTABILITE.docx |
+| 11h-12h | Comparatif previsionnel/reel | Corrige E52 2024 — Partie D |
+| 14h-15h | **ANGLAIS E2-A** : Simulation ecoute complete (30 min) | Audio |
+| 15h-17h | **ANGLAIS E2-B** : Simulation orale complete (15 min) | Documents |
 
 ---
 
@@ -223,196 +198,223 @@ PHASE 5 ▸ 19 juin - 24 juin ( 6 jours)  Maths + Physique
 | Heure | Activite |
 |---|---|
 | 09h-13h | **SIMULATION E4 — 4h chrono** (sujet 2025 ou 2024) |
-| 14h-16h | Auto-correction — identifier les themes faibles |
+| 14h-16h | Auto-correction + themes faibles |
 | 16h-17h | Reviser les points rates |
 
 ### DIMANCHE 20 AVRIL — REPOS
 
 ---
 
-## SEMAINE 3 : 21-27 avril — CONSOLIDATION + ANGLAIS FINAL
+## SEMAINE 3 : 21-27 avril — CONSOLIDATION + E2-A LE 27 ★
+
+> E2-A comprehension orale Anglais = LUNDI 27 AVRIL a 13h30
 
 ### LUNDI 21 AVRIL — Revision croisee E4 + E52
 
 | Heure | Activite |
 |---|---|
-| 09h-11h | Refaire TOUS les exercices rates des 2 semaines |
+| 09h-11h | Refaire les exercices rates des 2 semaines |
 | 11h-12h | 20 flashcards formules (ecrire de memoire) |
-| 14h-16h | Enchainer : 1 exercice de chaque theme E4 + E52 |
-| 16h-17h | Relire fiche memo A4 complete |
+| 14h-16h | 1 exercice de chaque theme E4 + E52 enchaine |
+| 16h-17h | **ANGLAIS E2-A** : Ecoute + compte-rendu |
 
 ---
 
-### MARDI 22 AVRIL — Focus calculs + timing
+### MARDI 22 AVRIL — Focus calculs + timing + ANGLAIS
 
-| Heure | Activite | Temps cible |
-|---|---|---|
-| 09h-09h20 | Decompte mensuel 16 lignes complet | < 15 min |
-| 09h20-09h35 | Tableau Cn + revisions sur 3 mois | < 12 min |
-| 09h35-10h00 | Notation 3 offres + classement | < 20 min |
-| 10h-10h15 | Classes expo beton (6 parties d'ouvrage) | < 10 min |
-| 10h15-10h35 | Calcul R + U + epaisseur + dephasage | < 15 min |
-| 10h35-10h45 | Calcul TR + surface panneaux (Sabine) | < 10 min |
-| 11h-12h | Reprendre ceux hors temps cible |
-| 14h-17h | **ANGLAIS** : Simulation complete oral (5 min expo + 10 min questions) x3 |
+| Heure | Activite |
+|---|---|
+| 09h-10h45 | Calculs chrono : decompte (15 min) + Cn (12 min) + offres (20 min) |
+| 10h45-12h | Calculs chrono : beton (10 min) + thermique (15 min) + Sabine (10 min) |
+| 14h-15h | **ANGLAIS E2-A** : Simulation ecoute conditions reelles (30 min) |
+| 15h-17h | **ANGLAIS E2-B** : Simulation orale x2 avec chrono |
 
 ---
 
-### MERCREDI 23 AVRIL — Memorisation intensive matin + BIM aprem
+### MERCREDI 23 AVRIL — Memorisation intensive + BIM decouverte
 
-| Heure | Quoi reciter de memoire |
+| Heure | Ce qu'il faut reciter de memoire |
 |---|---|
 | 09h-09h30 | E4 : 5 formules thermiques |
 | 09h30-10h | E4 : 5 categories voies + isolement |
-| 10h-10h30 | E4 : Classes beton essentielles (XC2, XC4, XD3, XF1, XS1) |
+| 10h-10h30 | E4 : Classes beton essentielles |
 | 10h30-11h | E52 : Formule Cn + 16 lignes decompte |
 | 11h-11h30 | E52 : Avance + remboursement + retenue garantie |
 | 11h30-12h | E52 : MB, RB, MBH |
-| 14h-17h | **BIM** : Decouvrir/reviser l'interface du logiciel BIM (Revit ou equivalent) |
+| 14h-17h | **BIM** : Decouvrir l'interface du logiciel BIM |
 
 ---
 
-### JEUDI 24 AVRIL — Double simulation
+### JEUDI 24 AVRIL — Double simulation E52 + E4
 
 | Heure | Activite |
 |---|---|
-| 09h-11h | **E52 simulee — 2h chrono** (sujet 2023 NC ou 2025) |
+| 09h-11h | **E52 simulee — 2h chrono** (sujet 2023 NC) |
 | 11h-12h | Correction E52 |
-| 14h-18h | **E4 simulee — 4h chrono** (sujet 2024 ou 2023 NC) |
+| 14h-18h | **E4 simulee — 4h chrono** (sujet 2024) |
 
 ---
 
-### VENDREDI 25 AVRIL — Anglais derniere preparation + BIM
+### VENDREDI 25 AVRIL — Derniere prep avant E2-A + BIM
 
 | Heure | Activite |
 |---|---|
-| 09h-12h | **ANGLAIS** : Dernier entrainement complet — presentation + interaction |
-| 14h-17h | **BIM** : Navigation maquette, extraction donnees, nomenclatures |
+| 09h-11h | **ANGLAIS E2-A** : 2 dernieres simulations ecoute (30 min chacune) |
+| 11h-12h | **ANGLAIS E2-B** : Relire plan presentation orale |
+| 14h-17h | **BIM** : Navigation maquette, extraction donnees |
 
 ---
 
-### SAMEDI 26 AVRIL — Revision legere
+### SAMEDI 26 AVRIL — Repos avant E2-A
 
 | Heure | Activite |
 |---|---|
-| 09h-10h | Relire fiche memo A4 |
-| 10h-11h | Anglais : relire plan de presentation une derniere fois |
-| 11h | STOP |
-
-### DIMANCHE 27 AVRIL — REPOS TOTAL
+| 09h-10h | Anglais : derniere ecoute legere (15 min) + relire vocabulaire BTP |
+| 10h | **STOP — Repos** |
+| — | Verifier itineraire → Lycee Condorcet, 29 rue Edmond Rostand, St Priest |
+| — | Preparer : convocation + piece d'identite |
 
 ---
 
-## SEMAINE 4 : 28 avril - 4 mai — BIM + ORAL ANGLAIS
+### ★ LUNDI 27 AVRIL — EPREUVE E2-A : COMPREHENSION ORALE ANGLAIS
+```
+Lieu : Lycee Condorcet, 29 rue Edmond Rostand, 69800 St Priest — Salle E302
+Heure : 13h30 (arriver a 13h00)
+Duree : 30 min (3 ecoutes d'un document audio/video + compte-rendu ecrit/oral en francais)
+Coeff : 3 (partage avec E2-B)
 
-### LUNDI 28 AVRIL — BIM + Anglais polish
+METHODE :
+  1ere ecoute : reperer le theme general, les locuteurs, le ton
+  2eme ecoute : noter les informations precises (chiffres, noms, dates)
+  3eme ecoute : completer et verifier les notes
+  Redaction : structurer en intro + idees principales + conclusion
+```
+
+---
+---
+
+# PHASE 2 — BIM + ANGLAIS B (28 avril → 13 mai)
+
+> 16 jours — Objectif : Oral anglais B le 4 mai + epreuve BIM 11-13 mai
+> E2-B coeff 3 (J-26) + E6-A coeff 4 (J-33)
+
+---
+
+## SEMAINE 4 : 28 avril - 4 mai
+
+### MARDI 28 AVRIL — BIM + Anglais B polish
 
 | Heure | Activite |
 |---|---|
-| 09h-12h | **BIM** : Maquette numerique — modifier objets, enrichir attributs |
+| 09h-12h | **BIM** : Modifier objets, enrichir attributs (description, cout) |
 | 14h-16h | **BIM** : Extraction quantitatifs depuis maquette |
-| 16h-17h | **ANGLAIS** : Derniere relecture des 3 documents + timing |
+| 16h-17h | **ANGLAIS E2-B** : Repeter presentation orale (chrono 5+10 min) |
 
 ---
 
-### MARDI 29 AVRIL — BIM intensif
+### MERCREDI 29 AVRIL — BIM intensif
 
 | Heure | Activite |
 |---|---|
 | 09h-12h | **BIM** : Import/export IFC, detection de conflits |
-| 14h-17h | **BIM** : Exercice complet : decomposition + quantification depuis maquette |
+| 14h-17h | **BIM** : Decomposition + quantification depuis maquette |
 
 ---
 
-### MERCREDI 30 AVRIL — BIM + Maintien E4/E52
+### JEUDI 30 AVRIL — BIM + Maintien E4/E52
 
 | Heure | Activite |
 |---|---|
 | 09h-12h | **BIM** : Bilan carbone + programmation/automatisation |
-| 14h-15h30 | E4 : 1 QCM rapide de chaque theme (6 QCM) |
-| 15h30-17h | E52 : 1 decompte mensuel + 1 calcul Cn de memoire |
+| 14h-15h30 | E4 : 1 QCM rapide par theme (6 QCM en 1h30) |
+| 15h30-17h | E52 : 1 decompte + 1 calcul Cn de memoire |
 
 ---
 
-### JEUDI 1er MAI — FERIE — Repos ou revision legere BIM
+### VENDREDI 1er MAI — FERIE
+- Repos ou revision legere BIM (1h max)
 
 ---
 
-### VENDREDI 2 MAI — Dernier jour avant oral anglais
+### SAMEDI 2 MAI — Dernier jour avant oral anglais B
 
 | Heure | Activite |
 |---|---|
-| 09h-12h | **BIM** : Simulation pratique (exercice type examen) |
-| 14h-15h | **ANGLAIS** : Derniere repetition orale chronometree |
-| 15h | **STOP — Repos** |
+| 09h-11h | **ANGLAIS E2-B** : Derniere repetition orale complete |
+| 11h-12h | **BIM** : Revoir points faibles |
+| 12h | **STOP — Repos** |
 
 ---
 
-### SAMEDI 3 MAI — REPOS COMPLET
+### DIMANCHE 3 MAI — REPOS
 - Verifier itineraire → LP Carole Peyrefitte, 21 Quai Tilsitt, Lyon 2e
 - Preparer : convocation + piece d'identite + 3 documents anglais
 
 ---
 
-### ★ DIMANCHE 4 MAI — EPREUVE E2-B : ANGLAIS ORAL
+### ★ LUNDI 4 MAI — EPREUVE E2-B : EXPRESSION ORALE ANGLAIS
 ```
 Lieu : LP ITCC Carole Peyrefitte, 21 Quai Tilsitt, 69002 Lyon
 Heure : 13h30 (arriver a 13h00)
 Duree : 15 min (5 min presentation + 10 min entretien)
-Coeff : 3
+Coeff : 3 (partage avec E2-A)
+
+METHODE :
+  Presentation (5 min) :
+    - Presenter les 3 documents de maniere structuree
+    - Mettre en evidence theme commun + points de vue
+  Entretien (10 min) :
+    - Developper certains aspects
+    - Defendre un point de vue
+    - Exprimer son opinion avec aisance
 ```
 
 ---
----
 
-# PHASE 2 — BIM INTENSIF (5 mai → 13 mai)
+## SEMAINE 5 : 5-10 mai — BIM INTENSIF avant epreuve
 
-> 9 jours — Objectif : Etre operationnel sur maquette BIM pour epreuve pratique
-> E6-A = coeff 4 = 15% de la note finale
-
----
-
-### LUNDI 5 MAI — BIM : Releve et modelisation
+### MARDI 5 MAI — BIM : Releve et modelisation
 
 | Heure | Activite |
 |---|---|
 | 09h-12h | Nuage de points : import, nettoyage, assemblage |
-| 14h-17h | Modelisation d'ouvrage a partir de nuage de points |
+| 14h-17h | Modelisation d'ouvrage a partir du nuage |
 
 ---
 
-### MARDI 6 MAI — BIM : Decomposition et quantification
+### MERCREDI 6 MAI — BIM : Decomposition et quantification
 
 | Heure | Activite |
 |---|---|
-| 09h-12h | Decomposition ouvrage : lots, ouvrages elementaires, interfaces |
-| 14h-17h | Extraction de quantitatifs : nomenclatures, rapports, DPGF |
+| 09h-12h | Decomposition ouvrage : lots, ouvrages elementaires |
+| 14h-17h | Extraction quantitatifs : nomenclatures, rapports, DPGF |
 
 ---
 
-### MERCREDI 7 MAI — BIM : Enrichissement et collaboration
+### JEUDI 7 MAI — BIM : Enrichissement et collaboration
 
 | Heure | Activite |
 |---|---|
-| 09h-12h | Enrichir maquette : attributs, description, cout des objets |
-| 14h-17h | Protocole collaboration BIM, IFC, BCF, plateforme collaborative |
+| 09h-12h | Enrichir maquette : attributs, FDES, cout |
+| 14h-17h | Protocole collaboration BIM, IFC, BCF |
 
 ---
 
-### JEUDI 8 MAI — FERIE — Revision legere BIM + repos
+### VENDREDI 8 MAI — FERIE — Repos
 
 ---
 
-### VENDREDI 9 MAI — BIM : Bilan carbone + programmation
+### SAMEDI 9 MAI — BIM : Derniere simulation
 
 | Heure | Activite |
 |---|---|
-| 09h-12h | FDES, bilan carbone, outils d'analyse |
-| 14h-17h | Outils de programmation : algorithmes, scripts, tableur |
+| 09h-12h | Simulation pratique complete : sujet type → livrables |
+| 14h-16h | Corriger + revoir points faibles |
+| 16h | STOP |
 
 ---
 
-### SAMEDI 10 MAI — REPOS avant BIM
+### DIMANCHE 10 MAI — REPOS avant BIM
 - Verifier itineraire → AFIP Formations, 40 rue des Antonins, Villeurbanne
 - Preparer : convocation + piece d'identite
 
@@ -430,57 +432,57 @@ Coeff : 4
 
 # PHASE 3 — SPRINT FINAL ECRITS (14 mai → 21 mai)
 
-> 8 jours avant les 3 ecrits decisifs : E1 (coeff 4) + E4 (coeff 4) + E52 (coeff 2)
-> Total : 10 coefficients en 3 jours consecutifs = 38% de la note finale
+> 8 jours avant 3 ecrits : E1 (coeff 4) + E4 (coeff 4) + E52 (coeff 2) = 10 coefficients
+> ATTENTION : E1 est PEU preparee — y consacrer plus de temps
 
 ---
 
-### MERCREDI 14 MAI — E4 + E52 revision intense
+### JEUDI 14 MAI — REPOS apres BIM + Lancement E1
 
 | Heure | Activite |
 |---|---|
-| 09h-10h | E4 : Reciter de memoire TOUTES les formules |
-| 10h-12h | E4 : Simulation partielle 2h (parties les plus faibles) |
-| 14h-15h | E52 : Decompte 16 lignes de memoire + Cn |
-| 15h-17h | E52 : Simulation rapide 1h30 + correction |
+| 09h-10h | Repos / decompression apres 3 jours de BIM |
+| 10h-12h | **E1** : Lire methode synthese + ecriture personnelle | Fiches CGE dans l'app |
+| 14h-17h | **E1** : Entrainement synthese sur sujet annales CGE 2025 |
 
 ---
 
-### JEUDI 15 MAI — E1 Culture Generale preparation
+### VENDREDI 15 MAI — E1 + E4 revision
 
 | Heure | Activite |
 |---|---|
-| 09h-10h | Methode synthese : plan thematique, citations courtes, neutralite |
-| 10h-12h | **Entrainement synthese** sur sujet annales CGE 2025 |
-| 14h-15h | Methode ecriture personnelle : these/antithese/depassement |
-| 15h-17h | E4 : Relire les 6 fiches en mode survol (10 min/fiche) |
+| 09h-12h | **E1** : Entrainement ecriture personnelle (1h30) + relecture |
+| 14h-15h | **E1** : Revoir connecteurs logiques + methode intro/conclusion |
+| 15h-17h | **E4** : Reciter toutes les formules + relire 6 fiches en survol |
 
 ---
 
-### VENDREDI 16 MAI — Simulations completes
+### SAMEDI 16 MAI — E52 + E1
 
 | Heure | Activite |
 |---|---|
-| 09h-12h | **E1 : Entrainement ecriture personnelle** (1h30) + relecture |
-| 14h-16h | E52 : Derniere simulation 2h chrono |
-| 16h-17h | Correction + noter les dernieres erreurs |
+| 09h-11h | **E52** : Simulation 2h chrono (dernier entrainement) |
+| 11h-12h | Correction E52 |
+| 14h-16h | **E1** : 2eme entrainement synthese (sujet different) |
+| 16h-17h | **E4** : Derniers exercices themes faibles |
 
 ---
 
-### SAMEDI 17 MAI — Derniere revision E4
+### DIMANCHE 17 MAI — Dernieres revisions
 
 | Heure | Activite |
 |---|---|
-| 09h-11h | E4 : Derniere simulation partielle (themes faibles uniquement) |
-| 11h-12h | Relire fiche memo A4 complete |
+| 09h-10h | E52 : Reciter 16 lignes + Cn + avance de memoire |
+| 10h-11h | E4 : Reciter classes beton + formules thermiques + categories voies |
+| 11h-12h | E1 : Relire methode synthese + connecteurs |
 | 14h | **STOP — REPOS** |
 
 ---
 
-### DIMANCHE 18 MAI — REPOS TOTAL
+### LUNDI 18 MAI — REPOS TOTAL avant les ecrits
 ```
 - Relire fiche memo A4 le soir (15 min MAX)
-- Preparer : calculatrice mode examen + stylos bleu/noir + regle
+- Preparer : calculatrice mode examen + stylos bleu/noir + regle + convocation
 - Verifier itineraire → LGT Martiniere Monplaisir, 41 rue Antoine Lumiere, Lyon 8e
 - Dormir tot
 ```
@@ -495,14 +497,14 @@ Duree : 3h (fin ~17h30)
 Coeff : 4
 
 STRATEGIE :
-  1. Lecture attentive du corpus (15 min)
-  2. Plan thematique de la synthese (15 min)
-  3. Redaction synthese (1h15)
-  4. Ecriture personnelle (1h)
-  5. Relecture orthographe (15 min)
+  14h30-14h45  Lecture attentive du corpus (15 min)
+  14h45-15h00  Plan thematique de la synthese (15 min)
+  15h00-16h15  Redaction synthese (1h15)
+  16h15-17h15  Ecriture personnelle (1h)
+  17h15-17h30  Relecture orthographe (15 min)
 ```
 
-**Le soir :** Relire fiche memo A4 pour E4 du lendemain (30 min max)
+**Le soir :** Relire fiche memo A4 pour E4 (30 min max)
 
 ---
 
@@ -514,19 +516,19 @@ Duree : 4h (fin ~18h00)
 Coeff : 4
 
 STRATEGIE :
-  1. LIRE tout le sujet d'abord (15 min) — reperer les themes
-  2. CALCULS en premier : fondations, acoustique, thermique → points assures
-  3. QUESTIONS REDIGEES ensuite : MOE, reglementation, securite
-  4. RELECTURE des calculs (15 dernières min)
+  14h00-14h15  LIRE tout le sujet — reperer les themes
+  14h15-16h15  CALCULS en premier : fondations, acoustique, thermique
+  16h15-17h45  QUESTIONS REDIGEES : MOE, reglementation, securite
+  17h45-18h00  RELECTURE des calculs
 
 REFLEXES :
-  - "fondations" → classes expo beton + exigences + profondeur hors gel
-  - "facade" → categorie voie + DnT,A,tr + entree d'air
-  - "thermique" → R, U, dephasage φ > 12h
-  - "securite" → blindage si ≥ 1,30m + garde-corps si acces
+  "fondations" → classes expo beton + exigences + profondeur hors gel
+  "facade"     → categorie voie + DnT,A,tr + entree d'air
+  "thermique"  → R, U, dephasage phi > 12h
+  "securite"   → blindage si >= 1,30m + garde-corps si acces
 ```
 
-**Le soir :** Relire formules E52 pour le lendemain (20 min max)
+**Le soir :** Relire formules E52 (20 min max)
 
 ---
 
@@ -537,21 +539,21 @@ Heure : 16h00 (arriver a 15h30)
 Duree : 2h (fin ~18h00)
 Coeff : 2
 
-LE MATIN : Reviser formules cles E52 (2h max, pas plus)
-  09h-10h : Reciter 16 lignes + formule Cn + avance
-  10h-11h : 1 decompte mensuel rapide de memoire
-  11h : STOP
+LE MATIN (2h max puis STOP) :
+  09h-10h  Reciter 16 lignes + formule Cn + avance
+  10h-11h  1 decompte mensuel rapide de memoire
+  11h      STOP — se detendre
 
 STRATEGIE EPREUVE :
-  1. LIRE tout le sujet (5 min) — reperer donnees chiffrees
-  2. ANALYSE DES OFFRES en premier (le plus long)
-  3. REVISION DES PRIX (Cn par mois)
-  4. DECOMPTE MENSUEL en dernier (le plus structure)
-  5. VERIFICATIONS FINALES :
-     - Cn arrondi au millieme SUPERIEUR ?
-     - Avance calculee sur TTC ?
-     - Remboursement avance AVANT TVA ?
-     - Retenue garantie 5% sur TTC ?
+  16h00-16h05  LIRE tout le sujet — reperer donnees chiffrees
+  16h05-16h50  Analyse des offres (le plus long)
+  16h50-17h25  Revision des prix (Cn par mois)
+  17h25-17h55  Decompte mensuel (le plus structure)
+  17h55-18h00  VERIFICATIONS :
+    ✓ Cn arrondi au millieme SUPERIEUR ?
+    ✓ Avance calculee sur TTC ?
+    ✓ Remboursement avance AVANT TVA ?
+    ✓ Retenue garantie 5% sur TTC ?
 ```
 
 ---
@@ -559,129 +561,97 @@ STRATEGIE EPREUVE :
 
 # PHASE 4 — E51 ETUDE DESCRIPTIVE (22 mai → 18 juin)
 
-> 28 jours — Objectif : Preparer l'oral E51 (COEFF 5 = LE PLUS GROS)
-> C'est une epreuve ORALE : 50 min (20 min expose + 30 min entretien)
-> Support : dossier technique remis 1 mois avant
+> 28 jours — E51 = COEFF 5 = LE PLUS GROS DU BTS
+> Epreuve ORALE : 50 min (20 min expose + 30 min entretien)
+> Sujet remis ~1 mois avant (mi-mai) — pas encore recu au 8 avril
 
 ---
 
-### Semaine du 22-25 mai : Recuperation + lancement E51
+### 22-25 mai : Recuperation + lancement E51
 
 | Jour | Activite |
 |---|---|
 | Ven 22 mai | REPOS apres les 3 ecrits |
 | Sam 23 mai | REPOS |
-| Dim 24 mai | Lire le sujet/dossier E51 attentivement (1ere lecture) |
-| Lun 25 mai | Analyser le dossier : identifier les lots, les prestations |
+| Dim 24 mai | Lire le sujet/dossier E51 (1ere lecture attentive) |
+| Lun 25 mai | Analyser le dossier : lots, prestations, contraintes |
 
 ---
 
-### Semaine du 26 mai - 1er juin : Travail sur dossier E51
+### 26-31 mai : Travail sur le dossier (semaine 1/3)
 
 | Jour | Matin (3h) | Apres-midi (3h) |
 |---|---|---|
-| Mar 26 | Description des ouvrages — CCTP lot(s) | Estimation de prix — ratios, m2, prix composes |
-| Mer 27 | Cout de revient — sous-details de prix | DS, frais chantier, FG, coefficient PV |
-| Jeu 28 | FERIE (Ascension) — repos |
-| Ven 29 | Planification — ordonnancement, planning Gantt | Planning 4D si maquette BIM disponible |
-| Sam 30 | Strategie commerciale — finaliser offre | Memoire technique |
-| Dim 31 | Repos |
+| Mar 26 | CCTP du/des lot(s) | Estimation de prix (ratios, m2) |
+| Mer 27 | Cout de revient (sous-details) | DS, frais chantier, FG, coeff PV |
+| Jeu 28 | FERIE (Ascension) | — |
+| Ven 29 | Planning : ordonnancement, Gantt | Planning 4D si maquette BIM |
+| Sam 30 | Strategie commerciale | Memoire technique |
 
 ---
 
-### Semaine du 1-8 juin : Redaction + entrainement oral
+### 1-7 juin : Redaction + entrainement oral (semaine 2/3)
 
 | Jour | Matin (3h) | Apres-midi (3h) |
 |---|---|---|
-| Lun 1 | Rediger note de synthese | Structurer l'expose oral (20 min) |
-| Mar 2 | Preparer reponses aux questions probables | Chronometrer l'expose x2 |
-| Mer 3 | Reviser les aspects techniques du dossier | Simulation orale avec chrono |
-| Jeu 4 | Reviser estimation + cout de revient | Simulation orale complete |
-| Ven 5 | Finaliser tous les documents numeriques | Derniere relecture |
-| Sam 6 | Repos |
-| Dim 7 | Repos |
+| Lun 1 | Rediger note de synthese | Structurer expose oral (20 min) |
+| Mar 2 | Preparer reponses questions jury | Chrono expose x2 |
+| Mer 3 | Reviser aspects techniques | Simulation orale avec chrono |
+| Jeu 4 | Estimation + cout de revient | Simulation orale complete |
+| Ven 5 | Finaliser documents numeriques | Rendu si demande |
 
 ---
 
-### Semaine du 8-14 juin : Simulations orales intensives
+### 8-14 juin : Simulations orales (semaine 3/3)
 
-| Jour | Matin (3h) | Apres-midi (3h) |
-|---|---|---|
-| Lun 8 | Simulation orale complete (20+30 min) | Corriger les faiblesses |
-| Mar 9 | Revoir les points techniques les plus complexes | Simulation orale #2 |
-| Mer 10 | Anticiper questions du jury sur les choix techniques | Simulation orale #3 |
-| Jeu 11 | Reviser planification + cout global | Simulation orale #4 |
-| Ven 12 | Derniere revision du dossier complet | Derniere simulation |
+| Jour | Activite |
+|---|---|
+| Lun-Ven 8-12 | 1 simulation orale complete par jour (50 min) + corriger faiblesses |
 | Sam 13 | Relire note de synthese + repos |
-| Dim 14 | REPOS TOTAL avant oral |
+| Dim 14 | REPOS TOTAL |
 
 ---
 
-### ★ LUNDI 15 → JEUDI 18 JUIN — EPREUVE E5-A : ETUDE DESCRIPTIVE ET ECONOMIQUE
+### ★ LUNDI 15 → JEUDI 18 JUIN — EPREUVE E51
 ```
 Lieu : LGT La Martiniere Monplaisir, Lyon 8e
 Horaires : 08h30 - 17h00
 Coeff : 5 (LE PLUS GROS COEFFICIENT)
 
 FORMAT CANDIDAT INDIVIDUEL :
-  - Expose : 20 min (5 min travail equipe + 15 min travail perso)
-  - Entretien : 30 min avec le jury
-  - Jury : 1 professionnel + 1-2 professeurs
+  Expose : 20 min (5 min equipe + 15 min personnel)
+  Entretien : 30 min (jury : 1 professionnel + 1-2 professeurs)
+  ATTENTION : absence du professionnel = pas d'evaluation
 
-COMPETENCES EVALUEES :
-  C9  Travail collaboratif
-  C10 Definir les ouvrages (CCTP)
-  C11 Estimer le prix
-  C12 Cout de revient
-  C13 Prevention
-  C14 Proposition commerciale
-  C15 Planning
+COMPETENCES EVALUEES : C10 (ouvrages), C11 (estimation), C12 (cout revient),
+  C13 (prevention), C14 (proposition commerciale), C15 (planning)
 ```
 
 ---
 ---
 
-# PHASE 5 — MATHS + PHYSIQUE (19 juin → 24 juin)
+# PHASE 5 — MATHS + PHYSIQUE (19-24 juin)
 
-> 6 jours — Objectif : Reviser maths et physique pour les oraux/pratiques
-> E3-A Maths (coeff 2) + E3-B Physique (coeff 2) = 4 coefficients
+> 6 jours — E3-A Maths (coeff 2) + E3-B Physique (coeff 2) = 4 coefficients
 
 ---
 
-### VENDREDI 19 JUIN — Maths : Equations differentielles + Fonctions
-
-| Heure | Activite |
-|---|---|
-| 09h-12h | Eq. diff 1er ordre : y' + ay = b → solution generale |
+### Vendredi 19 juin — Maths : Eq. diff. + Fonctions
+| 09h-12h | Eq. diff 1er ordre : y' + ay = b → solution + limite |
 | 14h-17h | Fonctions : derivees, variations, limites, TVI |
 
----
-
-### SAMEDI 20 JUIN — Maths : Probabilites + Statistiques
-
-| Heure | Activite |
-|---|---|
-| 09h-12h | Proba : arbres, loi binomiale B(n,p), loi normale |
+### Samedi 20 juin — Maths : Probabilites + Statistiques
+| 09h-12h | Arbres, loi binomiale B(n,p), loi normale |
 | 14h-17h | Statistiques descriptives + intervalles de confiance |
 
----
+### Dimanche 21 juin — Physique : Thermique + Acoustique
+| 09h-12h | Conduction, convection, rayonnement, resistance thermique |
+| 14h-17h | Niveau sonore, reflexion, absorption, Sabine |
 
-### DIMANCHE 21 JUIN — Physique : Thermique + Acoustique
-
-| Heure | Activite |
-|---|---|
-| 09h-12h | Thermique : conduction, convection, rayonnement, resistance thermique |
-| 14h-17h | Acoustique : niveau sonore, reflexion, absorption, Sabine |
-
----
-
-### LUNDI 22 JUIN — Physique : Chimie + Revision globale
-
-| Heure | Activite |
-|---|---|
-| 09h-12h | Chimie : pH, oxydo-reduction, corrosion, polymeres, chaux |
+### Lundi 22 juin — Physique : Chimie + Derniere revision
+| 09h-12h | pH, oxydo-reduction, corrosion, polymeres, chaux |
 | 14h-16h | Simulation maths (1h prep + oral) |
-| 16h-17h | Relire formules physique |
+| 16h | STOP |
 
 ---
 
@@ -690,50 +660,24 @@ COMPETENCES EVALUEES :
 Lieu : LGT La Martiniere Monplaisir, Lyon 8e
 Horaires : 08h30 - 17h00
 
-E3-A Mathematiques : Oral 35 min (1h preparation + 15 min expose + 20 min entretien)
-E3-B Physique-Chimie : Pratique 2h (manipulation + compte-rendu)
+E3-A Maths : Oral 35 min (1h prep + 15 min expose + 20 min entretien)
+E3-B Physique : Pratique 2h (manipulation + compte-rendu)
 Coeff : 2 + 2 = 4
 ```
 
 ---
 ---
 
-# RESUME GLOBAL — REPARTITION DU TEMPS
+# RESUME — INCOHERENCES CORRIGEES
 
 ```
-PHASE   PERIODE              JOURS   EPREUVES                    COEFF   % NOTE
-──────────────────────────────────────────────────────────────────────────────
-  1     7 avril - 3 mai       27     E4 + E52 + Anglais prep       9      35%
-  2     4 mai - 13 mai        10     BIM + Anglais oral             7      27%
-  3     14 mai - 21 mai        8     E1 + E4 + E52 (ecrits)       10      38%
-  4     22 mai - 18 juin      28     E51 (oral, coeff 5)            5      19%
-  5     19 juin - 24 juin      6     Maths + Physique               4      15%
-──────────────────────────────────────────────────────────────────────────────
-TOTAL                         79 jours                              26     100%
-
-HEURES TOTALES ESTIMEES : ~79 jours x 6h moyenne = ~475 heures de revision
-```
-
----
-
-# CHECKLIST MATERIEL JOUR J
-
-```
-POUR CHAQUE EPREUVE :
-  [ ] Convocation imprimee
-  [ ] Piece d'identite (valide ou perimee < 5 ans)
-  [ ] Calculatrice avec MODE EXAMEN active
-  [ ] Stylos bleu/noir (x2 minimum)
-  [ ] Regle, equerre
-  [ ] Montre (non connectee)
-  [ ] Bouteille d'eau + en-cas
-
-SPECIFIQUE E2-B (4 mai) :
-  [ ] 3 documents anglais annexes au rapport
-
-SPECIFIQUE E6-A BIM (11-13 mai) :
-  [ ] Verifier logiciels autorises avec AFIP
-
-SPECIFIQUE E5-A (15-18 juin) :
-  [ ] Note de synthese + dossier numerique complet
+1. E2-A (27 avril) : ajoutee comme epreuve a venir, plus marquee "PASSEE"
+2. Preparation ecoute anglais : ajoutee en semaines 2-3 (1h/jour)
+3. 27 avril = LUNDI (pas dimanche) : corrige, c'est jour d'epreuve E2-A
+4. 19 mai = MARDI : confirme correct
+5. Jour de repos apres BIM (14 mai) : ajoute avant sprint phase 3
+6. E1 preparation : augmentee a 4 demi-journees (au lieu de 2)
+7. Phase 1 raccourcie (finit le 26 au lieu du 3 mai)
+8. Phase 2 commence le 27 avril (jour E2-A) au lieu du 4 mai
+9. Total coefficients : precise 26 restants / 29 total
 ```
