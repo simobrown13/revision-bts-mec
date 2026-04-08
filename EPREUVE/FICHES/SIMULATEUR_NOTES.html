@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur BTS MEC 2026 — Notes cibles</title>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--text2:#94a3b8;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--blue:#3b82f6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:16px}
+h1{text-align:center;font-size:22px;font-weight:900;background:linear-gradient(135deg,#60a5fa,#8b5cf6,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.sub{text-align:center;font-size:12px;color:var(--text2);margin-bottom:16px}
+.container{max-width:900px;margin:0 auto}
+
+/* JAUGE PRINCIPALE */
+.gauge{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:16px;text-align:center}
+.gauge-score{font-size:56px;font-weight:900;line-height:1}
+.gauge-label{font-size:13px;color:var(--text2);margin-top:4px}
+.gauge-bar{height:14px;background:#334155;border-radius:7px;margin:12px 0 8px;overflow:hidden;position:relative}
+.gauge-fill{height:100%;border-radius:7px;transition:width .5s,background .5s}
+.gauge-marks{display:flex;justify-content:space-between;font-size:10px;color:var(--text2);padding:0 2px}
+
+/* RÉSULTAT */
+.result{font-size:18px;font-weight:800;margin-top:8px;padding:10px;border-radius:10px}
+.result.pass{background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(34,197,94,.3)}
+.result.fail{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.3)}
+.result.close{background:rgba(245,158,11,.15);color:#fde68a;border:1px solid rgba(245,158,11,.3)}
+
+/* TABLEAU */
+.table-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1e3a5f;color:#93c5fd;padding:10px 12px;text-align:left;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:8px 12px;border-bottom:1px solid var(--border)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(59,130,246,.06)}
+.epreuve-name{font-weight:700}
+.coeff{text-align:center;font-weight:800;color:#60a5fa}
+.passe{color:var(--text2);font-style:italic}
+
+input[type=range]{width:100%;height:6px;-webkit-appearance:none;background:#334155;border-radius:3px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;cursor:pointer}
+.note-display{font-size:20px;font-weight:900;min-width:50px;text-align:center}
+
+/* PRESETS */
+.presets{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;justify-content:center}
+.preset{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer;font-size:12px;font-weight:600;transition:all .15s}
+.preset:hover{border-color:#3b82f6;color:var(--text);background:rgba(59,130,246,.1)}
+.preset.active{background:#1e3a5f;color:#60a5fa;border-color:#3b82f6}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
+.stat-val{font-size:24px;font-weight:900;line-height:1}
+.stat-lbl{font-size:10px;color:var(--text2);margin-top:3px;text-transform:uppercase}
+
+/* OBJECTIFS */
+.obj{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:16px}
+.obj h3{font-size:13px;font-weight:700;color:#60a5fa;margin-bottom:8px}
+.obj-row{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:12px;border-bottom:1px solid rgba(51,65,85,.5)}
+.obj-row:last-child{border-bottom:none}
+.obj-epr{font-weight:700;min-width:180px}
+.obj-bar{flex:1;height:8px;background:#334155;border-radius:4px;overflow:hidden}
+.obj-fill{height:100%;border-radius:4px;transition:width .3s}
+.obj-note{font-weight:800;min-width:40px;text-align:right}
+
+/* COLORS PER SCORE */
+.n-red{color:#ef4444}.n-orange{color:#f59e0b}.n-yellow{color:#eab308}.n-green{color:#22c55e}.n-great{color:#34d399}
+
+@media(max-width:600px){
+  .stats{grid-template-columns:1fr 1fr}
+  table{font-size:11px}
+  th,td{padding:6px 8px}
+}
+@media print{
+  body{background:#fff;color:#000;padding:8mm}
+  .gauge,.table-wrap,.obj,.stats .stat{border-color:#ccc}
+  th{background:#1e3a5f;color:#fff}
+  input[type=range]{display:none}
+  .presets{display:none}
+}
+</style>
+</head>
+<body>
+
+<h1>Simulateur BTS MEC 2026</h1>
+<div class="sub">BAHAFID Mohamed — 29 coefficients — Moyenne necessaire : 10/20 — Glissez les curseurs pour simuler vos notes</div>
+
+<div class="container" id="app"></div>
+
+<script>
+const EPREUVES = [
+  {id:'e1', name:'E1 — Culture generale et expression', coeff:4, color:'#14b8a6', icon:'🇫🇷', niveau:'faible'},
+  {id:'e2', name:'E2 — Anglais (A+B)', coeff:3, color:'#ef4444', icon:'🇬🇧', niveau:'moyen'},
+  {id:'e31',name:'E31 — Mathematiques', coeff:2, color:'#8b5cf6', icon:'🔢', niveau:'moyen'},
+  {id:'e32',name:'E32 — Physique-Chimie', coeff:2, color:'#f97316', icon:'⚗️', niveau:'moyen'},
+  {id:'e4', name:'E4 — Analyse du projet et contexte', coeff:4, color:'#3b82f6', icon:'📘', niveau:'fort'},
+  {id:'e51',name:'E51 — Etude descriptive et eco', coeff:5, color:'#8b5cf6', icon:'📐', niveau:'fort'},
+  {id:'e52',name:'E52 — Analyse et suivi financiers', coeff:2, color:'#22c55e', icon:'📗', niveau:'fort'},
+  {id:'e61',name:'E61 — Projet numerique BIM', coeff:4, color:'#f59e0b', icon:'💻', niveau:'fort'},
+  {id:'e62',name:'E62 — Compte rendu stage', coeff:3, color:'#d97706', icon:'📋', niveau:'fort', passe:true},
+];
+
+const PRESETS = [
+  {name:'Objectif minimum (10/20)', notes:{e1:8,e2:10,e31:8,e32:8,e4:12,e51:12,e52:14,e61:14,e62:12}},
+  {name:'Objectif realiste', notes:{e1:10,e2:11,e31:10,e32:10,e4:14,e51:14,e52:15,e61:16,e62:13}},
+  {name:'Objectif ambitieux', notes:{e1:12,e2:12,e31:12,e32:12,e4:16,e51:16,e52:17,e61:18,e62:15}},
+  {name:'Scenario pessimiste', notes:{e1:6,e2:8,e31:7,e32:7,e4:11,e51:10,e52:12,e61:12,e62:10}},
+  {name:'Vos forces a fond', notes:{e1:8,e2:9,e31:9,e32:9,e4:15,e51:16,e52:16,e61:17,e62:14}},
+];
+
+let notes = {e1:10,e2:10,e31:10,e32:10,e4:14,e51:14,e52:14,e61:15,e62:12};
+let activePreset = -1;
+
+function calcMoyenne(){
+  let totalPts=0, totalCoeff=0;
+  EPREUVES.forEach(e=>{
+    totalPts += notes[e.id] * e.coeff;
+    totalCoeff += e.coeff;
+  });
+  return totalPts / totalCoeff;
+}
+
+function noteColor(n){
+  if(n<8) return '#ef4444';
+  if(n<10) return '#f59e0b';
+  if(n<12) return '#eab308';
+  if(n<14) return '#22c55e';
+  return '#34d399';
+}
+
+function noteClass(n){
+  if(n<8) return 'n-red';
+  if(n<10) return 'n-orange';
+  if(n<12) return 'n-yellow';
+  if(n<14) return 'n-green';
+  return 'n-great';
+}
+
+function pointsManquants(){
+  const moy = calcMoyenne();
+  if(moy >= 10) return 0;
+  const totalCoeff = EPREUVES.reduce((s,e)=>s+e.coeff,0);
+  return Math.ceil((10 - moy) * totalCoeff);
+}
+
+function render(){
+  const moy = calcMoyenne();
+  const totalCoeff = EPREUVES.reduce((s,e)=>s+e.coeff,0);
+  const totalPts = EPREUVES.reduce((s,e)=>s+notes[e.id]*e.coeff,0);
+  const maxPts = totalCoeff * 20;
+  const pass = moy >= 10;
+  const close = moy >= 9 && moy < 10;
+  const mention = moy >= 16 ? 'Mention Bien' : moy >= 14 ? 'Mention Assez Bien' : moy >= 12 ? 'Mention Passable' : '';
+
+  let html = '';
+
+  // JAUGE
+  html += '<div class="gauge">';
+  html += '<div class="gauge-score" style="color:'+noteColor(moy)+'">'+moy.toFixed(2)+'/20</div>';
+  html += '<div class="gauge-label">Moyenne generale ponderee ('+totalPts+' pts / '+maxPts+' pts max)</div>';
+  html += '<div class="gauge-bar"><div class="gauge-fill" style="width:'+(moy/20*100)+'%;background:'+noteColor(moy)+'"></div></div>';
+  html += '<div class="gauge-marks"><span>0</span><span>4</span><span>8</span><span style="color:'+(moy>=10?'#22c55e':'#ef4444')+';font-weight:800">10</span><span>12</span><span>14</span><span>16</span><span>20</span></div>';
+
+  if(pass){
+    html += '<div class="result pass">✅ ADMIS'+(mention?' — '+mention:'')+'</div>';
+  } else if(close){
+    html += '<div class="result close">⚠️ RATTRAPAGE possible — Il manque '+pointsManquants()+' points ('+((10-moy)).toFixed(2)+' pts de moyenne)</div>';
+  } else {
+    html += '<div class="result fail">❌ NON ADMIS — Il manque '+pointsManquants()+' points ('+((10-moy)).toFixed(2)+' pts de moyenne)</div>';
+  }
+  html += '</div>';
+
+  // STATS
+  const notesFortes = EPREUVES.filter(e=>e.niveau==='fort').reduce((s,e)=>s+notes[e.id]*e.coeff,0);
+  const coeffFortes = EPREUVES.filter(e=>e.niveau==='fort').reduce((s,e)=>s+e.coeff,0);
+  const notesFaibles = EPREUVES.filter(e=>e.niveau!=='fort').reduce((s,e)=>s+notes[e.id]*e.coeff,0);
+  const coeffFaibles = EPREUVES.filter(e=>e.niveau!=='fort').reduce((s,e)=>s+e.coeff,0);
+
+  html += '<div class="stats">';
+  html += '<div class="stat"><div class="stat-val" style="color:'+noteColor(moy)+'">'+moy.toFixed(1)+'</div><div class="stat-lbl">Moyenne</div></div>';
+  html += '<div class="stat"><div class="stat-val" style="color:#34d399">'+(notesFortes/coeffFortes).toFixed(1)+'</div><div class="stat-lbl">Moy. points forts ('+coeffFortes+' coeff)</div></div>';
+  html += '<div class="stat"><div class="stat-val" style="color:'+(notesFaibles/coeffFaibles>=10?'#eab308':'#ef4444')+'">'+(notesFaibles/coeffFaibles).toFixed(1)+'</div><div class="stat-lbl">Moy. points faibles ('+coeffFaibles+' coeff)</div></div>';
+  html += '<div class="stat"><div class="stat-val" style="color:'+noteColor(notes.e1)+'">'+notes.e1+'</div><div class="stat-lbl">E1 Francais (coeff 4)</div></div>';
+  html += '</div>';
+
+  // PRESETS
+  html += '<div class="presets">';
+  PRESETS.forEach((p,i)=>{
+    html += '<div class="preset'+(activePreset===i?' active':'')+'" onclick="applyPreset('+i+')">'+p.name+'</div>';
+  });
+  html += '</div>';
+
+  // TABLEAU
+  html += '<div class="table-wrap"><table>';
+  html += '<tr><th></th><th>Epreuve</th><th style="text-align:center">Coeff</th><th style="text-align:center">Niveau</th><th style="text-align:center;width:60px">Note</th><th style="width:40%">Curseur</th><th style="text-align:center">Points</th></tr>';
+
+  EPREUVES.forEach(e=>{
+    const n = notes[e.id];
+    const pts = n * e.coeff;
+    const niveauBadge = e.niveau==='fort' ? '<span style="background:#14532d;color:#86efac;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">FORT</span>' :
+                        e.niveau==='faible' ? '<span style="background:#7f1d1d;color:#fca5a5;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">FAIBLE</span>' :
+                        '<span style="background:#78350f;color:#fde68a;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">MOYEN</span>';
+
+    html += '<tr>';
+    html += '<td style="font-size:18px;text-align:center">'+e.icon+'</td>';
+    html += '<td class="epreuve-name" style="color:'+e.color+'">'+(e.passe?'<span class="passe">'+e.name+' (PASSE)</span>':e.name)+'</td>';
+    html += '<td class="coeff">'+e.coeff+'</td>';
+    html += '<td style="text-align:center">'+niveauBadge+'</td>';
+    html += '<td class="note-display '+noteClass(n)+'">'+n+'</td>';
+    html += '<td><input type="range" min="0" max="20" step="0.5" value="'+n+'" oninput="updateNote(\''+e.id+'\',this.value)" style="accent-color:'+e.color+'"></td>';
+    html += '<td style="text-align:center;font-weight:700;color:'+noteColor(n)+'">'+pts.toFixed(0)+' / '+(e.coeff*20)+'</td>';
+    html += '</tr>';
+  });
+
+  html += '</table></div>';
+
+  // OBJECTIFS VISUELS
+  html += '<div class="obj">';
+  html += '<h3>Objectifs par epreuve — ou gagner des points ?</h3>';
+
+  // Trier par potentiel de gain (coeff * (note cible - note actuelle))
+  const sorted = [...EPREUVES].sort((a,b)=>{
+    const gainA = a.niveau==='fort' ? a.coeff*(Math.min(notes[a.id]+3,20)-notes[a.id]) : a.coeff*(Math.min(notes[a.id]+2,20)-notes[a.id]);
+    const gainB = b.niveau==='fort' ? b.coeff*(Math.min(notes[b.id]+3,20)-notes[b.id]) : b.coeff*(Math.min(notes[b.id]+2,20)-notes[b.id]);
+    return gainB - gainA;
+  });
+
+  sorted.forEach(e=>{
+    const n = notes[e.id];
+    const pct = n/20*100;
+    html += '<div class="obj-row">';
+    html += '<div class="obj-epr" style="color:'+e.color+'">'+e.icon+' '+e.name+' (×'+e.coeff+')</div>';
+    html += '<div class="obj-bar"><div class="obj-fill" style="width:'+pct+'%;background:'+noteColor(n)+'"></div></div>';
+    html += '<div class="obj-note '+noteClass(n)+'">'+n+'/20</div>';
+    html += '</div>';
+  });
+
+  // Conseil
+  if(!pass){
+    html += '<div style="margin-top:10px;padding:10px;background:rgba(239,68,68,.1);border-left:3px solid #ef4444;border-radius:0 8px 8px 0;font-size:12px;color:#fca5a5">';
+    html += '<b>💡 Conseil :</b> Il manque <b>'+pointsManquants()+' points</b>. ';
+
+    // Trouver ou gagner le plus facilement
+    const easiest = EPREUVES.filter(e=>e.niveau==='fort'&&notes[e.id]<16).sort((a,b)=>b.coeff-a.coeff);
+    if(easiest.length>0){
+      html += 'Le plus simple : gagner des points sur <b>'+easiest[0].name+'</b> (coeff '+easiest[0].coeff+', niveau fort, note actuelle '+notes[easiest[0].id]+'/20). ';
+      html += '+2 points ici = +'+easiest[0].coeff*2+' points au total.';
+    }
+    html += '</div>';
+  } else if(moy < 12){
+    html += '<div style="margin-top:10px;padding:10px;background:rgba(245,158,11,.1);border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;font-size:12px;color:#fde68a">';
+    html += '<b>💡 Pour la mention :</b> Il faut '+((12-moy)*totalCoeff).toFixed(0)+' points de plus pour la mention Passable (12/20). ';
+    html += 'Concentrez-vous sur vos matieres fortes (E4, E51, E52, BIM) pour maximiser les points.';
+    html += '</div>';
+  } else {
+    html += '<div style="margin-top:10px;padding:10px;background:rgba(34,197,94,.1);border-left:3px solid #22c55e;border-radius:0 8px 8px 0;font-size:12px;color:#86efac">';
+    html += '<b>🎯 Excellent !</b> Moyenne de '+moy.toFixed(2)+'/20'+(mention?' avec '+mention:'')+'. Continuez comme ca !';
+    html += '</div>';
+  }
+
+  html += '</div>';
+
+  // SCENARIOS RAPIDES
+  html += '<div class="obj">';
+  html += '<h3>Impact des notes — Que se passe-t-il si... ?</h3>';
+
+  const scenarios = [
+    {desc:'E1 Francais passe de '+notes.e1+' a '+(notes.e1+2), delta:2*4},
+    {desc:'E51 Etude desc. passe de '+notes.e51+' a '+(notes.e51+2), delta:2*5},
+    {desc:'E4 Analyse passe de '+notes.e4+' a '+(notes.e4+2), delta:2*4},
+    {desc:'E1 Francais tombe a '+(Math.max(notes.e1-3,0)), delta:-3*4},
+    {desc:'E52 monte a 18/20', delta:(18-notes.e52)*2},
+    {desc:'BIM monte a 18/20', delta:(18-notes.e61)*4},
+  ];
+
+  scenarios.forEach(sc=>{
+    const newMoy = (totalPts + sc.delta) / totalCoeff;
+    const sign = sc.delta >= 0 ? '+' : '';
+    html += '<div class="obj-row">';
+    html += '<div style="flex:1;font-size:12px">'+sc.desc+'</div>';
+    html += '<div style="min-width:80px;text-align:center;font-weight:700;color:'+(sc.delta>=0?'#22c55e':'#ef4444')+'">'+sign+sc.delta+' pts</div>';
+    html += '<div style="min-width:80px;text-align:right;font-weight:800;color:'+noteColor(newMoy)+'">→ '+newMoy.toFixed(2)+'/20</div>';
+    html += '</div>';
+  });
+
+  html += '</div>';
+
+  document.getElementById('app').innerHTML = html;
+}
+
+function updateNote(id, val){
+  notes[id] = parseFloat(val);
+  activePreset = -1;
+  render();
+}
+
+function applyPreset(i){
+  activePreset = i;
+  Object.assign(notes, PRESETS[i].notes);
+  render();
+}
+
+render();
+</script>
+
+</body>
+</html>
