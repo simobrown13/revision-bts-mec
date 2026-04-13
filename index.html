@@ -314,24 +314,28 @@ body.light .tag-2{background:#fefce8;color:#a16207}
   .hamburger{display:none}
 }
 @media print{
-  .sidebar,.topbar,.hamburger,.overlay,.back-btn,.theme-btn,.print-btn,.stat-row .stat{page-break-inside:avoid}
   .sidebar{display:none!important}
   .topbar{display:none!important}
   .overlay{display:none!important}
-  .app{display:block!important}
-  .main{display:block!important}
-  .main-scroll{overflow:visible!important}
-  .content{max-width:100%!important;padding:8mm!important}
-  body{background:#fff!important;color:#000!important;font-size:11px!important}
+  .nav-item,.back-btn,.theme-btn,.print-btn{display:none!important}
+  input[type=range]{display:none!important}
+  .qcm-choice{cursor:default!important}
+  .app{display:block!important;height:auto!important;overflow:visible!important}
+  .main{display:block!important;height:auto!important;overflow:visible!important}
+  .main-scroll{height:auto!important;overflow:visible!important}
+  .content{max-width:100%!important;padding:8mm!important;height:auto!important;overflow:visible!important}
+  body{background:#fff!important;color:#000!important;font-size:11px!important;height:auto!important;overflow:visible!important}
+  html{height:auto!important;overflow:visible!important}
   body.light .section-h2,body .section-h2{color:#1e3a5f!important}
   .card,.stat,.tbl-wrap,.plan-week,.accordion,.annale-partie,.formula-section{break-inside:avoid;border-color:#ccc!important}
   .card{background:#fff!important;box-shadow:none!important}
   .tbl th{background:#1e3a5f!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .key-point,.alert-red,.alert-green,.alert-blue,.alert-yellow{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   pre.formula-code{background:#f1f5f9!important;color:#1a1a1a!important;border-color:#3b82f6!important}
-  .nav-item,.back-btn,.theme-btn,.print-btn{display:none!important}
-  input[type=range]{display:none!important}
-  .qcm-choice{cursor:default!important}
+  .grid-2{display:block!important}
+  .grid-2 .card{margin-bottom:12px!important}
+  .score-recap{max-height:none!important;overflow:visible!important}
+  .memo-tabs{display:none!important}
 }
 </style>
 </head>
