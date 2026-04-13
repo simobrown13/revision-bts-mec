@@ -5640,23 +5640,67 @@ const FICHES_E1_METHODE = [
     ]},
   ]},
   {id:'e1_corpus', title:'Méthode Questions Corpus (10 pts)', freq:'ESSENTIEL', sections:[
-    {title:'Étape 1 — Lire et annoter (15 min)', content:[
+    {title:'Rappel : 1h30 pour les questions, pas plus', content:[
+      {type:'alert', color:'red', text:'L\'épreuve dure 3h. Il faut allouer 1h30 aux questions et 1h30 à l\'essai. Les deux exercices sont notés sur 10 : il n\'y a pas d\'exercice à privilégier. Ne dépassez JAMAIS 1h30 sur les questions.'},
+    ]},
+    {title:'Étape 1 — Première lecture globale (10 min)', content:[
       {type:'list', items:[
-        'Pour CHAQUE document noter : Auteur + Titre + Date + Nature (article/essai/roman/image)',
-        'Idée principale de chaque document',
-        'Position de l\'auteur : pour / contre / nuancé',
+        'Observer : combien de documents ? Quel type ? (texte littéraire, essai, article, image)',
+        'Lire le PARATEXTE de chaque document : auteur, titre, date, genre, source',
+        'Compléter un TABLEAU SYNOPTIQUE au brouillon (ligne 1 = paratexte de chaque doc)',
+        'Déterminer le SUJET précis (pas juste le thème, mais le sous-thème du corpus)',
+        'Jeter sur une feuille les idées, souvenirs de cours qui viennent à l\'esprit',
+      ]},
+      {type:'code', content:'TABLEAU SYNOPTIQUE (au brouillon) :\n\n              | Doc 1          | Doc 2          | Doc 3          |\n──────────────|────────────────|────────────────|────────────────|\nAuteur        |                |                |                |\nTitre         |                |                |                |\nDate          |                |                |                |\nNature/Genre  |                |                |                |\nIdée générale |                |                |                |\n──────────────|────────────────|────────────────|────────────────|\nQuestion 1    |                |                |                |\nQuestion 2    |                |                |                |\nQuestion 3    |                |                |                |'},
+    ]},
+    {title:'Étape 2 — Analyser les questions AVANT de relire', content:[
+      {type:'alert', color:'yellow', text:'AVANT la 2ème lecture : analysez les questions pour savoir QUOI chercher dans les textes.'},
+      {type:'list', items:[
+        'Identifier les TERMES INTERROGATIFS : comment, pourquoi, en quoi, dans quelle mesure...',
+        'Identifier les VERBES D\'ACTION : confrontez, montrez, expliquez, justifiez, analysez...',
+        'Noter quels DOCUMENTS sont concernés par chaque question',
+        'ATTENTION : ne pas répondre sur des documents qui ne sont pas demandés dans la question',
+        'La DERNIÈRE question porte généralement sur l\'ENSEMBLE du corpus',
+        'Question sur 1 SEUL doc = analyse DÉTAILLÉE (figures de style, champs lexicaux, effets de langue)',
+      ]},
+      {type:'table', headers:['Verbe dans la question','Ce qu\'on attend de vous'], rows:[
+        ['Expliquez','Reformuler l\'idée + montrer le raisonnement de l\'auteur'],
+        ['Confrontez','Montrer convergences ET divergences entre les documents'],
+        ['Montrez','Prouver avec des éléments précis du texte (citations, lignes)'],
+        ['Analysez','Identifier les procédés (figures de style, champs lexicaux) + expliquer leur EFFET'],
+        ['Justifiez','Donner des preuves tirées du texte pour appuyer votre réponse'],
       ]},
     ]},
-    {title:'Étape 2 — Définir les mots clés de la question', content:[
-      {type:'alert', color:'yellow', text:'Le correcteur VALORISE cette démarche ! Commencer par : "Le mot [X] peut se définir comme [définition]."'},
-      {type:'code', content:'Exemple : "Le mot \'progrès\' désigne ici aussi bien\nl\'avancée technique que l\'amélioration\ndes conditions de vie."'},
+    {title:'Étape 3 — Deuxième lecture ACTIVE (15 min)', content:[
+      {type:'list', items:[
+        'SOULIGNER les idées importantes dans chaque document',
+        'SURLIGNER d\'une couleur différente pour chaque question les éléments à utiliser',
+        'RÉSUMER chaque idée importante dans la marge en quelques mots',
+        'REPÉRER : figures de style, champs lexicaux, effets rhétoriques, structure argumentative',
+        'À la fin : être capable de résumer CHAQUE document en UNE SEULE phrase',
+        'Reporter dans le TABLEAU SYNOPTIQUE les idées surlignées, par question',
+      ]},
+      {type:'alert', color:'green', text:'Réserver une dernière couleur pour les éléments utilisables dans l\'essai (Partie 2). Ça fait gagner du temps plus tard.'},
     ]},
-    {title:'Gabarit — Question de compréhension (1 document)', content:[
-      {type:'code', content:'"Dans ce document, [auteur] [défend/analyse/témoigne de]\n[idée principale]. Il souligne que [détail]\nen précisant que [élément secondaire].\nCette approche permet de comprendre que [interprétation]."'},
+    {title:'Étape 4 — Définir les mots clés de la question', content:[
+      {type:'alert', color:'yellow', text:'Le correcteur VALORISE cette démarche ! Commencer par : "Le mot [X] peut se définir comme [définition]."'},
+      {type:'code', content:'Exemple : "Le mot \'imaginaire\' renvoie ici aux\nreprésentations mentales, mythes et symboles que\nl\'homme projette sur l\'animal, par opposition à la\nconnaissance scientifique objective."'},
+    ]},
+    {title:'Étape 5 — Rédiger : structure de chaque réponse', content:[
+      {type:'alert', color:'blue', text:'Chaque réponse = 2 à 3 paragraphes de CONFRONTATION. On ne parle pas d\'un document puis d\'un autre : on organise par IDÉE, en faisant dialoguer les documents dans chaque paragraphe.'},
+      {type:'code', content:'STRUCTURE D\'UNE RÉPONSE :\n\n1. Phrase d\'introduction (rappeler le thème de la question)\n   → Présenter rapidement les documents concernés\n\n2. Paragraphe 1 — Premier point de confrontation\n   → Idée commune ou divergente\n   → Référence doc X (l. Y) + référence doc Z (l. W)\n   → Explication / analyse\n\n3. Paragraphe 2 — Deuxième point de confrontation\n   → Autre idée (convergence / divergence / complément)\n   → Références croisées aux documents\n\n4. (Paragraphe 3 si nécessaire)\n\n5. Courte conclusion (1-2 phrases)\n   → Résumer les étapes du raisonnement\n   → Reformuler une réponse claire à la question'},
+    ]},
+    {title:'Gabarit — Première question (avec présentation des documents)', content:[
+      {type:'alert', color:'green', text:'La première question est l\'occasion de présenter les documents du corpus. Appuyez-vous sur la première ligne du tableau synoptique.'},
+      {type:'code', content:'"Le corpus proposé réunit trois documents autour de\n[thème/sous-thème]. Le premier, [nature] de [auteur]\npublié en [date], [idée en 1 ligne]. Le deuxième,\n[nature] de [auteur] ([date]), [idée]. Enfin, le\ntroisième document, [nature], [idée].\n\n[Puis répondre à la question...]\n\nPar la suite, présenter seulement les documents\npas encore présentés dans les questions précédentes."'},
+    ]},
+    {title:'Gabarit — Question de compréhension (1 seul document)', content:[
+      {type:'alert', color:'yellow', text:'Question sur 1 seul doc = analyse DÉTAILLÉE. Il faut repérer les figures de style, champs lexicaux, effets de langue. C\'est proche du commentaire composé.'},
+      {type:'code', content:'"Dans ce document, [auteur] [défend/analyse/dénonce]\n[idée principale]. Il s\'appuie sur [procédé :\nchamp lexical de X / métaphore / opposition...]\npour [effet : souligner / renforcer / émouvoir...].\nAinsi, « [citation courte] » (l. X) illustre\n[explication de l\'effet produit].\n\nDe plus, [deuxième idée ou procédé].\n\nEn conclusion, [réponse claire à la question]."'},
     ]},
     {title:'Gabarit — Question de CONFRONTATION (2+ docs) ← RAPPORTE LE PLUS', content:[
-      {type:'alert', color:'red', text:'CONFRONTER = montrer points communs ET différences. JAMAIS résumer chaque doc séparément.'},
-      {type:'code', content:'"Les documents [X] et [Y] abordent tous deux la question de\n[thème commun]. [Auteur X] considère que [idée X], comme en\ntémoigne « [citation] » (l. X). De son côté, [auteur Y]\n[rejoint/nuance/contredit] cette vision en affirmant que\n[idée Y] (doc. Y, l. X).\nAinsi, si les deux auteurs s\'accordent sur [point commun],\nils divergent quant à [point de divergence]."'},
+      {type:'alert', color:'red', text:'CONFRONTER PAR IDÉE, pas document par document. Dans chaque paragraphe, les documents DIALOGUENT.'},
+      {type:'code', content:'"Les documents [X] et [Y] abordent tous deux la question de\n[thème commun]. [Auteur X] considère que [idée X] (l. X),\ntandis que [auteur Y] [rejoint/nuance/contredit] cette vision\nen [verbe] que [idée Y] (doc. Y, l. X).\n\nCependant, une divergence apparaît : alors que [auteur X]\ninsiste sur [aspect], [auteur Y] met davantage l\'accent\nsur [autre aspect] (l. X).\n\nAinsi, si les deux auteurs s\'accordent sur [point commun],\nils divergent quant à [point de divergence]."'},
       {type:'list', items:[
         'ACCORD : "À l\'instar de [X], [Y] souligne que..."',
         'NUANCE : "[Y] rejoint partiellement [X] mais nuance en..."',
@@ -5664,15 +5708,39 @@ const FICHES_E1_METHODE = [
         'COMPLÉMENT : "[Y] enrichit la réflexion de [X] en ajoutant que..."',
       ]},
     ]},
+    {title:'Gabarit — Dernière question (ensemble du corpus)', content:[
+      {type:'alert', color:'blue', text:'La dernière question porte généralement sur l\'ENSEMBLE du corpus (3 documents). Il faut faire DIALOGUER les 3 documents comme une entité : convergences, divergences, complémentarités.'},
+      {type:'code', content:'"L\'ensemble du corpus propose un regard [homogène/\nhétérogène/complémentaire] sur [thème].\n\nD\'une part, les documents [X] et [Y] convergent en\n[point commun] (doc. X, l. A ; doc. Y, l. B).\n\nD\'autre part, le document [Z] apporte un éclairage\ndifférent en [divergence ou complément] (l. C).\n\nAinsi, le corpus dans son ensemble [synthèse :\nmontre que / interroge / met en lumière]."'},
+    ]},
     {title:'Gabarit — Question sur une image', content:[
-      {type:'code', content:'"Ce document iconographique représente [description factuelle].\n[Élément visuel remarquable] évoque [interprétation].\nCette image [confirme/nuance/illustre] la thèse de [auteur]\ndans le document [X], selon laquelle [idée]."'},
+      {type:'code', content:'"Ce document iconographique représente [description\nfactuelle : qui, quoi, où, comment].\n\nLe choix de [cadrage / couleurs / composition]\ncrée un effet de [émotion / contraste / proximité].\n[Élément visuel] évoque [interprétation].\n\nCette image [confirme/nuance/illustre] la thèse de\n[auteur] dans le document [X], selon laquelle [idée],\nen montrant visuellement [lien avec le texte]."'},
+    ]},
+    {title:'Citations : les 3 cas où citer + comment varier les références', content:[
+      {type:'alert', color:'yellow', text:'Les citations doivent être PEU NOMBREUSES, COURTES et CORRECTEMENT INTRODUITES. Elles servent à justifier, pas à paraphraser.'},
+      {type:'list', items:[
+        'CAS 1 — Définition spécifique à un auteur : citer la définition exacte entre « »',
+        'CAS 2 — Figure de style : citer pour MONTRER le procédé + expliquer l\'EFFET',
+        'CAS 3 — Citation de citation : quand l\'auteur cite lui-même quelqu\'un',
+        'EN DEHORS DE CES 3 CAS : préférer un renvoi aux lignes (doc. 1, l. 5-8)',
+      ]},
+      {type:'table', headers:['Au lieu de répéter...','Varier avec...'], rows:[
+        ['document 1','le texte de [auteur], l\'article du [source], l\'extrait de [titre]'],
+        ['document 2','[auteur] souligne / propose / met en évidence / donne à voir'],
+        ['document 3','le [genre : roman / essai / photographie] de [auteur]'],
+        ['l\'auteur dit que','[auteur] affirme / soutient / dénonce / suggère / révèle / interroge'],
+      ]},
     ]},
     {title:'Réflexes anti-erreurs Partie 1', content:[
       {type:'list', items:[
-        '❌ Recopier des phrases entières → ✅ REFORMULER + citation courte entre « » (l. X)',
-        '❌ Résumer chaque doc séparément → ✅ CONFRONTER (accord + divergence)',
-        '❌ Donner son avis perso en Partie 1 → ✅ Rester NEUTRE et OBJECTIF',
-        '❌ Oublier les numéros de ligne → ✅ Toujours indiquer (l. 12) ou (doc. 2, l. 5)',
+        '❌ Recopier des phrases entières → ✅ REFORMULER + citation courte « » (l. X)',
+        '❌ Résumer doc par doc → ✅ CONFRONTER PAR IDÉE dans chaque paragraphe',
+        '❌ Donner son avis perso → ✅ Rester NEUTRE et OBJECTIF (avis = Partie 2)',
+        '❌ Oublier les numéros de ligne → ✅ Toujours (l. 12) ou (doc. 2, l. 5)',
+        '❌ Répondre sur des documents non demandés → ✅ Vérifier quels docs la question cible',
+        '❌ Paraphraser → ✅ EXPLIQUER : nommer le procédé + analyser l\'EFFET',
+        '❌ Répéter "document 1, document 2" → ✅ Varier : nom auteur, titre, genre',
+        '❌ Pas de conclusion → ✅ 1-2 phrases de bilan pour CHAQUE question',
+        '❌ Être trop long → ✅ CONCISION : maximum d\'idées en minimum de mots',
       ]},
     ]},
   ]},
