@@ -2004,9 +2004,7 @@ const FORMULES_FRANCAIS = [
     {name:'AXE 3 — COMPRENDRE l\'animal (éthique)',
      code:'Peter Singer, La Libération animale (1975)\n  → Fondateur de l\'antispécisme\n  → Égalité de considération des êtres sentients\n\nDerrida, L\'Animal que donc je suis (2006)\n  → Questionne la frontière homme/animal\n  → Critique la tradition philosophique occidentale\n\nVoltaire, Dict. philosophique (art. Bêtes)\n  → Critique l\'animal-machine de Descartes\n  → Défend la compassion envers les animaux\n\nLoi française 2015\n  → Animal reconnu "être vivant doué de sensibilité"\n  → (avant : simple "bien meuble" dans le Code civil)',
      vars:'Mots clés : antispécisme, spécisme, bien-être animal,\nsentience, bioéthique\n\nIdée clé : la question éthique est\n"que devons-NOUS à l\'animal ?" (pas l\'inverse)'},
-    {name:'Exemples BTP personnels (votre expérience)',
-     code:'→ Espèces protégées sur chantier :\n  chauves-souris, hirondelles, crapauds\n  → arrêt de chantier possible, diagnostics écologiques\n\n→ Nids dans les bâtiments avant démolition :\n  obligation légale de protection\n\n→ RE2020 et biodiversité :\n  toitures végétalisées, corridors écologiques\n\n→ Au Maroc : rapport différent à l\'animal\n  (chèvres arganiers, chiens errants, faune montagnarde)\n\n→ Nuisibles sur chantier : rats, pigeons\n  gestion sans cruauté vs impératifs sanitaires',
-     vars:'Le correcteur valorise les exemples PERSONNELS\nVotre parcours BTP est original et concret\nToujours lier à la problématique du sujet'},
+},
     {name:'Problématiques possibles le jour J',
      code:'1. Les représentations animales nous en apprennent-elles\n   plus sur l\'homme que sur l\'animal ?\n\n2. Peut-on connaître véritablement l\'animal ou\n   ne fait-on que projeter notre humanité ?\n\n3. Les avancées sur la sentience doivent-elles\n   changer nos comportements ?\n\n4. L\'anthropomorphisme est-il un moyen de comprendre\n   l\'animal ou de le dénaturer ?\n\n5. Comment concilier progrès (construction, agriculture)\n   et respect du vivant ?',
      vars:'RAPPEL : le « nous » du titre place la RELATION\nau centre. Ce n\'est pas un thème SUR l\'animal,\nmais sur NOTRE RAPPORT à l\'animal.\n\nToute réponse doit interroger cette relation.'},
@@ -2055,7 +2053,7 @@ const ERREURS_FREQUENTES_FRANCAIS = [
       correction:'Toujours nuancer : certes... mais... / mouvement 1 + mouvement 2'},
      {erreur:'Exemples uniquement du corpus',
       consequence:'Palier 2 — "issues uniquement du corpus"',
-      correction:'Varier : corpus + culture (La Fontaine, Orwell...) + expérience perso (BTP)'},
+      correction:'Varier : corpus + culture (La Fontaine, Orwell...) + expérience personnelle'},
      {erreur:'Pas de connecteurs entre paragraphes',
       consequence:'Palier 2 — "progression peu cohérente"',
       correction:'1 connecteur au début de CHAQUE paragraphe (cependant, de plus, dès lors...)'},
@@ -2318,10 +2316,7 @@ const MemoFrancaisVerso = () => (
       <b>Cyril Dion</b>, Animal (2021) — effondrement biodiversité
     </div>
 
-    <div style={{fontWeight:700,fontSize:11,color:'#f59e0b',marginTop:6}}>EXEMPLES BTP PERSONNELS</div>
-    <div style={{fontSize:9.5}}>
-      Espèces protégées sur chantier (chauves-souris, hirondelles) · Nids avant démolition · RE2020 biodiversité · Maroc : rapport différent à l'animal · Nuisibles : gestion sans cruauté
-    </div>
+
 
     <div style={{fontWeight:700,fontSize:11,color:'#dc2626',marginTop:6}}>ORTHOGRAPHE — TESTS RAPIDES</div>
     <div style={{fontSize:10}}>
@@ -5715,7 +5710,7 @@ const FICHES_E1_METHODE = [
       {type:'table', headers:['Type','Comment l\'utiliser','Exemple'], rows:[
         ['CORPUS','Citer les documents du sujet','Comme le souligne [auteur], « ... » (l. X)'],
         ['CULTURE GÉNÉRALE','Films, livres, événements','Chaplin, "Les Temps modernes" (1936)'],
-        ['EXPÉRIENCE PERSO','Votre vécu, observations','Mon expérience de chef de chantier BTP'],
+        ['EXPÉRIENCE PERSO','Votre vécu, observations','Mon expérience personnelle, mon quotidien'],
       ]},
     ]},
   ]},
@@ -5759,14 +5754,14 @@ const FICHES_E1_METHODE = [
         ['Loi française 2015','Droit','L\'animal reconnu comme « être vivant doué de sensibilité » (Code civil)'],
       ]},
     ]},
-    {title:'Votre expérience personnelle BTP (toujours pertinente)', content:[
-      {type:'alert', color:'green', text:'Votre parcours BTP permet des exemples concrets et originaux sur le thème animalier. Le correcteur valorise l\'authenticité.'},
+    {title:'Exemples personnels et du quotidien', content:[
+      {type:'alert', color:'green', text:'Le correcteur valorise les exemples concrets issus de votre vécu. Pensez à votre quotidien, vos observations, vos lectures.'},
       {type:'list', items:[
-        'Espèces protégées sur chantier : chauves-souris, hirondelles → contraintes écologiques et arrêt de chantier',
-        'Nids d\'oiseaux dans les bâtiments → obligation légale de protection avant démolition',
-        'La RE2020 et biodiversité : intégrer la nature dans la construction (toitures végétalisées, corridors écologiques)',
-        'Au Maroc : rapport différent à l\'animal (chèvres dans les arganiers, chiens errants, faune montagnarde)',
-        'Nuisibles sur chantier : rats, pigeons → gestion sans cruauté vs impératifs sanitaires',
+        'Animaux domestiques : relation affective, responsabilité, anthropomorphisme au quotidien',
+        'Animaux en ville : pigeons, chats errants, renards urbains — cohabitation homme/animal',
+        'Alimentation : véganisme, élevage, étiquetage bien-être animal — choix de consommation',
+        'Réseaux sociaux : vidéos d\'animaux virales — entre attendrissement et instrumentalisation',
+        'Actualité : lois sur la maltraitance, cirques sans animaux, refuges SPA',
       ]},
     ]},
     {title:'Problématiques possibles le jour J', content:[
@@ -11349,7 +11344,7 @@ const FICHES_FRANCAIS = [
           'Sujet A : Les repr\u00e9sentations animales dans la litt\u00e9rature et le cin\u00e9ma nous parlent-elles davantage de l\'homme que de l\'animal ? Vous r\u00e9pondrez en vous appuyant sur les documents du corpus, vos connaissances et votre exp\u00e9rience personnelle.',
           'Sujet B : L\'anthropomorphisme est-il un obstacle \u00e0 la compr\u00e9hension de l\'animal ou un premier pas vers l\'empathie ? Vous argumenterez en mobilisant le corpus et des r\u00e9f\u00e9rences culturelles vari\u00e9es.',
         ]},
-        { type: 'alert', color: 'green', text: 'Gabarit recommand\u00e9 : G1 (Image vs R\u00e9alit\u00e9) ou G3 (Animal miroir). Pensez \u00e0 utiliser votre exp\u00e9rience BTP : les symboles animaux en h\u00e9raldique, les noms d\'entreprises (Puma, Jaguar), les mascottes de chantier...' },
+        { type: 'alert', color: 'green', text: 'Gabarit recommand\u00e9 : G1 (Image vs R\u00e9alit\u00e9) ou G3 (Animal miroir). Pensez \u00e0 utiliser les symboles animaux du quotidien : logos d\'entreprises (Puma, Jaguar), mascottes sportives, expressions populaires...' },
       ]},
       { title: '\u00c9l\u00e9ments de corrig\u00e9', content: [
         { type: 'table', headers: ['Question', 'Points cl\u00e9s attendus'], rows: [
@@ -11402,7 +11397,7 @@ const FICHES_FRANCAIS = [
           'Sujet A : La connaissance scientifique de l\'animal doit-elle transformer nos pratiques ? Argumentez en vous appuyant sur le corpus, vos connaissances culturelles et votre exp\u00e9rience.',
           'Sujet B : Sommes-nous responsables du sort des animaux ? R\u00e9pondez en mobilisant les documents du corpus et des r\u00e9f\u00e9rences personnelles.',
         ]},
-        { type: 'alert', color: 'green', text: 'Gabarit recommand\u00e9 : G2 (Droits et responsabilit\u00e9). Exp\u00e9rience BTP : esp\u00e8ces prot\u00e9g\u00e9es sur chantier, diagnostic \u00e9cologique obligatoire, RE2020 et biodiversit\u00e9.' },
+        { type: 'alert', color: 'green', text: 'Gabarit recommand\u00e9 : G2 (Droits et responsabilit\u00e9). Exemples : loi biodiversit\u00e9 2016, corridors \u00e9cologiques, parcs nationaux, rapports WWF.' },
       ]},
       { title: '\u00c9l\u00e9ments de corrig\u00e9', content: [
         { type: 'table', headers: ['Question', 'Points cl\u00e9s'], rows: [
@@ -11415,12 +11410,12 @@ const FICHES_FRANCAIS = [
   },
   {
     id: 'fr14',
-    title: 'Examen 4 — Progr\u00e8s et biodiversit\u00e9 (axe COMPRENDRE + BTP)',
+    title: 'Examen 4 — Progr\u00e8s et biodiversit\u00e9 (axe COMPRENDRE)',
     freq: '\u2605\u2605\u2605',
     sections: [
       { title: 'Consignes', content: [
-        { type: 'alert', color: 'blue', text: 'Dur\u00e9e : 3h · Th\u00e8me : CONCILIER PROGR\u00c8S ET RESPECT DU VIVANT — ID\u00c9AL POUR VOTRE PROFIL BTP' },
-        { type: 'alert', color: 'green', text: 'Ce sujet est con\u00e7u pour mobiliser votre exp\u00e9rience de chef de chantier et de cr\u00e9ateur de BIMCO. Utilisez-la !' },
+        { type: 'alert', color: 'blue', text: 'Dur\u00e9e : 3h · Th\u00e8me : CONCILIER PROGR\u00c8S ET RESPECT DU VIVANT — ID\u00c9AL POUR Progr\u00e8s et vivant' },
+        { type: 'alert', color: 'green', text: 'Ce sujet est con\u00e7u pour mobiliser votre exp\u00e9rience de la conciliation entre progr\u00e8s technique et respect du vivant.' },
       ]},
       { title: 'Document 1 — Texte philosophique', content: [
         { type: 'key', label: 'Auteur', value: 'Ren\u00e9 Descartes' },
@@ -11436,7 +11431,7 @@ const FICHES_FRANCAIS = [
         { type: 'code', content: '\u00ab Chaque ann\u00e9e, ce sont des milliers d\'hectares de for\u00eats\nqui disparaissent pour laisser place \u00e0 l\'agriculture\nindustrielle, aux routes, aux zones commerciales.\nLes animaux perdent leur habitat, leurs couloirs de\nmigration sont coup\u00e9s, leurs sources de nourriture\ntar-issent. Nous vivons la sixi\u00e8me extinction de masse,\net cette fois, c\'est l\'homme qui en est la cause.\n\nMais il ne s\'agit pas de culpabiliser. Il s\'agit de\ncomprendre que notre avenir est li\u00e9 \u00e0 celui des autres\nesp\u00e8ces. Nous ne pouvons pas vivre sur une plan\u00e8te\nmorte. Prot\u00e9ger la biodiversit\u00e9, c\'est nous prot\u00e9ger\nnous-m\u00eames. \u00bb' },
       ]},
       { title: 'Document 3 — Article technique', content: [
-        { type: 'key', label: 'Source', value: 'Le Moniteur du BTP, mars 2025' },
+        { type: 'key', label: 'Source', value: 'Le Monde, mars 2025' },
         { type: 'key', label: 'Titre', value: '\u00ab RE2020 et biodiversit\u00e9 : le b\u00e2timent se met au vert \u00bb' },
         { type: 'key', label: 'Nature', value: 'Article de presse sp\u00e9cialis\u00e9e (extrait)' },
         { type: 'code', content: '\u00ab La r\u00e9glementation environnementale RE2020, entr\u00e9e en\nvigueur en 2022, ne se limite pas au bilan carbone. Elle\nencourage d\u00e9sormais l\'int\u00e9gration de la biodiversit\u00e9 dans\nles projets de construction : toitures v\u00e9g\u00e9talis\u00e9es, murs\nplant\u00e9s, corridors \u00e9cologiques, nichoirs int\u00e9gr\u00e9s.\n\nSur les chantiers, les diagnostics \u00e9cologiques pr\u00e9alables\nse multiplient. La pr\u00e9sence d\'esp\u00e8ces prot\u00e9g\u00e9es — chauves-\nsouris, hirondelles, tritons — peut retarder ou modifier\nun projet. Certains y voient une contrainte ; d\'autres, une\nopportunit\u00e9 de repenser la relation entre le b\u00e2ti et le\nvivant. Le BIM (maquette num\u00e9rique) permet d\u00e9sormais de\nmod\u00e9liser l\'impact d\'un b\u00e2timent sur son environnement\nnaturel avant m\u00eame de poser la premi\u00e8re pierre. \u00bb' },
@@ -11450,10 +11445,10 @@ const FICHES_FRANCAIS = [
       ]},
       { title: 'PARTIE 2 — Essai (10 points)', content: [
         { type: 'list', items: [
-          'Sujet A : Peut-on \u00eatre \u00ab ma\u00eetre et possesseur de la nature \u00bb tout en la respectant ? Argumentez en mobilisant le corpus, vos connaissances et votre exp\u00e9rience professionnelle.',
+          'Sujet A : Peut-on \u00eatre \u00ab ma\u00eetre et possesseur de la nature \u00bb tout en la respectant ? Argumentez en mobilisant le corpus, vos connaissances et votre exp\u00e9rience.',
           'Sujet B : Le progr\u00e8s technique est-il n\u00e9cessairement l\'ennemi du monde animal ? R\u00e9pondez en vous appuyant sur les documents et des exemples pr\u00e9cis.',
         ]},
-        { type: 'alert', color: 'green', text: 'GABARIT G4 (Progr\u00e8s et vivant) est PARFAIT pour ce sujet. Mobilisez : RE2020, esp\u00e8ces prot\u00e9g\u00e9es sur vos chantiers, BIM et mod\u00e9lisation environnementale, corridors \u00e9cologiques, votre exp\u00e9rience au Maroc.' },
+        { type: 'alert', color: 'green', text: 'GABARIT G4 (Progr\u00e8s et vivant) est PARFAIT pour ce sujet. Mobilisez : RE2020, esp\u00e8ces prot\u00e9g\u00e9es sur vos chantiers, BIM et mod\u00e9lisation environnementale, corridors \u00e9cologiques, des exemples concrets.' },
       ]},
       { title: '\u00c9l\u00e9ments de corrig\u00e9', content: [
         { type: 'table', headers: ['Question', 'Points cl\u00e9s'], rows: [
@@ -11462,8 +11457,8 @@ const FICHES_FRANCAIS = [
           ['Q3 Doc 3 r\u00e9conciliation', 'OUI partiellement : la RE2020 utilise la technique (BIM, mod\u00e9lisation) pour prot\u00e9ger la biodiversit\u00e9. La science au service du vivant, pas contre lui. MAIS les contraintes sont parfois mal accept\u00e9es. Conciliation en cours, pas achev\u00e9e.'],
         ]},
         { type: 'table', headers: ['Sujet', 'Plan possible (Gabarit G4)'], rows: [
-          ['Sujet A', 'Mvt 1 : La domination a caus\u00e9 des d\u00e9g\u00e2ts (Descartes → industrialisation → extinction) · Mvt 2 : Prise de conscience (Dion, loi 2015, Singer) · Mvt 3 : Concilier gr\u00e2ce \u00e0 la technique verte (RE2020, BIM, corridors + votre exp. chantier)'],
-          ['Sujet B', 'Mvt 1 : Le progr\u00e8s a d\u00e9truit (b\u00e9tonisation, \u00e9levage intensif) · Mvt 2 : Mais le progr\u00e8s cr\u00e9e aussi des solutions (BIM, diagnostics \u00e9co) · Mvt 3 : Tout d\u00e9pend de l\'usage qu\'on en fait (votre exp. BTP : contrainte → opportunit\u00e9)'],
+          ['Sujet A', 'Mvt 1 : La domination a caus\u00e9 des d\u00e9g\u00e2ts (Descartes → industrialisation → extinction) · Mvt 2 : Prise de conscience (Dion, loi 2015, Singer) · Mvt 3 : Concilier gr\u00e2ce \u00e0 la technique verte (loi biodiversité, corridors écologiques, aires protégées)'],
+          ['Sujet B', 'Mvt 1 : Le progr\u00e8s a d\u00e9truit (b\u00e9tonisation, \u00e9levage intensif) · Mvt 2 : Mais le progr\u00e8s cr\u00e9e aussi des solutions (BIM, diagnostics \u00e9co) · Mvt 3 : Tout d\u00e9pend de l\'usage qu\'on en fait (votre exemples concrets : contrainte → opportunit\u00e9)'],
         ]},
       ]},
     ]
@@ -12516,7 +12511,7 @@ const FICHES_FRANCAIS = [
             ['G1 \u2014 Image vs R\u00e9alit\u00e9', 'Repr\u00e9sentation vs connaissance', 'Imaginer \u2192 Conna\u00eetre \u2192 Concilier'],
             ['G2 \u2014 Droits et Responsabilit\u00e9', 'Sujet \u00e9thique (devoirs envers animaux)', 'Domination \u2192 Reconnaissance \u2192 Cohabitation'],
             ['G3 \u2014 Animal miroir de l\'homme', 'Repr\u00e9sentations / projections', 'Projection \u2192 R\u00e9alit\u00e9 propre \u2192 Ce que \u00e7a r\u00e9v\u00e8le'],
-            ['G4 \u2014 Progr\u00e8s et vivant (BTP)', 'Modernit\u00e9 / construction et animal', 'Contre nature \u2192 Conscience \u2192 Concilier'],
+            ['G4 \u2014 Progr\u00e8s et respect du vivant', 'Modernit\u00e9 / construction et animal', 'Contre nature \u2192 Conscience \u2192 Concilier'],
           ] },
         ]
       },
@@ -12524,28 +12519,28 @@ const FICHES_FRANCAIS = [
         title: 'G1 \u2014 L\'image vs la r\u00e9alit\u00e9 (Imaginer \u2192 Conna\u00eetre \u2192 Concilier)',
         content: [
           { type: 'alert', color: 'yellow', text: 'Pour : anthropomorphisme, fables vs science, fiction vs r\u00e9alit\u00e9, repr\u00e9sentations animales...' },
-          { type: 'code', content: 'INTRO :\n\"Depuis l\'Antiquit\u00e9, l\'homme peuple son imaginaire de\nfigures animales : fables, mythes, bestiaires. Mais ces\nrepr\u00e9sentations correspondent-elles \u00e0 la r\u00e9alit\u00e9 ?\n[Reformuler la question]. Nous examinerons d\'abord\ncomment l\'homme IMAGINE l\'animal, avant de voir ce\nque la science permet d\'en CONNA\u00ceTRE, pour enfin\nnous demander si ces regards peuvent se CONCILIER.\"\n\nMVT 1 \u2014 L\'animal imagin\u00e9 :\n  \u2192 La Fontaine : animaux = masques humains\n  \u2192 Bestiaires : lion=courage, serpent=mal\n  \u2192 Disney : anthropomorphisme (Le Roi Lion)\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Ces repr\u00e9sentations refl\u00e8tent-elles\n  l\'animal r\u00e9el ?\"\n\nMVT 2 \u2014 L\'animal connu par la science :\n  \u2192 Goodall : chimpanz\u00e9s = intelligence, culture\n  \u2192 Descartes r\u00e9fut\u00e9 : animal ≠ machine\n  \u2192 Sentience d\u00e9montr\u00e9e\n  \u2192 [DOC DU CORPUS]\n  Transition : \"D\u00e8s lors, ne faudrait-il pas\n  r\u00e9concilier ces deux regards ?\"\n\nMVT 3 \u2014 Concilier imaginaire et savoir :\n  \u2192 Imaginaire = premier pas vers l\'empathie\n  \u2192 Science = fonde une \u00e9thique du respect\n  \u2192 EXP. BTP : esp\u00e8ces prot\u00e9g\u00e9es sur chantier\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, si nos repr\u00e9sentations refl\u00e8tent nos\npr\u00e9occupations humaines, la science nous invite \u00e0\nconsid\u00e9rer l\'animal pour ce qu\'il est. Toutefois,\nl\'imaginaire n\'est-il pas le d\u00e9but de toute\ncompr\u00e9hension ?\"' },
+          { type: 'code', content: 'INTRO :\n\"Depuis l\'Antiquit\u00e9, l\'homme peuple son imaginaire de\nfigures animales : fables, mythes, bestiaires. Mais ces\nrepr\u00e9sentations correspondent-elles \u00e0 la r\u00e9alit\u00e9 ?\n[Reformuler la question]. Nous examinerons d\'abord\ncomment l\'homme IMAGINE l\'animal, avant de voir ce\nque la science permet d\'en CONNA\u00ceTRE, pour enfin\nnous demander si ces regards peuvent se CONCILIER.\"\n\nMVT 1 \u2014 L\'animal imagin\u00e9 :\n  \u2192 La Fontaine : animaux = masques humains\n  \u2192 Bestiaires : lion=courage, serpent=mal\n  \u2192 Disney : anthropomorphisme (Le Roi Lion)\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Ces repr\u00e9sentations refl\u00e8tent-elles\n  l\'animal r\u00e9el ?\"\n\nMVT 2 \u2014 L\'animal connu par la science :\n  \u2192 Goodall : chimpanz\u00e9s = intelligence, culture\n  \u2192 Descartes r\u00e9fut\u00e9 : animal ≠ machine\n  \u2192 Sentience d\u00e9montr\u00e9e\n  \u2192 [DOC DU CORPUS]\n  Transition : \"D\u00e8s lors, ne faudrait-il pas\n  r\u00e9concilier ces deux regards ?\"\n\nMVT 3 \u2014 Concilier imaginaire et savoir :\n  \u2192 Imaginaire = premier pas vers l\'empathie\n  \u2192 Science = fonde une \u00e9thique du respect\n  \u2192 EXEMPLE : esp\u00e8ces prot\u00e9g\u00e9es sur chantier\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, si nos repr\u00e9sentations refl\u00e8tent nos\npr\u00e9occupations humaines, la science nous invite \u00e0\nconsid\u00e9rer l\'animal pour ce qu\'il est. Toutefois,\nl\'imaginaire n\'est-il pas le d\u00e9but de toute\ncompr\u00e9hension ?\"' },
         ]
       },
       {
         title: 'G2 \u2014 Droits et responsabilit\u00e9 (Domination \u2192 Reconnaissance \u2192 Cohabitation)',
         content: [
           { type: 'alert', color: 'yellow', text: 'Pour : droits des animaux, bien-\u00eatre, \u00e9levage, chasse, exp\u00e9rimentation, antispécisme...' },
-          { type: 'code', content: 'INTRO :\n\"Entre exploitation industrielle et reconnaissance\njuridique, notre rapport \u00e0 l\'animal est en mutation.\n[Reformuler la question]. Nous verrons comment\nl\'homme a longtemps DOMIN\u00c9 l\'animal, puis comment\n\u00e9merge une RECONNAISSANCE, avant d\'envisager\nune nouvelle COHABITATION.\"\n\nMVT 1 \u2014 Domination :\n  \u2192 Descartes : animal-machine (1637)\n  \u2192 \u00c9levage intensif, exp\u00e9rimentation\n  \u2192 La Fontaine : loi du plus fort\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Cependant, cette vision est de plus\n  en plus remise en question.\"\n\nMVT 2 \u2014 Reconnaissance :\n  \u2192 Singer : antisp\u00e9cisme (1975)\n  \u2192 Loi 2015 : animal = \u00eatre sensible\n  \u2192 Goodall, de Waal : sentience d\u00e9montr\u00e9e\n  \u2192 [DOC DU CORPUS]\n  Transition : \"D\u00e8s lors, comment repenser\n  notre cohabitation ?\"\n\nMVT 3 \u2014 Cohabitation :\n  \u2192 Ni domination ni id\u00e9alisation : RESPECT\n  \u2192 Dion, Animal (2021) : biodiversit\u00e9\n  \u2192 EXP. BTP : RE2020, corridors \u00e9cologiques\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, la question n\'est plus si l\'animal\nm\u00e9rite consid\u00e9ration, mais comment organiser une\ncoexistence respectueuse. Toutefois, nos soci\u00e9t\u00e9s\nsont-elles pr\u00eates \u00e0 transformer leurs pratiques ?\"' },
+          { type: 'code', content: 'INTRO :\n\"Entre exploitation industrielle et reconnaissance\njuridique, notre rapport \u00e0 l\'animal est en mutation.\n[Reformuler la question]. Nous verrons comment\nl\'homme a longtemps DOMIN\u00c9 l\'animal, puis comment\n\u00e9merge une RECONNAISSANCE, avant d\'envisager\nune nouvelle COHABITATION.\"\n\nMVT 1 \u2014 Domination :\n  \u2192 Descartes : animal-machine (1637)\n  \u2192 \u00c9levage intensif, exp\u00e9rimentation\n  \u2192 La Fontaine : loi du plus fort\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Cependant, cette vision est de plus\n  en plus remise en question.\"\n\nMVT 2 \u2014 Reconnaissance :\n  \u2192 Singer : antisp\u00e9cisme (1975)\n  \u2192 Loi 2015 : animal = \u00eatre sensible\n  \u2192 Goodall, de Waal : sentience d\u00e9montr\u00e9e\n  \u2192 [DOC DU CORPUS]\n  Transition : \"D\u00e8s lors, comment repenser\n  notre cohabitation ?\"\n\nMVT 3 \u2014 Cohabitation :\n  \u2192 Ni domination ni id\u00e9alisation : RESPECT\n  \u2192 Dion, Animal (2021) : biodiversit\u00e9\n  \u2192 EXEMPLE : RE2020, corridors \u00e9cologiques\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, la question n\'est plus si l\'animal\nm\u00e9rite consid\u00e9ration, mais comment organiser une\ncoexistence respectueuse. Toutefois, nos soci\u00e9t\u00e9s\nsont-elles pr\u00eates \u00e0 transformer leurs pratiques ?\"' },
         ]
       },
       {
         title: 'G3 \u2014 L\'animal miroir (Projection \u2192 R\u00e9alit\u00e9 propre \u2192 Ce que \u00e7a r\u00e9v\u00e8le)',
         content: [
           { type: 'alert', color: 'yellow', text: 'Pour : fables, m\u00e9taphores, publicit\u00e9, litt\u00e9rature, cin\u00e9ma, symboles animaux...' },
-          { type: 'code', content: 'INTRO :\n\"Du renard rus\u00e9 au lion courageux, l\'homme projette\nsur l\'animal ses qualit\u00e9s et d\u00e9fauts. Mais que nous\napprennent ces repr\u00e9sentations ? [Reformuler].\nNous analyserons la PROJECTION humaine sur l\'animal,\npuis la R\u00c9ALIT\u00c9 propre de l\'animal, pour enfin\nnous interroger sur ce que ce miroir R\u00c9V\u00c8LE de nous.\"\n\nMVT 1 \u2014 L\'animal comme projection :\n  \u2192 La Fontaine : loup=tyrannie, renard=ruse\n  \u2192 Orwell : cochons = dirigeants corrompus\n  \u2192 Kafka : Gregor-insecte = exclusion\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Cette projection ne masque-t-elle\n  pas la r\u00e9alit\u00e9 de l\'animal ?\"\n\nMVT 2 \u2014 L\'animal a sa propre r\u00e9alit\u00e9 :\n  \u2192 Le vrai renard n\'est pas \"rus\u00e9\"\n  \u2192 Goodall : chimpanz\u00e9s = deuil, culture\n  \u2192 Derrida : l\'animal \"me regarde\"\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Que r\u00e9v\u00e8le ce d\u00e9calage ?\"\n\nMVT 3 \u2014 Ce que le miroir r\u00e9v\u00e8le de nous :\n  \u2192 Nos repr\u00e9sentations = NOS valeurs et peurs\n  \u2192 Le Petit Prince : besoin de lien\n  \u2192 EXP. PERSO : au Maroc, rapport diff\u00e9rent\n     → repr\u00e9sentations sont CULTURELLES\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, l\'animal-miroir nous renvoie notre\nimage, mais sa r\u00e9alit\u00e9 propre nous oblige \u00e0\nl\'humilit\u00e9. Ce besoin de projeter sur l\'animal\nn\'est-il pas, en soi, profond\u00e9ment humain ?\"' },
+          { type: 'code', content: 'INTRO :\n\"Du renard rus\u00e9 au lion courageux, l\'homme projette\nsur l\'animal ses qualit\u00e9s et d\u00e9fauts. Mais que nous\napprennent ces repr\u00e9sentations ? [Reformuler].\nNous analyserons la PROJECTION humaine sur l\'animal,\npuis la R\u00c9ALIT\u00c9 propre de l\'animal, pour enfin\nnous interroger sur ce que ce miroir R\u00c9V\u00c8LE de nous.\"\n\nMVT 1 \u2014 L\'animal comme projection :\n  \u2192 La Fontaine : loup=tyrannie, renard=ruse\n  \u2192 Orwell : cochons = dirigeants corrompus\n  \u2192 Kafka : Gregor-insecte = exclusion\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Cette projection ne masque-t-elle\n  pas la r\u00e9alit\u00e9 de l\'animal ?\"\n\nMVT 2 \u2014 L\'animal a sa propre r\u00e9alit\u00e9 :\n  \u2192 Le vrai renard n\'est pas \"rus\u00e9\"\n  \u2192 Goodall : chimpanz\u00e9s = deuil, culture\n  \u2192 Derrida : l\'animal \"me regarde\"\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Que r\u00e9v\u00e8le ce d\u00e9calage ?\"\n\nMVT 3 \u2014 Ce que le miroir r\u00e9v\u00e8le de nous :\n  \u2192 Nos repr\u00e9sentations = NOS valeurs et peurs\n  \u2192 Le Petit Prince : besoin de lien\n  \u2192 EXEMPLE : au Maroc, rapport diff\u00e9rent\n     → repr\u00e9sentations sont CULTURELLES\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, l\'animal-miroir nous renvoie notre\nimage, mais sa r\u00e9alit\u00e9 propre nous oblige \u00e0\nl\'humilit\u00e9. Ce besoin de projeter sur l\'animal\nn\'est-il pas, en soi, profond\u00e9ment humain ?\"' },
         ]
       },
       {
-        title: 'G4 \u2014 Progr\u00e8s et vivant — ID\u00c9AL POUR VOTRE PROFIL BTP',
+        title: 'G4 \u2014 Progr\u00e8s et vivant — ID\u00c9AL POUR Progr\u00e8s et vivant',
         content: [
-          { type: 'alert', color: 'green', text: 'CE GABARIT EST LE PLUS ADAPT\u00c9 \u00c0 VOTRE PROFIL. Votre exp\u00e9rience BTP (chantier, RE2020, esp\u00e8ces prot\u00e9g\u00e9es) est directement mobilisable.' },
-          { type: 'code', content: 'INTRO :\n\"Le d\u00e9veloppement technique s\'est longtemps fait au\nd\u00e9triment du monde animal : urbanisation, pollution.\nMais une prise de conscience \u00e9merge. [Reformuler].\nNous examinerons comment le progr\u00e8s s\'est OPPOS\u00c9\n\u00e0 la nature, avant d\'analyser la PRISE DE CONSCIENCE,\npour enfin envisager comment CONCILIER les deux.\"\n\nMVT 1 \u2014 Le progr\u00e8s contre la nature :\n  \u2192 Descartes : \"ma\u00eetre et possesseur de la nature\"\n  \u2192 Urbanisation : destruction habitats\n  \u2192 BTP : b\u00e9tonisation, imperm\u00e9abilisation\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Cette course au progr\u00e8s rencontre\n  aujourd\'hui ses limites.\"\n\nMVT 2 \u2014 La prise de conscience :\n  \u2192 Dion, Animal : effondrement biodiversit\u00e9\n  \u2192 Singer : repenser rapport aux vivants\n  \u2192 Loi 2015 : animal = \u00eatre sensible\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Est-il possible de concilier\n  progr\u00e8s et respect du vivant ?\"\n\nMVT 3 \u2014 Concilier progr\u00e8s et vivant :\n  \u2192 RE2020 : bilan carbone + biodiversit\u00e9\n  \u2192 Corridors \u00e9cologiques, toitures v\u00e9g\u00e9talis\u00e9es\n  \u2192 EXP. CHANTIER : chauves-souris prot\u00e9g\u00e9es,\n     nids d\'oiseaux, diagnostics \u00e9cologiques\n  \u2192 Le BIM peut mod\u00e9liser l\'impact biodiversit\u00e9\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, le progr\u00e8s n\'a de sens que s\'il\nint\u00e8gre le respect du vivant. Le BTP montre\nqu\'il est possible de construire en prot\u00e9geant\nla biodiversit\u00e9. Toutefois, cette conciliation\nexige une volont\u00e9 politique encore \u00e0 consolider.\"' },
+          { type: 'alert', color: 'green', text: 'CE GABARIT EST LE PLUS ADAPT\u00c9 \u00c0 ce sujet. Ce gabarit traite de la conciliation entre progr\u00e8s technique et respect de la biodiversit\u00e9.' },
+          { type: 'code', content: 'INTRO :\n\"Le d\u00e9veloppement technique s\'est longtemps fait au\nd\u00e9triment du monde animal : urbanisation, pollution.\nMais une prise de conscience \u00e9merge. [Reformuler].\nNous examinerons comment le progr\u00e8s s\'est OPPOS\u00c9\n\u00e0 la nature, avant d\'analyser la PRISE DE CONSCIENCE,\npour enfin envisager comment CONCILIER les deux.\"\n\nMVT 1 \u2014 Le progr\u00e8s contre la nature :\n  \u2192 Descartes : \"ma\u00eetre et possesseur de la nature\"\n  \u2192 Urbanisation : destruction habitats\n  \u2192 Urbanisation : b\u00e9tonisation, d\u00e9forestation\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Cette course au progr\u00e8s rencontre\n  aujourd\'hui ses limites.\"\n\nMVT 2 \u2014 La prise de conscience :\n  \u2192 Dion, Animal : effondrement biodiversit\u00e9\n  \u2192 Singer : repenser rapport aux vivants\n  \u2192 Loi 2015 : animal = \u00eatre sensible\n  \u2192 [DOC DU CORPUS]\n  Transition : \"Est-il possible de concilier\n  progr\u00e8s et respect du vivant ?\"\n\nMVT 3 \u2014 Concilier progr\u00e8s et vivant :\n  \u2192 RE2020 : bilan carbone + biodiversit\u00e9\n  \u2192 Corridors \u00e9cologiques, toitures v\u00e9g\u00e9talis\u00e9es\n  \u2192 Loi biodiversit\u00e9 2016, parcs nationaux,\n     corridors \u00e9cologiques, aires marines prot\u00e9g\u00e9es\n  \u2192 La technologie peut mesurer l\'impact sur la biodiversit\u00e9\n  \u2192 [DOC DU CORPUS]\n\nCONCLUSION :\n\"En d\u00e9finitive, le progr\u00e8s n\'a de sens que s\'il\nint\u00e8gre le respect du vivant. De nombreux exemples montrent\nqu\'il est possible de progresser en prot\u00e9geant\nla biodiversit\u00e9. Toutefois, cette conciliation\nexige une volont\u00e9 politique encore \u00e0 consolider.\"' },
         ]
       },
       {
