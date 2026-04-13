@@ -14032,6 +14032,7 @@ const Accueil = ({setNav}) => {
     <div className="grid-2">
       {[
         {label:'E1 Français — Méthode',sub:'Grille officielle · Gabarits · Ortho · Exemples · coeff 4',c:'#dc2626',nav:'fiches_e1'},
+        {label:'Examens CGE — Entraînement',sub:'5 sujets complets avec vrais textes longs · 3h chrono',c:'#991b1b',nav:'examens_cge'},
         {label:'Fiches E4',sub:'6 thèmes — Fondations, Acoustique, Thermique…',c:'#3b82f6',nav:'fiches_e4'},
         {label:'Fiches E52',sub:'5 thèmes — Offres, Révision, Décomptes, Rentabilité…',c:'#22c55e',nav:'fiches_e52'},
         {label:'Formules',sub:'Toutes les formules E4 et E52 organisées',c:'#8b5cf6',nav:'formules'},
@@ -16548,6 +16549,7 @@ const NAVS = [
   {id:'memo',      label:'Fiche Mémo A4',   icon:'🗒️'},
   {id:'planning',  label:'Planning',        icon:'📅'},
   {id:'fiches_e1', label:'E1 Français CGE', icon:'🇫🇷'},
+  {id:'examens_cge',label:'Examens CGE',   icon:'📝'},
   {id:'simulateur',label:'Simulateur Notes',icon:'🎯'},
   {id:'_sep1',     label:'──────────',      icon:''},
   {id:'fiches_maths',    label:'Maths B1',        icon:'🔢',badge:'MATHS'},
@@ -16603,6 +16605,11 @@ const App = () => {
     if(nav==='fiches_e1'){
       if(fiche) return <FicheDetail fiche={fiche} epreuve="E1" onBack={()=>setFiche(null)}/>;
       return <FichesList fiches={FICHES_E1_METHODE} epreuve="E1" onSelect={setFiche} onBack={()=>{setFiche(null);handleNav('accueil')}}/>;
+    }
+    if(nav==='examens_cge'){
+      const examens = (typeof FICHES_FRANCAIS!=='undefined'?FICHES_FRANCAIS:[]).filter(f=>f.id==='fr07'||f.id==='fr12'||f.id==='fr13'||f.id==='fr14'||f.id==='fr15');
+      if(fiche) return <FicheDetail fiche={fiche} epreuve="CGE" onBack={()=>setFiche(null)}/>;
+      return <FichesList fiches={examens} epreuve="CGE" onSelect={setFiche} onBack={()=>{setFiche(null);handleNav('accueil')}}/>;
     }
     if(nav==='fiches_e4'){
       if(fiche) return <FicheDetail fiche={fiche} epreuve="E4" onBack={()=>setFiche(null)}/>;
