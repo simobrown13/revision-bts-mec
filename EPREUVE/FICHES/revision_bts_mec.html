@@ -13431,6 +13431,7 @@ const SimulateurPage = ({onBack}) => {
     {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
     <div className="page-title">Simulateur de Notes</div>
     <div className="page-sub">29 coefficients — Glissez les curseurs — Moyenne nécessaire : 10/20</div>
+    <PrintAllBtn onClick={()=>window.print()}/>
 
     {/* JAUGE */}
     <div style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:14,padding:18,marginBottom:16,textAlign:'center'}}>
@@ -13655,11 +13656,29 @@ const Accueil = ({setNav}) => {
 const badgeCls = ep => ep==='E4'?'cb-e4':ep==='E52'?'cb-e52':ep==='MATHS'?'cb-maths':ep==='PHYS'?'cb-physique':ep==='CGE'?'cb-francais':ep==='ANG'?'cb-anglais':'cb-e4';
 const epreuveLabel = ep => ({E1:'E1 — Méthode Français (Grille officielle)',MATHS:'Mathématiques B1',PHYS:'Sciences Physiques',CGE:'Français — Culture Générale',ANG:'Anglais LVA'}[ep]||'Fiches '+ep);
 
-const FichesList = ({fiches,epreuve,onSelect,onBack}) => (
+const PrintAllBtn = ({onClick}) => (
+  <button onClick={onClick} style={{display:'inline-flex',alignItems:'center',gap:6,padding:'8px 16px',borderRadius:8,border:'1px solid var(--border)',background:'var(--card)',color:'var(--text2)',cursor:'pointer',fontSize:13,fontWeight:600,transition:'all .15s',marginBottom:14}} onMouseOver={e=>e.currentTarget.style.background='var(--nav-hover)'} onMouseOut={e=>e.currentTarget.style.background='var(--card)'}>🖨️ Imprimer tout le contenu</button>
+);
+
+const FichesList = ({fiches,epreuve,onSelect,onBack}) => {
+  const [printAll, setPrintAll] = useState(false);
+  useEffect(()=>{if(printAll){setTimeout(()=>{window.print();setPrintAll(false)},300)}},[printAll]);
+  return (
   <div>
     {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
     <div className="page-title">{epreuveLabel(epreuve)||('Fiches '+epreuve)}</div>
-    <div className="page-sub">{fiches.length} fiches de révision — extraites des annales 2022-2025</div>
+    <div className="page-sub">{fiches.length} fiches de révision</div>
+    <PrintAllBtn onClick={()=>setPrintAll(true)}/>
+    {printAll ? (
+      <div>
+        {fiches.map(f=>(
+          <div key={f.id} style={{marginBottom:24,pageBreakInside:'avoid'}}>
+            <div style={{fontSize:16,fontWeight:800,color:'var(--text)',marginBottom:8,borderBottom:'2px solid var(--border)',paddingBottom:6}}>{f.title}</div>
+            <FicheContent sections={f.sections}/>
+          </div>
+        ))}
+      </div>
+    ) : (
     <div className="grid-2">
       {fiches.map(f=>(
         <div key={f.id} className="card" onClick={()=>onSelect(f)}>
@@ -13672,12 +13691,17 @@ const FichesList = ({fiches,epreuve,onSelect,onBack}) => (
         </div>
       ))}
     </div>
+    )}
   </div>
-);
+  );
+};
 
 const FicheDetail = ({fiche,epreuve,onBack}) => (
   <div>
-    <div className="back-btn" onClick={onBack}>← Retour aux fiches</div>
+    <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:8}}>
+      <div className="back-btn" style={{marginBottom:0}} onClick={onBack}>← Retour aux fiches</div>
+      <PrintAllBtn onClick={()=>window.print()}/>
+    </div>
     <span className={`card-badge ${badgeCls(epreuve)}`} style={{marginBottom:6,display:'inline-block'}}>{epreuve}</span>
     <div className="page-title">{fiche.title}</div>
     <div style={{display:'flex',gap:8,marginBottom:20,alignItems:'center'}}>
@@ -13693,6 +13717,7 @@ const FormulesPage = ({data=FORMULES,title='Formules Essentielles',subtitle='Tou
     {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
     <div className="page-title">{title}</div>
     <div className="page-sub">{subtitle}</div>
+    <PrintAllBtn onClick={()=>window.print()}/>
     {data.map((sec,si)=>(
       <div key={si} className="formula-section">
         <div className="formula-hdr" style={{background:sec.color}}>{sec.section}</div>
@@ -13746,6 +13771,7 @@ const SynthesePage = ({cols=SYNTHESE_COLS,sections=[{label:'ÉPREUVE E4',data:SY
       {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
       <div className="page-title">{title}</div>
       <div className="page-sub">{subtitle}</div>
+      <PrintAllBtn onClick={()=>window.print()}/>
       {sections.map((section,si)=>(
         <div key={si}>
           <div className="section-h2">{section.label}</div>
@@ -15143,6 +15169,7 @@ const MemoPage = ({tabs=[{id:'recto',label:'📘 Recto — E4',component:MemoRec
       {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
       <div className="page-title">{title}</div>
       <div className="page-sub">{subtitle}</div>
+      <PrintAllBtn onClick={()=>window.print()}/>
       <div className="memo-tabs">
         {tabs.map(t=>(
           <div key={t.id} className={`memo-tab ${tab===t.id?'active':''}`} onClick={()=>setTab(t.id)}>{t.label}</div>
@@ -15204,6 +15231,7 @@ const PlanningPage = ({data=PLANNING_DATA,title='Planning de Révision',subtitle
     {onBack && <div className="back-btn" onClick={onBack}>← Retour</div>}
     <div className="page-title">{title}</div>
     <div className="page-sub">{subtitle}</div>
+    <PrintAllBtn onClick={()=>window.print()}/>
     <div className="key-point" style={{marginBottom:20}}>
       💡 Cochez les tâches au fur et à mesure. L'avancement est affiché sur chaque journée.
     </div>
