@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Planning 3 semaines — 8 au 28 avril 2026</title>
+<style>
+@page { size: A4 landscape; margin: 8mm; }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .pb { page-break-before: always; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 8pt; color: #1a1a1a; background: #fff; line-height: 1.3; padding: 4mm; }
+.hdr { background: linear-gradient(135deg,#1e3a5f,#3b82f6); color: #fff; padding: 6px 12px; border-radius: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+.hdr h1 { font-size: 13pt; font-weight: 900; }
+.hdr .m { font-size: 8pt; text-align: right; opacity: 0.9; line-height: 1.4; }
+.prio { background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px; font-size: 8pt; }
+.prio b { color: #991b1b; }
+.prio .tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 7pt; font-weight: 700; margin: 0 2px; }
+.t-e1 { background: #fee2e2; color: #991b1b; }
+.t-ang { background: #fef3c7; color: #92400e; }
+.t-e4 { background: #dbeafe; color: #1e40af; }
+.t-e52 { background: #dcfce7; color: #166534; }
+.t-bim { background: #fef3c7; color: #92400e; }
+.t-rp { background: #e2e8f0; color: #475569; }
+
+.grid { display: grid; grid-template-columns: 70px repeat(7,1fr); gap: 2px; margin-bottom: 2px; }
+.dow { text-align: center; font-size: 7.5pt; font-weight: 800; color: #64748b; padding: 2px; }
+.wk { background: #1e3a5f; color: #fff; font-weight: 800; font-size: 7.5pt; padding: 3px; border-radius: 3px 0 0 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.1; }
+.wk .ws { font-size: 6.5pt; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+
+.cell { border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 4px; min-height: 110px; font-size: 7pt; line-height: 1.25; display: flex; flex-direction: column; }
+.cell .d { font-size: 7.5pt; font-weight: 800; color: #1e3a5f; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; }
+.cell .d .j { font-size: 6.5pt; color: #64748b; font-weight: 600; }
+.slot { margin-bottom: 2px; padding: 2px 3px; border-radius: 2px; border-left: 2px solid; }
+.slot b { font-size: 6.8pt; font-weight: 800; }
+.slot-e1 { background: #fef2f2; border-color: #dc2626; }
+.slot-ang { background: #fef3c7; border-color: #d97706; }
+.slot-e4 { background: #eff6ff; border-color: #3b82f6; }
+.slot-e52 { background: #f0fdf4; border-color: #22c55e; }
+.slot-bim { background: #fffbeb; border-color: #f59e0b; }
+.slot-sim { background: #fefce8; border: 1.5px solid #eab308; font-weight: 600; }
+.slot-repos { background: #f8fafc; border-color: #94a3b8; color: #475569; text-align: center; padding: 6px; font-style: italic; }
+.slot-exam { background: #fee2e2; border: 2px solid #ef4444; text-align: center; font-weight: 800; color: #991b1b; padding: 6px; }
+
+.legend { display: flex; gap: 6px; justify-content: center; margin: 4px 0; flex-wrap: wrap; font-size: 7pt; }
+.ld { width: 8px; height: 8px; border-radius: 2px; display: inline-block; vertical-align: middle; margin-right: 2px; }
+.footer { text-align: center; font-size: 6.5pt; color: #94a3b8; margin-top: 4px; border-top: 1px solid #e2e8f0; padding-top: 2px; }
+.tips { background: #f0f9ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 4px 8px; margin-top: 5px; font-size: 7pt; line-height: 1.5; }
+.tips b { color: #1e3a5f; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <h1>Planning 3 semaines — Mercredi 8 avril → Mardi 28 avril 2026</h1>
+    <div style="font-size:8pt">Objectif : prép. Anglais E2-A (lun 27 avril) + fondations E1 Français + maintien E4/E52</div>
+  </div>
+  <div class="m">BAHAFID Mohamed<br>BTS MEC 2026 · Candidat libre<br>~6h/jour en semaine · 3h WE</div>
+</div>
+
+<div class="prio">
+  <b>PRIORITÉS (par ordre d'urgence) :</b>
+  <span class="tag t-ang">🎧 Anglais E2-A le 27/4 (J-19)</span>
+  <span class="tag t-e1">📖 E1 Français J-41 (FAIBLESSE)</span>
+  <span class="tag t-e4">📘 E4 J-42 (entretien)</span>
+  <span class="tag t-e52">📗 E52 J-43 (entretien)</span>
+  <span class="tag t-bim">💻 BIM J-33 (expert)</span>
+  <b>Règle :</b> 1h E1 par jour MINIMUM · 45 min Anglais par jour · Samedi simulation · Dimanche REPOS
+</div>
+
+<div class="legend">
+  <span><span class="ld" style="background:#dc2626"></span>E1 Français</span>
+  <span><span class="ld" style="background:#d97706"></span>Anglais</span>
+  <span><span class="ld" style="background:#3b82f6"></span>E4</span>
+  <span><span class="ld" style="background:#22c55e"></span>E52</span>
+  <span><span class="ld" style="background:#f59e0b"></span>BIM</span>
+  <span><span class="ld" style="background:#eab308"></span>SIMULATION</span>
+  <span><span class="ld" style="background:#94a3b8"></span>Repos</span>
+</div>
+
+<div class="grid">
+  <div class="dow"></div><div class="dow">LUNDI</div><div class="dow">MARDI</div><div class="dow">MERCREDI</div><div class="dow">JEUDI</div><div class="dow">VENDREDI</div><div class="dow">SAMEDI</div><div class="dow">DIMANCHE</div>
+</div>
+
+<!-- SEMAINE 1 : 8-13 avril -->
+<div class="grid">
+  <div class="wk">S1<br>8-13<br>avr<div class="ws">Démarrage<br>E4+E52<br>+ intro E1</div></div>
+
+  <div class="cell slot-repos"><div class="d">Lun 7</div>Déjà passé</div>
+
+  <div class="cell"><div class="d">Mar 8 <span class="j">J-19/41</span></div>
+    <div class="slot slot-e4"><b>9h-12h · E4 Fondations</b><br>F03 + 18 classes béton + QCM</div>
+    <div class="slot slot-e4"><b>14h-16h · Exercices fond.</b><br>Profondeur gel + béton</div>
+    <div class="slot slot-e1"><b>16h-17h · E1 Lire méthode</b><br>Gabarits + grille IGESR</div>
+  </div>
+
+  <div class="cell"><div class="d">Mer 9 <span class="j">J-18/40</span></div>
+    <div class="slot slot-e4"><b>9h-12h · E4 Acoustique</b><br>F05 + Sabine + QCM</div>
+    <div class="slot slot-ang"><b>14h-15h · 🎧 Anglais</b><br>Écoute BBC 30 min</div>
+    <div class="slot slot-e1"><b>15h-17h · E1 Gabarits</b><br>Mémoriser confrontation</div>
+  </div>
+
+  <div class="cell"><div class="d">Jeu 10 <span class="j">J-17/39</span></div>
+    <div class="slot slot-e52"><b>9h-12h · E52 Révision prix</b><br>F08 + Cn + 10 calculs</div>
+    <div class="slot slot-ang"><b>14h-15h · 🎧 Anglais</b><br>Podcast BTP + notes</div>
+    <div class="slot slot-e1"><b>15h-17h · E1 Connecteurs</b><br>Apprendre par cœur</div>
+  </div>
+
+  <div class="cell"><div class="d">Ven 11 <span class="j">J-16/38</span></div>
+    <div class="slot slot-e52"><b>9h-12h · E52 Situation</b><br>F09 + 16 lignes décompte</div>
+    <div class="slot slot-ang"><b>14h-15h · 🎧 Anglais</b><br>Simulation écoute 30 min</div>
+    <div class="slot slot-e1"><b>15h-17h · E1 Orthographe</b><br>20 règles + tests</div>
+  </div>
+
+  <div class="cell"><div class="d">Sam 12 <span class="j">J-15/37</span></div>
+    <div class="slot slot-sim"><b>9h-12h · SIMUL E52</b><br>Sujet chrono 2h + correction</div>
+    <div class="slot slot-e1"><b>14h-17h · E1 CORPUS FR12</b><br>Faire examen CGE chrono</div>
+  </div>
+
+  <div class="cell slot-repos"><div class="d">Dim 13</div>REPOS<br>Fiche mémo 15 min</div>
+</div>
+
+<!-- SEMAINE 2 : 14-20 avril -->
+<div class="grid">
+  <div class="wk">S2<br>14-20<br>avr<div class="ws">E4 compl.<br>+ E1 essai<br>+ Anglais</div></div>
+
+  <div class="cell"><div class="d">Lun 14 <span class="j">J-13/35</span></div>
+    <div class="slot slot-e1"><b>9h-11h · E1 Correction</b><br>Corriger FR12 du samedi</div>
+    <div class="slot slot-e4"><b>11h-12h · E4 Réglementation</b><br>F02 PC/PLU/ERP</div>
+    <div class="slot slot-ang"><b>14h-15h · 🎧 Anglais</b><br>Vocabulaire BTP 30 min</div>
+    <div class="slot slot-e4"><b>15h-17h · E4 Exercices</b><br>RT2012 vs RE2020</div>
+  </div>
+
+  <div class="cell"><div class="d">Mar 15 <span class="j">J-12/34</span></div>
+    <div class="slot slot-e4"><b>9h-12h · E4 Thermique</b><br>F04 + 5 formules + QCM</div>
+    <div class="slot slot-ang"><b>14h-15h · 🎧 Anglais</b><br>Écoute doc + résumé</div>
+    <div class="slot slot-e1"><b>15h-17h · E1 Écriture perso</b><br>Rédiger thèse/antithèse 1h</div>
+  </div>
+
+  <div class="cell"><div class="d">Mer 16 <span class="j">J-11/33</span></div>
+    <div class="slot slot-e4"><b>9h-11h · E4 MOE (survol)</b><br>F01 : 9 phases</div>
+    <div class="slot slot-e1"><b>11h-12h · E1 Exemples</b><br>La Fontaine, Orwell, Kafka</div>
+    <div class="slot slot-ang"><b>14h-17h · 🇬🇧 E2-B Oral</b><br>Choisir 3 docs + structurer</div>
+  </div>
+
+  <div class="cell"><div class="d">Jeu 17 <span class="j">J-10/32</span></div>
+    <div class="slot slot-e4"><b>9h-11h · E4 Sécurité (survol)</b><br>F06 blindage/GC</div>
+    <div class="slot slot-e1"><b>11h-12h · E1 Relire gabarits</b><br></div>
+    <div class="slot slot-ang"><b>14h-15h · 🎧 Simul écoute</b><br>30 min conditions réelles</div>
+    <div class="slot slot-ang"><b>15h-17h · 🇬🇧 Oral x3 chrono</b><br></div>
+  </div>
+
+  <div class="cell"><div class="d">Ven 18 <span class="j">J-9/31</span></div>
+    <div class="slot slot-e52"><b>9h-11h · E52 Rentabilité</b><br>F10 + DS/MB/RB</div>
+    <div class="slot slot-e1"><b>11h-12h · E1 Entraîn. corpus</b><br>Question confrontation</div>
+    <div class="slot slot-ang"><b>14h-17h · 🎧+🇬🇧 Simul</b><br>Compréhension + oral</div>
+  </div>
+
+  <div class="cell"><div class="d">Sam 19 <span class="j">J-8/30</span></div>
+    <div class="slot slot-sim"><b>9h-13h · SIMUL E4</b><br>4h chrono (sujet 2025)</div>
+    <div class="slot slot-e1"><b>14h-17h · E1 Essai sujet B</b><br>Écriture perso complète</div>
+  </div>
+
+  <div class="cell slot-repos"><div class="d">Dim 20</div>REPOS<br>Relire mémo A4</div>
+</div>
+
+<!-- SEMAINE 3 : 21-27 avril -->
+<div class="grid">
+  <div class="wk" style="background:#991b1b">S3<br>21-27<br>avr<div class="ws">SPRINT<br>★ E2-A<br>LE 27 !</div></div>
+
+  <div class="cell"><div class="d">Lun 21 <span class="j">J-6/28</span></div>
+    <div class="slot slot-e4"><b>9h-11h · Révision E4+E52</b><br>Exercices ratés S1+S2</div>
+    <div class="slot slot-e1"><b>11h-12h · E1 Flashcards</b><br>20 formules de mémoire</div>
+    <div class="slot slot-ang"><b>14h-17h · 🎧 Écoute intensive</b><br>2 simulations complètes</div>
+  </div>
+
+  <div class="cell"><div class="d">Mar 22 <span class="j">J-5/27</span></div>
+    <div class="slot slot-e4"><b>9h-11h · Calculs chrono</b><br>Décompte/Cn/offres timés</div>
+    <div class="slot slot-e1"><b>11h-12h · E1 Sujet FR13</b><br>Questions corpus 1h</div>
+    <div class="slot slot-ang"><b>14h-17h · 🎧 Simul + 🇬🇧 Oral</b><br>Conditions réelles</div>
+  </div>
+
+  <div class="cell"><div class="d">Mer 23 <span class="j">J-4/26</span></div>
+    <div class="slot slot-e4"><b>9h-12h · Mémorisation</b><br>Toutes formules E4+E52</div>
+    <div class="slot slot-bim"><b>14h-15h · 💻 BIM révision</b><br>Revoir interface Revit</div>
+    <div class="slot slot-e1"><b>15h-17h · E1 Relire méthode</b><br>Gabarits + ortho</div>
+  </div>
+
+  <div class="cell"><div class="d">Jeu 24 <span class="j">J-3/25</span></div>
+    <div class="slot slot-sim"><b>9h-11h · SIMUL E52 2h</b><br>Sujet 2023 NC</div>
+    <div class="slot slot-sim"><b>14h-18h · SIMUL E4 4h</b><br>Sujet 2024</div>
+  </div>
+
+  <div class="cell"><div class="d">Ven 25 <span class="j">J-2</span></div>
+    <div class="slot slot-ang"><b>9h-11h · 🎧 2 DERNIÈRES simul</b><br>Écoutes complètes</div>
+    <div class="slot slot-e1"><b>11h-12h · E1 Relire gabarits</b></div>
+    <div class="slot slot-bim"><b>14h-17h · 💻 BIM nomenclatures</b><br>Format BTS</div>
+  </div>
+
+  <div class="cell"><div class="d">Sam 26 <span class="j">J-1</span></div>
+    <div class="slot slot-ang"><b>9h-10h · 🎧 Écoute légère</b><br>15 min + vocabulaire</div>
+    <div class="slot slot-repos"><b>10h · STOP</b><br>Convocation + ID<br>Itinéraire St Priest<br>Dormir tôt</div>
+  </div>
+
+  <div class="cell slot-exam"><div class="d">★ LUN 27</div>
+    <div style="font-size:7.5pt;margin-top:4px">E2-A ANGLAIS<br>13h30<br>30 min · coeff 3<br><br>Lycée Condorcet<br>St Priest<br>Salle E302<br><br>3 écoutes + CR</div>
+  </div>
+</div>
+
+<div class="tips">
+  <b>📌 CONSEILS CLÉS :</b><br>
+  • <b>Chaque matin 9h-12h</b> = bloc CONCENTRATION (pas de téléphone, pas de réseaux sociaux)<br>
+  • <b>Chaque jour finir par 15 min de mémorisation</b> : formules, gabarits, exemples culturels (consolidation sommeil)<br>
+  • <b>E1 tous les jours</b> (même 1h) > E1 concentré sur 1 journée. La mémoire procédurale demande de la répétition.<br>
+  • <b>Anglais ÉCOUTE uniquement cette phase</b> (pas la grammaire) : votre E2-A est un exercice de compréhension orale pure.<br>
+  • <b>Simulations du samedi</b> = conditions réelles : téléphone éteint, chrono lancé, pas d'interruption.<br>
+  • <b>Dimanche REPOS VRAI</b> : pas de révision le dimanche = meilleure mémorisation le lundi (repos actif du cerveau)
+</div>
+
+<div class="footer">
+  Planning 3 semaines — BTS MEC Session 2026 — BAHAFID Mohamed — Période : mercredi 8 avril au lundi 27 avril 2026<br>
+  Total : ~90h de travail réparties · E1 Français : ~25h · Anglais : ~15h · E4 : ~25h · E52 : ~15h · BIM : ~6h · Simulations : ~12h
+</div>
+
+</body>
+</html>
