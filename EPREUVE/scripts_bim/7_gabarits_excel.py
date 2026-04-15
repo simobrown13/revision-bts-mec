@@ -636,6 +636,892 @@ def gabarit_controle_qualite(wb):
 
 
 # ============================================================
+# GABARIT 6 : METRE DETAILLE PAR OUVRAGE
+# ============================================================
+def gabarit_metre(wb):
+    ws = wb.create_sheet("6. Metre")
+
+    style_titre(ws, 'A1:H1', "METRE DETAILLE PAR OUVRAGE", bg=NAVY, taille=15)
+
+    ws['A2'] = "Projet :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = "[A remplir]"
+
+    style_sous_titre(ws, 4, 'A4:H4',
+                     "CALCULS DE METRES (longueur x largeur x hauteur)", bg=ORANGE)
+
+    style_header(ws, 6, ["Code", "Ouvrage", "Local / Zone",
+                          "L (m)", "l (m)", "H (m)", "Nb", "Total"])
+
+    ouvrages = [
+        ("M.01", "Mur exterieur BA 20cm", "Facade Nord"),
+        ("M.02", "Mur exterieur BA 20cm", "Facade Sud"),
+        ("M.03", "Mur exterieur BA 20cm", "Facade Est"),
+        ("M.04", "Mur exterieur BA 20cm", "Facade Ouest"),
+        ("M.05", "Mur interieur porteur", "Refend central"),
+        ("C.01", "Cloison placo 72/48", "Sejour/Cuisine"),
+        ("C.02", "Cloison placo 72/48", "Chambres"),
+        ("D.01", "Dalle BA 20cm", "RdC"),
+        ("D.02", "Dalle BA 20cm", "R+1"),
+        ("D.03", "Dalle BA 20cm", "Toiture terrasse"),
+        ("P.01", "Poteau BA 25x25", "Structure"),
+        ("P.02", "Poutre BA 20x40", "Linteaux"),
+        ("F.01", "Semelle filante", "Peripherie"),
+        ("F.02", "Semelle isolee", "Sous poteaux"),
+        ("M.10", "Menuiserie fenetre", "Baies vitrees"),
+        ("M.11", "Menuiserie porte ext.", "Entree"),
+        ("T.01", "Toiture couverture", "Pente sud"),
+        ("T.02", "Toiture couverture", "Pente nord"),
+        ("R.01", "Revetement sol carrelage", "Pieces humides"),
+        ("R.02", "Revetement sol parquet", "Pieces seches"),
+    ]
+
+    for i, (code, ouvrage, zone) in enumerate(ouvrages):
+        r = 7 + i
+        ws.cell(row=r, column=1, value=code).alignment = Alignment(horizontal='center')
+        ws.cell(row=r, column=2, value=ouvrage)
+        ws.cell(row=r, column=3, value=zone)
+        ws.cell(row=r, column=4, value=0)
+        ws.cell(row=r, column=5, value=0)
+        ws.cell(row=r, column=6, value=0)
+        ws.cell(row=r, column=7, value=1)
+        ws.cell(row=r, column=8,
+                value="=D" + str(r) + "*E" + str(r) + "*F" + str(r) + "*G" + str(r))
+        ws.cell(row=r, column=8).number_format = '0.00'
+        ws.cell(row=r, column=8).font = Font(bold=True, color=ORANGE)
+        for col in range(1, 9):
+            ws.cell(row=r, column=col).border = thin_border()
+
+    # TOTAL
+    r = 7 + len(ouvrages) + 1
+    ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=7)
+    ws.cell(row=r, column=1, value="TOTAL METRE").font = Font(bold=True, size=12, color=WHITE)
+    ws.cell(row=r, column=1).fill = PatternFill("solid", fgColor=NAVY)
+    ws.cell(row=r, column=1).alignment = Alignment(horizontal='right', indent=2, vertical='center')
+    ws.cell(row=r, column=8,
+            value="=SUM(H7:H" + str(6 + len(ouvrages)) + ")").font = Font(bold=True, size=12)
+    ws.cell(row=r, column=8).fill = PatternFill("solid", fgColor=YELLOW)
+    ws.row_dimensions[r].height = 26
+
+    set_widths(ws, [8, 28, 22, 10, 10, 10, 8, 12])
+
+
+# ============================================================
+# GABARIT 7 : DQE - DEVIS QUANTITATIF ESTIMATIF
+# ============================================================
+def gabarit_dqe(wb):
+    ws = wb.create_sheet("7. DQE")
+
+    style_titre(ws, 'A1:G1', "DEVIS QUANTITATIF ESTIMATIF (DQE)",
+                bg=NAVY, taille=15)
+
+    ws['A2'] = "Projet :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = "[A remplir]"
+    ws['D2'] = "Date :"
+    ws['D2'].font = Font(bold=True, color=NAVY)
+    ws['E2'] = "[JJ/MM/AAAA]"
+
+    style_header(ws, 4, ["Code", "Designation", "Unite", "Qte",
+                          "PU mat. (€)", "PU pose (€)", "Total (€)"])
+
+    postes = [
+        ("01.01", "Terrassement general", "m³"),
+        ("02.01", "Beton fondations C25/30", "m³"),
+        ("02.02", "Beton voiles C25/30", "m³"),
+        ("02.03", "Beton dalles C25/30", "m³"),
+        ("02.04", "Acier BA HA500", "kg"),
+        ("02.05", "Maconnerie parpaing 20cm", "m²"),
+        ("03.01", "Charpente bois", "m³"),
+        ("03.02", "Couverture tuiles", "m²"),
+        ("04.01", "Menuiserie PVC double vitrage", "m²"),
+        ("04.02", "Porte bois entree", "U"),
+        ("05.01", "Cloison placo BA13", "m²"),
+        ("05.02", "Isolation laine de verre 100mm", "m²"),
+        ("06.01", "Carrelage gres cerame", "m²"),
+        ("06.02", "Parquet stratifie", "m²"),
+        ("08.01", "Peinture acrylique 2c", "m²"),
+        ("09.01", "Reseau eau froide PER", "ml"),
+        ("10.01", "Cable electrique", "ml"),
+        ("11.01", "VMC simple flux", "U"),
+        ("12.01", "Enrobe voirie", "m²"),
+    ]
+
+    row = 5
+    for code, design, unite in postes:
+        ws.cell(row=row, column=1, value=code).alignment = Alignment(horizontal='center')
+        ws.cell(row=row, column=2, value=design)
+        ws.cell(row=row, column=3, value=unite).alignment = Alignment(horizontal='center')
+        ws.cell(row=row, column=4, value=0)
+        ws.cell(row=row, column=5, value=0).number_format = '#,##0.00 €'
+        ws.cell(row=row, column=6, value=0).number_format = '#,##0.00 €'
+        ws.cell(row=row, column=7,
+                value="=D" + str(row) + "*(E" + str(row) + "+F" + str(row) + ")")
+        ws.cell(row=row, column=7).number_format = '#,##0.00 €'
+        for col in range(1, 8):
+            ws.cell(row=row, column=col).border = thin_border()
+        row += 1
+
+    # Totaux
+    row += 1
+    ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=6)
+    ws.cell(row=row, column=1, value="TOTAL HT").font = Font(bold=True, size=13, color=WHITE)
+    ws.cell(row=row, column=1).fill = PatternFill("solid", fgColor=NAVY)
+    ws.cell(row=row, column=1).alignment = Alignment(horizontal='right', indent=2, vertical='center')
+    ws.cell(row=row, column=7,
+            value="=SUM(G5:G" + str(row - 2) + ")").font = Font(bold=True, size=13)
+    ws.cell(row=row, column=7).number_format = '#,##0.00 €'
+    ws.cell(row=row, column=7).fill = PatternFill("solid", fgColor=YELLOW)
+    ws.row_dimensions[row].height = 28
+
+    set_widths(ws, [10, 42, 10, 10, 15, 15, 18])
+
+
+# ============================================================
+# GABARIT 8 : ETUDE DE PRIX - SOUS-DETAIL
+# ============================================================
+def gabarit_sous_detail(wb):
+    ws = wb.create_sheet("8. Sous-detail")
+
+    style_titre(ws, 'A1:F1', "ETUDE DE PRIX - SOUS-DETAIL D'OUVRAGE",
+                bg=NAVY, taille=15)
+
+    ws['A2'] = "Ouvrage :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = "[Ex : m³ beton arme voile]"
+    ws['A3'] = "Unite :"
+    ws['A3'].font = Font(bold=True, color=NAVY)
+    ws['B3'] = "m³"
+
+    # MATERIAUX
+    style_sous_titre(ws, 5, 'A5:F5', "DEBOURSE MATERIAUX", bg=ORANGE)
+    style_header(ws, 6, ["Composant", "Qte / U", "Unite", "Prix unitaire",
+                          "Montant", "% debourse"])
+
+    mat = [
+        ("Beton C25/30 pret a l'emploi", 1.05, "m³"),
+        ("Acier HA500 (150 kg/m³)", 150, "kg"),
+        ("Coffrage ordinaire", 10, "m²"),
+        ("Pompage beton", 1, "m³"),
+        ("Adjuvants / produits divers", 1, "Ft"),
+    ]
+    row = 7
+    first_mat = row
+    for comp, qte, u in mat:
+        ws.cell(row=row, column=1, value=comp)
+        ws.cell(row=row, column=2, value=qte)
+        ws.cell(row=row, column=3, value=u).alignment = Alignment(horizontal='center')
+        ws.cell(row=row, column=4, value=0).number_format = '#,##0.00 €'
+        ws.cell(row=row, column=5,
+                value="=B" + str(row) + "*D" + str(row)).number_format = '#,##0.00 €'
+        for col in range(1, 7):
+            ws.cell(row=row, column=col).border = thin_border()
+        row += 1
+    last_mat = row - 1
+
+    # MAIN D'OEUVRE
+    row += 1
+    style_sous_titre(ws, row, 'A' + str(row) + ':F' + str(row),
+                     "DEBOURSE MAIN D'OEUVRE", bg=ORANGE)
+    row += 1
+    style_header(ws, row, ["Categorie", "Heures / U", "Unite",
+                            "Taux horaire", "Montant", ""])
+    row += 1
+    mo = [
+        ("Chef d'equipe N4", 1.0, "h"),
+        ("Ouvrier qualifie N3", 3.5, "h"),
+        ("Manoeuvre N1", 2.0, "h"),
+    ]
+    first_mo = row
+    for cat, h, u in mo:
+        ws.cell(row=row, column=1, value=cat)
+        ws.cell(row=row, column=2, value=h)
+        ws.cell(row=row, column=3, value=u).alignment = Alignment(horizontal='center')
+        ws.cell(row=row, column=4, value=0).number_format = '#,##0.00 €'
+        ws.cell(row=row, column=5,
+                value="=B" + str(row) + "*D" + str(row)).number_format = '#,##0.00 €'
+        for col in range(1, 7):
+            ws.cell(row=row, column=col).border = thin_border()
+        row += 1
+    last_mo = row - 1
+
+    # MATERIEL
+    row += 1
+    style_sous_titre(ws, row, 'A' + str(row) + ':F' + str(row),
+                     "DEBOURSE MATERIEL", bg=ORANGE)
+    row += 1
+    style_header(ws, row, ["Equipement", "Duree", "Unite",
+                            "Cout unitaire", "Montant", ""])
+    row += 1
+    mat_eq = [
+        ("Grue de chantier (prorata)", 0.5, "h"),
+        ("Outillage divers (prorata)", 1, "Ft"),
+    ]
+    first_eq = row
+    for eq, d, u in mat_eq:
+        ws.cell(row=row, column=1, value=eq)
+        ws.cell(row=row, column=2, value=d)
+        ws.cell(row=row, column=3, value=u).alignment = Alignment(horizontal='center')
+        ws.cell(row=row, column=4, value=0).number_format = '#,##0.00 €'
+        ws.cell(row=row, column=5,
+                value="=B" + str(row) + "*D" + str(row)).number_format = '#,##0.00 €'
+        for col in range(1, 7):
+            ws.cell(row=row, column=col).border = thin_border()
+        row += 1
+    last_eq = row - 1
+
+    # SYNTHESE
+    row += 2
+    ws.cell(row=row, column=1, value="Debourse sec materiaux").font = Font(bold=True)
+    ws.cell(row=row, column=5,
+            value="=SUM(E" + str(first_mat) + ":E" + str(last_mat) + ")").number_format = '#,##0.00 €'
+    row += 1
+    ws.cell(row=row, column=1, value="Debourse sec main d'oeuvre").font = Font(bold=True)
+    ws.cell(row=row, column=5,
+            value="=SUM(E" + str(first_mo) + ":E" + str(last_mo) + ")").number_format = '#,##0.00 €'
+    row += 1
+    ws.cell(row=row, column=1, value="Debourse sec materiel").font = Font(bold=True)
+    ws.cell(row=row, column=5,
+            value="=SUM(E" + str(first_eq) + ":E" + str(last_eq) + ")").number_format = '#,##0.00 €'
+    ds_row = row
+    row += 1
+    ws.cell(row=row, column=1, value="DEBOURSE SEC TOTAL").font = Font(bold=True, color=NAVY)
+    ws.cell(row=row, column=5,
+            value="=SUM(E" + str(ds_row - 2) + ":E" + str(ds_row) + ")")
+    ws.cell(row=row, column=5).font = Font(bold=True)
+    ws.cell(row=row, column=5).number_format = '#,##0.00 €'
+    ws.cell(row=row, column=5).fill = PatternFill("solid", fgColor=GREY_LIGHT)
+    ds_tot = row
+    row += 1
+    ws.cell(row=row, column=1, value="Frais de chantier (10%)")
+    ws.cell(row=row, column=5, value="=E" + str(ds_tot) + "*0.1").number_format = '#,##0.00 €'
+    row += 1
+    ws.cell(row=row, column=1, value="Frais generaux (12%)")
+    ws.cell(row=row, column=5, value="=E" + str(ds_tot) + "*0.12").number_format = '#,##0.00 €'
+    row += 1
+    ws.cell(row=row, column=1, value="Benefice et alea (8%)")
+    ws.cell(row=row, column=5, value="=E" + str(ds_tot) + "*0.08").number_format = '#,##0.00 €'
+    row += 1
+    ws.cell(row=row, column=1, value="PRIX DE VENTE UNITAIRE HT").font = Font(bold=True, size=13, color=WHITE)
+    ws.cell(row=row, column=1).fill = PatternFill("solid", fgColor=ORANGE)
+    ws.cell(row=row, column=5,
+            value="=E" + str(ds_tot) + "*1.3").number_format = '#,##0.00 €'
+    ws.cell(row=row, column=5).font = Font(bold=True, size=13)
+    ws.cell(row=row, column=5).fill = PatternFill("solid", fgColor=YELLOW)
+    ws.row_dimensions[row].height = 28
+
+    set_widths(ws, [35, 12, 10, 15, 18, 12])
+
+
+# ============================================================
+# GABARIT 9 : NOTE DE SYNTHESE PROJET
+# ============================================================
+def gabarit_note_synthese(wb):
+    ws = wb.create_sheet("9. Note synthese")
+
+    style_titre(ws, 'A1:D1', "NOTE DE SYNTHESE - PROJET BIM",
+                bg=NAVY, taille=15)
+
+    ws['A3'] = "Projet :"
+    ws['A3'].font = Font(bold=True, color=NAVY)
+    ws['B3'] = "[A remplir]"
+    ws['A4'] = "Maitre d'ouvrage :"
+    ws['A4'].font = Font(bold=True, color=NAVY)
+    ws['B4'] = "[A remplir]"
+    ws['A5'] = "Adresse :"
+    ws['A5'].font = Font(bold=True, color=NAVY)
+    ws['B5'] = "[A remplir]"
+    ws['A6'] = "Phase :"
+    ws['A6'].font = Font(bold=True, color=NAVY)
+    ws['B6'] = "DCE / EXE / APS / APD"
+
+    sections = [
+        ("1. CONTEXTE DU PROJET",
+         "Presentation generale du projet, type d'ouvrage, destination, "
+         "contraintes reglementaires (PLU, ERP, RE2020...)."),
+        ("2. CARACTERISTIQUES TECHNIQUES",
+         "Surface SHON / SHOB, nombre de niveaux, type de structure, "
+         "procede constructif, systemes techniques (CVC, elec, plomb...)."),
+        ("3. METHODOLOGIE BIM",
+         "Logiciels utilises (Revit, ArchiCAD, eveBIM), LOD cible, "
+         "convention BIM, plateforme collaborative, processus IFC."),
+        ("4. QUANTITES EXTRAITES",
+         "Synthese des metres extraits de la maquette : volumes beton, "
+         "surfaces, menuiseries. Voir onglet 'Metre' pour detail."),
+        ("5. ESTIMATION FINANCIERE",
+         "Cout travaux HT par lot, ratio €/m², comparaison avec references "
+         "du secteur. Voir onglets 'DPGF' et 'DQE'."),
+        ("6. IMPACT ENVIRONNEMENTAL",
+         "IC construction (kgCO2eq/m²), comparaison seuils RE2020, "
+         "preconisations bas carbone. Voir onglet 'Bilan carbone'."),
+        ("7. PLANNING PREVISIONNEL",
+         "Duree totale, chemin critique, phases. Voir onglet 'Planning'."),
+        ("8. CONTROLE QUALITE",
+         "Niveau de conformite de la maquette, points de vigilance, "
+         "actions correctives. Voir onglet 'Controle BIM'."),
+        ("9. VARIANTES ETUDIEES",
+         "Options techniques envisagees, analyse comparative (cout, delai, "
+         "performance). Voir onglet 'Comparatif variantes'."),
+        ("10. CONCLUSION",
+         "Synthese des elements cles, faisabilite, recommandations, "
+         "suites a donner."),
+    ]
+
+    row = 8
+    for titre, contenu in sections:
+        ws.merge_cells('A' + str(row) + ':D' + str(row))
+        ws.cell(row=row, column=1, value=titre).font = Font(bold=True, size=12, color=WHITE)
+        ws.cell(row=row, column=1).fill = PatternFill("solid", fgColor=ORANGE)
+        ws.cell(row=row, column=1).alignment = Alignment(horizontal='left', indent=1, vertical='center')
+        ws.row_dimensions[row].height = 24
+        row += 1
+
+        ws.merge_cells('A' + str(row) + ':D' + str(row + 3))
+        c = ws.cell(row=row, column=1, value=contenu + "\n\n[Completer ici...]")
+        c.alignment = Alignment(wrap_text=True, vertical='top', indent=1)
+        c.font = Font(size=10)
+        c.fill = PatternFill("solid", fgColor=GREY_LIGHT)
+        ws.row_dimensions[row].height = 22
+        for i in range(4):
+            ws.row_dimensions[row + i].height = 22
+        row += 5
+
+    set_widths(ws, [25, 25, 25, 25])
+
+
+# ============================================================
+# GABARIT 10 : DESCENTE DE CHARGES SIMPLIFIEE
+# ============================================================
+def gabarit_descente_charges(wb):
+    ws = wb.create_sheet("10. Charges")
+
+    style_titre(ws, 'A1:G1', "DESCENTE DE CHARGES SIMPLIFIEE",
+                bg=NAVY, taille=15)
+
+    ws['A2'] = "Element :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = "[Ex : Poteau P1]"
+
+    # Charges permanentes
+    style_sous_titre(ws, 4, 'A4:G4', "CHARGES PERMANENTES (G)", bg=ORANGE)
+    style_header(ws, 5, ["Niveau", "Element", "Poids vol. (kN/m³)",
+                          "Surf/Long (m² ou ml)", "Epaisseur (m)",
+                          "Charge (kN/m²)", "Total (kN)"])
+
+    charges_g = [
+        ("Toiture", "Couverture + charpente", 0, 1, 0, 1.5),
+        ("R+1", "Dalle BA + revetement", 25, 1, 0.22, 0),
+        ("R+1", "Cloisons legeres", 0, 1, 0, 0.5),
+        ("RdC", "Dalle BA + revetement", 25, 1, 0.22, 0),
+        ("RdC", "Cloisons legeres", 0, 1, 0, 0.5),
+        ("Fondations", "Semelle BA", 25, 1, 0.4, 0),
+    ]
+
+    row = 6
+    first_g = row
+    for niv, elem, pv, surf, ep, q in charges_g:
+        ws.cell(row=row, column=1, value=niv)
+        ws.cell(row=row, column=2, value=elem)
+        ws.cell(row=row, column=3, value=pv)
+        ws.cell(row=row, column=4, value=surf)
+        ws.cell(row=row, column=5, value=ep)
+        ws.cell(row=row, column=6, value=q)
+        # Total = surf * (q OU pv*ep)
+        ws.cell(row=row, column=7,
+                value="=D" + str(row) + "*IF(F" + str(row) + ">0,F" + str(row) +
+                ",C" + str(row) + "*E" + str(row) + ")")
+        ws.cell(row=row, column=7).number_format = '0.00'
+        for col in range(1, 8):
+            ws.cell(row=row, column=col).border = thin_border()
+        row += 1
+    last_g = row - 1
+
+    row += 1
+    ws.cell(row=row, column=1, value="TOTAL G (kN)").font = Font(bold=True, color=NAVY)
+    ws.cell(row=row, column=7,
+            value="=SUM(G" + str(first_g) + ":G" + str(last_g) + ")")
+    ws.cell(row=row, column=7).font = Font(bold=True)
+    ws.cell(row=row, column=7).fill = PatternFill("solid", fgColor=GREY_LIGHT)
+    g_row = row
+
+    # Charges exploitation
+    row += 2
+    style_sous_titre(ws, row, 'A' + str(row) + ':G' + str(row),
+                     "CHARGES D'EXPLOITATION (Q)", bg=ORANGE)
+    row += 1
+    style_header(ws, row, ["Niveau", "Usage", "",
+                            "Surface (m²)", "", "q (kN/m²)", "Total (kN)"])
+    row += 1
+    charges_q = [
+        ("Toiture terrasse", "Non accessible", 1, 1.0),
+        ("R+1", "Logement", 1, 1.5),
+        ("RdC", "Logement", 1, 1.5),
+    ]
+    first_q = row
+    for niv, us, surf, q in charges_q:
+        ws.cell(row=row, column=1, value=niv)
+        ws.cell(row=row, column=2, value=us)
+        ws.cell(row=row, column=4, value=surf)
+        ws.cell(row=row, column=6, value=q)
+        ws.cell(row=row, column=7,
+                value="=D" + str(row) + "*F" + str(row)).number_format = '0.00'
+        for col in range(1, 8):
+            ws.cell(row=row, column=col).border = thin_border()
+        row += 1
+    last_q = row - 1
+
+    row += 1
+    ws.cell(row=row, column=1, value="TOTAL Q (kN)").font = Font(bold=True, color=NAVY)
+    ws.cell(row=row, column=7,
+            value="=SUM(G" + str(first_q) + ":G" + str(last_q) + ")")
+    ws.cell(row=row, column=7).font = Font(bold=True)
+    ws.cell(row=row, column=7).fill = PatternFill("solid", fgColor=GREY_LIGHT)
+    q_row = row
+
+    # Combinaisons
+    row += 2
+    style_sous_titre(ws, row, 'A' + str(row) + ':G' + str(row),
+                     "COMBINAISONS ELU / ELS", bg=NAVY)
+    row += 1
+    ws.cell(row=row, column=1, value="ELU : 1.35 G + 1.5 Q").font = Font(bold=True)
+    ws.cell(row=row, column=7,
+            value="=1.35*G" + str(g_row) + "+1.5*G" + str(q_row))
+    ws.cell(row=row, column=7).number_format = '0.00'
+    ws.cell(row=row, column=7).font = Font(bold=True, size=12, color=RED)
+    ws.cell(row=row, column=7).fill = PatternFill("solid", fgColor=YELLOW)
+    row += 1
+    ws.cell(row=row, column=1, value="ELS : G + Q").font = Font(bold=True)
+    ws.cell(row=row, column=7, value="=G" + str(g_row) + "+G" + str(q_row))
+    ws.cell(row=row, column=7).number_format = '0.00'
+    ws.cell(row=row, column=7).font = Font(bold=True, size=12, color=NAVY)
+    ws.cell(row=row, column=7).fill = PatternFill("solid", fgColor=GREY_LIGHT)
+
+    set_widths(ws, [15, 28, 15, 12, 12, 12, 12])
+
+
+# ============================================================
+# GABARIT 11 : BILAN THERMIQUE RE2020
+# ============================================================
+def gabarit_bilan_thermique(wb):
+    ws = wb.create_sheet("11. Thermique")
+
+    style_titre(ws, 'A1:F1', "BILAN THERMIQUE RE2020",
+                bg="4DC7C7", fg=WHITE, taille=15)
+
+    ws['A2'] = "Projet :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = "[A remplir]"
+    ws['D2'] = "Zone climatique :"
+    ws['D2'].font = Font(bold=True, color=NAVY)
+    ws['E2'] = "H1 / H2 / H3"
+
+    # Indicateurs RE2020
+    style_sous_titre(ws, 4, 'A4:F4', "INDICATEURS RE2020", bg=ORANGE)
+
+    kpi_card(ws, 6, 1, "Bbio", 0, "pts", NAVY)
+    kpi_card(ws, 6, 2, "Cep", 0, "kWh/m²/an", TURQUOISE)
+    kpi_card(ws, 6, 3, "Cep,nr", 0, "kWh/m²/an", ORANGE)
+    kpi_card(ws, 6, 4, "Ic energie", 0, "kgCO2/m²", GREEN)
+    kpi_card(ws, 6, 5, "Ic construction", 0, "kgCO2/m²", RED)
+    kpi_card(ws, 6, 6, "DH", 0, "°C.h", NAVY)
+
+    # Parois
+    style_sous_titre(ws, 10, 'A10:F10',
+                     "CARACTERISTIQUES THERMIQUES DES PAROIS", bg=TURQUOISE)
+    style_header(ws, 11, ["Paroi", "Surface (m²)", "U (W/m²K)",
+                           "R (m²K/W)", "Type", "UxS (W/K)"])
+
+    parois = [
+        ("Murs exterieurs", "Murs mitoyens", "Toiture",
+         "Plancher bas", "Fenetres", "Portes exterieures"),
+    ][0]
+    u_cible = [0.20, 0.40, 0.15, 0.22, 1.30, 1.50]
+
+    for i, (p, u) in enumerate(zip(parois, u_cible)):
+        r = 12 + i
+        ws.cell(row=r, column=1, value=p)
+        ws.cell(row=r, column=2, value=0)
+        ws.cell(row=r, column=3, value=u)
+        ws.cell(row=r, column=4, value="=IF(C" + str(r) + ">0,1/C" + str(r) + ",0)")
+        ws.cell(row=r, column=4).number_format = '0.00'
+        ws.cell(row=r, column=5, value="Opaque" if i < 4 else "Vitre")
+        ws.cell(row=r, column=6, value="=B" + str(r) + "*C" + str(r))
+        ws.cell(row=r, column=6).number_format = '0.00'
+        for col in range(1, 7):
+            ws.cell(row=r, column=col).border = thin_border()
+
+    # Total deperditions
+    r = 12 + len(parois) + 1
+    ws.cell(row=r, column=1, value="Deperditions totales (W/K)").font = Font(bold=True)
+    ws.cell(row=r, column=6,
+            value="=SUM(F12:F" + str(11 + len(parois)) + ")")
+    ws.cell(row=r, column=6).font = Font(bold=True)
+    ws.cell(row=r, column=6).fill = PatternFill("solid", fgColor=YELLOW)
+
+    # Seuils reglementaires
+    style_sous_titre(ws, r + 2, 'A' + str(r + 2) + ':F' + str(r + 2),
+                     "SEUILS RE2020 (logement collectif)", bg=NAVY)
+    style_header(ws, r + 3, ["Indicateur", "Seuil RE2020", "Projet",
+                              "Ecart", "Statut", ""])
+
+    seuils = [
+        ("Bbio max", 72),
+        ("Cep,nr max (kWh/m²/an)", 55),
+        ("Cep max (kWh/m²/an)", 75),
+        ("Ic energie max (kgCO2/m²)", 560),
+        ("Ic construction 2025 (kgCO2/m²)", 740),
+        ("DH max (°C.h)", 1250),
+    ]
+    for i, (ind, s) in enumerate(seuils):
+        rr = r + 4 + i
+        ws.cell(row=rr, column=1, value=ind)
+        ws.cell(row=rr, column=2, value=s)
+        ws.cell(row=rr, column=3, value=0)
+        ws.cell(row=rr, column=4, value="=C" + str(rr) + "-B" + str(rr))
+        ws.cell(row=rr, column=5,
+                value='=IF(C' + str(rr) + '<=B' + str(rr) + ',"OK","KO")')
+        for col in range(1, 6):
+            ws.cell(row=rr, column=col).border = thin_border()
+
+    set_widths(ws, [28, 15, 15, 12, 14, 15])
+
+
+# ============================================================
+# GABARIT 12 : COMPARATIF VARIANTES
+# ============================================================
+def gabarit_variantes(wb):
+    ws = wb.create_sheet("12. Variantes")
+
+    style_titre(ws, 'A1:F1', "COMPARATIF VARIANTES TECHNIQUES",
+                bg=NAVY, taille=15)
+
+    ws['A2'] = "Choix etudie :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = "[Ex : Solution structure - Beton vs Bois vs Metal]"
+
+    style_sous_titre(ws, 4, 'A4:F4', "TABLEAU COMPARATIF", bg=ORANGE)
+    style_header(ws, 6, ["Critere", "Poids (1-5)", "Variante 1",
+                           "Variante 2", "Variante 3", "Observations"])
+
+    criteres = [
+        ("Cout investissement (€)", 5),
+        ("Cout exploitation 10 ans", 3),
+        ("Delai execution (mois)", 4),
+        ("Performance thermique (U)", 4),
+        ("Impact carbone (kgCO2/m²)", 5),
+        ("Complexite mise en oeuvre", 3),
+        ("Durabilite / entretien", 4),
+        ("Esthetique / architectural", 2),
+        ("Disponibilite materiaux", 3),
+        ("Confort acoustique", 3),
+    ]
+
+    # Variantes
+    for i, (crit, poids) in enumerate(criteres):
+        r = 7 + i
+        ws.cell(row=r, column=1, value=crit)
+        ws.cell(row=r, column=2, value=poids).alignment = Alignment(horizontal='center')
+        # Notes 1-5 a remplir
+        ws.cell(row=r, column=3, value=0).alignment = Alignment(horizontal='center')
+        ws.cell(row=r, column=4, value=0).alignment = Alignment(horizontal='center')
+        ws.cell(row=r, column=5, value=0).alignment = Alignment(horizontal='center')
+        for col in range(1, 7):
+            ws.cell(row=r, column=col).border = thin_border()
+
+    # Notes ponderees
+    r = 7 + len(criteres) + 1
+    ws.cell(row=r, column=1, value="SCORE PONDERE").font = Font(bold=True, size=12, color=WHITE)
+    ws.cell(row=r, column=1).fill = PatternFill("solid", fgColor=NAVY)
+    ws.cell(row=r, column=2, value="").fill = PatternFill("solid", fgColor=NAVY)
+    ws.cell(row=r, column=3,
+            value="=SUMPRODUCT($B$7:$B$" + str(6 + len(criteres)) + ",C7:C" + str(6 + len(criteres)) + ")")
+    ws.cell(row=r, column=4,
+            value="=SUMPRODUCT($B$7:$B$" + str(6 + len(criteres)) + ",D7:D" + str(6 + len(criteres)) + ")")
+    ws.cell(row=r, column=5,
+            value="=SUMPRODUCT($B$7:$B$" + str(6 + len(criteres)) + ",E7:E" + str(6 + len(criteres)) + ")")
+    for col in range(3, 6):
+        ws.cell(row=r, column=col).font = Font(bold=True, size=14, color=NAVY)
+        ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor=YELLOW)
+        ws.cell(row=r, column=col).alignment = Alignment(horizontal='center')
+    ws.row_dimensions[r].height = 28
+
+    # Recommandation
+    r += 2
+    ws.merge_cells('A' + str(r) + ':F' + str(r))
+    ws.cell(row=r, column=1, value="RECOMMANDATION").font = Font(bold=True, size=12, color=WHITE)
+    ws.cell(row=r, column=1).fill = PatternFill("solid", fgColor=ORANGE)
+    ws.cell(row=r, column=1).alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[r].height = 24
+    r += 1
+    ws.merge_cells('A' + str(r) + ':F' + str(r + 4))
+    c = ws.cell(row=r, column=1, value="[Justification du choix retenu et motifs techniques/economiques/environnementaux...]")
+    c.alignment = Alignment(wrap_text=True, vertical='top', indent=1)
+    c.fill = PatternFill("solid", fgColor=GREY_LIGHT)
+    for i in range(5):
+        ws.row_dimensions[r + i].height = 22
+
+    # Format conditionnel : mettre en vert la meilleure variante
+    score_range = "C" + str(7 + len(criteres) + 1) + ":E" + str(7 + len(criteres) + 1)
+    ws.conditional_formatting.add(score_range,
+        ColorScaleRule(start_type='min', start_color=RED,
+                       mid_type='percentile', mid_value=50, mid_color=YELLOW,
+                       end_type='max', end_color=GREEN))
+
+    set_widths(ws, [30, 10, 12, 12, 12, 30])
+
+
+# ============================================================
+# GABARIT 13 : REGISTRE ANOMALIES BCF
+# ============================================================
+def gabarit_anomalies(wb):
+    ws = wb.create_sheet("13. Anomalies BCF")
+
+    style_titre(ws, 'A1:H1', "REGISTRE DES ANOMALIES (BCF)",
+                bg=RED, fg=WHITE, taille=15)
+
+    # KPI
+    style_sous_titre(ws, 3, 'A3:H3', "SYNTHESE", bg=ORANGE)
+    kpi_card(ws, 5, 1, "Total", "=COUNTA(A9:A50)-1", "", NAVY)
+    kpi_card(ws, 5, 2, "Critiques", '=COUNTIF(D9:D50,"Critique")', "", RED)
+    kpi_card(ws, 5, 3, "Majeures", '=COUNTIF(D9:D50,"Majeure")', "", ORANGE)
+    kpi_card(ws, 5, 4, "Mineures", '=COUNTIF(D9:D50,"Mineure")', "", YELLOW)
+    kpi_card(ws, 5, 5, "Resolues", '=COUNTIF(G9:G50,"Resolu")', "", GREEN)
+    kpi_card(ws, 5, 6, "En cours", '=COUNTIF(G9:G50,"En cours")', "", NAVY)
+    kpi_card(ws, 5, 7, "Ouvertes", '=COUNTIF(G9:G50,"Ouvert")', "", RED)
+    kpi_card(ws, 5, 8, "% resolues",
+             '=IFERROR(COUNTIF(G9:G50,"Resolu")/(COUNTA(G9:G50)-1),0)', "", GREEN)
+
+    style_header(ws, 8, ["N°", "Date", "Titre anomalie", "Gravite",
+                          "Localisation", "Attribue a", "Statut", "Commentaire"])
+
+    from openpyxl.worksheet.datavalidation import DataValidation
+    dv_gravite = DataValidation(type="list", formula1='"Critique,Majeure,Mineure"',
+                                 allow_blank=True)
+    dv_gravite.add("D9:D50")
+    ws.add_data_validation(dv_gravite)
+
+    dv_statut = DataValidation(type="list", formula1='"Ouvert,En cours,Resolu"',
+                                allow_blank=True)
+    dv_statut.add("G9:G50")
+    ws.add_data_validation(dv_statut)
+
+    # Exemples de lignes vides
+    for r in range(9, 30):
+        ws.cell(row=r, column=1, value=r - 8).alignment = Alignment(horizontal='center')
+        for col in range(1, 9):
+            ws.cell(row=r, column=col).border = thin_border()
+
+    # Format conditionnel gravite
+    ws.conditional_formatting.add("D9:D50",
+        CellIsRule(operator='equal', formula=['"Critique"'],
+                   fill=PatternFill("solid", fgColor=RED),
+                   font=Font(color=WHITE, bold=True)))
+    ws.conditional_formatting.add("D9:D50",
+        CellIsRule(operator='equal', formula=['"Majeure"'],
+                   fill=PatternFill("solid", fgColor=ORANGE),
+                   font=Font(color=WHITE, bold=True)))
+    ws.conditional_formatting.add("D9:D50",
+        CellIsRule(operator='equal', formula=['"Mineure"'],
+                   fill=PatternFill("solid", fgColor=YELLOW),
+                   font=Font(bold=True)))
+
+    # Format conditionnel statut
+    ws.conditional_formatting.add("G9:G50",
+        CellIsRule(operator='equal', formula=['"Resolu"'],
+                   fill=PatternFill("solid", fgColor="DCFCE7"),
+                   font=Font(color=GREEN, bold=True)))
+    ws.conditional_formatting.add("G9:G50",
+        CellIsRule(operator='equal', formula=['"Ouvert"'],
+                   fill=PatternFill("solid", fgColor="FEE2E2"),
+                   font=Font(color=RED, bold=True)))
+    ws.conditional_formatting.add("G9:G50",
+        CellIsRule(operator='equal', formula=['"En cours"'],
+                   fill=PatternFill("solid", fgColor="FEF3C7")))
+
+    set_widths(ws, [6, 12, 35, 12, 20, 18, 12, 35])
+
+
+# ============================================================
+# GABARIT 14 : COURBE S - AVANCEMENT FINANCIER
+# ============================================================
+def gabarit_courbe_s(wb):
+    ws = wb.create_sheet("14. Courbe S")
+
+    style_titre(ws, 'A1:F1', "COURBE D'AVANCEMENT FINANCIER (S-CURVE)",
+                bg=NAVY, taille=15)
+
+    ws['A2'] = "Duree :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = 12
+    ws['C2'] = "mois"
+
+    style_header(ws, 4, ["Mois", "Prevu mensuel (€)", "Prevu cumule (€)",
+                          "Realise mensuel (€)", "Realise cumule (€)", "Ecart (€)"])
+
+    for i in range(1, 13):
+        r = 4 + i
+        ws.cell(row=r, column=1, value="M" + str(i)).alignment = Alignment(horizontal='center')
+        ws.cell(row=r, column=2, value=0).number_format = '#,##0 €'
+        if i == 1:
+            ws.cell(row=r, column=3, value="=B" + str(r))
+        else:
+            ws.cell(row=r, column=3, value="=C" + str(r - 1) + "+B" + str(r))
+        ws.cell(row=r, column=3).number_format = '#,##0 €'
+        ws.cell(row=r, column=4, value=0).number_format = '#,##0 €'
+        if i == 1:
+            ws.cell(row=r, column=5, value="=D" + str(r))
+        else:
+            ws.cell(row=r, column=5, value="=E" + str(r - 1) + "+D" + str(r))
+        ws.cell(row=r, column=5).number_format = '#,##0 €'
+        ws.cell(row=r, column=6, value="=E" + str(r) + "-C" + str(r))
+        ws.cell(row=r, column=6).number_format = '#,##0 €;[Red]-#,##0 €'
+        for col in range(1, 7):
+            ws.cell(row=r, column=col).border = thin_border()
+
+    # Graphique courbe S
+    chart = LineChart()
+    chart.title = "Courbe S : Prevu vs Realise"
+    chart.y_axis.title = 'Cumul € HT'
+    chart.x_axis.title = 'Mois'
+    data = Reference(ws, min_col=3, min_row=4, max_col=3, max_row=16)
+    data2 = Reference(ws, min_col=5, min_row=4, max_col=5, max_row=16)
+    chart.add_data(data, titles_from_data=True)
+    chart.add_data(data2, titles_from_data=True)
+    cats = Reference(ws, min_col=1, min_row=5, max_row=16)
+    chart.set_categories(cats)
+    chart.height = 10
+    chart.width = 18
+    ws.add_chart(chart, "H4")
+
+    # Format conditionnel ecart
+    ws.conditional_formatting.add("F5:F16",
+        ColorScaleRule(start_type='min', start_color=RED,
+                       mid_type='num', mid_value=0, mid_color=WHITE,
+                       end_type='max', end_color=GREEN))
+
+    set_widths(ws, [8, 18, 18, 18, 18, 18])
+
+
+# ============================================================
+# GABARIT 15 : CONVENTION BIM - LOD / RACI
+# ============================================================
+def gabarit_convention_bim(wb):
+    ws = wb.create_sheet("15. Convention BIM")
+
+    style_titre(ws, 'A1:F1', "CONVENTION BIM - LOD & RACI",
+                bg=TURQUOISE, fg=WHITE, taille=15)
+
+    ws['A2'] = "Projet :"
+    ws['A2'].font = Font(bold=True, color=NAVY)
+    ws['B2'] = "[A remplir]"
+
+    # LOD
+    style_sous_titre(ws, 4, 'A4:F4',
+                     "NIVEAUX DE DEVELOPPEMENT (LOD)", bg=ORANGE)
+    style_header(ws, 5, ["Element", "Phase ESQ/APS", "Phase APD",
+                           "Phase PRO", "Phase EXE", "Phase DOE"])
+
+    elements = [
+        "Structure (murs, dalles, poteaux)",
+        "Menuiseries ext. (portes, fenetres)",
+        "Cloisons / Doublages",
+        "Reseaux plomberie",
+        "Reseaux electriques",
+        "CVC (chauffage, ventilation)",
+        "Revetements",
+        "Mobilier / equipements",
+        "Terrain / topographie",
+        "VRD exterieurs",
+    ]
+    lod_defaut = [
+        [200, 300, 350, 400, 500],
+        [200, 300, 350, 400, 500],
+        [100, 200, 300, 350, 400],
+        [100, 200, 300, 400, 500],
+        [100, 200, 300, 400, 500],
+        [100, 200, 300, 400, 500],
+        [100, 200, 300, 350, 400],
+        [100, 100, 200, 300, 400],
+        [200, 200, 300, 300, 300],
+        [100, 200, 300, 350, 400],
+    ]
+
+    for i, (elem, lods) in enumerate(zip(elements, lod_defaut)):
+        r = 6 + i
+        ws.cell(row=r, column=1, value=elem)
+        for j, lod in enumerate(lods):
+            c = ws.cell(row=r, column=2 + j, value="LOD " + str(lod))
+            c.alignment = Alignment(horizontal='center')
+            # Couleur selon LOD
+            if lod <= 200:
+                c.fill = PatternFill("solid", fgColor="DBEAFE")
+            elif lod <= 300:
+                c.fill = PatternFill("solid", fgColor="FEF3C7")
+            elif lod <= 400:
+                c.fill = PatternFill("solid", fgColor="FED7AA")
+            else:
+                c.fill = PatternFill("solid", fgColor="DCFCE7")
+        for col in range(1, 7):
+            ws.cell(row=r, column=col).border = thin_border()
+
+    # RACI
+    start_raci = 6 + len(elements) + 2
+    style_sous_titre(ws, start_raci, 'A' + str(start_raci) + ':F' + str(start_raci),
+                     "MATRICE RACI (R=Responsable A=Accountable C=Consulte I=Informe)",
+                     bg=ORANGE)
+    style_header(ws, start_raci + 1,
+                 ["Tache BIM", "MOA", "MOE archi", "BET struct", "BIM Manager", "Entreprise"])
+
+    taches_raci = [
+        "Definition convention BIM",
+        "Maquette architecturale",
+        "Maquette structure",
+        "Maquette fluides",
+        "Controle qualite maquette",
+        "Synthese / detection de clash",
+        "Extraction quantites",
+        "Maquette DOE",
+        "Plan execution",
+        "Suivi de chantier BIM",
+    ]
+
+    from openpyxl.worksheet.datavalidation import DataValidation
+    dv_raci = DataValidation(type="list", formula1='"R,A,C,I,-"', allow_blank=True)
+
+    for i, tache in enumerate(taches_raci):
+        r = start_raci + 2 + i
+        ws.cell(row=r, column=1, value=tache)
+        for col in range(2, 7):
+            ws.cell(row=r, column=col, value="").alignment = Alignment(horizontal='center')
+            ws.cell(row=r, column=col).border = thin_border()
+        ws.cell(row=r, column=1).border = thin_border()
+
+    dv_raci.add("B" + str(start_raci + 2) + ":F" + str(start_raci + 1 + len(taches_raci)))
+    ws.add_data_validation(dv_raci)
+
+    # Couleurs RACI
+    raci_range = "B" + str(start_raci + 2) + ":F" + str(start_raci + 1 + len(taches_raci))
+    ws.conditional_formatting.add(raci_range,
+        CellIsRule(operator='equal', formula=['"R"'],
+                   fill=PatternFill("solid", fgColor=RED),
+                   font=Font(color=WHITE, bold=True)))
+    ws.conditional_formatting.add(raci_range,
+        CellIsRule(operator='equal', formula=['"A"'],
+                   fill=PatternFill("solid", fgColor=ORANGE),
+                   font=Font(color=WHITE, bold=True)))
+    ws.conditional_formatting.add(raci_range,
+        CellIsRule(operator='equal', formula=['"C"'],
+                   fill=PatternFill("solid", fgColor=YELLOW),
+                   font=Font(bold=True)))
+    ws.conditional_formatting.add(raci_range,
+        CellIsRule(operator='equal', formula=['"I"'],
+                   fill=PatternFill("solid", fgColor=TURQUOISE),
+                   font=Font(color=WHITE, bold=True)))
+
+    set_widths(ws, [35, 12, 12, 12, 14, 14])
+
+
+# ============================================================
 # PAGE GARDE
 # ============================================================
 def page_garde(wb):
@@ -663,6 +1549,16 @@ def page_garde(wb):
         ("3", "Planning chantier", "Gantt 12 mois avec remplissage auto"),
         ("4", "Bilan carbone RE2020", "IC construction, seuils, graphique"),
         ("5", "Controle qualite BIM", "Checklist 30 points, score conformite"),
+        ("6", "Metre detaille", "Calculs L x l x h par ouvrage"),
+        ("7", "DQE estimatif", "Devis quantitatif avec prix mat./pose"),
+        ("8", "Sous-detail de prix", "Etude de prix : materiaux + MO + materiel"),
+        ("9", "Note de synthese", "Rapport de projet en 10 sections"),
+        ("10", "Descente de charges", "G + Q, combinaisons ELU / ELS"),
+        ("11", "Bilan thermique", "Bbio, Cep, Ic - seuils RE2020"),
+        ("12", "Comparatif variantes", "Analyse multicritere ponderee"),
+        ("13", "Registre anomalies BCF", "Suivi des incompatibilites (gravite, statut)"),
+        ("14", "Courbe S", "Avancement financier prevu vs realise"),
+        ("15", "Convention BIM + RACI", "LOD par phase, matrice responsabilites"),
     ]
 
     style_header(ws, 9, ["N°", "Gabarit", "Contenu", ""])
@@ -675,20 +1571,26 @@ def page_garde(wb):
         ws.cell(row=r, column=3, value=contenu)
         for col in range(1, 4):
             ws.cell(row=r, column=col).border = thin_border()
-        ws.row_dimensions[r].height = 26
+        ws.row_dimensions[r].height = 24
 
-    ws['A18'] = "Mode d'emploi :"
-    ws['A18'].font = Font(bold=True, size=12, color=NAVY)
-    ws['A19'] = "1. Completer les champs [A remplir] en en-tete de chaque onglet"
-    ws['A20'] = "2. Saisir les quantites extraites de la maquette eveBIM"
-    ws['A21'] = "3. Les totaux, pourcentages et indicateurs se calculent automatiquement"
-    ws['A22'] = "4. Les graphiques et jauges se mettent a jour en temps reel"
-    ws['A23'] = "5. Imprimer en A4 paysage pour les annexes"
-
-    ws['A25'] = "Astuce examen :"
-    ws['A25'].font = Font(bold=True, size=12, color=ORANGE)
-    ws['A26'] = "Utiliser les scripts 2_extract_quantites.py et 3_generer_dpgf.py pour"
-    ws['A27'] = "remplir automatiquement ces gabarits a partir du fichier IFC."
+    r = 10 + len(gabarits) + 2
+    ws.cell(row=r, column=1, value="Mode d'emploi :").font = Font(bold=True, size=12, color=NAVY)
+    r += 1
+    ws.cell(row=r, column=1, value="1. Completer les champs [A remplir] en en-tete de chaque onglet")
+    r += 1
+    ws.cell(row=r, column=1, value="2. Saisir les quantites extraites de la maquette eveBIM")
+    r += 1
+    ws.cell(row=r, column=1, value="3. Les totaux, pourcentages et indicateurs se calculent automatiquement")
+    r += 1
+    ws.cell(row=r, column=1, value="4. Les graphiques et jauges se mettent a jour en temps reel")
+    r += 1
+    ws.cell(row=r, column=1, value="5. Imprimer en A4 paysage pour les annexes")
+    r += 2
+    ws.cell(row=r, column=1, value="Astuce examen :").font = Font(bold=True, size=12, color=ORANGE)
+    r += 1
+    ws.cell(row=r, column=1, value="Utiliser les scripts 2_extract_quantites.py et 3_generer_dpgf.py")
+    r += 1
+    ws.cell(row=r, column=1, value="pour remplir automatiquement ces gabarits a partir du fichier IFC.")
 
     set_widths(ws, [8, 30, 55, 5])
 
@@ -707,6 +1609,16 @@ def generer_gabarits(dossier_sortie):
     gabarit_planning(wb)
     gabarit_bilan_carbone(wb)
     gabarit_controle_qualite(wb)
+    gabarit_metre(wb)
+    gabarit_dqe(wb)
+    gabarit_sous_detail(wb)
+    gabarit_note_synthese(wb)
+    gabarit_descente_charges(wb)
+    gabarit_bilan_thermique(wb)
+    gabarit_variantes(wb)
+    gabarit_anomalies(wb)
+    gabarit_courbe_s(wb)
+    gabarit_convention_bim(wb)
 
     output = os.path.join(dossier_sortie, "GABARITS_BIM_Examen.xlsx")
 
@@ -719,13 +1631,16 @@ def generer_gabarits(dossier_sortie):
     print("")
     print("[OK] Gabarits generes : " + output)
     print("")
-    print("Contenu :")
+    print("Contenu (15 gabarits) :")
     print("  Sommaire")
-    print("  1. Dashboard projet (KPI + donut chart)")
-    print("  2. DPGF (12 lots + totaux auto)")
-    print("  3. Planning chantier (Gantt 12 mois)")
-    print("  4. Bilan carbone RE2020 (jauges + seuils)")
-    print("  5. Controle qualite BIM (checklist 30 points)")
+    print("  1. Dashboard projet            9. Note de synthese")
+    print("  2. DPGF pro                    10. Descente de charges")
+    print("  3. Planning Gantt              11. Bilan thermique RE2020")
+    print("  4. Bilan carbone RE2020        12. Comparatif variantes")
+    print("  5. Controle qualite BIM        13. Registre anomalies BCF")
+    print("  6. Metre detaille              14. Courbe S")
+    print("  7. DQE estimatif               15. Convention BIM + RACI")
+    print("  8. Sous-detail de prix")
     print("")
     print("Pret a utiliser pour l'examen E6-A BIM.")
 
