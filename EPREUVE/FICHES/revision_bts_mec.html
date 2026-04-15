@@ -5908,6 +5908,299 @@ const FICHES_E1_METHODE = [
   ]},
 ];
 
+// ══════════════════ FICHES BIM E6-A (eveBIM + examens) ══════════════════
+
+const FICHES_BIM = [
+  {id:'bim_intro', title:'E6-A : présentation de l\'épreuve', freq:'ESSENTIEL', sections:[
+    {title:'Format officiel', content:[
+      {type:'alert', color:'blue', text:'E6-A Projet numérique — Étude quantitative · Coeff 4 · AFIP Villeurbanne · 11-13 mai 2026 (3 jours · 08h30-17h00)'},
+      {type:'table', headers:['Critère','Détail'], rows:[
+        ['Durée','3 jours complets (~24h effectives)'],
+        ['Coefficient','4 sur 29 (14% de la note finale)'],
+        ['Logiciel','eveBIM (CSTB) — logiciel gratuit à utiliser pendant l\'épreuve'],
+        ['Support','Maquette IFC + CCTP + FDES + éventuellement nuage de points'],
+        ['Attendu','Uniquement des LIVRABLES (pas de compte-rendu)'],
+        ['Entretien','30 min max avec le jury'],
+      ]},
+    ]},
+    {title:'5 compétences évaluées (Bloc 2 — Unité U61)', content:[
+      {type:'list', items:[
+        'C4 — Établir un relevé d\'ouvrages (depuis nuage de points, croquis, photos)',
+        'C5 — Décomposer l\'ouvrage (lots, ouvrages élémentaires, interfaces)',
+        'C6 — Intervenir sur maquette BIM (enrichir, modifier, extraire, exploiter)',
+        'C7 — Quantifier les ouvrages (métrés, nomenclatures, DPGF, plans de repérage)',
+        'C8 — Bilan carbone (FDES, INIES, calcul IC construction)',
+      ]},
+    ]},
+    {title:'Livrables types attendus', content:[
+      {type:'list', items:[
+        'Tableau de décomposition en lots (Excel ou PDF)',
+        'Quantitatifs détaillés par lot (tableur)',
+        'Cadres DPGF complétés',
+        'Plans de repérage des éléments (PDF annotés)',
+        'Annotations BCF pour anomalies détectées',
+        'Bilan carbone partiel (exports INIES + calcul IC)',
+        'Ratios dimensionnels et économiques (Excel)',
+      ]},
+    ]},
+  ]},
+  {id:'bim_evebim', title:'Guide eveBIM — Interface et commandes', freq:'ESSENTIEL', sections:[
+    {title:'Présentation eveBIM', content:[
+      {type:'alert', color:'green', text:'eveBIM est développé par le CSTB (Centre Scientifique et Technique du Bâtiment). Logiciel GRATUIT, en français, spécialement orienté pour la maîtrise d\'ouvrage, l\'économiste de la construction et l\'analyse de maquettes IFC.'},
+      {type:'list', items:[
+        'Installation : télécharger sur evebim.cstb.fr',
+        'Compatible Windows (fichier .exe)',
+        'Format natif : IFC (2x3 et 4)',
+        'Interface en français (contrairement à Revit/Navisworks)',
+        'Conçu pour ANALYSE et EXPLOITATION (pas modélisation)',
+      ]},
+    ]},
+    {title:'Interface principale — Les 5 zones', content:[
+      {type:'table', headers:['Zone','Position','Usage'], rows:[
+        ['Ruban (menu)','Haut','Fichier, Affichage, Sélection, Extraction, Export'],
+        ['Arborescence projet','Gauche','Hiérarchie IFC : Projet → Site → Bâtiment → Étage → Éléments'],
+        ['Vue 3D','Centre','Navigation : clic droit = rotation, molette = zoom, shift+clic = pan'],
+        ['Propriétés','Droite','Caractéristiques de l\'élément sélectionné (Pset, QTO)'],
+        ['Filtres/Nomenclatures','Bas','Construction des tableaux de quantités'],
+      ]},
+    ]},
+    {title:'Raccourcis clavier essentiels', content:[
+      {type:'table', headers:['Raccourci','Action'], rows:[
+        ['Ctrl + O','Ouvrir un fichier IFC'],
+        ['F2','Zoom sur l\'élément sélectionné'],
+        ['F3','Vue globale (zoom étendu)'],
+        ['F5','Afficher/masquer l\'arborescence'],
+        ['F','Basculer en vue filaire'],
+        ['Ctrl + F','Filtre de recherche'],
+        ['Ctrl + A','Sélectionner tout'],
+        ['Échap','Désélectionner'],
+        ['Delete','Masquer l\'élément sélectionné'],
+        ['Ctrl + Shift + I','Isoler la sélection'],
+      ]},
+    ]},
+    {title:'Fonctions clés pour l\'épreuve', content:[
+      {type:'list', items:[
+        '1. NAVIGATION : Parcourir la maquette par étage / lot / type d\'élément',
+        '2. SÉLECTION PAR FILTRE : Tous les murs porteurs, toutes les dalles R+1...',
+        '3. NOMENCLATURES : Générer un tableau de quantités filtré',
+        '4. EXPORT EXCEL/CSV : Récupérer les quantités pour calcul',
+        '5. ANNOTATIONS BCF : Signaler les anomalies détectées',
+        '6. GESTION DES VUES : Coupes, vues isolées, plans par étage',
+        '7. EXTRACTION QTO : Quantity Take-Off automatique depuis les propriétés IFC',
+        '8. COMPARAISON MAQUETTES : Détecter les écarts entre 2 versions',
+      ]},
+    ]},
+    {title:'Workflow type le jour de l\'épreuve', content:[
+      {type:'code', content:'1. Charger la maquette IFC (Ctrl+O)\n2. Explorer l\'arborescence (comprendre la structure)\n3. Lire le CCTP et noter ce qui est demandé\n4. DÉCOMPOSER : identifier les lots et ouvrages\n5. FILTRER par type (murs, dalles, poteaux...)\n6. GÉNÉRER les nomenclatures (quantités automatiques)\n7. EXPORTER vers Excel\n8. VÉRIFIER cohérence avec le CCTP\n9. ANNOTER les anomalies (BCF)\n10. CONSTITUER les livrables (PDF + Excel)'},
+    ]},
+  ]},
+  {id:'bim_ressources', title:'Ressources IFC et documentation', freq:'À EXPLORER', sections:[
+    {title:'Maquettes IFC de démonstration (gratuites)', content:[
+      {type:'alert', color:'blue', text:'Ces maquettes sont téléchargeables gratuitement et permettent de s\'entraîner sur eveBIM.'},
+      {type:'table', headers:['Source','Type de maquette','Lien / recherche'], rows:[
+        ['buildingSMART','Sample Test Files','buildingsmart.org → IFC samples'],
+        ['buildingSMART Tech','IFC4 sample files','github.com/buildingSMART/Sample-Test-Files'],
+        ['KROQI','Plateforme publique BIM FR','kroqi.fr (inscription gratuite)'],
+        ['openBIM','Datasets et modèles','openbim.com/openbim-data'],
+        ['CSTB','Maquettes pédagogiques','evebim.cstb.fr → Ressources'],
+        ['Nemetschek','Bibliothèque Allplan','connect.graphisoft.com (BIMcloud samples)'],
+      ]},
+    ]},
+    {title:'Documentation officielle', content:[
+      {type:'list', items:[
+        'Site officiel eveBIM : https://evebim.cstb.fr',
+        'Chaîne YouTube CSTB : tutoriels vidéos',
+        'Forum BIM France : échanges communauté',
+        'Mediaconstruct : normes et standards BIM',
+      ]},
+    ]},
+    {title:'Types d\'éléments IFC courants à connaître', content:[
+      {type:'table', headers:['Nom IFC','Correspondance française'], rows:[
+        ['IfcWall / IfcWallStandardCase','Mur (porteur ou cloison)'],
+        ['IfcSlab','Dalle (plancher, toiture-terrasse)'],
+        ['IfcBeam','Poutre'],
+        ['IfcColumn','Poteau'],
+        ['IfcFooting','Fondation (semelle filante, isolée)'],
+        ['IfcPile','Pieu'],
+        ['IfcDoor','Porte'],
+        ['IfcWindow','Fenêtre'],
+        ['IfcCovering','Revêtement (sol, mur, plafond)'],
+        ['IfcRoof','Toiture'],
+        ['IfcStair / IfcRamp','Escalier / Rampe'],
+        ['IfcSpace','Espace (local, pièce)'],
+        ['IfcBuildingStorey','Étage'],
+        ['IfcBuilding','Bâtiment'],
+        ['IfcSite','Site / terrain'],
+      ]},
+    ]},
+    {title:'Propriétés IFC essentielles (Psets et Qtos)', content:[
+      {type:'list', items:[
+        'Pset_WallCommon : propriétés communes des murs (charge, matériau, classification feu)',
+        'Qto_WallBaseQuantities : quantités (longueur, hauteur, volume, surface)',
+        'Pset_SlabCommon / Qto_SlabBaseQuantities : dalles',
+        'Pset_BeamCommon / Qto_BeamBaseQuantities : poutres',
+        'Pset_DoorCommon : portes (dimensions, matériau, acoustique)',
+        'IsExternal : booléen (élément extérieur ou intérieur)',
+        'LoadBearing : booléen (élément porteur ou non)',
+        'FireRating : classement coupe-feu',
+      ]},
+    ]},
+  ]},
+  {id:'bim_examen1', title:'Examen BIM 1 — Gros Œuvre (débutant)', freq:'ENTRAÎNEMENT', sections:[
+    {title:'Contexte', content:[
+      {type:'alert', color:'yellow', text:'Durée recommandée : 6h sur 1 journée · Niveau : débutant · Cible : 14-16/20'},
+      {type:'list', items:[
+        'Type de bâtiment : Maison individuelle R+1',
+        'Surface : ~150 m² SHON',
+        'Support : maquette IFC fournie (format IFC4)',
+        'Logiciel : eveBIM exclusivement',
+        'Documents annexes : CCTP partiel du lot Gros Œuvre',
+      ]},
+    ]},
+    {title:'Consignes détaillées', content:[
+      {type:'code', content:'DOSSIER : Maison_Individuelle_R+1.ifc\n\nVous êtes économiste de la construction. Le\nmaître d\'ouvrage vous a confié la maquette IFC\nd\'une maison individuelle (~150 m² SHON).\n\nVous devez produire les livrables pour la phase\nDCE (Dossier de Consultation des Entreprises).'},
+    ]},
+    {title:'Travail demandé — 5 livrables', content:[
+      {type:'list', items:[
+        '1. DÉCOMPOSITION EN LOTS (Excel)\n   Établir un tableau des 7 lots principaux : Gros Œuvre, Charpente, Couverture, Menuiseries extérieures, Cloisons, Revêtements de sols, Peintures\n   Pour chaque lot : description succincte + liste des ouvrages élémentaires',
+        '2. QUANTITATIF BÉTON ARMÉ (Excel, lot GO)\n   Volume (m³) pour : fondations, murs enterrés, dalles, poteaux, poutres\n   Méthode : extraction eveBIM des éléments IfcFooting, IfcWall (IsExternal=true), IfcSlab, IfcColumn, IfcBeam\n   Export nomenclature → Excel',
+        '3. QUANTITATIF MAÇONNERIE (Excel)\n   Surface (m²) : murs porteurs extérieurs, murs porteurs intérieurs, cloisons\n   Utiliser le filtre LoadBearing et IsExternal',
+        '4. PLAN DE REPÉRAGE (PDF)\n   Capture des vues par étage (RDC + R+1)\n   Annoter les éléments principaux (numéros de référence)\n   Export PDF avec légende',
+        '5. CADRE DPGF (Excel)\n   Pour le lot Gros Œuvre uniquement\n   Colonnes : Code, Désignation, Unité, Quantité, PU HT, Total HT\n   Ne pas remplir les PU (laissés à l\'entreprise)',
+      ]},
+    ]},
+    {title:'Barème indicatif', content:[
+      {type:'table', headers:['Livrable','Points','Critères'], rows:[
+        ['1. Décomposition','3 pts','Exhaustivité · cohérence · interfaces'],
+        ['2. Quantitatif BA','5 pts','Exactitude des m³ · méthode · unités'],
+        ['3. Quantitatif maçonnerie','3 pts','Distinction extérieur/intérieur/cloisons'],
+        ['4. Plan de repérage','4 pts','Lisibilité · annotations · légende'],
+        ['5. Cadre DPGF','5 pts','Structure · codification · complétude'],
+      ]},
+    ]},
+  ]},
+  {id:'bim_examen2', title:'Examen BIM 2 — Logement collectif (intermédiaire)', freq:'ENTRAÎNEMENT', sections:[
+    {title:'Contexte', content:[
+      {type:'alert', color:'yellow', text:'Durée recommandée : 10h sur 2 jours · Niveau : intermédiaire · Cible : 13-15/20'},
+      {type:'list', items:[
+        'Type : Immeuble collectif R+4 — 12 logements',
+        'Surface : ~1200 m² SHON',
+        'Support : maquette IFC + CCTP partiel',
+        'Enjeu : vérification cohérence maquette/CCTP',
+      ]},
+    ]},
+    {title:'Consignes', content:[
+      {type:'code', content:'DOSSIER : Collectif_R+4_12_logements.ifc + CCTP.pdf\n\nLe maître d\'œuvre a livré une maquette IFC que\nvous devez confronter au CCTP fourni.\nPlusieurs incohérences existent : à vous de les\nidentifier et de produire un rapport complet.'},
+    ]},
+    {title:'Travail demandé — 6 livrables', content:[
+      {type:'list', items:[
+        '1. CADRE DPGF COMPLET (Excel) pour 3 lots au choix :\n   - Lot Fondations (pieux, semelles, longrines)\n   - Lot Structure (dalles, poteaux, poutres, voiles)\n   - Lot Façades (murs extérieurs + revêtements)\n   Structure : 15-20 lignes par lot minimum',
+        '2. VÉRIFICATION COHÉRENCE (PDF rapport 2 pages)\n   Identifier minimum 3 écarts entre maquette et CCTP\n   Exemples d\'écarts à chercher : épaisseur de mur, type de fondation, revêtement spécifié vs modélisé, hauteur d\'étage\n   Documenter chaque écart : description + localisation + conséquence',
+        '3. ANNOTATIONS BCF (fichier .bcf)\n   Pour chaque écart identifié : créer une annotation BCF dans eveBIM\n   Titre explicite + description + capture d\'écran + référence CCTP',
+        '4. RATIOS DIMENSIONNELS (Excel)\n   Calculer : m² SHON total, m² de façade total, m³ de béton total, nombre de logements\n   Puis : m² façade/logement, m³ béton/logement, m³ béton/m² SHON',
+        '5. TABLEAU COMPARATIF (Excel)\n   Comparer avec une opération similaire (bibliothèque fournie)\n   Identifier les écarts de ratios > 10% et expliquer',
+        '6. NOTE DE SYNTHÈSE (PDF 1 page)\n   Expliquer la méthode utilisée, les outils eveBIM mobilisés, les difficultés rencontrées, les recommandations au MOE',
+      ]},
+    ]},
+    {title:'Barème', content:[
+      {type:'table', headers:['Livrable','Points'], rows:[
+        ['1. Cadre DPGF 3 lots','6 pts'],
+        ['2. Vérification cohérence','4 pts'],
+        ['3. Annotations BCF','2 pts'],
+        ['4. Ratios dimensionnels','3 pts'],
+        ['5. Tableau comparatif','3 pts'],
+        ['6. Note de synthèse','2 pts'],
+      ]},
+    ]},
+  ]},
+  {id:'bim_examen3', title:'Examen BIM 3 — Projet complet (niveau examen)', freq:'ENTRAÎNEMENT', sections:[
+    {title:'Contexte', content:[
+      {type:'alert', color:'red', text:'Durée : 18h sur 3 jours (EXAMEN RÉEL) · Niveau examen · Cible : 12-14/20'},
+      {type:'list', items:[
+        'Type : Groupe scolaire (école primaire 6 classes)',
+        'Surface : ~900 m² SHON',
+        'Support : maquette IFC + CCTP complet + FDES INIES + fiches produits',
+        'Spécificité : intègre un BILAN CARBONE (axe RE2020)',
+      ]},
+    ]},
+    {title:'Consignes générales', content:[
+      {type:'code', content:'DOSSIER : Ecole_Primaire_6_Classes.ifc + CCTP.pdf\n         + FDES_INIES.xlsx + Fiches_Produits.pdf\n\nLe maître d\'ouvrage (collectivité) vous confie\nl\'étude économique complète + bilan carbone.\nObjectif : comparer 2 solutions d\'isolation\npour choisir la plus vertueuse.'},
+    ]},
+    {title:'Travail demandé — 7 livrables', content:[
+      {type:'list', items:[
+        '1. DÉCOMPOSITION COMPLÈTE EN LOTS (Excel)\n   Arbre complet : lots → sous-lots → ouvrages élémentaires\n   Interfaces entre lots clairement identifiées',
+        '2. MÉTRÉS DÉTAILLÉS (Excel) pour : Terrassement, Gros Œuvre, Menuiseries, Couverture, Isolation\n   Méthode : extraction eveBIM + calculs complémentaires\n   Unités correctes selon les lots',
+        '3. PLANS DE REPÉRAGE (PDF, 1 par lot)\n   Vues isolées par lot depuis eveBIM\n   Annotations des éléments principaux\n   Légendes explicites',
+        '4. CADRE DPGF (Excel) pour lot GO + lot Isolation\n   Structure professionnelle avec codification UNTEC',
+        '5. BILAN CARBONE (Excel + rapport PDF)\n   a. Extraire les FDES des matériaux depuis INIES\n   b. Calculer IC construction (kg CO2 eq/m² SHON)\n   c. Comparer 2 solutions d\'isolation :\n      Option A : Laine de verre 140 mm\n      Option B : Fibre de bois 140 mm\n   d. Préconisation motivée (impact carbone + coût)',
+        '6. RATIOS ÉCONOMIQUES (Excel)\n   Coût/m² SHON par lot (base bibliothèque fournie)\n   Coût/m² de façade, coût/m³ de béton',
+        '7. RAPPORT DE SYNTHÈSE (PDF 2 pages)\n   Méthodologie · Résultats principaux · Préconisations · Recommandations au MOA',
+      ]},
+    ]},
+    {title:'Barème (type examen)', content:[
+      {type:'table', headers:['Livrable','Points'], rows:[
+        ['1. Décomposition complète','2 pts'],
+        ['2. Métrés détaillés','5 pts'],
+        ['3. Plans de repérage','2 pts'],
+        ['4. Cadre DPGF','3 pts'],
+        ['5. Bilan carbone','5 pts'],
+        ['6. Ratios économiques','1 pt'],
+        ['7. Rapport de synthèse','2 pts'],
+      ]},
+    ]},
+    {title:'Entretien avec le jury (30 min)', content:[
+      {type:'alert', color:'blue', text:'À la fin, 30 min d\'entretien avec le jury (1 professionnel + 1-2 professeurs). Attendez-vous à des questions sur vos choix méthodologiques.'},
+      {type:'list', items:[
+        'Pourquoi avez-vous choisi cette décomposition en lots ?',
+        'Quels critères pour comparer les 2 solutions d\'isolation ?',
+        'Comment avez-vous vérifié la cohérence de vos quantités ?',
+        'Quelles difficultés avec eveBIM et comment les avez-vous résolues ?',
+        'Quelles préconisations au maître d\'ouvrage ?',
+      ]},
+    ]},
+  ]},
+  {id:'bim_strategie', title:'Stratégie pour l\'épreuve (3 jours)', freq:'LE JOUR J', sections:[
+    {title:'Gestion des 3 jours', content:[
+      {type:'table', headers:['Jour','Objectif','Temps'], rows:[
+        ['JOUR 1','Analyse + décomposition + premières extractions','6-7h'],
+        ['JOUR 2','Quantités détaillées + bilan carbone + DPGF','7-8h'],
+        ['JOUR 3','Plans de repérage + rapport + entretien','5-6h'],
+      ]},
+      {type:'alert', color:'yellow', text:'Ne pas attendre le jour 3 pour commencer la rédaction du rapport. Rédiger AU FIL de l\'eau.'},
+    ]},
+    {title:'Check-list le matin du jour 1', content:[
+      {type:'list', items:[
+        '[ ] Convocation + pièce d\'identité',
+        '[ ] eveBIM installé et fonctionnel (tester avant le départ)',
+        '[ ] Clé USB (si autorisée)',
+        '[ ] Calculatrice',
+        '[ ] Stylo bleu/noir + surligneur',
+        '[ ] Savoir utiliser Excel avec tableaux croisés dynamiques',
+      ]},
+    ]},
+    {title:'Pièges à éviter', content:[
+      {type:'list', items:[
+        '❌ Passer trop de temps sur la navigation 3D (se limiter à l\'essentiel)',
+        '❌ Oublier de vérifier les unités (m² vs m³ vs ml)',
+        '❌ Ne pas croiser maquette et CCTP (d\'où viennent les écarts)',
+        '❌ Livrer un fichier Excel mal structuré (entêtes absents, formatage chaotique)',
+        '❌ Oublier d\'exporter en PDF (certains jurys ne peuvent pas ouvrir les fichiers natifs)',
+        '❌ Négliger l\'entretien (30 min qui peuvent faire basculer la note)',
+      ]},
+    ]},
+    {title:'Réflexes à avoir', content:[
+      {type:'list', items:[
+        '✅ Toujours nommer ses fichiers clairement : NOM_Livrable_Date.xlsx',
+        '✅ Structurer ses Excel avec entêtes, feuilles nommées, couleurs cohérentes',
+        '✅ Créer une feuille "Synthèse" avec les chiffres clés',
+        '✅ Vérifier les totaux (contrôler 2 fois avant de livrer)',
+        '✅ Documenter sa méthode (1 paragraphe par livrable)',
+        '✅ Sauvegarder régulièrement (Ctrl+S toutes les 15 min)',
+      ]},
+    ]},
+  ]},
+];
+
 const FICHES_E4 = [
   {id:'f01',title:"Marché de Maîtrise d'Œuvre",freq:'3/5',sections:[
     {title:'Composition de l\'équipe MOE',content:[
@@ -14473,6 +14766,7 @@ const Accueil = ({setNav}) => {
       {[
         {label:'E1 Français — Méthode',sub:'Grille officielle · Gabarits · Ortho · Exemples · coeff 4',c:'#dc2626',nav:'fiches_e1'},
         {label:'Examens CGE — Entraînement',sub:'9 sujets complets avec vrais textes longs · 3h chrono',c:'#991b1b',nav:'examens_cge'},
+        {label:'E6-A BIM eveBIM',sub:'Guide eveBIM + ressources IFC + 3 examens d\'entraînement',c:'#f59e0b',nav:'fiches_bim'},
         {label:'Fiches E4',sub:'6 thèmes — Fondations, Acoustique, Thermique…',c:'#3b82f6',nav:'fiches_e4'},
         {label:'Fiches E52',sub:'5 thèmes — Offres, Révision, Décomptes, Rentabilité…',c:'#22c55e',nav:'fiches_e52'},
         {label:'Formules',sub:'Toutes les formules E4 et E52 organisées',c:'#8b5cf6',nav:'formules'},
@@ -14497,8 +14791,8 @@ const Accueil = ({setNav}) => {
   );
 };
 
-const badgeCls = ep => ep==='E4'?'cb-e4':ep==='E52'?'cb-e52':ep==='MATHS'?'cb-maths':ep==='PHYS'?'cb-physique':ep==='CGE'?'cb-francais':ep==='ANG'?'cb-anglais':'cb-e4';
-const epreuveLabel = ep => ({E1:'E1 — Méthode Français (Grille officielle)',MATHS:'Mathématiques B1',PHYS:'Sciences Physiques',CGE:'Français — Culture Générale',ANG:'Anglais LVA'}[ep]||'Fiches '+ep);
+const badgeCls = ep => ep==='E4'?'cb-e4':ep==='E52'?'cb-e52':ep==='BIM'?'cb-physique':ep==='MATHS'?'cb-maths':ep==='PHYS'?'cb-physique':ep==='CGE'?'cb-francais':ep==='ANG'?'cb-anglais':'cb-e4';
+const epreuveLabel = ep => ({E1:'E1 — Méthode Français (Grille officielle)',BIM:'E6-A BIM — eveBIM + 3 examens d\'entraînement',MATHS:'Mathématiques B1',PHYS:'Sciences Physiques',CGE:'Français — Culture Générale',ANG:'Anglais LVA'}[ep]||'Fiches '+ep);
 
 const PrintAllBtn = ({onClick}) => (
   <button onClick={onClick} style={{display:'inline-flex',alignItems:'center',gap:6,padding:'8px 16px',borderRadius:8,border:'1px solid var(--border)',background:'var(--card)',color:'var(--text2)',cursor:'pointer',fontSize:13,fontWeight:600,transition:'all .15s',marginBottom:14}} onMouseOver={e=>e.currentTarget.style.background='var(--nav-hover)'} onMouseOut={e=>e.currentTarget.style.background='var(--card)'}>🖨️ Imprimer tout le contenu</button>
@@ -16990,6 +17284,7 @@ const NAVS = [
   {id:'planning',  label:'Planning',        icon:'📅'},
   {id:'fiches_e1', label:'E1 Français CGE', icon:'🇫🇷'},
   {id:'examens_cge',label:'Examens CGE',   icon:'📝'},
+  {id:'fiches_bim',label:'E6-A BIM eveBIM', icon:'💻'},
   {id:'simulateur',label:'Simulateur Notes',icon:'🎯'},
   {id:'_sep1',     label:'──────────',      icon:''},
   {id:'fiches_maths',    label:'Maths B1',        icon:'🔢',badge:'MATHS'},
@@ -17050,6 +17345,10 @@ const App = () => {
       const examens = (typeof FICHES_FRANCAIS!=='undefined'?FICHES_FRANCAIS:[]).filter(f=>f.id.match(/^fr(07|1[2-9])$/));
       if(fiche) return <FicheDetail fiche={fiche} epreuve="CGE" onBack={()=>setFiche(null)}/>;
       return <FichesList fiches={examens} epreuve="CGE" onSelect={setFiche} onBack={()=>{setFiche(null);handleNav('accueil')}}/>;
+    }
+    if(nav==='fiches_bim'){
+      if(fiche) return <FicheDetail fiche={fiche} epreuve="BIM" onBack={()=>setFiche(null)}/>;
+      return <FichesList fiches={FICHES_BIM} epreuve="BIM" onSelect={setFiche} onBack={()=>{setFiche(null);handleNav('accueil')}}/>;
     }
     if(nav==='fiches_e4'){
       if(fiche) return <FicheDetail fiche={fiche} epreuve="E4" onBack={()=>setFiche(null)}/>;
