@@ -1,20 +1,67 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-1_analyse_ifc.py — Analyser la structure d'une maquette IFC
+1_analyse_ifc.py - Analyser la structure d'une maquette IFC
 Usage : python 1_analyse_ifc.py chemin/vers/maquette.ifc
-
-Produit : rapport texte avec :
-  - Informations generales (projet, site, batiment)
-  - Nombre d'elements par type
-  - Etages et espaces
-  - Arborescence simplifiee
 """
 import sys
 import os
-from collections import Counter
+
+# Force UTF-8 output on Windows
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
 
 
-def analyser_ifc(chemin_ifc: str):
+def get_psets_safe(element):
+    """Recupere les Psets d'un element sans dependre de ifcopenshell.util."""
+    psets = {}
+    try:
+        for rel in element.IsDefinedBy or []:
+            if rel.is_a('IfcRelDefinesByProperties'):
+                pset = rel.RelatingPropertyDefinition
+                if pset.is_a('IfcPropertySet'):
+                    props = {}
+                    for prop in pset.HasProperties or []:
+                        if prop.is_a('IfcPropertySingleValue') and prop.NominalValue:
+                            props[prop.Name] = prop.NominalValue.wrappedValue
+                    psets[pset.Name] = props
+                elif pset.is_a('IfcElementQuantity'):
+                    props = {}
+                    for q in pset.Quantities or []:
+                        try:
+                            if q.is_a('IfcQuantityLength'):
+                                props[q.Name] = q.LengthValue
+                            elif q.is_a('IfcQuantityArea'):
+                                props[q.Name] = q.AreaValue
+                            elif q.is_a('IfcQuantityVolume'):
+                                props[q.Name] = q.VolumeValue
+                            elif q.is_a('IfcQuantityCount'):
+                                props[q.Name] = q.CountValue
+                            elif q.is_a('IfcQuantityWeight'):
+                                props[q.Name] = q.WeightValue
+                        except Exception:
+                            pass
+                    psets[pset.Name] = props
+    except Exception:
+        pass
+    return psets
+
+
+def get_container_safe(element):
+    """Trouve le conteneur (etage) d'un element."""
+    try:
+        for rel in element.ContainedInStructure or []:
+            return rel.RelatingStructure
+    except Exception:
+        pass
+    return None
+
+
+def analyser_ifc(chemin_ifc):
     try:
         import ifcopenshell
     except ImportError:
@@ -23,45 +70,54 @@ def analyser_ifc(chemin_ifc: str):
         sys.exit(1)
 
     if not os.path.exists(chemin_ifc):
-        print(f"[ERREUR] Fichier introuvable : {chemin_ifc}")
+        print("[ERREUR] Fichier introuvable : " + chemin_ifc)
         sys.exit(1)
 
-    print(f"\n{'=' * 60}")
-    print(f"ANALYSE IFC : {os.path.basename(chemin_ifc)}")
-    print(f"{'=' * 60}\n")
+    print("")
+    print("=" * 60)
+    print("ANALYSE IFC : " + os.path.basename(chemin_ifc))
+    print("=" * 60)
+    print("")
 
-    # Charger la maquette
-    model = ifcopenshell.open(chemin_ifc)
+    try:
+        model = ifcopenshell.open(chemin_ifc)
+    except Exception as e:
+        print("[ERREUR] Impossible d'ouvrir le fichier IFC : " + str(e))
+        sys.exit(1)
 
     # Informations generales
-    projet = model.by_type("IfcProject")
-    if projet:
-        p = projet[0]
-        print(f"Projet        : {p.Name or '(sans nom)'}")
-        print(f"Description   : {p.Description or '(aucune)'}")
-        print(f"Schema IFC    : {model.schema}")
+    projets = model.by_type("IfcProject")
+    if projets:
+        p = projets[0]
+        print("Projet        : " + str(p.Name or "(sans nom)"))
+        print("Description   : " + str(p.Description or "(aucune)"))
+        print("Schema IFC    : " + model.schema)
 
     sites = model.by_type("IfcSite")
     if sites:
-        print(f"\nSite          : {sites[0].Name or '(sans nom)'}")
+        print("Site          : " + str(sites[0].Name or "(sans nom)"))
 
     batiments = model.by_type("IfcBuilding")
     for b in batiments:
-        print(f"Batiment      : {b.Name or '(sans nom)'}")
+        print("Batiment      : " + str(b.Name or "(sans nom)"))
 
     etages = model.by_type("IfcBuildingStorey")
-    print(f"\nETAGES ({len(etages)}) :")
+    print("")
+    print("ETAGES (%d) :" % len(etages))
     for e in etages:
-        elev = getattr(e, 'Elevation', 'N/C')
-        print(f"  - {e.Name or '(sans nom)':20s} altitude = {elev}")
+        elev = getattr(e, 'Elevation', None)
+        elev_str = str(elev) if elev is not None else "N/C"
+        print("  - " + str(e.Name or "(sans nom)").ljust(20) + " altitude = " + elev_str)
 
     espaces = model.by_type("IfcSpace")
-    print(f"\nESPACES/LOCAUX : {len(espaces)}")
+    print("")
+    print("ESPACES/LOCAUX : %d" % len(espaces))
 
-    # Compter les elements par type
-    print(f"\n{'=' * 60}")
+    # Inventaire
+    print("")
+    print("=" * 60)
     print("INVENTAIRE DES ELEMENTS")
-    print(f"{'=' * 60}")
+    print("=" * 60)
 
     types_a_compter = [
         ("IfcWall", "Murs (tous)"),
@@ -83,61 +139,79 @@ def analyser_ifc(chemin_ifc: str):
         ("IfcSanitaryTerminal", "Sanitaires"),
     ]
 
-    print(f"\n{'Type':35s} {'Nombre':>8s}")
+    print("")
+    print("%-35s %8s" % ("Type", "Nombre"))
     print("-" * 45)
     total = 0
     for type_ifc, label in types_a_compter:
-        elements = model.by_type(type_ifc)
-        nb = len(elements)
-        if nb > 0:
-            print(f"{label:35s} {nb:>8d}")
-            if not label.startswith("  "):
-                total += nb
+        try:
+            elements = model.by_type(type_ifc)
+            nb = len(elements)
+            if nb > 0:
+                print("%-35s %8d" % (label, nb))
+                if not label.startswith("  "):
+                    total += nb
+        except Exception:
+            pass
 
     print("-" * 45)
-    print(f"{'TOTAL (hors sous-categories)':35s} {total:>8d}")
+    print("%-35s %8d" % ("TOTAL (hors sous-categories)", total))
 
-    # Materiaux utilises
-    materiaux = model.by_type("IfcMaterial")
-    if materiaux:
-        print(f"\n{'=' * 60}")
-        print(f"MATERIAUX ({len(materiaux)})")
-        print(f"{'=' * 60}")
-        for m in sorted(materiaux, key=lambda x: x.Name or ''):
-            if m.Name:
-                print(f"  - {m.Name}")
+    # Materiaux
+    try:
+        materiaux = model.by_type("IfcMaterial")
+        if materiaux:
+            print("")
+            print("=" * 60)
+            print("MATERIAUX (%d)" % len(materiaux))
+            print("=" * 60)
+            noms = sorted([m.Name for m in materiaux if m.Name])
+            for n in noms:
+                print("  - " + n)
+    except Exception:
+        pass
 
-    # Elements porteurs vs non porteurs
-    print(f"\n{'=' * 60}")
+    # Classification structurelle
+    print("")
+    print("=" * 60)
     print("CLASSIFICATION STRUCTURELLE")
-    print(f"{'=' * 60}")
+    print("=" * 60)
 
     murs = model.by_type("IfcWall")
     porteurs = 0
     non_porteurs = 0
     exterieurs = 0
     interieurs = 0
+    inconnus = 0
+
     for mur in murs:
-        psets = ifcopenshell.util.element.get_psets(mur) if hasattr(ifcopenshell, 'util') else {}
+        psets = get_psets_safe(mur)
         common = psets.get('Pset_WallCommon', {})
-        if common.get('LoadBearing'):
+        lb = common.get('LoadBearing')
+        ie = common.get('IsExternal')
+        if lb is True:
             porteurs += 1
-        else:
+        elif lb is False:
             non_porteurs += 1
-        if common.get('IsExternal'):
-            exterieurs += 1
         else:
+            inconnus += 1
+        if ie is True:
+            exterieurs += 1
+        elif ie is False:
             interieurs += 1
 
     if murs:
-        print(f"  Murs porteurs      : {porteurs}")
-        print(f"  Murs non porteurs  : {non_porteurs}")
-        print(f"  Murs exterieurs    : {exterieurs}")
-        print(f"  Murs interieurs    : {interieurs}")
+        print("  Murs porteurs      : %d" % porteurs)
+        print("  Murs non porteurs  : %d" % non_porteurs)
+        print("  Murs classification inconnue : %d" % inconnus)
+        print("  Murs exterieurs    : %d" % exterieurs)
+        print("  Murs interieurs    : %d" % interieurs)
 
-    print(f"\n{'=' * 60}")
+    print("")
+    print("=" * 60)
     print("Analyse terminee")
-    print(f"{'=' * 60}\n")
+    print("=" * 60)
+    print("")
 
 
 if __name__ == "__main__":

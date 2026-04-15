@@ -1,53 +1,45 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-2_extract_quantites.py — Extraire les quantites d'une maquette IFC vers Excel
+2_extract_quantites.py - Extraire les quantites vers Excel
 Usage : python 2_extract_quantites.py chemin/vers/maquette.ifc
-
-Produit : fichier Excel avec plusieurs feuilles :
-  - Murs (surface, volume, longueur, porteur/non-porteur, ext/int)
-  - Dalles (surface, volume, epaisseur, etage)
-  - Poteaux (volume, hauteur, etage)
-  - Poutres (volume, longueur, etage)
-  - Fondations (type, volume)
-  - Portes et fenetres (dimensions, comptage)
-  - Synthese (totaux par lot)
 """
 import sys
 import os
-from collections import defaultdict
+
+from _utils import (setup_encoding, check_dependencies, get_psets,
+                    get_pset_value, get_etage, get_material,
+                    safe_volume, safe_area, safe_length, safe_height)
+
+setup_encoding()
+check_dependencies()
+
+import ifcopenshell
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
 
-def extraire_quantites(chemin_ifc: str):
-    try:
-        import ifcopenshell
-        import ifcopenshell.util.element
-        from openpyxl import Workbook
-        from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-    except ImportError as e:
-        print(f"[ERREUR] Bibliotheque manquante : {e}")
-        print("Lancez : pip install -r requirements.txt")
-        sys.exit(1)
-
+def extraire_quantites(chemin_ifc):
     if not os.path.exists(chemin_ifc):
-        print(f"[ERREUR] Fichier introuvable : {chemin_ifc}")
+        print("[ERREUR] Fichier introuvable : " + chemin_ifc)
         sys.exit(1)
 
-    print(f"\nExtraction des quantites : {os.path.basename(chemin_ifc)}")
-    model = ifcopenshell.open(chemin_ifc)
+    print("")
+    print("Extraction des quantites : " + os.path.basename(chemin_ifc))
+    print("")
 
-    # Workbook Excel
+    try:
+        model = ifcopenshell.open(chemin_ifc)
+    except Exception as e:
+        print("[ERREUR] " + str(e))
+        sys.exit(1)
+
     wb = Workbook()
     wb.remove(wb.active)
 
     # Styles
     header_font = Font(bold=True, color="FFFFFF", size=11)
     header_fill = PatternFill("solid", fgColor="1E3A5F")
-    border = Border(
-        left=Side(style='thin', color='CCCCCC'),
-        right=Side(style='thin', color='CCCCCC'),
-        top=Side(style='thin', color='CCCCCC'),
-        bottom=Side(style='thin', color='CCCCCC')
-    )
 
     def style_header(ws, headers):
         for i, h in enumerate(headers, 1):
@@ -56,106 +48,73 @@ def extraire_quantites(chemin_ifc: str):
             cell.font = header_font
             cell.fill = header_fill
             cell.alignment = Alignment(horizontal='center')
-            cell.border = border
 
-    def get_qto(element, prop_name):
-        """Extrait une quantite depuis les QuantitySets IFC."""
-        psets = ifcopenshell.util.element.get_psets(element, qtos_only=True)
-        for qto_name, props in psets.items():
-            if prop_name in props:
-                return props[prop_name]
-        return None
+    def ajuster_largeurs(ws, widths):
+        for i, w in enumerate(widths, 1):
+            letter = chr(64 + i) if i <= 26 else "A" + chr(64 + i - 26)
+            ws.column_dimensions[letter].width = w
 
-    def get_pset_value(element, pset_name, prop_name):
-        psets = ifcopenshell.util.element.get_psets(element)
-        return psets.get(pset_name, {}).get(prop_name)
-
-    def get_etage(element):
-        """Trouve l'etage d'un element."""
-        storey = ifcopenshell.util.element.get_container(element)
-        if storey and storey.is_a('IfcBuildingStorey'):
-            return storey.Name or 'N/C'
-        return 'N/C'
-
-    # =========================================================
-    # FEUILLE 1 : MURS
-    # =========================================================
+    # ===== MURS =====
     ws = wb.create_sheet("Murs")
     style_header(ws, ["Nom", "Type", "Etage", "Longueur (m)", "Hauteur (m)",
                       "Surface (m²)", "Volume (m³)", "Porteur", "Exterieur", "Materiau"])
 
     murs = model.by_type("IfcWall")
     row = 2
-    total_vol_mur = 0
-    total_surf_mur = 0
+    total_vol_mur = 0.0
+    total_surf_mur = 0.0
+
     for m in murs:
-        longueur = get_qto(m, 'Length') or 0
-        hauteur = get_qto(m, 'Height') or 0
-        surface = get_qto(m, 'NetSideArea') or get_qto(m, 'GrossSideArea') or 0
-        volume = get_qto(m, 'NetVolume') or get_qto(m, 'GrossVolume') or 0
+        longueur = safe_length(m)
+        hauteur = safe_height(m)
+        surface = safe_area(m)
+        volume = safe_volume(m)
         porteur = get_pset_value(m, 'Pset_WallCommon', 'LoadBearing')
         exterieur = get_pset_value(m, 'Pset_WallCommon', 'IsExternal')
+        materiau = get_material(model, m)
 
-        # Materiau
-        materiau = ''
-        try:
-            for rel in model.by_type('IfcRelAssociatesMaterial'):
-                if m in rel.RelatedObjects:
-                    mat = rel.RelatingMaterial
-                    if hasattr(mat, 'Name'):
-                        materiau = mat.Name or ''
-                        break
-        except:
-            pass
-
-        ws.cell(row=row, column=1, value=m.Name or f"Mur_{m.id()}")
+        ws.cell(row=row, column=1, value=m.Name or ("Mur_" + str(m.id())))
         ws.cell(row=row, column=2, value=m.is_a())
         ws.cell(row=row, column=3, value=get_etage(m))
         ws.cell(row=row, column=4, value=round(longueur, 3))
         ws.cell(row=row, column=5, value=round(hauteur, 3))
         ws.cell(row=row, column=6, value=round(surface, 3))
         ws.cell(row=row, column=7, value=round(volume, 3))
-        ws.cell(row=row, column=8, value="Oui" if porteur else "Non")
-        ws.cell(row=row, column=9, value="Oui" if exterieur else "Non")
+        ws.cell(row=row, column=8, value="Oui" if porteur else "Non" if porteur is False else "?")
+        ws.cell(row=row, column=9, value="Oui" if exterieur else "Non" if exterieur is False else "?")
         ws.cell(row=row, column=10, value=materiau)
         total_vol_mur += volume
         total_surf_mur += surface
         row += 1
 
-    # Ligne de totaux
     ws.cell(row=row, column=1, value="TOTAL").font = Font(bold=True)
     ws.cell(row=row, column=6, value=round(total_surf_mur, 2)).font = Font(bold=True)
     ws.cell(row=row, column=7, value=round(total_vol_mur, 2)).font = Font(bold=True)
-    for col in range(1, 11):
-        ws.column_dimensions[chr(64 + col)].width = 15
+    ajuster_largeurs(ws, [20, 20, 12, 12, 12, 14, 14, 10, 10, 20])
 
-    print(f"  Murs         : {len(murs)} ({total_vol_mur:.2f} m³, {total_surf_mur:.2f} m²)")
+    print("  Murs         : %d elements, %.2f m3, %.2f m2" %
+          (len(murs), total_vol_mur, total_surf_mur))
 
-    # =========================================================
-    # FEUILLE 2 : DALLES
-    # =========================================================
+    # ===== DALLES =====
     ws = wb.create_sheet("Dalles")
-    style_header(ws, ["Nom", "Type", "Etage", "Surface (m²)", "Volume (m³)",
-                      "Epaisseur (m)", "Porteur", "Materiau"])
+    style_header(ws, ["Nom", "Type", "Etage", "Surface (m²)", "Volume (m³)", "Epaisseur (m)"])
 
     dalles = model.by_type("IfcSlab")
     row = 2
-    total_vol_dalle = 0
-    total_surf_dalle = 0
-    for d in dalles:
-        surface = get_qto(d, 'NetArea') or get_qto(d, 'GrossArea') or 0
-        volume = get_qto(d, 'NetVolume') or get_qto(d, 'GrossVolume') or 0
-        epaisseur = get_qto(d, 'Depth') or 0
-        porteur = get_pset_value(d, 'Pset_SlabCommon', 'LoadBearing')
-        pred = get_pset_value(d, 'Pset_SlabCommon', 'PredefinedType') or ''
+    total_vol_dalle = 0.0
+    total_surf_dalle = 0.0
 
-        ws.cell(row=row, column=1, value=d.Name or f"Dalle_{d.id()}")
-        ws.cell(row=row, column=2, value=pred or d.is_a())
+    for d in dalles:
+        surface = safe_area(d)
+        volume = safe_volume(d)
+        epaisseur = (surface > 0 and volume > 0) and (volume / surface) or 0
+
+        ws.cell(row=row, column=1, value=d.Name or ("Dalle_" + str(d.id())))
+        ws.cell(row=row, column=2, value=getattr(d, 'PredefinedType', '') or d.is_a())
         ws.cell(row=row, column=3, value=get_etage(d))
         ws.cell(row=row, column=4, value=round(surface, 3))
         ws.cell(row=row, column=5, value=round(volume, 3))
         ws.cell(row=row, column=6, value=round(epaisseur, 3))
-        ws.cell(row=row, column=7, value="Oui" if porteur else "Non")
         total_vol_dalle += volume
         total_surf_dalle += surface
         row += 1
@@ -163,82 +122,72 @@ def extraire_quantites(chemin_ifc: str):
     ws.cell(row=row, column=1, value="TOTAL").font = Font(bold=True)
     ws.cell(row=row, column=4, value=round(total_surf_dalle, 2)).font = Font(bold=True)
     ws.cell(row=row, column=5, value=round(total_vol_dalle, 2)).font = Font(bold=True)
-    for col in range(1, 9):
-        ws.column_dimensions[chr(64 + col)].width = 15
+    ajuster_largeurs(ws, [20, 15, 12, 14, 14, 14])
 
-    print(f"  Dalles       : {len(dalles)} ({total_vol_dalle:.2f} m³, {total_surf_dalle:.2f} m²)")
+    print("  Dalles       : %d elements, %.2f m3, %.2f m2" %
+          (len(dalles), total_vol_dalle, total_surf_dalle))
 
-    # =========================================================
-    # FEUILLE 3 : POTEAUX
-    # =========================================================
+    # ===== POTEAUX =====
     ws = wb.create_sheet("Poteaux")
-    style_header(ws, ["Nom", "Etage", "Hauteur (m)", "Volume (m³)", "Section"])
+    style_header(ws, ["Nom", "Etage", "Hauteur (m)", "Volume (m³)"])
 
     poteaux = model.by_type("IfcColumn")
     row = 2
-    total_vol_pot = 0
-    for p in poteaux:
-        hauteur = get_qto(p, 'Length') or 0
-        volume = get_qto(p, 'NetVolume') or get_qto(p, 'GrossVolume') or 0
-        section = get_qto(p, 'CrossSectionArea') or 0
+    total_vol_pot = 0.0
 
-        ws.cell(row=row, column=1, value=p.Name or f"Poteau_{p.id()}")
+    for p in poteaux:
+        hauteur = safe_length(p) or safe_height(p)
+        volume = safe_volume(p)
+
+        ws.cell(row=row, column=1, value=p.Name or ("Poteau_" + str(p.id())))
         ws.cell(row=row, column=2, value=get_etage(p))
         ws.cell(row=row, column=3, value=round(hauteur, 3))
         ws.cell(row=row, column=4, value=round(volume, 3))
-        ws.cell(row=row, column=5, value=round(section, 4))
         total_vol_pot += volume
         row += 1
 
     ws.cell(row=row, column=1, value="TOTAL").font = Font(bold=True)
     ws.cell(row=row, column=4, value=round(total_vol_pot, 2)).font = Font(bold=True)
-    for col in range(1, 6):
-        ws.column_dimensions[chr(64 + col)].width = 15
+    ajuster_largeurs(ws, [20, 12, 14, 14])
 
-    print(f"  Poteaux      : {len(poteaux)} ({total_vol_pot:.2f} m³)")
+    print("  Poteaux      : %d elements, %.2f m3" % (len(poteaux), total_vol_pot))
 
-    # =========================================================
-    # FEUILLE 4 : POUTRES
-    # =========================================================
+    # ===== POUTRES =====
     ws = wb.create_sheet("Poutres")
-    style_header(ws, ["Nom", "Etage", "Longueur (m)", "Volume (m³)", "Section"])
+    style_header(ws, ["Nom", "Etage", "Longueur (m)", "Volume (m³)"])
 
     poutres = model.by_type("IfcBeam")
     row = 2
-    total_vol_pou = 0
-    for p in poutres:
-        longueur = get_qto(p, 'Length') or 0
-        volume = get_qto(p, 'NetVolume') or get_qto(p, 'GrossVolume') or 0
-        section = get_qto(p, 'CrossSectionArea') or 0
+    total_vol_pou = 0.0
 
-        ws.cell(row=row, column=1, value=p.Name or f"Poutre_{p.id()}")
+    for p in poutres:
+        longueur = safe_length(p)
+        volume = safe_volume(p)
+
+        ws.cell(row=row, column=1, value=p.Name or ("Poutre_" + str(p.id())))
         ws.cell(row=row, column=2, value=get_etage(p))
         ws.cell(row=row, column=3, value=round(longueur, 3))
         ws.cell(row=row, column=4, value=round(volume, 3))
-        ws.cell(row=row, column=5, value=round(section, 4))
         total_vol_pou += volume
         row += 1
 
     ws.cell(row=row, column=1, value="TOTAL").font = Font(bold=True)
     ws.cell(row=row, column=4, value=round(total_vol_pou, 2)).font = Font(bold=True)
-    for col in range(1, 6):
-        ws.column_dimensions[chr(64 + col)].width = 15
+    ajuster_largeurs(ws, [20, 12, 14, 14])
 
-    print(f"  Poutres      : {len(poutres)} ({total_vol_pou:.2f} m³)")
+    print("  Poutres      : %d elements, %.2f m3" % (len(poutres), total_vol_pou))
 
-    # =========================================================
-    # FEUILLE 5 : FONDATIONS
-    # =========================================================
+    # ===== FONDATIONS =====
     ws = wb.create_sheet("Fondations")
     style_header(ws, ["Nom", "Type", "Volume (m³)"])
 
     fondations = model.by_type("IfcFooting") + model.by_type("IfcPile")
     row = 2
-    total_vol_fond = 0
-    for f in fondations:
-        volume = get_qto(f, 'NetVolume') or get_qto(f, 'GrossVolume') or 0
+    total_vol_fond = 0.0
 
-        ws.cell(row=row, column=1, value=f.Name or f"Fondation_{f.id()}")
+    for f in fondations:
+        volume = safe_volume(f)
+        ws.cell(row=row, column=1, value=f.Name or ("Fondation_" + str(f.id())))
         ws.cell(row=row, column=2, value=f.is_a())
         ws.cell(row=row, column=3, value=round(volume, 3))
         total_vol_fond += volume
@@ -246,14 +195,11 @@ def extraire_quantites(chemin_ifc: str):
 
     ws.cell(row=row, column=1, value="TOTAL").font = Font(bold=True)
     ws.cell(row=row, column=3, value=round(total_vol_fond, 2)).font = Font(bold=True)
-    for col in range(1, 4):
-        ws.column_dimensions[chr(64 + col)].width = 18
+    ajuster_largeurs(ws, [25, 20, 14])
 
-    print(f"  Fondations   : {len(fondations)} ({total_vol_fond:.2f} m³)")
+    print("  Fondations   : %d elements, %.2f m3" % (len(fondations), total_vol_fond))
 
-    # =========================================================
-    # FEUILLE 6 : PORTES / FENETRES
-    # =========================================================
+    # ===== MENUISERIES =====
     ws = wb.create_sheet("Menuiseries")
     style_header(ws, ["Type", "Nom", "Etage", "Largeur (m)", "Hauteur (m)", "Surface (m²)"])
 
@@ -262,11 +208,17 @@ def extraire_quantites(chemin_ifc: str):
     nb_fenetres = 0
 
     for p in model.by_type("IfcDoor"):
+        largeur = getattr(p, 'OverallWidth', None) or 0
+        hauteur = getattr(p, 'OverallHeight', None) or 0
+        try:
+            largeur = float(largeur)
+            hauteur = float(hauteur)
+        except Exception:
+            largeur, hauteur = 0, 0
+
         ws.cell(row=row, column=1, value="Porte")
-        ws.cell(row=row, column=2, value=p.Name or f"Porte_{p.id()}")
+        ws.cell(row=row, column=2, value=p.Name or ("Porte_" + str(p.id())))
         ws.cell(row=row, column=3, value=get_etage(p))
-        largeur = getattr(p, 'OverallWidth', 0) or 0
-        hauteur = getattr(p, 'OverallHeight', 0) or 0
         ws.cell(row=row, column=4, value=round(largeur, 3))
         ws.cell(row=row, column=5, value=round(hauteur, 3))
         ws.cell(row=row, column=6, value=round(largeur * hauteur, 3))
@@ -274,28 +226,31 @@ def extraire_quantites(chemin_ifc: str):
         row += 1
 
     for f in model.by_type("IfcWindow"):
+        largeur = getattr(f, 'OverallWidth', None) or 0
+        hauteur = getattr(f, 'OverallHeight', None) or 0
+        try:
+            largeur = float(largeur)
+            hauteur = float(hauteur)
+        except Exception:
+            largeur, hauteur = 0, 0
+
         ws.cell(row=row, column=1, value="Fenetre")
-        ws.cell(row=row, column=2, value=f.Name or f"Fenetre_{f.id()}")
+        ws.cell(row=row, column=2, value=f.Name or ("Fenetre_" + str(f.id())))
         ws.cell(row=row, column=3, value=get_etage(f))
-        largeur = getattr(f, 'OverallWidth', 0) or 0
-        hauteur = getattr(f, 'OverallHeight', 0) or 0
         ws.cell(row=row, column=4, value=round(largeur, 3))
         ws.cell(row=row, column=5, value=round(hauteur, 3))
         ws.cell(row=row, column=6, value=round(largeur * hauteur, 3))
         nb_fenetres += 1
         row += 1
 
-    for col in range(1, 7):
-        ws.column_dimensions[chr(64 + col)].width = 15
+    ajuster_largeurs(ws, [10, 20, 12, 12, 12, 12])
 
-    print(f"  Portes       : {nb_portes}")
-    print(f"  Fenetres     : {nb_fenetres}")
+    print("  Portes       : %d" % nb_portes)
+    print("  Fenetres     : %d" % nb_fenetres)
 
-    # =========================================================
-    # FEUILLE 7 : SYNTHESE
-    # =========================================================
-    ws = wb.create_sheet("Synthese", 0)  # En premiere position
-    ws['A1'] = "SYNTHESE QUANTITATIVE - Lot Gros Oeuvre"
+    # ===== SYNTHESE (en premiere position) =====
+    ws = wb.create_sheet("Synthese", 0)
+    ws['A1'] = "SYNTHESE QUANTITATIVE"
     ws['A1'].font = Font(bold=True, size=14, color="1E3A5F")
     ws.merge_cells('A1:D1')
 
@@ -308,16 +263,16 @@ def extraire_quantites(chemin_ifc: str):
 
     data = [
         ("Fondations (toutes)", "m³", round(total_vol_fond, 2), "Semelles + pieux"),
-        ("Murs (volume beton)", "m³", round(total_vol_mur, 2), f"{len(murs)} murs"),
-        ("Murs (surface)", "m²", round(total_surf_mur, 2), ""),
-        ("Dalles (volume beton)", "m³", round(total_vol_dalle, 2), f"{len(dalles)} dalles"),
-        ("Dalles (surface)", "m²", round(total_surf_dalle, 2), ""),
-        ("Poteaux (volume beton)", "m³", round(total_vol_pot, 2), f"{len(poteaux)} poteaux"),
-        ("Poutres (volume beton)", "m³", round(total_vol_pou, 2), f"{len(poutres)} poutres"),
+        ("Murs - volume beton", "m³", round(total_vol_mur, 2), str(len(murs)) + " murs"),
+        ("Murs - surface", "m²", round(total_surf_mur, 2), ""),
+        ("Dalles - volume", "m³", round(total_vol_dalle, 2), str(len(dalles)) + " dalles"),
+        ("Dalles - surface", "m²", round(total_surf_dalle, 2), ""),
+        ("Poteaux - volume", "m³", round(total_vol_pot, 2), str(len(poteaux)) + " poteaux"),
+        ("Poutres - volume", "m³", round(total_vol_pou, 2), str(len(poutres)) + " poutres"),
         ("", "", "", ""),
         ("TOTAL BETON ARME", "m³",
          round(total_vol_fond + total_vol_mur + total_vol_dalle + total_vol_pot + total_vol_pou, 2),
-         "Somme (verification visuelle requise)"),
+         "Somme - verification visuelle requise"),
         ("", "", "", ""),
         ("Portes", "U", nb_portes, ""),
         ("Fenetres", "U", nb_fenetres, ""),
@@ -333,15 +288,20 @@ def extraire_quantites(chemin_ifc: str):
                 ws.cell(row=i, column=col).font = Font(bold=True)
                 ws.cell(row=i, column=col).fill = PatternFill("solid", fgColor="FEF3C7")
 
-    for col, width in enumerate([30, 10, 15, 35], 1):
-        ws.column_dimensions[chr(64 + col)].width = width
+    ajuster_largeurs(ws, [30, 10, 15, 35])
 
     # Sauvegarder
     base = os.path.splitext(chemin_ifc)[0]
     output = base + "_quantites.xlsx"
-    wb.save(output)
 
-    print(f"\n[OK] Fichier genere : {output}")
+    try:
+        wb.save(output)
+    except Exception as e:
+        print("[ERREUR] Impossible d'ecrire le fichier Excel : " + str(e))
+        sys.exit(1)
+
+    print("")
+    print("[OK] Fichier genere : " + output)
 
 
 if __name__ == "__main__":
