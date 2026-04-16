@@ -200,6 +200,11 @@ pre.formula-code{font-family:'Courier New',monospace;font-size:12px;background:v
 .alert-green{background:var(--alert-g);border-left-color:#22c55e;color:var(--alert-gc)}
 .alert-blue{background:var(--alert-b);border-left-color:#3b82f6;color:var(--alert-bc)}
 .alert-yellow{background:var(--alert-y);border-left-color:#f59e0b;color:var(--alert-yc)}
+.fiche-image{margin:14px 0;text-align:center;break-inside:avoid}
+.fiche-image img{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.fiche-image figcaption{font-size:12px;color:var(--text3);margin-top:8px;font-style:italic;line-height:1.5}
+.fiche-image-credit{font-size:11px;color:var(--text3);opacity:.7}
+@media print{.fiche-image img{max-height:300px;object-fit:contain}}
 .formula-ref{background:var(--alert-b);border-radius:8px;padding:12px 14px;margin:8px 0;border-left:3px solid #3b82f6}
 .formula-ref div{font-family:'Courier New',monospace;font-size:12.5px;color:var(--alert-gc);line-height:1.9}
 
@@ -5907,6 +5912,327 @@ const FICHES_E1_METHODE = [
     ]},
   ]},
 ];
+
+
+// ============================================================
+// FICHES LIVRE "Les animaux et nous" (Flammarion 2025)
+// ============================================================
+const FICHES_LIVRE = [
+  {
+    id: 'lv01',
+    title: 'Synth\u00e8se Partie I \u2014 Ces animaux qui peuplent nos imaginaires',
+    freq: '\u2605\u2605\u2605',
+    sections: [
+      { title: 'Probl\u00e9matique de la partie', content: [
+        { type: 'alert', color: 'blue', text: 'En quoi les animaux, r\u00e9els ou fantastiques, sont-ils un miroir de la condition humaine dans les arts et la litt\u00e9rature ?' },
+        { type: 'text', content: 'Depuis la pr\u00e9histoire (grottes de Lascaux), les hommes repr\u00e9sentent les animaux. Cette partie explore trois dimensions : l\u2019animal comme outil marketing et symbolique (publicit\u00e9, mode), l\u2019animal comme figure litt\u00e9raire (fables, contes), et l\u2019animal comme cr\u00e9ature hybride interrogeant notre humanit\u00e9 (m\u00e9tamorphoses).' },
+      ]},
+      { title: 'Les 3 sous-chapitres', content: [
+        { type: 'table', headers: ['Chapitre', 'Id\u00e9e directrice', 'Textes cl\u00e9s', 'Notion'], rows: [
+          ['1. Partout des images', 'De la pr\u00e9histoire au marketing, l\u2019animal v\u00e9hicule des st\u00e9r\u00e9otypes et des \u00e9motions', 'T2 Buffard-Moret, T4 Le Saint', 'Symbolisme animal'],
+          ['2. Animaux litt\u00e9raires', 'L\u2019anthropomorphisme permet de critiquer la soci\u00e9t\u00e9 humaine \u00e0 travers le miroir animal', 'T5 Roman de Renart, T7 La Fontaine, T8 Pommerat', 'Anthropomorphisme, apologue'],
+          ['3. Cr\u00e9atures hybrides', 'Les m\u00e9tamorphoses questionnent la fronti\u00e8re entre humanit\u00e9 et animalit\u00e9', 'T10 Ovide, T11 Kafka, T12 Valentino', 'M\u00e9tamorphose, hybridit\u00e9'],
+        ]},
+      ]},
+      { title: 'Notions cl\u00e9s \u00e0 retenir', content: [
+        { type: 'list', items: [
+          'Anthropomorphisme : attribuer des caract\u00e9ristiques humaines aux animaux (parole, sentiments, posture)',
+          'Apologue : r\u00e9cit (fable, conte) qui d\u00e9livre un enseignement moral par l\u2019all\u00e9gorie',
+          'Bestiaire : recueil m\u00e9di\u00e9val associant animaux r\u00e9els/imaginaires \u00e0 des symboliques morales ou religieuses',
+          'M\u00e9tamorphose : transformation d\u2019un \u00eatre en un autre, souvent homme \u2192 animal (Ovide, Kafka)',
+          'Physiognomonie : pseudo-science comparant traits humains et animaux pour d\u00e9duire le caract\u00e8re',
+        ]},
+      ]},
+      { title: 'Probl\u00e9matiques d\u2019essai possibles', content: [
+        { type: 'list', items: [
+          'Les repr\u00e9sentations animales nous parlent-elles davantage de nous-m\u00eames que des animaux ?',
+          'L\u2019anthropomorphisme rapproche-t-il l\u2019homme de l\u2019animal ou les \u00e9loigne-t-il ?',
+          'Les cr\u00e9atures hybrides remettent-elles en cause notre humanit\u00e9 ?',
+          'Pourquoi les fictions repr\u00e9sentant des humains hybrides ont-elles du succ\u00e8s ?',
+        ]},
+      ]},
+      { title: 'Images cl\u00e9s', content: [
+        { type: 'image', src: 'images/livre/image0002.jpg', alt: 'La Dame \u00e0 la licorne, tapisserie (1484-1538)', caption: 'La Dame \u00e0 la licorne \u2014 tapisserie all\u00e9gorique, mus\u00e9e de Cluny', credit: 'Mus\u00e9e de Cluny, Paris' },
+        { type: 'image', src: 'images/livre/image0020.jpg', alt: 'Picasso, La D\u00e9pouille du Minotaure (1936)', caption: 'Picasso, La D\u00e9pouille du Minotaure en costume d\u2019Arlequin (1936)', credit: 'Mus\u00e9e Picasso, Paris' },
+      ]},
+    ]
+  },
+  {
+    id: 'lv02',
+    title: 'Synth\u00e8se Partie II \u2014 Relations complexes homme/animal',
+    freq: '\u2605\u2605\u2605',
+    sections: [
+      { title: 'Probl\u00e9matique de la partie', content: [
+        { type: 'alert', color: 'blue', text: 'Comment le statut de l\u2019animal a-t-il \u00e9volu\u00e9 en Occident, de l\u2019animal-machine de Descartes \u00e0 la reconnaissance de sa sensibilit\u00e9 ?' },
+        { type: 'text', content: 'Cette partie retrace l\u2019\u00e9volution du regard occidental sur l\u2019animal : la rupture cart\u00e9sienne (animal = machine), les Lumi\u00e8res (Voltaire, Buffon), Darwin et l\u2019\u00e9volution, puis la domestication affective et l\u2019\u00e9mergence de l\u2019histoire animale. Un fil conducteur : la lente reconnaissance que les animaux ne sont pas de simples objets.' },
+      ]},
+      { title: 'Les 3 sous-chapitres', content: [
+        { type: 'table', headers: ['Chapitre', 'Id\u00e9e directrice', 'Textes cl\u00e9s', 'Notion'], rows: [
+          ['1. Condition animale', 'De Descartes (\u00ab animal-machine \u00bb) aux Achuar (animisme) : des visions radicalement oppos\u00e9es', 'T14 Descartes, T16 Voltaire, T17 Descola', 'Dualisme, animisme, naturalisme'],
+          ['2. De b\u00eate \u00e0 meilleur ami', 'La domestication cr\u00e9e un lien affectif ambigu : amour et domination', 'T18 Matignon, T22 Colette, T21 Bonheur', 'Domestication, anthropocentrisme'],
+          ['3. Histoire animale', 'Les animaux sont aussi des acteurs de l\u2019histoire (guerres, politique)', 'T23 Baratay, T24 Morpurgo, T26 Schneider', 'Zoohistoire, empathie'],
+        ]},
+      ]},
+      { title: 'Chronologie cl\u00e9', content: [
+        { type: 'table', headers: ['Date', '\u00c9v\u00e9nement', 'Cons\u00e9quence'], rows: [
+          ['~20 000 av. J.-C.', 'Premi\u00e8re domestication (chien)', 'D\u00e9but de la cohabitation homme/animal'],
+          ['1637', 'Descartes, Discours de la m\u00e9thode', 'Th\u00e9orie de l\u2019animal-machine : l\u2019animal ne pense pas'],
+          ['1764', 'Voltaire, \u00ab B\u00eates \u00bb', 'R\u00e9futation : les animaux ont des sentiments'],
+          ['1859', 'Darwin, L\u2019Origine des esp\u00e8ces', 'Homme et animal ont des anc\u00eatres communs'],
+          ['1976', 'Peter Singer, La Lib\u00e9ration animale', 'Naissance de l\u2019antis\u00e9pcisme philosophique'],
+          ['2015', 'Loi fran\u00e7aise', 'L\u2019animal reconnu comme \u00ab \u00eatre vivant dou\u00e9 de sensibilit\u00e9 \u00bb (art. 515-14 Code civil)'],
+        ]},
+      ]},
+      { title: 'Notions cl\u00e9s', content: [
+        { type: 'list', items: [
+          'Animal-machine (Descartes) : l\u2019animal est un automate sans \u00e2me ni pens\u00e9e',
+          'Sensibilit\u00e9 animale : capacit\u00e9 \u00e0 ressentir plaisir et douleur (Bentham : \u00ab Peuvent-ils souffrir ? \u00bb)',
+          'Anthropocentrisme : vision du monde centr\u00e9e sur l\u2019homme, l\u2019animal \u00e9tant subordonn\u00e9',
+          'Animisme (Descola) : vision o\u00f9 humains et non-humains partagent la m\u00eame int\u00e9riorit\u00e9',
+          'Domestication : processus par lequel l\u2019homme s\u2019approprie des esp\u00e8ces animales',
+        ]},
+      ]},
+      { title: 'Image cl\u00e9', content: [
+        { type: 'image', src: 'images/livre/image0047.jpg', alt: 'Charles Le Brun, Trois t\u00eates d\u2019hommes / lion', caption: 'Le Brun, Trois t\u00eates d\u2019hommes en relation avec le lion (XVIIe s.) \u2014 physiognomonie', credit: 'Mus\u00e9e du Louvre' },
+      ]},
+    ]
+  },
+  {
+    id: 'lv03',
+    title: 'Synth\u00e8se Partie III \u2014 Les animaux, sujet de connaissance',
+    freq: '\u2605\u2605\u2605',
+    sections: [
+      { title: 'Probl\u00e9matique de la partie', content: [
+        { type: 'alert', color: 'blue', text: 'Que nous apprennent les sciences sur l\u2019intelligence, les capacit\u00e9s et la sensibilit\u00e9 des animaux ?' },
+        { type: 'text', content: 'L\u2019\u00e9thologie moderne r\u00e9v\u00e8le des capacit\u00e9s insoup\u00e7onn\u00e9es : les chimpanz\u00e9s utilisent des outils, les corbeaux r\u00e9solvent des probl\u00e8mes, les poulpes font preuve d\u2019adaptabilit\u00e9, les abeilles communiquent par la danse. Cette partie interroge ce que ces d\u00e9couvertes changent dans notre rapport au vivant.' },
+      ]},
+      { title: 'Les 3 sous-chapitres', content: [
+        { type: 'table', headers: ['Chapitre', 'Id\u00e9e directrice', 'Textes cl\u00e9s', 'Notion'], rows: [
+          ['1. Science et animaux', 'L\u2019observation de terrain (Goodall) r\u00e9volutionne la m\u00e9thode scientifique', 'T27 Anhoury/Goodall, T29 Tesson, T31 Baylac', '\u00c9thologie, observation'],
+          ['2. Intelligences animales', 'Dauphins, poulpes, abeilles : preuves d\u2019intelligence non humaine', 'T32 Delfour, T33 Hortle, T34 Abeilles', 'Cognition, adaptation'],
+          ['3. Ce qu\u2019ils nous apprennent', 'Les animaux inspirent notre m\u00e9decine, architecture et organisation sociale', 'T35 Kerangal, T36 Despret, T38 De Meyer', 'Biomim\u00e9tisme, territorialit\u00e9'],
+        ]},
+      ]},
+      { title: 'Notions cl\u00e9s', content: [
+        { type: 'list', items: [
+          '\u00c9thologie : science du comportement animal dans son milieu naturel (Lorenz, Goodall)',
+          'Cognition animale : capacit\u00e9s mentales des animaux (m\u00e9moire, r\u00e9solution de probl\u00e8mes, apprentissage)',
+          'Biomim\u00e9tisme : s\u2019inspirer de la nature pour innover (architecture, mat\u00e9riaux, organisation)',
+          'Sentience : capacit\u00e9 \u00e0 \u00e9prouver des exp\u00e9riences subjectives (douleur, plaisir)',
+          'Anthropomorphisme scientifique : risque de projeter nos \u00e9motions sur les animaux',
+        ]},
+      ]},
+      { title: 'Image cl\u00e9', content: [
+        { type: 'image', src: 'images/livre/image0075.jpg', alt: 'Jane Goodall avec des chimpanz\u00e9s (1998)', caption: 'Jane Goodall observant des chimpanz\u00e9s \u2014 r\u00e9volution de l\u2019\u00e9thologie de terrain', credit: 'Michael Nichols / National Geographic' },
+      ]},
+    ]
+  },
+  {
+    id: 'lv04',
+    title: 'Synth\u00e8se Partie IV \u2014 Pr\u00e9server le vivant',
+    freq: '\u2605\u2605\u2605',
+    sections: [
+      { title: 'Probl\u00e9matique de la partie', content: [
+        { type: 'alert', color: 'blue', text: 'Quelle responsabilit\u00e9 l\u2019homme porte-t-il envers les animaux, et comment repenser leur statut ?' },
+        { type: 'text', content: 'Cette derni\u00e8re partie aborde les questions les plus br\u00fblantes : la maltraitance animale, l\u2019\u00e9levage industriel, la corrida, la chasse, le v\u00e9ganisme. Elle interroge aussi les voies d\u2019avenir : droits des animaux, statut juridique, cohabitation respectueuse.' },
+      ]},
+      { title: 'Les 3 sous-chapitres', content: [
+        { type: 'table', headers: ['Chapitre', 'Id\u00e9e directrice', 'Textes cl\u00e9s', 'Notion'], rows: [
+          ['1. Soumettre, abattre, manger', 'L\u2019exploitation animale est au c\u0153ur de nos soci\u00e9t\u00e9s (chasse, \u00e9levage, alimentation)', 'T39 Kipling, T41 Thevenon, T42 M. Page', 'Sp\u00e9cisme, v\u00e9ganisme'],
+          ['2. D\u00e9bats vifs', 'Corrida, chasse au loup, cirques : des pratiques de plus en plus contest\u00e9es', 'T44 Arnaud, T45 Rochette, T46 Cabrel', 'Tradition vs \u00e9thique'],
+          ['3. Repenser le statut', 'Vers une reconnaissance juridique et philosophique des droits de l\u2019animal', 'T47 Gen\u00e8se, T49 Collectif, T51 Morizot', 'Droits, cohabitation'],
+        ]},
+      ]},
+      { title: 'Notions cl\u00e9s', content: [
+        { type: 'list', items: [
+          'Sp\u00e9cisme : discrimination fond\u00e9e sur l\u2019esp\u00e8ce (analog. racisme, sexisme) \u2014 terme de Peter Singer',
+          'Antis\u00e9pcisme : mouvement refusant la hi\u00e9rarchie entre esp\u00e8ces',
+          'V\u00e9ganisme : mode de vie excluant tout produit d\u2019origine animale',
+          'Bien-\u00eatre animal : conditions de vie respectant les besoins fondamentaux de l\u2019animal',
+          'D\u00e9claration des droits de l\u2019animal (1978, r\u00e9vis\u00e9e 2018) : texte fondateur sans valeur juridique contraignante',
+          'Loi 2015 (art. 515-14 Code civil) : l\u2019animal = \u00ab \u00eatre vivant dou\u00e9 de sensibilit\u00e9 \u00bb',
+        ]},
+      ]},
+      { title: 'Images cl\u00e9s', content: [
+        { type: 'image', src: 'images/livre/image0134.jpg', alt: 'Lucas Cranach, Le Jardin d\u2019\u00c9den (1530)', caption: 'Cranach l\u2019Ancien, Le Jardin d\u2019\u00c9den (1530) \u2014 vision d\u2019harmonie originelle homme/animal', credit: 'Gem\u00e4ldegalerie, Dresde' },
+      ]},
+    ]
+  },
+  {
+    id: 'lv05',
+    title: 'Lexique th\u00e9matique \u2014 Les animaux et nous',
+    freq: '\u2605\u2605\u2605',
+    sections: [
+      { title: 'Axe 1 \u2014 IMAGINER l\u2019animal', content: [
+        { type: 'table', headers: ['Terme', 'D\u00e9finition', 'Exemple d\u2019usage en essai'], rows: [
+          ['Anthropomorphisme', 'Attribuer des traits humains aux animaux', '\u00ab L\u2019anthropomorphisme des Fables permet \u00e0 La Fontaine de critiquer la cour de Louis XIV \u00bb'],
+          ['Apologue', 'R\u00e9cit court \u00e0 vis\u00e9e morale (fable, conte, parabole)', '\u00ab L\u2019apologue reste un outil didactique efficace car il instruit en divertissant \u00bb'],
+          ['Bestiaire', 'Recueil m\u00e9di\u00e9val associant animaux et symboliques', '\u00ab Les bestiaires m\u00e9di\u00e9vaux t\u00e9moignent d\u2019un rapport symbolique et moral \u00e0 l\u2019animal \u00bb'],
+          ['M\u00e9tamorphose', 'Transformation d\u2019un \u00eatre en un autre', '\u00ab La m\u00e9tamorphose kafka\u00efenne interroge la fronti\u00e8re entre humanit\u00e9 et animalit\u00e9 \u00bb'],
+          ['All\u00e9gorie', 'Repr\u00e9sentation concr\u00e8te d\u2019une id\u00e9e abstraite', '\u00ab Le loup est l\u2019all\u00e9gorie de la violence arbitraire du pouvoir \u00bb'],
+          ['Physiognomonie', 'Pseudo-science liant traits physiques et caract\u00e8re moral', '\u00ab La physiognomonie de Le Brun r\u00e9v\u00e8le les pr\u00e9jug\u00e9s li\u00e9s au regard sur l\u2019animal \u00bb'],
+        ]},
+      ]},
+      { title: 'Axe 2 \u2014 CONNA\u00ceT RE l\u2019animal', content: [
+        { type: 'table', headers: ['Terme', 'D\u00e9finition', 'Exemple d\u2019usage en essai'], rows: [
+          ['\u00c9thologie', '\u00c9tude scientifique du comportement animal en milieu naturel', '\u00ab L\u2019\u00e9thologie de Goodall a d\u00e9montr\u00e9 l\u2019usage d\u2019outils chez les chimpanz\u00e9s \u00bb'],
+          ['Cognition animale', 'Ensemble des capacit\u00e9s mentales des animaux', '\u00ab La cognition du poulpe remet en cause la hi\u00e9rarchie traditionnelle de l\u2019intelligence \u00bb'],
+          ['Sentience', 'Capacit\u00e9 \u00e0 ressentir subjectivement (douleur, plaisir)', '\u00ab La sentience animale est d\u00e9sormais attest\u00e9e par les neurosciences \u00bb'],
+          ['Biomim\u00e9tisme', 'Innovation inspir\u00e9e de la nature et du vivant', '\u00ab Le biomim\u00e9tisme prouve que les animaux sont une source de progr\u00e8s pour l\u2019homme \u00bb'],
+          ['Taxinomie', 'Science de la classification des \u00eatres vivants', '\u00ab La taxinomie de Linn\u00e9 a plac\u00e9 l\u2019homme parmi les primates \u00bb'],
+          ['S\u00e9lection naturelle', 'M\u00e9canisme darwinien d\u2019adaptation des esp\u00e8ces', '\u00ab La s\u00e9lection naturelle implique une parent\u00e9 entre toutes les esp\u00e8ces \u00bb'],
+        ]},
+      ]},
+      { title: 'Axe 3 \u2014 COMPRENDRE et prot\u00e9ger', content: [
+        { type: 'table', headers: ['Terme', 'D\u00e9finition', 'Exemple d\u2019usage en essai'], rows: [
+          ['Sp\u00e9cisme', 'Discrimination fond\u00e9e sur l\u2019esp\u00e8ce (Singer)', '\u00ab Le sp\u00e9cisme est \u00e0 l\u2019esp\u00e8ce ce que le racisme est \u00e0 la race, selon Singer \u00bb'],
+          ['Antis\u00e9pcisme', 'Mouvement contestant la sup\u00e9riorit\u00e9 humaine sur l\u2019animal', '\u00ab L\u2019antis\u00e9pcisme philosophique gagne du terrain dans le d\u00e9bat public \u00bb'],
+          ['V\u00e9ganisme', 'Exclusion de tout produit d\u2019origine animale', '\u00ab Le v\u00e9ganisme pose la question de la coh\u00e9rence entre \u00e9thique et alimentation \u00bb'],
+          ['Bien-\u00eatre animal', 'Conditions respectant les besoins fondamentaux', '\u00ab Le bien-\u00eatre animal est devenu un crit\u00e8re de consommation responsable \u00bb'],
+          ['Droit animalier', 'Branche du droit prot\u00e9geant les animaux', '\u00ab La loi de 2015 a reconnu l\u2019animal comme \u00eatre sensible dans le Code civil \u00bb'],
+          ['Biodiversit\u00e9', 'Diversit\u00e9 des esp\u00e8ces vivantes dans un \u00e9cosyst\u00e8me', '\u00ab La perte de biodiversit\u00e9 menace l\u2019\u00e9quilibre des \u00e9cosyst\u00e8mes dont l\u2019homme d\u00e9pend \u00bb'],
+          ['Empathie', 'Capacit\u00e9 \u00e0 ressentir l\u2019\u00e9tat \u00e9motionnel d\u2019autrui', '\u00ab Frans de Waal montre que l\u2019empathie n\u2019est pas un privil\u00e8ge humain \u00bb'],
+          ['Anthropocentrisme', 'Vision du monde centr\u00e9e sur l\u2019homme', '\u00ab L\u2019anthropocentrisme a longtemps justifi\u00e9 l\u2019exploitation animale \u00bb'],
+        ]},
+      ]},
+    ]
+  },
+  {
+    id: 'lv06',
+    title: 'Vocabulaire argumentatif \u2014 Formuler et relier',
+    freq: '\u2605\u2605',
+    sections: [
+      { title: 'Connecteurs pour confronter deux documents', content: [
+        { type: 'table', headers: ['Fonction', 'Connecteurs', 'Exemple'], rows: [
+          ['Rapprochement', 'De m\u00eame, \u00e0 l\u2019instar de, tout comme, parall\u00e8lement', 'De m\u00eame que Descartes nie la sensibilit\u00e9 animale, Le Brun...'],
+          ['Opposition', 'En revanche, \u00e0 l\u2019oppos\u00e9, toutefois, n\u00e9anmoins, or', 'Toutefois, Voltaire s\u2019inscrit en faux contre cette th\u00e8se...'],
+          ['Concession', 'Certes... mais, bien que, m\u00eame si, quoique', 'Certes l\u2019animal ne parle pas, mais il communique...'],
+          ['Cause', 'En effet, car, puisque, \u00e9tant donn\u00e9 que', 'En effet, les neurosciences ont d\u00e9montr\u00e9 que...'],
+          ['Cons\u00e9quence', 'D\u00e8s lors, par cons\u00e9quent, c\u2019est pourquoi, ainsi', 'D\u00e8s lors, il para\u00eet difficile de maintenir la th\u00e8se...'],
+        ]},
+      ]},
+      { title: 'Formulations pour l\u2019essai', content: [
+        { type: 'table', headers: ['Moment', 'Formulation type'], rows: [
+          ['Introduire une th\u00e8se', 'Il est commun\u00e9ment admis que... / Selon X, ...'],
+          ['Nuancer', 'Cependant, cette vision m\u00e9rite d\u2019\u00eatre nuanc\u00e9e...'],
+          ['Illustrer', 'Ainsi, dans [titre] (date), [auteur] montre que...'],
+          ['Citer le corpus', 'Comme le souligne [auteur] dans le document X, \u00ab [...] \u00bb (l. Y)'],
+          ['Conclure une partie', 'Ainsi, il appara\u00eet que... / En d\u00e9finitive, ...'],
+          ['Ouvrir', 'D\u00e8s lors, on peut se demander si... / Cette r\u00e9flexion invite \u00e0...'],
+        ]},
+      ]},
+      { title: 'Verbes pour reformuler (ne pas recopier)', content: [
+        { type: 'list', items: [
+          'L\u2019auteur affirme / soutient / d\u00e9montre / r\u00e9v\u00e8le / d\u00e9nonce / interroge / remet en cause',
+          'Le texte met en lumi\u00e8re / souligne / illustre / \u00e9tablit un parall\u00e8le entre',
+          'Le document invite \u00e0 reconsid\u00e9rer / repose sur l\u2019id\u00e9e que / s\u2019inscrit dans la continuit\u00e9 de',
+        ]},
+      ]},
+    ]
+  },
+  {
+    id: 'lv07',
+    title: 'M\u00e9thodologie \u2014 Analyser une image',
+    freq: '\u2605\u2605\u2605',
+    sections: [
+      { title: 'M\u00e9thode en 5 \u00e9tapes', content: [
+        { type: 'table', headers: ['\u00c9tape', 'Ce qu\u2019il faut faire', 'Questions \u00e0 se poser'], rows: [
+          ['1. Identifier', 'Nature, auteur, date, lieu, dimensions', 'Quel type d\u2019image ? Qui l\u2019a cr\u00e9\u00e9e ? Dans quel contexte ?'],
+          ['2. D\u00e9crire', 'Ce que l\u2019on voit objectivement (sans interpr\u00e9ter)', 'Que repr\u00e9sente l\u2019image ? Quels \u00e9l\u00e9ments sont pr\u00e9sents ?'],
+          ['3. Composer', 'Lignes, plans, couleurs, cadrage, \u00e9quilibre', 'Comment l\u2019image est-elle organis\u00e9e ? O\u00f9 le regard est-il guid\u00e9 ?'],
+          ['4. Interpr\u00e9ter', 'Symboles, intentions, message, registre', 'Quel message ? Quelle \u00e9motion ? Quel rapport au th\u00e8me ?'],
+          ['5. Relier au corpus', 'Lien avec les textes, le th\u00e8me, la probl\u00e9matique', 'En quoi l\u2019image \u00e9claire-t-elle / compl\u00e8te-t-elle les textes ?'],
+        ]},
+      ]},
+      { title: 'Exemple appliqu\u00e9 : La Dame \u00e0 la licorne', content: [
+        { type: 'image', src: 'images/livre/image0002.jpg', alt: 'La Dame \u00e0 la licorne', caption: 'Tapisserie \u00ab Le go\u00fbt \u00bb de La Dame \u00e0 la licorne (1484-1538), mus\u00e9e de Cluny' },
+        { type: 'list', items: [
+          '1. Identifier : tapisserie m\u00e9di\u00e9vale, anonyme, fin XVe s., laine et soie, 3,7 x 4,6 m',
+          '2. D\u00e9crire : une dame entour\u00e9e d\u2019une licorne et d\u2019un lion, fond millefleurs avec animaux',
+          '3. Composer : composition sym\u00e9trique, dame au centre, animaux en miroir, fond charg\u00e9',
+          '4. Interpr\u00e9ter : la licorne = puret\u00e9, fid\u00e9lit\u00e9 ; le lion = force ; les sens humains m\u00e9diatis\u00e9s par l\u2019animal',
+          '5. Relier : illustre l\u2019animal comme miroir symbolique de l\u2019humain (Partie I du th\u00e8me)',
+        ]},
+      ]},
+      { title: 'Vocabulaire de l\u2019analyse d\u2019image', content: [
+        { type: 'list', items: [
+          'Composition : premier plan / arri\u00e8re-plan / hors-champ / plongée / contre-plongée',
+          'Lumi\u00e8re : clair-obscur / contraste / dominante chaude-froide',
+          'Symbolique : all\u00e9gorie / m\u00e9taphore visuelle / iconographie / embl\u00e8me',
+          'Effet produit : pathos / ironie / mise en ab\u00eeme / interpellation du spectateur',
+        ]},
+      ]},
+    ]
+  },
+  {
+    id: 'lv08',
+    title: 'Activit\u00e9s d\u2019argumentation \u2014 S\u2019exercer',
+    freq: '\u2605\u2605',
+    sections: [
+      { title: 'Exercice 1 \u2014 Rep\u00e9rer la strat\u00e9gie argumentative', content: [
+        { type: 'alert', color: 'yellow', text: 'Pour chaque texte du corpus, identifiez : la th\u00e8se d\u00e9fendue, les arguments principaux, les exemples utilis\u00e9s, le registre (lyrique, pol\u00e9mique, didactique, ironique).' },
+        { type: 'table', headers: ['Texte', 'Th\u00e8se', 'Type d\u2019argument', 'Registre'], rows: [
+          ['Voltaire (T16)', 'Les animaux ont des sentiments', 'Argument par l\u2019absurde + ironie', 'Ironique'],
+          ['Singer (r\u00e9f.)', 'Le sp\u00e9cisme est une injustice', 'Analogie racisme/sp\u00e9cisme', 'Pol\u00e9mique'],
+          ['Morizot (T51)', 'Nous devons cohabiter avec le vivant', 'Argument \u00e9cologique + ph\u00e9nom\u00e9nologique', 'Didactique/lyrique'],
+        ]},
+      ]},
+      { title: 'Exercice 2 \u2014 Construire un plan d\u2019essai', content: [
+        { type: 'alert', color: 'green', text: 'Sujet : \u00ab Selon vous, les animaux ont-ils des droits ? \u00bb' },
+        { type: 'table', headers: ['Partie', 'Id\u00e9e directrice', 'Arguments + exemples'], rows: [
+          ['I. Oui, moralement', 'Les animaux souffrent \u2192 devoir de protection', 'Bentham, loi 2015, D\u00e9claration 2018'],
+          ['II. Mais des limites pratiques', 'Appliquer le \u00ab droit \u00bb \u00e0 l\u2019animal pose des difficult\u00e9s juridiques', 'Absence de r\u00e9ciprocit\u00e9, conflit d\u2019int\u00e9r\u00eats'],
+          ['III. Vers une nouvelle responsabilit\u00e9', 'Plut\u00f4t que des droits, des devoirs humains envers le vivant', 'Morizot, \u00e9thique du care, cohabitation'],
+        ]},
+      ]},
+      { title: 'Exercice 3 \u2014 Reformuler sans recopier', content: [
+        { type: 'alert', color: 'red', text: 'Rappel : le jury sanctionne la paraphrase (recopier en changeant 2 mots). Il faut REFORMULER en vos propres termes, puis citer bri\u00e8vement entre guillemets pour appuyer.' },
+        { type: 'table', headers: ['Texte original (exemple)', 'Mauvaise reformulation \u2717', 'Bonne reformulation \u2713'], rows: [
+          ['Descartes affirme que les animaux sont des machines', 'Descartes dit que les animaux sont comme des machines', 'Le philosophe cart\u00e9sien nie toute int\u00e9riorit\u00e9 \u00e0 l\u2019animal, qu\u2019il r\u00e9duit \u00e0 un simple m\u00e9canisme'],
+          ['Morizot invite \u00e0 repenser notre cohabitation', 'Morizot dit qu\u2019il faut repenser la cohabitation', 'Le philosophe plaide pour une \u00e9thique de la relation au vivant, fond\u00e9e sur l\u2019attention et le partage du territoire'],
+        ]},
+      ]},
+    ]
+  },
+  {
+    id: 'lv09',
+    title: 'Citations cl\u00e9s \u2014 S\u00e9lection par partie',
+    freq: '\u2605\u2605\u2605',
+    sections: [
+      { title: 'Partie I \u2014 Imaginaires', content: [
+        { type: 'table', headers: ['Citation', 'Auteur / Source', 'Usage possible'], rows: [
+          ['\u00ab La raison du plus fort est toujours la meilleure \u00bb', 'La Fontaine, Le Loup et l\u2019Agneau', 'L\u2019animal comme miroir de l\u2019injustice sociale'],
+          ['\u00ab Attach\u00e9 ? dit le Loup. Vous ne courez donc pas o\u00f9 vous voulez ? \u00bb', 'La Fontaine, Le Loup et le Chien', 'La libert\u00e9 animale comme m\u00e9taphore de la libert\u00e9 humaine'],
+          ['\u00ab Un matin, Gregor Samsa s\u2019\u00e9veilla transform\u00e9 en un monstrueux insecte \u00bb', 'Kafka, La M\u00e9tamorphose', 'La fronti\u00e8re homme/animal : quand le corps trahit l\u2019identit\u00e9'],
+        ]},
+      ]},
+      { title: 'Partie II \u2014 Relations', content: [
+        { type: 'table', headers: ['Citation', 'Auteur / Source', 'Usage possible'], rows: [
+          ['\u00ab Je pense, donc je suis \u00bb \u2192 l\u2019animal ne pense pas, donc...', 'Descartes, Discours de la m\u00e9thode', 'La th\u00e9orie de l\u2019animal-machine et ses cons\u00e9quences'],
+          ['\u00ab Peuvent-ils souffrir ? \u00bb', 'Bentham (XVIIIe s.)', 'Le tournant \u00e9thique : la souffrance comme crit\u00e8re moral'],
+          ['\u00ab Quelle piti\u00e9 ! quelle pauvret\u00e9 d\u2019esprit de dire que les b\u00eates sont des machines \u00bb', 'Voltaire, Dictionnaire philosophique', 'La r\u00e9futation des th\u00e8ses cart\u00e9siennes par l\u2019ironie'],
+        ]},
+      ]},
+      { title: 'Partie III \u2014 Connaissance', content: [
+        { type: 'table', headers: ['Citation', 'Auteur / Source', 'Usage possible'], rows: [
+          ['\u00ab Ce qui m\u2019a surpris le plus, c\u2019est leur capacit\u00e9 \u00e0 utiliser des outils \u00bb', 'Jane Goodall (reformul\u00e9)', 'La r\u00e9volution de l\u2019\u00e9thologie de terrain'],
+          ['\u00ab L\u2019empathie n\u2019est pas un privil\u00e8ge humain \u00bb', 'Frans de Waal, L\u2019\u00c2ge de l\u2019empathie', 'Animalit\u00e9 de nos qualit\u00e9s morales'],
+        ]},
+      ]},
+      { title: 'Partie IV \u2014 Pr\u00e9server', content: [
+        { type: 'table', headers: ['Citation', 'Auteur / Source', 'Usage possible'], rows: [
+          ['\u00ab Les animaux ne sont pas comestibles \u00bb', 'Martin Page (titre)', 'La remise en cause radicale de l\u2019alimentation carn\u00e9e'],
+          ['\u00ab Nous sommes des vivants parmi les vivants \u00bb', 'Baptiste Morizot, Mani\u00e8res d\u2019\u00eatre vivant', 'La n\u00e9cessit\u00e9 d\u2019une cohabitation respectueuse'],
+          ['\u00ab L\u2019animal est un \u00eatre vivant dou\u00e9 de sensibilit\u00e9 \u00bb', 'Article 515-14, Code civil (2015)', 'L\u2019\u00e9volution juridique du statut de l\u2019animal en France'],
+        ]},
+      ]},
+      { title: 'M\u00e9thode : int\u00e9grer une citation', content: [
+        { type: 'alert', color: 'green', text: '1. Nommer l\u2019auteur et l\u2019\u0153uvre\n2. Contextualiser en une phrase\n3. Citer entre guillemets\n4. Analyser : en quoi cela \u00e9claire-t-il votre argument ?' },
+      ]},
+    ]
+  },
+];
+
 
 // ══════════════════ FICHES BIM E6-A (eveBIM + examens) ══════════════════
 
@@ -15407,6 +15733,15 @@ const FicheContent = ({sections}) => sections.map((sec,si)=>(
           ))}
         </div>
       );
+      if(b.type==='image') return (
+        <figure key={bi} className="fiche-image">
+          <img src={b.src} alt={b.alt||''} onError={e=>{e.target.style.display='none';e.target.nextSibling&&(e.target.nextSibling.style.display='flex')}} />
+          <div className="fiche-image-fallback" style={{display:'none',background:'var(--bg3)',border:'2px dashed var(--border)',borderRadius:10,padding:'30px 20px',alignItems:'center',justifyContent:'center',minHeight:120,color:'var(--text3)',fontSize:13}}>
+            {'\ud83d\uddbc\ufe0f Image : '+(b.alt||b.caption||'')}
+          </div>
+          {(b.caption||b.credit)?<figcaption>{b.caption}{b.credit?<span className="fiche-image-credit">{' \u2014 \u00a9 '+b.credit}</span>:null}</figcaption>:null}
+        </figure>
+      );
       return null;
     })}
   </div>
@@ -18127,6 +18462,33 @@ const SUBJECT_CONFIG = {
   },
 };
 
+const LivreHub = ({onModule,onBack}) => {
+  const modules = [
+    {id:'syntheses',  icon:'\ud83d\udcd6', label:'Synth\u00e8ses des 4 parties', sub:'lv01\u2013lv04 \u2014 R\u00e9sum\u00e9s + notions + images'},
+    {id:'lexique',    icon:'\ud83d\udcdd', label:'Lexique th\u00e9matique', sub:'lv05\u2013lv06 \u2014 40+ termes + vocabulaire argumentatif'},
+    {id:'methodologie',icon:'\ud83c\udfaf', label:'M\u00e9thodologie & Exercices', sub:'lv07\u2013lv09 \u2014 Analyse image + argumentation + citations'},
+    {id:'epub',       icon:'\ud83d\udcda', label:'Ouvrir le livre (EPUB)', sub:'Adobe Digital Editions'},
+  ];
+  return (
+    <div style={{padding:'16px 12px',maxWidth:700,margin:'0 auto'}}>
+      <button className="back-btn" onClick={onBack}>\u2190 Retour</button>
+      <h2 style={{fontSize:20,fontWeight:700,color:'var(--text)',margin:'14px 0 6px'}}>{'\ud83d\udcd6'} Livre CGE 2026</h2>
+      <p style={{fontSize:13,color:'var(--text3)',margin:'0 0 16px'}}>\u00ab Les animaux et nous \u00bb \u2014 Flammarion 2025 \u2014 Chauvineau / De Rorthais</p>
+      <div style={{display:'grid',gap:10}}>
+        {modules.map(m=>(
+          <div key={m.id} onClick={()=>{if(m.id==='epub'){try{window.open('file:///C:/Users/bahaf/Documents/My Digital Editions/Les animaux et nous.epub')}catch(e){alert('Ouvrez le fichier EPUB avec Adobe Digital Editions')}}else{onModule(m.id)}}} className="card-hover" style={{background:'var(--bg2)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',cursor:'pointer',display:'flex',alignItems:'center',gap:14,transition:'all .15s'}}>
+            <span style={{fontSize:28}}>{m.icon}</span>
+            <div>
+              <div style={{fontWeight:600,fontSize:14,color:'var(--text)'}}>{m.label}</div>
+              <div style={{fontSize:12,color:'var(--text3)',marginTop:2}}>{m.sub}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const SubjectHub = ({cfg,onModule,onBack}) => {
   const modules = [
     {id:'fiches',  icon:'📚', label:'Fiches de Révision', sub:cfg.fiches().length+' fiches'},
@@ -18258,6 +18620,7 @@ const NAVS = [
   {id:'planning',  label:'Planning',        icon:'📅'},
   {id:'fiches_e1', label:'E1 Français CGE', icon:'🇫🇷'},
   {id:'examens_cge',label:'Examens CGE',   icon:'📝'},
+  {id:'livre_cge', label:'Livre CGE 2026',  icon:'📖',badge:'CGE'},
   {id:'fiches_bim',label:'E6-A BIM eveBIM', icon:'💻'},
   {id:'simulateur',label:'Simulateur Notes',icon:'🎯'},
   {id:'_sep1',     label:'──────────',      icon:''},
@@ -18319,6 +18682,24 @@ const App = () => {
       const examens = (typeof FICHES_FRANCAIS!=='undefined'?FICHES_FRANCAIS:[]).filter(f=>f.id.match(/^fr(07|1[2-9])$/));
       if(fiche) return <FicheDetail fiche={fiche} epreuve="CGE" onBack={()=>setFiche(null)}/>;
       return <FichesList fiches={examens} epreuve="CGE" onSelect={setFiche} onBack={()=>{setFiche(null);handleNav('accueil')}}/>;
+    }
+    if(nav==='livre_cge'){
+      const syntheses = FICHES_LIVRE.filter(f=>f.id.match(/^lv0[1-4]$/));
+      const lexique = FICHES_LIVRE.filter(f=>f.id.match(/^lv0[56]$/));
+      const methodo = FICHES_LIVRE.filter(f=>f.id.match(/^lv0[789]$/));
+      if(subjectModule==='syntheses'){
+        if(fiche) return <FicheDetail fiche={fiche} epreuve="CGE" onBack={()=>setFiche(null)}/>;
+        return <FichesList fiches={syntheses} epreuve="CGE" onSelect={setFiche} onBack={()=>{setSubjectModule(null);setFiche(null)}}/>;
+      }
+      if(subjectModule==='lexique'){
+        if(fiche) return <FicheDetail fiche={fiche} epreuve="CGE" onBack={()=>setFiche(null)}/>;
+        return <FichesList fiches={lexique} epreuve="CGE" onSelect={setFiche} onBack={()=>{setSubjectModule(null);setFiche(null)}}/>;
+      }
+      if(subjectModule==='methodologie'){
+        if(fiche) return <FicheDetail fiche={fiche} epreuve="CGE" onBack={()=>setFiche(null)}/>;
+        return <FichesList fiches={methodo} epreuve="CGE" onSelect={setFiche} onBack={()=>{setSubjectModule(null);setFiche(null)}}/>;
+      }
+      return <LivreHub onModule={setSubjectModule} onBack={()=>handleNav('accueil')}/>;
     }
     if(nav==='fiches_bim'){
       if(fiche) return <FicheDetail fiche={fiche} epreuve="BIM" onBack={()=>setFiche(null)}/>;
